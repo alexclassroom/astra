@@ -90,6 +90,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 
 	$css_output_min_tablet  = array();
 	$narrow_container_width = astra_get_option( 'narrow-container-max-width', apply_filters( 'astra_narrow_container_width', 750 ) );
+	$author_avatar_size     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-author-avatar-size' );
 
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
@@ -309,6 +310,9 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		}
 		.ast-single-entry-banner + .site-content .entry-header {
 			margin-bottom: 0;
+		}
+		.ast-author-avatar {
+			--ast-author-avatar-size: ' . astra_get_css_value( $author_avatar_size, 'px' ) . ';
 		}
 	';
 

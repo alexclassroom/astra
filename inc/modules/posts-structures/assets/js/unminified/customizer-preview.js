@@ -103,6 +103,22 @@ function astra_refresh_customizer( control ) {
 			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]'
 		);
 
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]'
+		);
+
+		wp.customize( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar-size]', function( value ) {
+			value.bind( function( size ) {
+				var dynamicStyle = '';
+				dynamicStyle +=  '.entry-meta .ast-author-avatar img {';
+				dynamicStyle += 'width: ' + size + 'px;';
+				dynamicStyle += 'height: ' + size + 'px;';
+				dynamicStyle += '} ';
+
+				astra_add_dynamic_css( 'ast-dynamic-single-' + postType + '-author-avatar-size', dynamicStyle );
+			} );
+		} );
+
 		astra_dynamic_build_css(
 			'ast-dynamic-single-' + postType + '-horizontal-alignment',
 			'astra-settings[ast-dynamic-single-' + postType + '-horizontal-alignment]',

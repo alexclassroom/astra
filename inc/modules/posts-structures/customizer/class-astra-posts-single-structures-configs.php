@@ -305,6 +305,14 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'clone_limit' => 1,
 				'title'       => __( 'Date', 'astra' ),
 			);
+			$meta_config_options['author'] = array(
+				'clone'       => false,
+				'is_parent'   => true,
+				'main_index'  => 'author',
+				'clone_limit' => 1,
+				'title'       => __( 'Author', 'astra' ),
+			);
+
 
 			// Display Read Time option in Meta options only when Astra Addon is activated.
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -568,9 +576,46 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'choices'           => array_merge(
 						array(
 							'comments' => __( 'Comments', 'astra' ),
-							'author'   => __( 'Author', 'astra' ),
 						),
 						$meta_config_options
+					),
+				),
+
+				/**
+				 * Option: Author Avatar.
+				 */
+				array(
+					'name'      => $title_section . '-author-avatar',
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
+					'default'   => astra_get_option( $title_section . '-author-avatar', false ),
+					'linked'    => 'author',
+					'type'      => 'sub-control',
+					'control'   => 'ast-toggle',
+					'section'   => $title_section,
+					'priority'  => 5,
+					'title'     => __( 'Author Avatar', 'astra' ),
+					'transport' => 'postMessage',
+				),
+
+				/**
+				 * Option: Author Avatar Width.
+				 */
+				array(
+					'name'      => $title_section . '-author-avatar-size',
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
+					'default'     => astra_get_option( $title_section . '-author-avatar-size', 30 ),
+					'linked'    => 'author',
+					'type'      => 'sub-control',
+					'control'   => 'ast-slider',
+					'transport' => 'postMessage',
+					'section'   => $title_section,
+					'priority'    => 10,
+					'title'       => __( 'Avatar Size', 'astra' ),
+					'suffix'      => 'px',
+					'input_attrs' => array(
+						'min'  => 1,
+						'step' => 1,
+						'max'  => 200,
 					),
 				),
 

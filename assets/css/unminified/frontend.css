@@ -3161,6 +3161,16 @@ input[type="color"]::-webkit-color-swatch {
   border-radius: 2px;
 }
 
+.ast-author-avatar {
+  margin: 0 5px;
+}
+
+.ast-author-avatar img {
+  border-radius: 100%;
+  width: var(--ast-author-avatar-size, 30px);
+  height: var(--ast-author-avatar-size, 30px);
+}
+
 .ast-separate-container .post-navigation {
   border-top: 0;
   padding-left: 3.33333em;

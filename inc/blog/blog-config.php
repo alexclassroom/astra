@@ -61,6 +61,39 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator ) {
 }
 
 /**
+ * Function to get Author ID.
+ *
+ * @since x.x.x
+ * @return mixed $author_id Author ID.
+ */
+function astra_get_author_id() {
+	global $post;
+	if ( isset( $post->post_author ) ) {
+		$author_id = $post->post_author;
+	} elseif ( is_callable( 'get_the_author_meta' ) ) {
+		$author_id = get_the_author_meta( 'ID' );
+	} else {
+		$author_id = 1;
+	}
+	return $author_id;
+}
+
+/**
+ * Function to get Author Avatar.
+ *
+ * @since x.x.x
+ * @return mixed $avatar Author Avatar.
+ */
+function astra_author_avatar() {
+	$avatar = '';
+	if ( is_singular() && astra_get_option( 'ast-dynamic-single-' . get_post_type() . '-author-avatar', false ) ) {
+		$avatar_image_size = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar-size', 30 );
+		$avatar = '<span class="ast-author-avatar">' . get_avatar( astra_get_author_id(), ( 2 * $avatar_image_size ) ) . '</span>';
+	}
+	return $avatar;
+}
+
+/**
  * Common Functions for Blog and Single Blog
  *
  * @return  post meta
@@ -87,7 +120,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 
 				case 'author':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+					$output_str .= astra_author_avatar() . esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
 					break;
 
 				case 'date':
@@ -239,14 +272,7 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 	 */
 	function astra_post_author( $output_filter = '' ) {
 
-		global $post;
-		if ( isset( $post->post_author ) ) {
-			$author_id = $post->post_author;
-		} elseif ( is_callable( 'get_the_author_meta' ) ) {
-			$author_id = get_the_author_meta( 'ID' );
-		} else {
-			$author_id = 1;
-		}
+		$author_id = astra_get_author_id();
 
 		ob_start();
 
