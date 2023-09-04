@@ -15,6 +15,7 @@ import ToggleControl from '../toggle-control/toggle-control-component';
 import TextInputControl from '../text-input/text-input-component';
 import ListIconsControl from '../list-icons/list-icons-component';
 import DescriptionComponent from '../description/description-component';
+import AstNumberComponent from '../ast-number/ast-number-component';
 
 import {
 	astraGetBackground,
@@ -411,7 +412,12 @@ export const sortableControl = wp.customize.astraControl.extend( {
 				let control_full_name = attr.name.replace('[', '-');
 				control_full_name = control_full_name.replace(']', '');
 
-				fields_html += "<li id='customize-control-" + control_full_name + "' class='customize-control customize-control-" + attr.control + "' >";
+				let ast_class = '';
+				if ( attr ?. divider ?. ast_class ) {
+					ast_class = `${ attr.divider.ast_class} `;
+				}
+
+				fields_html += "<li id='customize-control-" + control_full_name + "' class='customize-control customize-control-" + attr.control + ' ' + ast_class + "' >";
 
 				if( jQuery( '#tmpl-' + template_id ).length ) {
 					fields_html += template(attr);
@@ -446,7 +452,8 @@ export const sortableControl = wp.customize.astraControl.extend( {
 			'ast-toggle': ToggleControl,
 			'ast-text-input': TextInputControl,
 			'ast-list-icons': ListIconsControl,
-			'ast-description': DescriptionComponent
+			'ast-description': DescriptionComponent,
+			'ast-number' : AstNumberComponent,
 		};
 
 		if( astra.customizer.is_pro ) {

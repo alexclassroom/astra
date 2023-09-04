@@ -1752,11 +1752,13 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 
 		$check_is_singular = is_singular();
 
-		$featured_image = true;
-		$post_type      = strval( get_post_type() );
+		$featured_image      = true;
+		$featured_image_size = 'large';
+		$post_type           = strval( get_post_type() );
 
 		if ( $check_is_singular ) {
-			$is_featured_image = astra_get_option_meta( 'ast-featured-img' );
+			$is_featured_image   = astra_get_option_meta( 'ast-featured-img' );
+			$featured_image_size = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-size', 'large' );
 		} else {
 			$is_featured_image = astra_get_option( 'ast-featured-img' );
 		}
@@ -1778,7 +1780,7 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 					'astra_featured_image_markup',
 					get_the_post_thumbnail(
 						get_the_ID(),
-						apply_filters( 'astra_post_thumbnail_default_size', 'large' ),
+						apply_filters( 'astra_post_thumbnail_default_size', $featured_image_size ),
 						apply_filters( 'astra_post_thumbnail_itemprop', '' )
 					)
 				);

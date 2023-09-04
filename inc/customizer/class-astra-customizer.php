@@ -487,11 +487,13 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 							$configuration['choices_upgrade'][ $key ] = isset( $value['is_pro'] ) ? $value['is_pro'] : false;
 						}
 					}
-					if ( isset( $configuration['input_attrs'] ) ) {
+					if ( isset( $configuration['inputAttrs'] ) ) {
 
 						$configuration['inputAttrs'] = '';
 						$configuration['labelStyle'] = '';
+							/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						foreach ( $configuration['input_attrs'] as $attr => $value ) {
+							/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 							if ( 'style' !== $attr ) {
 								$configuration['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 							} else {
@@ -663,11 +665,11 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 		 */
 		public function prepare_javascript_sub_control_configs( $config ) {
 
-			global $wp_customize;
 			unset( $config['type'] );
 
-			$sub_control_name = ASTRA_THEME_SETTINGS . '[' . astra_get_prop( $config, 'name' ) . ']';
+			$name             = astra_get_prop( $config, 'name' );
 			$parent           = astra_get_prop( $config, 'parent' );
+			$sub_control_name = ASTRA_THEME_SETTINGS . '[' . $name . ']';
 
 			$ignore_controls = array( 'ast-settings-group', 'ast-sortable', 'ast-radio-image', 'ast-slider', 'ast-responsive-slider', 'ast-section-toggle' );
 
@@ -708,14 +710,19 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			$new_config['settings']                           = array( 'default' => astra_get_prop( $new_config, 'name' ) );
 			$new_config                                       = self::bypass_control_configs( $new_config );
 			self::$js_configs ['sub_controls'] [ $parent ] [] = $new_config;
+
+			// Keep contextual sub controls aside to process initially in customizer.js.
+			if ( isset( $config['contextual_sub_control'] ) ) {
+				self::$js_configs ['contextual_sub_controls'] [ $name ] = $new_config;
+			}
 		}
 
-			/**
-			 * Get the Link for Control.
-			 *
-			 * @since 3.0.0
-			 * @param array $id Control ID.
-			 */
+		/**
+		 * Get the Link for Control.
+		 *
+		 * @since 3.0.0
+		 * @param array $id Control ID.
+		 */
 		public static function get_control_link( $id ) {
 			if ( isset( $id ) ) {
 				return 'data-customize-setting-link="' . $id . '"';
@@ -732,9 +739,9 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 		 */
 		public function prepare_javascript_control_configs( $config ) {
 
-			global $wp_customize;
 			// Remove type from configuration.
 			unset( $config['type'] );
+			$name = astra_get_prop( $config, 'name' );
 
 			$ignore_controls = array( 'ast-settings-group', 'ast-sortable', 'ast-radio-image', 'ast-slider', 'ast-responsive-slider', 'ast-section-toggle' );
 
@@ -762,13 +769,12 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			}
 
 			if ( isset( $config['active_callback'] ) ) {
-
-				self::$js_configs ['skip_context'] [] = astra_get_prop( $config, 'name' );
+				self::$js_configs ['skip_context'] [] = $name;
 				$this->prepare_preload_controls( $config );
 				return;
 			}
 
-			self::$dynamic_options['settings'][ astra_get_prop( $config, 'name' ) ] = array(
+			self::$dynamic_options['settings'][ $name ] = array(
 				'default'           => astra_get_prop( $config, 'default' ),
 				'type'              => astra_get_prop( $config, 'datastore_type' ),
 				'transport'         => astra_get_prop( $config, 'transport', 'refresh' ),
@@ -776,7 +782,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			);
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( astra_get_prop( $config, 'partial', false ) ) {
-				self::$dynamic_options['partials'][ astra_get_prop( $config, 'name' ) ] = array(
+				self::$dynamic_options['partials'][ $name ] = array(
 					'selector'           => astra_get_prop( $config['partial'], 'selector' ),
 					'render_callback'    => astra_get_prop( $config['partial'], 'render_callback' ),
 					'containerInclusive' => astra_get_prop( $config['partial'], 'container_inclusive' ),
@@ -784,12 +790,17 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 				);
 			}
 
-			$config['id']       = astra_get_prop( $config, 'name' );
-			$config['settings'] = array( 'default' => astra_get_prop( $config, 'name' ) );
+			$config['id']       = $name;
+			$config['settings'] = array( 'default' => $name );
 			$config             = self::bypass_control_configs( $config );
 
 			if ( isset( $config['section'] ) ) {
 				self::$js_configs ['controls'] [ $config['section'] ] [] = $config;
+			}
+
+			// Keep contextual sub controls aside to process initially in customizer.js.
+			if ( isset( $config['contextual_sub_control'] ) ) {
+				self::$js_configs ['contextual_sub_controls'] [ $name ] = $config;
 			}
 		}
 
@@ -1053,10 +1064,6 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 					'is_site_rtl'             => is_rtl(),
 					'defaults'                => $this->get_control_defaults(),
 					'isWP_5_9'                => astra_wp_version_compare( '5.8.99', '>=' ),
-					'astraRegenerateFonts'    => wp_create_nonce( 'astra-regenerate-local-fonts' ),
-					'initialFlushText'        => __( 'Flush Local Font Files', 'astra' ),
-					'successFlushed'          => __( 'Successfully Flushed', 'astra' ),
-					'failedFlushed'           => __( 'Failed, Please try again later.', 'astra' ),
 					'googleFonts'             => Astra_Font_Families::get_google_fonts(),
 					'variantLabels'           => Astra_Font_Families::font_variant_labels(),
 					'menuLocations'           => $resultant_menus,
@@ -1325,6 +1332,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			// Customizer Core.
 			wp_enqueue_script( 'astra-customizer-controls-toggle-js', ASTRA_THEME_URI . 'assets/js/' . $dir . '/customizer-controls-toggle' . $js_prefix, array(), ASTRA_THEME_VERSION, true );
 
+			wp_enqueue_script( 'astra-customizer-controls-js', ASTRA_THEME_URI . 'assets/js/' . $dir . '/customizer-controls' . $js_prefix, array( 'astra-customizer-controls-toggle-js' ), ASTRA_THEME_VERSION, true );
 			// Extended Customizer Assets - Panel extended.
 			wp_enqueue_style( 'astra-extend-customizer-css', ASTRA_THEME_URI . 'assets/css/minified/extend-customizer' . $css_prefix, null, ASTRA_THEME_VERSION );
 			wp_enqueue_script( 'astra-extend-customizer-js', ASTRA_THEME_URI . 'assets/js/' . $dir . '/extend-customizer' . $js_prefix, array(), ASTRA_THEME_VERSION, true );

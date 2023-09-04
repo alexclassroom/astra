@@ -119,6 +119,34 @@ function astra_refresh_customizer( control ) {
 			} );
 		} );
 
+    astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-ratio-type]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-ratio-pre-scale]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-custom-scale-width]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-custom-scale-height]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-hover-effect]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-bordered-image]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-image-size]'
+		);
+
 		astra_dynamic_build_css(
 			'ast-dynamic-single-' + postType + '-horizontal-alignment',
 			'astra-settings[ast-dynamic-single-' + postType + '-horizontal-alignment]',

@@ -24,7 +24,7 @@ if ( ! class_exists( 'Astra_Ext_Transparent_Header' ) ) {
 		/**
 		 * Member Variable
 		 *
-		 * @var instance
+		 * @var null instance
 		 */
 		private static $instance;
 

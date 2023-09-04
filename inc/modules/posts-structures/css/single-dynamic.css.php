@@ -92,26 +92,54 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 	$narrow_container_width = astra_get_option( 'narrow-container-max-width', apply_filters( 'astra_narrow_container_width', 750 ) );
 	$author_avatar_size     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-author-avatar-size' );
 
+	// Aspect Ratio processing.
+	$aspect_ratio_type    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-type', '' );
+	$predefined_scale     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-pre-scale' );
+	$custom_scale_width   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-width' );
+	$custom_scale_height  = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-height' );
+	$aspect_ratio         = astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height );
+	$featured_image_width = ( '' !== astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-size', '' ) ) ? '100%' : '';
+
+	// Hover effects.
+	$scale_hover_css = '';
+	$hover_effect    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-hover-effect', '' );
+	if ( '' !== $hover_effect ) {
+		$scale_hover_css = 'zoomin' === $hover_effect ? 'scale(1.1);' : 'scale(0.9);';
+	}
+
+	$bordered_image = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-bordered-image', false );
+	$border_color   = astra_get_option( 'border-color' );
+
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
 		/**
 		 * Desktop CSS.
 		 */
 		$css_output_desktop = array(
-			$selector                               => array(
+			$selector                                  => array(
 				'text-align' => $desk_h_alignment,
 			),
-			$selector . ' *'                        => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
-			$selector . ' .entry-title'             => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
+			$selector . ' *'                           => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
+			$selector . ' .entry-title'                => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
 			$selector . ' .entry-meta, ' . $selector . ' .entry-meta *' => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-weight' ), $banner_meta_font_size, 'ast-dynamic-single-' . $current_post_type . '-meta-font-extras' ),
-			$selector . ' a, ' . $selector . ' a *' => array(
+			$selector . ' a, ' . $selector . ' a *'    => array(
 				'color' => esc_attr( $link_color ),
 			),
 			$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' > *:not(:last-child)'     => array(
+			$selector . ' > *:not(:last-child)'        => array(
 				'margin-bottom' => $elements_gap . 'px',
+			),
+			$selector . ' .post-thumb-img-content img' => array(
+				'aspect-ratio'  => $aspect_ratio,
+				'transition'    => 'all 0.3s',
+				'border'        => $bordered_image ? '1px solid ' . $border_color : '',
+				'border-radius' => $bordered_image ? '4px' : '',
+				'width'         => $featured_image_width,
+			),
+			$selector . ' .post-thumb-img-content img:hover' => array(
+				'transform' => $scale_hover_css,
 			),
 		);
 		/**

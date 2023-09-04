@@ -47,8 +47,10 @@ import { multiSelectorControl } from './multi-selector/control';
 import { astFontExtrasControl } from './ast-font-extras/control';
 import { astUpgradeControl } from './ast-upgrade/control';
 import { radioIconControl } from './ast-radio-icon/control';
+import { numberInputControl } from './ast-number/control';
 
 window.svgIcons = svgIcons;
+wp.customize.controlConstructor['ast-number'] = numberInputControl;
 wp.customize.controlConstructor['ast-heading'] = headingControl;
 wp.customize.controlConstructor['ast-hidden'] = hiddenControl;
 wp.customize.controlConstructor['ast-description'] = descriptionControl;

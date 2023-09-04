@@ -25,7 +25,7 @@ if ( ! class_exists( 'Astra_Breadcrumbs_Loader' ) ) {
 		/**
 		 * Member Variable
 		 *
-		 * @var instance
+		 * @var null instance
 		 */
 		private static $instance;
 

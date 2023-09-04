@@ -70,6 +70,7 @@ if ( ! class_exists( 'Astra_Customizer_Control_Base' ) ) {
 			// Enqueue Customizer React.JS script.
 			$custom_controls_react_deps = array(
 				'astra-custom-control-plain-script',
+				'astra-customizer-controls-js',
 				'wp-i18n',
 				'wp-components',
 				'wp-element',

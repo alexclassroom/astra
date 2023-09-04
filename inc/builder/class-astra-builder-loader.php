@@ -20,7 +20,7 @@ if ( ! class_exists( 'Astra_Builder_Loader' ) ) {
 		/**
 		 * Member Variable
 		 *
-		 * @var instance
+		 * @var null instance
 		 */
 		private static $instance = null;
 

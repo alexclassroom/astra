@@ -478,6 +478,9 @@ export const settingsGroupControl = wp.customize.astraControl.extend( {
 		if ( undefined !== attr.renderAs && ( undefined === controlObject.params['renderAs'] || '' === controlObject.params['renderAs'] || null === controlObject.params['renderAs'] ) ) {
 			controlObject.params['renderAs'] = attr.renderAs;
 		}
+		if ( undefined !== attr.divider && undefined === controlObject.params['divider'] ) {
+			controlObject.params['divider'] = attr.divider;
+		}
 
 		return controlObject;
 	},

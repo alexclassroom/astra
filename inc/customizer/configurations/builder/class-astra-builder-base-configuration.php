@@ -18,7 +18,7 @@ final class Astra_Builder_Base_Configuration {
 	/**
 	 * Member Variable
 	 *
-	 * @var instance
+	 * @var null instance
 	 */
 	private static $instance = null;
 
