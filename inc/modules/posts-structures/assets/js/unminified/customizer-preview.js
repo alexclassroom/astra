@@ -119,7 +119,7 @@ function astra_refresh_customizer( control ) {
 			} );
 		} );
 
-    astra_refresh_customizer(
+		astra_refresh_customizer(
 			'astra-settings[ast-dynamic-single-' + postType + '-image-ratio-type]'
 		);
 
@@ -145,6 +145,14 @@ function astra_refresh_customizer( control ) {
 
 		astra_refresh_customizer(
 			'astra-settings[ast-dynamic-single-' + postType + '-image-size]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-metadata-separator]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-author-prefix-label]'
 		);
 
 		astra_dynamic_build_css(

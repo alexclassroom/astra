@@ -112,15 +112,18 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		$output_str = '';
 		$loop_count = 1;
 
-		$separator = apply_filters( 'astra_post_meta_separator', $separator );
+		$single_meta_separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+
+		$separator = apply_filters( 'astra_post_meta_separator', is_singular() ? $single_meta_separator : $separator );
 
 		foreach ( $post_meta as $meta_value ) {
 
 			switch ( $meta_value ) {
 
 				case 'author':
+					$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= astra_author_avatar() . esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+					$output_str .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
 					break;
 
 				case 'date':

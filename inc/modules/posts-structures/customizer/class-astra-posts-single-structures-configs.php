@@ -757,6 +757,23 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 
 				/**
+				 * Option: Author Prefix Label.
+				 */
+				array(
+					'name'      => $title_section . '-author-prefix-label',
+					'default'   => astra_get_option( $title_section . '-author-prefix-label', __( 'By', 'astra' ) ),
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
+					'linked'    => 'author',
+					'type'      => 'sub-control',
+					'control'   => 'ast-text-input',
+					'section'   => $title_section,
+					'divider'           => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'title'     => __( 'Prefix Label', 'astra' ),
+					'priority'  => 1,
+					'transport' => 'postMessage',
+				),
+
+				/**
 				 * Option: Author Avatar.
 				 */
 				array(
@@ -839,6 +856,39 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 						'm/d/Y'  => '11/06/2010',
 						'd/m/Y'  => '06/11/2010',
 					),
+				),
+
+				/**
+				 * Option: Meta Data Separator.
+				 */
+				array(
+					'name'       => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata-separator]',
+					'default'    => astra_get_option( $title_section . '-metadata-separator', '/' ),
+					'type'       => 'control',
+					'control'    => 'ast-selector',
+					'section'    => $title_section,
+					'priority'   => 26,
+					'title'      => __( 'Meta Items Divider', 'astra' ),
+					'choices'    => array(
+						'/' => '/',
+						'-'   => '-',
+						'|'   => '|',
+						'•' => '•',
+						'none' => __( 'None', 'astra' ),
+					),
+					'context'   => array(
+						Astra_Builder_Helper::$general_tab_config,
+						'relation' => 'AND',
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+							'operator' => 'contains',
+							'value'    => $title_section . '-meta',
+						),
+					),
+					'divider'           => array( 'ast_class' => 'ast-bottom-spacing' ),
+					'transport'  => 'postMessage',
+					'renderAs'   => 'text',
+					'responsive' => false,
 				),
 
 				/**
