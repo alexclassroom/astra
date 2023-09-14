@@ -324,13 +324,11 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 			esc_html( '%s' ),
 			'<a class="' . esc_attr( implode( ' ', $read_more_classes ) ) . '" href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . ' ' . $read_more_text . '</a>'
 		);
-
-		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
+		$output    = '<p class="read-more"> ' . $post_link . '</p>';
 
 		return apply_filters( 'astra_post_link', $output, $output_filter );
 	}
 }
-add_filter( 'excerpt_more', 'astra_post_link', 1 );
 
 /**
  * Function to get Number of Comments of Post

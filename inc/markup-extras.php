@@ -194,7 +194,7 @@ function astra_is_content_style_boxed( $post_id = false ) {
 		// Get global content style if third party is default.
 		$global_content_style = ( 'default' === $third_party_content_style || empty( $third_party_content_style ) ) ? $global_content_style : $third_party_content_style;
 
-		// Woo Cart & Checkout Page
+		// Woo Cart & Checkout Page.
 		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) ) {
 			return ( 'boxed' === $global_content_style );
 		}
@@ -242,15 +242,16 @@ function astra_with_third_party( $is_sidebar_option = false ) {
 
 	$post_type = strval( get_post_type() );
 
-	/** @psalm-suppress UndefinedFunction */
+	// @codingStandardsIgnoreStart
+	/**
+	 * @psalm-suppress UndefinedFunction
+	 */
 	if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_checkout() || is_cart() || is_account_page() ) ) {
 		return 'woocommerce';
 	}
-	/** @psalm-suppress UndefinedFunction */
 	elseif ( class_exists( 'Easy_Digital_Downloads' ) && astra_is_edd_page() ) {
 		return 'edd';
 	}
-	/** @psalm-suppress UndefinedFunction */
 	elseif ( class_exists( 'LifterLMS' ) && ( is_lifterlms() || is_llms_account_page() || is_llms_checkout() ) ) {
 		if ( $is_sidebar_option && ( is_lesson() || is_course() ) ) {
 			return 'lifterlms-course-lesson';
@@ -259,6 +260,7 @@ function astra_with_third_party( $is_sidebar_option = false ) {
 	} elseif ( class_exists( 'SFWD_LMS' ) && in_array( $post_type, array( 'sfwd-courses', 'sfwd-lessons', 'sfwd-topic', 'sfwd-quiz', 'sfwd-certificates', 'sfwd-assignment' ) ) ) {
 		return 'learndash';
 	}
+	// @codingStandardsIgnoreEnd
 
 	return false;
 }
@@ -299,7 +301,7 @@ function astra_is_sidebar_style_boxed( $post_id = false ) {
 		// Get global sidebar style if third party is default.
 		$global_sidebar_style = ( 'default' === $third_party_sidebar_style || empty( $third_party_sidebar_style ) ) ? $global_sidebar_style : $third_party_sidebar_style;
 
-		// Woo Cart & Checkout Page
+		// Woo Cart & Checkout Page.
 		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) ) {
 			return ( 'boxed' === $global_sidebar_style );
 		}
@@ -429,21 +431,24 @@ function astra_third_party_archive_meta( $option ) {
 		$shop_page_id = get_option( 'woocommerce_shop_page_id' );
 		$meta_value   = get_post_meta( $shop_page_id, $option, true );
 	} elseif ( 'lifterlms' === $third_party ) {
-		/** @psalm-suppress UndefinedFunction */
+		// @codingStandardsIgnoreStart
+		/**
+		 * @psalm-suppress UndefinedFunction
+		 */
 		if ( is_courses() ) {
 			$lifter_page_id = get_option( 'lifterlms_shop_page_id' );
 			$meta_value     = get_post_meta( $lifter_page_id, $option, true );
 		}
-		/** @psalm-suppress UndefinedFunction */
 		elseif ( is_memberships() ) {
 			$lifter_page_id = get_option( 'lifterlms_memberships_page_id' );
 			$meta_value     = get_post_meta( $lifter_page_id, $option, true );
 		} elseif ( is_course_taxonomy() ) {
 			$meta_value = 'default';
 		}
+		// @codingStandardsIgnoreEnd
 	} elseif ( 'edd' === $third_party && astra_is_edd_single_page() ) {
 		$page_id = get_the_ID();
-		/** @psalm-suppress PossiblyFalseArgument */
+		/** @psalm-suppress PossiblyFalseArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$meta_value = get_post_meta( $page_id, $option, true );
 	}
 
@@ -1588,6 +1593,7 @@ if ( ! function_exists( 'astra_the_excerpt' ) ) {
 			the_content();
 		} else {
 			the_excerpt();
+			add_filter( 'excerpt_more', '__return_false' );
 		}
 
 		do_action( 'astra_the_excerpt_after', $excerpt_type );

@@ -3430,8 +3430,16 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 1.6em;
 }
 
+.post-content > .cat-links, .post-content > .tags-links {
+  display: block;
+}
+
 .read-more {
   margin-bottom: 0;
+}
+
+.read-more a {
+  display: inline-block;
 }
 
 .read-more .ast-right-arrow {

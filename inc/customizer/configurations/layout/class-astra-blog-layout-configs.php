@@ -32,22 +32,32 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 
 			$blog_meta_choices = array(
 				'comments' => __( 'Comments', 'astra' ),
-				'category' => __( 'Category', 'astra' ),
+				'category' => __( 'Categories', 'astra' ),
 				'author'   => __( 'Author', 'astra' ),
 				'date'     => array(
 					'clone'       => false,
 					'is_parent'   => true,
 					'main_index'  => 'date',
 					'clone_limit' => 1,
-					'title'       => __( 'Date', 'astra' ),
+					'title'       => __( 'Published Date', 'astra' ),
 				),
-				'tag'      => __( 'Tag', 'astra' ),
+				'tag'      => __( 'Tags', 'astra' ),
+			);
+
+			$blog_element_structure = array(
+				'image'      => __( 'Featured Image', 'astra' ),
+				'category'   => __( 'Categories', 'astra' ),
+				'tag'        => __( 'Tags', 'astra' ),
+				'title'      => __( 'Title', 'astra' ),
+				'title-meta' => __( 'Post Meta', 'astra' ),
+				'excerpt'    => __( 'Excerpt', 'astra' ),
+				'read-more'  => __( 'Read More', 'astra' ),
 			);
 
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$blog_meta_choices['read-time'] = __( 'Read Time', 'astra' );
+				$blog_meta_choices['read-time'] = __( 'Last updated', 'astra' );
 			}
 
 			$_configs = array(
@@ -146,12 +156,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_multi_choices' ),
 					'section'           => 'section-blog',
 					'priority'          => 50,
-					'title'             => __( 'Post Structure', 'astra' ),
+					'title'             => __( 'Post Elements', 'astra' ),
 					'divider'           => array( 'ast_class' => 'ast-top-spacing ast-bottom-section-divider' ),
-					'choices'           => array(
-						'image'      => __( 'Featured Image', 'astra' ),
-						'title-meta' => __( 'Title & Blog Meta', 'astra' ),
-					),
+					'choices'           => $blog_element_structure,
 				),
 
 				array(
