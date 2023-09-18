@@ -44,15 +44,45 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				'tag'      => __( 'Tags', 'astra' ),
 			);
 
-			$blog_element_structure = array(
-				'image'      => __( 'Featured Image', 'astra' ),
-				'category'   => __( 'Categories', 'astra' ),
-				'tag'        => __( 'Tags', 'astra' ),
-				'title'      => __( 'Title', 'astra' ),
-				'title-meta' => __( 'Post Meta', 'astra' ),
-				'excerpt'    => __( 'Excerpt', 'astra' ),
-				'read-more'  => __( 'Read More', 'astra' ),
-			);
+			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+				$blog_element_structure = array(
+					'image'      => __( 'Featured Image', 'astra' ),
+					'category'   => array(
+						'clone'       => false,
+						'is_parent'   => true,
+						'main_index'  => 'category',
+						'clone_limit' => 1,
+						'title'       => __( 'Categories', 'astra' ),
+					),
+					'tag'        => array(
+						'clone'       => false,
+						'is_parent'   => true,
+						'main_index'  => 'tag',
+						'clone_limit' => 1,
+						'title'       => __( 'Tags', 'astra' ),
+					),
+					'title'      => __( 'Title', 'astra' ),
+					'title-meta' => __( 'Post Meta', 'astra' ),
+					'excerpt'    => array(
+						'clone'       => false,
+						'is_parent'   => true,
+						'main_index'  => 'excerpt',
+						'clone_limit' => 1,
+						'title'       => __( 'Excerpt', 'astra' ),
+					),
+					'read-more'  => __( 'Read More', 'astra' ),
+				);
+			} else {
+				$blog_element_structure = array(
+					'image'      => __( 'Featured Image', 'astra' ),
+					'category'   => __( 'Categories', 'astra' ),
+					'tag'        => __( 'Tags', 'astra' ),
+					'title'      => __( 'Title', 'astra' ),
+					'title-meta' => __( 'Post Meta', 'astra' ),
+					'excerpt'    => __( 'Excerpt', 'astra' ),
+					'read-more'  => __( 'Read More', 'astra' ),
+				);
+			}
 
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
@@ -116,12 +146,14 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 * Option: Blog Post Content
 				 */
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[blog-post-content]',
+					'name'       => 'blog-post-content',
+					'parent'     => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
 					'section'    => 'section-blog',
 					'title'      => __( 'Post Content', 'astra' ),
 					'default'    => astra_get_option( 'blog-post-content' ),
-					'type'       => 'control',
+					'type'       => 'sub-control',
 					'control'    => 'ast-selector',
+					'linked'     => 'excerpt',
 					'priority'   => 75,
 					'choices'    => array(
 						'full-content' => __( 'Full Content', 'astra' ),
