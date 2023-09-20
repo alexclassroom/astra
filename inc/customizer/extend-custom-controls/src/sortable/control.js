@@ -15,6 +15,7 @@ import ToggleControl from '../toggle-control/toggle-control-component';
 import TextInputControl from '../text-input/text-input-component';
 import ListIconsControl from '../list-icons/list-icons-component';
 import DescriptionComponent from '../description/description-component';
+import NumberComponent from '../ast-number/ast-number';
 
 import {
 	astraGetBackground,
@@ -446,7 +447,8 @@ export const sortableControl = wp.customize.astraControl.extend( {
 			'ast-toggle': ToggleControl,
 			'ast-text-input': TextInputControl,
 			'ast-list-icons': ListIconsControl,
-			'ast-description': DescriptionComponent
+			'ast-description': DescriptionComponent,
+			'ast-number' : NumberComponent
 		};
 
 		if( astra.customizer.is_pro ) {
