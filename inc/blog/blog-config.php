@@ -79,6 +79,21 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		$output_str = '';
 		$loop_count = 1;
 
+		if ( defined( 'ASTRA_EXT_VER' ) ) {
+			$divider_type = astra_get_option('blog-post-meta-divider-type');
+			if( $divider_type ) {
+				if( 'line' === $divider_type ) {
+					$separator = '|';
+				}
+				if( 'dot' === $divider_type ) {
+					$separator = '.';
+				}
+				if( 'none' === $divider_type ) {
+					$separator = '';
+				}
+			}
+		}
+
 		$separator = apply_filters( 'astra_post_meta_separator', $separator );
 
 		foreach ( $post_meta as $meta_value ) {
@@ -387,17 +402,41 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
 	 */
 	function astra_post_tags( $output_filter = '' ) {
 
+		$style_type = astra_get_option('blog-meta-tag-style');
+		$separator = 'badge' === $style_type ? ' ' : ', ';
 		$output = '';
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'astra' ) );
+		$tags_list = get_the_tag_list( '', __( apply_filters('astra_post_tags_separator', $separator), 'astra' ) );
 
 		if ( $tags_list ) {
-			$output .= '<span class="tags-links">' . $tags_list . '</span>';
+			$output .= '<span class="tags-links tags-links-style '. $style_type .'">' . $tags_list . '</span>';
 		}
 
 		return apply_filters( 'astra_post_tags', $output, $output_filter );
 	}
+}
+
+/**
+ * Function to get Tags applied of Post Parent
+ *
+ * @param  string $output_filter Output filter.
+ * @return html                Markup.
+ */
+function astra_blog_archive_tag( $output_filter = '' ) {
+
+	$style_type = astra_get_option('blog-tag-style');
+	$separator = 'badge' === $style_type ? ' ' : ', ';
+	$output = '';
+
+	/* translators: used between list items, there is a space after the comma */
+	$tags_list = get_the_tag_list( '', __( apply_filters('astra_blog_archive_tag_separator', $separator), 'astra' ) );
+
+	if ( $tags_list ) {
+		$output .= '<span class="tags-links tags-links-style-archive '. $style_type .'">' . $tags_list . '</span>';
+	}
+
+	return apply_filters( 'astra_blog_archive_tag', $output, $output_filter );
 }
 
 /**
@@ -416,17 +455,41 @@ if ( ! function_exists( 'astra_post_categories' ) ) {
 	 */
 	function astra_post_categories( $output_filter = '' ) {
 
+		$style_type = astra_get_option('blog-meta-category-style');
+		$separator = 'badge' === $style_type ? ' ' : ', ';
 		$output = '';
 
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'astra' ) );
+		$categories_list = get_the_category_list( __( apply_filters('astra_post_categories_separator', $separator), 'astra' ) );
 
 		if ( $categories_list ) {
-			$output .= '<span class="cat-links">' . $categories_list . '</span>';
+			$output .= '<span class="cat-links cat-links-style '. $style_type .'">' . $categories_list . '</span>';
 		}
 
 		return apply_filters( 'astra_post_categories', $output, $output_filter );
 	}
+}
+
+/**
+ * Function to get Categories applied of Post Outside Post Meta
+ *
+ * @param  string $output_filter Output filter.
+ * @return html                Markup.
+ */
+function astra_blog_archive_category( $output_filter = '' ) {
+
+	$style_type = astra_get_option('blog-category-style');
+	$separator = 'badge' === $style_type ? ' ' : ', ';
+	$output = '';
+
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( __( apply_filters('astra_blog_archive_category_separator', $separator), 'astra' ) );
+
+	if ( $categories_list ) {
+		$output .= '<span class="cat-links cat-links-style-archive '. $style_type .'">' . $categories_list . '</span>';
+	}
+
+	return apply_filters( 'astra_blog_archive_category', $output, $output_filter );
 }
 
 /**

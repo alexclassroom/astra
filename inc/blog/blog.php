@@ -182,14 +182,14 @@ if ( ! function_exists( 'astra_blog_post_thumbnail_and_title_order' ) ) {
 					// Blog Categories.
 					case 'category':
 						do_action( 'astra_blog_archive_category_before' );
-						echo wp_kses_post( astra_get_post_meta( array( 'category' ) ) );
+						echo wp_kses_post( astra_blog_archive_category() );
 						do_action( 'astra_blog_archive_category_after' );
 						break;
 
 					// Blog Tags.
 					case 'tag':
 						do_action( 'astra_blog_archive_tag_before' );
-						echo wp_kses_post( astra_get_post_meta( array( 'tag' ) ) );
+						echo wp_kses_post( astra_blog_archive_tag() );
 						do_action( 'astra_blog_archive_tag_after' );
 						break;
 
