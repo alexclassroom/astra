@@ -723,7 +723,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'default'    => astra_get_option( $title_section . '-structural-taxonomy-style', '' ),
 					'priority'   => 2,
 					'linked'     => $title_section . '-taxonomy',
-					'transport'  => 'postMessage',
+					'transport'  => 'refresh',
 					'title'      => __( 'Style', 'astra' ),
 					'choices'    => array(
 						'' => __( 'Default', 'astra' ),

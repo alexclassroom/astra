@@ -342,6 +342,18 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		.ast-author-avatar {
 			--ast-author-avatar-size: ' . astra_get_css_value( $author_avatar_size, 'px' ) . ';
 		}
+		a.ast-underline-text {
+			text-decoration: underline;
+		}
+		.ast-container > .ast-terms-link {
+			position: relative;
+			display: block;
+		}
+		a.ast-button.ast-badge-tax {
+			padding: 4px 8px;
+			border-radius: 3px;
+			font-size: inherit;
+		}
 	';
 
 	if ( is_customize_preview() ) {

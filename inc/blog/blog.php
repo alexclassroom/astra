@@ -486,6 +486,12 @@ function astra_banner_elements_order( $structure = array() ) {
 				}
 				break;
 
+			case 'single-taxonomy':
+				do_action( 'astra_single_post_banner_taxonomies_before' );
+				echo astra_get_dynamic_taxonomy( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy', 1, astra_get_option( 'ast-dynamic-single-' . $post_type .'-metadata-separator' ), astra_get_option( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy-style', '' ), true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				do_action( 'astra_single_post_banner_taxonomies_after' );
+				break;
+
 			case 'archive-title':
 				do_action( 'astra_blog_archive_title_before' );
 				add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

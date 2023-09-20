@@ -107,6 +107,10 @@ function astra_refresh_customizer( control ) {
 			'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]'
 		);
 
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy-style]'
+		);
+
 		wp.customize( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar-size]', function( value ) {
 			value.bind( function( size ) {
 				var dynamicStyle = '';

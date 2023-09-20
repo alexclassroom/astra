@@ -16308,10 +16308,11 @@ namespace {
      * @param string $control_tax Taxonomy subcontrol name.
      * @param int    $loop_count Meta loop counter to decide separator appearance.
      * @param string $separator Separator.
+	 * @param string $badge_style For taxonomies as badge styles.
      *
      * @return string $output Taxonomy output.
      */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator)
+    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '')
     {
     }
     /**
