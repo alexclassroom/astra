@@ -495,6 +495,11 @@ export const sortableControl = wp.customize.astraControl.extend( {
 		if ( undefined !== attr.link && undefined === controlObject.params['link'] ) {
 			controlObject.params['link'] = attr.link;
 		}
+
+		if ( undefined !== attr.qty_selector && undefined === controlObject.params['qty_selector'] ) {
+			controlObject.params['qty_selector'] = attr.qty_selector;
+		}
+
 		if ( undefined !== attr.units && undefined === controlObject.params['units'] ) {
 			controlObject.params['units'] = attr.units;
 		}

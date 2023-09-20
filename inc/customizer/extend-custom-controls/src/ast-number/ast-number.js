@@ -9,7 +9,6 @@ import {Dashicon} from '@wordpress/components';
 const NumberComponent = (props) => {
 	const { description, input_attrs, responsive, title, qty_selector } =
 		props.control.params;
-
 	const defaultValue = props?.control?.setting?.get()
 		? props.control.setting.get()
 		: "";
