@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.customize-control-ast-number .dashicon {
+.customize-control-ast-number .ast-number-single .dashicon.dashicons  {
     display: flex;
     align-items: center;
     justify-content: center;
