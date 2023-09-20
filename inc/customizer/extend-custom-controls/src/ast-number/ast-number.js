@@ -1,18 +1,207 @@
-import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
-import PropTypes from 'prop-types';
-import { useState } from '@wordpress/element';
+import { __experimentalNumberControl as NumberControl } from "@wordpress/components";
+import PropTypes from "prop-types";
+import { useState } from "@wordpress/element";
+import { __ } from "@wordpress/i18n";
+import parse from "html-react-parser";
+import svgIcons from "../../../../../assets/svg/svgs.json";
+import {Dashicon} from '@wordpress/components';
 
+const NumberComponent = (props) => {
+	const { description, input_attrs, responsive, title } =
+		props.control.params;
 
-const NumberComponent = () => {
-	const [ value, setValue ] = useState( 10 );
+	const defaultValue = props?.control?.setting?.get()
+		? props.control.setting.get()
+		: "";
+
+	let defaultFallback = 1;
+
+	let min = input_attrs?.min ? input_attrs?.min : 1;
+	min = min > 0 ? min : 1;
+	const max = input_attrs?.max ? input_attrs?.max : 100;
+	const step = input_attrs?.step ? input_attrs?.step : 1;
+
+	if (responsive) {
+		defaultValue.desktop = defaultValue?.desktop ? defaultValue.desktop : 1;
+		defaultValue.tablet = defaultValue?.tablet ? defaultValue.tablet : 1;
+		defaultValue.mobile = defaultValue?.mobile ? defaultValue.mobile : 1;
+	}
+
+	const [value, setValue] = useState(
+		defaultValue ? defaultValue : defaultFallback
+	);
+
+	const saveValue = (current, key) => {
+		const currentInt = parseInt(current);
+
+		if (responsive) {
+			const obj = {
+				...value,
+			};
+			obj[key] = currentInt;
+			props.control.setting.set(obj);
+			setValue(obj);
+		} else {
+			setValue(currentInt);
+			props.control.setting.set(currentInt);
+		}
+	};
+	const handlePlusMinus = (type, key = "") => {
+		const obj = {
+			...value,
+		};
+
+		if ("plus" === type) {
+			if (responsive) {
+				obj[key] = value[key] + 1;
+				setValue(obj);
+				props.control.setting.set(obj);
+			} else {
+				setValue((current) => current + 1);
+				props.control.setting.set(value);
+			}
+		} else {
+			if (responsive) {
+				if (min < value[key]) {
+					obj[key] = value[key] - 1;
+					setValue(obj);
+					props.control.setting.set(obj);
+				}
+			} else {
+				if (min < value) {
+					setValue((current) => current - 1);
+					props.control.setting.set(value);
+				}
+			}
+		}
+	};
+
+	const renderSettings = (key) => {
+		let plus;
+		let minus;
+
+		if (responsive) {
+			plus = () => handlePlusMinus("plus", key);
+			minus = () => handlePlusMinus("minus", key);
+		} else {
+			plus = () => handlePlusMinus("plus");
+			minus = () => handlePlusMinus("minus");
+			140;
+		}
+
+		return (
+			<>
+				<div className="minus" onClick={minus}>
+					<Dashicon icon='minus'/>
+				</div>
+				<NumberControl
+					isShiftStepEnabled={true}
+					onChange={(current) => saveValue(current, key)}
+					shiftStep={step}
+					value={responsive ? value[key] : value}
+					max={max}
+					min={min}
+					step={step}
+				/>
+				<div className="plus" onClick={plus}>
+					<Dashicon icon='plus'/>
+				</div>
+			</>
+		);
+	};
+
+	let labelHtml = null;
+	let descriptionHtml = null;
+	let responsiveHtml = null;
+	let inputHtml = null;
+
+	if (title) {
+		labelHtml = (<span className="ast-control-label">{title}</span>);
+	}
+
+	if (description) {
+		descriptionHtml = (
+			<span className="description customize-control-description">
+				{description}
+			</span>
+		);
+	}
+
+	if (responsive) {
+		const responsiveDesktop = parse(svgIcons["desktop-responsive"]);
+		const responsiveTablet = parse(svgIcons["tablet-responsive"]);
+		const responsiveMobile = parse(svgIcons["mobile-responsive"]);
+
+		responsiveHtml = (
+			<ul className="ast-responsive-btns">
+				<li className="desktop active">
+					<button
+						type="button"
+						className="preview-desktop"
+						data-device="desktop"
+					>
+						{responsiveDesktop}
+					</button>
+				</li>
+				<li className="tablet">
+					<button
+						type="button"
+						className="preview-tablet"
+						data-device="tablet"
+					>
+						{responsiveTablet}
+					</button>
+				</li>
+				<li className="mobile">
+					<button
+						type="button"
+						className="preview-mobile"
+						data-device="mobile"
+					>
+						{responsiveMobile}
+					</button>
+				</li>
+			</ul>
+		);
+
+		inputHtml = (
+			<>
+				<div className="ast-input-res-wrapper ast-number-wrapper">
+					<div className="ast-responsive-container ast-number-single desktop active">
+						{renderSettings("desktop")}
+					</div>
+					<div className="ast-responsive-container ast-number-single tablet">
+						{renderSettings("tablet")}
+					</div>
+					<div className="ast-responsive-container ast-number-single mobile">
+						{renderSettings("mobile")}
+					</div>
+				</div>
+			</>
+		);
+	} else {
+		inputHtml = (
+			<>
+				<div className="ast-number-single desktop active">
+					{renderSettings()}
+				</div>
+			</>
+		);
+	}
 
 	return (
-		<NumberControl
-			isShiftStepEnabled={ true }
-			onChange={ setValue }
-			shiftStep={ 10 }
-			value={ value }
-		/>
+		<>
+			<div className="ast-control-wrapper">
+				<div className="ast-title-wrapper">
+					{labelHtml}
+					{responsiveHtml}
+				</div>
+				<div className="ast-control-wrapper">
+					{inputHtml}
+				</div>
+			</div>
+			{descriptionHtml}
+		</>
 	);
 };
 

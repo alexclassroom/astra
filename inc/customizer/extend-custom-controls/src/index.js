@@ -47,6 +47,7 @@ import { multiSelectorControl } from './multi-selector/control';
 import { astFontExtrasControl } from './ast-font-extras/control';
 import { astUpgradeControl } from './ast-upgrade/control';
 import { radioIconControl } from './ast-radio-icon/control';
+import { astNumberControl } from './ast-number/control';
 
 window.svgIcons = svgIcons;
 wp.customize.controlConstructor['ast-heading'] = headingControl;
@@ -96,6 +97,7 @@ wp.customize.controlConstructor['ast-upgrade'] = astUpgradeControl;
 wp.customize.controlConstructor['ast-font-extras'] = astFontExtrasControl;
 wp.customize.controlConstructor['ast-box-shadow'] = boxShadowControl;
 wp.customize.controlConstructor["ast-radio-icon"] = radioIconControl;
+wp.customize.controlConstructor["ast-number"] = astNumberControl;
 
 import { Base } from './customizer';
 import { ControlBase } from './control-customizer';
