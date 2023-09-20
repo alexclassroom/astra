@@ -398,7 +398,7 @@ function astra_banner_elements_order( $structure = array() ) {
 		return;
 	}
 
-	// If Blog / Latest Post page is active then looping required strctural order.
+	// If Blog / Latest Post page is active then looping required structural order.
 	if ( ( ! is_front_page() && is_home() ) && false === astra_get_option( 'ast-dynamic-archive-post-banner-on-blog', false ) ) {
 		return astra_blog_post_thumbnail_and_title_order();
 	}
@@ -477,8 +477,9 @@ function astra_banner_elements_order( $structure = array() ) {
 
 			case 'single-image':
 				$featured_background = astra_get_option( 'ast-dynamic-single-' . $post_type . '-featured-as-background', false );
+				$image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-position', 'inside' );
 
-				if ( ( 'layout-2' === $layout_type && false === $featured_background ) || 'layout-1' === $layout_type ) {
+				if ( ( 'layout-2' === $layout_type && 'inside' === $image_position && false === $featured_background ) || 'layout-1' === $layout_type ) {
 					do_action( 'astra_blog_single_featured_image_before' );
 					astra_get_blog_post_thumbnail( 'single' );
 					do_action( 'astra_blog_single_featured_image_after' );
@@ -514,4 +515,31 @@ function astra_banner_elements_order( $structure = array() ) {
 	}
 
 	do_action( 'astra_single_post_banner_after' );
+}
+
+/**
+ * Render the featured image at top of entry content.
+ *
+ * Customizer settings: Single {post_type} > {post_type} Title > Structure > Featured Image > Image Position
+ *
+ * @since x.x.x
+ * @return void
+ */
+function astra_single_content_image() {
+	if ( false === apply_filters( 'astra_single_entry_content_before_featured_image', true ) || ! is_singular() ) {
+		return;
+	}
+	global $post;
+	if ( is_null( $post ) ) {
+		return;
+	}
+	$post_type = $post->post_type;
+	$layout_type = astra_get_option( 'ast-dynamic-single-' . $post_type . '-layout', 'layout-1' );
+	$image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-position', 'inside' );
+
+	if ( 'layout-2' === $layout_type && 'outside' === $image_position ) {
+		do_action( 'astra_single_content_featured_image_before' );
+		astra_get_blog_post_thumbnail( 'single' );
+		do_action( 'astra_single_content_featured_image_after' );
+	}
 }

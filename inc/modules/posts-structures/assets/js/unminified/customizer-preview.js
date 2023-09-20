@@ -136,11 +136,7 @@ function astra_refresh_customizer( control ) {
 		);
 
 		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-image-hover-effect]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-bordered-image]'
+			'astra-settings[ast-dynamic-single-' + postType + '-image-position]'
 		);
 
 		astra_refresh_customizer(

@@ -247,5 +247,5 @@
 /* Sub controls divider support */
 .ast-fields-wrap .customize-control.ast-bottom-section-divider::after, .ast-fields-wrap .customize-control.ast-top-section-divider::before {
     width: 100%;
-    right: 6px;
+    right: 0px;
 }

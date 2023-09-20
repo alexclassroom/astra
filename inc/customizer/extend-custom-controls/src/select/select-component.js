@@ -30,9 +30,8 @@ const SelectComponent = props => {
 		return html;
 	});
 
-
 	if (description) {
-		descriptionHtml = <span className="description customize-control-description">{description}</span>;
+		descriptionHtml = <><i className="ast-control-tooltip dashicons dashicons-editor-help" data-title={description}></i> <span className="ast-dashicons-custom-tooltip" data-title={description}><span></span></span></>;
 	}
 
 	return <>

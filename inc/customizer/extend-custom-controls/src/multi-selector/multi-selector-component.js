@@ -68,12 +68,14 @@ const MultiSelectorComponent = props => {
 
 	const {
 		description,
-		label
+		label,
+		input_attrs
 	} = props.control.params;
 	let labelHtml = null;
 	let responsiveHtml = null;
 	let descriptionHtml = null;
 	let inputHtml = null;
+	let stackAfterClass = '';
 
 	if (label) {
 		labelHtml = <span className="customize-control-title">{label}</span>;
@@ -81,6 +83,10 @@ const MultiSelectorComponent = props => {
 
 	if (description) {
 		descriptionHtml = <span className="description customize-control-description">{description}</span>;
+	}
+
+	if (input_attrs) {
+		stackAfterClass = input_attrs.stack_after ? 'stack-after-' + input_attrs.stack_after : '';
 	}
 
 	inputHtml = <>
@@ -92,7 +98,7 @@ const MultiSelectorComponent = props => {
 		{labelHtml}
 		{responsiveHtml}
 		{descriptionHtml}
-		<div className="input-wrapper ast-alignment-wrapper">
+		<div className={`input-wrapper ast-alignment-wrapper ${stackAfterClass}`}>
 			{inputHtml}
 		</div>
 	</div>;

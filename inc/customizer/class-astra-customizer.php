@@ -694,6 +694,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 				'linked'            => astra_get_prop( $config, 'linked' ),
 				'variant'           => astra_get_prop( $config, 'variant' ),
 				'help'              => astra_get_prop( $config, 'help' ),
+				'description'       => astra_get_prop( $config, 'description' ),
 				'input_attrs'       => astra_get_prop( $config, 'input_attrs' ),
 				'disable'           => astra_get_prop( $config, 'disable' ),
 			);
@@ -1024,32 +1025,6 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 		 * @since 3.0.0
 		 */
 		public function enqueue_customizer_scripts() {
-
-			$sorted_menus = array(
-				'0' => __( 'Select Menu', 'astra' ),
-			);
-
-			$all_menus = get_terms(
-				array(
-					'taxonomy'   => 'nav_menu',
-					'hide_empty' => true,
-				)
-			);
-
-			if ( is_array( $all_menus ) && count( $all_menus ) ) {
-				foreach ( $all_menus as $row ) {
-					/** @psalm-suppress PossiblyInvalidPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-					$sorted_menus[ $row->term_id ] = $row->name;
-					/** @psalm-suppress PossiblyInvalidPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				}
-			}
-
-			$resultant_menus = array();
-
-			foreach ( $sorted_menus as $id => $menu ) {
-				$resultant_menus[ $id ] = $menu;
-			}
-
 			// Localize variables for Dev mode > Customizer JS.
 			wp_localize_script(
 				'astra-custom-control-script',
@@ -1066,7 +1041,6 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 					'isWP_5_9'                => astra_wp_version_compare( '5.8.99', '>=' ),
 					'googleFonts'             => Astra_Font_Families::get_google_fonts(),
 					'variantLabels'           => Astra_Font_Families::font_variant_labels(),
-					'menuLocations'           => $resultant_menus,
 					'upgradeUrl'              => ASTRA_PRO_CUSTOMIZER_UPGRADE_URL,
 				)
 			);
@@ -1484,6 +1458,8 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 				'apply_content_bg_fullwidth_layouts'   => astra_get_option( 'apply-content-background-fullwidth-layouts', true ),
 				'astra_woo_btn_global_compatibility'   => is_callable( 'Astra_Dynamic_CSS::astra_woo_support_global_settings' ) ? Astra_Dynamic_CSS::astra_woo_support_global_settings() : false,
 				'v4_2_2_core_form_btns_styling'        => ( true === Astra_Dynamic_CSS::astra_core_form_btns_styling() ) ? ', #comments .submit, .search .search-submit' : '',
+				'tablet_breakpoint'                    => astra_get_tablet_breakpoint(),
+				'mobile_breakpoint'                    => astra_get_mobile_breakpoint(),
 			);
 
 			wp_localize_script( 'astra-customizer-preview-js', 'astraCustomizer', $localize_array );

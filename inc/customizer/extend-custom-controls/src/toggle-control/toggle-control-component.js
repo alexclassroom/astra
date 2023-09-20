@@ -13,10 +13,8 @@ const AstToggleControl = props => {
   if (props.control.params.title) {
     htmlTitle = <span className="toggle-control-label">{props.control.params.title}</span>;
   }
-
-  if (props.control.params.description) {
-		htmlDescription =
-			<span className="description customize-control-description">{props.control.params.description}</span>;
+	if (props.control.params.description) {
+		htmlDescription = <><i className="ast-control-tooltip dashicons dashicons-editor-help" data-title={props.control.params.description}></i> <span className="ast-dashicons-custom-tooltip" data-title={props.control.params.description}><span></span></span></>;
 	}
 
   const updateValues = () => {

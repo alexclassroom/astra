@@ -1,9 +1,27 @@
-v4.3.1 (Unreleased)
-- New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata. 
+v4.4.0 (Unreleased)
+- New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
 - New: Introducing new featured image options like Image Ratio, Image Size, Hover Effect, Bordered Effect for single layouts.
+- New: Introducing a feature of Sticky Sidebar functionality for enhanced user experience. (Needs Doc)
+- New: Introducing new Twitter-X Icon added for Social Sharing and Social Icons.
+- New: Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for single layouts.
+- New: WooCommerce - Compatibility for a pro cart shortcode 'astra_woo_slide_in_cart', which adds support for a slide-in cart feature. (Needs Doc).
 - Improvement: Added a new filter 'astra_woo_shop_product_title_link' to remove the product title link from the product page.
 - Fix: Resolved console error which originated from "menu-toggle-close" element click on the frontend.
-- Fix: After WordPress 6.3 update bottom spacing of 'figure' tag is missing.
+- Fix: Theme's meta-box modal UI getting extra space after WordPress-6.3.
+- Fix: After WordPress 6.3 bottom spacing of 'figure' tag is missing.
+- Fix: Header-Footer Builder - Social - Background spacing issue breaking UI in customizer preview.
+- Fix: Block Editor - After WordPress 6.3 compatibility title visibility SVG icon jerks on page load with slow networks.
+- Fix: Site Identity - Logo Width sizes not working as expected in the customizer preview.
+- Fix: Duplicate dotted outlines are visible on focus of the close-menu toggle icon when accessibility is enabled.
+- Fix: Above Header - Left & Right spacing does not apply on frontend & in the customizer preview.
+- Fix: Blog Archive - Read More button not working with the excerpt when the Left Sidebar layout is active.
+- Fix: Customizer - Blog - Design tab section seems blank when Astra Pro is active and all pro addons are disabled.
+- Fix: Block - Embed/YouTube block not working inside nested blocks from Custom Layouts.
+
+v4.3.1
+- Fix: Block - Lists block style type updated to "disc" after v4.3.0 update.
+- Fix: Block Editor - Text color not inheriting as per the settings saved in customizer.
+- Fix: Single - Banner's custom background not working for Layout 1.
 
 v4.3.0
 - New: Header-Footer Builder - Social - Enable Brand Color option on hover.

@@ -2585,7 +2585,7 @@ namespace {
         /**
          * Return starter content definition.
          *
-         * @return mixed|void 
+         * @return mixed|void
          * @since 4.0.0
          */
         public function get()
@@ -3276,7 +3276,7 @@ namespace {
         public function __construct()
         {
         }
-        /** 
+        /**
          * Comment count wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -3286,7 +3286,7 @@ namespace {
         public function comment_count_wrapper_open($args)
         {
         }
-        /** 
+        /**
          * Comment count wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -3296,7 +3296,7 @@ namespace {
         public function comment_count_wrapper_close($args)
         {
         }
-        /** 
+        /**
          * Comment data wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -3306,7 +3306,7 @@ namespace {
         public function ast_comment_data_wrap_open($args)
         {
         }
-        /** 
+        /**
          * Comment data wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -3316,17 +3316,18 @@ namespace {
         public function ast_comment_data_wrap_close($args)
         {
         }
-        /** 
-         * Comment meta wrapper opening div.
+        /**
+         * Adds a responsive embed wrapper around oEmbed content
          *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
+         * @param  string $html The oEmbed markup.
+         * @param  string $url The URL being embedded.
+         * @param  array  $attr An array of attributes.
+		     * @param  bool   $core_yt_block Whether the oEmbed is being rendered by the core YouTube block.
          */
-        public function ast_comment_meta_wrap_open($args)
+        public function responsive_oembed_wrapper($html, $url, $attr, $core_yt_block = false)
         {
         }
-        /** 
+        /**
          * Comment meta wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -3336,7 +3337,7 @@ namespace {
         public function ast_comment_meta_wrap_close($args)
         {
         }
-        /** 
+        /**
          * Comment time div attributes.
          *
          * @since 3.3.0
@@ -3345,7 +3346,7 @@ namespace {
         public function ast_comment_time_attr()
         {
         }
-        /** 
+        /**
          * Comment cite wrapper div attributes.
          *
          * @since 3.3.0
@@ -3390,16 +3391,16 @@ namespace {
         public function ast_grid_col_6()
         {
         }
-        /** 
+        /**
          * Comment form grid classes.
          *
-         * @since 3.3.0 
+         * @since 3.3.0
          * @return string.
          */
         public function comment_form_grid_class()
         {
         }
-        /** 
+        /**
          * Removed grid layout classes and make common class for same style
          *
          * @since 3.3.0
@@ -3408,7 +3409,7 @@ namespace {
         public function ast_grid_lg_12()
         {
         }
-        /** 
+        /**
          * Layout-4 grid css backward comaptibility.
          *
          * @return string.
@@ -3416,7 +3417,7 @@ namespace {
         public function ast_layout_4_grid()
         {
         }
-        /** 
+        /**
          * Layout-2 grid css backward comaptibility.
          *
          * @return string.
@@ -3424,7 +3425,7 @@ namespace {
         public function ast_layout_2_grid()
         {
         }
-        /** 
+        /**
          * Layout-1 grid css backward comaptibility.
          *
          * @return string.
@@ -3432,7 +3433,7 @@ namespace {
         public function ast_layout_1_grid()
         {
         }
-        /** 
+        /**
          * Layout-3 grid css backward comaptibility.
          *
          * @return string.
@@ -3440,7 +3441,7 @@ namespace {
         public function ast_layout_3_grid()
         {
         }
-        /** 
+        /**
          * Layout-5 grid css backward comaptibility.
          *
          * @return string.
@@ -3448,7 +3449,7 @@ namespace {
         public function ast_layout_5_grid()
         {
         }
-        /** 
+        /**
          * Layout-6 grid css backward comaptibility.
          *
          * @return string.
@@ -3458,7 +3459,7 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -3468,7 +3469,7 @@ namespace {
         }
         /**
          * Footer widget closing div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -3498,12 +3499,21 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
          */
         public function header_widget_div_open($args)
+        {
+        }
+        /**
+         * Dynamic CSS to make Sidebar Sticky.
+         *
+         * @return string Sticky Sidebar CSS.
+         * @since x.x.x
+         */
+        public static function astra_sticky_sidebar_css()
         {
         }
     }
@@ -12467,7 +12477,7 @@ namespace {
      *
      * @param string $title for MyAccount title endpoint.
      * @return string
-     * 
+     *
      * @since 4.3.0
      */
     function astra_get_wc_endpoints_title($title)
@@ -12582,7 +12592,7 @@ namespace {
     }
     /**
      * Home starter content.
-     * 
+     *
      * @since 4.0.0
      * @package Astra\Compatibility\Starter_Content
      */
@@ -12926,7 +12936,7 @@ namespace {
     /**
      * Old Header Menu Last Item - Dynamic CSS.
      *
-     * @param string $dynamic_css 
+     * @param string $dynamic_css
      * @since 3.5.0
      */
     function astra_old_header_custom_menu_css($dynamic_css)
@@ -16279,6 +16289,17 @@ namespace {
      * @return mixed
      */
     function astra_banner_elements_order($structure = array())
+    {
+    }
+	/**
+	 * Render the featured image at top of entry content.
+	 *
+	 * Customizer settings: Single {post_type} > {post_type} Title > Structure > Featured Image > Image Position
+	 *
+	 * @since x.x.x
+	 * @return void
+	 */
+    function astra_single_content_image()
     {
     }
     /**

@@ -1026,6 +1026,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			if ( 'no-sidebar' !== astra_page_layout() ) {
 				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::load_sidebar_static_css() );
+				$parse_css .= self::astra_sticky_sidebar_css();
 			}
 
 			if ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) {
@@ -4945,6 +4946,41 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		public static function astra_woo_support_global_settings() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
 			return apply_filters( 'astra_get_option_woo_support_global_settings', isset( $astra_settings['woo_support_global_settings'] ) ? false : true );
+		}
+
+		/**
+		 * Dynamic CSS to make Sidebar Sticky.
+		 *
+		 * @return string Sticky Sidebar CSS.
+		 * @since x.x.x
+		 */
+		public static function astra_sticky_sidebar_css() {
+			$css = '';
+			if ( astra_get_option( 'site-sticky-sidebar', false ) ) {
+				$sidebar_sticky_css        = array(
+					'.ast-sticky-sidebar .sidebar-main' => array(
+						'top'        => '50px',
+						'position'   => 'sticky',
+						'overflow-y' => 'auto',
+					),
+				);
+				$sidebar_webkit_sticky_css = array(
+					'.ast-sticky-sidebar .sidebar-main' => array(
+						'position' => '-webkit-sticky',
+					),
+				);
+
+				$css .= astra_parse_css(
+					$sidebar_sticky_css,
+					astra_get_tablet_breakpoint( '', 1 )
+				);
+
+				$css .= astra_parse_css(
+					$sidebar_webkit_sticky_css,
+					astra_get_tablet_breakpoint( '', 1 )
+				);
+			}
+			return $css;
 		}
 
 		/**

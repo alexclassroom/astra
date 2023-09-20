@@ -1534,6 +1534,7 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
   top: 0;
   right: 0;
   color: var(--ast-customizer-color-6);
+  cursor: help;
 }
 
 .customize-control.customize-control-ast-toggle-control .ast-control-tooltip {
@@ -1577,6 +1578,21 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
 .ast-fields-wrap .customize-control .ast-control-tooltip {
   right: 15px;
   top: 6px;
+}
+
+.customize-control .ast-sortable-subfields-wrap .ast-control-tooltip {
+    position: absolute !important;
+    top: 40%;
+    right: 0px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.customize-control .ast-sortable-subfields-wrap .customize-control-ast-toggle .ast-control-tooltip {
+	right: 30px;
+	top: 50%;
+}
+.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
+    top: 24px;
 }
 
 /* Select2 WP 5.3 compatibility */
@@ -2036,7 +2052,7 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
 /* Sub controls divider support */
 .ast-fields-wrap .customize-control.ast-bottom-section-divider::after, .ast-fields-wrap .customize-control.ast-top-section-divider::before {
     width: 100%;
-    left: 6px;
+    left: 0px;
 }
 
 .ast-typo-presets {
@@ -2529,21 +2545,6 @@ span.customize-control-title.ast-group-section-title {
   border-top: 1px dashed var(--ast-customizer-color-7);
 }
 
-.ast-menu-setting-wrap {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.ast-menu-setting-wrap .dashicon {
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
-	color: #9CA3AF;
-}
-.ast-menu-location-btn {
-	cursor: pointer;
-}
-
 .customize-control-ast-multi-selector .input-wrapper {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2577,6 +2578,26 @@ span.customize-control-title.ast-group-section-title {
 }
 .customize-control-ast-multi-selector .ast-multiselector-inner-wrap:first-child {
 	border-radius: 3px 0px 0px 3px;
+}
+.customize-control-ast-multi-selector .ast-multiselector-inner-wrap span[label] {
+    color: var(--ast-customizer-color-6);
+}
+.customize-control-ast-multi-selector .ast-multiselector-inner-wrap.active span[label] {
+    color: var(--ast-customizer-multiselect-icon-color);
+}
+.ast-alignment-wrapper.stack-after-2 .ast-multiselector-inner-wrap {
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+}
+.ast-alignment-wrapper.stack-after-2 .ast-multiselector-inner-wrap:nth-child(2n) {
+    margin-right: 0;
+}
+.ast-alignment-wrapper.stack-after-3 .ast-multiselector-inner-wrap {
+    flex: 0 0 calc(33.33% - 10px);
+    margin: 5px;
+}
+.ast-alignment-wrapper.stack-after-3 .ast-multiselector-inner-wrap:nth-child(3n) {
+    margin-right: 0;
 }
 
 .ast-fields-wrap [ID*="-image-custom-scale-width"], .ast-fields-wrap [ID*="-image-custom-scale-height"] {
@@ -4211,6 +4232,7 @@ span.customize-control-title.ast-group-section-title {
 }
 .customize-control-ast-sortable .sortable .ast-sortable-subcontrols {
     border: none;
+	padding: 0 9px 0 0;
     border-top: 1px solid #d1d5db;
     border-radius: 0 0 3px 3px;
 }
@@ -4266,13 +4288,7 @@ span.customize-control-title.ast-group-section-title {
 .ast-sortable-subcontrols {
 	display: none;
 	padding: 12px 0;
-    margin-left: -12px !important;
     border-top: 1px solid #d1d5db;
-	margin-right: -3px!important;
-}
-.ast-sortable-subcontrols > * {
-	padding-right: 9px;
-	padding-bottom: 12px;
 }
 .show .ast-sortable-subcontrols {
 	display: block;
@@ -4280,7 +4296,6 @@ span.customize-control-title.ast-group-section-title {
 .ast-sortable-subfields-wrap .customize-control {
 	box-sizing: border-box;
     position: relative;
-    padding-left: 9px;
 }
 /**
  * ast-list-icons inside sortable compatibility CSS.
@@ -4369,8 +4384,12 @@ span.customize-control-title.ast-group-section-title {
 }
 .customize-control-ast-sortable .ast-sortable-subfields-wrap .customize-control-title {
     margin-bottom: 16px;
-    font-size: 13px;
-    margin-top: 3px;
+    font-size: 14px;
+}
+.ast-sortable-subfields-wrap .customize-control-ast-color .ast-control-wrap .astra-popover-color {
+    margin-left: -10px;
+    margin-right: 10px;
+    width: calc(100% + 15px);
 }
 
 .customize-control-ast-sortable .ast-sortable-subfields-wrap .ast-responsive-btns {
@@ -4378,8 +4397,7 @@ span.customize-control-title.ast-group-section-title {
 }
 
 .ast-sortable-subfields-wrap .ast-fields-wrap {
-    margin-left: -12px;
-	padding-bottom: 10px;
+	padding-bottom: 16px;
 }
 .customize-control-content {
     width: 100%;
