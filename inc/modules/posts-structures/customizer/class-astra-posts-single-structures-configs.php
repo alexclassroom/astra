@@ -279,7 +279,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'main_index'    => $title_section . '-taxonomy',
 					'clone_limit'   => $clone_limit,
 					'clone_tracker' => ASTRA_THEME_SETTINGS . '[' . $title_section . '-taxonomy-clone-tracker]',
-					'title'         => __( 'Taxonomy', 'astra' ),
+					'title'         => __( 'Taxonomies', 'astra' ),
 				);
 				$meta_config_options[ $title_section . '-taxonomy-1' ] = array(
 					'clone'         => $to_clone,
@@ -287,7 +287,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'main_index'    => $title_section . '-taxonomy',
 					'clone_limit'   => $clone_limit,
 					'clone_tracker' => ASTRA_THEME_SETTINGS . '[' . $title_section . '-taxonomy-clone-tracker]',
-					'title'         => __( 'Taxonomy', 'astra' ),
+					'title'         => __( 'Taxonomies', 'astra' ),
 				);
 				$meta_config_options[ $title_section . '-taxonomy-2' ] = array(
 					'clone'         => $to_clone,
@@ -295,7 +295,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'main_index'    => $title_section . '-taxonomy',
 					'clone_limit'   => $clone_limit,
 					'clone_tracker' => ASTRA_THEME_SETTINGS . '[' . $title_section . '-taxonomy-clone-tracker]',
-					'title'         => __( 'Taxonomy', 'astra' ),
+					'title'         => __( 'Taxonomies', 'astra' ),
 				);
 			}
 			$meta_config_options['date'] = array(
@@ -313,7 +313,6 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'title'       => __( 'Author', 'astra' ),
 			);
 
-
 			// Display Read Time option in Meta options only when Astra Addon is activated.
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
@@ -328,6 +327,14 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'main_index'  => $title_section . '-image',
 				'clone_limit' => 2,
 				'title'       => __( 'Featured Image', 'astra' ),
+			);
+			// Add taxonomy in structural sub-control.
+			$structure_sub_controls[ $title_section . '-taxonomy' ] = array(
+				'clone'       => false,
+				'is_parent'   => true,
+				'main_index'  => $title_section . '-taxonomy',
+				'clone_limit' => 2,
+				'title'       => __( 'Taxonomies', 'astra' ),
 			);
 
 			$configurations = array_merge( $configurations, $this->get_layout_configuration( $parent_section, $post_type ) );
@@ -727,6 +734,41 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'transport' => 'postMessage',
 					'partial'   => false,
 					'default'   => astra_get_option( $title_section . '-taxonomy-clone-tracker', 1 ),
+				),
+
+				array(
+					'name'      => $title_section . '-structural-taxonomy',
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'default'   => astra_get_option( $title_section . '-structural-taxonomy' ),
+					'linked'    => $title_section . '-taxonomy',
+					'type'      => 'sub-control',
+					'control'   => 'ast-select',
+					'transport' => 'refresh',
+					'section'   => $title_section,
+					'priority'  => 1,
+					'title'     => __( 'Taxonomy', 'astra' ),
+					'choices'   => $taxonomies,
+				),
+
+				array(
+					'name'       => $title_section . '-structural-taxonomy-style',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'type'       => 'sub-control',
+					'control'    => 'ast-selector',
+					'section'    => $title_section,
+					'default'    => astra_get_option( $title_section . '-structural-taxonomy-style', '' ),
+					'priority'   => 2,
+					'linked'     => $title_section . '-taxonomy',
+					'transport'  => 'postMessage',
+					'title'      => __( 'Style', 'astra' ),
+					'choices'    => array(
+						'' => __( 'Default', 'astra' ),
+						'badge'   => __( 'Badge', 'astra' ),
+						'underline'   => __( 'Underline', 'astra' ),
+					),
+					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'responsive' => false,
+					'renderAs'   => 'text',
 				),
 
 				array(
@@ -1443,7 +1485,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 						'transport' => 'refresh',
 						'section'   => $title_section,
 						'priority'  => 5,
-						'title'     => __( 'Select Taxonomy', 'astra' ),
+						'title'     => __( 'Taxonomy', 'astra' ),
 						'choices'   => $taxonomies,
 					);
 				}
