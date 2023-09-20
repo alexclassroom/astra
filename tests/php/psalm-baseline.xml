@@ -721,6 +721,9 @@
     </UndefinedDocblockClass>
   </file>
   <file src="inc/builder/class-astra-builder-loader.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="4">
       <code>false === Astra_Builder_Helper::$is_header_footer_builder_active</code>
       <code>false === Astra_Builder_Helper::$is_header_footer_builder_active</code>
@@ -771,6 +774,9 @@
     </UndefinedFunction>
   </file>
   <file src="inc/builder/controllers/class-astra-builder-widget-controller.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="3">
       <code>false === Astra_Builder_Helper::$is_header_footer_builder_active</code>
       <code>false === Astra_Builder_Helper::$is_header_footer_builder_active</code>
@@ -791,6 +797,9 @@
     </UndefinedDocblockClass>
   </file>
   <file src="inc/builder/markup/class-astra-builder-footer.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="2">
       <code>is_null( self::$instance )</code>
       <code>true === Astra_Builder_Helper::$is_header_footer_builder_active</code>
@@ -832,6 +841,9 @@
     </UndefinedDocblockClass>
   </file>
   <file src="inc/builder/markup/class-astra-builder-header.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="2">
       <code>is_null( self::$instance )</code>
       <code>true === Astra_Builder_Helper::$is_header_footer_builder_active</code>
@@ -953,6 +965,9 @@
     </ParadoxicalCondition>
   </file>
   <file src="inc/builder/type/class-astra-builder-base-dynamic-css.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="1">
       <code>is_null( self::$instance )</code>
     </DocblockTypeContradiction>
@@ -2162,6 +2177,9 @@
     </TooManyArguments>
   </file>
   <file src="inc/core/builder/class-astra-builder-admin.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="1">
       <code>is_null( self::$instance )</code>
     </DocblockTypeContradiction>
@@ -2185,6 +2203,9 @@
     </UndefinedDocblockClass>
   </file>
   <file src="inc/core/builder/class-astra-builder-helper.php">
+	<RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="2">
       <code>is_null( self::$instance )</code>
       <code>is_null( self::$loaded_grid )</code>
@@ -2668,7 +2689,7 @@
       <code>self::$js_configs['controls']</code>
       <code>self::$js_configs['sub_controls']</code>
     </InvalidArrayAccess>
-    <InvalidArrayAssignment occurrences="17">
+    <InvalidArrayAssignment occurrences="19">
       <code>$section_id</code>
       <code>self::$choices[ $configuration['name'] ]</code>
       <code>self::$contexts[ $configuration['name'] ]</code>
@@ -2739,7 +2760,7 @@
       <code>astra_get_prop( $config, 'title' )</code>
       <code>astra_get_prop( $new_config, 'control' )</code>
     </PossiblyNullArgument>
-    <PossiblyNullArrayOffset occurrences="13">
+    <PossiblyNullArrayOffset occurrences="15">
       <code>$defaults</code>
       <code>self::$dynamic_options['partials']</code>
       <code>self::$dynamic_options['settings']</code>
@@ -2749,6 +2770,7 @@
       <code>self::$group_configs</code>
       <code>self::$js_configs ['sub_controls']</code>
       <code>self::$js_configs ['wp_defaults']</code>
+      <code>self::$js_configs ['contextual_sub_controls']</code>
       <code>self::$js_configs['clone_sections']</code>
       <code>self::$js_configs['panels']</code>
       <code>self::$js_configs['sections']</code>
@@ -2839,6 +2861,9 @@
     </ParadoxicalCondition>
   </file>
   <file src="inc/customizer/configurations/builder/class-astra-builder-base-configuration.php">
+    <RedundantConditionGivenDocblockType occurrences="1">
+      <code>is_null( self::$instance )</code>
+    </RedundantConditionGivenDocblockType>
     <DocblockTypeContradiction occurrences="1">
       <code>is_null( self::$instance )</code>
     </DocblockTypeContradiction>

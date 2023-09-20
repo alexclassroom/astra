@@ -1025,7 +1025,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$parse_css .= astra_container_layout_css();
 
 			if ( 'no-sidebar' !== astra_page_layout() ) {
-				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::load_sidebar_static_css() ); 
+				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::load_sidebar_static_css() );
 				$parse_css .= self::astra_sticky_sidebar_css();
 			}
 
@@ -1764,9 +1764,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			/**
 			 * Add margin-bottom to the figure element conditionally for WordPress 6.3 or above.
+			 *
 			 * @since x.x.x
 			 */
-			if ( astra_wp_version_compare('6.3', '>=') ) {
+			if ( astra_wp_version_compare( '6.3', '>=' ) ) {
 				$figure_margin_bottom = array(
 					'.entry-content[ast-blocks-layout] > figure' => array(
 						'margin-bottom' => '1em',
@@ -4956,7 +4957,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		public static function astra_sticky_sidebar_css() {
 			$css = '';
 			if ( astra_get_option( 'site-sticky-sidebar', false ) ) {
-				$sidebar_sticky_css = array(
+				$sidebar_sticky_css        = array(
 					'.ast-sticky-sidebar .sidebar-main' => array(
 						'top'        => '50px',
 						'position'   => 'sticky',
@@ -4965,7 +4966,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				);
 				$sidebar_webkit_sticky_css = array(
 					'.ast-sticky-sidebar .sidebar-main' => array(
-						'position'   => '-webkit-sticky',
+						'position' => '-webkit-sticky',
 					),
 				);
 
@@ -4982,7 +4983,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			return $css;
 		}
 
-		/*
+		/**
 		 * Check if fullwidth layout with sidebar is supported.
 		 * Old users - yes
 		 * New users - no

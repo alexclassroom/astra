@@ -2,4983 +2,6 @@
 
 namespace {
     /**
-     * Astra_Admin_Loader
-     *
-     * @since 4.0.0
-     */
-    class Astra_Admin_Loader
-    {
-        /**
-         * Instance
-         *
-         * @access private
-         * @var null $instance
-         * @since 4.0.0
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 4.0.0
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Include required classes.
-         *
-         * @since 4.0.0
-         */
-        public function includes()
-        {
-        }
-    }
-    /**
-     * Class Astra_Admin_Ajax.
-     *
-     * @since 4.0.0
-     */
-    class Astra_Admin_Ajax
-    {
-        /**
-         * Ajax action prefix.
-         *
-         * @var string
-         * @since 4.0.0
-         */
-        private $prefix = 'astra';
-        /**
-         * Instance
-         *
-         * @access private
-         * @var null $instance
-         * @since 4.0.0
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 4.0.0
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Errors class instance.
-         *
-         * @var array
-         * @since 4.0.0
-         */
-        private $errors = array();
-        /**
-         * Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Return boolean settings for admin dashboard app.
-         *
-         * @return array
-         * @since 4.0.0
-         */
-        public function astra_admin_settings_typewise()
-        {
-        }
-        /**
-         * Disable pro upgrade notice from all over in Astra.
-         *
-         * @since 4.0.0
-         */
-        public function disable_astra_pro_notices()
-        {
-        }
-        /**
-         * Migrate to New Header Builder
-         *
-         * @since 4.0.0
-         */
-        public function migrate_to_builder()
-        {
-        }
-        /**
-         * Save settings.
-         *
-         * @return void
-         * @since 4.0.0
-         */
-        public function astra_update_admin_setting()
-        {
-        }
-        /**
-         * Get ajax error message.
-         *
-         * @param string $type Message type.
-         * @return string
-         * @since 4.0.0
-         */
-        public function get_error_msg($type)
-        {
-        }
-        /**
-         * Required Plugin Activate
-         *
-         * @since 1.2.4
-         */
-        public function required_plugin_activate()
-        {
-        }
-        /**
-         * Required Plugin Activate
-         *
-         * @since 1.2.4
-         */
-        public function required_plugin_deactivate()
-        {
-        }
-    }
-    /**
-     * Astra_API_Init.
-     *
-     * @since 4.1.0
-     */
-    class Astra_API_Init extends \WP_REST_Controller
-    {
-        /**
-         * Instance
-         *
-         * @access private
-         * @var null $instance
-         * @since 4.0.0
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 4.0.0
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Namespace.
-         *
-         * @var string
-         */
-        protected $namespace = 'astra/v1';
-        /**
-         * Route base.
-         *
-         * @var string
-         */
-        protected $rest_base = '/admin/settings/';
-        /**
-         * Option name
-         *
-         * @access private
-         * @var string $option_name DB option name.
-         * @since 4.0.0
-         */
-        private static $option_name = 'astra_admin_settings';
-        /**
-         * Admin settings dataset
-         *
-         * @access private
-         * @var array $astra_admin_settings Settings array.
-         * @since 4.0.0
-         */
-        private static $astra_admin_settings = array();
-        /**
-         * Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Astra's REST knowledge base data.
-         *
-         * @since 4.0.0
-         * @return mixed
-         */
-        public static function astra_get_knowledge_base_data()
-        {
-        }
-        /**
-         * Perform scheduler for Astra knowledge base data retriever for processing further in admin dashboard.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_kb_data_scheduler()
-        {
-        }
-        /**
-         * Run scheduled job for Astra knowledge base data.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_run_scheduled_docs_job()
-        {
-        }
-        /**
-         * Register API routes.
-         *
-         * @since 4.0.0
-         */
-        public function register_routes()
-        {
-        }
-        /**
-         * Get common settings.
-         *
-         * @param WP_REST_Request $request Full details about the request.
-         * @return array $updated_option defaults + set DB option data.
-         *
-         * @since 4.0.0
-         */
-        public function get_admin_settings($request)
-        {
-        }
-        /**
-         * Check whether a given request has permission to read notes.
-         *
-         * @param  WP_REST_Request $request Full details about the request.
-         * @return WP_Error|boolean
-         * @since 4.0.0
-         */
-        public function get_permissions_check($request)
-        {
-        }
-        /**
-         * Returns an value,
-         * based on the settings database option for the admin settings page.
-         *
-         * @param  string $key     The sub-option key.
-         * @param  mixed  $default Option default value if option is not available.
-         * @return mixed            Return the option value based on provided key
-         * @since 4.0.0
-         */
-        public static function get_admin_settings_option($key, $default = \false)
-        {
-        }
-        /**
-         * Update an value of a key,
-         * from the settings database option for the admin settings page.
-         *
-         * @param string $key       The option key.
-         * @param mixed  $value     The value to update.
-         * @return mixed            Return the option value based on provided key
-         * @since 4.0.0
-         */
-        public static function update_admin_settings_option($key, $value)
-        {
-        }
-    }
-    /**
-     * Astra_Menu.
-     *
-     * @since 4.1.0
-     */
-    class Astra_Menu
-    {
-        /**
-         * Instance
-         *
-         * @access private
-         * @var null $instance
-         * @since 4.0.0
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 4.0.0
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Page title
-         *
-         * @since 4.0.0
-         * @var string $page_title
-         */
-        public static $page_title = 'Astra';
-        /**
-         * Plugin slug
-         *
-         * @since 4.0.0
-         * @var string $plugin_slug
-         */
-        public static $plugin_slug = 'astra';
-        /**
-         * Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Init Hooks.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function initialize_hooks()
-        {
-        }
-        /**
-         * Admin settings init.
-         *
-         * @since 4.0.0
-         */
-        public function init_admin_settings()
-        {
-        }
-        /**
-         * Add custom CSS for admin area sub menu icons.
-         *
-         * @since 4.0.0
-         */
-        public function admin_submenu_css()
-        {
-        }
-        /**
-         * Theme options page Slug getter including White Label string.
-         *
-         * @since 4.0.0
-         * @return string Theme Options Page Slug.
-         */
-        public static function get_theme_page_slug()
-        {
-        }
-        /**
-         *  Initialize after Astra gets loaded.
-         *
-         * @since 4.0.0
-         */
-        public function settings_admin_scripts()
-        {
-        }
-        /**
-         * Add submenu to admin menu.
-         *
-         * @since 4.0.0
-         */
-        public function setup_menu()
-        {
-        }
-		/**
-		 * Provide the Spectra admin page URL.
-		 *
-		 * @since 4.1.1
-		 * @return string url.
-		 */
-		public function get_spectra_page_admin_link()
-		{
-		}
-        /**
-         * Renders the admin settings.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function render_admin_dashboard()
-        {
-        }
-        /**
-         * Enqueues the needed CSS/JS for the builder's admin settings page.
-         *
-         * @since 4.0.0
-         */
-        public function styles_scripts()
-        {
-        }
-        /**
-         * Get customizer quick links for easy navigation.
-         *
-         * @return array
-         * @since 4.0.0
-         */
-        public static function astra_get_quick_links()
-        {
-        }
-        /**
-         * Get Starter Templates plugin data.
-         *
-         * @return array
-         * @since 4.0.0
-         */
-        public static function get_starter_template_plugin_data()
-        {
-        }
-        /**
-         * Get plugin status
-         *
-         * @since 4.0.0
-         *
-         * @param  string $plugin_init_file Plguin init file.
-         * @return mixed
-         */
-        public static function get_plugin_status($plugin_init_file)
-        {
-        }
-        /**
-         * Get Astra's pro extension list.
-         *
-         * @since 4.0.0
-         * @return array
-         * @access public
-         */
-        public static function astra_get_pro_extensions()
-        {
-        }
-        /**
-         * Get Astra's useful plugins.
-         * Extend this in following way -
-         *
-         * //  array(
-         * //         'title' => "Plugin Name",
-         * //         'subtitle' => "Plugin description goes here.",
-         * //         'path' => 'plugin-slug/plugin-slug.php',
-         * //         'redirection' => admin_url( 'admin.php?page=sc-dashboard' ),
-         * //         'status' => self::get_plugin_status( 'plugin-slug/plugin-slug.php' ),
-         * //         'logoPath' => array(
-         * //             'internal_icon' => true, // true = will take internal Astra's any icon. false = provide next custom icon link.
-         * //             'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: ASTRA_THEME_URI . 'inc/assets/images/astra.svg'.
-         * //         ),
-         * //     ),
-         *
-         * @since 4.0.0
-         * @return array
-         * @access public
-         */
-        public static function astra_get_useful_plugins()
-        {
-        }
-        /**
-         * Get Astra's recommended integrations.
-         * Extend this in following way -
-         *
-         * // array(
-         * //    'title' => "Plugin Name",
-         * //    'subtitle' => "Plugin description goes here.",
-         * //     'isPro' => false,
-         * //     'status' => self::get_plugin_status( 'plugin-slug/plugin-slug.php' ),
-         * //     'path' => 'plugin-slug/plugin-slug.php',
-         * //     'redirection' => admin_url( 'admin.php?page=sc-dashboard' ),
-         * //     'logoPath' => array(
-         * //         'internal_icon' => true, // true = will take internal Astra's any icon. false = provide next custom icon link.
-         * //         'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: ASTRA_THEME_URI . 'inc/assets/images/astra.svg'.
-         * //     ),
-         * // ),
-         *
-         * @since 4.0.0
-         * @return array
-         * @access public
-         */
-        public static function astra_get_integrations()
-        {
-        }
-        /**
-         * Get Changelogs from API.
-         *
-         * @since 4.0.0
-         * @return array $changelog_data Changelog Data.
-         */
-        public static function astra_get_theme_changelog_feed_data()
-        {
-        }
-        /**
-         * Settings app scripts
-         *
-         * @since 4.0.0
-         * @param array $localize Variable names.
-         */
-        public function settings_app_scripts($localize)
-        {
-        }
-        /**
-         *  Add footer link.
-         *
-         * @since 4.0.0
-         */
-        public function astra_admin_footer_link()
-        {
-        }
-    }
-    /**
-     * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
-     *
-     * @since  0.6.0
-     * @access public
-     */
-    class Astra_Breadcrumb_Trail
-    {
-        /**
-         * Array of items belonging to the current breadcrumb trail.
-         *
-         * @since  0.1.0
-         * @access public
-         * @var    array
-         */
-        public $items = array();
-        /**
-         * Arguments used to build the breadcrumb trail.
-         *
-         * @since  0.1.0
-         * @access public
-         * @var    array
-         */
-        public $args = array();
-        /**
-         * Array of text labels.
-         *
-         * @since  1.0.0
-         * @access public
-         * @var    array
-         */
-        public $labels = array();
-        /**
-         * Array of post types (key) and taxonomies (value) to use for single post views.
-         *
-         * @since  1.0.0
-         * @access public
-         * @var    array
-         */
-        public $post_taxonomy = array();
-        /* ====== Magic Methods ====== */
-        /**
-         * Magic method to use in case someone tries to output the layout object as a string.
-         * We'll just return the trail HTML.
-         *
-         * @since  1.0.0
-         * @access public
-         * @return string
-         */
-        public function __toString()
-        {
-        }
-        /**
-         * Sets up the breadcrumb trail properties.  Calls the `Breadcrumb_Trail::add_items()` method
-         * to create the array of breadcrumb items.
-         *
-         * @since  0.6.0
-         * @access public
-         * @param  array   $args  {
-         *     @type string    $container      Container HTML element. nav|div
-         *     @type string    $before         String to output before breadcrumb menu.
-         *     @type string    $after          String to output after breadcrumb menu.
-         *     @type string    $browse_tag     The HTML tag to use to wrap the "Browse" header text.
-         *     @type string    $list_tag       The HTML tag to use for the list wrapper.
-         *     @type string    $item_tag       The HTML tag to use for the item wrapper.
-         *     @type bool      $show_on_front  Whether to show when `is_front_page()`.
-         *     @type bool      $network        Whether to link to the network main site (multisite only).
-         *     @type bool      $show_title     Whether to show the title (last item) in the trail.
-         *     @type bool      $show_browse    Whether to show the breadcrumb menu header.
-         *     @type array     $labels         Text labels. @see Breadcrumb_Trail::set_labels()
-         *     @type array     $post_taxonomy  Taxonomies to use for post types. @see Breadcrumb_Trail::set_post_taxonomy()
-         *     @type bool      $echo           Whether to print or return the breadcrumbs.
-         * }
-         * @return void
-         */
-        public function __construct($args = array())
-        {
-        }
-        /* ====== Public Methods ====== */
-        /**
-         * Formats the HTML output for the breadcrumb trail.
-         *
-         * @since  0.6.0
-         * @access public
-         * @return string
-         */
-        public function trail()
-        {
-        }
-        /* ====== Protected Methods ====== */
-        /**
-         * Sets the labels property.  Parses the inputted labels array with the defaults.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function set_labels()
-        {
-        }
-        /**
-         * Sets the `$post_taxonomy` property.  This is an array of post types (key) and taxonomies (value).
-         * The taxonomy's terms are shown on the singular post view if set.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function set_post_taxonomy()
-        {
-        }
-        /**
-         * Runs through the various WordPress conditional tags to check the current page being viewed.  Once
-         * a condition is met, a specific method is launched to add items to the `$items` array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_items()
-        {
-        }
-        /**
-         * Gets front items based on $wp_rewrite->front.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_rewrite_front_items()
-        {
-        }
-        /**
-         * Adds the page/paged number to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_paged_items()
-        {
-        }
-        /**
-         * Adds the network (all sites) home page link to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_network_home_link()
-        {
-        }
-        /**
-         * Adds the current site's home page link to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_site_home_link()
-        {
-        }
-        /**
-         * Adds items for the front page to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_front_page_items()
-        {
-        }
-        /**
-         * Adds items for the posts page (i.e., is_home()) to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_blog_items()
-        {
-        }
-        /**
-         * Adds singular post items to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_singular_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for taxonomy term archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @global object $wp_rewrite
-         * @return void
-         */
-        protected function add_term_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for post type archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_post_type_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for user (author) archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @global object $wp_rewrite
-         * @return void
-         */
-        protected function add_user_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for minute + hour archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_minute_hour_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for minute archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_minute_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for hour archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_hour_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for day archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_day_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for week archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_week_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for month archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_month_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for year archives.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_year_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for archives that don't have a more specific method
-         * defined in this class.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_default_archive_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for search results.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_search_items()
-        {
-        }
-        /**
-         * Adds the items to the trail items array for 404 pages.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @return void
-         */
-        protected function add_404_items()
-        {
-        }
-        /**
-         * Adds a specific post's parents to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @param  int    $post_id
-         * @return void
-         */
-        protected function add_post_parents($post_id)
-        {
-        }
-        /**
-         * Adds a specific post's hierarchy to the items array.  The hierarchy is determined by post type's
-         * rewrite arguments and whether it has an archive page.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @param  int    $post_id
-         * @return void
-         */
-        protected function add_post_hierarchy($post_id)
-        {
-        }
-        /**
-         * Gets post types by slug.  This is needed because the get_post_types() function doesn't exactly
-         * match the 'has_archive' argument when it's set as a string instead of a boolean.
-         *
-         * @since  0.6.0
-         * @access protected
-         * @param  int    $slug  The post type archive slug to search for.
-         * @return void
-         */
-        protected function get_post_types_by_slug($slug)
-        {
-        }
-        /**
-         * Adds a post's terms from a specific taxonomy to the items array.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @param  int     $post_id  The ID of the post to get the terms for.
-         * @param  string  $taxonomy The taxonomy to get the terms from.
-         * @return void
-         */
-        protected function add_post_terms($post_id, $taxonomy)
-        {
-        }
-        /**
-         * Get parent posts by path.  Currently, this method only supports getting parents of the 'page'
-         * post type.  The goal of this function is to create a clear path back to home given what would
-         * normally be a "ghost" directory.  If any page matches the given path, it'll be added.
-         *
-         * @since  1.0.0
-         * @access protected
-         * @param  string $path The path (slug) to search for posts by.
-         * @return void
-         */
-        function add_path_parents($path)
-        {
-        }
-        /**
-         * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
-         * function get_category_parents() but handles any type of taxonomy.
-         *
-         * @since  1.0.0
-         * @param  int    $term_id  ID of the term to get the parents of.
-         * @param  string $taxonomy Name of the taxonomy for the given term.
-         * @return void
-         */
-        function add_term_parents($term_id, $taxonomy)
-        {
-        }
-        /**
-         * Turns %tag% from permalink structures into usable links for the breadcrumb trail.  This feels kind of
-         * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post'
-         * post type.  In the future, maybe it'll handle a wider variety of possibilities, especially for custom post
-         * types.
-         *
-         * @since  0.6.0
-         * @access protected
-         * @param  int    $post_id ID of the post whose parents we want.
-         * @param  string $path    Path of a potential parent page.
-         * @param  array  $args    Mixed arguments for the menu.
-         * @return array
-         */
-        protected function map_rewrite_tags($post_id, $path)
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 1.7.0
-     */
-    class Astra_Breadcrumbs_Loader
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         *  Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Enqueue google fonts.
-         *
-         * @return void
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Set Options Default Values
-         *
-         * @param  array $defaults  Astra options default value array.
-         * @return array
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Add postMessage support for site title and description for the Theme Customizer.
-         *
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register($wp_customize)
-        {
-        }
-        /**
-         * Customizer Preview
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Breadcrumbs Markup Initial Setup
-     *
-     * @since 1.8.0
-     */
-    class Astra_Breadcrumbs_Markup
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         *  Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Astra Breadcrumbs Template
-         *
-         * Loads template based on the style option selected in options panel for Breadcrumbs.
-         *
-         * @since 1.8.0
-         *
-         * @return void
-         */
-        public function astra_breadcumb_template()
-        {
-        }
-        /**
-         * Astra Hook Breadcrumb Position
-         *
-         * Hook breadcrumb to position of selected option
-         *
-         * @since 1.8.0
-         *
-         * @return void
-         */
-        public function astra_hook_breadcrumb_position()
-        {
-        }
-        /**
-         * Astra Breadcrumbs Rules
-         *
-         * Checks the rules defined for displaying Breadcrumb on different pages.
-         *
-         * @since 1.8.0
-         *
-         * @return boolean
-         */
-        public static function astra_breadcrumb_rules()
-        {
-        }
-    }
-    /**
-     * Breadcrumbs Initial Setup
-     *
-     * @since 1.7.0
-     */
-    class Astra_Breadcrumbs
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Third Party Breadcrumb option
-         *
-         * @param Array $options breadcrumb options array.
-         *
-         * @return Array breadcrumb options array.
-         * @since 1.0.0
-         */
-        public function astra_breadcrumb_source_list_items($options)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Customizer_Config_Base
-    {
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Base Method for Registering Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-        /**
-         * Section Description
-         *
-         * @since 1.4.3
-         *
-         * @param  array $args Description arguments.
-         * @return mixed       Markup of the section description.
-         */
-        public function section_get_description($args)
-        {
-        }
-    }
-    /**
-     * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
-     */
-    class Astra_Breadcrumbs_Color_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.7.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Breadcrumbs_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-Breadcrumbs Settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.7.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-        /**
-         * Is third-party breadcrumb active.
-         * Decide if the Source option should be visible depending on third party plugins.
-         *
-         * @return boolean  True - If the option should be displayed, False - If the option should be hidden.
-         */
-        public function is_third_party_breadcrumb_active()
-        {
-        }
-        /**
-         * Is selected third-party breadcrumb active.
-         * Decide if the Separator option should be visible depending on third party plugins.
-         *
-         * @return boolean  True - If the option should be displayed, False - If the option should be hidden.
-         */
-        public function is_selected_breadcrumb_active()
-        {
-        }
-    }
-    /**
-     * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
-     */
-    class Astra_Breadcrumbs_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.7.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 2.2.0
-     */
-    class Astra_Heading_Colors_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 2.2.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Enqueue google fonts.
-         *
-         * @since 2.2.0
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Set Options Default Values
-         *
-         * @param  array $defaults  Astra options default value array.
-         * @return array
-         *
-         * @since 2.2.0
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Load color configs for the Heading Colors.
-         *
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         *
-         * @since 2.2.0
-         */
-        public function customize_register($wp_customize)
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 2.2.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 2.1.4
-     */
-    class Astra_Heading_Colors
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Heading_Colors_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Heading Colors Settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 2.1.4
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Scroll To Top Initial Setup
-     *
-     * @since 4.0.0
-     */
-    class Astra_Scroll_To_Top
-    {
-        /**
-         * Member Variable
-         *
-         * @var null $instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Scroll to Top - Customizer.
-     *
-     * @package Astra
-     * @since 4.0.0
-     */
-    /**
-     * Customizer Initialization
-     *
-     * @since 4.0.0
-     */
-    class Astra_Scroll_To_Top_Loader
-    {
-        /**
-         * Member Variable
-         *
-         * @var null $instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         *  Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Set Options Default Values
-         *
-         * @param  array $defaults  Astra options default value array.
-         * @return array
-         * @since 4.0.0
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Add customizer configs for scroll to top in the Theme Customizer.
-         *
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         * @since 4.0.0
-         */
-        public function new_customize_register($wp_customize)
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 4.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-        /**
-         * Scroll to Top addon markup loader
-         *
-         * Loads appropriate template file based on the style option selected in options panel.
-         *
-         * @since 4.0.0
-         */
-        public function html_markup_loader()
-        {
-        }
-    }
-    /**
-     * Register Scroll To Top Customizer Configurations.
-     */
-    class Astra_Scroll_To_Top_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Scroll To Top Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Sticky Header Initial Setup
-     *
-     * @since 1.0.0
-     */
-    class Astra_Ext_Transparent_Header
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 1.0.0
-     */
-    class Astra_Ext_Transparent_Header_Loader
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         *  Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Set Options Default Values
-         *
-         * @param  array $defaults  Astra options default value array.
-         * @return array
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Add postMessage support for site title and description for the Theme Customizer.
-         *
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register($wp_customize)
-        {
-        }
-        /**
-         * Customizer Preview
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Transparent Header Markup Initial Setup
-     *
-     * @since 1.0.0
-     */
-    class Astra_Ext_Transparent_Header_Markup
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         *  Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add Body Classes
-         *
-         * @param array $classes Body Class Array.
-         * @return array
-         */
-        public function add_body_class($classes)
-        {
-        }
-        /**
-         * Astra check if transparent header is enabled.
-         *
-         * @return boolean true/false.
-         */
-        public static function is_transparent_header()
-        {
-        }
-        /**
-         * Site Header - <header>
-         *
-         * @since 1.0.0
-         */
-        public function transparent_header_logo()
-        {
-        }
-        /**
-         * Replace transparent header logo.
-         *
-         * @param sting $html Size name.
-         * @param int   $blog_id Icon.
-         *
-         * @return string html markup of logo.
-         */
-        public function transparent_custom_logo($html, $blog_id)
-        {
-        }
-        /**
-         * Replace transparent header logo.
-         *
-         * @param array  $attr Image.
-         * @param object $attachment Image obj.
-         * @param sting  $size Size name.
-         *
-         * @return array Image attr.
-         */
-        public function replace_trans_header_attr($attr, $attachment, $size)
-        {
-        }
-        /**
-         * Add Meta Options
-         *
-         * @param array $meta_option Page Meta.
-         * @return array
-         */
-        public function add_options($meta_option)
-        {
-        }
-        /**
-         * Transparent Header Meta Field markup
-         *
-         * Loads appropriate template file based on the style option selected in options panel.
-         *
-         * @param array $meta Page Meta.
-         * @since 1.0.0
-         */
-        public function add_options_markup($meta)
-        {
-        }
-        /**
-         * Add Styles Callback
-         */
-        public function customizer_save()
-        {
-        }
-        /**
-         * Add logo image sizes in filter.
-         *
-         * @since 1.0.0
-         * @param array $sizes Sizes.
-         * @param array $metadata attachment data.
-         *
-         * @return array
-         */
-        public function transparent_logo_image_sizes($sizes, $metadata)
-        {
-        }
-    }
-    /**
-     * Register Transparent Header Customizer Configurations.
-     */
-    class Astra_Transparent_Header_Panels_And_Sections extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Transparent Header Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Colors and Background - Header Options Customizer Configurations.
-     */
-    class Astra_Customizer_Colors_Transparent_Header_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Colors and Background - Header Options Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Transparent Header Customizer Configurations.
-     */
-    class Astra_Customizer_Transparent_Header_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Transparent Header Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Loader.
-     */
-    final class Astra_Builder_Loader
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Update Quick Settings links.
-         *
-         * @param array $quick_settings Links to the Quick Settings in Astra.
-         * @since 3.0.0
-         */
-        public function quick_settings($quick_settings)
-        {
-        }
-        /**
-         * Advanced Hooks markup loader
-         *
-         * Loads appropriate template file based on the style option selected in options panel.
-         *
-         * @since 3.0.0
-         */
-        public function load_markup()
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_UI_Controller.
-     */
-    final class Astra_Builder_UI_Controller
-    {
-        /**
-         * Astra SVGs.
-         *
-         * @var ast_svgs
-         */
-        private static $ast_svgs = \null;
-        /**
-         * Get an SVG Icon
-         *
-         * @param string $icon the icon name.
-         * @param bool   $base if the baseline class should be added.
-         */
-        public static function fetch_svg_icon($icon = '', $base = \true)
-        {
-        }
-        /**
-         * Prepare Social Icon HTML.
-         *
-         * @param string $index The Index of the social icon.
-         * @param string $builder_type the type of the builder.
-         */
-        public static function render_social_icon($index, $builder_type = 'header')
-        {
-        }
-        /**
-         * Prepare HTML Markup.
-         *
-         * @param string $index Key of the HTML Control.
-         */
-        public static function render_html_markup($index = 'header-html-1')
-        {
-        }
-        /**
-         * Prepare Edit icon inside customizer.
-         *
-         * @param string $class custom class.
-         * @since 3.9.4
-         */
-        public static function render_customizer_edit_button($class = '')
-        {
-        }
-        /**
-         * Prepare Special Edit navigatory trigger for Builder Grid Rows in customizer.
-         *
-         * @param string $type Header / Footer row type.
-         * @param string $row_position Above / Primary / Below.
-         *
-         * @since 3.0.0
-         */
-        public static function render_grid_row_customizer_edit_button($type, $row_position)
-        {
-        }
-        /**
-         * Prepare Edit navigatory trigger for Banner Section in customizer.
-         *
-         * @since 3.9.0
-         */
-        public static function render_banner_customizer_edit_button()
-        {
-        }
-        /**
-         * Render Trigger Markup.
-         *
-         * @since 3.0.0
-         */
-        public static function render_mobile_trigger()
-        {
-        }
-        /**
-         * Prepare Button HTML.
-         *
-         * @param string $index The Index of the button.
-         * @param string $builder_type the type of the builder.
-         */
-        public static function render_button($index, $builder_type = 'header')
-        {
-        }
-        /**
-         * Site Identity.
-         *
-         * @param  string $device   Device name.
-         */
-        public static function render_site_identity($device)
-        {
-        }
-        /**
-         * Render Mobile Cart Flyout Markup.
-         *
-         * @since 3.1.0
-         */
-        public static function render_mobile_cart_flyout_markup()
-        {
-        }
-        /**
-         * Account HTML.
-         */
-        public static function render_account()
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Widget_Controller.
-     */
-    final class Astra_Builder_Widget_Controller
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Display sidebar as section.
-         *
-         * @param bool   $active ios active.
-         * @param object $section section.
-         * @return bool
-         */
-        public function display_sidebar($active, $section)
-        {
-        }
-        /**
-         * Initiate Astra Widgets.
-         */
-        public function widget_init()
-        {
-        }
-        /**
-         * Register widget for the builder.
-         *
-         * @param integer $index index of widget.
-         * @param string  $builder_type builder type.
-         */
-        public function register_sidebar($index, $builder_type = 'header')
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Footer.
-     */
-    final class Astra_Builder_Footer
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         * Dynamic Methods.
-         *
-         * @var dynamic methods
-         */
-        private static $methods = array();
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Callback when method not exists.
-         *
-         * @param  string $func function name.
-         * @param array  $params function parameters.
-         */
-        public function __call($func, $params)
-        {
-        }
-        /**
-         * Remove existing Footer to load Footer Builder.
-         *
-         * @since 3.0.0
-         * @return void
-         */
-        public function remove_existing_actions()
-        {
-        }
-        /**
-         * Astra Footer Markup.
-         */
-        public function footer_markup()
-        {
-        }
-        /**
-         *  Call above footer UI.
-         */
-        public function above_footer()
-        {
-        }
-        /**
-         *  Call primary footer UI.
-         */
-        public function primary_footer()
-        {
-        }
-        /**
-         *  Call below footer UI.
-         */
-        public function below_footer()
-        {
-        }
-        /**
-         * Call component footer UI.
-         *
-         * @param string $row row.
-         * @param string $column column.
-         */
-        public function render_column($row, $column)
-        {
-        }
-        /**
-         * Render Footer Copyright Markup!
-         */
-        public function footer_copyright()
-        {
-        }
-        /**
-         * Render HTML 1.
-         */
-        public function footer_html_1()
-        {
-        }
-        /**
-         * Render HTML 2.
-         */
-        public function footer_html_2()
-        {
-        }
-        /**
-         * Render HTML 3.
-         */
-        public function footer_html_3()
-        {
-        }
-        /**
-         * Render HTML 4.
-         */
-        public function footer_html_4()
-        {
-        }
-        /**
-         * Render Menu.
-         */
-        public function footer_menu()
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Header.
-     */
-    final class Astra_Builder_Header
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         * Dynamic Methods.
-         *
-         * @var dynamic methods
-         */
-        private static $methods = array();
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Callback when method not exists.
-         *
-         * @param  string $func function name.
-         * @param array  $params function parameters.
-         */
-        public function __call($func, $params)
-        {
-        }
-        /**
-         * Remove complete header Support on basis of meta option.
-         *
-         * @since 3.8.0
-         * @return void
-         */
-        public function global_astra_header()
-        {
-        }
-        /**
-         * Inherit Header base layout.
-         * Do all actions for header.
-         */
-        public function header_builder_markup()
-        {
-        }
-        /**
-         * Remove existing Header to load Header Builder.
-         *
-         * @since 3.0.0
-         * @return void
-         */
-        public function remove_existing_actions()
-        {
-        }
-        /**
-         * Header Mobile trigger
-         */
-        public function header_mobile_trigger()
-        {
-        }
-        /**
-         * Render WooCommerce Cart.
-         */
-        public function header_woo_cart()
-        {
-        }
-        /**
-         * Render EDD Cart.
-         */
-        public function header_edd_cart()
-        {
-        }
-        /**
-         * Render account icon.
-         */
-        public function header_account()
-        {
-        }
-        /**
-         * Render Search icon.
-         *
-         * @param  string $device   Device name.
-         */
-        public function header_search($device = 'desktop')
-        {
-        }
-        /**
-         * Render site logo.
-         *
-         * @param  string $device   Device name.
-         */
-        public static function site_identity($device = 'desktop')
-        {
-        }
-        /**
-         * Call component header UI.
-         *
-         * @param string $row row.
-         * @param string $column column.
-         */
-        public function render_column($row, $column)
-        {
-        }
-        /**
-         * Render desktop header layout.
-         */
-        public function desktop_header()
-        {
-        }
-        /**
-         *  Call above header UI.
-         */
-        public function above_header()
-        {
-        }
-        /**
-         *  Call primary header UI.
-         */
-        public function primary_header()
-        {
-        }
-        /**
-         *  Call below header UI.
-         */
-        public function below_header()
-        {
-        }
-        /**
-         * Call mobile component header UI.
-         *
-         * @param string $row row.
-         * @param string $column column.
-         */
-        public function render_mobile_column($row, $column)
-        {
-        }
-        /**
-         * Render Mobile header layout.
-         */
-        public function mobile_header()
-        {
-        }
-        /**
-         *  Call Mobile above header UI.
-         */
-        public function mobile_above_header()
-        {
-        }
-        /**
-         *  Call Mobile primary header UI.
-         */
-        public function mobile_primary_header()
-        {
-        }
-        /**
-         *  Call Mobile below header UI.
-         */
-        public function mobile_below_header()
-        {
-        }
-        /**
-         *  Call Mobile Popup UI.
-         */
-        public function mobile_popup()
-        {
-        }
-        /**
-         *  Call Mobile Menu Markup.
-         *
-         * @param string $device Checking where mobile-menu is dropped.
-         */
-        public function header_mobile_menu_markup($device = '')
-        {
-        }
-        /**
-         *  Call Mobile Cart Flyout UI.
-         */
-        public function mobile_cart_flyout()
-        {
-        }
-        /**
-         * Add Body Classes
-         *
-         * @param array $classes Body Class Array.
-         * @return array
-         */
-        public function add_body_class($classes)
-        {
-        }
-    }
-    /**
-     * Register Builder Dynamic CSS.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Button_Component_Dynamic_CSS
-    {
-        /**
-         * Dynamic CSS
-         *
-         * @param string $builder_type Builder Type.
-         * @return String Generated dynamic CSS for Heading Colors.
-         *
-         * @since 3.0.0
-         */
-        public static function astra_button_dynamic_css($builder_type = 'header')
-        {
-        }
-    }
-    /**
-     * Register Builder Dynamic CSS.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Html_Component_Dynamic_CSS
-    {
-        /**
-         * Dynamic CSS
-         *
-         * @param string $builder_type Builder Type.
-         * @return String Generated dynamic CSS for Heading Colors.
-         *
-         * @since 3.0.0
-         */
-        public static function astra_html_dynamic_css($builder_type = 'header')
-        {
-        }
-    }
-    /**
-     * Register Builder Dynamic CSS.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Social_Component_Dynamic_CSS
-    {
-        /**
-         * Dynamic CSS
-         *
-         * @param string $builder_type Builder Type.
-         * @return String Generated dynamic CSS for Heading Colors.
-         *
-         * @since 3.0.0
-         */
-        public static function astra_social_dynamic_css($builder_type = 'header')
-        {
-        }
-        /**
-         * Load Social default css.
-         *
-         * @since 3.0.0
-         */
-        public static function get_social_static_css()
-        {
-        }
-    }
-    /**
-     * Register Builder Dynamic CSS.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Widget_Component_Dynamic_CSS
-    {
-        /**
-         * Dynamic CSS
-         *
-         * @param string $builder_type Builder Type.
-         * @return String Generated dynamic CSS for Heading Colors.
-         *
-         * @since 3.0.0
-         */
-        public static function astra_widget_dynamic_css($builder_type = 'header')
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Base_Dynamic_CSS.
-     */
-    final class Astra_Builder_Base_Dynamic_CSS
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Prepare Advanced Margin / Padding Dynamic CSS.
-         *
-         * @param string $section_id section id.
-         * @param string $selector selector.
-         * @return string
-         */
-        public static function prepare_advanced_margin_padding_css($section_id, $selector)
-        {
-        }
-        /**
-         * Prepare Advanced Margin / Padding Dynamic CSS.
-         *
-         * @param string $section_id section id.
-         * @param string $selector selector.
-         * @return array
-         */
-        public static function prepare_advanced_typography_css($section_id, $selector)
-        {
-        }
-        /**
-         * Prepare Footer Dynamic CSS.
-         *
-         * @param string $dynamic_css Appended dynamic CSS.
-         * @param string $dynamic_css_filtered Filtered dynamic CSS.
-         * @return array
-         */
-        public static function footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Different logo for mobile static CSS.
-         *
-         * @param string $dynamic_css Appended dynamic CSS.
-         * @since 3.5.0
-         * @return string
-         */
-        public static function mobile_header_logo_css($dynamic_css)
-        {
-        }
-        /**
-         * Prepare Element visibility Dynamic CSS.
-         *
-         * @param string $section_id section id.
-         * @param string $selector selector.
-         * @param string $default_property Section default CSS property.
-         * @param string $mobile_tablet_default Mobile/Tabled display property.
-         * @return array
-         */
-        public static function prepare_visibility_css($section_id, $selector, $default_property = 'flex', $mobile_tablet_default = '')
-        {
-        }
-    }
-    /**
-     * Above Footer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Above_Footer_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Above Footer Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Above_Footer
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Below Footer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Below_Footer_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Below Footer Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Below_Footer
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Button_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add Font Family Callback
-         *
-         * @return void
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Button_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Copyright_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Astra_Footer_Copyright_Component
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Copyright_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Html_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Html_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Footer Navigation Menu Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Menu_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Footer Navigation Menu Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Menu_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Secondary navigation markup
-         *
-         * @since 3.0.0.
-         */
-        public static function menu_markup()
-        {
-        }
-    }
-    /**
-     * Primary Footer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Primary_Footer_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Primary Footer Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Primary_Footer
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Social Icons Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Social_Icons_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Social Icons Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Social_Icons_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Widget_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Widget_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Class Astra_Above_Header_Loader
-     *
-     * Loads config files.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Above_Header_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Above Header Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Above_Header
-    {
-        /**
-         * Constructor function that initializes required actions and hooks.
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Account_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Account_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Account navigation markup
-         */
-        public static function account_menu_markup()
-        {
-        }
-    }
-    /**
-     * Class Astra_Below_Header_Loader
-     *
-     * Loads config files.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Below_Header_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Below Header Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Below_Header
-    {
-        /**
-         * Constructor function that initializes required actions and hooks.
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Button_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add Font Family Callback
-         *
-         * @return void
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 2.1.4
-     */
-    class Astra_Header_Button_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Edd_Cart_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Edd_Cart_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Html_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Html_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Menu_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Enqueue google fonts.
-         *
-         * @since 3.0.0
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Menu_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Secondary navigation markup
-         *
-         * @param int    $index index.
-         * @param string $device device.
-         */
-        public static function menu_markup($index, $device = 'desktop')
-        {
-        }
-    }
-    /**
-     * Mobile Navigation Menu Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Mobile_Menu_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Header Navigation Menu Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Mobile_Menu_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Secondary navigation markup
-         *
-         * @param string $device Checking where mobile-menu is dropped.
-         *
-         * @since 3.0.0.
-         */
-        public static function menu_markup($device = 'mobile')
-        {
-        }
-    }
-    /**
-     * Class Mobile Trigger Loader.
-     *
-     * Loads config files.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Mobile_Trigger_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Mobile Trigger Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Mobile_Trigger
-    {
-        /**
-         * Constructor function that initializes required actions and hooks.
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Class Astra_Off_Canvas_Loader
-     *
-     * Loads config files.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Off_Canvas_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Off Canvas Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Off_Canvas
-    {
-        /**
-         * Constructor function that initializes required actions and hooks.
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Primary_Header_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Adds custom classes to the array of body classes.
-         *
-         * @since 1.0.0
-         * @param array $classes Classes for the body element.
-         * @return array
-         */
-        public function astra_body_header_classes($classes)
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Primary_Header
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Search_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-        /**
-         * Adding Wrapper for Search Form.
-         *
-         * @since 3.0.0
-         *
-         * @param string $search_markup   Search Form Content.
-         * @param string $option    Search Form Options.
-         * @param string $device    Device Desktop/Tablet/Mobile.
-         * @return Search HTML structure created.
-         */
-        public static function get_search_markup($search_markup, $option = '', $device = '')
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Search_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Site_Identity_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Site_Identity_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0s
-     */
-    class Astra_Header_Social_Icon_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0s
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0s
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Social_Icon_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Widget_Component_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Widget_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Heading Initial Setup
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Woo_Cart_Component
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Woo_Cart_Loader
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Customizer Preview
-         *
-         * @since 3.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-    }
-    /**
-     * Astra_After_Setup_Theme initial setup
-     */
-    class Astra_After_Setup_Theme
-    {
-        /**
-         * Instance
-         *
-         * @var $instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 1.0.0
-         * @return object
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Setup theme
-         *
-         * @since 1.0.0
-         */
-        public function setup_theme()
-        {
-        }
-        /**
-         * Set the $content_width global variable used by WordPress to set image dimennsions.
-         *
-         * @since 1.5.5
-         * @return void
-         */
-        public function setup_content_width()
-        {
-        }
-        /**
-         * Adds a responsive embed wrapper around oEmbed content
-         *
-         * @param  string $html The oEmbed markup.
-         * @param  string $url The URL being embedded.
-         * @param  array  $attr An array of attributes.
-         *
-         * @return string       Updated embed markup.
-         */
-        public function responsive_oembed_wrapper($html, $url, $attr)
-        {
-        }
-    }
-    /**
-     * Dynamic CSS
-     */
-    class Astra_Dynamic_CSS
-    {
-        /**
-         * Return CSS Output
-         *
-         * @param  string $dynamic_css          Astra Dynamic CSS.
-         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-         * @return string Generated CSS.
-         */
-        public static function return_output($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Return post meta CSS
-         *
-         * @param  string $dynamic_css          Astra Dynamic CSS.
-         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-         * @return mixed              Return the CSS.
-         */
-        public static function return_meta_output($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Conditionally iclude CSS Selectors with anchors in the typography settings.
-         *
-         * Historically Astra adds Colors/Typography CSS for headings and anchors for headings but this causes irregularities with the expected output.
-         * For eg Link color does not work for the links inside headings.
-         *
-         * If filter `astra_include_achors_in_headings_typography` is set to true or Astra Option `include-headings-in-typography` is set to true, This will return selectors with anchors. Else This will return selectors without anchors.
-         *
-         * @access Private.
-         *
-         * @since 1.4.9
-         * @param String $selectors_with_achors CSS Selectors with anchors.
-         * @param String $selectors_without_achors CSS Selectors withour annchors.
-         *
-         * @return String CSS Selectors based on the condition of filters.
-         */
-        private static function conditional_headings_css_selectors($selectors_with_achors, $selectors_without_achors)
-        {
-        }
-        /**
-         * Check if CSS selectors in Headings should use anchors.
-         *
-         * @since 1.4.9
-         * @return boolean true if it should include anchors, False if not.
-         */
-        public static function anchors_in_css_selectors_heading()
-        {
-        }
-        /**
-         * Check backwards compatibility CSS for loading submenu below the header needs to be added.
-         *
-         * @since 1.5.0
-         * @return boolean true if CSS should be included, False if not.
-         */
-        public static function astra_submenu_below_header_fix()
-        {
-        }
-        /**
-         * Check backwards compatibility CSS for loading submenu below the header needs to be added.
-         *
-         * @since 2.1.3
-         * @return boolean true if submenu below header fix is to be loaded, False if not.
-         */
-        public static function astra_submenu_open_below_header_fix()
-        {
-        }
-        /**
-         * Check backwards compatibility to not load default CSS for the button styling of Page Builders.
-         *
-         * @since 2.2.0
-         * @return boolean true if button style CSS should be loaded, False if not.
-         */
-        public static function page_builder_button_style_css()
-        {
-        }
-        /**
-         * Elementor Theme Style - Button Text Color compatibility. This should be looked in the future for proper solution.
-         *
-         * Reference: https://github.com/elementor/elementor/issues/10733
-         * Reference: https://github.com/elementor/elementor/issues/10739
-         *
-         * @since 2.3.3
-         *
-         * @return mixed
-         */
-        public static function is_elementor_kit_button_color_set()
-        {
-        }
-        /**
-         * Check if Elementor - Disable Default Colors or Disable Default Fonts checked or unchecked.
-         *
-         * @since  2.3.3
-         *
-         * @return mixed String if any of the settings are enabled. False if no settings are enabled.
-         */
-        public static function elementor_default_color_font_setting()
-        {
-        }
-        /**
-         * For existing users, do not reflect direct change.
-         *
-         * @since 3.6.5
-         * @return boolean true if WordPress-5.8 compatibility enabled, False if not.
-         */
-        public static function is_block_editor_support_enabled()
-        {
-        }
-        /**
-         * For existing users, do not provide Elementor Default Color Typo settings compatibility by default.
-         *
-         * @since 2.3.3
-         * @return boolean true if elementor default color and typo setting should work with theme, False if not.
-         */
-        public static function is_elementor_default_color_font_comp()
-        {
-        }
-		/**
-		 * For existing users, do not provide list vertical spacing.
-		 *
-		 * @since 4.1.6
-		 * @return boolean true for new users, false for old users.
-		 */
-		public static function astra_list_block_vertical_spacing()
-        {
-		}
-        /**
-         * For existing users, do not load the wide/full width image CSS by default.
-         *
-         * @since 2.4.4
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function gtn_image_group_css_comp()
-        {
-        }
-        /**
-         * Do not apply new wide/full Group and Cover block CSS for existing users.
-         *
-         * @since 2.5.0
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function gtn_group_cover_css_comp()
-        {
-        }
-        /**
-         * Do not apply new Group, Column and Media & Text block CSS for existing users.
-         *
-         * @since 2.6.0
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function gutenberg_core_blocks_css_comp()
-        {
-        }
-        /**
-         * Do not apply new Group, Column and Media & Text block CSS for existing users.
-         *
-         * CSS for adding spacing|padding support to Gutenberg Media-&-Text Block
-         *
-         * @since 2.6.1
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function gutenberg_media_text_block_css_compat()
-        {
-        }
-        /**
-         * Gutenberg pattern compatibility changes.
-         *
-         * @since 3.3.0
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function gutenberg_core_patterns_compat()
-        {
-        }
-        /**
-         * Font CSS support for widget-title heading fonts & fonts which are not working in editor.
-         *
-         * 1. Adding Font-weight support to widget titles.
-         * 2. Customizer font CSS not supporting in editor.
-         *
-         * @since 3.6.0
-         * @return boolean false if it is an existing user, true if not.
-         */
-        public static function support_font_css_to_widget_and_in_editor()
-        {
-        }
-        /**
-         * Whether to remove or not following CSS which restricts logo size on responsive devices.
-         *
-         * @see https://github.com/brainstormforce/astra/commit/d09f63336b73d58c8f8951726edbc90671d7f419
-         *
-         * @since 3.6.0
-         * @return boolean false if it is an existing user, true if not.
-         */
-        public static function remove_logo_max_width_mobile_static_css()
-        {
-        }
-        /**
-         * Remove text-decoration: underline; CSS for builder specific elements to maintain their UI/UX better.
-         *
-         * 1. UAG : Marketing Button, Info Box CTA, MultiButtons, Tabs.
-         * 2. UABB : Button, Slide Box CTA, Flip box CTA, Info Banner, Posts, Info Circle, Call to Action, Subscribe Form.
-         *
-         * @since 3.6.9
-         */
-        public static function unset_builder_elements_underline()
-        {
-        }
-        /**
-         * Block editor experience improvements css introduced with v4.0.0.
-         *
-         * @since 4.0.0
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function v4_block_editor_compat()
-        {
-        }
-        /**
-         * Load sidebar static CSS when it is enabled.
-         *
-         * @since 3.0.0
-         */
-        public static function load_sidebar_static_css()
-        {
-        }
-        /**
-         * Astra Spectra Gutenberg Compatibility CSS.
-         *
-         * @since 3.9.4
-         * @return boolean false if it is an existing user , true if not.
-         */
-        public static function spectra_gutenberg_compat_css()
-        {
-        }
-        /**
-         * Load static card(EDD/Woo) CSS.
-         *
-         * @since 3.0.0
-         * @return string static css for Woocommerce and EDD card.
-         */
-        public static function load_cart_static_css()
-        {
-        }
-		/**
-		 * Core Comment & Search Button Styling Compatibility.
-		 * Old Users - Will not reflect directly.
-		 * New Users - Direct reflection
-		 * @return bool true|false.
-		 * @since 4.2.2
-		 */
-		public static function astra_core_form_btns_styling()
-        {
-        }
-        /**
-         * Check is new structural things are updated.
-         *
-         * @return bool true|false.
-         * @since 4.0.0
-         */
-        public static function astra_check_default_color_typo()
-        {
-        }
-        /**
-         * Dynamic CSS to make Sidebar Sticky.
-         *
-         * @return string Sticky Sidebar CSS.
-         * @since x.x.x
-         */
-        public static function astra_sticky_sidebar_css()
-        {
-        }
-    }
-    /**
-     * Global palette class
-     */
-    class Astra_Global_Palette
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.7.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Modify color palette from Gutenberg.
-         *
-         * @since 3.7.0
-         * @return void
-         */
-        public function support_editor_color_palette()
-        {
-        }
-        /**
-         * Format color palette data required to pass for Gutenberg palette.
-         *
-         * @since 3.7.0
-         * @param array $global_palette global palette data.
-         * @return array
-         */
-        public function format_global_palette($global_palette)
-        {
-        }
-        /**
-         * Get CSS variable prefix used for styling.
-         *
-         * @since 3.7.0
-         * @return string variable prefix
-         */
-        public static function get_css_variable_prefix()
-        {
-        }
-        /**
-         * Localize variables used in the customizer.
-         *
-         * @since 3.7.0
-         * @param array $object localize object.
-         * @return array<array-key, mixed> $object localize object.
-         */
-        public function localize_variables($object)
-        {
-        }
-        /**
-         * Default global palette options.
-         *
-         * @since 3.7.0
-         * @return array Palette options.
-         */
-        public static function get_default_color_palette()
-        {
-        }
-        /**
-         * Get labels for palette colors.
-         *
-         * @since 3.7.0
-         * @return array Palette labels.
-         */
-        public static function get_palette_labels()
-        {
-        }
-        /**
-         * Get slugs for palette colors.
-         *
-         * @since 3.7.0
-         * @return array Palette slugs.
-         */
-        public static function get_palette_slugs()
-        {
-        }
-        /**
-         * Include required files.
-         *
-         * @since 3.7.0
-         */
-        public function includes()
-        {
-        }
-        /**
-         * Generate palette CSS required to display on front end.
-         *
-         * @since 3.7.0
-         * @return array palette style array.
-         */
-        public static function generate_global_palette_style()
-        {
-        }
-        /**
-         * Pass hex value for global palette to process forground color.
-         *
-         * @since 3.7.0
-         * @param string $color hex color / css variable.
-         * @return string
-         */
-        public function get_color_by_palette_variable($color)
-        {
-        }
-        /**
-         * Add dynamic CSS for the global border color.
-         *
-         * @since 3.9.0
-         *
-         * @param  string $dynamic_css          Astra Dynamic CSS.
-         *
-         * @return String Generated dynamic CSS for global border.
-         */
-        public function global_border_compatibility($dynamic_css)
-        {
-        }
-    }
-    /**
-     * Astra_Loop
-     *
-     * @since 1.2.7
-     */
-    class Astra_Loop
-    {
-        /**
-         * Instance
-         *
-         * @since 1.2.7
-         *
-         * @access private
-         * @var object Class object.
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 1.2.7
-         *
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         *
-         * @since 1.2.7
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Template part none
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_none()
-        {
-        }
-        /**
-         * Template part 404
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_404()
-        {
-        }
-        /**
-         * Template part page
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_page()
-        {
-        }
-        /**
-         * Template part single
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_post()
-        {
-        }
-        /**
-         * Template part search
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_search()
-        {
-        }
-        /**
-         * Template part comments
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_comments()
-        {
-        }
-        /**
-         * Template part default
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_default()
-        {
-        }
-        /**
-         * Loop Markup for content page
-         *
-         * @since 1.3.1
-         */
-        public function loop_markup_page()
-        {
-        }
-        /**
-         * Template part loop
-         *
-         * @param  boolean $is_page Loop outputs different content action for content page and default content.
-         *         if is_page is set to true - do_action( 'astra_page_template_parts_content' ); is added
-         *         if is_page is false - do_action( 'astra_template_parts_content' ); is added.
-         * @since 1.2.7
-         * @return void
-         */
-        public function loop_markup($is_page = \false)
-        {
-        }
-        /**
-         * Template part content top
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_content_top()
-        {
-        }
-        /**
-         * Template part content bottom
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function template_parts_content_bottom()
-        {
-        }
-        /**
-         * Add wrapper div 'ast-row' for Astra template part.
-         *
-         * @since  1.2.7
-         * @return void
-         */
-        public function astra_templat_part_wrap_open()
-        {
-        }
-        /**
-         * Add closing wrapper div for 'ast-row' after Astra template part.
-         *
-         * @since  1.2.7
-         * @return void
-         */
-        public function astra_templat_part_wrap_close()
-        {
-        }
-    }
-    /**
-     * Astra_Mobile_Header
-     *
-     * @since 1.4.0
-     */
-    class Astra_Mobile_Header
-    {
-        /**
-         * Instance
-         *
-         * @since 1.4.0
-         *
-         * @access private
-         * @var object Class object.
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 1.4.0
-         *
-         * @return object initialized object of class.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         *
-         * @since 1.4.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add submenu toggle button used for mobile devices.
-         *
-         * @since 1.6.9
-         *
-         * @param string   $item_output The menu item's starting HTML output.
-         * @param WP_Post  $item        Menu item data object.
-         * @param int      $depth       Depth of menu item. Used for padding.
-         * @param stdClass $args        An object of wp_nav_menu() arguments.
-         *
-         * @return String Menu item's starting markup.
-         */
-        public function toggle_button($item_output, $item, $depth, $args)
-        {
-        }
-        /**
-         * Get Menu Arrow Button Mark up
-         *
-         * @param string  $item_output The menu item's starting HTML output.
-         * @param WP_Post $item        Menu item data object.
-         *
-         * @since 1.7.2
-         * @return string Menu item arrow button markup.
-         */
-        public function menu_arrow_button_markup($item_output, $item)
-        {
-        }
-        /**
-         * Header Cart Icon Class
-         *
-         * @param array $classes Default argument array.
-         *
-         * @since 1.4.0
-         * @return array;
-         */
-        public function menu_toggle_classes($classes)
-        {
-        }
-        /**
-         * Mobile Header Markup
-         *
-         * @return void
-         */
-        public function mobile_header_markup()
-        {
-        }
-        /**
-         * Replace logo with Mobile Header logo.
-         *
-         * @param sting $html Size name.
-         * @param int   $blog_id Icon.
-         * @since 1.4.0
-         * @return string html markup of logo.
-         */
-        public function astra_mobile_header_custom_logo($html, $blog_id)
-        {
-        }
-        /**
-         * Add svg class to mobile logo.
-         *
-         * @param bool  $is_logo_attachment is attachment is logo image?.
-         * @param array $attachment attachment data.
-         * @since 2.1.0
-         * @return bool return if attachment is mobile logo image.
-         */
-        public function add_mobile_logo_svg_class($is_logo_attachment, $attachment)
-        {
-        }
-        /**
-         * Add Body Classes
-         *
-         * @param array $classes Body Class Array.
-         * @return array
-         */
-        public function add_body_class($classes)
-        {
-        }
-    }
-    /**
-     * Class Astra_AMP
-     */
-    class Astra_AMP
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Init Astra Amp Compatibility.
-         * This adds required actions and filters only if AMP endpoinnt is detected.
-         *
-         * @since 1.7.0
-         * @return void
-         */
-        public function astra_amp_init()
-        {
-        }
-        /**
-         * Add ID to body to toggleClasses on AMP actions.
-         *
-         * @since 1.7.0
-         * @param String $schema markup returned from theme.
-         * @return String
-         */
-        public function body_id($schema)
-        {
-        }
-        /**
-         * Dynamic CSS used for AMP pages.
-         * This should be changed to main CSS in next versions, replacing JavaScript based interactions with pure CSS alternatives.
-         *
-         * @since 1.7.0
-         * @param String $compiled_css Dynamic CSS received to  be enqueued on page.
-         *
-         * @return String Updated dynamic CSS with AMP specific changes.
-         */
-        public function dynamic_css($compiled_css)
-        {
-        }
-        /**
-         * Add AMP attributes to the nav menu wrapper.
-         *
-         * @since 1.7.0
-         * @param Array $attr HTML attributes to be added to the nav menu wrapper.
-         *
-         * @return Array updated HTML attributes.
-         */
-        public function nav_menu_wrapper($attr)
-        {
-        }
-        /**
-         * Set AMP State for eeach sub menu toggle.
-         *
-         * @since 1.7.0
-         * @param String  $item_output HTML markup for the menu item.
-         * @param  WP_Post $item Post object for the navigation menu.
-         *
-         * @return String HTML MArkup for the menu including the AML State.
-         */
-        public function toggle_button_markup($item_output, $item)
-        {
-        }
-        /**
-         * Add AMP attribites to the toggle button to add `.ast-submenu-expanded` class to parent li.
-         *
-         * @since 1.7.0
-         * @param array  $attr Optional. Extra attributes to merge with defaults.
-         * @param string $context    The context, to build filter name.
-         * @param array  $args       Optional. Custom data to pass to filter.
-         *
-         * @return Array updated HTML attributes.
-         */
-        public function menu_toggle_button($attr, $context, $args)
-        {
-        }
-        /**
-         * Add amp states to the dom.
-         */
-        public function render_amp_states()
-        {
-        }
-        /**
-         * Add search slide data attributes.
-         *
-         * @param string $input the data attrs already existing in the nav.
-         *
-         * @return string
-         */
-        public function add_search_slide_toggle_attrs($input)
-        {
-        }
-        /**
-         * Add search slide data attributes.
-         *
-         * @param string $input the data attrs already existing in the nav.
-         *
-         * @return string
-         */
-        public function add_search_field_toggle_attrs($input)
-        {
-        }
-        /**
-         * Add the nav toggle data attributes.
-         *
-         * @param string $input the data attrs already existing in nav toggle.
-         *
-         * @return string
-         */
-        public function add_nav_toggle_attrs($input)
-        {
-        }
-    }
-    /**
-     * Astra BB Ultimate Addon Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_BB_Ultimate_Addon
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Remove UABB Global Setting Option
-         */
-        public function remove_uabb_global_setting()
-        {
-        }
-        /**
-         * Theme Color
-         */
-        public function theme_color()
-        {
-        }
-        /**
-         * Text Color
-         */
-        public function text_color()
-        {
-        }
-        /**
-         * Link Color
-         */
-        public function link_color()
-        {
-        }
-        /**
-         * Link Hover Color
-         */
-        public function link_hover_color()
-        {
-        }
-        /**
-         * Button Font Family
-         */
-        public function button_font_family()
-        {
-        }
-        /**
-         * Button Font Size
-         */
-        public function button_font_size()
-        {
-        }
-        /**
-         * Button Line Height
-         */
-        public function button_line_height()
-        {
-        }
-        /**
-         * Default type : Button Font Size
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_font_size()
-        {
-        }
-        /**
-         * Default type : Button Line Height
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_line_height()
-        {
-        }
-        /**
-         * Button Letter Spacing
-         */
-        public function button_letter_spacing()
-        {
-        }
-        /**
-         * Default type : Button Letter Spacing
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_letter_spacing()
-        {
-        }
-        /**
-         * Button Text Transform
-         */
-        public function button_text_transform()
-        {
-        }
-        /**
-         * Default type : Button Text Transform
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_text_transform()
-        {
-        }
-        /**
-         * Button Text Color
-         */
-        public function button_text_color()
-        {
-        }
-        /**
-         * Default type : Button Text Color
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_text_color()
-        {
-        }
-        /**
-         * Button Text Hover Color
-         */
-        public function button_text_hover_color()
-        {
-        }
-        /**
-         * Default type : Button Text Hover Color
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_text_hover_color()
-        {
-        }
-        /**
-         * Button Background Color
-         */
-        public function button_bg_color()
-        {
-        }
-        /**
-         * Default type : Button Background Color
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_bg_color()
-        {
-        }
-        /**
-         * Button Background Color
-         */
-        public function button_bg_hover_color()
-        {
-        }
-        /**
-         * Default type : Button Background Color
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_bg_hover_color()
-        {
-        }
-        /**
-         * Button Border Radius
-         */
-        public function button_border_radius()
-        {
-        }
-        /**
-         * Button Padding
-         */
-        public function button_padding()
-        {
-        }
-        /**
-         * Default type : Button Padding
-         *
-         * @since 2.2.0
-         */
-        public function default_type_button_padding()
-        {
-        }
-        /**
-         * Button Border Width
-         */
-        public function button_border_width()
-        {
-        }
-        /**
-         * Button Border Color
-         */
-        public function button_border_color()
-        {
-        }
-        /**
-         * Button Border Hover Color
-         */
-        public function button_border_hover_color()
-        {
-        }
-        /**
-         * Button Vertical Padding.
-         *
-         * @deprecated 2.2.0
-         */
-        public function button_vertical_padding()
-        {
-        }
-        /**
-         * Button Horizontal Padding.
-         *
-         * @deprecated 2.2.0
-         */
-        public function button_horizontal_padding()
-        {
-        }
-    }
-    /**
-     * Astra Beaver Builder Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Beaver_Builder
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Disable Astra's block editor attr which applied for further block layout CSS.
-         *
-         * @param bool $flag Flag to enable/disable entry content attr.
-         * @param int  $post_id Post ID.
-         *
-         * @since  3.8.1
-         * @return bool true|false
-         */
-        public function remove_astra_block_editor_attr($flag, $post_id)
-        {
-        }
-        /**
-         * Builder Template Content layout set as Full Width / Stretched
-         *
-         * @since  1.0.13
-         * @return void
-         */
-        public function beaver_builder_default_setting()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 3.5.0
-         */
-        public function add_styles($assets)
-        {
-        }
-    }
-    /**
-     * Astra Beaver Themer Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Beaver_Themer
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Builder Template Content layout set as Full Width / Stretched
-         *
-         * @param  string $layout Content Layout.
-         * @return string
-         * @since  1.0.2
-         */
-        public function builder_template_content_layout($layout)
-        {
-        }
-        /**
-         * Remove theme post's default classes
-         *
-         * @param  array $classes Post Classes.
-         * @return array
-         * @since  1.0.2
-         */
-        public function render_post_class($classes)
-        {
-        }
-        /**
-         * Function to add Theme Support
-         *
-         * @since 1.0.0
-         */
-        public function header_footer_support()
-        {
-        }
-        /**
-         * Function to update Atra header/footer with Beaver template
-         *
-         * @since 1.0.0
-         */
-        public function theme_header_footer_render()
-        {
-        }
-        /**
-         * Function to Astra theme parts
-         *
-         * @since 1.0.0
-         */
-        public function register_part_hooks()
-        {
-        }
-        /**
-         * Function to theme before render content
-         *
-         * @param int $post_id Post ID.
-         * @since 1.0.28
-         */
-        public function builder_before_render_content($post_id)
-        {
-        }
-        /**
-         * Function to theme after render content
-         *
-         * @param int $post_id Post ID.
-         * @since 1.0.28
-         */
-        public function builder_after_render_content($post_id)
-        {
-        }
-    }
-    /**
-     * Astra BNE Flyout Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_BNE_Flyout
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 1.0.0
-         */
-        public function add_styles($assets)
-        {
-        }
-    }
-    /**
-     * Astra Contact Form 7 Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Contact_Form_7
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @since 1.0.0
-         */
-        public function add_styles()
-        {
-        }
-    }
-    /**
-     * Astra Divi Builder
-     *
-     * @since 1.4.0
-     */
-    class Astra_Divi_Builder
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 1.4.0
-         */
-        public function add_styles($assets)
-        {
-        }
-    }
-}
-namespace ElementorPro\Modules\ThemeBuilder\ThemeSupport {
-    /**
-     * Astra Elementor Compatibility
-     *
-     * @since 1.2.7
-     */
-    class Astra_Elementor_Pro
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 1.2.7
-         * @return object Class object.
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         *
-         * @since 1.2.7
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Check if Elementor Editor is open.
-         *
-         * @since  3.8.0
-         *
-         * @return boolean true iF Elementor Editor is loaded, false If Elementor Editor is not loaded.
-         */
-        public function is_elementor_editor()
-        {
-        }
-        /**
-         * Remove actions of WooCommerce for shipping form fields, as it needs only in 'col-1'.
-         *
-         * Case: Theme's 'woocommerce_checkout' action conflicting with Elementor Pro's checkout widget. On frontend billing + shipping details wrapper comes under col-1 div because of theme's above action. But in Elementor editor, billing + shipping wrappers comes in two different cols, i.e. col-1 & col-2. Due to this, styling looks inappropriate in editor only.
-         *
-         * @since 3.8.0
-         * @return void
-         */
-        public function update_woocommerce_checkout()
-        {
-        }
-        /**
-         * Compatibility CSS for Elementor Pro's WooCommerce widgets releasing in their v3.6.0
-         *
-         * @param  string $css_output CSS stylesheet.
-         * @return string $css_output CSS stylesheet.
-         *
-         * @since  3.7.5
-         */
-        public function elementor_wc_widgets_compatibility_styles($css_output)
-        {
-        }
-        /**
-         * Register Locations
-         *
-         * @since 1.2.7
-         * @param object $manager Location manager.
-         * @return void
-         */
-        public function register_locations($manager)
-        {
-        }
-        /**
-         * Template Parts Support
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function do_template_parts()
-        {
-        }
-        /**
-         * Override 404 page
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function do_template_part_404()
-        {
-        }
-        /**
-         * Override sidebar, title etc with post meta
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function override_meta()
-        {
-        }
-        /**
-         * Override sidebar, title etc with post meta
-         *
-         * @since 1.2.7
-         * @param  integer $post_id  Post ID.
-         * @return void
-         */
-        public function override_with_post_meta($post_id = 0)
-        {
-        }
-        /**
-         * Header Support
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function do_header()
-        {
-        }
-        /**
-         * Footer Support
-         *
-         * @since 1.2.7
-         * @return void
-         */
-        public function do_footer()
-        {
-        }
-        /**
-         * Remove theme post's default classes when Elementor's template builder is activated.
-         *
-         * @param  array $classes Post Classes.
-         * @return array
-         * @since  1.4.9
-         */
-        public function render_post_class($classes)
-        {
-        }
-    }
-}
-namespace Elementor {
-    /**
-     * Astra Elementor Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Elementor
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Hide elementor title.
-         *
-         * @param array $classes Array of elementor edit mode check.
-         *
-         * @since 4.1.0
-         */
-        function astra_entry_header_class_custom($classes)
-        {
-        }
-        /**
-         * Compatibility CSS for Elementor Headings after Elementor-v2.9.9
-         *
-         * In v2.9.9 Elementor has removed [ .elementor-widget-heading .elementor-heading-title { margin: 0 } ] this CSS.
-         * Again in v2.9.10 Elementor added this as .elementor-heading-title { margin: 0 } but still our [ .entry-content heading { margin-bottom: 20px } ] CSS overrding their fix.
-         *
-         * That's why adding this CSS fix to headings by setting bottom-margin to 0.
-         *
-         * @param  string $dynamic_css Astra Dynamic CSS.
-         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-         * @return string $dynamic_css Generated CSS.
-         *
-         * @since  2.4.5
-         */
-        public function enqueue_elementor_compatibility_styles($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Elementor Content layout set as Page Builder
-         *
-         * @return void
-         * @since  1.0.2
-         */
-        public function elementor_default_setting()
-        {
-        }
-        /**
-         * Add z-index CSS for elementor's drag drop
-         *
-         * @return void
-         * @since  1.4.0
-         */
-        public function elementor_overlay_zindex()
-        {
-        }
-        /**
-         * Check is elementor activated.
-         *
-         * @param int $id Post/Page Id.
-         * @return boolean
-         */
-        public function is_elementor_activated($id)
-        {
-        }
-        /**
-         * Check if Elementor Editor is open.
-         *
-         * @since  1.2.7
-         *
-         * @return boolean True IF Elementor Editor is loaded, False If Elementor Editor is not loaded.
-         */
-        private function is_elementor_editor()
-        {
-        }
-        /**
-         * Display theme global colors to Elementor Global colors
-         *
-         * @since 3.7.0
-         * @param object          $response rest request response.
-         * @param array           $handler Route handler used for the request.
-         * @param WP_REST_Request $request Request used to generate the response.
-         * @return object
-         */
-        public function elementor_add_theme_colors($response, $handler, $request)
-        {
-        }
-        /**
-         * Display global paltte colors on Elementor front end Page.
-         *
-         * @since 3.7.0
-         * @param object          $response rest request response.
-         * @param array           $handler Route handler used for the request.
-         * @param WP_REST_Request $request Request used to generate the response.
-         * @return object
-         */
-        public function display_global_colors_front_end($response, $handler, $request)
-        {
-        }
-        /**
-         * Generate CSS variable style for Elementor.
-         *
-         * @since 3.7.0
-         * @param string $dynamic_css Dynamic CSS.
-         * @return object
-         */
-        public function generate_global_elementor_style($dynamic_css)
-        {
-        }
-        /**
-         * Load style inside Elementor editor.
-         *
-         * @since 3.7.0
-         * @return void
-         */
-        public function elementor_add_scripts()
-        {
-        }
-    }
-}
-namespace {
-    /**
-     * Astra Gravity Forms
-     *
-     * @since 1.0.0
-     */
-    class Astra_Gravity_Forms
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @since 1.0.0
-         */
-        public function add_styles()
-        {
-        }
-    }
-    /**
      * Gutenberg Compatibility File.
      *
      * @since 3.7.1
@@ -5060,339 +83,9 @@ namespace {
         }
     }
     /**
-     * Astra Jetpack Compatibility
-     *
-     * @since 1.0.0
+     * Customizer Sanitizes Initial setup
      */
-    class Astra_Jetpack
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add theme support for Infinite Scroll.
-         * See: https://jetpack.me/support/infinite-scroll/
-         */
-        public function jetpack_setup()
-        {
-        }
-        // end function jetpack_setup
-        /**
-         * Custom render function for Infinite Scroll.
-         */
-        public function infinite_scroll_render()
-        {
-        }
-        // end function infinite_scroll_render
-    }
-    /**
-     * Astra Site Origin Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Site_Origin
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 1.0.0
-         */
-        public function add_styles($assets)
-        {
-        }
-    }
-    /**
-     * Starter Content Compatibility.
-     *
-     * @since 4.0.0
-     * @package Astra
-     */
-    /**
-     * Class Astre_Starter_Content
-     */
-    class Astra_Starter_Content
-    {
-        const HOME_SLUG = 'home';
-        const ABOUT_SLUG = '#about';
-        const SERVICES_SLUG = '#services';
-        const REVIEWS_SLUG = '#reviews';
-        const WHY_US_SLUG = '#whyus';
-        const CONTACT_SLUG = '#contact';
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Load default starter meta.
-         *
-         * @since 4.0.2
-         * @param mixed  $value Value.
-         * @param int    $post_id Post id.
-         * @param string $meta_key Meta key.
-         *
-         * @return string Meta value.
-         */
-        public function starter_meta($value, $post_id, $meta_key)
-        {
-        }
-        /**
-         * Register listener to insert post.
-         *
-         * @since 4.0.0
-         * @param int      $post_ID Post Id.
-         * @param \WP_Post $post Post object.
-         * @param bool     $update Is update.
-         */
-        public function register_listener($post_ID, $post, $update)
-        {
-        }
-        /**
-         *  Get customizer json
-         *
-         * @since 4.0.0
-         *  @return mixed value.
-         */
-        public function get_customizer_json()
-        {
-        }
-        /**
-         *  Save Astra customizer settings into database.
-         *
-         * @since 4.0.0
-         */
-        public function save_astra_settings()
-        {
-        }
-        /**
-         * Load default astra settings.
-         *
-         * @since 4.0.0
-         * @param mixed $defaults defaults.
-         * @return mixed value.
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Load default color palettes.
-         *
-         * @since 4.0.0
-         * @param mixed $defaults defaults.
-         * @return mixed value.
-         */
-        public function theme_color_palettes_defaults($defaults)
-        {
-        }
-        /**
-         * Return starter content definition.
-         *
-         * @return mixed|void
-         * @since 4.0.0
-         */
-        public function get()
-        {
-        }
-    }
-    /**
-     * Astra Ubermenu Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Ubermeu
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since  1.1.7
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         *
-         * @since  1.1.7
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Disable the Mobile Menu toggles from Astra if Uber Menu is used.
-         *
-         * @since  1.1.7
-         * @param  bool $status Status if the mobile menu toggels are enaled or disaled.
-         * @return bool         False If ubermenu is configured on this location. Unchanged if it is not configured.
-         */
-        public function disable_primary_menu_toggle($status)
-        {
-        }
-    }
-    /**
-     * Astra Visual Composer Compatibility
-     *
-     * @since 1.0.0
-     */
-    class Astra_Visual_Composer
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * VC Updated meta settings
-         *
-         * @since 1.0.13
-         * @param int $id Post id.
-         * @return void
-         */
-        public function vc_update_meta_setting($id)
-        {
-        }
-        /**
-         * Set frontend default setting.
-         *
-         * @since 1.0.13
-         * @return void
-         */
-        public function vc_frontend_default_setting()
-        {
-        }
-        /**
-         * Set default setting.
-         *
-         * @since 1.0.13
-         * @return void
-         */
-        public function vc_default_setting()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 3.5.0
-         */
-        public function add_styles($assets)
-        {
-        }
-    }
-    /**
-     * Astra Web_Stories Compatibility
-     *
-     * @since 3.2.0
-     */
-    class Astra_Web_Stories
-    {
-        /**
-         * Constructor
-         *
-         * @since 3.2.0
-         * @return void
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add theme support for Web Stories.
-         *
-         * @since 3.2.0
-         * @return void
-         */
-        public function web_stories_setup()
-        {
-        }
-        /**
-         * Custom render function for Web Stories Embedding.
-         *
-         * @since 3.2.0
-         * @return void
-         */
-        public function web_stories_embed()
-        {
-        }
-        /**
-         * Add dynamic CSS for the webstories.
-         *
-         * @since 3.2.0
-         *
-         * @param  string $dynamic_css          Astra Dynamic CSS.
-         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-         *
-         * @return String Generated dynamic CSS for Heading Colors.
-         */
-        public function web_stories_css($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-    }
-    /**
-     * Yoast SEO Compatibility File.
-     *
-     * @package Astra
-     */
-    /**
-     * Astra Yoast SEO Compatibility
-     *
-     * @since 2.1.2
-     */
-    class Astra_Yoast_SEO
+    class Astra_Customizer_Config_Base
     {
         /**
          * Constructor
@@ -5401,281 +94,39 @@ namespace {
         {
         }
         /**
-         * Exclude One Content Type From Yoast SEO Sitemap
+         * Base Method for Registering Customizer Configurations.
          *
-         * @param  string $value value.
-         * @param  string $post_type Post Type.
-         * @since 2.1.2
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
          */
-        public function sitemap_exclude_post_type($value, $post_type)
-        {
-        }
-    }
-    /**
-     * Astra Easy Digital Downloads Compatibility
-     *
-     * @since 1.5.5
-     */
-    class Astra_Edd
-    {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
+        public function register_configuration($configurations, $wp_customize)
         {
         }
         /**
-         * Constructor
+         * Section Description
+         *
+         * @since 1.4.3
+         *
+         * @param  array $args Description arguments.
+         * @return mixed       Markup of the section description.
          */
-        public function __construct()
-        {
-        }
-        /**
-         * Header Cart Extra Icons markup
-         *
-         * @return void;
-         */
-        public function header_cart_icon_markup()
-        {
-        }
-        /**
-         * Header Cart Icon Class
-         *
-         * @param array $classes Default argument array.
-         *
-         * @return array;
-         */
-        public function header_cart_icon_class($classes)
-        {
-        }
-        /**
-         * Disable EDD style only for the first time
-         *
-         * @return void
-         */
-        public function edd_set_defaults_initialization()
-        {
-        }
-        /**
-         * Single Product Navigation
-         *
-         * @param array $args single products navigation arguments.
-         *
-         * @return array $args single products navigation arguments.
-         */
-        public function edd_single_post_navigation($args)
-        {
-        }
-        /**
-         * EDD Initialization
-         *
-         * @return void
-         */
-        public function edd_initialization()
-        {
-        }
-        /**
-         * Add wrapper for edd archive pages
-         *
-         * @return void
-         */
-        public function astra_edd_templat_part_wrap_open()
-        {
-        }
-        /**
-         * Add end of wrapper for edd archive pages
-         */
-        public function astra_edd_templat_part_wrap_close()
-        {
-        }
-        /**
-         * Edd Single Product template
-         */
-        public function edd_single_template()
-        {
-        }
-        /**
-         * Add Cart icon markup
-         *
-         * @param Array $options header options array.
-         *
-         * @return Array header options array.
-         * @since 1.5.5
-         */
-        public function header_section_elements($options)
-        {
-        }
-        /**
-         * Add wrapper to the edd archive content template
-         *
-         * @return void
-         */
-        public function edd_content_loop()
-        {
-        }
-        /**
-         * Remove theme post's default classes when EDD archive.
-         *
-         * @param  array $classes Post Classes.
-         * @return array
-         * @since  1.5.5
-         */
-        public function render_post_class($classes)
-        {
-        }
-        /**
-         * Add Cart icon markup
-         *
-         * @param String $output Markup.
-         * @param String $section Section name.
-         * @param String $section_type Section selected option.
-         * @return Markup String.
-         *
-         * @since 1.5.5
-         */
-        public function astra_header_cart($output, $section, $section_type)
-        {
-        }
-        /**
-         * Easy Digital DOwnloads mini cart markup markup
-         *
-         * @since 1.5.5
-         * @return html
-         */
-        public function edd_mini_cart_markup()
-        {
-        }
-        /**
-         * Cart Link
-         * Displayed a link to the cart including the number of items present and the cart total
-         *
-         * @return void
-         * @since  1.5.5
-         */
-        public function astra_get_edd_cart()
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         * @since 1.5.5
-         */
-        public function add_styles($assets)
-        {
-        }
-        /**
-         * Add inline style
-         *
-         * @since 1.5.5
-         */
-        public function add_inline_scripts()
-        {
-        }
-        /**
-         * Dynamic CSS
-         *
-         * @param  string $dynamic_css          Astra Dynamic CSS.
-         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-         * @since 1.5.5
-         * @return string $dynamic_css
-         */
-        public function add_inline_styles($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Theme Defaults.
-         *
-         * @param array $defaults Array of options value.
-         * @return array
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Add products item class to the body
-         *
-         * @param Array $classes product classes.
-         *
-         * @return array.
-         */
-        public function edd_products_item_class($classes = '')
-        {
-        }
-        /**
-         * Add class on single product page
-         *
-         * @param Array $classes product classes.
-         *
-         * @return array.
-         */
-        public function edd_single_product_class($classes)
-        {
-        }
-        /**
-         * Store widgets init.
-         */
-        public function store_widgets_init()
-        {
-        }
-        /**
-         * Assign shop sidebar for store page.
-         *
-         * @param String $sidebar Sidebar.
-         *
-         * @return String $sidebar Sidebar.
-         */
-        public function replace_store_sidebar($sidebar)
-        {
-        }
-        /**
-         * Easy Digital Downloads Container
-         *
-         * @param String $sidebar_layout Layout type.
-         *
-         * @return String $sidebar_layout Layout type.
-         */
-        public function store_sidebar_layout($sidebar_layout)
-        {
-        }
-        /**
-         * Easy Digital Downloads Container
-         *
-         * @param String $layout Layout type.
-         *
-         * @return String $layout Layout type.
-         */
-        public function store_content_layout($layout)
-        {
-        }
-        /**
-         * Register Customizer sections and panel for Easy Digital Downloads.
-         *
-         * @since 1.5.5
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register($wp_customize)
+        public function section_get_description($args)
         {
         }
     }
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Customizer_Register_Edd_Section extends \Astra_Customizer_Config_Base
+    class Astra_Lifter_Sidebar_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Register Panels and Sections for Customizer.
+         * Register Astra-LifterLMS Sidebar Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.5.5
+         * @since 1.4.3
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -5685,14 +136,14 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Edd_Container_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Lifter_General_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Register Astra-Easy Digital Downloads Shop Container Settings.
+         * Register Astra-LifterLMS General Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.5.5
+         * @since 1.4.3
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -5701,162 +152,17 @@ namespace {
     }
     /**
      * Customizer Sanitizes Initial setup
-     */
-    class Astra_Edd_Sidebar_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Easy Digital Downloads Sidebar Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.5.5
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Edd_Archive_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-Easy Digital Downloads Shop Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.5.5
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Edd_Single_Product_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-Easy Digital Downloads Shop Cart Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.5.5
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Astra LearnDash Compatibility
      *
-     * @since 1.3.0
+     * @since 1.4.3
      */
-    class Astra_LearnDash
+    class Astra_Lifter_Container_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Enqueue styles
-         *
-         * @param  String $dynamic_css          Astra Dynamic CSS.
-         * @param  String $dynamic_css_filtered Astra Dynamic CSS Filters.
-         * @since 1.3.0
-         * @return String Dynamic CSS.
-         */
-        public function add_dynamic_styles($dynamic_css, $dynamic_css_filtered = '')
-        {
-        }
-        /**
-         * Register Customizer sections and panel for learndash.
-         *
-         * @since 1.3.0
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register($wp_customize)
-        {
-        }
-        /**
-         * Theme Defaults.
-         *
-         * @since 1.3.0
-         * @param array $defaults Array of options value.
-         * @return array
-         */
-        public function theme_defaults($defaults)
-        {
-        }
-        /**
-         * Add assets in theme
-         *
-         * @since 1.3.0
-         * @param array $assets list of theme assets (JS & CSS).
-         * @return array List of updated assets.
-         */
-        public function add_styles($assets)
-        {
-        }
-        /**
-         * LeanDash Sidebar
-         *
-         * @since 1.3.0
-         * @param string $layout Layout type.
-         * @return string $layout Layout type.
-         */
-        public function sidebar_layout($layout)
-        {
-        }
-        /**
-         * LeanDash Container
-         *
-         * @since 1.3.0
-         * @param string $layout Layout type.
-         * @return string $layout Layout type.
-         */
-        public function content_layout($layout)
-        {
-        }
-        /**
-         * LearnDash Static CSS.
-         *
-         * @since 3.3.0
-         * @return string
-         */
-        public static function ld_static_css()
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Customizer_Register_Learndash_Section extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Panels and Sections for Customizer.
+         * Register LifterLMS Container Settings.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.2.0
-         * @since 1.4.6 Chnaged to using Astra_Customizer API
+         * @since 1.4.3
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -5866,44 +172,10 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Learndash_Container_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Liferlms_Section_Configs extends \Astra_Customizer_Config_Base
     {
         /**
          * Register LearnDash Container settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Learndash_Sidebar_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register LearnDash Sidebar settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Learndash_General_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register LearnDash General Layout settings.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -5921,12 +193,6 @@ namespace {
      */
     class Astra_LifterLMS
     {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
         /**
          * Initiator
          */
@@ -6096,35 +362,16 @@ namespace {
         }
     }
     /**
-     * Customizer Sanitizes Initial setup
+     * Customizer WooCommerece store notice - customizer config initial setup.
      */
-    class Astra_Liferlms_Section_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Woo_Store_Notice_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Register LearnDash Container settings.
+         * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     *
-     * @since 1.4.3
-     */
-    class Astra_Lifter_Container_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register LifterLMS Container Settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
+         * @since 3.9.0
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -6134,10 +381,10 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Lifter_Sidebar_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Woo_Shop_Container_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Register Astra-LifterLMS Sidebar Customizer Configurations.
+         * Register Astra-WooCommerce Shop Container Settings.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -6151,10 +398,95 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Lifter_General_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Woo_Shop_Layout_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Register Astra-LifterLMS General Customizer Configurations.
+         * Register Astra-WooCommerce Shop Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Woo_Shop_Cart_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Woo_Shop_Misc_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-WooCommerce Misc Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.9.2
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Woo_Shop_Single_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-WooCommerce Shop Single Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Woo_Shop_Sidebar_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-WooCommerce Shop Sidebar Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Customizer_Register_Woo_Section extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Panels and Sections for Customizer.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -6172,12 +504,6 @@ namespace {
      */
     class Astra_Woocommerce
     {
-        /**
-         * Member Variable
-         *
-         * @var object instance
-         */
-        private static $instance;
         /**
          * Initiator
          */
@@ -6757,154 +1083,43 @@ namespace {
         }
     }
     /**
-     * Customizer Sanitizes Initial setup
+     * Yoast SEO Compatibility File.
+     *
+     * @package Astra
      */
-    class Astra_Customizer_Register_Woo_Section extends \Astra_Customizer_Config_Base
+    /**
+     * Astra Yoast SEO Compatibility
+     *
+     * @since 2.1.2
+     */
+    class Astra_Yoast_SEO
     {
         /**
-         * Register Panels and Sections for Customizer.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
+         * Constructor
          */
-        public function register_configuration($configurations, $wp_customize)
+        public function __construct()
+        {
+        }
+        /**
+         * Exclude One Content Type From Yoast SEO Sitemap
+         *
+         * @param  string $value value.
+         * @param  string $post_type Post Type.
+         * @since 2.1.2
+         */
+        public function sitemap_exclude_post_type($value, $post_type)
         {
         }
     }
     /**
-     * Customizer Sanitizes Initial setup
+     * Astra LearnDash Compatibility
+     *
+     * @since 1.3.0
      */
-    class Astra_Woo_Shop_Container_Configs extends \Astra_Customizer_Config_Base
+    class Astra_LearnDash
     {
         /**
-         * Register Astra-WooCommerce Shop Container Settings.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Woo_Shop_Sidebar_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Shop Sidebar Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer WooCommerece store notice - customizer config initial setup.
-     */
-    class Astra_Woo_Store_Notice_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.9.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Woo_Shop_Cart_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Woo_Shop_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Shop Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Woo_Shop_Misc_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Misc Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.9.2
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Woo_Shop_Single_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra-WooCommerce Shop Single Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Admin.
-     */
-    final class Astra_Builder_Admin
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         *  Initiator
+         * Initiator
          */
         public static function get_instance()
         {
@@ -6916,27 +1131,2413 @@ namespace {
         {
         }
         /**
-         * Update Customizer Header Footer quick links from options page.
+         * Enqueue styles
          *
-         * @since 3.0.0
-         * @param array $args default Header Footer quick links.
-         * @return array updated Header Footer quick links.
+         * @param  String $dynamic_css          Astra Dynamic CSS.
+         * @param  String $dynamic_css_filtered Astra Dynamic CSS Filters.
+         * @since 1.3.0
+         * @return String Dynamic CSS.
          */
-        public function update_customizer_header_footer_link($args)
+        public function add_dynamic_styles($dynamic_css, $dynamic_css_filtered = '')
         {
         }
         /**
-         * Migrate to New Header Builder
+         * Register Customizer sections and panel for learndash.
+         *
+         * @since 1.3.0
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
          */
-        public function migrate_to_builder()
+        public function customize_register($wp_customize)
         {
         }
         /**
-         * Disable pro upgrade notice from all over in Astra.
+         * Theme Defaults.
+         *
+         * @since 1.3.0
+         * @param array $defaults Array of options value.
+         * @return array
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @since 1.3.0
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         */
+        public function add_styles($assets)
+        {
+        }
+        /**
+         * LeanDash Sidebar
+         *
+         * @since 1.3.0
+         * @param string $layout Layout type.
+         * @return string $layout Layout type.
+         */
+        public function sidebar_layout($layout)
+        {
+        }
+        /**
+         * LeanDash Container
+         *
+         * @since 1.3.0
+         * @param string $layout Layout type.
+         * @return string $layout Layout type.
+         */
+        public function content_layout($layout)
+        {
+        }
+        /**
+         * LearnDash Static CSS.
+         *
+         * @since 3.3.0
+         * @return string
+         */
+        public static function ld_static_css()
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Learndash_General_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register LearnDash General Layout settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Learndash_Sidebar_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register LearnDash Sidebar settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Learndash_Container_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register LearnDash Container settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Customizer_Register_Learndash_Section extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Panels and Sections for Customizer.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.2.0
+         * @since 1.4.6 Chnaged to using Astra_Customizer API
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Astra Jetpack Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Jetpack
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add theme support for Infinite Scroll.
+         * See: https://jetpack.me/support/infinite-scroll/
+         */
+        public function jetpack_setup()
+        {
+        }
+        // end function jetpack_setup
+        /**
+         * Custom render function for Infinite Scroll.
+         */
+        public function infinite_scroll_render()
+        {
+        }
+        // end function infinite_scroll_render
+    }
+    /**
+     * Astra BNE Flyout Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_BNE_Flyout
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 1.0.0
+         */
+        public function add_styles($assets)
+        {
+        }
+    }
+    /**
+     * Astra Visual Composer Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Visual_Composer
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * VC Updated meta settings
+         *
+         * @since 1.0.13
+         * @param int $id Post id.
+         * @return void
+         */
+        public function vc_update_meta_setting($id)
+        {
+        }
+        /**
+         * Set frontend default setting.
+         *
+         * @since 1.0.13
+         * @return void
+         */
+        public function vc_frontend_default_setting()
+        {
+        }
+        /**
+         * Set default setting.
+         *
+         * @since 1.0.13
+         * @return void
+         */
+        public function vc_default_setting()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 3.5.0
+         */
+        public function add_styles($assets)
+        {
+        }
+    }
+    /**
+     * Astra Site Origin Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Site_Origin
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 1.0.0
+         */
+        public function add_styles($assets)
+        {
+        }
+    }
+    /**
+     * Class Astra_AMP
+     */
+    class Astra_AMP
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Init Astra Amp Compatibility.
+         * This adds required actions and filters only if AMP endpoinnt is detected.
+         *
+         * @since 1.7.0
+         * @return void
+         */
+        public function astra_amp_init()
+        {
+        }
+        /**
+         * Add ID to body to toggleClasses on AMP actions.
+         *
+         * @since 1.7.0
+         * @param String $schema markup returned from theme.
+         * @return String
+         */
+        public function body_id($schema)
+        {
+        }
+        /**
+         * Dynamic CSS used for AMP pages.
+         * This should be changed to main CSS in next versions, replacing JavaScript based interactions with pure CSS alternatives.
+         *
+         * @since 1.7.0
+         * @param String $compiled_css Dynamic CSS received to  be enqueued on page.
+         *
+         * @return String Updated dynamic CSS with AMP specific changes.
+         */
+        public function dynamic_css($compiled_css)
+        {
+        }
+        /**
+         * Add AMP attributes to the nav menu wrapper.
+         *
+         * @since 1.7.0
+         * @param Array $attr HTML attributes to be added to the nav menu wrapper.
+         *
+         * @return Array updated HTML attributes.
+         */
+        public function nav_menu_wrapper($attr)
+        {
+        }
+        /**
+         * Set AMP State for eeach sub menu toggle.
+         *
+         * @since 1.7.0
+         * @param String  $item_output HTML markup for the menu item.
+         * @param  WP_Post $item Post object for the navigation menu.
+         *
+         * @return String HTML MArkup for the menu including the AML State.
+         */
+        public function toggle_button_markup($item_output, $item)
+        {
+        }
+        /**
+         * Add AMP attribites to the toggle button to add `.ast-submenu-expanded` class to parent li.
+         *
+         * @since 1.7.0
+         * @param array  $attr Optional. Extra attributes to merge with defaults.
+         * @param string $context    The context, to build filter name.
+         * @param array  $args       Optional. Custom data to pass to filter.
+         *
+         * @return Array updated HTML attributes.
+         */
+        public function menu_toggle_button($attr, $context, $args)
+        {
+        }
+        /**
+         * Add amp states to the dom.
+         */
+        public function render_amp_states()
+        {
+        }
+        /**
+         * Add search slide data attributes.
+         *
+         * @param string $input the data attrs already existing in the nav.
+         *
+         * @return string
+         */
+        public function add_search_slide_toggle_attrs($input)
+        {
+        }
+        /**
+         * Add search slide data attributes.
+         *
+         * @param string $input the data attrs already existing in the nav.
+         *
+         * @return string
+         */
+        public function add_search_field_toggle_attrs($input)
+        {
+        }
+        /**
+         * Add the nav toggle data attributes.
+         *
+         * @param string $input the data attrs already existing in nav toggle.
+         *
+         * @return string
+         */
+        public function add_nav_toggle_attrs($input)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Edd_Single_Product_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-Easy Digital Downloads Shop Cart Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.5.5
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Edd_Archive_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-Easy Digital Downloads Shop Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.5.5
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Edd_Container_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-Easy Digital Downloads Shop Container Settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.5.5
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Edd_Sidebar_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Easy Digital Downloads Sidebar Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.5.5
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Customizer_Register_Edd_Section extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Panels and Sections for Customizer.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.5.5
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Astra Easy Digital Downloads Compatibility
+     *
+     * @since 1.5.5
+     */
+    class Astra_Edd
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Header Cart Extra Icons markup
+         *
+         * @return void;
+         */
+        public function header_cart_icon_markup()
+        {
+        }
+        /**
+         * Header Cart Icon Class
+         *
+         * @param array $classes Default argument array.
+         *
+         * @return array;
+         */
+        public function header_cart_icon_class($classes)
+        {
+        }
+        /**
+         * Disable EDD style only for the first time
+         *
+         * @return void
+         */
+        public function edd_set_defaults_initialization()
+        {
+        }
+        /**
+         * Single Product Navigation
+         *
+         * @param array $args single products navigation arguments.
+         *
+         * @return array $args single products navigation arguments.
+         */
+        public function edd_single_post_navigation($args)
+        {
+        }
+        /**
+         * EDD Initialization
+         *
+         * @return void
+         */
+        public function edd_initialization()
+        {
+        }
+        /**
+         * Add wrapper for edd archive pages
+         *
+         * @return void
+         */
+        public function astra_edd_templat_part_wrap_open()
+        {
+        }
+        /**
+         * Add end of wrapper for edd archive pages
+         */
+        public function astra_edd_templat_part_wrap_close()
+        {
+        }
+        /**
+         * Edd Single Product template
+         */
+        public function edd_single_template()
+        {
+        }
+        /**
+         * Add Cart icon markup
+         *
+         * @param Array $options header options array.
+         *
+         * @return Array header options array.
+         * @since 1.5.5
+         */
+        public function header_section_elements($options)
+        {
+        }
+        /**
+         * Add wrapper to the edd archive content template
+         *
+         * @return void
+         */
+        public function edd_content_loop()
+        {
+        }
+        /**
+         * Remove theme post's default classes when EDD archive.
+         *
+         * @param  array $classes Post Classes.
+         * @return array
+         * @since  1.5.5
+         */
+        public function render_post_class($classes)
+        {
+        }
+        /**
+         * Add Cart icon markup
+         *
+         * @param String $output Markup.
+         * @param String $section Section name.
+         * @param String $section_type Section selected option.
+         * @return Markup String.
+         *
+         * @since 1.5.5
+         */
+        public function astra_header_cart($output, $section, $section_type)
+        {
+        }
+        /**
+         * Easy Digital DOwnloads mini cart markup markup
+         *
+         * @since 1.5.5
+         * @return html
+         */
+        public function edd_mini_cart_markup()
+        {
+        }
+        /**
+         * Cart Link
+         * Displayed a link to the cart including the number of items present and the cart total
+         *
+         * @return void
+         * @since  1.5.5
+         */
+        public function astra_get_edd_cart()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 1.5.5
+         */
+        public function add_styles($assets)
+        {
+        }
+        /**
+         * Add inline style
+         *
+         * @since 1.5.5
+         */
+        public function add_inline_scripts()
+        {
+        }
+        /**
+         * Dynamic CSS
+         *
+         * @param  string $dynamic_css          Astra Dynamic CSS.
+         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+         * @since 1.5.5
+         * @return string $dynamic_css
+         */
+        public function add_inline_styles($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+        /**
+         * Theme Defaults.
+         *
+         * @param array $defaults Array of options value.
+         * @return array
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Add products item class to the body
+         *
+         * @param Array $classes product classes.
+         *
+         * @return array.
+         */
+        public function edd_products_item_class($classes = '')
+        {
+        }
+        /**
+         * Add class on single product page
+         *
+         * @param Array $classes product classes.
+         *
+         * @return array.
+         */
+        public function edd_single_product_class($classes)
+        {
+        }
+        /**
+         * Store widgets init.
+         */
+        public function store_widgets_init()
+        {
+        }
+        /**
+         * Assign shop sidebar for store page.
+         *
+         * @param String $sidebar Sidebar.
+         *
+         * @return String $sidebar Sidebar.
+         */
+        public function replace_store_sidebar($sidebar)
+        {
+        }
+        /**
+         * Easy Digital Downloads Container
+         *
+         * @param String $sidebar_layout Layout type.
+         *
+         * @return String $sidebar_layout Layout type.
+         */
+        public function store_sidebar_layout($sidebar_layout)
+        {
+        }
+        /**
+         * Easy Digital Downloads Container
+         *
+         * @param String $layout Layout type.
+         *
+         * @return String $layout Layout type.
+         */
+        public function store_content_layout($layout)
+        {
+        }
+        /**
+         * Register Customizer sections and panel for Easy Digital Downloads.
+         *
+         * @since 1.5.5
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         */
+        public function customize_register($wp_customize)
+        {
+        }
+    }
+}
+namespace Elementor {
+    /**
+     * Astra Elementor Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Elementor
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Astra post layout 2 disable compatibility.
+         *
+         * @param array $classes Array of elementor edit mode check.
+         *
+         * @since 4.1.0
+         */
+        function astra_entry_header_class_custom($classes)
+        {
+        }
+        /**
+         * Compatibility CSS for Elementor Headings after Elementor-v2.9.9
+         *
+         * In v2.9.9 Elementor has removed [ .elementor-widget-heading .elementor-heading-title { margin: 0 } ] this CSS.
+         * Again in v2.9.10 Elementor added this as .elementor-heading-title { margin: 0 } but still our [ .entry-content heading { margin-bottom: 20px } ] CSS overrding their fix.
+         *
+         * That's why adding this CSS fix to headings by setting bottom-margin to 0.
+         *
+         * @param  string $dynamic_css Astra Dynamic CSS.
+         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+         * @return string $dynamic_css Generated CSS.
+         *
+         * @since  2.4.5
+         */
+        public function enqueue_elementor_compatibility_styles($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+        /**
+         * Elementor Content layout set as Page Builder
+         *
+         * @return void
+         * @since  1.0.2
+         */
+        public function elementor_default_setting()
+        {
+        }
+        /**
+         * Add z-index CSS for elementor's drag drop
+         *
+         * @return void
+         * @since  1.4.0
+         */
+        public function elementor_overlay_zindex()
+        {
+        }
+        /**
+         * Check is elementor activated.
+         *
+         * @param int $id Post/Page Id.
+         * @return boolean
+         */
+        public function is_elementor_activated($id)
+        {
+        }
+        /**
+         * Display theme global colors to Elementor Global colors
+         *
+         * @since 3.7.0
+         * @param object          $response rest request response.
+         * @param array           $handler Route handler used for the request.
+         * @param WP_REST_Request $request Request used to generate the response.
+         * @return object
+         */
+        public function elementor_add_theme_colors($response, $handler, $request)
+        {
+        }
+        /**
+         * Display global paltte colors on Elementor front end Page.
+         *
+         * @since 3.7.0
+         * @param object          $response rest request response.
+         * @param array           $handler Route handler used for the request.
+         * @param WP_REST_Request $request Request used to generate the response.
+         * @return object
+         */
+        public function display_global_colors_front_end($response, $handler, $request)
+        {
+        }
+        /**
+         * Generate CSS variable style for Elementor.
+         *
+         * @since 3.7.0
+         * @param string $dynamic_css Dynamic CSS.
+         * @return object
+         */
+        public function generate_global_elementor_style($dynamic_css)
+        {
+        }
+        /**
+         * Load style inside Elementor editor.
+         *
+         * @since 3.7.0
+         * @return void
+         */
+        public function elementor_add_scripts()
+        {
+        }
+    }
+}
+namespace ElementorPro\Modules\ThemeBuilder\ThemeSupport {
+    /**
+     * Astra Elementor Compatibility
+     *
+     * @since 1.2.7
+     */
+    class Astra_Elementor_Pro
+    {
+        /**
+         * Initiator
+         *
+         * @since 1.2.7
+         * @return object Class object.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since 1.2.7
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Append Elementor preview status.
+         *
+         * @param Array $localize_data
+         *
+         * @since 4.1.6
+         * @return Array
+         */
+        public function astra_shop_add_to_cart_js_localize($localize_data)
+        {
+        }
+        /**
+         * Check if Elementor Editor is open.
+         *
+         * @since  3.8.0
+         *
+         * @return boolean true iF Elementor Editor is loaded, false If Elementor Editor is not loaded.
+         */
+        public function is_elementor_editor()
+        {
+        }
+        /**
+         * Remove actions of WooCommerce for shipping form fields, as it needs only in 'col-1'.
+         *
+         * Case: Theme's 'woocommerce_checkout' action conflicting with Elementor Pro's checkout widget. On frontend billing + shipping details wrapper comes under col-1 div because of theme's above action. But in Elementor editor, billing + shipping wrappers comes in two different cols, i.e. col-1 & col-2. Due to this, styling looks inappropriate in editor only.
+         *
+         * @since 3.8.0
+         * @return void
+         */
+        public function update_woocommerce_checkout()
+        {
+        }
+        /**
+         * Compatibility CSS for Elementor Pro's WooCommerce widgets releasing in their v3.6.0
+         *
+         * @param  string $css_output CSS stylesheet.
+         * @return string $css_output CSS stylesheet.
+         *
+         * @since  3.7.5
+         */
+        public function elementor_wc_widgets_compatibility_styles($css_output)
+        {
+        }
+        /**
+         * Register Locations
+         *
+         * @since 1.2.7
+         * @param object $manager Location manager.
+         * @return void
+         */
+        public function register_locations($manager)
+        {
+        }
+        /**
+         * Template Parts Support
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function do_template_parts()
+        {
+        }
+        /**
+         * Override 404 page
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function do_template_part_404()
+        {
+        }
+        /**
+         * Override sidebar, title etc with post meta
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function override_meta()
+        {
+        }
+        /**
+         * Override sidebar, title etc with post meta
+         *
+         * @since 1.2.7
+         * @param  integer $post_id  Post ID.
+         * @return void
+         */
+        public function override_with_post_meta($post_id = 0)
+        {
+        }
+        /**
+         * Header Support
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function do_header()
+        {
+        }
+        /**
+         * Footer Support
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function do_footer()
+        {
+        }
+        /**
+         * Remove theme post's default classes when Elementor's template builder is activated.
+         *
+         * @param  array $classes Post Classes.
+         * @return array
+         * @since  1.4.9
+         */
+        public function render_post_class($classes)
+        {
+        }
+    }
+}
+namespace {
+    /**
+     * Astra Beaver Themer Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Beaver_Themer
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Builder Template Content layout set as Full Width / Stretched
+         *
+         * @param  string $layout Content Layout.
+         * @return string
+         * @since  1.0.2
+         */
+        public function builder_template_content_layout($layout)
+        {
+        }
+        /**
+         * Remove theme post's default classes
+         *
+         * @param  array $classes Post Classes.
+         * @return array
+         * @since  1.0.2
+         */
+        public function render_post_class($classes)
+        {
+        }
+        /**
+         * Function to add Theme Support
+         *
+         * @since 1.0.0
+         */
+        public function header_footer_support()
+        {
+        }
+        /**
+         * Function to update Atra header/footer with Beaver template
+         *
+         * @since 1.0.0
+         */
+        public function theme_header_footer_render()
+        {
+        }
+        /**
+         * Function to Astra theme parts
+         *
+         * @since 1.0.0
+         */
+        public function register_part_hooks()
+        {
+        }
+        /**
+         * Function to theme before render content
+         *
+         * @param int $post_id Post ID.
+         * @since 1.0.28
+         */
+        public function builder_before_render_content($post_id)
+        {
+        }
+        /**
+         * Function to theme after render content
+         *
+         * @param int $post_id Post ID.
+         * @since 1.0.28
+         */
+        public function builder_after_render_content($post_id)
+        {
+        }
+    }
+    /**
+     * Astra BB Ultimate Addon Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_BB_Ultimate_Addon
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Remove UABB Global Setting Option
+         */
+        public function remove_uabb_global_setting()
+        {
+        }
+        /**
+         * Theme Color
+         */
+        public function theme_color()
+        {
+        }
+        /**
+         * Text Color
+         */
+        public function text_color()
+        {
+        }
+        /**
+         * Link Color
+         */
+        public function link_color()
+        {
+        }
+        /**
+         * Link Hover Color
+         */
+        public function link_hover_color()
+        {
+        }
+        /**
+         * Button Font Family
+         */
+        public function button_font_family()
+        {
+        }
+        /**
+         * Button Font Size
+         */
+        public function button_font_size()
+        {
+        }
+        /**
+         * Button Line Height
+         */
+        public function button_line_height()
+        {
+        }
+        /**
+         * Default type : Button Font Size
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_font_size()
+        {
+        }
+        /**
+         * Default type : Button Line Height
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_line_height()
+        {
+        }
+        /**
+         * Button Letter Spacing
+         */
+        public function button_letter_spacing()
+        {
+        }
+        /**
+         * Default type : Button Letter Spacing
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_letter_spacing()
+        {
+        }
+        /**
+         * Button Text Transform
+         */
+        public function button_text_transform()
+        {
+        }
+        /**
+         * Default type : Button Text Transform
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_text_transform()
+        {
+        }
+        /**
+         * Button Text Color
+         */
+        public function button_text_color()
+        {
+        }
+        /**
+         * Default type : Button Text Color
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_text_color()
+        {
+        }
+        /**
+         * Button Text Hover Color
+         */
+        public function button_text_hover_color()
+        {
+        }
+        /**
+         * Default type : Button Text Hover Color
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_text_hover_color()
+        {
+        }
+        /**
+         * Button Background Color
+         */
+        public function button_bg_color()
+        {
+        }
+        /**
+         * Default type : Button Background Color
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_bg_color()
+        {
+        }
+        /**
+         * Button Background Color
+         */
+        public function button_bg_hover_color()
+        {
+        }
+        /**
+         * Default type : Button Background Color
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_bg_hover_color()
+        {
+        }
+        /**
+         * Button Border Radius
+         */
+        public function button_border_radius()
+        {
+        }
+        /**
+         * Button Padding
+         */
+        public function button_padding()
+        {
+        }
+        /**
+         * Default type : Button Padding
+         *
+         * @since 2.2.0
+         */
+        public function default_type_button_padding()
+        {
+        }
+        /**
+         * Button Border Width
+         */
+        public function button_border_width()
+        {
+        }
+        /**
+         * Button Border Color
+         */
+        public function button_border_color()
+        {
+        }
+        /**
+         * Button Border Hover Color
+         */
+        public function button_border_hover_color()
+        {
+        }
+        /**
+         * Button Vertical Padding.
+         *
+         * @deprecated 2.2.0
+         */
+        public function button_vertical_padding()
+        {
+        }
+        /**
+         * Button Horizontal Padding.
+         *
+         * @deprecated 2.2.0
+         */
+        public function button_horizontal_padding()
+        {
+        }
+    }
+    /**
+     * Astra Beaver Builder Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Beaver_Builder
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Disable Astra's block editor attr which applied for further block layout CSS.
+         *
+         * @param bool $flag Flag to enable/disable entry content attr.
+         * @param int  $post_id Post ID.
+         *
+         * @since  3.8.1
+         * @return bool true|false
+         */
+        public function remove_astra_block_editor_attr($flag, $post_id)
+        {
+        }
+        /**
+         * Builder Template Content layout set as Full Width / Stretched
+         *
+         * @since  1.0.13
+         * @return void
+         */
+        public function beaver_builder_default_setting()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 3.5.0
+         */
+        public function add_styles($assets)
+        {
+        }
+    }
+    /**
+     * Starter Content Compatibility.
+     *
+     * @since 4.0.0
+     * @package Astra
+     */
+    /**
+     * Class Astre_Starter_Content
+     */
+    class Astra_Starter_Content
+    {
+        const HOME_SLUG = 'home';
+        const ABOUT_SLUG = '#about';
+        const SERVICES_SLUG = '#services';
+        const REVIEWS_SLUG = '#reviews';
+        const WHY_US_SLUG = '#whyus';
+        const CONTACT_SLUG = '#contact';
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Load default starter meta.
+         *
+         * @since 4.0.2
+         * @param mixed  $value Value.
+         * @param int    $post_id Post id.
+         * @param string $meta_key Meta key.
+         *
+         * @return string Meta value.
+         */
+        public function starter_meta($value, $post_id, $meta_key)
+        {
+        }
+        /**
+         * Register listener to insert post.
+         *
+         * @since 4.0.0
+         * @param int      $post_ID Post Id.
+         * @param \WP_Post $post Post object.
+         * @param bool     $update Is update.
+         */
+        public function register_listener($post_ID, $post, $update)
+        {
+        }
+        /**
+         *  Get customizer json
+         *
+         * @since 4.0.0
+         *  @return mixed value.
+         */
+        public function get_customizer_json()
+        {
+        }
+        /**
+         *  Save Astra customizer settings into database.
+         *
+         * @since 4.0.0
+         */
+        public function save_astra_settings()
+        {
+        }
+        /**
+         * Load default astra settings.
+         *
+         * @since 4.0.0
+         * @param mixed $defaults defaults.
+         * @return mixed value.
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Load default color palettes.
+         *
+         * @since 4.0.0
+         * @param mixed $defaults defaults.
+         * @return mixed value.
+         */
+        public function theme_color_palettes_defaults($defaults)
+        {
+        }
+        /**
+         * Return starter content definition.
+         *
+         * @return mixed|void
+         * @since 4.0.0
+         */
+        public function get()
+        {
+        }
+    }
+    /**
+     * Astra Web_Stories Compatibility
+     *
+     * @since 3.2.0
+     */
+    class Astra_Web_Stories
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.2.0
+         * @return void
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add theme support for Web Stories.
+         *
+         * @since 3.2.0
+         * @return void
+         */
+        public function web_stories_setup()
+        {
+        }
+        /**
+         * Custom render function for Web Stories Embedding.
+         *
+         * @since 3.2.0
+         * @return void
+         */
+        public function web_stories_embed()
+        {
+        }
+        /**
+         * Add dynamic CSS for the webstories.
+         *
+         * @since 3.2.0
+         *
+         * @param  string $dynamic_css          Astra Dynamic CSS.
+         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+         *
+         * @return String Generated dynamic CSS for Heading Colors.
+         */
+        public function web_stories_css($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+    }
+    /**
+     * Astra Ubermenu Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Ubermeu
+    {
+        /**
+         * Initiator
+         *
+         * @since  1.1.7
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since  1.1.7
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Disable the Mobile Menu toggles from Astra if Uber Menu is used.
+         *
+         * @since  1.1.7
+         * @param  bool $status Status if the mobile menu toggels are enaled or disaled.
+         * @return bool         False If ubermenu is configured on this location. Unchanged if it is not configured.
+         */
+        public function disable_primary_menu_toggle($status)
+        {
+        }
+    }
+    /**
+     * Astra Gravity Forms
+     *
+     * @since 1.0.0
+     */
+    class Astra_Gravity_Forms
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @since 1.0.0
+         */
+        public function add_styles()
+        {
+        }
+    }
+    /**
+     * Astra Divi Builder
+     *
+     * @since 1.4.0
+     */
+    class Astra_Divi_Builder
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @param array $assets list of theme assets (JS & CSS).
+         * @return array List of updated assets.
+         * @since 1.4.0
+         */
+        public function add_styles($assets)
+        {
+        }
+    }
+    /**
+     * Astra Contact Form 7 Compatibility
+     *
+     * @since 1.0.0
+     */
+    class Astra_Contact_Form_7
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add assets in theme
+         *
+         * @since 1.0.0
+         */
+        public function add_styles()
+        {
+        }
+    }
+    /**
+     * Admin Helper
+     */
+    final class Astra_Admin_Helper
+    {
+        /**
+         * Returns an option from the database for
+         * the admin settings page.
+         *
+         * @param  string  $key     The option key.
+         * @param  boolean $network Whether to allow the network admin setting to be overridden on subsites.
+         * @return string           Return the option value
+         */
+        public static function get_admin_settings_option($key, $network = \false)
+        {
+        }
+        /**
+         * Updates an option from the admin settings page.
+         *
+         * @param string $key       The option key.
+         * @param mixed  $value     The value to update.
+         * @param bool   $network   Whether to allow the network admin setting to be overridden on subsites.
+         * @return mixed
+         */
+        public static function update_admin_settings_option($key, $value, $network = \false)
+        {
+        }
+        /**
+         * Returns an option from the database for
+         * the admin settings page.
+         *
+         * @param string $key The option key.
+         * @param bool   $network Whether to allow the network admin setting to be overridden on subsites.
+         * @return mixed
+         */
+        public static function delete_admin_settings_option($key, $network = \false)
+        {
+        }
+    }
+    /**
+     * Astra Admin Settings
+     */
+    class Astra_Admin_Settings
+    {
+        /**
+         * Current Slug
+         *
+         * @since 1.0
+         * @var array $current_slug
+         */
+        public static $current_slug = 'general';
+        /**
+         * Starter Templates Slug
+         *
+         * @since 2.3.2
+         * @var array $starter_templates_slug
+         */
+        public static $starter_templates_slug = 'astra-sites';
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Admin settings init
+         */
+        public static function init_admin_settings()
+        {
+        }
+        /**
+         * Add custom megamenu fields data to the menu.
+         *
+         * @access public
+         * @param int    $id menu item id.
+         * @param object $item A single menu item.
+         * @param int    $depth menu item depth.
+         * @param array  $args menu item arguments.
+         * @return void
          *
          * @since 3.9.4
          */
-        public function disable_astra_pro_notices()
+        public static function add_custom_fields($id, $item, $depth, $args)
+        {
+        }
+        /**
+         * Get register & enqueue astra-admin scripts.
+         *
+         * @since 3.6.6
+         */
+        public static function load_astra_admin_script()
+        {
+        }
+        /**
+         * Ask Theme Rating
+         *
+         * @since 1.4.0
+         */
+        public static function register_notices()
+        {
+        }
+        /**
+         * Upgrade to Pro notice for Astra on WooCommerce pages.
+         *
+         * @since 3.9.4
+         */
+        public static function upgrade_to_pro_wc_notice()
+        {
+        }
+        /**
+         * Display notice for minimun version for Astra addon.
+         *
+         * @since 2.0.0
+         */
+        public static function minimum_addon_version_notice()
+        {
+        }
+        /**
+         * Get minimum supported version for Astra addon.
+         * This function will be used to inform the user about incompatible version of Astra addon.
+         *
+         * @param string $input_version Input version of the addon.
+         *
+         * @since 4.3.0
+         */
+        public static function get_astra_addon_min_supported_version($input_version)
+        {
+        }
+        /**
+         * This constant will be used to inform the user about incompatible version of Astra addon.
+         *
+         * @since 4.3.0
+         */
+        public static function minimum_addon_supported_version_notice()
+        {
+        }
+        /**
+         * Enqueue Astra Notices CSS.
+         *
+         * @since 2.0.0
+         *
+         * @return void
+         */
+        public static function notice_assets()
+        {
+        }
+        /**
+         * Render button for Astra Site notices
+         *
+         * @since 1.6.5
+         * @return array $ast_sites_notice_btn Rendered button
+         */
+        public static function astra_sites_notice_button()
+        {
+        }
+        /**
+         * Check if installed Starter Sites plugin is new.
+         *
+         * @since 2.3.2
+         */
+        public static function get_starter_templates_slug()
+        {
+        }
+        /**
+         * Load the scripts and styles in the customizer controls.
+         *
+         * @since 1.2.1
+         */
+        public static function customizer_scripts()
+        {
+        }
+        /**
+         * Register admin scripts.
+         *
+         * @param String $hook Screen name where the hook is fired.
+         * @return void
+         */
+        public static function register_scripts($hook)
+        {
+        }
+        /**
+         * Get and return page URL
+         *
+         * @param string $menu_slug Menu name.
+         * @since 1.0
+         * @return  string page url
+         */
+        public static function get_page_url($menu_slug)
+        {
+        }
+    }
+    /**
+     * Astra custom navigation walker.
+     *
+     * @since 1.5.4
+     */
+    class Astra_Walker_Page extends \Walker_Page
+    {
+        /**
+         * Outputs the beginning of the current level in the tree before elements are output.
+         *
+         * @since 1.5.4
+         *
+         * @see Walker::start_lvl()
+         *
+         * @param string $output Used to append additional content (passed by reference).
+         * @param int    $depth  Optional. Depth of page. Used for padding. Default 0.
+         * @param array  $args   Optional. Arguments for outputting the next level.
+         *                       Default empty array.
+         */
+        public function start_lvl(&$output, $depth = 0, $args = array())
+        {
+        }
+        /**
+         * Outputs the beginning of the current element in the tree.
+         *
+         * @see Walker::start_el()
+         * @since 1.7.2
+         *
+         * @param string  $output       Used to append additional content. Passed by reference.
+         * @param WP_Post $page         Page data object.
+         * @param int     $depth        Optional. Depth of page. Used for padding. Default 0.
+         * @param array   $args         Optional. Array of arguments. Default empty array.
+         * @param int     $current_page Optional. Page ID. Default 0.
+         */
+        public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0)
+        {
+        }
+    }
+    /**
+     * Icons for Astra theme.
+     *
+     * @package     Astra
+     * @author      Brainstorm Force
+     * @copyright   Copyright (c) 2020, Brainstorm Force
+     * @link        https://www.brainstormforce.com
+     * @since       Astra 3.3.0
+     */
+    /**
+     * Icons Initial Setup
+     *
+     * @since 3.3.0
+     */
+    class Astra_Icons
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Check if we need to load icons as SVG or fonts.
+         * Returns true if SVG false if font.
+         *
+         * @since 3.3.0
+         *
+         * @return boolean should be svg or font.
+         */
+        public static function is_svg_icons()
+        {
+        }
+        /**
+         * Get SVG icons.
+         * Returns the SVG icon you want to display.
+         *
+         * @since 3.3.0
+         *
+         * @param string  $icon Key for the SVG you want to load.
+         * @param boolean $is_echo whether to echo the output or return.
+         * @param boolean $replace load close markup for SVG.
+         * @param string  $menu_location Creates dynamic filter for passed parameter.
+         *
+         * @return string SVG for passed key.
+         */
+        public static function get_icons($icon, $is_echo = \false, $replace = \false, $menu_location = 'main')
+        {
+        }
+    }
+    /**
+     * Theme Options
+     */
+    class Astra_Theme_Options
+    {
+        /**
+         * Post id.
+         *
+         * @var $instance Post id.
+         */
+        public static $post_id = \null;
+        /**
+         * A static theme astra-options variable.
+         *
+         * @since 4.0.2
+         * @access public
+         * @var mixed $astra_options
+         */
+        public static $astra_options = \null;
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Set default theme option values
+         *
+         * @since 1.0.0
+         * @return default values of the theme.
+         */
+        public static function defaults()
+        {
+        }
+        /**
+         * Get astra-options DB values.
+         *
+         * @return array Return array of theme options from database.
+         *
+         * @since 4.0.0
+         */
+        public static function get_astra_options()
+        {
+        }
+        /**
+         * Get theme options from static array()
+         *
+         * @return array    Return array of theme options.
+         */
+        public static function get_options()
+        {
+        }
+        /**
+         * Update theme static option array.
+         */
+        public static function refresh()
+        {
+        }
+        /**
+         * Get theme options from static array() from database
+         *
+         * @return array    Return array of theme options from database.
+         */
+        public static function get_db_options()
+        {
+        }
+    }
+    /**
+     * Class Astra_Attr
+     */
+    class Astra_Attr
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Build list of attributes into a string and apply contextual filter on string.
+         *
+         * The contextual filter is of the form `astra_attr_{context}_output`.
+         *
+         * @since 1.6.2
+         *
+         * @param string $context    The context, to build filter name.
+         * @param array  $attributes Optional. Extra attributes to merge with defaults.
+         * @param array  $args       Optional. Custom data to pass to filter.
+         * @return string String of HTML attributes and values.
+         */
+        public function astra_attr($context, $attributes = array(), $args = array())
+        {
+        }
+        /**
+         * Merge array of attributes with defaults, and apply contextual filter on array.
+         *
+         * The contextual filter is of the form `astra_attr_{context}`.
+         *
+         * @since 1.6.2
+         *
+         * @param string $context    The context, to build filter name.
+         * @param array  $attributes Optional. Extra attributes to merge with defaults.
+         * @param array  $args       Optional. Custom data to pass to filter.
+         * @return array Merged and filtered attributes.
+         */
+        public function astra_parse_attr($context, $attributes = array(), $args = array())
+        {
+        }
+    }
+    /**
+     * Theme Enqueue Scripts
+     */
+    class Astra_Enqueue_Scripts
+    {
+        /**
+         * Class styles.
+         *
+         * @access public
+         * @var $styles Enqueued styles.
+         */
+        public static $styles;
+        /**
+         * Class scripts.
+         *
+         * @access public
+         * @var $scripts Enqueued scripts.
+         */
+        public static $scripts;
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Fix skip link focus in IE11.
+         *
+         * This does not enqueue the script because it is tiny and because it is only for IE11,
+         * thus it does not warrant having an entire dedicated blocking script being loaded.
+         *
+         * @link https://git.io/vWdr2
+         * @link https://github.com/WordPress/twentynineteen/pull/47/files
+         * @link https://github.com/ampproject/amphtml/issues/18671
+         */
+        public function astra_skip_link_focus_fix()
+        {
+        }
+        /**
+         * Admin body classes.
+         *
+         * Body classes to be added to <body> tag in admin page
+         *
+         * @param String $classes body classes returned from the filter.
+         * @return String body classes to be added to <body> tag in admin page
+         */
+        public function admin_body_class($classes)
+        {
+        }
+        /**
+         * List of all assets.
+         *
+         * @return array assets array.
+         */
+        public static function theme_assets()
+        {
+        }
+        /**
+         * Add Fonts
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Enqueue Scripts
+         */
+        public function enqueue_scripts()
+        {
+        }
+        /**
+         * Trim CSS
+         *
+         * @since 1.0.0
+         * @param string $css CSS content to trim.
+         * @return string
+         */
+        public static function trim_css($css = '')
+        {
+        }
+        /**
+         * Enqueue Gutenberg assets.
+         *
+         * @since 1.5.2
+         *
+         * @return void
+         */
+        public function gutenberg_assets()
+        {
+        }
+        /**
+         * Function to check if enqueuing of Astra assets are disabled.
+         *
+         * @since 2.1.0
+         * @return boolean
+         */
+        public static function enqueue_theme_assets()
+        {
+        }
+        /**
+         * Enqueue galleries relates CSS on gallery_style filter.
+         *
+         * @param string $gallery_style gallery style and div.
+         * @since 3.5.0
+         * @return string
+         */
+        public function enqueue_galleries_style($gallery_style)
+        {
+        }
+    }
+    /**
+     * Class Astra_Attr
+     */
+    class Astra_Markup
+    {
+        /**
+         * Initialuze the Class.
+         *
+         * @since 3.3.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Comment count wrapper opening div.
+         *
+         * @param array $args markup arguments.
+         * @since 3.3.0
+         * @return array.
+         */
+        public function comment_count_wrapper_open($args)
+        {
+        }
+        /**
+         * Comment count wrapper closing div.
+         *
+         * @param array $args markup arguments.
+         * @since 3.3.0
+         * @return array.
+         */
+        public function comment_count_wrapper_close($args)
+        {
+        }
+        /**
+         * Comment data wrapper opening div.
+         *
+         * @param array $args markup arguments.
+         * @since 3.3.0
+         * @return array.
+         */
+        public function ast_comment_data_wrap_open($args)
+        {
+        }
+        /**
+         * Comment data wrapper closing div.
+         *
+         * @param array $args markup arguments.
+         * @since 3.3.0
+         * @return array.
+         */
+        public function ast_comment_data_wrap_close($args)
+        {
+        }
+        /**
+         * Adds a responsive embed wrapper around oEmbed content
+         *
+         * @param  string $html The oEmbed markup.
+         * @param  string $url The URL being embedded.
+         * @param  array  $attr An array of attributes.
+		     * @param  bool   $core_yt_block Whether the oEmbed is being rendered by the core YouTube block.
+         */
+        public function responsive_oembed_wrapper($html, $url, $attr, $core_yt_block = false)
+        {
+        }
+        /**
+         * Comment meta wrapper closing div.
+         *
+         * @param array $args markup arguments.
+         * @since 3.3.0
+         * @return array.
+         */
+        public function ast_comment_meta_wrap_close($args)
+        {
+        }
+        /**
+         * Comment time div attributes.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_comment_time_attr()
+        {
+        }
+        /**
+         * Comment cite wrapper div attributes.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_comment_cite_wrap_attr()
+        {
+        }
+        /**
+         * We have removed grid css and make common css for grid style.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_grid_common_css()
+        {
+        }
+        /**
+         * Blog content Grid CSS.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_grid_blog_col()
+        {
+        }
+        /**
+         * We have removed grid css and make common css for grid style.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_blog_common_css()
+        {
+        }
+        /**
+         * Removed grid layout classes and make common class for same style.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_grid_col_6()
+        {
+        }
+        /**
+         * Comment form grid classes.
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function comment_form_grid_class()
+        {
+        }
+        /**
+         * Removed grid layout classes and make common class for same style
+         *
+         * @since 3.3.0
+         * @return string.
+         */
+        public function ast_grid_lg_12()
+        {
+        }
+        /**
+         * Layout-4 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_4_grid()
+        {
+        }
+        /**
+         * Layout-2 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_2_grid()
+        {
+        }
+        /**
+         * Layout-1 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_1_grid()
+        {
+        }
+        /**
+         * Layout-3 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_3_grid()
+        {
+        }
+        /**
+         * Layout-5 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_5_grid()
+        {
+        }
+        /**
+         * Layout-6 grid css backward comaptibility.
+         *
+         * @return string.
+         */
+        public function ast_layout_6_grid()
+        {
+        }
+        /**
+         * Footer widget opening div.
+         *
+         * @since 3.3.0
+         * @param array $args div attributes.
+         * @return array.
+         */
+        public function footer_widget_div_open($args)
+        {
+        }
+        /**
+         * Footer widget closing div.
+         *
+         * @since 3.3.0
+         * @param array $args div attributes.
+         * @return array.
+         */
+        public function footer_widget_div_close($args)
+        {
+        }
+        /**
+         * Footer widget inner class.
+         *
+         * @param array $args attributes.
+         * @since 3.3.0
+         * @return string.
+         */
+        public function footer_widget_area_inner($args)
+        {
+        }
+        /**
+         * Header widget inner class.
+         *
+         * @param array $args Attributes.
+         * @since 3.3.0
+         * @return string.
+         */
+        public function header_widget_area_inner($args)
+        {
+        }
+        /**
+         * Footer widget opening div.
+         *
+         * @since 3.3.0
+         * @param array $args div attributes.
+         * @return array.
+         */
+        public function header_widget_div_open($args)
+        {
+        }
+        /**
+         * Dynamic CSS to make Sidebar Sticky.
+         *
+         * @return string Sticky Sidebar CSS.
+         * @since x.x.x
+         */
+        public static function astra_sticky_sidebar_css()
+        {
+        }
+    }
+    /**
+     * New modern WP-Block editor experience.
+     */
+    class Astra_WP_Editor_CSS
+    {
+        /**
+         * Astra block editor block editor - padding preset CSS.
+         *
+         * @return array Devices specific padding spacings.
+         *
+         * @since 3.8.3
+         */
+        public static function astra_get_block_spacings()
+        {
+        }
+        /**
+         * Get dynamic CSS  required for the block editor to make editing experience similar to how it looks on frontend.
+         *
+         * @return String CSS to be loaded in the editor interface.
+         */
+        public static function get_css()
         {
         }
     }
@@ -7142,15 +3743,9 @@ namespace {
         /**
          * Member Variable
          *
-         * @var instance
+         * @var null instance
          */
         public static $loaded_grid = \null;
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
         /**
          * Member Variable
          *
@@ -7300,452 +3895,12 @@ namespace {
         }
     }
     /**
-     * Admin Helper
+     * Class Astra_Builder_Admin.
      */
-    final class Astra_Admin_Helper
+    final class Astra_Builder_Admin
     {
         /**
-         * Returns an option from the database for
-         * the admin settings page.
-         *
-         * @param  string  $key     The option key.
-         * @param  boolean $network Whether to allow the network admin setting to be overridden on subsites.
-         * @return string           Return the option value
-         */
-        public static function get_admin_settings_option($key, $network = \false)
-        {
-        }
-        /**
-         * Updates an option from the admin settings page.
-         *
-         * @param string $key       The option key.
-         * @param mixed  $value     The value to update.
-         * @param bool   $network   Whether to allow the network admin setting to be overridden on subsites.
-         * @return mixed
-         */
-        public static function update_admin_settings_option($key, $value, $network = \false)
-        {
-        }
-        /**
-         * Returns an option from the database for
-         * the admin settings page.
-         *
-         * @param string $key The option key.
-         * @param bool   $network Whether to allow the network admin setting to be overridden on subsites.
-         * @return mixed
-         */
-        public static function delete_admin_settings_option($key, $network = \false)
-        {
-        }
-    }
-    /**
-     * Astra Admin Settings
-     */
-    class Astra_Admin_Settings
-    {
-        /**
-         * Current Slug
-         *
-         * @since 1.0
-         * @var array $current_slug
-         */
-        public static $current_slug = 'general';
-        /**
-         * Starter Templates Slug
-         *
-         * @since 2.3.2
-         * @var array $starter_templates_slug
-         */
-        public static $starter_templates_slug = 'astra-sites';
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Admin settings init
-         */
-        public static function init_admin_settings()
-        {
-        }
-        /**
-         * Add custom megamenu fields data to the menu.
-         *
-         * @access public
-         * @param int    $id menu item id.
-         * @param object $item A single menu item.
-         * @param int    $depth menu item depth.
-         * @param array  $args menu item arguments.
-         * @return void
-         *
-         * @since 3.9.4
-         */
-        public static function add_custom_fields($id, $item, $depth, $args)
-        {
-        }
-        /**
-         * Get register & enqueue astra-admin scripts.
-         *
-         * @since 3.6.6
-         */
-        public static function load_astra_admin_script()
-        {
-        }
-        /**
-         * Ask Theme Rating
-         *
-         * @since 1.4.0
-         */
-        public static function register_notices()
-        {
-        }
-        /**
-         * Upgrade to Pro notice for Astra on WooCommerce pages.
-         *
-         * @since 3.9.4
-         */
-        public static function upgrade_to_pro_wc_notice()
-        {
-        }
-        /**
-         * Display notice for minimun version for Astra addon.
-         *
-         * @since 2.0.0
-         */
-        public static function minimum_addon_version_notice()
-        {
-        }
-        /**
-         * Enqueue Astra Notices CSS.
-         *
-         * @since 2.0.0
-         *
-         * @return void
-         */
-        public static function notice_assets()
-        {
-        }
-        /**
-         * Render button for Astra Site notices
-         *
-         * @since 1.6.5
-         * @return array $ast_sites_notice_btn Rendered button
-         */
-        public static function astra_sites_notice_button()
-        {
-        }
-        /**
-         * Check if installed Starter Sites plugin is new.
-         *
-         * @since 2.3.2
-         */
-        public static function get_starter_templates_slug()
-        {
-        }
-        /**
-         * Load the scripts and styles in the customizer controls.
-         *
-         * @since 1.2.1
-         */
-        public static function customizer_scripts()
-        {
-        }
-        /**
-         * Register admin scripts.
-         *
-         * @param String $hook Screen name where the hook is fired.
-         * @return void
-         */
-        public static function register_scripts($hook)
-        {
-        }
-        /**
-         * Add custom CSS for admin area sub menu icons.
-         *
-         * @since 2.5.4
-         */
-        public static function admin_submenu_css()
-        {
-        }
-        /**
-         * Get and return page URL
-         *
-         * @param string $menu_slug Menu name.
-         * @since 1.0
-         * @return  string page url
-         */
-        public static function get_page_url($menu_slug)
-        {
-        }
-    }
-    /**
-     * Class Astra_Attr
-     */
-    class Astra_Attr
-    {
-        /**
-         * Store Instance on Current Class.
-         *
-         * @var object instance
-         */
-        private static $instance;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Initialuze the Class.
-         *
-         * @since 1.6.2
-         */
-        private function __construct()
-        {
-        }
-        /**
-         * Build list of attributes into a string and apply contextual filter on string.
-         *
-         * The contextual filter is of the form `astra_attr_{context}_output`.
-         *
-         * @since 1.6.2
-         *
-         * @param string $context    The context, to build filter name.
-         * @param array  $attributes Optional. Extra attributes to merge with defaults.
-         * @param array  $args       Optional. Custom data to pass to filter.
-         * @return string String of HTML attributes and values.
-         */
-        public function astra_attr($context, $attributes = array(), $args = array())
-        {
-        }
-        /**
-         * Merge array of attributes with defaults, and apply contextual filter on array.
-         *
-         * The contextual filter is of the form `astra_attr_{context}`.
-         *
-         * @since 1.6.2
-         *
-         * @param string $context    The context, to build filter name.
-         * @param array  $attributes Optional. Extra attributes to merge with defaults.
-         * @param array  $args       Optional. Custom data to pass to filter.
-         * @return array Merged and filtered attributes.
-         */
-        public function astra_parse_attr($context, $attributes = array(), $args = array())
-        {
-        }
-    }
-    /**
-     * Theme Enqueue Scripts
-     */
-    class Astra_Enqueue_Scripts
-    {
-        /**
-         * Class styles.
-         *
-         * @access public
-         * @var $styles Enqueued styles.
-         */
-        public static $styles;
-        /**
-         * Class scripts.
-         *
-         * @access public
-         * @var $scripts Enqueued scripts.
-         */
-        public static $scripts;
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Fix skip link focus in IE11.
-         *
-         * This does not enqueue the script because it is tiny and because it is only for IE11,
-         * thus it does not warrant having an entire dedicated blocking script being loaded.
-         *
-         * @link https://git.io/vWdr2
-         * @link https://github.com/WordPress/twentynineteen/pull/47/files
-         * @link https://github.com/ampproject/amphtml/issues/18671
-         */
-        public function astra_skip_link_focus_fix()
-        {
-        }
-        /**
-         * Admin body classes.
-         *
-         * Body classes to be added to <body> tag in admin page
-         *
-         * @param String $classes body classes returned from the filter.
-         * @return String body classes to be added to <body> tag in admin page
-         */
-        public function admin_body_class($classes)
-        {
-        }
-        /**
-         * List of all assets.
-         *
-         * @return array assets array.
-         */
-        public static function theme_assets()
-        {
-        }
-        /**
-         * Add Fonts
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Enqueue Scripts
-         */
-        public function enqueue_scripts()
-        {
-        }
-        /**
-         * Trim CSS
-         *
-         * @since 1.0.0
-         * @param string $css CSS content to trim.
-         * @return string
-         */
-        public static function trim_css($css = '')
-        {
-        }
-        /**
-         * Enqueue Gutenberg assets.
-         *
-         * @since 1.5.2
-         *
-         * @return void
-         */
-        public function gutenberg_assets()
-        {
-        }
-        /**
-         * Function to check if enqueuing of Astra assets are disabled.
-         *
-         * @since 2.1.0
-         * @return boolean
-         */
-        public static function enqueue_theme_assets()
-        {
-        }
-        /**
-         * Enqueue galleries relates CSS on gallery_style filter.
-         *
-         * @param string $gallery_style gallery style and div.
-         * @since 3.5.0
-         * @return string
-         */
-        public function enqueue_galleries_style($gallery_style)
-        {
-        }
-    }
-    /**
-     * Icons for Astra theme.
-     *
-     * @package     Astra
-     * @author      Brainstorm Force
-     * @copyright   Copyright (c) 2020, Brainstorm Force
-     * @link        https://www.brainstormforce.com
-     * @since       Astra 3.3.0
-     */
-    /**
-     * Icons Initial Setup
-     *
-     * @since 3.3.0
-     */
-    class Astra_Icons
-    {
-        /**
-         * Constructor function that initializes required actions and hooks
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Check if we need to load icons as SVG or fonts.
-         * Returns true if SVG false if font.
-         *
-         * @since 3.3.0
-         *
-         * @return boolean should be svg or font.
-         */
-        public static function is_svg_icons()
-        {
-        }
-        /**
-         * Get SVG icons.
-         * Returns the SVG icon you want to display.
-         *
-         * @since 3.3.0
-         *
-         * @param string  $icon Key for the SVG you want to load.
-         * @param boolean $is_echo whether to echo the output or return.
-         * @param boolean $replace load close markup for SVG.
-         * @param string  $menu_location Creates dynamic filter for passed parameter.
-         *
-         * @return string SVG for passed key.
-         */
-        public static function get_icons($icon, $is_echo = \false, $replace = \false, $menu_location = 'main')
-        {
-        }
-    }
-    /**
-     * Theme Options
-     */
-    class Astra_Theme_Options
-    {
-        /**
-         * Class instance.
-         *
-         * @access private
-         * @var $instance Class instance.
-         */
-        private static $instance;
-        /**
-         * Customizer defaults.
-         *
-         * @access Private
-         * @since 1.4.3
-         * @var Array
-         */
-        private static $defaults;
-        /**
-         * Post id.
-         *
-         * @var $instance Post id.
-         */
-        public static $post_id = \null;
-        /**
-         * A static option variable.
-         *
-         * @since 1.0.0
-         * @access private
-         * @var mixed $db_options
-         */
-        private static $db_options;
-        /**
-         * A static option variable.
-         *
-         * @since 1.0.0
-         * @access private
-         * @var mixed $db_options
-         */
-        private static $db_options_no_defaults;
-        /**
-         * A static theme astra-options variable.
-         *
-         * @since 4.0.2
-         * @access public
-         * @var mixed $astra_options
-         */
-        public static $astra_options = \null;
-        /**
-         * Initiator
+         *  Initiator
          */
         public static function get_instance()
         {
@@ -7757,106 +3912,27 @@ namespace {
         {
         }
         /**
-         * Set default theme option values
+         * Update Customizer Header Footer quick links from options page.
          *
-         * @since 1.0.0
-         * @return default values of the theme.
+         * @since 3.0.0
+         * @param array $args default Header Footer quick links.
+         * @return array updated Header Footer quick links.
          */
-        public static function defaults()
+        public function update_customizer_header_footer_link($args)
         {
         }
         /**
-         * Get astra-options DB values.
-         *
-         * @return array Return array of theme options from database.
-         *
-         * @since 4.0.0
+         * Migrate to New Header Builder
          */
-        public static function get_astra_options()
+        public function migrate_to_builder()
         {
         }
         /**
-         * Get theme options from static array()
+         * Disable pro upgrade notice from all over in Astra.
          *
-         * @return array    Return array of theme options.
+         * @since 3.9.4
          */
-        public static function get_options()
-        {
-        }
-        /**
-         * Update theme static option array.
-         */
-        public static function refresh()
-        {
-        }
-        /**
-         * Get theme options from static array() from database
-         *
-         * @return array    Return array of theme options from database.
-         */
-        public static function get_db_options()
-        {
-        }
-    }
-    /**
-     * Astra custom navigation walker.
-     *
-     * @since 1.5.4
-     */
-    class Astra_Walker_Page extends \Walker_Page
-    {
-        /**
-         * Outputs the beginning of the current level in the tree before elements are output.
-         *
-         * @since 1.5.4
-         *
-         * @see Walker::start_lvl()
-         *
-         * @param string $output Used to append additional content (passed by reference).
-         * @param int    $depth  Optional. Depth of page. Used for padding. Default 0.
-         * @param array  $args   Optional. Arguments for outputting the next level.
-         *                       Default empty array.
-         */
-        public function start_lvl(&$output, $depth = 0, $args = array())
-        {
-        }
-        /**
-         * Outputs the beginning of the current element in the tree.
-         *
-         * @see Walker::start_el()
-         * @since 1.7.2
-         *
-         * @param string  $output       Used to append additional content. Passed by reference.
-         * @param WP_Post $page         Page data object.
-         * @param int     $depth        Optional. Depth of page. Used for padding. Default 0.
-         * @param array   $args         Optional. Array of arguments. Default empty array.
-         * @param int     $current_page Optional. Page ID. Default 0.
-         */
-        public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0)
-        {
-        }
-    }
-    /**
-     * New modern WP-Block editor experience.
-     */
-    class Astra_WP_Editor_CSS
-    {
-        /**
-         * Astra block editor block editor - padding preset CSS.
-         *
-         * @return array Devices specific padding spacings.
-         *
-         * @since 3.8.3
-         */
-        public static function astra_get_block_spacings()
-        {
-        }
-        /**
-         * Get dynamic CSS  required for the block editor to make editing experience similar to how it looks on frontend.
-         *
-         * @return String CSS to be loaded in the editor interface.
-         */
-        public static function get_css()
+        public function disable_astra_pro_notices()
         {
         }
     }
@@ -7877,295 +3953,56 @@ namespace {
         }
     }
     /**
-     * Class Astra_Attr
+     * Customizer Callback
      */
-    class Astra_Markup
+    class Astra_Customizer_Callback
     {
         /**
-         * Initialuze the Class.
+         * Sidebar Archive
          *
-         * @since 3.3.0
+         * @return boolean Return the sidebar status for Home, Archive & Search pages.
          */
-        public function __construct()
+        public static function _sidebar_archive()
         {
         }
         /**
-         * Comment count wrapper opening div.
+         * Sidebar Single
          *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
+         * @return boolean Return the sidebar status for Single Post.
          */
-        public function comment_count_wrapper_open($args)
+        public static function _sidebar_single()
         {
         }
         /**
-         * Comment count wrapper closing div.
+         * Sidebar Page
          *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
+         * @return boolean Return the sidebar status for Single Page / Custom post type & 404.
          */
-        public function comment_count_wrapper_close($args)
-        {
-        }
-        /**
-         * Comment data wrapper opening div.
-         *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
-         */
-        public function ast_comment_data_wrap_open($args)
-        {
-        }
-        /**
-         * Comment data wrapper closing div.
-         *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
-         */
-        public function ast_comment_data_wrap_close($args)
-        {
-        }
-        /**
-         * Comment meta wrapper opening div.
-         *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
-         */
-        public function ast_comment_meta_wrap_open($args)
-        {
-        }
-        /**
-         * Comment meta wrapper closing div.
-         *
-         * @param array $args markup arguments.
-         * @since 3.3.0
-         * @return array.
-         */
-        public function ast_comment_meta_wrap_close($args)
-        {
-        }
-        /**
-         * Comment time div attributes.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_comment_time_attr()
-        {
-        }
-        /**
-         * Comment cite wrapper div attributes.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_comment_cite_wrap_attr()
-        {
-        }
-        /**
-         * We have removed grid css and make common css for grid style.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_grid_common_css()
-        {
-        }
-        /**
-         * Blog content Grid CSS.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_grid_blog_col()
-        {
-        }
-        /**
-         * We have removed grid css and make common css for grid style.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_blog_common_css()
-        {
-        }
-        /**
-         * Removed grid layout classes and make common class for same style.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_grid_col_6()
-        {
-        }
-        /**
-         * Comment form grid classes.
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function comment_form_grid_class()
-        {
-        }
-        /**
-         * Removed grid layout classes and make common class for same style
-         *
-         * @since 3.3.0
-         * @return string.
-         */
-        public function ast_grid_lg_12()
-        {
-        }
-        /**
-         * Layout-4 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_4_grid()
-        {
-        }
-        /**
-         * Layout-2 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_2_grid()
-        {
-        }
-        /**
-         * Layout-1 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_1_grid()
-        {
-        }
-        /**
-         * Layout-3 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_3_grid()
-        {
-        }
-        /**
-         * Layout-5 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_5_grid()
-        {
-        }
-        /**
-         * Layout-6 grid css backward comaptibility.
-         *
-         * @return string.
-         */
-        public function ast_layout_6_grid()
-        {
-        }
-        /**
-         * Footer widget opening div.
-         *
-         * @since 3.3.0
-         * @param array $args div attributes.
-         * @return array.
-         */
-        public function footer_widget_div_open($args)
-        {
-        }
-        /**
-         * Footer widget closing div.
-         *
-         * @since 3.3.0
-         * @param array $args div attributes.
-         * @return array.
-         */
-        public function footer_widget_div_close($args)
-        {
-        }
-        /**
-         * Footer widget inner class.
-         *
-         * @param array $args attributes.
-         * @since 3.3.0
-         * @return string.
-         */
-        public function footer_widget_area_inner($args)
-        {
-        }
-        /**
-         * Header widget inner class.
-         *
-         * @param array $args Attributes.
-         * @since 3.3.0
-         * @return string.
-         */
-        public function header_widget_area_inner($args)
-        {
-        }
-        /**
-         * Footer widget opening div.
-         *
-         * @since 3.3.0
-         * @param array $args div attributes.
-         * @return array.
-         */
-        public function header_widget_div_open($args)
-        {
-        }
-    }
-    /**
-     * Astra_Pro_Customizer Initial setup
-     */
-    class Astra_Pro_Customizer extends \WP_Customize_Section
-    {
-        /**
-         * The type of customize section being rendered.
-         *
-         * @since  1.0.10
-         * @access public
-         * @var    string
-         */
-        public $type = 'astra-pro';
-        /**
-         * Custom pro button URL.
-         *
-         * @since  1.0.10
-         * @access public
-         * @var    string
-         */
-        public $pro_url = '';
-        /**
-         * Add custom parameters to pass to the JS via JSON.
-         *
-         * @since  1.0.10
-         * @access public
-         * @return string
-         */
-        public function json()
-        {
-        }
-        /**
-         * Outputs the Underscore.js template.
-         *
-         * @since  1.0.10
-         * @access public
-         * @return void
-         */
-        protected function render_template()
+        public static function _sidebar_page()
         {
         }
     }
     /**
      * Register Button Customizer Configurations.
      */
-    class Astra_Pro_Upgrade_Link_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Existing_Button_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Button Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 2.6.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Button Customizer Configurations.
+     */
+    class Astra_Customizer_Button_Configs extends \Astra_Customizer_Config_Base
     {
         /**
          * Register Button Customizer Configurations.
@@ -8176,6 +4013,1258 @@ namespace {
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Astra Global Misc Configurations.
+     */
+    class Astra_Global_Misc_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Global Misc  Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 4.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Body Color Customizer Configurations.
+     */
+    class Astra_Body_Colors_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Body Color Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Advanced Footer Color Customizer Configurations.
+     */
+    class Astra_Advanced_Footer_Colors_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Advanced Footer Color Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Footer Color Configurations.
+     */
+    class Astra_Footer_Colors_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Footer Color Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Astra Site Container Layout Customizer Configurations.
+     */
+    class Astra_Site_Container_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Site Container Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Footer Layout Configurations.
+     */
+    class Astra_Footer_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Footer Layout Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Blog Single Layout Configurations.
+     */
+    class Astra_Blog_Single_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Blog Single Layout Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Astra Customizerr Site identity Customizer Configurations.
+     */
+    class Astra_Site_Identity_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Customizerr Site identity Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+        /**
+         * Check if transparent header is enabled on the page being previewed.
+         *
+         * @since  2.4.5
+         * @return boolean True - If Transparent Header is enabled, False if not.
+         */
+        public function is_transparent_header_enabled()
+        {
+        }
+    }
+    /**
+     * Register Astra Sidebar Layout Configurations.
+     */
+    class Astra_Sidebar_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Sidebar Layout Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Blog Layout Customizer Configurations.
+     */
+    class Astra_Blog_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Blog Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Header Layout Customizer Configurations.
+     */
+    class Astra_Header_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Header Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Site Layout Customizer Configurations.
+     */
+    class Astra_Site_Layout_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Site Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Single Typography Configurations.
+     *
+     * @since 1.4.3
+     */
+    class Astra_Single_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Single Typography configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Header_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Header Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Global_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Body Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Archive_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Archive Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Body_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Body Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Content_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Content Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Headings_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register headings Typography Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.7.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Site Layout Customizer Configurations.
+     */
+    class Astra_Block_Editor_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Site Layout Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.8.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Astra Accessibility Configurations.
+     */
+    class Astra_Accessibility_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Accessibility Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 4.1.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Footer_Builder_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Footer Zones.
+         *
+         * @var array
+         * @since 3.0.0
+         */
+        public static $zones = array('above' => array(), 'primary' => array(), 'below' => array());
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Footer_Menu_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Html_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Button_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Primary_Footer_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Above footer Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Above_Footer_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Above Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Below footer Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Below_Footer_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Below footer Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Social Icons Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Footer_Social_Icons_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Social Icons Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Copyright_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Widget_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Social_Icon_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Primary_Header_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Edd_Cart_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Mobile_Trigger_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Html_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register below header Configurations.
+     */
+    class Astra_Header_Button_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Button control for Header/Footer Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Woo_Cart_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Off Canvas Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Off_Canvas_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Above Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Header_Widget_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Menu_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Account_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Above Header Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Above_Header_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Above Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Search_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Site Identity Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Site_Identity_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Site Identity Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Mobile_Menu_Component_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Header_Builder_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Below Header Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Customizer_Below_Header_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Builder Below Header Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Social_Icon_Component_Configs
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array  $configurations Configurations.
+         * @param string $builder_type Builder Type.
+         * @param string $section Section slug.
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-social-icons-')
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Html_Component_Configs
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array  $configurations Configurations.
+         * @param string $builder_type Builder Type.
+         * @param string $section Section.
+         *
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-html-')
+        {
+        }
+    }
+    /**
+     * Register Builder Customizer Configurations.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Button_Component_Configs
+    {
+        /**
+         * Register Builder Customizer Configurations.
+         *
+         * @param Array  $configurations Configurations.
+         * @param string $builder_type Builder Type.
+         * @param string $section Section.
+         *
+         * @since 3.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-button-')
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Base_Configuration.
+     */
+    final class Astra_Builder_Base_Configuration
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Prepare Advance header configuration.
+         *
+         * @param string $section_id section id.
+         * @return array
+         */
+        public static function prepare_advanced_tab($section_id)
+        {
+        }
+        /**
+         * Prepare Advance Typography configuration.
+         *
+         * @param string $section_id section id.
+         * @param array  $required_condition Required Condition.
+         * @param array  $divider_setup Required divider setup.
+         * @return array
+         */
+        public static function prepare_typography_options($section_id, $required_condition = array(), $divider_setup = array())
+        {
+        }
+        /**
+         * Prepare Visibility options.
+         *
+         * @param string $_section section id.
+         * @param string $builder_type Builder Type.
+         * @return array
+         */
+        public static function prepare_visibility_tab($_section, $builder_type = 'header')
+        {
+        }
+        /**
+         * Prepare common options for the widgets by type.
+         *
+         * @param string $type type.
+         * @return array
+         */
+        public static function prepare_widget_options($type = 'header')
+        {
+        }
+    }
+    /**
+     * Adds a custom Panel for nested panels / sections.
+     *
+     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
+     * @since 1.0.31
+     * @see WP_Customize_Panel
+     */
+    class Astra_WP_Customize_Panel extends \WP_Customize_Panel
+    {
+        /**
+         * Panel
+         *
+         * @since 1.0.31
+         * @var string
+         */
+        public $panel;
+        /**
+         * Control type.
+         *
+         * @since  1.0.31
+         * @var string
+         */
+        public $type = 'ast_panel';
+        /**
+         * Get section parameters for JS.
+         *
+         * @since 1.0.31
+         * @return array Exported parameters.
+         */
+        public function json()
+        {
+        }
+    }
+    /**
+     * Adds a custom Customize Section for section separator.
+     *
+     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
+     * @since 2.0.0
+     * @see WP_Customize_Section
+     */
+    class Astra_WP_Customize_Separator extends \WP_Customize_Section
+    {
+        /**
+         * Control type.
+         *
+         * @since  1.0.31
+         * @var string
+         */
+        public $type = 'ast-section-separator';
+        /**
+         * Template for section separator
+         *
+         * @since 2.0.0
+         */
+        protected function render_template()
+        {
+        }
+    }
+    /**
+     * Adds a custom Customize Section for nested sections.
+     *
+     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
+     * @since 1.0.31
+     * @see WP_Customize_Section
+     */
+    class Astra_WP_Customize_Section extends \WP_Customize_Section
+    {
+        /**
+         * Section
+         *
+         * @since 1.0.31
+         * @var string
+         */
+        public $section;
+        /**
+         * Control type.
+         *
+         * @since  1.0.31
+         * @var string
+         */
+        public $type = 'ast_section';
+        /**
+         * Get section parameters for JS.
+         *
+         * @since 1.0.31
+         * @return array Exported parameters.
+         */
+        public function json()
+        {
+        }
+    }
+    /**
+     * Customizer Partials initial setup
+     */
+    class Astra_Customizer_Partials
+    {
+        /**
+         * Constructor
+         *
+         * @since 1.0.0
+         *
+         * @return void
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Render Partial Site Tagline
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_partial_site_tagline()
+        {
+        }
+        /**
+         * Render Partial Site Tagline
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_partial_site_title()
+        {
+        }
+        /**
+         * Render Partial Header Right Section HTML
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_header_main_rt_section_html()
+        {
+        }
+        /**
+         * Render Partial Text Custom Menu Item
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_header_main_rt_section_button_text()
+        {
+        }
+        /**
+         * Render Partial Text Header Site Title & Tagline
+         *
+         * @since 2.2.0
+         *
+         * @return mixed
+         */
+        public static function render_header_site_title_tagline()
+        {
+        }
+        /**
+         * Render Partial Footer Section 1 Credit
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_footer_sml_section_1_credit()
+        {
+        }
+        /**
+         * Render Partial Footer Section 2 Credit
+         *
+         * @since 1.0.0
+         *
+         * @return mixed
+         */
+        public static function render_footer_sml_section_2_credit()
+        {
+        }
+        /**
+         * Render Partial text for the mobile toggle menu
+         *
+         * @since 2.6.0
+         *
+         * @return mixed
+         */
+        public static function mobile_toggle_menu()
+        {
+        }
+    }
+    /**
+     * Font info class for System and Google fonts.
+     */
+    final class Astra_Font_Families
+    {
+        /**
+         * System Fonts
+         *
+         * @since 1.0.19
+         * @var array
+         */
+        public static $system_fonts = array();
+        /**
+         * Google Fonts
+         *
+         * @since 1.0.19
+         * @var array
+         */
+        public static $google_fonts = array();
+        /**
+         * Get System Fonts
+         *
+         * @since 1.0.19
+         *
+         * @return Array All the system fonts in Astra
+         */
+        public static function get_system_fonts()
+        {
+        }
+        /**
+         * Custom Fonts
+         *
+         * @since 1.0.19
+         *
+         * @return Array All the custom fonts in Astra
+         */
+        public static function get_custom_fonts()
+        {
+        }
+        /**
+         * Variant labels.
+         *
+         * @since 3.8.0
+         * @return array
+         */
+        public static function font_variant_labels()
+        {
+        }
+        /**
+         * Google Fonts used in astra.
+         * Array is generated from the google-fonts.json file.
+         *
+         * @since  1.0.19
+         *
+         * @return Array Array of Google Fonts.
+         */
+        public static function get_google_fonts()
         {
         }
     }
@@ -8289,145 +5378,377 @@ namespace {
         }
     }
     /**
-     * Customizer Callback
+     * Astra Fonts
      */
-    class Astra_Customizer_Callback
+    final class Astra_Fonts
     {
         /**
-         * Sidebar Archive
+         * Adds data to the $fonts array for a font to be rendered.
          *
-         * @return boolean Return the sidebar status for Home, Archive & Search pages.
+         * @since 1.0.0
+         * @param string $name The name key of the font to add.
+         * @param array  $variants An array of weight variants.
+         * @return void
          */
-        public static function _sidebar_archive()
+        public static function add_font($name, $variants = array())
         {
         }
         /**
-         * Sidebar Single
-         *
-         * @return boolean Return the sidebar status for Single Post.
+         * Get Fonts
          */
-        public static function _sidebar_single()
+        public static function get_fonts()
         {
         }
         /**
-         * Sidebar Page
+         * Renders the <link> tag for all fonts in the $fonts array.
          *
-         * @return boolean Return the sidebar status for Single Page / Custom post type & 404.
+         * @since 1.0.16 Added the filter 'astra_render_fonts' to support custom fonts.
+         * @since 1.0.0
+         * @return void
          */
-        public static function _sidebar_page()
+        public static function render_fonts()
+        {
+        }
+        /**
+         * Google Font URL
+         * Combine multiple google font in one URL
+         *
+         * @link https://shellcreeper.com/?p=1476
+         * @param array $fonts      Google Fonts array.
+         * @param array $subsets    Font's Subsets array.
+         *
+         * @return string
+         */
+        public static function google_fonts_url($fonts, $subsets = array())
         {
         }
     }
     /**
-     * Customizer Partials initial setup
+     * Customizer Loader
+     *
+     * @since 1.0.0
      */
-    class Astra_Customizer_Partials
+    class Astra_Customizer
     {
         /**
+         * All groups parent-child relation array data.
+         *
+         * @access Public
+         * @since 2.0.0
+         * @var Array
+         */
+        public static $group_configs = array();
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
          * Constructor
-         *
-         * @since 1.0.0
-         *
-         * @return void
          */
         public function __construct()
         {
         }
         /**
-         * Render Partial Site Tagline
+         * Add site icon control in the site identity panel.
+         *
+         * @access public
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         * @return void
+         *
+         * @since 3.6.9
+         */
+        public function customize_register_site_icon($wp_customize)
+        {
+        }
+        /**
+         * Reset font folder
+         *
+         * @access public
+         * @return void
+         *
+         * @since 3.6.0
+         */
+        public function regenerate_astra_fonts_folder()
+        {
+        }
+        /**
+         *  Delete the cached partial configs.
+         */
+        public function delete_cached_partials()
+        {
+        }
+        /**
+         * Add dynamic control partial refresh.
+         *
+         * @since 3.1.0
+         * @param array  $partial_args partial configs.
+         * @param string $partial_id partial id.
+         * @return array|mixed
+         */
+        public function filter_dynamic_partial_args($partial_args, $partial_id)
+        {
+        }
+        /**
+         * Add dynamic control settings.
+         *
+         * @since 3.1.0
+         * @param array  $setting_args setting configs.
+         * @param string $setting_id setting id.
+         * @return mixed
+         */
+        public function filter_dynamic_setting_args($setting_args, $setting_id)
+        {
+        }
+        /**
+         * Prepare Contexts and choices.
+         *
+         * @since 3.0.0
+         */
+        public function prepare_customizer_javascript_configs()
+        {
+        }
+        /**
+         * Print Footer Scripts
          *
          * @since 1.0.0
-         *
-         * @return mixed
+         * @return void
          */
-        public static function render_partial_site_tagline()
+        public function print_footer_scripts()
         {
         }
         /**
-         * Render Partial Site Tagline
+         * Bypass JS configs for Controls.
          *
-         * @since 1.0.0
-         *
-         * @return mixed
+         * @param array $configuration configuration.
          */
-        public static function render_partial_site_title()
+        public static function bypass_control_configs($configuration)
         {
         }
         /**
-         * Render Partial Header Right Section HTML
+         * Prepare Panel Configs for Javascript.
          *
-         * @since 1.0.0
-         *
-         * @return mixed
+         * @since 3.0.0
+         * @param array $config configs.
          */
-        public static function render_header_main_rt_section_html()
+        public function prepare_javascript_panel_configs($config)
         {
         }
         /**
-         * Render Partial Text Custom Menu Item
+         * Prepare Section Configs for Javascript.
          *
-         * @since 1.0.0
-         *
-         * @return mixed
+         * @since 3.0.0
+         * @param array $config configs.
          */
-        public static function render_header_main_rt_section_button_text()
+        public function prepare_javascript_section_configs($config)
         {
         }
         /**
-         * Render Partial Text Header Site Title & Tagline
+         * Prepare Sub Control Configs for Javascript.
          *
-         * @since 2.2.0
-         *
-         * @return mixed
+         * @since 3.0.0
+         * @param array $config configs.
          */
-        public static function render_header_site_title_tagline()
+        public function prepare_javascript_sub_control_configs($config)
         {
         }
         /**
-         * Render Partial Footer Section 1 Credit
+         * Get the Link for Control.
          *
-         * @since 1.0.0
-         *
-         * @return mixed
+         * @since 3.0.0
+         * @param array $id Control ID.
          */
-        public static function render_footer_sml_section_1_credit()
+        public static function get_control_link($id)
         {
         }
         /**
-         * Render Partial Footer Section 2 Credit
+         * Prepare Control Configs for Javascript.
          *
-         * @since 1.0.0
-         *
-         * @return mixed
+         * @since 3.0.0
+         * @param array $config configs.
          */
-        public static function render_footer_sml_section_2_credit()
+        public function prepare_javascript_control_configs($config)
         {
         }
         /**
-         * Render Partial text for the mobile toggle menu
+         * Map and add sanitize callback to JS configs.
          *
-         * @since 2.6.0
-         *
+         * @param array $config js config array.
          * @return mixed
          */
-        public static function mobile_toggle_menu()
+        public function sanitize_control($config)
         {
         }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Customizer_Register_Sections_Panels extends \Astra_Customizer_Config_Base
-    {
         /**
-         * Register Panels and Sections for Customizer.
+         * Add controls for which active_callback is added.
          *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.0.0
+         * @param array $config config.
+         */
+        public function prepare_preload_controls($config)
+        {
+        }
+        /**
+         * Prepare Group configs to visible sub-controls.
+         *
+         * @since 3.0.0
+         * @param object $wp_customize customizer object.
+         */
+        public function prepare_group_configs($wp_customize)
+        {
+        }
+        /**
+         * Prepare context.
+         *
+         * @return mixed|void
+         */
+        public static function get_contexts()
+        {
+        }
+        /**
+         * Prepare choices.
+         *
+         * @return mixed|void
+         */
+        public static function get_choices()
+        {
+        }
+        /**
+         * Prepare javascript configs.
+         *
+         * @return mixed|void
+         */
+        public static function get_js_configs()
+        {
+        }
+        /**
+         * Prepare tabbed sections.
+         *
+         * @return mixed|void
+         */
+        public static function get_tabbed_sections()
+        {
+        }
+        /**
+         * Add customizer script.
+         *
+         * @since 3.0.0
+         */
+        public function enqueue_customizer_scripts()
+        {
+        }
+        /**
+         * Check if string is start with a string provided.
+         *
+         * @param string $string main string.
+         * @param string $start_string string to search.
+         * @since 2.0.0
+         * @return bool.
+         */
+        public function starts_with($string, $start_string)
+        {
+        }
+        /**
+         * Include Customizer Configuration files.
+         *
          * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
+         * @return void
          */
-        public function register_configuration($configurations, $wp_customize)
+        public function include_configurations()
+        {
+        }
+        /**
+         * Register custom section and panel.
+         *
+         * @since 1.0.0
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         */
+        public function customize_register_panel($wp_customize)
+        {
+        }
+        /**
+         * Add postMessage support for site title and description for the Theme Customizer.
+         *
+         * @since 1.0.0
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         */
+        public function customize_register($wp_customize)
+        {
+        }
+        /**
+         * Add upgrade link configurations controls.
+         *
+         * @since 1.0.0
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         */
+        public function astra_pro_upgrade_configurations($wp_customize)
+        {
+        }
+        /**
+         * Customizer Controls
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function controls_scripts()
+        {
+        }
+        /**
+         * Generates HTML for font dropdown.
+         *
+         * @return string
+         */
+        public function generate_font_dropdown()
+        {
+        }
+        /**
+         * Customizer Preview Init
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function preview_init()
+        {
+        }
+        /**
+         * Called by the customize_save_after action to refresh
+         * the cached CSS when Customizer settings are saved.
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function customize_save()
+        {
+        }
+        /**
+         * Add logo image sizes in filter.
+         *
+         * @since 1.0.0
+         * @param array $sizes Sizes.
+         * @param array $metadata attachment data.
+         *
+         * @return array
+         */
+        public static function logo_image_sizes($sizes, $metadata)
+        {
+        }
+        /**
+         * Generate logo image by its width.
+         *
+         * @since 1.0.0
+         * @param int $custom_logo_id Logo id.
+         */
+        public static function generate_logo_by_width($custom_logo_id)
+        {
+        }
+        /**
+         * Customizer Preview icon CSS
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function preview_styles()
         {
         }
     }
@@ -8436,13 +5757,6 @@ namespace {
      */
     class Astra_Customizer_Sanitizes
     {
-        /**
-         * Instance
-         *
-         * @access private
-         * @var object
-         */
-        private static $instance;
         /**
          * Initiator
          */
@@ -8720,1625 +6034,10 @@ namespace {
         }
     }
     /**
-     * Customizer Loader
-     *
-     * @since 1.0.0
-     */
-    class Astra_Customizer
-    {
-        /**
-         * Contexts.
-         *
-         * @access private
-         * @var object
-         */
-        private static $contexts;
-        /**
-         * Dynamic options.
-         *
-         * @since 3.1.0
-         * @access private
-         * @var object
-         */
-        private static $dynamic_options = array();
-        /**
-         * Tabful sections.
-         *
-         * @access private
-         * @var array
-         */
-        private static $tabbed_sections = array();
-        /**
-         * Choices.
-         *
-         * @access private
-         * @var object
-         */
-        private static $choices;
-        /**
-         * JS Configs.
-         *
-         * @access private
-         * @var object
-         */
-        private static $js_configs;
-        /**
-         * Instance
-         *
-         * @access private
-         * @var object
-         */
-        private static $instance;
-        /**
-         * Customizer Configurations.
-         *
-         * @access Private
-         * @since 1.4.3
-         * @var Array
-         */
-        private static $configuration;
-        /**
-         * All groups parent-child relation array data.
-         *
-         * @access Public
-         * @since 2.0.0
-         * @var Array
-         */
-        public static $group_configs = array();
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Add site icon control in the site identity panel.
-         *
-         * @access public
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         * @return void
-         *
-         * @since 3.6.9
-         */
-        public function customize_register_site_icon($wp_customize)
-        {
-        }
-        /**
-         * Reset font folder
-         *
-         * @access public
-         * @return void
-         *
-         * @since 3.6.0
-         */
-        public function regenerate_astra_fonts_folder()
-        {
-        }
-        /**
-         *  Delete the cached partial configs.
-         */
-        public function delete_cached_partials()
-        {
-        }
-        /**
-         * Add dynamic control partial refresh.
-         *
-         * @since 3.1.0
-         * @param array  $partial_args partial configs.
-         * @param string $partial_id partial id.
-         * @return array|mixed
-         */
-        public function filter_dynamic_partial_args($partial_args, $partial_id)
-        {
-        }
-        /**
-         * Add dynamic control settings.
-         *
-         * @since 3.1.0
-         * @param array  $setting_args setting configs.
-         * @param string $setting_id setting id.
-         * @return mixed
-         */
-        public function filter_dynamic_setting_args($setting_args, $setting_id)
-        {
-        }
-        /**
-         * Prepare Contexts and choices.
-         *
-         * @since 3.0.0
-         */
-        public function prepare_customizer_javascript_configs()
-        {
-        }
-        /**
-         * Get control default.
-         *
-         * @param string $setting_key setting key.
-         * @param array  $default_values default value array.
-         * @return mixed|string
-         */
-        private function get_default_value($setting_key, $default_values)
-        {
-        }
-        /**
-         * Prepare tabbed sections for dynamic controls to optimize frontend JS calls.
-         */
-        private static function prepare_tabbed_sections()
-        {
-        }
-        /**
-         * Print Footer Scripts
-         *
-         * @since 1.0.0
-         * @return void
-         */
-        public function print_footer_scripts()
-        {
-        }
-        /**
-         *  Set default context for WP default controls.
-         */
-        private static function set_default_context()
-        {
-        }
-        /**
-         * Bypass JS configs for Controls.
-         *
-         * @param array $configuration configuration.
-         */
-        public static function bypass_control_configs($configuration)
-        {
-        }
-        /**
-         * Prepare Panel Configs for Javascript.
-         *
-         * @since 3.0.0
-         * @param array $config configs.
-         */
-        public function prepare_javascript_panel_configs($config)
-        {
-        }
-        /**
-         * Prepare Section Configs for Javascript.
-         *
-         * @since 3.0.0
-         * @param array $config configs.
-         */
-        public function prepare_javascript_section_configs($config)
-        {
-        }
-        /**
-         * Prepare Sub Control Configs for Javascript.
-         *
-         * @since 3.0.0
-         * @param array $config configs.
-         */
-        public function prepare_javascript_sub_control_configs($config)
-        {
-        }
-        /**
-         * Get the Link for Control.
-         *
-         * @since 3.0.0
-         * @param array $id Control ID.
-         */
-        public static function get_control_link($id)
-        {
-        }
-        /**
-         * Prepare Control Configs for Javascript.
-         *
-         * @since 3.0.0
-         * @param array $config configs.
-         */
-        public function prepare_javascript_control_configs($config)
-        {
-        }
-        /**
-         * Map and add sanitize callback to JS configs.
-         *
-         * @param array $config js config array.
-         * @return mixed
-         */
-        public function sanitize_control($config)
-        {
-        }
-        /**
-         * Add controls for which active_callback is added.
-         *
-         * @since 3.0.0
-         * @param array $config config.
-         */
-        public function prepare_preload_controls($config)
-        {
-        }
-        /**
-         * Prepare Group configs to visible sub-controls.
-         *
-         * @since 3.0.0
-         * @param object $wp_customize customizer object.
-         */
-        public function prepare_group_configs($wp_customize)
-        {
-        }
-        /**
-         * Prepare context.
-         *
-         * @return mixed|void
-         */
-        public static function get_contexts()
-        {
-        }
-        /**
-         * Prepare choices.
-         *
-         * @return mixed|void
-         */
-        public static function get_choices()
-        {
-        }
-        /**
-         * Prepare javascript configs.
-         *
-         * @return mixed|void
-         */
-        public static function get_js_configs()
-        {
-        }
-        /**
-         * Prepare tabbed sections.
-         *
-         * @return mixed|void
-         */
-        public static function get_tabbed_sections()
-        {
-        }
-        /**
-         * Prepare default values for the control.
-         *
-         * @return array
-         */
-        private function get_control_defaults()
-        {
-        }
-        /**
-         * Add customizer script.
-         *
-         * @since 3.0.0
-         */
-        public function enqueue_customizer_scripts()
-        {
-        }
-        /**
-         * Check if string is start with a string provided.
-         *
-         * @param string $string main string.
-         * @param string $start_string string to search.
-         * @since 2.0.0
-         * @return bool.
-         */
-        public function starts_with($string, $start_string)
-        {
-        }
-        /**
-         * Filter and return Customizer Configurations.
-         *
-         * @since 1.4.3
-         * @return Array Customizer Configurations for registering Sections/Panels/Controls.
-         */
-        private function get_customizer_configurations()
-        {
-        }
-        /**
-         * Return default values for the Customize Configurations.
-         *
-         * @since 1.4.3
-         * @return Array default values for the Customizer Configurations.
-         */
-        private function get_astra_customizer_configuration_defaults()
-        {
-        }
-        /**
-         * Include Customizer Configuration files.
-         *
-         * @since 1.4.3
-         * @return void
-         */
-        public function include_configurations()
-        {
-        }
-        /**
-         * Register custom section and panel.
-         *
-         * @since 1.0.0
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register_panel($wp_customize)
-        {
-        }
-        /**
-         * Add postMessage support for site title and description for the Theme Customizer.
-         *
-         * @since 1.0.0
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function customize_register($wp_customize)
-        {
-        }
-        /**
-         * Add upgrade link configurations controls.
-         *
-         * @since 1.0.0
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         */
-        public function astra_pro_upgrade_configurations($wp_customize)
-        {
-        }
-        /**
-         * Customizer Controls
-         *
-         * @since 1.0.0
-         * @return void
-         */
-        public function controls_scripts()
-        {
-        }
-        /**
-         * Generates HTML for font dropdown.
-         *
-         * @return string
-         */
-        public function generate_font_dropdown()
-        {
-        }
-        /**
-         * Customizer Preview Init
-         *
-         * @since 1.0.0
-         * @return void
-         */
-        public function preview_init()
-        {
-        }
-        /**
-         * Called by the customize_save_after action to refresh
-         * the cached CSS when Customizer settings are saved.
-         *
-         * @since 1.0.0
-         * @return void
-         */
-        public function customize_save()
-        {
-        }
-        /**
-         * Add logo image sizes in filter.
-         *
-         * @since 1.0.0
-         * @param array $sizes Sizes.
-         * @param array $metadata attachment data.
-         *
-         * @return array
-         */
-        public static function logo_image_sizes($sizes, $metadata)
-        {
-        }
-        /**
-         * Generate logo image by its width.
-         *
-         * @since 1.0.0
-         * @param int $custom_logo_id Logo id.
-         */
-        public static function generate_logo_by_width($custom_logo_id)
-        {
-        }
-        /**
-         * Customizer Preview icon CSS
-         *
-         * @since 1.0.0
-         * @return void
-         */
-        public function preview_styles()
-        {
-        }
-    }
-    /**
-     * Font info class for System and Google fonts.
-     */
-    final class Astra_Font_Families
-    {
-        /**
-         * System Fonts
-         *
-         * @since 1.0.19
-         * @var array
-         */
-        public static $system_fonts = array();
-        /**
-         * Google Fonts
-         *
-         * @since 1.0.19
-         * @var array
-         */
-        public static $google_fonts = array();
-        /**
-         * Get System Fonts
-         *
-         * @since 1.0.19
-         *
-         * @return Array All the system fonts in Astra
-         */
-        public static function get_system_fonts()
-        {
-        }
-        /**
-         * Custom Fonts
-         *
-         * @since 1.0.19
-         *
-         * @return Array All the custom fonts in Astra
-         */
-        public static function get_custom_fonts()
-        {
-        }
-        /**
-         * Variant labels.
-         *
-         * @since 3.8.0
-         * @return array
-         */
-        public static function font_variant_labels()
-        {
-        }
-        /**
-         * Google Fonts used in astra.
-         * Array is generated from the google-fonts.json file.
-         *
-         * @since  1.0.19
-         *
-         * @return Array Array of Google Fonts.
-         */
-        public static function get_google_fonts()
-        {
-        }
-    }
-    /**
-     * Fonts Data
-     */
-    final class Astra_Fonts_Data
-    {
-        /**
-         * Localize Fonts
-         */
-        public static function js()
-        {
-        }
-    }
-    /**
-     * Astra Fonts
-     */
-    final class Astra_Fonts
-    {
-        /**
-         * Get fonts to generate.
-         *
-         * @since 1.0.0
-         * @var array $fonts
-         */
-        private static $fonts = array();
-        /**
-         * Adds data to the $fonts array for a font to be rendered.
-         *
-         * @since 1.0.0
-         * @param string $name The name key of the font to add.
-         * @param array  $variants An array of weight variants.
-         * @return void
-         */
-        public static function add_font($name, $variants = array())
-        {
-        }
-        /**
-         * Get Fonts
-         */
-        public static function get_fonts()
-        {
-        }
-        /**
-         * Renders the <link> tag for all fonts in the $fonts array.
-         *
-         * @since 1.0.16 Added the filter 'astra_render_fonts' to support custom fonts.
-         * @since 1.0.0
-         * @return void
-         */
-        public static function render_fonts()
-        {
-        }
-        /**
-         * Google Font URL
-         * Combine multiple google font in one URL
-         *
-         * @link https://shellcreeper.com/?p=1476
-         * @param array $fonts      Google Fonts array.
-         * @param array $subsets    Font's Subsets array.
-         *
-         * @return string
-         */
-        public static function google_fonts_url($fonts, $subsets = array())
-        {
-        }
-    }
-    /**
-     * Register Astra Accessibility Configurations.
-     */
-    class Astra_Accessibility_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Accessibility Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.1.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Site Layout Customizer Configurations.
-     */
-    class Astra_Block_Editor_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Site Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.8.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Button_Component_Configs
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array  $configurations Configurations.
-         * @param string $builder_type Builder Type.
-         * @param string $section Section.
-         *
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-button-')
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Html_Component_Configs
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array  $configurations Configurations.
-         * @param string $builder_type Builder Type.
-         * @param string $section Section.
-         *
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-html-')
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Social_Icon_Component_Configs
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array  $configurations Configurations.
-         * @param string $builder_type Builder Type.
-         * @param string $section Section slug.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public static function register_configuration($configurations, $builder_type = 'header', $section = 'section-hb-social-icons-')
-        {
-        }
-    }
-    /**
-     * Class Astra_Builder_Base_Configuration.
-     */
-    final class Astra_Builder_Base_Configuration
-    {
-        /**
-         * Member Variable
-         *
-         * @var instance
-         */
-        private static $instance = \null;
-        /**
-         *  Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Prepare Advance header configuration.
-         *
-         * @param string $section_id section id.
-         * @return array
-         */
-        public static function prepare_advanced_tab($section_id)
-        {
-        }
-        /**
-         * Prepare Advance Typography configuration.
-         *
-         * @param string $section_id section id.
-         * @param array  $required_condition Required Condition.
-         * @param array  $divider_setup Required divider setup.
-         * @return array
-         */
-        public static function prepare_typography_options($section_id, $required_condition = array(), $divider_setup = array())
-        {
-        }
-        /**
-         * Prepare Visibility options.
-         *
-         * @param string $_section section id.
-         * @param string $builder_type Builder Type.
-         * @return array
-         */
-        public static function prepare_visibility_tab($_section, $builder_type = 'header')
-        {
-        }
-        /**
-         * Prepare common options for the widgets by type.
-         *
-         * @param string $type type.
-         * @return array
-         */
-        public static function prepare_widget_options($type = 'header')
-        {
-        }
-    }
-    /**
-     * Register Above footer Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Above_Footer_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Above Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Below footer Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Below_Footer_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Below footer Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Copyright_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Footer_Builder_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Footer Zones.
-         *
-         * @var array
-         * @since 3.0.0
-         */
-        public static $zones = array('above' => array(), 'primary' => array(), 'below' => array());
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Footer_Menu_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Social Icons Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Footer_Social_Icons_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Social Icons Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Primary_Footer_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Button_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Html_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Footer_Widget_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Above Header Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Above_Header_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Above Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Below Header Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Below_Header_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Below Header Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Edd_Cart_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Header_Builder_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Header_Widget_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Mobile_Trigger_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Off Canvas Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Off_Canvas_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Above Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Primary_Header_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Site Identity Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Site_Identity_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Site Identity Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Customizer_Woo_Cart_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Account_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register below header Configurations.
-     */
-    class Astra_Header_Button_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Button control for Header/Footer Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Html_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Menu_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Search_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Header_Social_Icon_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Builder Customizer Configurations.
-     *
-     * @since 3.0.0
-     */
-    class Astra_Mobile_Menu_Component_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Builder Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Button Customizer Configurations.
-     */
-    class Astra_Customizer_Button_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Button Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Button Customizer Configurations.
-     */
-    class Astra_Existing_Button_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Button Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 2.6.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Advanced Footer Color Customizer Configurations.
-     */
-    class Astra_Advanced_Footer_Colors_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Advanced Footer Color Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Body Color Customizer Configurations.
-     */
-    class Astra_Body_Colors_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Body Color Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Footer Color Configurations.
-     */
-    class Astra_Footer_Colors_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Footer Color Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Astra Global Misc Configurations.
-     */
-    class Astra_Global_Misc_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Global Misc  Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Blog Layout Customizer Configurations.
-     */
-    class Astra_Blog_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Blog Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Blog Single Layout Configurations.
-     */
-    class Astra_Blog_Single_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Blog Single Layout Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Footer Layout Configurations.
-     */
-    class Astra_Footer_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Footer Layout Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Header Layout Customizer Configurations.
-     */
-    class Astra_Header_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Header Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Astra Sidebar Layout Configurations.
-     */
-    class Astra_Sidebar_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Sidebar Layout Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Astra Site Container Layout Customizer Configurations.
-     */
-    class Astra_Site_Container_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Site Container Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Astra Customizerr Site identity Customizer Configurations.
-     */
-    class Astra_Site_Identity_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Astra Customizerr Site identity Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-        /**
-         * Check if transparent header is enabled on the page being previewed.
-         *
-         * @since  2.4.5
-         * @return boolean True - If Transparent Header is enabled, False if not.
-         */
-        public function is_transparent_header_enabled()
-        {
-        }
-        /**
-         * Help notice message to be displayed when the page that is being previewed has Logo set from Transparent Header.
-         *
-         * @since  2.4.5
-         * @param String $context Type of notice message to be returned.
-         * @return String HTML Markup for the help notice.
-         */
-        private function get_help_text_notice($context)
-        {
-        }
-    }
-    /**
-     * Register Site Layout Customizer Configurations.
-     */
-    class Astra_Site_Layout_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Site Layout Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Archive_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Archive Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Body_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Body Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Content_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Content Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Global_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Body Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Header_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Header Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Headings_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register headings Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.7.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Single Typography Configurations.
-     *
-     * @since 1.4.3
-     */
-    class Astra_Single_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Single Typography configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
      * Customizer Sanitizes Initial setup
      */
     class Astra_Customizer_Control_Base
     {
-        /**
-         * Registered Controls.
-         *
-         * @since 1.4.3
-         * @var Array
-         */
-        private static $controls;
         /**
          *  Constructor
          */
@@ -10391,59 +6090,6 @@ namespace {
          * @return string
          */
         public static function get_sanitize_call($control)
-        {
-        }
-    }
-    /**
-     * A text control with validation for CSS units.
-     */
-    class Astra_Control_Customizer_Link extends \WP_Customize_Control
-    {
-        /**
-         * The control type.
-         *
-         * @access public
-         * @var string
-         */
-        public $type = 'ast-customizer-link';
-        /**
-         * Link text to be added inside the anchor tag.
-         *
-         * @var string
-         */
-        public $link_text = '';
-        /**
-         * Linked customizer section.
-         *
-         * @var string
-         */
-        public $linked = '';
-        /**
-         * Linked customizer section.
-         *
-         * @var string
-         */
-        public $link_type = '';
-        /**
-         * True if the link is button.
-         *
-         * @var boolean
-         */
-        public $is_button_link = '';
-        /**
-         * Refresh the parameters passed to the JavaScript via JSON.
-         *
-         * @see WP_Customize_Control::to_json()
-         */
-        public function to_json()
-        {
-        }
-        /**
-         * Render the control's content.
-         *
-         * @see WP_Customize_Control::render_content()
-         */
-        protected function render_content()
         {
         }
     }
@@ -10577,288 +6223,1172 @@ namespace {
         public function to_json()
         {
         }
+    }
+    /**
+     * A text control with validation for CSS units.
+     */
+    class Astra_Control_Customizer_Link extends \WP_Customize_Control
+    {
         /**
-         * An Underscore (JS) template for this control's content (but not its container).
+         * The control type.
          *
-         * Class variables for this control class are available in the `data` JS object;
-         * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
-         *
-         * @see WP_Customize_Control::print_template()
-         *
-         * @access protected
+         * @access public
+         * @var string
          */
-        protected function content_template()
+        public $type = 'ast-customizer-link';
+        /**
+         * Link text to be added inside the anchor tag.
+         *
+         * @var string
+         */
+        public $link_text = '';
+        /**
+         * Linked customizer section.
+         *
+         * @var string
+         */
+        public $linked = '';
+        /**
+         * Linked customizer section.
+         *
+         * @var string
+         */
+        public $link_type = '';
+        /**
+         * True if the link is button.
+         *
+         * @var boolean
+         */
+        public $is_button_link = '';
+        /**
+         * Refresh the parameters passed to the JavaScript via JSON.
+         *
+         * @see WP_Customize_Control::to_json()
+         */
+        public function to_json()
+        {
+        }
+        /**
+         * Render the control's content.
+         *
+         * @see WP_Customize_Control::render_content()
+         */
+        protected function render_content()
         {
         }
     }
     /**
-     * Adds a custom Panel for nested panels / sections.
-     *
-     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
-     * @since 1.0.31
-     * @see WP_Customize_Panel
+     * Customizer Sanitizes Initial setup
      */
-    class Astra_WP_Customize_Panel extends \WP_Customize_Panel
+    class Astra_Customizer_Register_Sections_Panels extends \Astra_Customizer_Config_Base
     {
         /**
-         * Panel
+         * Register Panels and Sections for Customizer.
          *
-         * @since 1.0.31
-         * @var string
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
          */
-        public $panel;
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Astra_Pro_Customizer Initial setup
+     */
+    class Astra_Pro_Customizer extends \WP_Customize_Section
+    {
         /**
-         * Control type.
+         * The type of customize section being rendered.
          *
-         * @since  1.0.31
-         * @var string
+         * @since  1.0.10
+         * @access public
+         * @var    string
          */
-        public $type = 'ast_panel';
+        public $type = 'astra-pro';
         /**
-         * Get section parameters for JS.
+         * Custom pro button URL.
          *
-         * @since 1.0.31
-         * @return array Exported parameters.
+         * @since  1.0.10
+         * @access public
+         * @var    string
+         */
+        public $pro_url = '';
+        /**
+         * Add custom parameters to pass to the JS via JSON.
+         *
+         * @since  1.0.10
+         * @access public
+         * @return string
          */
         public function json()
         {
         }
-    }
-    /**
-     * Adds a custom Customize Section for nested sections.
-     *
-     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
-     * @since 1.0.31
-     * @see WP_Customize_Section
-     */
-    class Astra_WP_Customize_Section extends \WP_Customize_Section
-    {
         /**
-         * Section
+         * Outputs the Underscore.js template.
          *
-         * @since 1.0.31
-         * @var string
-         */
-        public $section;
-        /**
-         * Control type.
-         *
-         * @since  1.0.31
-         * @var string
-         */
-        public $type = 'ast_section';
-        /**
-         * Get section parameters for JS.
-         *
-         * @since 1.0.31
-         * @return array Exported parameters.
-         */
-        public function json()
-        {
-        }
-    }
-    /**
-     * Adds a custom Customize Section for section separator.
-     *
-     * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
-     * @since 2.0.0
-     * @see WP_Customize_Section
-     */
-    class Astra_WP_Customize_Separator extends \WP_Customize_Section
-    {
-        /**
-         * Control type.
-         *
-         * @since  1.0.31
-         * @var string
-         */
-        public $type = 'ast-section-separator';
-        /**
-         * Template for section separator
-         *
-         * @since 2.0.0
+         * @since  1.0.10
+         * @access public
+         * @return void
          */
         protected function render_template()
         {
         }
     }
     /**
-     * Astra_Notices
-     *
-     * @since 1.0.0
+     * Register Button Customizer Configurations.
      */
-    class Astra_Notices
+    class Astra_Pro_Upgrade_Link_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Notices
+         * Register Button Customizer Configurations.
          *
-         * @access private
-         * @var array Notices.
-         * @since 1.0.0
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
          */
-        private static $version = '1.1.11';
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Fonts Data
+     */
+    final class Astra_Fonts_Data
+    {
         /**
-         * Notices
-         *
-         * @access private
-         * @var array Notices.
-         * @since 1.0.0
+         * Localize Fonts
          */
-        private static $notices = array();
+        public static function js()
+        {
+        }
+    }
+    /**
+     * Scroll To Top Initial Setup
+     *
+     * @since 4.0.0
+     */
+    class Astra_Scroll_To_Top
+    {
         /**
-         * Instance
-         *
-         * @access private
-         * @var object Class object.
-         * @since 1.0.0
-         */
-        private static $instance;
-        /**
-         * Initiator
-         *
-         * @since 1.0.0
-         * @return object initialized object of class.
+         *  Initiator
          */
         public static function get_instance()
         {
         }
         /**
-         * Constructor
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Register Scroll To Top Customizer Configurations.
+     */
+    class Astra_Scroll_To_Top_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Scroll To Top Customizer Configurations.
          *
-         * @since 1.0.0
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 4.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Scroll to Top - Customizer.
+     *
+     * @package Astra
+     * @since 4.0.0
+     */
+    /**
+     * Customizer Initialization
+     *
+     * @since 4.0.0
+     */
+    class Astra_Scroll_To_Top_Loader
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         *  Constructor
+         *
+         * @since 4.0.0
          */
         public function __construct()
         {
         }
         /**
-         * Filters and Returns a list of allowed tags and attributes for a given context.
+         * Set Options Default Values
          *
-         * @param array  $allowedposttags array of allowed tags.
-         * @param string $context Context type (explicit).
-         * @since 1.0.0
+         * @param  array $defaults  Astra options default value array.
+         * @return array
+         * @since 4.0.0
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Add customizer configs for scroll to top in the Theme Customizer.
+         *
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         * @since 4.0.0
+         */
+        public function new_customize_register($wp_customize)
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 4.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+        /**
+         * Scroll to Top addon markup loader
+         *
+         * Loads appropriate template file based on the style option selected in options panel.
+         *
+         * @since 4.0.0
+         */
+        public function html_markup_loader()
+        {
+        }
+    }
+    /**
+     * Register Transparent Header Customizer Configurations.
+     */
+    class Astra_Customizer_Transparent_Header_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Transparent Header Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Colors and Background - Header Options Customizer Configurations.
+     */
+    class Astra_Customizer_Colors_Transparent_Header_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Colors and Background - Header Options Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Transparent Header Customizer Configurations.
+     */
+    class Astra_Transparent_Header_Panels_And_Sections extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Transparent Header Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 1.0.0
+     */
+    class Astra_Ext_Transparent_Header_Loader
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         *  Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Set Options Default Values
+         *
+         * @param  array $defaults  Astra options default value array.
          * @return array
          */
-        public function add_data_attributes($allowedposttags, $context)
+        public function theme_defaults($defaults)
         {
         }
         /**
-         * Add Notice.
+         * Add postMessage support for site title and description for the Theme Customizer.
          *
-         * @since 1.0.0
-         * @param array $args Notice arguments.
-         * @return void
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
          */
-        public static function add_notice($args = array())
+        public function customize_register($wp_customize)
         {
         }
         /**
-         * Dismiss Notice.
-         *
-         * @since 1.0.0
-         * @return void
+         * Customizer Preview
          */
-        public function dismiss_notice()
+        public function preview_scripts()
         {
         }
+    }
+    /**
+     * Transparent Header Markup Initial Setup
+     *
+     * @since 1.0.0
+     */
+    class Astra_Ext_Transparent_Header_Markup
+    {
         /**
-         * Enqueue Scripts.
-         *
-         * @since 1.0.0
-         * @return void
+         *  Initiator
          */
-        public function enqueue_scripts()
+        public static function get_instance()
         {
         }
         /**
-         * Sort the notices based on the given priority of the notice.
-         * This function is called from usort()
+         *  Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add Body Classes
          *
-         * @since 1.5.2
-         * @param array $notice_1 First notice.
-         * @param array $notice_2 Second Notice.
+         * @param array $classes Body Class Array.
          * @return array
          */
-        public function sort_notices($notice_1, $notice_2)
+        public function add_body_class($classes)
         {
         }
         /**
-         * Get all registered notices.
-         * Since v1.1.8 it is recommended to register the notices on
+         * Astra check if transparent header is enabled.
          *
-         * @return array|null
+         * @return boolean true/false.
          */
-        private function get_notices()
+        public static function is_transparent_header()
         {
         }
         /**
-         * Get notice by notice_id
-         *
-         * @param string $notice_id Notice id.
-         *
-         * @return array notice based on the notice id.
-         */
-        private function get_notice_by_id($notice_id)
-        {
-        }
-        /**
-         * Display the notices in the WordPress admin.
+         * Site Header - <header>
          *
          * @since 1.0.0
+         */
+        public function transparent_header_logo()
+        {
+        }
+        /**
+         * Replace transparent header logo.
+         *
+         * @param sting $html Size name.
+         * @param int   $blog_id Icon.
+         *
+         * @return string html markup of logo.
+         */
+        public function transparent_custom_logo($html, $blog_id)
+        {
+        }
+        /**
+         * Replace transparent header logo.
+         *
+         * @param array  $attr Image.
+         * @param object $attachment Image obj.
+         * @param sting  $size Size name.
+         *
+         * @return array Image attr.
+         */
+        public function replace_trans_header_attr($attr, $attachment, $size)
+        {
+        }
+        /**
+         * Add Meta Options
+         *
+         * @param array $meta_option Page Meta.
+         * @return array
+         */
+        public function add_options($meta_option)
+        {
+        }
+        /**
+         * Transparent Header Meta Field markup
+         *
+         * Loads appropriate template file based on the style option selected in options panel.
+         *
+         * @param array $meta Page Meta.
+         * @since 1.0.0
+         */
+        public function add_options_markup($meta)
+        {
+        }
+        /**
+         * Add Styles Callback
+         */
+        public function customizer_save()
+        {
+        }
+        /**
+         * Add logo image sizes in filter.
+         *
+         * @since 1.0.0
+         * @param array $sizes Sizes.
+         * @param array $metadata attachment data.
+         *
+         * @return array
+         */
+        public function transparent_logo_image_sizes($sizes, $metadata)
+        {
+        }
+    }
+    /**
+     * Sticky Header Initial Setup
+     *
+     * @since 1.0.0
+     */
+    class Astra_Ext_Transparent_Header
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 1.7.0
+     */
+    class Astra_Breadcrumbs_Loader
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         *  Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Enqueue google fonts.
+         *
          * @return void
          */
-        public function show_notices()
+        public function add_fonts()
         {
         }
         /**
-         * Render a notice.
+         * Set Options Default Values
          *
-         * @since 1.0.0
-         * @param  array $notice Notice markup.
+         * @param  array $defaults  Astra options default value array.
+         * @return array
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Add postMessage support for site title and description for the Theme Customizer.
+         *
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         */
+        public function customize_register($wp_customize)
+        {
+        }
+        /**
+         * Customizer Preview
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
+     */
+    class Astra_Breadcrumbs_Typo_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.7.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Breadcrumbs_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra-Breadcrumbs Settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.7.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+        /**
+         * Is third-party breadcrumb active.
+         * Decide if the Source option should be visible depending on third party plugins.
+         *
+         * @return boolean  True - If the option should be displayed, False - If the option should be hidden.
+         */
+        public function is_third_party_breadcrumb_active()
+        {
+        }
+        /**
+         * Is selected third-party breadcrumb active.
+         * Decide if the Separator option should be visible depending on third party plugins.
+         *
+         * @return boolean  True - If the option should be displayed, False - If the option should be hidden.
+         */
+        public function is_selected_breadcrumb_active()
+        {
+        }
+    }
+    /**
+     * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
+     */
+    class Astra_Breadcrumbs_Color_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 1.7.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Breadcrumbs Markup Initial Setup
+     *
+     * @since 1.8.0
+     */
+    class Astra_Breadcrumbs_Markup
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         *  Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Astra Breadcrumbs Template
+         *
+         * Loads template based on the style option selected in options panel for Breadcrumbs.
+         *
+         * @since 1.8.0
+         *
          * @return void
          */
-        public static function markup($notice = array())
+        public function astra_breadcumb_template()
         {
         }
         /**
-         * Get wrapper classes for a notice.
+         * Astra Hook Breadcrumb Position
          *
-         * @since 1.0.0
+         * Hook breadcrumb to position of selected option
          *
-         * @param  array $notice Notice arguments.
-         * @return array       Notice wrapper classes.
+         * @since 1.8.0
+         *
+         * @return void
          */
-        private static function get_wrap_classes($notice)
+        public function astra_hook_breadcrumb_position()
         {
         }
         /**
-         * Get HTML ID for a given notice.
+         * Astra Breadcrumbs Rules
          *
-         * @since 1.0.0
+         * Checks the rules defined for displaying Breadcrumb on different pages.
          *
-         * @param  array $notice Notice arguments.
-         * @param  int   $key    Notice array index.
-         * @return string HTML if for the notice.
-         */
-        private static function get_notice_id($notice, $key)
-        {
-        }
-        /**
-         * Check if the notice is expires.
+         * @since 1.8.0
          *
-         * @since 1.0.0
-         *
-         * @param  array $notice Notice arguments.
          * @return boolean
          */
-        private static function is_expired($notice)
+        public static function astra_breadcrumb_rules()
+        {
+        }
+    }
+    /**
+     * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
+     *
+     * @since  0.6.0
+     * @access public
+     */
+    class Astra_Breadcrumb_Trail
+    {
+        /**
+         * Array of items belonging to the current breadcrumb trail.
+         *
+         * @since  0.1.0
+         * @access public
+         * @var    array
+         */
+        public $items = array();
+        /**
+         * Arguments used to build the breadcrumb trail.
+         *
+         * @since  0.1.0
+         * @access public
+         * @var    array
+         */
+        public $args = array();
+        /**
+         * Array of text labels.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    array
+         */
+        public $labels = array();
+        /**
+         * Array of post types (key) and taxonomies (value) to use for single post views.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    array
+         */
+        public $post_taxonomy = array();
+        /* ====== Magic Methods ====== */
+        /**
+         * Magic method to use in case someone tries to output the layout object as a string.
+         * We'll just return the trail HTML.
+         *
+         * @since  1.0.0
+         * @access public
+         * @return string
+         */
+        public function __toString()
         {
         }
         /**
-         * Get base URL for the astra-notices.
+         * Sets up the breadcrumb trail properties.  Calls the `Breadcrumb_Trail::add_items()` method
+         * to create the array of breadcrumb items.
          *
-         * @return mixed URL.
+         * @since  0.6.0
+         * @access public
+         * @param  array   $args  {
+         *     @type string    $container      Container HTML element. nav|div
+         *     @type string    $before         String to output before breadcrumb menu.
+         *     @type string    $after          String to output after breadcrumb menu.
+         *     @type string    $browse_tag     The HTML tag to use to wrap the "Browse" header text.
+         *     @type string    $list_tag       The HTML tag to use for the list wrapper.
+         *     @type string    $item_tag       The HTML tag to use for the item wrapper.
+         *     @type bool      $show_on_front  Whether to show when `is_front_page()`.
+         *     @type bool      $network        Whether to link to the network main site (multisite only).
+         *     @type bool      $show_title     Whether to show the title (last item) in the trail.
+         *     @type bool      $show_browse    Whether to show the breadcrumb menu header.
+         *     @type array     $labels         Text labels. @see Breadcrumb_Trail::set_labels()
+         *     @type array     $post_taxonomy  Taxonomies to use for post types. @see Breadcrumb_Trail::set_post_taxonomy()
+         *     @type bool      $echo           Whether to print or return the breadcrumbs.
+         * }
+         * @return void
          */
-        public static function get_url()
+        public function __construct($args = array())
+        {
+        }
+        /* ====== Public Methods ====== */
+        /**
+         * Formats the HTML output for the breadcrumb trail.
+         *
+         * @since  0.6.0
+         * @access public
+         * @return string
+         */
+        public function trail()
+        {
+        }
+        /* ====== Protected Methods ====== */
+        /**
+         * Sets the labels property.  Parses the inputted labels array with the defaults.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function set_labels()
+        {
+        }
+        /**
+         * Sets the `$post_taxonomy` property.  This is an array of post types (key) and taxonomies (value).
+         * The taxonomy's terms are shown on the singular post view if set.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function set_post_taxonomy()
+        {
+        }
+        /**
+         * Runs through the various WordPress conditional tags to check the current page being viewed.  Once
+         * a condition is met, a specific method is launched to add items to the `$items` array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_items()
+        {
+        }
+        /**
+         * Gets front items based on $wp_rewrite->front.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_rewrite_front_items()
+        {
+        }
+        /**
+         * Adds the page/paged number to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_paged_items()
+        {
+        }
+        /**
+         * Adds the network (all sites) home page link to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_network_home_link()
+        {
+        }
+        /**
+         * Adds the current site's home page link to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_site_home_link()
+        {
+        }
+        /**
+         * Adds items for the front page to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_front_page_items()
+        {
+        }
+        /**
+         * Adds items for the posts page (i.e., is_home()) to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_blog_items()
+        {
+        }
+        /**
+         * Adds singular post items to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_singular_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for taxonomy term archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @global object $wp_rewrite
+         * @return void
+         */
+        protected function add_term_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for post type archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_post_type_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for user (author) archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @global object $wp_rewrite
+         * @return void
+         */
+        protected function add_user_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for minute + hour archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_minute_hour_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for minute archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_minute_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for hour archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_hour_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for day archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_day_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for week archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_week_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for month archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_month_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for year archives.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_year_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for archives that don't have a more specific method
+         * defined in this class.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_default_archive_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for search results.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_search_items()
+        {
+        }
+        /**
+         * Adds the items to the trail items array for 404 pages.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @return void
+         */
+        protected function add_404_items()
+        {
+        }
+        /**
+         * Adds a specific post's parents to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @param  int    $post_id
+         * @return void
+         */
+        protected function add_post_parents($post_id)
+        {
+        }
+        /**
+         * Adds a specific post's hierarchy to the items array.  The hierarchy is determined by post type's
+         * rewrite arguments and whether it has an archive page.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @param  int    $post_id
+         * @return void
+         */
+        protected function add_post_hierarchy($post_id)
+        {
+        }
+        /**
+         * Gets post types by slug.  This is needed because the get_post_types() function doesn't exactly
+         * match the 'has_archive' argument when it's set as a string instead of a boolean.
+         *
+         * @since  0.6.0
+         * @access protected
+         * @param  int    $slug  The post type archive slug to search for.
+         * @return void
+         */
+        protected function get_post_types_by_slug($slug)
+        {
+        }
+        /**
+         * Adds a post's terms from a specific taxonomy to the items array.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @param  int     $post_id  The ID of the post to get the terms for.
+         * @param  string  $taxonomy The taxonomy to get the terms from.
+         * @return void
+         */
+        protected function add_post_terms($post_id, $taxonomy)
+        {
+        }
+        /**
+         * Get parent posts by path.  Currently, this method only supports getting parents of the 'page'
+         * post type.  The goal of this function is to create a clear path back to home given what would
+         * normally be a "ghost" directory.  If any page matches the given path, it'll be added.
+         *
+         * @since  1.0.0
+         * @access protected
+         * @param  string $path The path (slug) to search for posts by.
+         * @return void
+         */
+        function add_path_parents($path)
+        {
+        }
+        /**
+         * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
+         * function get_category_parents() but handles any type of taxonomy.
+         *
+         * @since  1.0.0
+         * @param  int    $term_id  ID of the term to get the parents of.
+         * @param  string $taxonomy Name of the taxonomy for the given term.
+         * @return void
+         */
+        function add_term_parents($term_id, $taxonomy)
+        {
+        }
+        /**
+         * Turns %tag% from permalink structures into usable links for the breadcrumb trail.  This feels kind of
+         * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post'
+         * post type.  In the future, maybe it'll handle a wider variety of possibilities, especially for custom post
+         * types.
+         *
+         * @since  0.6.0
+         * @access protected
+         * @param  int    $post_id ID of the post whose parents we want.
+         * @param  string $path    Path of a potential parent page.
+         * @param  array  $args    Mixed arguments for the menu.
+         * @return array
+         */
+        protected function map_rewrite_tags($post_id, $path)
+        {
+        }
+    }
+    /**
+     * Breadcrumbs Initial Setup
+     *
+     * @since 1.7.0
+     */
+    class Astra_Breadcrumbs
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Third Party Breadcrumb option
+         *
+         * @param Array $options breadcrumb options array.
+         *
+         * @return Array breadcrumb options array.
+         * @since 1.0.0
+         */
+        public function astra_breadcrumb_source_list_items($options)
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 2.2.0
+     */
+    class Astra_Heading_Colors_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 2.2.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Enqueue google fonts.
+         *
+         * @since 2.2.0
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Set Options Default Values
+         *
+         * @param  array $defaults  Astra options default value array.
+         * @return array
+         *
+         * @since 2.2.0
+         */
+        public function theme_defaults($defaults)
+        {
+        }
+        /**
+         * Load color configs for the Heading Colors.
+         *
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         *
+         * @since 2.2.0
+         */
+        public function customize_register($wp_customize)
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 2.2.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Customizer Sanitizes Initial setup
+     */
+    class Astra_Heading_Colors_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Astra Heading Colors Settings.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 2.1.4
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 2.1.4
+     */
+    class Astra_Heading_Colors
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
         {
         }
     }
@@ -11231,6 +7761,1352 @@ namespace {
         protected abstract function task($item);
     }
     /**
+     * Database Background Process
+     *
+     * @since 2.1.3
+     */
+    class Astra_Theme_WP_Background_Process extends \Astra_WP_Background_Process
+    {
+        /**
+         * Database Process
+         *
+         * @var string
+         */
+        protected $action = 'astra_theme_db_migration';
+        /**
+         * Task
+         *
+         * Override this method to perform any actions required on each
+         * queue item. Return the modified item for further processing
+         * in the next pass through. Or, return false to remove the
+         * item from the queue.
+         *
+         * @since 2.1.3
+         *
+         * @param object $process Queue item object.
+         * @return mixed
+         */
+        protected function task($process)
+        {
+        }
+        /**
+         * Complete
+         *
+         * Override if applicable, but ensure that the below actions are
+         * performed, or, call parent::complete().
+         *
+         * @since 2.1.3
+         */
+        protected function complete()
+        {
+        }
+    }
+    /**
+     * Astra_Theme_Background_Updater Class.
+     */
+    class Astra_Theme_Background_Updater
+    {
+        /**
+         *  Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Check Cron Status
+         *
+         * Gets the current cron status by performing a test spawn. Cached for one hour when all is well.
+         *
+         * @since 2.3.0
+         *
+         * @return bool true if there is a problem spawning a call to WP-Cron system, else false.
+         */
+        public function test_cron()
+        {
+        }
+        /**
+         * Install actions when a update button is clicked within the admin area.
+         *
+         * This function is hooked into admin_init to affect admin and wp to affect the frontend.
+         */
+        public function install_actions()
+        {
+        }
+        /**
+         * Is this a brand new theme install?
+         *
+         * @since 2.1.3
+         * @return boolean
+         */
+        public function is_new_install()
+        {
+        }
+        /**
+         * Get list of DB update callbacks.
+         *
+         * @since 2.1.3
+         * @return array
+         */
+        public function get_db_update_callbacks()
+        {
+        }
+        /**
+         * Check if database is migrated
+         *
+         * @since 2.3.1
+         *
+         * @return true If the database migration should not be run through CRON.
+         */
+        public function check_if_data_migrated()
+        {
+        }
+        /**
+         * Checks if astra addon version is updated in the database
+         *
+         * @since 2.3.1
+         *
+         * @return true if astra addon version is updated.
+         */
+        public function is_db_version_updated()
+        {
+        }
+        /**
+         * Update DB version to current.
+         *
+         * @param string|null $version New Astra theme version or null.
+         */
+        public static function update_db_version($version = \null)
+        {
+        }
+    }
+    /**
+     * Global palette class
+     */
+    class Astra_Global_Palette
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.7.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Modify color palette from Gutenberg.
+         *
+         * @since 3.7.0
+         * @return void
+         */
+        public function support_editor_color_palette()
+        {
+        }
+        /**
+         * Format color palette data required to pass for Gutenberg palette.
+         *
+         * @since 3.7.0
+         * @param array $global_palette global palette data.
+         * @return array
+         */
+        public function format_global_palette($global_palette)
+        {
+        }
+        /**
+         * Get CSS variable prefix used for styling.
+         *
+         * @since 3.7.0
+         * @return string variable prefix
+         */
+        public static function get_css_variable_prefix()
+        {
+        }
+        /**
+         * Localize variables used in the customizer.
+         *
+         * @since 3.7.0
+         * @param array $object localize object.
+         * @return array<array-key, mixed> $object localize object.
+         */
+        public function localize_variables($object)
+        {
+        }
+        /**
+         * Default global palette options.
+         *
+         * @since 3.7.0
+         * @return array Palette options.
+         */
+        public static function get_default_color_palette()
+        {
+        }
+        /**
+         * Get labels for palette colors.
+         *
+         * @since 3.7.0
+         * @return array Palette labels.
+         */
+        public static function get_palette_labels()
+        {
+        }
+        /**
+         * Get slugs for palette colors.
+         *
+         * @since 3.7.0
+         * @return array Palette slugs.
+         */
+        public static function get_palette_slugs()
+        {
+        }
+        /**
+         * Include required files.
+         *
+         * @since 3.7.0
+         */
+        public function includes()
+        {
+        }
+        /**
+         * Generate palette CSS required to display on front end.
+         *
+         * @since 3.7.0
+         * @return array palette style array.
+         */
+        public static function generate_global_palette_style()
+        {
+        }
+        /**
+         * Pass hex value for global palette to process forground color.
+         *
+         * @since 3.7.0
+         * @param string $color hex color / css variable.
+         * @return string
+         */
+        public function get_color_by_palette_variable($color)
+        {
+        }
+        /**
+         * Add dynamic CSS for the global border color.
+         *
+         * @since 3.9.0
+         *
+         * @param  string $dynamic_css          Astra Dynamic CSS.
+         *
+         * @return String Generated dynamic CSS for global border.
+         */
+        public function global_border_compatibility($dynamic_css)
+        {
+        }
+    }
+    /**
+     * Astra_After_Setup_Theme initial setup
+     */
+    class Astra_After_Setup_Theme
+    {
+        /**
+         * Initiator
+         *
+         * @since 1.0.0
+         * @return object
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Setup theme
+         *
+         * @since 1.0.0
+         */
+        public function setup_theme()
+        {
+        }
+        /**
+         * Set the $content_width global variable used by WordPress to set image dimennsions.
+         *
+         * @since 1.5.5
+         * @return void
+         */
+        public function setup_content_width()
+        {
+        }
+        /**
+         * Adds a responsive embed wrapper around oEmbed content
+         *
+         * @param  string $html The oEmbed markup.
+         * @param  string $url The URL being embedded.
+         * @param  array  $attr An array of attributes.
+         *
+         * @return string       Updated embed markup.
+         */
+        public function responsive_oembed_wrapper($html, $url, $attr)
+        {
+        }
+    }
+    /**
+     * Astra Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_Schema
+    {
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_WPFooter_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function wpfooter_Schema($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra Breadcrumb Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_Breadcrumb_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Disable Schema for Before Title option of Breadcrumb Position.
+         *
+         * @since 2.1.3
+         *
+         * @return void
+         */
+        public function disable_schema_before_title()
+        {
+        }
+        /**
+         * Disable schema by passing false to the 'schema' param to the filter.
+         *
+         * @since 2.1.3
+         *
+         * @param  array $args An array of default values.
+         *
+         * @return array       Updated schema param.
+         */
+        public function breadcrumb_schema($args)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_CreativeWork_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function creative_work_schema($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_title_blog_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_title_blog_single_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_title_content_page_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_title_content_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_blog_layout_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_page_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_blog_layout_2_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_blog_layout_3_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_content_single_layout_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_image_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function article_image_blog_archive_schema_prop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array Updated embed markup.
+         */
+        public function article_image_blog_single_post_schema_prop($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_WPSideBar_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function wpsidebar_Schema($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_Organization_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function organization_Schema($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_attr($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_link_attr($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_custom_link_attr($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_sticky_custom_link_attr($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_none_sticky_custom_link_attr($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_title_sticky_custom_logo_link_attr($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_Person_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function person_Schema($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_name_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_name_info_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_url_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_info_url_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_desc_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function author_item_schema_itemprop($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_Site_Navigation_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function site_navigation_schema($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Astra CreativeWork Schema Markup.
+     *
+     * @since 2.1.3
+     */
+    class Astra_WPHeader_Schema extends \Astra_Schema
+    {
+        /**
+         * Setup schema
+         *
+         * @since 2.1.3
+         */
+        public function setup_schema()
+        {
+        }
+        /**
+         * Update Schema markup attribute.
+         *
+         * @param  array $attr An array of attributes.
+         *
+         * @return array       Updated embed markup.
+         */
+        public function wpheader_Schema($attr)
+        {
+        }
+        /**
+         * Enabled schema
+         *
+         * @since 2.1.3
+         */
+        protected function schema_enabled()
+        {
+        }
+    }
+    /**
+     * Dynamic CSS
+     */
+    class Astra_Dynamic_CSS
+    {
+        /**
+         * Return CSS Output
+         *
+         * @param  string $dynamic_css          Astra Dynamic CSS.
+         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+         * @return string Generated CSS.
+         */
+        public static function return_output($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+        /**
+         * Return post meta CSS
+         *
+         * @param  string $dynamic_css          Astra Dynamic CSS.
+         * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+         * @return mixed              Return the CSS.
+         */
+        public static function return_meta_output($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+        /**
+         * Check if CSS selectors in Headings should use anchors.
+         *
+         * @since 1.4.9
+         * @return boolean true if it should include anchors, False if not.
+         */
+        public static function anchors_in_css_selectors_heading()
+        {
+        }
+        /**
+         * Check backwards compatibility CSS for loading submenu below the header needs to be added.
+         *
+         * @since 1.5.0
+         * @return boolean true if CSS should be included, False if not.
+         */
+        public static function astra_submenu_below_header_fix()
+        {
+        }
+        /**
+         * Check backwards compatibility CSS for loading submenu below the header needs to be added.
+         *
+         * @since 2.1.3
+         * @return boolean true if submenu below header fix is to be loaded, False if not.
+         */
+        public static function astra_submenu_open_below_header_fix()
+        {
+        }
+        /**
+         * Check backwards compatibility to not load default CSS for the button styling of Page Builders.
+         *
+         * @since 2.2.0
+         * @return boolean true if button style CSS should be loaded, False if not.
+         */
+        public static function page_builder_button_style_css()
+        {
+        }
+        /**
+         * Elementor Theme Style - Button Text Color compatibility. This should be looked in the future for proper solution.
+         *
+         * Reference: https://github.com/elementor/elementor/issues/10733
+         * Reference: https://github.com/elementor/elementor/issues/10739
+         *
+         * @since 2.3.3
+         *
+         * @return mixed
+         */
+        public static function is_elementor_kit_button_color_set()
+        {
+        }
+        /**
+         * Check if Elementor - Disable Default Colors or Disable Default Fonts checked or unchecked.
+         *
+         * @since  2.3.3
+         *
+         * @return mixed String if any of the settings are enabled. False if no settings are enabled.
+         */
+        public static function elementor_default_color_font_setting()
+        {
+        }
+        /**
+         * For existing users, do not reflect direct change.
+         *
+         * @since 3.6.5
+         * @return boolean true if WordPress-5.8 compatibility enabled, False if not.
+         */
+        public static function is_block_editor_support_enabled()
+        {
+        }
+        /**
+         * For existing users, do not provide Elementor Default Color Typo settings compatibility by default.
+         *
+         * @since 2.3.3
+         * @return boolean true if elementor default color and typo setting should work with theme, False if not.
+         */
+        public static function is_elementor_default_color_font_comp()
+        {
+        }
+        /**
+         * For existing users, do not provide list vertical spacing.
+         *
+         * @since 4.1.6
+         * @return boolean true for new users, false for old users.
+         */
+        public static function astra_list_block_vertical_spacing()
+        {
+        }
+        /**
+         * For existing users, do not load the wide/full width image CSS by default.
+         *
+         * @since 2.4.4
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function gtn_image_group_css_comp()
+        {
+        }
+        /**
+         * Do not apply new wide/full Group and Cover block CSS for existing users.
+         *
+         * @since 2.5.0
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function gtn_group_cover_css_comp()
+        {
+        }
+        /**
+         * Do not apply new Group, Column and Media & Text block CSS for existing users.
+         *
+         * @since 2.6.0
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function gutenberg_core_blocks_css_comp()
+        {
+        }
+        /**
+         * Do not apply new Group, Column and Media & Text block CSS for existing users.
+         *
+         * CSS for adding spacing|padding support to Gutenberg Media-&-Text Block
+         *
+         * @since 2.6.1
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function gutenberg_media_text_block_css_compat()
+        {
+        }
+        /**
+         * Gutenberg pattern compatibility changes.
+         *
+         * @since 3.3.0
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function gutenberg_core_patterns_compat()
+        {
+        }
+        /**
+         * Font CSS support for widget-title heading fonts & fonts which are not working in editor.
+         *
+         * 1. Adding Font-weight support to widget titles.
+         * 2. Customizer font CSS not supporting in editor.
+         *
+         * @since 3.6.0
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function support_font_css_to_widget_and_in_editor()
+        {
+        }
+        /**
+         * Whether to remove or not following CSS which restricts logo size on responsive devices.
+         *
+         * @see https://github.com/brainstormforce/astra/commit/d09f63336b73d58c8f8951726edbc90671d7f419
+         *
+         * @since 3.6.0
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function remove_logo_max_width_mobile_static_css()
+        {
+        }
+        /**
+         * Remove text-decoration: underline; CSS for builder specific elements to maintain their UI/UX better.
+         *
+         * 1. UAG : Marketing Button, Info Box CTA, MultiButtons, Tabs.
+         * 2. UABB : Button, Slide Box CTA, Flip box CTA, Info Banner, Posts, Info Circle, Call to Action, Subscribe Form.
+         *
+         * @since 3.6.9
+         */
+        public static function unset_builder_elements_underline()
+        {
+        }
+        /**
+         * Block editor experience improvements css introduced with v4.0.0.
+         *
+         * @since 4.0.0
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function v4_block_editor_compat()
+        {
+        }
+        /**
+         * Load sidebar static CSS when it is enabled.
+         *
+         * @since 3.0.0
+         */
+        public static function load_sidebar_static_css()
+        {
+        }
+        /**
+         * Astra Spectra Gutenberg Compatibility CSS.
+         *
+         * @since 3.9.4
+         * @return boolean false if it is an existing user , true if not.
+         */
+        public static function spectra_gutenberg_compat_css()
+        {
+        }
+        /**
+         * Load static card(EDD/Woo) CSS.
+         *
+         * @since 3.0.0
+         * @return string static css for Woocommerce and EDD card.
+         */
+        public static function load_cart_static_css()
+        {
+        }
+        /**
+         * Check is new structural things are updated.
+         *
+         * @return bool true|false.
+         * @since 4.0.0
+         */
+        public static function astra_check_default_color_typo()
+        {
+        }
+        /**
+         * Check is new structural things are updated.
+         *
+         * @return bool true|false.
+         * @since 4.1.0
+         */
+        public static function astra_woo_support_global_settings()
+        {
+        }
+        /**
+         * Check if fullwidth layout with sidebar is supported.
+         * Old users - yes
+         * New users - no
+         *
+         * @return bool true|false.
+         * @since 4.2.0
+         */
+        public static function astra_fullwidth_sidebar_support()
+        {
+        }
+        /**
+         * Core Comment & Search Button Styling Compatibility.
+         * Old Users - Will not reflect directly.
+         * New Users - Direct reflection
+         *
+         * @return bool true|false.
+         * @since 4.2.2
+         */
+        public static function astra_core_form_btns_styling()
+        {
+        }
+    }
+    /**
+     * Meta Box
+     */
+    class Astra_Meta_Box_Operations
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Metabox Hooks
+         */
+        public function meta_hooks()
+        {
+        }
+        /**
+         * Primary Header
+         */
+        public function primary_header()
+        {
+        }
+        /**
+         * Disable Post / Page Title
+         *
+         * @param  boolean $defaults Show default post title.
+         * @return boolean           Status of default post title.
+         */
+        public function post_title($defaults)
+        {
+        }
+        /**
+         * Add Body Classes
+         *
+         * @param  array $classes Body Classes Array.
+         * @return array
+         */
+        public function body_class($classes)
+        {
+        }
+    }
+    /**
+     * Meta Boxes setup
+     */
+    class Astra_Meta_Boxes
+    {
+        /**
+         * Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Register Post Meta options support.
+         *
+         * @since 3.7.6
+         * @param array|mixed $args the post type args.
+         * @param string      $post_type the post type.
+         */
+        public function custom_fields_support($args, $post_type)
+        {
+        }
+        /**
+         * Check if layout is bb themer's layout
+         */
+        public static function is_bb_themer_layout()
+        {
+        }
+        /**
+         *  Remove Metabox for beaver themer specific layouts
+         */
+        public function remove_metabox()
+        {
+        }
+        /**
+         *  Init Metabox
+         */
+        public function init_metabox()
+        {
+        }
+        /**
+         *  Setup Metabox
+         */
+        public function setup_meta_box()
+        {
+        }
+        /**
+         * Get metabox options
+         */
+        public static function get_meta_option()
+        {
+        }
+        /**
+         * Metabox Markup
+         *
+         * @param  object $post Post object.
+         * @return void
+         */
+        public function markup_meta_box($post)
+        {
+        }
+        /**
+         * Metabox Save
+         *
+         * @param  number $post_id Post ID.
+         * @return void
+         */
+        public function save_meta_box($post_id)
+        {
+        }
+        /**
+         * Register Script for Meta options
+         */
+        public function register_script()
+        {
+        }
+        /**
+         * Enqueue Script for Meta settings.
+         *
+         * @return void
+         */
+        public function load_scripts()
+        {
+        }
+        /**
+         * Returns an array of sidebar options.
+         *
+         * @return array The array of sidebar options.
+         */
+        public function get_sidebar_options()
+        {
+        }
+        /**
+         * Returns an array of content layout options for the current post type.
+         *
+         * @return array The array of content layout options.
+         */
+        public function get_content_layout_options()
+        {
+        }
+        /**
+         * @return array The array of content layout options.
+         * @since 4.2.0
+         */
+        public function get_content_style_options()
+        {
+        }
+        /**
+         * @return array The array of sidebar style options.
+         * @since 4.2.0
+         */
+        public function get_sidebar_style_options()
+        {
+        }
+        /**
+         * Get header related sub-meta fields.
+         *
+         * @return array $astra_header_options All header dependent toggle based page elements.
+         */
+        public function get_header_disable_meta_fields()
+        {
+        }
+        /**
+         * Get disable section fields.
+         *
+         * @return array $astra_page_meta_elements All toggle based page elements.
+         */
+        public function get_disable_section_fields()
+        {
+        }
+        /**
+         * Get sticky header options.
+         */
+        public function get_sticky_header_options()
+        {
+        }
+        /**
+         * Get all transparet and sticky header options.
+         */
+        public function get_header_enabled_options()
+        {
+        }
+        /**
+         * Checking the page headers are available and have some posts with it.
+         *
+         * @since 3.8.0
+         * @return bool true|false.
+         */
+        public function check_page_header_availability()
+        {
+        }
+        /**
+         * Get page header Options.
+         */
+        public function get_page_header_options()
+        {
+        }
+        /**
+         * Register Post Meta options for react based fields.
+         *
+         * @since 3.7.4
+         */
+        public function register_meta_settings()
+        {
+        }
+        /**
+         * Setup meta options for Astra meta settings.
+         *
+         * @since 3.7.8
+         */
+        public static function post_meta_options()
+        {
+        }
+    }
+    /**
      * Download webfonts locally.
      *
      * @package WPTT/webfont-loader
@@ -11555,499 +9431,353 @@ namespace {
         }
     }
     /**
-     * Meta Box
+     * Astra_Notices
+     *
+     * @since 1.0.0
      */
-    class Astra_Meta_Box_Operations
+    class Astra_Notices
     {
         /**
-         * Instance
-         *
-         * @var $instance
-         */
-        private static $instance;
-        /**
          * Initiator
+         *
+         * @since 1.0.0
+         * @return object initialized object of class.
          */
         public static function get_instance()
         {
         }
         /**
          * Constructor
+         *
+         * @since 1.0.0
          */
         public function __construct()
         {
         }
         /**
-         * Metabox Hooks
-         */
-        public function meta_hooks()
-        {
-        }
-        /**
-         * Primary Header
-         */
-        public function primary_header()
-        {
-        }
-        /**
-         * Disable Post / Page Title
+         * Filters and Returns a list of allowed tags and attributes for a given context.
          *
-         * @param  boolean $defaults Show default post title.
-         * @return boolean           Status of default post title.
+         * @param array  $allowedposttags array of allowed tags.
+         * @param string $context Context type (explicit).
+         * @since 1.0.0
+         * @return array
          */
-        public function post_title($defaults)
+        public function add_data_attributes($allowedposttags, $context)
+        {
+        }
+        /**
+         * Add Notice.
+         *
+         * @since 1.0.0
+         * @param array $args Notice arguments.
+         * @return void
+         */
+        public static function add_notice($args = array())
+        {
+        }
+        /**
+         * Dismiss Notice.
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function dismiss_notice()
+        {
+        }
+        /**
+         * Enqueue Scripts.
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function enqueue_scripts()
+        {
+        }
+        /**
+         * Sort the notices based on the given priority of the notice.
+         * This function is called from usort()
+         *
+         * @since 1.5.2
+         * @param array $notice_1 First notice.
+         * @param array $notice_2 Second Notice.
+         * @return array
+         */
+        public function sort_notices($notice_1, $notice_2)
+        {
+        }
+        /**
+         * Display the notices in the WordPress admin.
+         *
+         * @since 1.0.0
+         * @return void
+         */
+        public function show_notices()
+        {
+        }
+        /**
+         * Render a notice.
+         *
+         * @since 1.0.0
+         * @param  array $notice Notice markup.
+         * @return void
+         */
+        public static function markup($notice = array())
+        {
+        }
+        /**
+         * Get base URL for the astra-notices.
+         *
+         * @return mixed URL.
+         */
+        public static function get_url()
+        {
+        }
+    }
+    /**
+     * Astra_Loop
+     *
+     * @since 1.2.7
+     */
+    class Astra_Loop
+    {
+        /**
+         * Initiator
+         *
+         * @since 1.2.7
+         *
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since 1.2.7
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Template part none
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_none()
+        {
+        }
+        /**
+         * Template part 404
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_404()
+        {
+        }
+        /**
+         * Template part page
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_page()
+        {
+        }
+        /**
+         * Template part single
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_post()
+        {
+        }
+        /**
+         * Template part search
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_search()
+        {
+        }
+        /**
+         * Template part comments
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_comments()
+        {
+        }
+        /**
+         * Template part default
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_default()
+        {
+        }
+        /**
+         * Loop Markup for content page
+         *
+         * @since 1.3.1
+         */
+        public function loop_markup_page()
+        {
+        }
+        /**
+         * Template part loop
+         *
+         * @param  boolean $is_page Loop outputs different content action for content page and default content.
+         *         if is_page is set to true - do_action( 'astra_page_template_parts_content' ); is added
+         *         if is_page is false - do_action( 'astra_template_parts_content' ); is added.
+         * @since 1.2.7
+         * @return void
+         */
+        public function loop_markup($is_page = \false)
+        {
+        }
+        /**
+         * Template part content top
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_content_top()
+        {
+        }
+        /**
+         * Template part content bottom
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function template_parts_content_bottom()
+        {
+        }
+        /**
+         * Add wrapper div 'ast-row' for Astra template part.
+         *
+         * @since  1.2.7
+         * @return void
+         */
+        public function astra_templat_part_wrap_open()
+        {
+        }
+        /**
+         * Add closing wrapper div for 'ast-row' after Astra template part.
+         *
+         * @since  1.2.7
+         * @return void
+         */
+        public function astra_templat_part_wrap_close()
+        {
+        }
+    }
+    /**
+     * Astra_Mobile_Header
+     *
+     * @since 1.4.0
+     */
+    class Astra_Mobile_Header
+    {
+        /**
+         * Initiator
+         *
+         * @since 1.4.0
+         *
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since 1.4.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add submenu toggle button used for mobile devices.
+         *
+         * @since 1.6.9
+         *
+         * @param string   $item_output The menu item's starting HTML output.
+         * @param WP_Post  $item        Menu item data object.
+         * @param int      $depth       Depth of menu item. Used for padding.
+         * @param stdClass $args        An object of wp_nav_menu() arguments.
+         *
+         * @return String Menu item's starting markup.
+         */
+        public function toggle_button($item_output, $item, $depth, $args)
+        {
+        }
+        /**
+         * Get Menu Arrow Button Mark up
+         *
+         * @param string  $item_output The menu item's starting HTML output.
+         * @param WP_Post $item        Menu item data object.
+         *
+         * @since 1.7.2
+         * @return string Menu item arrow button markup.
+         */
+        public function menu_arrow_button_markup($item_output, $item)
+        {
+        }
+        /**
+         * Header Cart Icon Class
+         *
+         * @param array $classes Default argument array.
+         *
+         * @since 1.4.0
+         * @return array;
+         */
+        public function menu_toggle_classes($classes)
+        {
+        }
+        /**
+         * Mobile Header Markup
+         *
+         * @return void
+         */
+        public function mobile_header_markup()
+        {
+        }
+        /**
+         * Replace logo with Mobile Header logo.
+         *
+         * @param sting $html Size name.
+         * @param int   $blog_id Icon.
+         * @since 1.4.0
+         * @return string html markup of logo.
+         */
+        public function astra_mobile_header_custom_logo($html, $blog_id)
+        {
+        }
+        /**
+         * Add svg class to mobile logo.
+         *
+         * @param bool  $is_logo_attachment is attachment is logo image?.
+         * @param array $attachment attachment data.
+         * @since 2.1.0
+         * @return bool return if attachment is mobile logo image.
+         */
+        public function add_mobile_logo_svg_class($is_logo_attachment, $attachment)
         {
         }
         /**
          * Add Body Classes
          *
-         * @param  array $classes Body Classes Array.
+         * @param array $classes Body Class Array.
          * @return array
          */
-        public function body_class($classes)
-        {
-        }
-    }
-    /**
-     * Meta Boxes setup
-     */
-    class Astra_Meta_Boxes
-    {
-        /**
-         * Instance
-         *
-         * @var $instance
-         */
-        private static $instance;
-        /**
-         * Meta Option
-         *
-         * @var $meta_option
-         */
-        private static $meta_option;
-        /**
-         * Initiator
-         */
-        public static function get_instance()
-        {
-        }
-        /**
-         * Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Register Post Meta options support.
-         *
-         * @since 3.7.6
-         * @param array|mixed $args the post type args.
-         * @param string      $post_type the post type.
-         */
-        public function custom_fields_support($args, $post_type)
-        {
-        }
-        /**
-         * Check if layout is bb themer's layout
-         */
-        public static function is_bb_themer_layout()
-        {
-        }
-        /**
-         *  Remove Metabox for beaver themer specific layouts
-         */
-        public function remove_metabox()
-        {
-        }
-        /**
-         *  Init Metabox
-         */
-        public function init_metabox()
-        {
-        }
-        /**
-         *  Setup Metabox
-         */
-        public function setup_meta_box()
-        {
-        }
-        /**
-         * Get metabox options
-         */
-        public static function get_meta_option()
-        {
-        }
-        /**
-         * Metabox Markup
-         *
-         * @param  object $post Post object.
-         * @return void
-         */
-        public function markup_meta_box($post)
-        {
-        }
-        /**
-         * Metabox Save
-         *
-         * @param  number $post_id Post ID.
-         * @return void
-         */
-        public function save_meta_box($post_id)
-        {
-        }
-        /**
-         * Register Script for Meta options
-         */
-        public function register_script()
-        {
-        }
-        /**
-         * Enqueue Script for Meta settings.
-         *
-         * @return void
-         */
-        public function load_scripts()
-        {
-        }
-        /**
-         * Get all Sidebar Options.
-         */
-        public function get_sidebar_options()
-        {
-        }
-        /**
-         * Get Contenr Layout Options.
-         */
-        public function get_content_layout_options()
-        {
-        }
-        /**
-         * Get header related sub-meta fields.
-         *
-         * @return array $astra_header_options All header dependent toggle based page elements.
-         */
-        public function get_header_disable_meta_fields()
-        {
-        }
-        /**
-         * Get disable section fields.
-         *
-         * @return array $astra_page_meta_elements All toggle based page elements.
-         */
-        public function get_disable_section_fields()
-        {
-        }
-        /**
-         * Get sticky header options.
-         */
-        public function get_sticky_header_options()
-        {
-        }
-        /**
-         * Get all transparet and sticky header options.
-         */
-        public function get_header_enabled_options()
-        {
-        }
-        /**
-         * Checking the page headers are available and have some posts with it.
-         *
-         * @since 3.8.0
-         * @return bool true|false.
-         */
-        public function check_page_header_availability()
-        {
-        }
-        /**
-         * Get page header Options.
-         */
-        public function get_page_header_options()
-        {
-        }
-        /**
-         * Register Post Meta options for react based fields.
-         *
-         * @since 3.7.4
-         */
-        public function register_meta_settings()
-        {
-        }
-        /**
-         * Setup meta options for Astra meta settings.
-         *
-         * @since 3.7.8
-         */
-        public static function post_meta_options()
-        {
-        }
-    }
-    /**
-     * Post Strctures Initial Setup
-     *
-     * @since 4.0.0
-     */
-    class Astra_Post_Structures
-    {
-        /**
-         * Constructor function that loads require files.
-         */
-        public function __construct()
-        {
-        }
-    }
-    /**
-     * Customizer Initialization
-     *
-     * @since 4.0.0
-     */
-    class Astra_Posts_Structure_Loader
-    {
-        /**
-         * Instance
-         *
-         * @var array $customizer_defaults
-         */
-        private static $customizer_defaults = array();
-        /**
-         * Supported post types to process dynamic customizer.
-         *
-         * @var array $supported_post_types
-         */
-        private static $supported_post_types = array();
-        /**
-         *  Constructor
-         *
-         * @since 4.0.0
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Enqueue google fonts.
-         *
-         * @return void
-         * @since 4.0.0
-         */
-        public function add_fonts()
-        {
-        }
-        /**
-         * Add postMessage support for site title and description for the Theme Customizer.
-         *
-         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-         *
-         * @since 4.0.0
-         */
-        public function posts_structures_customize_register($wp_customize)
-        {
-        }
-        /**
-         * Get all supported pots types & filter the public ones for further query.
-         *
-         * @since 4.0.0
-         * @return array $post_types
-         */
-        public static function get_supported_post_types()
-        {
-        }
-        /**
-         * Customizer preview support.
-         *
-         * @since 4.0.0
-         */
-        public function preview_scripts()
-        {
-        }
-        /**
-         * Get customizer dynamic default.
-         *
-         * @param string $key Retrieve default for this parameter.
-         *
-         * @since 4.0.0
-         */
-        public static function get_customizer_default($key)
-        {
-        }
-    }
-    /**
-     * Breadcrumbs Markup Initial Setup
-     *
-     * @since 4.0.0
-     */
-    class Astra_Posts_Structure_Markup
-    {
-        /**
-         *  Constructor
-         */
-        public function __construct()
-        {
-        }
-        /**
-         * Check eligibility to override default entry header.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_add_hero_section_markup()
-        {
-        }
-        /**
-         * Support custom title & description support for archive.
-         *
-         * @param string $title Default archive title.
-         * @since 4.0.0
-         * @return string
-         */
-        public function astra_archive_custom_title($title)
-        {
-        }
-        /**
-         * Override default entry header.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function override_entry_header()
-        {
-        }
-        /**
-         * Layout 1 will also needed for WooCommerce product.
-         * Case: WooCommerce by default adds "Shop" title, breadcrumb on shop/product-archive frontend, but this should also get linked to banner layout 1.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_woocommerce_banner_layout_1_compatibility()
-        {
-        }
-        /**
-         * Enable layout 1 for some cases. Ex. WC Product.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_force_render_banner_layout_1()
-        {
-        }
-    }
-    /**
-     * Register Posts Structures Customizer Configurations.
-     *
-     * @since 4.0.0
-     */
-    class Astra_Posts_Archive_Structures_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Getting content layout dynamically.
-         * Compatibility case: Narrow width + dynamic customizer controls.
-         *
-         * @param string $post_type On basis of this will decide to show narrow-width layout or not.
-         * @since 4.0.0
-         */
-        public function get_content_layout_choices($post_type)
-        {
-        }
-        /**
-         * Register Single Post's Structures Customizer Configurations.
-         *
-         * @param string $parent_section Section of dynamic customizer.
-         * @param string $post_type Post Type.
-         * @since 4.0.0
-         *
-         * @return array Customizer Configurations.
-         */
-        public function get_layout_configuration($parent_section, $post_type)
-        {
-        }
-        /**
-         * Register Posts Structures Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Posts Strctures Customizer Configurations.
-     *
-     * @since 4.0.0
-     */
-    class Astra_Posts_Single_Structures_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Getting content layout dynamically.
-         * Compatibility case: Narrow width + dynamic customizer controls.
-         *
-         * @param string $post_type On basis of this will decide to show narrow-width layout or not.
-         * @since 4.0.0
-         */
-        public function get_content_layout_choices($post_type)
-        {
-        }
-        /**
-         * Register Single Post's Structures Customizer Configurations.
-         *
-         * @param string $parent_section Section of dynamic customizer.
-         * @param string $post_type Post Type.
-         * @since 4.0.0
-         *
-         * @return array Customizer Configurations.
-         */
-        public function get_layout_configuration($parent_section, $post_type)
-        {
-        }
-        /**
-         * Register Posts Strctures Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Register Posts Structures Customizer Configurations.
-     *
-     * @since 4.0.0
-     */
-    class Astra_Posts_Structures_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Excluding some post types with avoiding narrow-width container layout.
-         *
-         * @return array
-         * @since 4.0.0
-         */
-        public static function get_narrow_width_exculde_cpts()
-        {
-        }
-        /**
-         * Function to get formatted dynamic cpt section title.
-         *
-         * @since 4.0.2
-         * @param object|null $post_type_obj WP_Post_Type object.
-         * @param string      $label fallback label.
-         * @return string formatted label.
-         */
-        public static function astra_get_dynamic_section_title($post_type_obj, $label)
-        {
-        }
-        /**
-         * Register Posts Structures Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 4.0.0
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
+        public function add_body_class($classes)
         {
         }
     }
@@ -12099,6 +9829,23 @@ namespace {
          * @since 3.5.0
          */
         public function render_related_posts_title()
+        {
+        }
+    }
+    /**
+     * Register Related Posts Configurations.
+     */
+    class Astra_Related_Posts_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Related Posts Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.5.0
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
         {
         }
     }
@@ -12207,16 +9954,102 @@ namespace {
         }
     }
     /**
-     * Register Related Posts Configurations.
+     * Customizer Initialization
+     *
+     * @since 4.0.0
      */
-    class Astra_Related_Posts_Configs extends \Astra_Customizer_Config_Base
+    class Astra_Posts_Structure_Loader
     {
         /**
-         * Register Related Posts Configurations.
+         *  Constructor
+         *
+         * @since 4.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Enqueue google fonts.
+         *
+         * @return void
+         * @since 4.0.0
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Add postMessage support for site title and description for the Theme Customizer.
+         *
+         * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+         *
+         * @since 4.0.0
+         */
+        public function posts_structures_customize_register($wp_customize)
+        {
+        }
+        /**
+         * Get all supported pots types & filter the public ones for further query.
+         *
+         * @since 4.0.0
+         * @return array $post_types
+         */
+        public static function get_supported_post_types()
+        {
+        }
+        /**
+         * Customizer preview support.
+         *
+         * @since 4.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+        /**
+         * Get customizer dynamic default.
+         *
+         * @param string $key Retrieve default for this parameter.
+         *
+         * @since 4.0.0
+         */
+        public static function get_customizer_default($key)
+        {
+        }
+    }
+    /**
+     * Register Posts Strctures Customizer Configurations.
+     *
+     * @since 4.0.0
+     */
+    class Astra_Posts_Single_Structures_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Getting new content layout options dynamically.
+         * Compatibility case: Narrow width + dynamic customizer controls.
+         *
+         * @param string $post_type On basis of this will decide to show narrow-width layout or not.
+         * @since 4.2.0
+         */
+        public function get_new_content_layout_choices($post_type)
+        {
+        }
+        /**
+         * Register Single Post's Structures Customizer Configurations.
+         *
+         * @param string $parent_section Section of dynamic customizer.
+         * @param string $post_type Post Type.
+         * @since 4.0.0
+         *
+         * @return array Customizer Configurations.
+         */
+        public function get_layout_configuration($parent_section, $post_type)
+        {
+        }
+        /**
+         * Register Posts Strctures Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 3.5.0
+         * @since 4.0.0
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -12224,594 +10057,92 @@ namespace {
         }
     }
     /**
-     * Astra Schema Markup.
+     * Register Posts Structures Customizer Configurations.
      *
-     * @since 2.1.3
+     * @since 4.0.0
      */
-    class Astra_Schema
+    class Astra_Posts_Archive_Structures_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Constructor
+         * Getting new content layout options dynamically.
+         * Compatibility case: Narrow width + dynamic customizer controls.
+         *
+         * @param string $post_type On basis of this will decide to show narrow-width layout or not.
+         * @since 4.2.0
          */
-        public function __construct()
+        public function get_new_content_layout_choices($post_type)
         {
         }
         /**
-         * Setup schema
+         * Register Archive Post's Structures Customizer Configurations.
          *
-         * @since 2.1.3
+         * @param string $parent_section Section of dynamic customizer.
+         * @param string $post_type Post Type.
+         * @since 4.0.0
+         *
+         * @return array Customizer Configurations.
          */
-        public function setup_schema()
+        public function get_layout_configuration($parent_section, $post_type)
         {
         }
         /**
-         * Include schema files.
+         * Register Posts Structures Customizer Configurations.
          *
-         * @since 2.1.3
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 4.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
          */
-        private function include_schemas()
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
+        public function register_configuration($configurations, $wp_customize)
         {
         }
     }
     /**
-     * Astra Breadcrumb Schema Markup.
+     * Register Posts Structures Customizer Configurations.
      *
-     * @since 2.1.3
+     * @since 4.0.0
      */
-    class Astra_Breadcrumb_Schema extends \Astra_Schema
+    class Astra_Posts_Structures_Configs extends \Astra_Customizer_Config_Base
     {
         /**
-         * Setup schema
+         * Excluding some post types with avoiding narrow-width container layout.
          *
-         * @since 2.1.3
+         * @return array
+         * @since 4.0.0
          */
-        public function setup_schema()
+        public static function get_narrow_width_exculde_cpts()
         {
         }
         /**
-         * Disable Schema for Before Title option of Breadcrumb Position.
+         * Function to get formatted dynamic cpt section title.
          *
-         * @since 2.1.3
-         *
-         * @return void
+         * @since 4.0.2
+         * @param object|null $post_type_obj WP_Post_Type object.
+         * @param string      $label fallback label.
+         * @return string formatted label.
          */
-        public function disable_schema_before_title()
+        public static function astra_get_dynamic_section_title($post_type_obj, $label)
         {
         }
         /**
-         * Disable schema by passing false to the 'schema' param to the filter.
+         * Register Posts Structures Customizer Configurations.
          *
-         * @since 2.1.3
-         *
-         * @param  array $args An array of default values.
-         *
-         * @return array       Updated schema param.
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 4.0.0
+         * @return Array Astra Customizer Configurations with updated configurations.
          */
-        public function breadcrumb_schema($args)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
+        public function register_configuration($configurations, $wp_customize)
         {
         }
     }
     /**
-     * Astra CreativeWork Schema Markup.
+     * Breadcrumbs Markup Initial Setup
      *
-     * @since 2.1.3
+     * @since 4.0.0
      */
-    class Astra_CreativeWork_Schema extends \Astra_Schema
+    class Astra_Posts_Structure_Markup
     {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function creative_work_schema($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_title_blog_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_title_blog_single_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_title_content_page_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_title_content_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_blog_layout_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_page_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_blog_layout_2_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_blog_layout_3_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_content_single_layout_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_image_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function article_image_blog_archive_schema_prop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array Updated embed markup.
-         */
-        public function article_image_blog_single_post_schema_prop($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_Organization_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function organization_Schema($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_attr($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_link_attr($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_custom_link_attr($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_sticky_custom_link_attr($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_none_sticky_custom_link_attr($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_title_sticky_custom_logo_link_attr($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_Person_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function person_Schema($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_name_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_name_info_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_url_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_info_url_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_desc_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function author_item_schema_itemprop($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_Site_Navigation_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function site_navigation_schema($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_WPFooter_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function wpfooter_Schema($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_WPHeader_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function wpheader_Schema($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra CreativeWork Schema Markup.
-     *
-     * @since 2.1.3
-     */
-    class Astra_WPSideBar_Schema extends \Astra_Schema
-    {
-        /**
-         * Setup schema
-         *
-         * @since 2.1.3
-         */
-        public function setup_schema()
-        {
-        }
-        /**
-         * Update Schema markup attribute.
-         *
-         * @param  array $attr An array of attributes.
-         *
-         * @return array       Updated embed markup.
-         */
-        public function wpsidebar_Schema($attr)
-        {
-        }
-        /**
-         * Enabled schema
-         *
-         * @since 2.1.3
-         */
-        protected function schema_enabled()
-        {
-        }
-    }
-    /**
-     * Astra_Theme_Background_Updater Class.
-     */
-    class Astra_Theme_Background_Updater
-    {
-        /**
-         * Background update class.
-         *
-         * @var object
-         */
-        private static $background_updater;
-        /**
-         * DB updates and callbacks that need to be run per version.
-         *
-         * @var array
-         */
-        private static $db_updates = array('3.0.0' => array('astra_header_builder_compatibility'), '3.0.1' => array('astra_clear_assets_cache'), '3.3.0' => array('astra_gutenberg_pattern_compatibility', 'astra_icons_svg_compatibility', 'astra_check_flex_based_css'), '3.4.0' => array('astra_update_cart_style'), '3.5.0' => array('astra_update_related_posts_grid_layout', 'astra_site_title_tagline_responsive_control_migration'), '3.6.0' => array('astra_headings_font_support', 'astra_remove_logo_max_width', 'astra_transparent_header_default_value'), '3.6.3' => array('astra_button_default_values_updated'), '3.6.4' => array('astra_update_underline_link_setting'), '3.6.5' => array('astra_support_block_editor'), '3.6.7' => array('astra_fix_footer_widget_right_margin_case', 'astra_remove_elementor_toc_margin'), '3.6.8' => array('astra_set_removal_widget_design_options_flag'), '3.6.9' => array('astra_zero_font_size_comp', 'astra_unset_builder_elements_underline', 'astra_remove_responsive_account_menu_colors_support'), '3.7.0' => array('astra_global_color_compatibility'), '3.7.4' => array('astra_improve_gutenberg_editor_ui'), '3.7.9' => array('astra_set_default_breadcrumb_separator_option', 'astra_fullwidth_layouts_apply_content_background'), '3.8.1' => array('astra_apply_modern_block_editor_ui'), '3.8.3' => array('astra_update_customizer_layout_defaults', 'astra_apply_modern_block_editor_v2_ui'), '3.9.0' => array('astra_update_single_product_breadcrumb', 'astra_display_cart_total_title_compatibility', 'astra_update_woocommerce_cart_icons', 'astra_legacy_customizer_maintenance', 'astra_apply_modern_ecommerce_setup', 'astra_responsive_shop_content_alignment'), '3.9.2' => array('astra_apply_woocommerce_show_password_icon_css', 'astra_shop_style_design_layout'), '3.9.4' => array('astra_theme_background_updater_3_9_4'), '4.0.0' => array('astra_theme_background_updater_4_0_0'), '4.0.2' => array('astra_theme_background_updater_4_0_2') );
         /**
          *  Constructor
          */
@@ -12819,129 +10150,2182 @@ namespace {
         {
         }
         /**
-         * Check Cron Status
+         * Check eligibility to override default entry header.
          *
-         * Gets the current cron status by performing a test spawn. Cached for one hour when all is well.
-         *
-         * @since 2.3.0
-         *
-         * @return bool true if there is a problem spawning a call to WP-Cron system, else false.
-         */
-        public function test_cron()
-        {
-        }
-        /**
-         * Install actions when a update button is clicked within the admin area.
-         *
-         * This function is hooked into admin_init to affect admin and wp to affect the frontend.
-         */
-        public function install_actions()
-        {
-        }
-        /**
-         * Is this a brand new theme install?
-         *
-         * @since 2.1.3
-         * @return boolean
-         */
-        public function is_new_install()
-        {
-        }
-        /**
-         * Is a DB update needed?
-         *
-         * @since 2.1.3
-         * @return boolean
-         */
-        private function needs_db_update()
-        {
-        }
-        /**
-         * Get list of DB update callbacks.
-         *
-         * @since 2.1.3
-         * @return array
-         */
-        public function get_db_update_callbacks()
-        {
-        }
-        /**
-         * Check if database is migrated
-         *
-         * @since 2.3.1
-         *
-         * @return true If the database migration should not be run through CRON.
-         */
-        public function check_if_data_migrated()
-        {
-        }
-        /**
-         * Checks if astra addon version is updated in the database
-         *
-         * @since 2.3.1
-         *
-         * @return true if astra addon version is updated.
-         */
-        public function is_db_version_updated()
-        {
-        }
-        /**
-         * Push all needed DB updates to the queue for processing.
-         *
-         * @param bool $fallback Fallback migration.
-         *
+         * @since 4.0.0
          * @return void
          */
-        private function update($fallback)
+        public function astra_add_hero_section_markup()
         {
         }
         /**
-         * Update DB version to current.
+         * Support custom title & description support for archive.
          *
-         * @param string|null $version New Astra theme version or null.
+         * @param string $title Default archive title.
+         * @since 4.0.0
+         * @return string
          */
-        public static function update_db_version($version = \null)
+        public function astra_archive_custom_title($title)
+        {
+        }
+        /**
+         * Override default entry header.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function override_entry_header()
+        {
+        }
+        /**
+         * Layout 1 will also needed for WooCommerce product.
+         * Case: WooCommerce by default adds "Shop" title, breadcrumb on shop/product-archive frontend, but this should also get linked to banner layout 1.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function astra_woocommerce_banner_layout_1_compatibility()
+        {
+        }
+        /**
+         * Enable layout 1 for some cases. Ex. WC Product.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function astra_force_render_banner_layout_1()
         {
         }
     }
     /**
-     * Database Background Process
+     * Post Strctures Initial Setup
      *
-     * @since 2.1.3
+     * @since 4.0.0
      */
-    class Astra_Theme_WP_Background_Process extends \Astra_WP_Background_Process
+    class Astra_Post_Structures
     {
         /**
-         * Database Process
-         *
-         * @var string
+         * Constructor function that loads require files.
          */
-        protected $action = 'astra_theme_db_migration';
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Footer.
+     */
+    final class Astra_Builder_Footer
+    {
         /**
-         * Task
-         *
-         * Override this method to perform any actions required on each
-         * queue item. Return the modified item for further processing
-         * in the next pass through. Or, return false to remove the
-         * item from the queue.
-         *
-         * @since 2.1.3
-         *
-         * @param object $process Queue item object.
-         * @return mixed
+         *  Initiator
          */
-        protected function task($process)
+        public static function get_instance()
         {
         }
         /**
-         * Complete
-         *
-         * Override if applicable, but ensure that the below actions are
-         * performed, or, call parent::complete().
-         *
-         * @since 2.1.3
+         * Constructor
          */
-        protected function complete()
+        public function __construct()
+        {
+        }
+        /**
+         * Callback when method not exists.
+         *
+         * @param  string $func function name.
+         * @param array  $params function parameters.
+         */
+        public function __call($func, $params)
+        {
+        }
+        /**
+         * Remove existing Footer to load Footer Builder.
+         *
+         * @since 3.0.0
+         * @return void
+         */
+        public function remove_existing_actions()
+        {
+        }
+        /**
+         * Astra Footer Markup.
+         */
+        public function footer_markup()
+        {
+        }
+        /**
+         *  Call above footer UI.
+         */
+        public function above_footer()
+        {
+        }
+        /**
+         *  Call primary footer UI.
+         */
+        public function primary_footer()
+        {
+        }
+        /**
+         *  Call below footer UI.
+         */
+        public function below_footer()
+        {
+        }
+        /**
+         * Call component footer UI.
+         *
+         * @param string $row row.
+         * @param string $column column.
+         */
+        public function render_column($row, $column)
+        {
+        }
+        /**
+         * Render Footer Copyright Markup!
+         */
+        public function footer_copyright()
+        {
+        }
+        /**
+         * Render HTML 1.
+         */
+        public function footer_html_1()
+        {
+        }
+        /**
+         * Render HTML 2.
+         */
+        public function footer_html_2()
+        {
+        }
+        /**
+         * Render HTML 3.
+         */
+        public function footer_html_3()
+        {
+        }
+        /**
+         * Render HTML 4.
+         */
+        public function footer_html_4()
+        {
+        }
+        /**
+         * Render Menu.
+         */
+        public function footer_menu()
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Header.
+     */
+    final class Astra_Builder_Header
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Callback when method not exists.
+         *
+         * @param  string $func function name.
+         * @param array  $params function parameters.
+         */
+        public function __call($func, $params)
+        {
+        }
+        /**
+         * Remove complete header Support on basis of meta option.
+         *
+         * @since 3.8.0
+         * @return void
+         */
+        public function global_astra_header()
+        {
+        }
+        /**
+         * Inherit Header base layout.
+         * Do all actions for header.
+         */
+        public function header_builder_markup()
+        {
+        }
+        /**
+         * Remove existing Header to load Header Builder.
+         *
+         * @since 3.0.0
+         * @return void
+         */
+        public function remove_existing_actions()
+        {
+        }
+        /**
+         * Header Mobile trigger
+         */
+        public function header_mobile_trigger()
+        {
+        }
+        /**
+         * Render WooCommerce Cart.
+         */
+        public function header_woo_cart()
+        {
+        }
+        /**
+         * Render EDD Cart.
+         */
+        public function header_edd_cart()
+        {
+        }
+        /**
+         * Render account icon.
+         */
+        public function header_account()
+        {
+        }
+        /**
+         * Render Search icon.
+         *
+         * @param  string $device   Device name.
+         */
+        public function header_search($device = 'desktop')
+        {
+        }
+        /**
+         * Render site logo.
+         *
+         * @param  string $device   Device name.
+         */
+        public static function site_identity($device = 'desktop')
+        {
+        }
+        /**
+         * Call component header UI.
+         *
+         * @param string $row row.
+         * @param string $column column.
+         */
+        public function render_column($row, $column)
+        {
+        }
+        /**
+         * Render desktop header layout.
+         */
+        public function desktop_header()
+        {
+        }
+        /**
+         *  Call above header UI.
+         */
+        public function above_header()
+        {
+        }
+        /**
+         *  Call primary header UI.
+         */
+        public function primary_header()
+        {
+        }
+        /**
+         *  Call below header UI.
+         */
+        public function below_header()
+        {
+        }
+        /**
+         * Call mobile component header UI.
+         *
+         * @param string $row row.
+         * @param string $column column.
+         */
+        public function render_mobile_column($row, $column)
+        {
+        }
+        /**
+         * Render Mobile header layout.
+         */
+        public function mobile_header()
+        {
+        }
+        /**
+         *  Call Mobile above header UI.
+         */
+        public function mobile_above_header()
+        {
+        }
+        /**
+         *  Call Mobile primary header UI.
+         */
+        public function mobile_primary_header()
+        {
+        }
+        /**
+         *  Call Mobile below header UI.
+         */
+        public function mobile_below_header()
+        {
+        }
+        /**
+         *  Call Mobile Popup UI.
+         */
+        public function mobile_popup()
+        {
+        }
+        /**
+         *  Call Mobile Menu Markup.
+         *
+         * @param string $device Checking where mobile-menu is dropped.
+         */
+        public function header_mobile_menu_markup($device = '')
+        {
+        }
+        /**
+         *  Call Mobile Cart Flyout UI.
+         */
+        public function mobile_cart_flyout()
+        {
+        }
+        /**
+         * Add Body Classes
+         *
+         * @param array $classes Body Class Array.
+         * @return array
+         */
+        public function add_body_class($classes)
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Widget_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Widget_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Social Icons Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Social_Icons_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Social Icons Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Social_Icons_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Above Footer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Above_Footer_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Above Footer Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Above_Footer
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Html_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Html_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Button_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Button_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add Font Family Callback
+         *
+         * @return void
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Footer Navigation Menu Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Menu_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Secondary navigation markup
+         *
+         * @since 3.0.0.
+         */
+        public static function menu_markup()
+        {
+        }
+    }
+    /**
+     * Footer Navigation Menu Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Menu_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Primary Footer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Primary_Footer_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Primary Footer Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Primary_Footer
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Astra_Footer_Copyright_Component
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Copyright_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Footer_Copyright_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Below Footer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Below_Footer_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Below Footer Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Below_Footer
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Base_Dynamic_CSS.
+     */
+    final class Astra_Builder_Base_Dynamic_CSS
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Prepare Advanced Margin / Padding Dynamic CSS.
+         *
+         * @param string $section_id section id.
+         * @param string $selector selector.
+         * @return string
+         */
+        public static function prepare_advanced_margin_padding_css($section_id, $selector)
+        {
+        }
+        /**
+         * Prepare Advanced Margin / Padding Dynamic CSS.
+         *
+         * @param string $section_id section id.
+         * @param string $selector selector.
+         * @return array
+         */
+        public static function prepare_advanced_typography_css($section_id, $selector)
+        {
+        }
+        /**
+         * Prepare Footer Dynamic CSS.
+         *
+         * @param string $dynamic_css Appended dynamic CSS.
+         * @param string $dynamic_css_filtered Filtered dynamic CSS.
+         * @return array
+         */
+        public static function footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+        {
+        }
+        /**
+         * Different logo for mobile static CSS.
+         *
+         * @param string $dynamic_css Appended dynamic CSS.
+         * @since 3.5.0
+         * @return string
+         */
+        public static function mobile_header_logo_css($dynamic_css)
+        {
+        }
+        /**
+         * Prepare Element visibility Dynamic CSS.
+         *
+         * @param string $section_id section id.
+         * @param string $selector selector.
+         * @param string $default_property Section default CSS property.
+         * @param string $mobile_tablet_default Mobile/Tabled display property.
+         * @return array
+         */
+        public static function prepare_visibility_css($section_id, $selector, $default_property = 'flex', $mobile_tablet_default = '')
+        {
+        }
+    }
+    /**
+     * Class Astra_Below_Header_Loader
+     *
+     * Loads config files.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Below_Header_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Below Header Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Below_Header
+    {
+        /**
+         * Constructor function that initializes required actions and hooks.
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Widget_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Widget_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0s
+     */
+    class Astra_Header_Social_Icon_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0s
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0s
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Social_Icon_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Primary_Header_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Adds custom classes to the array of body classes.
+         *
+         * @since 1.0.0
+         * @param array $classes Classes for the body element.
+         * @return array
+         */
+        public function astra_body_header_classes($classes)
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Primary_Header
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Woo_Cart_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Woo_Cart_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Header Navigation Menu Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Mobile_Menu_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Secondary navigation markup
+         *
+         * @param string $device Checking where mobile-menu is dropped.
+         *
+         * @since 3.0.0.
+         */
+        public static function menu_markup($device = 'mobile')
+        {
+        }
+    }
+    /**
+     * Mobile Navigation Menu Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Mobile_Menu_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Html_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Html_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Search_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Search_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+        /**
+         * Adding Wrapper for Search Form.
+         *
+         * @since 3.0.0
+         *
+         * @param string $search_markup   Search Form Content.
+         * @param string $option    Search Form Options.
+         * @param string $device    Device Desktop/Tablet/Mobile.
+         * @return Search HTML structure created.
+         */
+        public static function get_search_markup($search_markup, $option = '', $device = '')
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 2.1.4
+     */
+    class Astra_Header_Button_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Button_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Add Font Family Callback
+         *
+         * @return void
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Above Header Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Above_Header
+    {
+        /**
+         * Constructor function that initializes required actions and hooks.
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Class Astra_Above_Header_Loader
+     *
+     * Loads config files.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Above_Header_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Menu_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Enqueue google fonts.
+         *
+         * @since 3.0.0
+         */
+        public function add_fonts()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Menu_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Secondary navigation markup
+         *
+         * @param int    $index index.
+         * @param string $device device.
+         */
+        public static function menu_markup($index, $device = 'desktop')
+        {
+        }
+    }
+    /**
+     * Class Astra_Off_Canvas_Loader
+     *
+     * Loads config files.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Off_Canvas_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Off Canvas Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Off_Canvas
+    {
+        /**
+         * Constructor function that initializes required actions and hooks.
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Account_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Account navigation markup
+         */
+        public static function account_menu_markup()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Account_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Edd_Cart_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Edd_Cart_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Mobile Trigger Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Mobile_Trigger
+    {
+        /**
+         * Constructor function that initializes required actions and hooks.
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Class Mobile Trigger Loader.
+     *
+     * Loads config files.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Mobile_Trigger_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Heading Initial Setup
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Site_Identity_Component
+    {
+        /**
+         * Constructor function that initializes required actions and hooks
+         */
+        public function __construct()
+        {
+        }
+    }
+    /**
+     * Customizer Initialization
+     *
+     * @since 3.0.0
+     */
+    class Astra_Header_Site_Identity_Component_Loader
+    {
+        /**
+         * Constructor
+         *
+         * @since 3.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Customizer Preview
+         *
+         * @since 3.0.0
+         */
+        public function preview_scripts()
+        {
+        }
+    }
+    /**
+     * Register Builder Dynamic CSS.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Widget_Component_Dynamic_CSS
+    {
+        /**
+         * Dynamic CSS
+         *
+         * @param string $builder_type Builder Type.
+         * @return String Generated dynamic CSS for Heading Colors.
+         *
+         * @since 3.0.0
+         */
+        public static function astra_widget_dynamic_css($builder_type = 'header')
+        {
+        }
+    }
+    /**
+     * Register Builder Dynamic CSS.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Html_Component_Dynamic_CSS
+    {
+        /**
+         * Dynamic CSS
+         *
+         * @param string $builder_type Builder Type.
+         * @return String Generated dynamic CSS for Heading Colors.
+         *
+         * @since 3.0.0
+         */
+        public static function astra_html_dynamic_css($builder_type = 'header')
+        {
+        }
+    }
+    /**
+     * Register Builder Dynamic CSS.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Social_Component_Dynamic_CSS
+    {
+        /**
+         * Dynamic CSS
+         *
+         * @param string $builder_type Builder Type.
+         * @return String Generated dynamic CSS for Heading Colors.
+         *
+         * @since 3.0.0
+         */
+        public static function astra_social_dynamic_css($builder_type = 'header')
+        {
+        }
+        /**
+         * Load Social default css.
+         *
+         * @since 3.0.0
+         */
+        public static function get_social_static_css()
+        {
+        }
+    }
+    /**
+     * Register Builder Dynamic CSS.
+     *
+     * @since 3.0.0
+     */
+    class Astra_Button_Component_Dynamic_CSS
+    {
+        /**
+         * Dynamic CSS
+         *
+         * @param string $builder_type Builder Type.
+         * @return String Generated dynamic CSS for Heading Colors.
+         *
+         * @since 3.0.0
+         */
+        public static function astra_button_dynamic_css($builder_type = 'header')
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Loader.
+     */
+    final class Astra_Builder_Loader
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Update Quick Settings links.
+         *
+         * @param array $quick_settings Links to the Quick Settings in Astra.
+         * @since 3.0.0
+         */
+        public function quick_settings($quick_settings)
+        {
+        }
+        /**
+         * Advanced Hooks markup loader
+         *
+         * Loads appropriate template file based on the style option selected in options panel.
+         *
+         * @since 3.0.0
+         */
+        public function load_markup()
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_Widget_Controller.
+     */
+    final class Astra_Builder_Widget_Controller
+    {
+        /**
+         *  Initiator
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Display sidebar as section.
+         *
+         * @param bool   $active ios active.
+         * @param object $section section.
+         * @return bool
+         */
+        public function display_sidebar($active, $section)
+        {
+        }
+        /**
+         * Initiate Astra Widgets.
+         */
+        public function widget_init()
+        {
+        }
+        /**
+         * Register widget for the builder.
+         *
+         * @param integer $index index of widget.
+         * @param string  $builder_type builder type.
+         */
+        public function register_sidebar($index, $builder_type = 'header')
+        {
+        }
+    }
+    /**
+     * Class Astra_Builder_UI_Controller.
+     */
+    final class Astra_Builder_UI_Controller
+    {
+        /**
+         * Get an SVG Icon
+         *
+         * @param string $icon the icon name.
+         * @param bool   $base if the baseline class should be added.
+         */
+        public static function fetch_svg_icon($icon = '', $base = \true)
+        {
+        }
+        /**
+         * Prepare Social Icon HTML.
+         *
+         * @param string $index The Index of the social icon.
+         * @param string $builder_type the type of the builder.
+         */
+        public static function render_social_icon($index, $builder_type = 'header')
+        {
+        }
+        /**
+         * Prepare HTML Markup.
+         *
+         * @param string $index Key of the HTML Control.
+         */
+        public static function render_html_markup($index = 'header-html-1')
+        {
+        }
+        /**
+         * Prepare Edit icon inside customizer.
+         *
+         * @param string $class custom class.
+         * @since 3.9.4
+         */
+        public static function render_customizer_edit_button($class = '')
+        {
+        }
+        /**
+         * Prepare Special Edit navigatory trigger for Builder Grid Rows in customizer.
+         *
+         * @param string $type Header / Footer row type.
+         * @param string $row_position Above / Primary / Below.
+         *
+         * @since 3.0.0
+         */
+        public static function render_grid_row_customizer_edit_button($type, $row_position)
+        {
+        }
+        /**
+         * Prepare Edit navigatory trigger for Banner Section in customizer.
+         *
+         * @since 3.9.0
+         */
+        public static function render_banner_customizer_edit_button()
+        {
+        }
+        /**
+         * Render Trigger Markup.
+         *
+         * @since 3.0.0
+         */
+        public static function render_mobile_trigger()
+        {
+        }
+        /**
+         * Prepare Button HTML.
+         *
+         * @param string $index The Index of the button.
+         * @param string $builder_type the type of the builder.
+         */
+        public static function render_button($index, $builder_type = 'header')
+        {
+        }
+        /**
+         * Site Identity.
+         *
+         * @param  string $device   Device name.
+         */
+        public static function render_site_identity($device)
+        {
+        }
+        /**
+         * Render Mobile Cart Flyout Markup.
+         *
+         * @since 3.1.0
+         */
+        public static function render_mobile_cart_flyout_markup()
+        {
+        }
+        /**
+         * Account HTML.
+         */
+        public static function render_account()
+        {
+        }
+    }
+    /**
+     * Astra_API_Init.
+     *
+     * @since 4.1.0
+     */
+    class Astra_API_Init extends \WP_REST_Controller
+    {
+        /**
+         * Initiator
+         *
+         * @since 4.0.0
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Namespace.
+         *
+         * @var string
+         */
+        protected $namespace = 'astra/v1';
+        /**
+         * Route base.
+         *
+         * @var string
+         */
+        protected $rest_base = '/admin/settings/';
+        /**
+         * Constructor
+         *
+         * @since 4.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Astra's REST knowledge base data.
+         *
+         * @since 4.0.0
+         * @return mixed
+         */
+        public static function astra_get_knowledge_base_data()
+        {
+        }
+        /**
+         * Perform scheduler for Astra knowledge base data retriever for processing further in admin dashboard.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function astra_kb_data_scheduler()
+        {
+        }
+        /**
+         * Run scheduled job for Astra knowledge base data.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function astra_run_scheduled_docs_job()
+        {
+        }
+        /**
+         * Register API routes.
+         *
+         * @since 4.0.0
+         */
+        public function register_routes()
+        {
+        }
+        /**
+         * Get common settings.
+         *
+         * @param WP_REST_Request $request Full details about the request.
+         * @return array $updated_option defaults + set DB option data.
+         *
+         * @since 4.0.0
+         */
+        public function get_admin_settings($request)
+        {
+        }
+        /**
+         * Check whether a given request has permission to read notes.
+         *
+         * @param  WP_REST_Request $request Full details about the request.
+         * @return WP_Error|boolean
+         * @since 4.0.0
+         */
+        public function get_permissions_check($request)
+        {
+        }
+        /**
+         * Returns an value,
+         * based on the settings database option for the admin settings page.
+         *
+         * @param  string $key     The sub-option key.
+         * @param  mixed  $default Option default value if option is not available.
+         * @return mixed            Return the option value based on provided key
+         * @since 4.0.0
+         */
+        public static function get_admin_settings_option($key, $default = \false)
+        {
+        }
+        /**
+         * Update an value of a key,
+         * from the settings database option for the admin settings page.
+         *
+         * @param string $key       The option key.
+         * @param mixed  $value     The value to update.
+         * @return mixed            Return the option value based on provided key
+         * @since 4.0.0
+         */
+        public static function update_admin_settings_option($key, $value)
+        {
+        }
+    }
+    /**
+     * Class Astra_Admin_Ajax.
+     *
+     * @since 4.0.0
+     */
+    class Astra_Admin_Ajax
+    {
+        /**
+         * Initiator
+         *
+         * @since 4.0.0
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since 4.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Return boolean settings for admin dashboard app.
+         *
+         * @return array
+         * @since 4.0.0
+         */
+        public function astra_admin_settings_typewise()
+        {
+        }
+        /**
+         * Disable pro upgrade notice from all over in Astra.
+         *
+         * @since 4.0.0
+         */
+        public function disable_astra_pro_notices()
+        {
+        }
+        /**
+         * Migrate to New Header Builder
+         *
+         * @since 4.0.0
+         */
+        public function migrate_to_builder()
+        {
+        }
+        /**
+         * Save settings.
+         *
+         * @return void
+         * @since 4.0.0
+         */
+        public function astra_update_admin_setting()
+        {
+        }
+        /**
+         * Get ajax error message.
+         *
+         * @param string $type Message type.
+         * @return string
+         * @since 4.0.0
+         */
+        public function get_error_msg($type)
+        {
+        }
+        /**
+         * Required Plugin Activate
+         *
+         * @since 1.2.4
+         */
+        public function required_plugin_activate()
+        {
+        }
+        /**
+         * Required Plugin Activate
+         *
+         * @since 1.2.4
+         */
+        public function required_plugin_deactivate()
+        {
+        }
+    }
+    /**
+     * Astra_Menu.
+     *
+     * @since 4.1.0
+     */
+    class Astra_Menu
+    {
+        /**
+         * Initiator
+         *
+         * @since 4.0.0
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Page title
+         *
+         * @since 4.0.0
+         * @var string $page_title
+         */
+        public static $page_title = 'Astra';
+        /**
+         * Plugin slug
+         *
+         * @since 4.0.0
+         * @var string $plugin_slug
+         */
+        public static $plugin_slug = 'astra';
+        /**
+         * Constructor
+         *
+         * @since 4.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Init Hooks.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function initialize_hooks()
+        {
+        }
+        /**
+         * Theme options page Slug getter including White Label string.
+         *
+         * @since 4.0.0
+         * @return string Theme Options Page Slug.
+         */
+        public static function get_theme_page_slug()
+        {
+        }
+        /**
+         *  Initialize after Astra gets loaded.
+         *
+         * @since 4.0.0
+         */
+        public function settings_admin_scripts()
+        {
+        }
+        /**
+         * Add submenu to admin menu.
+         *
+         * @since 4.0.0
+         */
+        public function setup_menu()
+        {
+        }
+        /**
+         * In version 2.4.1 Spectra introduces top level admin menu so there is no meaning to show Spectra submenu from Astra menu.
+         *
+         * @since 4.1.4
+         * @return bool true|false.
+         */
+        public function spectra_has_top_level_menu()
+        {
+        }
+        /**
+         * Provide the Spectra admin page URL.
+         *
+         * @since 4.1.1
+         * @return string url.
+         */
+        public function get_spectra_page_admin_link()
+        {
+        }
+        /**
+         * Renders the admin settings.
+         *
+         * @since 4.0.0
+         * @return void
+         */
+        public function render_admin_dashboard()
+        {
+        }
+        /**
+         * Enqueues the needed CSS/JS for the builder's admin settings page.
+         *
+         * @since 4.0.0
+         */
+        public function styles_scripts()
+        {
+        }
+        /**
+         * Get customizer quick links for easy navigation.
+         *
+         * @return array
+         * @since 4.0.0
+         */
+        public static function astra_get_quick_links()
+        {
+        }
+        /**
+         * Get Starter Templates plugin data.
+         *
+         * @return array
+         * @since 4.0.0
+         */
+        public static function get_starter_template_plugin_data()
+        {
+        }
+        /**
+         * Get plugin status
+         *
+         * @since 4.0.0
+         *
+         * @param  string $plugin_init_file Plguin init file.
+         * @return mixed
+         */
+        public static function get_plugin_status($plugin_init_file)
+        {
+        }
+        /**
+         * Get Astra's pro extension list.
+         *
+         * @since 4.0.0
+         * @return array
+         * @access public
+         */
+        public static function astra_get_pro_extensions()
+        {
+        }
+        /**
+         * Get Astra's useful plugins.
+         * Extend this in following way -
+         *
+         * //  array(
+         * //         'title' => "Plugin Name",
+         * //         'subtitle' => "Plugin description goes here.",
+         * //         'path' => 'plugin-slug/plugin-slug.php',
+         * //         'redirection' => admin_url( 'admin.php?page=sc-dashboard' ),
+         * //         'status' => self::get_plugin_status( 'plugin-slug/plugin-slug.php' ),
+         * //         'logoPath' => array(
+         * //             'internal_icon' => true, // true = will take internal Astra's any icon. false = provide next custom icon link.
+         * //             'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: ASTRA_THEME_URI . 'inc/assets/images/astra.svg'.
+         * //         ),
+         * //     ),
+         *
+         * @since 4.0.0
+         * @return array
+         * @access public
+         */
+        public static function astra_get_useful_plugins()
+        {
+        }
+        /**
+         * Get Astra's recommended integrations.
+         * Extend this in following way -
+         *
+         * // array(
+         * //    'title' => "Plugin Name",
+         * //    'subtitle' => "Plugin description goes here.",
+         * //     'isPro' => false,
+         * //     'status' => self::get_plugin_status( 'plugin-slug/plugin-slug.php' ),
+         * //     'path' => 'plugin-slug/plugin-slug.php',
+         * //     'redirection' => admin_url( 'admin.php?page=sc-dashboard' ),
+         * //     'logoPath' => array(
+         * //         'internal_icon' => true, // true = will take internal Astra's any icon. false = provide next custom icon link.
+         * //         'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: ASTRA_THEME_URI . 'inc/assets/images/astra.svg'.
+         * //     ),
+         * // ),
+         *
+         * @since 4.0.0
+         * @return array
+         * @access public
+         */
+        public static function astra_get_integrations()
+        {
+        }
+        /**
+         * Get Changelogs from API.
+         *
+         * @since 4.0.0
+         * @return array $changelog_data Changelog Data.
+         */
+        public static function astra_get_theme_changelog_feed_data()
+        {
+        }
+        /**
+         * Settings app scripts
+         *
+         * @since 4.0.0
+         * @param array $localize Variable names.
+         */
+        public function settings_app_scripts($localize)
+        {
+        }
+        /**
+         *  Add footer link.
+         *
+         * @since 4.0.0
+         */
+        public function astra_admin_footer_link()
+        {
+        }
+    }
+    /**
+     * Astra_Admin_Loader
+     *
+     * @since 4.0.0
+     */
+    class Astra_Admin_Loader
+    {
+        /**
+         * Initiator
+         *
+         * @since 4.0.0
+         * @return object initialized object of class.
+         */
+        public static function get_instance()
+        {
+        }
+        /**
+         * Constructor
+         *
+         * @since 4.0.0
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Include required classes.
+         *
+         * @since 4.0.0
+         */
+        public function includes()
         {
         }
     }
@@ -12950,843 +12334,153 @@ namespace {
     /**
      * Define Constants
      */
-    \define('ASTRA_THEME_VERSION', '4.0.2');
-    \define('ASTRA_THEME_VERSION', '4.1.0');
+    \define('ASTRA_THEME_VERSION', '4.3.0');
     \define('ASTRA_THEME_SETTINGS', 'astra-settings');
     \define('ASTRA_THEME_DIR', \trailingslashit(\get_template_directory()));
     \define('ASTRA_THEME_URI', \trailingslashit(\esc_url(\get_template_directory_uri())));
     \define('ASTRA_PRO_UPGRADE_URL', 'https://wpastra.com/pro/?utm_source=dashboard&utm_medium=free-theme&utm_campaign=upgrade-now');
+    \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', 'https://wpastra.com/pro/?utm_source=customizer&utm_medium=free-theme&utm_campaign=upgrade');
     /**
      * Minimum Version requirement of the Astra Pro addon.
      * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
      */
     \define('ASTRA_EXT_MIN_VER', '4.1.0');
     /**
-     * Astra Get Breadcrumb
+     * Shop Page product titles with anchor
      *
-     * Gets the basic Breadcrumb wrapper div & content
+     * @hooked woocommerce_after_shop_loop_item - 10
      *
-     * @since 1.8.1
-     * @param boolean $echo Whether to echo or not.
-     * @return string
+     * @since 1.1.0
      */
-    function astra_get_breadcrumb($echo = \true)
+    function astra_woo_shop_products_title()
     {
     }
     /**
-     * Get selected breadcrumb.
-     * Returns or echo the breadcrumb depending upon the argument.
+     * Add and/or Remove Categories from shop archive page.
      *
-     * @since  1.8.1
-     * @access public
-     * @param  boolean $echo  Whether to echo or not.
-     * @return string Selected Breadcrumb.
+     * @hooked woocommerce_after_shop_loop_item - 9
+     *
+     * @since 1.1.0
      */
-    function astra_get_selected_breadcrumb($echo = \true)
+    function astra_woo_shop_parent_category()
     {
     }
     /**
-     * Deprecating astra_breadcrumb_trail function.
+     * Add Out of Stock to the Shop page
      *
-     * @since 1.8.1
-     * @deprecated 1.8.1 Use astra_get_breadcrumb()
-     * @param array  $args List of args.
-     * @see astra_breadcrumb_trail()
+     * @hooked woocommerce_shop_loop_item_title - 8
      *
-     * @return string new breadcrumb function.
+     * @since 1.1.0
      */
-    function astra_breadcrumb_trail($args = array())
+    function astra_woo_shop_out_of_stock()
     {
     }
     /**
-     * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
-     * which should be used in theme templates.
+     * Product short description
      *
-     * @since  1.8.1
-     * @access public
-     * @param  boolean $echo  Whether to echo or not.
-     * @return string Selected Breadcrumb.
+     * @hooked woocommerce_after_shop_loop_item
+     *
+     * @since 1.1.0
      */
-    function astra_get_breadcrumb_trail($echo = \true)
-    {
-    }
-    \define('ASTRA_THEME_BREADCRUMBS_DIR', \ASTRA_THEME_DIR . 'inc/addons/breadcrumbs/');
-    \define('ASTRA_THEME_BREADCRUMBS_URI', \ASTRA_THEME_URI . 'inc/addons/breadcrumbs/');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Breadcrumb.
-     *
-     * @since 1.7.0
-     */
-    function astra_breadcrumb_section_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_THEME_HEADING_COLORS_DIR', \ASTRA_THEME_DIR . 'inc/addons/heading-colors/');
-    \define('ASTRA_THEME_HEADING_COLORS_URI', \ASTRA_THEME_URI . 'inc/addons/heading-colors/');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 2.1.4
-     */
-    function astra_heading_colors_section_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_woo_shop_product_short_description()
     {
     }
     /**
-     * Scroll To Top Addon
+     * Availability: in stock string updated
      *
-     * @since 4.0.0
-     * @package Astra
-     */
-    \define('ASTRA_SCROLL_TO_TOP_DIR', \ASTRA_THEME_DIR . 'inc/addons/scroll-to-top/');
-    \define('ASTRA_SCROLL_TO_TOP_URL', \ASTRA_THEME_URI . 'inc/addons/scroll-to-top/');
-    /**
-     * Dynamic CSS
+     * @param  string $markup  Markup.
+     * @param  object $product Object of Product.
      *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return string
+     * @since 1.1.0
      */
-    function astra_scroll_to_top_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_woo_product_in_stock($markup, $product)
     {
     }
     /**
-     * Scroll to Top - Static CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for Scroll to Top.
-     *
-     * @since 4.0.0
+     * Show the product title in the product loop. By default this is an H2.
      */
-    function astra_scroll_to_top_static_css($dynamic_css)
-    {
-    }
-    \define('ASTRA_THEME_TRANSPARENT_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/addons/transparent-header/');
-    \define('ASTRA_THEME_TRANSPARENT_HEADER_URI', \ASTRA_THEME_URI . 'inc/addons/transparent-header/');
-    /**
-     * Dynamic CSS
-     *
-     * @param  String $dynamic_css          Astra Dynamic CSS.
-     * @param  String $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Dynamic CSS.
-     */
-    function astra_ext_transparent_header_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_woo_woocommerce_template_loop_product_title()
     {
     }
     /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for above header transparent header.
+     * Show the product title in the product loop. By default this is an H2.
      */
-    function astra_ext_transparent_above_header_sections_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_woo_woocommerce_shop_product_content()
     {
     }
     /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS.
+     * Thumbnail wrap start.
      */
-    function astra_ext_transparent_below_header_sections_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_woo_shop_thumbnail_wrap_start()
     {
     }
     /**
-     * Register menus
-     *
-     * @since 1.0.0
+     * Thumbnail wrap end.
      */
-    function astra_register_menu_locations()
+    function astra_woo_shop_thumbnail_wrap_end()
     {
     }
     /**
-     * Prepare markup for taxonomies.
+     * Woocommerce filter - Widget Products Tags
      *
-     * @param string $control_tax Taxonomy subcontrol name.
-     * @param int    $loop_count Meta loop counter to decide separator appearance.
-     * @param string $separator Separator.
-     *
-     * @return string $output Taxonomy output.
+     * @param  array $args Tag arguments.
+     * @return array       Modified tag arguments.
      */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator)
+    function astra_widget_product_tag_cloud_args($args = array())
     {
     }
     /**
-     * Post meta
+     * Woocommerce shop/product div close tag.
      *
-     * @param  array  $post_meta Post meta.
-     * @param  string $separator Separator.
-     * @return string            post meta markup.
+     * @return void
      */
-    function astra_get_post_meta($post_meta, $separator = '/')
+    function astra_woocommerce_div_wrapper_close()
     {
     }
     /**
-     * Get post format as per new configurations set in customizer.
+     * Checking whether shop page style is selected as modern layout.
      *
-     * @return string HTML markup for date span.
-     * @since 4.1.0
+     * @return bool true|false.
      */
-    function astra_get_dynamic_post_format()
+    function astra_is_shop_page_modern_style()
     {
     }
     /**
-     * Function to get Date of Post
+     * Check if Woocommerce pro addons is enabled.
      *
-     * @return html                Markup.
+     * @return bool true|false.
      */
-    function astra_post_date()
+    function astra_has_pro_woocommerce_addon()
     {
     }
     /**
-     * Function to get Author name.
+     * Support cart color setting to default cart icon, till now with other cart icons have this color compatibility but default one don't have this.
+     * This case is only for old header layout.
      *
-     * @return null|string $author_name Author name.
-     * @since 4.0.0
-     */
-    function astra_post_author_name()
-    {
-    }
-    /**
-     * Function to get Author of Post
-     *
-     * @param  string $output_filter Filter string.
-     * @return html                Markup.
-     */
-    function astra_post_author($output_filter = '')
-    {
-    }
-    /**
-     * Function to get Read More Link of Post
-     *
-     * @param  string $output_filter Filter string.
-     * @return html                Markup.
-     */
-    function astra_post_link($output_filter = '')
-    {
-    }
-    /**
-     * Function to get Number of Comments of Post
-     *
-     * @param  string $output_filter Output filter.
-     * @return html                Markup.
-     */
-    function astra_post_comments($output_filter = '')
-    {
-    }
-    /**
-     * Function to get Tags applied of Post
-     *
-     * @param  string $output_filter Output filter.
-     * @return html                Markup.
-     */
-    function astra_post_tags($output_filter = '')
-    {
-    }
-    /**
-     * Function to get Categories applied of Post
-     *
-     * @param  string $output_filter Output filter.
-     * @return html                Markup.
-     */
-    function astra_post_categories($output_filter = '')
-    {
-    }
-    /**
-     * Layout class
-     *
-     * @param  string $class Class.
-     */
-    function astra_blog_layout_class($class = '')
-    {
-    }
-    /**
-     * Retrieve the classes for the body element as an array.
-     *
-     * @param string $class Class.
-     */
-    function astra_get_blog_layout_class($class = '')
-    {
-    }
-    /**
-     * Filters the Read More link text.
-     *
-     * @param  string $more_link_element Read More link element.
-     * @param  string $more_link_text Read More text.
-     * @return html                Markup.
-     */
-    function astra_the_content_more_link($more_link_element = '', $more_link_text = '')
-    {
-    }
-    /**
-     * Adds custom classes to the array of body classes.
-     *
-     * @since 1.0
-     * @param array $classes Classes for the body element.
-     * @return array
-     */
-    function astra_blog_body_classes($classes)
-    {
-    }
-    /**
-     * Adds custom classes to the array of post grid classes.
-     *
-     * @since 1.0
-     * @param array $classes Classes for the post element.
-     * @return array
-     */
-    function astra_post_class_blog_grid($classes)
-    {
-    }
-    /**
-     * Prints HTML with meta information for the current post-date/time and author.
-     *
-     * @since 1.0
-     * @return mixed            Markup.
-     */
-    function astra_blog_get_post_meta()
-    {
-    }
-    /**
-     * To featured image / gallery / audio / video etc. As per the post format.
-     *
-     * @since 1.0
-     * @return mixed
-     */
-    function astra_blog_post_get_featured_item()
-    {
-    }
-    /**
-     * Blog post Thubmnail, Title & Blog Meta order
-     *
-     * @since  1.0.8
-     */
-    function astra_blog_post_thumbnail_and_title_order()
-    {
-    }
-    /**
-     * Blog post Thumbnail
-     *
-     * @param string $type Type of post.
-     * @since  1.0.8
-     */
-    function astra_get_blog_post_thumbnail($type = 'archive')
-    {
-    }
-    /**
-     * Blog post Thumbnail
-     *
-     * @since  1.0.8
-     */
-    function astra_get_blog_post_title_meta()
-    {
-    }
-    /**
-     * Get audio files from post content
-     *
-     * @param  number $post_id Post id.
-     * @return mixed          Iframe.
-     */
-    function astra_get_audios_from_post($post_id)
-    {
-    }
-    /**
-     * Get first image from post content
-     *
-     * @since 1.0
-     * @param  number $post_id Post id.
-     * @return mixed
-     */
-    function astra_get_video_from_post($post_id)
-    {
-    }
-    /**
-     * Get last word of string to get meta-key of custom post structure.
-     *
-     * @since 4.0.0
-     * @param string $string from this get last word.
-     * @return string $last_word result.
-     */
-    function astra_get_last_meta_word($string)
-    {
-    }
-    /**
-     * Get the current archive description.
-     *
-     * @since 4.0.0
-     * @param string $post_type post type.
-     * @return string $description Description for archive.
-     */
-    function astra_get_archive_description($post_type)
-    {
-    }
-    /**
-     * Custom single post Title & Meta order display.
-     *
-     * @since 4.0.0
-     * @param array $structure archive or single post structure.
-     * @return mixed
-     */
-    function astra_banner_elements_order($structure = array())
-    {
-    }
-    /**
-     * Adds custom classes to the array of body classes.
-     *
-     * @since 1.0.0
-     * @param array $classes Classes for the body element.
-     * @return array
-     */
-    function astra_single_body_class($classes)
-    {
-    }
-    /**
-     * Adds custom classes to the array of body classes.
-     *
-     * @since 1.0.0
-     * @param array $classes Classes for the body element.
-     * @return array
-     */
-    function astra_single_post_class($classes)
-    {
-    }
-    /**
-     * Template for comments and pingbacks.
-     *
-     * To override this walker in a child theme without modifying the comments template
-     * simply create your own astra_theme_comment(), and that function will be used instead.
-     *
-     * Used as a callback by wp_list_comments() for displaying the comments.
-     *
-     * @param  string $comment Comment.
-     * @param  array  $args    Comment arguments.
-     * @param  number $depth   Depth.
-     * @return mixed          Comment markup.
-     */
-    function astra_theme_comment($comment, $args, $depth)
-    {
-    }
-    /**
-     * Get Post Navigation
-     *
-     * Checks post navigation, if exists return as button.
-     *
-     * @return mixed Post Navigation Buttons
-     */
-    function astra_single_post_navigation_markup()
-    {
-    }
-    /**
-     * Get global class.
-     *
-     * @return object
-     */
-    function astra_builder()
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_ABOVE_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/above-footer');
-    \define('ASTRA_BUILDER_FOOTER_ABOVE_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/above-footer');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for above Footer.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_above_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_BELOW_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/below-footer');
-    \define('ASTRA_BUILDER_FOOTER_BELOW_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/below-footer');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for below Footer.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_below_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_FOOTER_BUTTON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/button');
-    \define('ASTRA_FOOTER_BUTTON_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/button');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_button_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_COPYRIGHT_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/copyright');
-    \define('ASTRA_BUILDER_FOOTER_COPYRIGHT_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/copyright');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_copyright_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_HTML_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/html');
-    \define('ASTRA_BUILDER_FOOTER_HTML_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/html');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_html_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/menu');
-    \define('ASTRA_BUILDER_FOOTER_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/menu');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Footer Menu Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_footer_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    /**
-     * Footer menu static CSS
-     *
-     * @since 3.5.0
-     * @return string
-     */
-    function astra_footer_menu_static_css()
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_PRIMARY_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/primary-footer');
-    \define('ASTRA_BUILDER_FOOTER_PRIMARY_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/primary-footer');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Primary Footer.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_primary_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_SOCIAL_ICONS_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/social-icon');
-    \define('ASTRA_BUILDER_FOOTER_SOCIAL_ICONS_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/social-icon');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Social Icons Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_fb_social_icon_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_FOOTER_WIDGET_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/widget');
-    \define('ASTRA_BUILDER_FOOTER_WIDGET_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/widget');
-    /**
-     * Whether to fix the footer right-margin space not working case or not.
-     *
-     * As this affects the frontend, added this backward compatibility for existing users.
-     *
-     * @since 3.6.7
+     * @since 3.9.2
      * @return boolean false if it is an existing user, true if not.
      */
-    function astra_support_footer_widget_right_margin()
+    function astra_cart_color_default_icon_old_header()
     {
     }
     /**
-     * Dynamic CSS
+     * Function to check the Add to Cart quantity buttons.
      *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
+     * @return bool true|false.
+     * @since 3.9.2
      */
-    function astra_fb_widget_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_ABOVE_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/above-header');
-    \define('ASTRA_ABOVE_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/above-header');
-    /**
-     * Above Header Row - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_above_header_row_setting($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_ACCOUNT_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/account');
-    \define('ASTRA_HEADER_ACCOUNT_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/account');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Account.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_account_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BELOW_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/below-header');
-    \define('ASTRA_BELOW_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/below-header');
-    /**
-     * Below Header Row - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_below_header_row_setting($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_BUTTON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/button');
-    \define('ASTRA_HEADER_BUTTON_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/button');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_button_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_EDD_CART_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/edd-cart');
-    \define('ASTRA_HEADER_EDD_CART_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/edd-cart');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Search.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_edd_cart_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_HTML_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/html');
-    \define('ASTRA_HEADER_HTML_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/html');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_html_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/menu');
-    \define('ASTRA_HEADER_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/menu');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_add_to_cart_quantity_btn_enabled()
     {
     }
     /**
-     * Load Menu hover style static CSS if any one of the menu hover style is selected.
+     * Woocommerce MyAccount Page Endpoint.
      *
+     * @param string $title for MyAccount title endpoint.
      * @return string
-     * @since 3.5.0
+     *
+     * @since 4.3.0
      */
-    function astra_menu_hover_style_css()
-    {
-    }
-    \define('ASTRA_BUILDER_MOBILE_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/mobile-menu');
-    \define('ASTRA_BUILDER_MOBILE_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/mobile-menu');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Header Menu Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_mobile_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_MOBILE_TRIGGER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/mobile-trigger');
-    \define('ASTRA_MOBILE_TRIGGER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/mobile-trigger');
-    /**
-     * Mobile Trigger - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_mobile_trigger_row_setting($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_OFF_CANVAS_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/off-canvas');
-    \define('ASTRA_OFF_CANVAS_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/off-canvas');
-    /**
-     * Off Canvas Row - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_off_canvas_row_setting($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    /**
-     * Add static CSS for Off-canvas flyout.
-     *
-     * @since 3.4.0
-     * @return string.
-     */
-    function astra_off_canvas_static_css()
-    {
-    }
-    /**
-     * Add static CSS for Dropdown Type.
-     *
-     * @since 3.4.0
-     * @return string.
-     */
-    function astra_dropdown_type_static_css()
-    {
-    }
-    \define('ASTRA_PRIMARY_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/primary-header');
-    \define('ASTRA_PRIMARY_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/primary-header');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_primary_header_breakpoint_style($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_SEARCH_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/search');
-    \define('ASTRA_HEADER_SEARCH_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/search');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Search.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_search_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_SITE_IDENTITY_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/site-identity');
-    \define('ASTRA_HEADER_SITE_IDENTITY_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/site-identity');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Site Identity.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_site_identity_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_SOCIAL_ICON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/social-icon');
-    \define('ASTRA_HEADER_SOCIAL_ICON_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/social-icon');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 2.1.4
-     */
-    function astra_hb_social_icon_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_BUILDER_HEADER_WIDGET_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/widget');
-    \define('ASTRA_BUILDER_HEADER_WIDGET_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/widget');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Heading Colors.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_widget_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_HEADER_WOO_CART_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/woo-cart');
-    \define('ASTRA_HEADER_WOO_CART_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/woo-cart');
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Search.
-     *
-     * @since 3.0.0
-     */
-    function astra_hb_woo_cart_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    function astra_get_wc_endpoints_title($title)
     {
     }
     /**
@@ -13914,8 +12608,8 @@ namespace {
 <p>Pulvinar enim ac tortor nulla facilisi tristique facilisi <br>elementum sollicitudin eget lorem.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons {"align":"wide"} -->
-<div class="wp-block-buttons alignwide"><!-- wp:button -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Make a Website</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div><figure class="wp-block-media-text__media"><img src="' . \trailingslashit(\get_template_directory_uri()) . 'inc/assets/images/starter-content/hero-img.svg" alt="" class="wp-image-118 size-full"/></figure></div>
@@ -14127,130 +12821,1043 @@ namespace {
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->';
     /**
-     * Shop Page product titles with anchor
+     * This is new compatibillity CSS added at time 'improve-gb-editor-ui'. So requiring this for new setup as well that's why making it common.
      *
-     * @hooked woocommerce_after_shop_loop_item - 10
-     *
-     * @since 1.1.0
+     * @since 3.6.5
      */
-    function astra_woo_shop_products_title()
+    function astra_get_block_editor_required_css()
     {
     }
     /**
-     * Add and/or Remove Categories from shop archive page.
+     * Astra WordPress compatibility - Dynamic CSS.
      *
-     * @hooked woocommerce_after_shop_loop_item - 9
-     *
-     * @since 1.1.0
+     * @param string $dynamic_css Dynamic CSS.
+     * @since 3.6.5
      */
-    function astra_woo_shop_parent_category()
+    function astra_block_editor_compatibility_css($dynamic_css)
     {
     }
     /**
-     * Add Out of Stock to the Shop page
+     * Astra block editor 2.0 Spectra compatibility - Dynamic CSS.
      *
-     * @hooked woocommerce_shop_loop_item_title - 8
+     * @param string $dynamic_css Dynamic CSS.
+     * @return string $dynamic_css Dynamic CSS.
      *
-     * @since 1.1.0
+     * @since 3.8.0
      */
-    function astra_woo_shop_out_of_stock()
+    function astra_load_modern_block_editor_ui($dynamic_css)
     {
     }
     /**
-     * Product short description
+     * Inline On Mobile - Dynamic CSS.
      *
-     * @hooked woocommerce_after_shop_loop_item
+     * @param string $dynamic_css Dynamic CSS.
+     * @since 3.5.0
+     * @return string
+     */
+    function astra_inline_on_mobile_css($dynamic_css)
+    {
+    }
+    /**
+     * Astra Icons - Dynamic CSS.
      *
-     * @since 1.1.0
+     * @param string $dynamic_css Dynamic CSS.
+     * @since 3.5.0
      */
-    function astra_woo_shop_product_short_description()
+    function astra_icons_static_css($dynamic_css)
     {
     }
     /**
-     * Availability: in stock string updated
+     * Content Background - Dynamic CSS
      *
-     * @param  string $markup  Markup.
-     * @param  object $product Object of Product.
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for content background.
      *
-     * @since 1.1.0
+     * @since 3.2.0
      */
-    function astra_woo_product_in_stock($markup, $product)
+    function astra_content_background_css($dynamic_css)
     {
     }
     /**
-     * Show the product title in the product loop. By default this is an H2.
+     * Applies an unboxed container to the content.
+     *
+     * @since 4.2.0
+     * @param array $content_bg_obj The background object for the content.
+     * @param bool  $is_boxed Container style is boxed or not.
+     * @param bool  $is_sidebar_boxed Sidebar style is boxed or not.
+     * @param mixed $current_layout The current container layout applied.
+     * @return array $content_bg_obj The updated background object for the content.
      */
-    function astra_woo_woocommerce_template_loop_product_title()
+    function astra_apply_unboxed_container($content_bg_obj, $is_boxed, $is_sidebar_boxed, $current_layout)
     {
     }
     /**
-     * Show the product title in the product loop. By default this is an H2.
+     * Pagination - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Pagination.
+     *
+     * @since 3.3.0
      */
-    function astra_woo_woocommerce_shop_product_content()
+    function astra_pagination_css($dynamic_css)
     {
     }
     /**
-     * Thumbnail wrap start.
+     * Comments - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Pagination.
+     *
+     * @since 3.2.0
      */
-    function astra_woo_shop_thumbnail_wrap_start()
+    function astra_comments_css($dynamic_css)
     {
     }
     /**
-     * Thumbnail wrap end.
+     * Init fire to add required compatibility for divi page bulder.
+     *
+     * Case: In customizer-defaults update case Astra v3.8.3 we introduced some padding for stretched layout, that should not load for page builder layouts, that is why this compatibility added here.
+     *
+     * @param int $post_id Current post ID.
+     *
+     * @since 3.8.3
      */
-    function astra_woo_shop_thumbnail_wrap_end()
+    function astra_check_any_page_builder_is_active($post_id)
     {
     }
     /**
-     * Woocommerce filter - Widget Products Tags
+     * Container Layout - Dynamic CSS.
+     *
+     * @since 3.3.0
+     */
+    function astra_container_layout_css()
+    {
+    }
+    /**
+     * Old Header Menu Last Item - Dynamic CSS.
+     *
+     * @param string $dynamic_css
+     * @since 3.5.0
+     */
+    function astra_old_header_custom_menu_css($dynamic_css)
+    {
+    }
+    /**
+     * Generate palette CSS variable styles on the front end.
+     *
+     * @since 3.7.0
+     * @param string $dynamic_css dynamic css.
+     * @return string
+     */
+    function astra_generate_global_palette_style($dynamic_css)
+    {
+    }
+    /**
+     * WordPress filter - Widget Tags
      *
      * @param  array $args Tag arguments.
      * @return array       Modified tag arguments.
      */
-    function astra_widget_product_tag_cloud_args($args = array())
+    function astra_widget_tag_cloud_args($args = array())
     {
     }
     /**
-     * Woocommerce shop/product div close tag.
+     * WordPress filter - Widget Categories
      *
+     * @param  array $tags_data Tags data.
+     * @return array            Modified tags data.
+     */
+    function astra_filter_widget_tag_cloud($tags_data)
+    {
+    }
+    /**
+     * Register widget area.
+     *
+     * @see https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+     */
+    function astra_widgets_init()
+    {
+    }
+    /**
+     * Add a pingback url auto-discovery header for singularly identifiable articles.
+     */
+    function astra_pingback_header()
+    {
+    }
+    /**
+     * Adds schema tags to the body classes.
+     *
+     * @since 1.0.0
+     */
+    function astra_schema_body()
+    {
+    }
+    /**
+     * Adds custom classes to the array of body classes.
+     *
+     * @since 1.0.0
+     * @param array $classes Classes for the body element.
+     * @return array
+     */
+    function astra_body_classes($classes)
+    {
+    }
+    /**
+     * Checks whether content style is boxed for current layout.
+     *
+     * @since 4.2.0
+     * @param mixed $post_id Current post ID.
+     * @return boolean
+     */
+    function astra_is_content_style_boxed($post_id = \false)
+    {
+    }
+    /**
+     * Check if the current page is a third party page.
+     *
+     * @since 4.2.0
+     * @param bool $is_sidebar_option Optional. Whether to check sidebar option needed for Lifterlms case. Default false.
+     * @return string|bool Returns the name of third party if page belongs to any, otherwise returns false.
+     */
+    function astra_with_third_party($is_sidebar_option = \false)
+    {
+    }
+    /**
+     * Check if the sidebar style is boxed.
+     *
+     * @since 4.2.0
+     * @param mixed $post_id Current post ID.
+     * @return bool Whether the sidebar style is boxed.
+     */
+    function astra_is_sidebar_style_boxed($post_id = \false)
+    {
+    }
+    /**
+     * Switch to legacy boxed layouts (Content Boxed, Boxed) as per content style selection.
+     *
+     * @since 4.2.0
+     * @param mixed   $content_layout Current layout.
+     * @param boolean $is_boxed Current content style.
+     * @param boolean $is_sidebar_boxed Current sidebar style.
+     * @param mixed   $post_id Current post ID.
+     * @return mixed The content layout.
+     */
+    function astra_apply_boxed_layouts($content_layout, $is_boxed, $is_sidebar_boxed, $post_id = \false)
+    {
+    }
+    /**
+     * WooCommerce, LifterLMS, EDD Archive (Shop, Courses, Memberships etc) Meta value.
+     *
+     * @since 4.2.0
+     * @param mixed $option name of the option to fetch.
+     * @return mixed meta_value
+     */
+    function astra_third_party_archive_meta($option)
+    {
+    }
+    /**
+     * Astra Pagination
+     *
+     * @since 1.0.0
+     * @return void            Generate & echo pagination markup.
+     */
+    function astra_number_pagination()
+    {
+    }
+    /**
+     * Return or echo site logo markup.
+     *
+     * @since 1.0.0
+     * @param  string  $device Device name.
+     * @param  boolean $echo Echo markup.
+     * @return mixed echo or return markup.
+     */
+    function astra_logo($device = 'desktop', $echo = \true)
+    {
+    }
+    /**
+     * Add custom attribute to custom site logo.
+     *
+     * @param mixed $html custom logo html.
+     * @since 4.1.0
+     * @return mixed custom logo html.
+     */
+    function astra_add_custom_logo_attributes($html)
+    {
+    }
+    /**
+     * Return or echo site logo markup.
+     *
+     * @since 2.2.0
+     * @param boolean $display_site_title Site title enable or not.
+     * @param boolean $display_site_tagline Site tagline enable or not.
+     * @param  string  $device   Device name.
+     *
+     * @return string return markup.
+     */
+    function astra_get_site_title_tagline($display_site_title, $display_site_tagline, $device = 'desktop')
+    {
+    }
+    /**
+     * Return the selected sections
+     *
+     * @since 1.0.0
+     * @param  string $option Custom content type. E.g. search, text-html etc.
+     * @return array         Array of Custom contents.
+     */
+    function astra_get_dynamic_header_content($option)
+    {
+    }
+    /**
+     * Adding Wrapper for Search Form.
+     *
+     * @since 1.0.0
+     * @param  string $option   Search Option name.
+     * @param  string $device   Device name.
+     * @return mixed Search HTML structure created.
+     */
+    function astra_get_search($option = '', $device = '')
+    {
+    }
+    /**
+     * Get custom HTML added by user.
+     *
+     * @since 1.0.0
+     * @param  string $option_name Option name.
+     * @return String TEXT/HTML added by user in options panel.
+     */
+    function astra_get_custom_html($option_name = '')
+    {
+    }
+    /**
+     * Get custom HTML added by user.
+     *
+     * @since 1.0.0
+     * @param string $button_text Button Text.
+     * @param string $button_options Button Link.
+     * @param string $button_style Button Style.
+     * @return String Button added by user in options panel.
+     */
+    function astra_get_custom_button($button_text = '', $button_options = '', $button_style = '')
+    {
+    }
+    /**
+     * Get custom widget added by user.
+     *
+     * @since  1.0.1.1
+     * @param  string $option_name Option name.
+     * @return Widget added by user in options panel.
+     */
+    function astra_get_custom_widget($option_name = '')
+    {
+    }
+    /**
+     * Function to get Small Left/Right Footer
+     *
+     * @since 1.0.0
+     * @param string $section   Sections of Small Footer.
+     * @return mixed            Markup of sections.
+     */
+    function astra_get_small_footer($section = '')
+    {
+    }
+    /**
+     * Function to get Small Footer Custom Text
+     *
+     * @since 1.0.14
+     * @param string $option Custom text option name.
+     * @return mixed         Markup of custom text option.
+     */
+    function astra_get_small_footer_custom_text($option = '')
+    {
+    }
+    /**
+     * Function to get Footer Menu
+     *
+     * @since 1.0.0
+     * @return html
+     */
+    function astra_get_small_footer_menu()
+    {
+    }
+    /**
+     * Site Header - <header>
+     *
+     * @since 1.0.0
+     */
+    function astra_header_markup()
+    {
+    }
+    /**
+     * Site Title / Logo
+     *
+     * @since 1.0.0
+     */
+    function astra_site_branding_markup()
+    {
+    }
+    /**
+     * Toggle Button Markup
+     *
+     * @since 1.0.0
+     */
+    function astra_toggle_buttons_markup()
+    {
+    }
+    /**
+     * Site Title / Logo
+     *
+     * @since 1.0.0
+     */
+    function astra_primary_navigation_markup()
+    {
+    }
+    /**
+     * Add CSS classes for all menu links inside WP Nav menu items.
+     *
+     * Right now, if Addon is active we add 'menu-link' class through walker_nav_menu_start_el, but if only theme is being used no clas is assigned to anchors.
+     *
+     * As we are replacing tag based selector assets to class selector, adding 'menu-link' selector to all anchors inside menu items.
+     * Ex. .main-header-menu a => .main-header-menu .menu-link
+     *
+     * @since 2.5.0
+     * @param array $atts   An array of all parameters assigned to menu anchors.
+     */
+    function astra_menu_anchor_class_for_nav_menus($atts)
+    {
+    }
+    /**
+     * Add CSS classes for all menu links inside WP Page Menu items.
+     *
+     * As we are replacing tag based selector to class selector, adding 'menu-link' selector to all anchors inside menu items.
+     *
+     * @since 2.5.0
+     * @param array $atts   An array of all parameters assigned to menu anchors.
+     */
+    function astra_menu_anchor_class_for_page_menus($atts)
+    {
+    }
+    /**
+     * Add CSS classes from wp_nav_menu the wp_page_menu()'s menu items.
+     * This will help avoid targeting wp_page_menu and wp_nav_manu separately in CSS/JS.
+     *
+     * @since 1.6.9
+     * @param array   $css_class    An array of CSS classes to be applied
+     *                              to each list item.
+     * @param WP_Post $page         Page data object.
+     * @param int     $depth        Depth of page, used for padding.
+     * @param array   $args         An array of arguments.
+     * @param int     $current_page ID of the current page.
+     * @return Array CSS classes with added menu class `menu-item`
+     */
+    function astra_page_css_class($css_class, $page, $depth, $args, $current_page)
+    {
+    }
+    /**
+     * Site Footer - <footer>
+     *
+     * @since 1.0.0
+     */
+    function astra_footer_markup()
+    {
+    }
+    /**
+     * Function to get Header Breakpoint
+     *
+     * @since 1.4.0 Added Mobile Header Breakpoint option from customizer.
+     * @since 1.0.0
+     * @return number
+     */
+    function astra_header_break_point()
+    {
+    }
+    /**
+     * Function to get Edit Post Link
+     *
+     * @since 1.0.0
+     * @param string $text      Anchor Text.
+     * @param string $before    Anchor Text.
+     * @param string $after     Anchor Text.
+     * @param int    $id           Anchor Text.
+     * @param string $class     Anchor Text.
      * @return void
      */
-    function astra_woocommerce_div_wrapper_close()
+    function astra_edit_post_link($text, $before = '', $after = '', $id = 0, $class = 'post-edit-link')
     {
     }
     /**
-     * Checking whether shop page style is selected as modern layout.
+     * Function to get Header Classes
      *
-     * @return bool true|false.
+     * @since 1.0.0
      */
-    function astra_is_shop_page_modern_style()
+    function astra_header_classes()
     {
     }
     /**
-     * Check if Woocommerce pro addons is enabled.
+     * Return classnames for <header> element.
      *
-     * @return bool true|false.
+     * @since 2.1.0
+     * @return Array classnames for the <header>
      */
-    function astra_has_pro_woocommerce_addon()
+    function astra_get_header_classes()
     {
     }
     /**
-     * Support cart color setting to default cart icon, till now with other cart icons have this color compatibility but default one don't have this.
-     * This case is only for old header layout.
+     * Function to get Footer Classes
      *
-     * @since 3.9.2
-     * @return boolean false if it is an existing user, true if not.
+     * @since 1.0.0
      */
-    function astra_cart_color_default_icon_old_header()
+    function astra_footer_classes()
     {
     }
     /**
-     * Function to check the Add to Cart quantity buttons.
+     * Return classnames for <footer> element.
      *
-     * @return bool true|false.
-     * @since 3.9.2
+     * @since 2.1.0
+     * @return Array classnames for the <footer>
      */
-    function astra_add_to_cart_quantity_btn_enabled()
+    function astra_get_footer_classes()
+    {
+    }
+    /**
+     * Function filter comment form's default fields
+     *
+     * @since 1.0.0
+     * @param array $fields Array of comment form's default fields.
+     * @return array        Comment form fields.
+     */
+    function astra_comment_form_default_fields_markup($fields)
+    {
+    }
+    /**
+     * Function filter comment form arguments
+     *
+     * @since 1.0.0
+     * @param array $args   Comment form arguments.
+     * @return array
+     */
+    function astra_comment_form_default_markup($args)
+    {
+    }
+    /**
+     * Display Blog Post Excerpt
+     *
+     * @since 1.0.0
+     */
+    function astra_the_excerpt()
+    {
+    }
+    /**
+     * Get Sidebar
+     *
+     * @since 1.0.1.1
+     * @param  string $sidebar_id   Sidebar Id.
+     * @return void
+     */
+    function astra_get_sidebar($sidebar_id)
+    {
+    }
+    /**
+     * Get Footer Default Sidebar
+     *
+     * @param  string $sidebar_id   Sidebar Id..
+     * @return void
+     */
+    function astra_get_footer_widget($sidebar_id)
+    {
+    }
+    /**
+     * Astra entry header class
+     *
+     * @param bool $echo output being echoed or not.
+     *
+     * @since 1.0.15
+     */
+    function astra_entry_header_class($echo = \true)
+    {
+    }
+    /**
+     * Astra get post thumbnail image
+     *
+     * @since 1.0.15
+     * @param string  $before Markup before thumbnail image.
+     * @param string  $after  Markup after thumbnail image.
+     * @param boolean $echo   Output print or return.
+     * @return string|void
+     */
+    function astra_get_post_thumbnail($before = '', $after = '', $echo = \true)
+    {
+    }
+    /**
+     * Replace header logo.
+     *
+     * @param array  $attr Image.
+     * @param object $attachment Image obj.
+     * @param sting  $size Size name.
+     *
+     * @return array Image attr.
+     */
+    function astra_replace_header_attr($attr, $attachment, $size)
+    {
+    }
+    /**
+     * Astra Color Palletes.
+     *
+     * @return array Color Palletes.
+     */
+    function astra_color_palette()
+    {
+    }
+    /**
+     * Get theme name.
+     *
+     * @return string Theme Name.
+     */
+    function astra_get_theme_name()
+    {
+    }
+    /**
+     * Get Addon name.
+     *
+     * @return string Addon Name.
+     */
+    function astra_get_addon_name()
+    {
+    }
+    /**
+     * Added this filter to modify the post navigation template to remove the h2 tag from screen reader text.
+     */
+    function astra_post_navigation_template()
+    {
+    }
+    /**
+     * Prevent onboarding of Elementor.
+     *
+     * @param bool $network_wide Whether to enable the plugin for all sites in the network
+     *                            or just the current site. Multisite only. Default false.
+     *
+     * @since 3.9.0
+     */
+    function astra_skip_elementor_onboarding($network_wide)
+    {
+    }
+    /**
+     * BBPress Multiple user profile compatibility issue.
+     *
+     * @param bool $value For checking this issue is still persist or not.
+     *
+     * @since 4.1.0
+     */
+    function astra_bbpress_issue($value)
+    {
+    }
+    /**
+     * Render Svg Mask for Header logo
+     *
+     * @since 4.2.2
+     * @return void
+     */
+    function astra_render_header_svg_mask()
+    {
+    }
+    /**
+     * Site Sidebar
+     *
+     * Default 'right sidebar' for overall site.
+     */
+    function astra_page_layout()
+    {
+    }
+    /**
+     * Default Strings
+     *
+     * @since 1.0.0
+     * @param  string  $key  String key.
+     * @param  boolean $echo Print string.
+     * @return mixed        Return string or nothing.
+     */
+    function astra_default_strings($key, $echo = \true)
+    {
+    }
+    /**
+     * Determines, whether the specific hook type is actually supported.
+     *
+     * Plugin developers should always check for the support of a <strong>specific</strong>
+     * hook type before hooking a callback function to a hook of this type.
+     *
+     * Example:
+     * <code>
+     *      if ( current_theme_supports( 'astra_hooks', 'header' ) )
+     *          add_action( 'astra_head_top', 'prefix_header_top' );
+     * </code>
+     *
+     * @param bool  $bool true.
+     * @param array $args The hook type being checked.
+     * @param array $registered All registered hook types.
+     *
+     * @return bool
+     */
+    function astra_current_theme_supports($bool, $args, $registered)
+    {
+    }
+    /**
+     * HTML <html> hook
+     * Special case, useful for <DOCTYPE>, etc.
+     * $astra_supports[] = 'html;
+     */
+    function astra_html_before()
+    {
+    }
+    /**
+     * HTML <body> hooks
+     * $astra_supports[] = 'body';
+     */
+    function astra_body_top()
+    {
+    }
+    /**
+     * Body Bottom
+     */
+    function astra_body_bottom()
+    {
+    }
+    /**
+     * HTML <head> hooks
+     *
+     * $astra_supports[] = 'head';
+     */
+    function astra_head_top()
+    {
+    }
+    /**
+     * Head Bottom
+     */
+    function astra_head_bottom()
+    {
+    }
+    /**
+     * Semantic <header> hooks
+     *
+     * $astra_supports[] = 'header';
+     */
+    function astra_header_before()
+    {
+    }
+    /**
+     * Site Header
+     */
+    function astra_header()
+    {
+    }
+    /**
+     * Masthead Top
+     */
+    function astra_masthead_top()
+    {
+    }
+    /**
+     * Masthead
+     */
+    function astra_masthead()
+    {
+    }
+    /**
+     * Masthead Bottom
+     */
+    function astra_masthead_bottom()
+    {
+    }
+    /**
+     * Header After
+     */
+    function astra_header_after()
+    {
+    }
+    /**
+     * Main Header bar top
+     */
+    function astra_main_header_bar_top()
+    {
+    }
+    /**
+     * Main Header bar bottom
+     */
+    function astra_main_header_bar_bottom()
+    {
+    }
+    /**
+     * Main Header Content
+     */
+    function astra_masthead_content()
+    {
+    }
+    /**
+     * Main toggle button before
+     */
+    function astra_masthead_toggle_buttons_before()
+    {
+    }
+    /**
+     * Main toggle buttons
+     */
+    function astra_masthead_toggle_buttons()
+    {
+    }
+    /**
+     * Main toggle button after
+     */
+    function astra_masthead_toggle_buttons_after()
+    {
+    }
+    /**
+     * Semantic <content> hooks
+     *
+     * $astra_supports[] = 'content';
+     */
+    function astra_content_before()
+    {
+    }
+    /**
+     * Content after
+     */
+    function astra_content_after()
+    {
+    }
+    /**
+     * Content top
+     */
+    function astra_content_top()
+    {
+    }
+    /**
+     * Content bottom
+     */
+    function astra_content_bottom()
+    {
+    }
+    /**
+     * Content while before
+     */
+    function astra_content_while_before()
+    {
+    }
+    /**
+     * Content loop
+     */
+    function astra_content_loop()
+    {
+    }
+    /**
+     * Conten Page Loop.
+     *
+     * Called from page.php
+     */
+    function astra_content_page_loop()
+    {
+    }
+    /**
+     * Content while after
+     */
+    function astra_content_while_after()
+    {
+    }
+    /**
+     * Semantic <entry> hooks
+     *
+     * $astra_supports[] = 'entry';
+     */
+    function astra_entry_before()
+    {
+    }
+    /**
+     * Entry after
+     */
+    function astra_entry_after()
+    {
+    }
+    /**
+     * Entry content before
+     */
+    function astra_entry_content_before()
+    {
+    }
+    /**
+     * Entry content after
+     */
+    function astra_entry_content_after()
+    {
+    }
+    /**
+     * Entry Top
+     */
+    function astra_entry_top()
+    {
+    }
+    /**
+     * Entry bottom
+     */
+    function astra_entry_bottom()
+    {
+    }
+    /**
+     * Single Post Header Before
+     */
+    function astra_single_header_before()
+    {
+    }
+    /**
+     * Single Post Header After
+     */
+    function astra_single_header_after()
+    {
+    }
+    /**
+     * Single Post Header Top
+     */
+    function astra_single_header_top()
+    {
+    }
+    /**
+     * Single Post Header Bottom
+     */
+    function astra_single_header_bottom()
+    {
+    }
+    /**
+     * Comments block hooks
+     *
+     * $astra_supports[] = 'comments';
+     */
+    function astra_comments_before()
+    {
+    }
+    /**
+     * Comments after.
+     */
+    function astra_comments_after()
+    {
+    }
+    /**
+     * Semantic <sidebar> hooks
+     *
+     * $astra_supports[] = 'sidebar';
+     */
+    function astra_sidebars_before()
+    {
+    }
+    /**
+     * Sidebars after
+     */
+    function astra_sidebars_after()
+    {
+    }
+    /**
+     * Semantic <footer> hooks
+     *
+     * $astra_supports[] = 'footer';
+     */
+    function astra_footer()
+    {
+    }
+    /**
+     * Footer before
+     */
+    function astra_footer_before()
+    {
+    }
+    /**
+     * Footer after
+     */
+    function astra_footer_after()
+    {
+    }
+    /**
+     * Footer top
+     */
+    function astra_footer_content_top()
+    {
+    }
+    /**
+     * Footer
+     */
+    function astra_footer_content()
+    {
+    }
+    /**
+     * Footer bottom
+     */
+    function astra_footer_content_bottom()
+    {
+    }
+    /**
+     * Archive header
+     */
+    function astra_archive_header()
+    {
+    }
+    /**
+     * Pagination
+     */
+    function astra_pagination()
+    {
+    }
+    /**
+     * Entry content single
+     */
+    function astra_entry_content_single()
+    {
+    }
+    /**
+     * Entry content single-page.
+     *
+     * @since 4.0.0
+     */
+    function astra_entry_content_single_page()
+    {
+    }
+    /**
+     * 404
+     */
+    function astra_entry_content_404_page()
+    {
+    }
+    /**
+     * Entry content blog
+     */
+    function astra_entry_content_blog()
+    {
+    }
+    /**
+     * Blog featured post section
+     */
+    function astra_blog_post_featured_format()
+    {
+    }
+    /**
+     * Primary Content Top
+     */
+    function astra_primary_content_top()
+    {
+    }
+    /**
+     * Primary Content Bottom
+     */
+    function astra_primary_content_bottom()
+    {
+    }
+    /**
+     * 404 Page content template action.
+     */
+    function astra_404_content_template()
+    {
+    }
+    /**
+     * Fire the wp_body_open action.
+     * Adds backward compatibility for WordPress versions < 5.2
+     *
+     * @since 1.8.7
+     */
+    function wp_body_open()
     {
     }
     /**
@@ -14314,17 +13921,6 @@ namespace {
      * @param integer $index index.
      */
     function astra_prepare_menu_defaults($defaults, $index)
-    {
-    }
-    /**
-     * Default Strings
-     *
-     * @since 1.0.0
-     * @param  string  $key  String key.
-     * @param  boolean $echo Print string.
-     * @return mixed        Return string or nothing.
-     */
-    function astra_default_strings($key, $echo = \true)
     {
     }
     /**
@@ -14831,6 +14427,98 @@ namespace {
     {
     }
     /**
+     * Function which will return the Sidebar Layout to determine default body classes for Editor.
+     *
+     * @since 4.2.0
+     * @param string $post_type Post Type.
+     * @return string Sidebar Layout.
+     */
+    function astra_get_sidebar_layout_for_editor($post_type)
+    {
+    }
+    /**
+     * Gets the SVG for the duotone filter definition.
+     *
+     * @since 4.2.2
+     *
+     * @param string $filter_id The ID of the filter.
+     * @param array  $color    An array of color strings.
+     * @return string An SVG with a duotone filter definition.
+     */
+    function astra_get_filter_svg($filter_id, $color)
+    {
+    }
+    /**
+     * Converts HEX to RGB.
+     *
+     * @since 4.2.2
+     *
+     * @param string $hex Hex color.
+     * @return array split version of rgb.
+     */
+    function astra_hex_to_rgb($hex)
+    {
+    }
+    /**
+     * Converts RGBA to split array RGBA.
+     *
+     * @since 4.2.2
+     *
+     * @param string $rgba RGBA value.
+     * @return array split version of rgba.
+     */
+    function astra_split_rgba($rgba)
+    {
+    }
+    /**
+     * Render svg mask.
+     *
+     * @since 4.2.2
+     *
+     * @param string $id id.
+     * @param string $filter_name filter name.
+     * @param string $color color.
+     * @return mixed masked svg,
+     */
+    function astra_render_svg_mask($id, $filter_name, $color)
+    {
+    }
+    /**
+     * Astra Filter Deprecated
+     *
+     * @since 1.1.1
+     * @param string $tag         The name of the filter hook.
+     * @param array  $args        Array of additional function arguments to be passed to apply_filters().
+     * @param string $version     The version of WordPress that deprecated the hook.
+     * @param string $replacement Optional. The hook that should have been used. Default false.
+     * @param string $message     Optional. A message regarding the change. Default null.
+     */
+    function astra_do_action_deprecated($tag, $args, $version, $replacement = \false, $message = \null)
+    {
+    }
+    /**
+     * Depreciating 'asta_register_admin_menu' action & replacing with 'astra_register_admin_menu'.
+     *
+     * @param string   $parent_page        Admin menu page.
+     * @param string   $page_title         The text to be displayed in the title tags of the page when the menu is selected.
+     * @param string   $capability         The capability required for this menu to be displayed to the user.
+     * @param string   $page_menu_slug     The slug name to refer to this menu by (should be unique for this menu).
+     * @param callable $page_menu_func     The function to be called to output the content for this page.
+     *
+     * @since 3.7.4
+     */
+    function astra_deprecated_asta_register_admin_menu_hook($parent_page, $page_title, $capability, $page_menu_slug, $page_menu_func)
+    {
+    }
+    /**
+     * Actions which are deprecated in admin redesign phase.
+     *
+     * @since 4.0.0
+     */
+    function astra_show_deprecated_admin_hooks_warnings()
+    {
+    }
+    /**
      * Astra Color Palettes
      *
      * @since 1.0.23
@@ -15137,1463 +14825,11 @@ namespace {
     {
     }
     /**
-     * Astra Filter Deprecated
-     *
-     * @since 1.1.1
-     * @param string $tag         The name of the filter hook.
-     * @param array  $args        Array of additional function arguments to be passed to apply_filters().
-     * @param string $version     The version of WordPress that deprecated the hook.
-     * @param string $replacement Optional. The hook that should have been used. Default false.
-     * @param string $message     Optional. A message regarding the change. Default null.
-     */
-    function astra_do_action_deprecated($tag, $args, $version, $replacement = \false, $message = \null)
-    {
-    }
-    /**
-     * Depreciating 'asta_register_admin_menu' action & replacing with 'astra_register_admin_menu'.
-     *
-     * @param string   $parent_page        Admin menu page.
-     * @param string   $page_title         The text to be displayed in the title tags of the page when the menu is selected.
-     * @param string   $capability         The capability required for this menu to be displayed to the user.
-     * @param string   $page_menu_slug     The slug name to refer to this menu by (should be unique for this menu).
-     * @param callable $page_menu_func     The function to be called to output the content for this page.
-     *
-     * @since 3.7.4
-     */
-    function astra_deprecated_asta_register_admin_menu_hook($parent_page, $page_title, $capability, $page_menu_slug, $page_menu_func)
-    {
-    }
-    /**
-     * Actions which are deprecated in admin redesign phase.
-     *
-     * @since 4.0.0
-     */
-    function astra_show_deprecated_admin_hooks_warnings()
-    {
-    }
-    /**
-     * Site Sidebar
-     *
-     * Default 'right sidebar' for overall site.
-     */
-    function astra_page_layout()
-    {
-    }
-    /**
-     * Function which will return the Sidebar Layout to determine default body classes for Editor.
-     *
-     * @since 4.2.0
-     * @param string $post_type Post Type.
-     * @return string Sidebar Layout.
-     */
-    function astra_get_sidebar_layout_for_editor( $post_type )
-    {
-    }
-    /**
-     * Determines, whether the specific hook type is actually supported.
-     *
-     * Plugin developers should always check for the support of a <strong>specific</strong>
-     * hook type before hooking a callback function to a hook of this type.
-     *
-     * Example:
-     * <code>
-     *      if ( current_theme_supports( 'astra_hooks', 'header' ) )
-     *          add_action( 'astra_head_top', 'prefix_header_top' );
-     * </code>
-     *
-     * @param bool  $bool true.
-     * @param array $args The hook type being checked.
-     * @param array $registered All registered hook types.
-     *
-     * @return bool
-     */
-    function astra_current_theme_supports($bool, $args, $registered)
-    {
-    }
-    /**
-     * HTML <html> hook
-     * Special case, useful for <DOCTYPE>, etc.
-     * $astra_supports[] = 'html;
-     */
-    function astra_html_before()
-    {
-    }
-    /**
-     * HTML <body> hooks
-     * $astra_supports[] = 'body';
-     */
-    function astra_body_top()
-    {
-    }
-    /**
-     * Body Bottom
-     */
-    function astra_body_bottom()
-    {
-    }
-    /**
-     * HTML <head> hooks
-     *
-     * $astra_supports[] = 'head';
-     */
-    function astra_head_top()
-    {
-    }
-    /**
-     * Head Bottom
-     */
-    function astra_head_bottom()
-    {
-    }
-    /**
-     * Semantic <header> hooks
-     *
-     * $astra_supports[] = 'header';
-     */
-    function astra_header_before()
-    {
-    }
-    /**
-     * Site Header
-     */
-    function astra_header()
-    {
-    }
-    /**
-     * Masthead Top
-     */
-    function astra_masthead_top()
-    {
-    }
-    /**
-     * Masthead
-     */
-    function astra_masthead()
-    {
-    }
-    /**
-     * Masthead Bottom
-     */
-    function astra_masthead_bottom()
-    {
-    }
-    /**
-     * Header After
-     */
-    function astra_header_after()
-    {
-    }
-    /**
-     * Main Header bar top
-     */
-    function astra_main_header_bar_top()
-    {
-    }
-    /**
-     * Main Header bar bottom
-     */
-    function astra_main_header_bar_bottom()
-    {
-    }
-    /**
-     * Main Header Content
-     */
-    function astra_masthead_content()
-    {
-    }
-    /**
-     * Main toggle button before
-     */
-    function astra_masthead_toggle_buttons_before()
-    {
-    }
-    /**
-     * Main toggle buttons
-     */
-    function astra_masthead_toggle_buttons()
-    {
-    }
-    /**
-     * Main toggle button after
-     */
-    function astra_masthead_toggle_buttons_after()
-    {
-    }
-    /**
-     * Semantic <content> hooks
-     *
-     * $astra_supports[] = 'content';
-     */
-    function astra_content_before()
-    {
-    }
-    /**
-     * Content after
-     */
-    function astra_content_after()
-    {
-    }
-    /**
-     * Content top
-     */
-    function astra_content_top()
-    {
-    }
-    /**
-     * Content bottom
-     */
-    function astra_content_bottom()
-    {
-    }
-    /**
-     * Content while before
-     */
-    function astra_content_while_before()
-    {
-    }
-    /**
-     * Content loop
-     */
-    function astra_content_loop()
-    {
-    }
-    /**
-     * Conten Page Loop.
-     *
-     * Called from page.php
-     */
-    function astra_content_page_loop()
-    {
-    }
-    /**
-     * Content while after
-     */
-    function astra_content_while_after()
-    {
-    }
-    /**
-     * Semantic <entry> hooks
-     *
-     * $astra_supports[] = 'entry';
-     */
-    function astra_entry_before()
-    {
-    }
-    /**
-     * Entry after
-     */
-    function astra_entry_after()
-    {
-    }
-    /**
-     * Entry content before
-     */
-    function astra_entry_content_before()
-    {
-    }
-    /**
-     * Entry content after
-     */
-    function astra_entry_content_after()
-    {
-    }
-    /**
-     * Entry Top
-     */
-    function astra_entry_top()
-    {
-    }
-    /**
-     * Entry bottom
-     */
-    function astra_entry_bottom()
-    {
-    }
-    /**
-     * Single Post Header Before
-     */
-    function astra_single_header_before()
-    {
-    }
-    /**
-     * Single Post Header After
-     */
-    function astra_single_header_after()
-    {
-    }
-    /**
-     * Single Post Header Top
-     */
-    function astra_single_header_top()
-    {
-    }
-    /**
-     * Single Post Header Bottom
-     */
-    function astra_single_header_bottom()
-    {
-    }
-    /**
-     * Comments block hooks
-     *
-     * $astra_supports[] = 'comments';
-     */
-    function astra_comments_before()
-    {
-    }
-    /**
-     * Comments after.
-     */
-    function astra_comments_after()
-    {
-    }
-    /**
-     * Semantic <sidebar> hooks
-     *
-     * $astra_supports[] = 'sidebar';
-     */
-    function astra_sidebars_before()
-    {
-    }
-    /**
-     * Sidebars after
-     */
-    function astra_sidebars_after()
-    {
-    }
-    /**
-     * Semantic <footer> hooks
-     *
-     * $astra_supports[] = 'footer';
-     */
-    function astra_footer()
-    {
-    }
-    /**
-     * Footer before
-     */
-    function astra_footer_before()
-    {
-    }
-    /**
-     * Footer after
-     */
-    function astra_footer_after()
-    {
-    }
-    /**
-     * Footer top
-     */
-    function astra_footer_content_top()
-    {
-    }
-    /**
-     * Footer
-     */
-    function astra_footer_content()
-    {
-    }
-    /**
-     * Footer bottom
-     */
-    function astra_footer_content_bottom()
-    {
-    }
-    /**
-     * Archive header
-     */
-    function astra_archive_header()
-    {
-    }
-    /**
-     * Pagination
-     */
-    function astra_pagination()
-    {
-    }
-    /**
-     * Entry content single
-     */
-    function astra_entry_content_single()
-    {
-    }
-    /**
-     * Entry content single-page.
-     *
-     * @since 4.0.0
-     */
-    function astra_entry_content_single_page()
-    {
-    }
-    /**
-    * Check whether user is exising or new to override the hr tag styling for elementor
-    *
-    * @since 4.3.0
-    * @return boolean
-    */
-    function astra_can_add_styling_for_hr()
-    {
-    }
-    /**
-     * 404
-     */
-    function astra_entry_content_404_page()
-    {
-    }
-    /**
-     * Entry content blog
-     */
-    function astra_entry_content_blog()
-    {
-    }
-    /**
-     * Blog featured post section
-     */
-    function astra_blog_post_featured_format()
-    {
-    }
-    /**
-     * Primary Content Top
-     */
-    function astra_primary_content_top()
-    {
-    }
-    /**
-     * Primary Content Bottom
-     */
-    function astra_primary_content_bottom()
-    {
-    }
-    /**
-     * 404 Page content template action.
-     */
-    function astra_404_content_template()
-    {
-    }
-    /**
-     * Fire the wp_body_open action.
-     * Adds backward compatibility for WordPress versions < 5.2
-     *
-     * @since 1.8.7
-     */
-    function wp_body_open()
-    {
-    }
-    /**
-     * Astra Icons - Dynamic CSS.
-     *
-     * @param string $dynamic_css Dynamic CSS.
-     * @since 3.5.0
-     */
-    function astra_icons_static_css($dynamic_css)
-    {
-    }
-    /**
-     * This is new compatibillity CSS added at time 'improve-gb-editor-ui'. So requiring this for new setup as well that's why making it common.
-     *
-     * @since 3.6.5
-     */
-    function astra_get_block_editor_required_css()
-    {
-    }
-    /**
-     * Astra WordPress compatibility - Dynamic CSS.
-     *
-     * @param string $dynamic_css Dynamic CSS.
-     * @since 3.6.5
-     */
-    function astra_block_editor_compatibility_css($dynamic_css)
-    {
-    }
-    /**
-     * Astra block editor 2.0 Spectra compatibility - Dynamic CSS.
-     *
-     * @param string $dynamic_css Dynamic CSS.
-     * @return string $dynamic_css Dynamic CSS.
-     *
-     * @since 3.8.0
-     */
-    function astra_load_modern_block_editor_ui($dynamic_css)
-    {
-    }
-    /**
-     * Comments - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for Pagination.
-     *
-     * @since 3.2.0
-     */
-    function astra_comments_css($dynamic_css)
-    {
-    }
-    /**
-     * Init fire to add required compatibility for divi page bulder.
-     *
-     * Case: In customizer-defaults update case Astra v3.8.3 we introduced some padding for stretched layout, that should not load for page builder layouts, that is why this compatibility added here.
-     *
-     * @param int $post_id Current post ID.
-     *
-     * @since 3.8.3
-     */
-    function astra_check_any_page_builder_is_active($post_id)
-    {
-    }
-    /**
-     * Container Layout - Dynamic CSS.
-     *
-     * @since 3.3.0
-     */
-    function astra_container_layout_css()
-    {
-    }
-    /**
-     * Content Background - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for content background.
-     *
-     * @since 3.2.0
-     */
-    function astra_content_background_css($dynamic_css)
-    {
-    }
-    /**
-     * Old Header Menu Last Item - Dynamic CSS.
-     *
-     * @param string $dynamic_css
-     * @since 3.5.0
-     */
-    function astra_old_header_custom_menu_css($dynamic_css)
-    {
-    }
-    /**
-     * Generate palette CSS variable styles on the front end.
-     *
-     * @since 3.7.0
-     * @param string $dynamic_css dynamic css.
-     * @return string
-     */
-    function astra_generate_global_palette_style($dynamic_css)
-    {
-    }
-    /**
-     * Inline On Mobile - Dynamic CSS.
-     *
-     * @param string $dynamic_css Dynamic CSS.
-     * @since 3.5.0
-     * @return string
-     */
-    function astra_inline_on_mobile_css($dynamic_css)
-    {
-    }
-    /**
-     * Pagination - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for Pagination.
-     *
-     * @since 3.3.0
-     */
-    function astra_pagination_css($dynamic_css)
-    {
-    }
-    /**
-     * Function to get Body Font Family
+     * Register menus
      *
      * @since 1.0.0
-     * @return string
      */
-    function astra_body_font_family()
-    {
-    }
-    /**
-     * Function to Add Header Breakpoint Style
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @since 1.5.2 Remove ob_start, ob_get_clean and .main-header-bar-wrap::before{content} for our .ast-header-break-point class
-     * @since 1.0.0
-     */
-    function astra_header_breakpoint_style($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    /**
-     * Function filter comment form arguments
-     *
-     * @since 1.0.0
-     * @param array $layout     Comment form arguments.
-     * @return array
-     */
-    function astra_404_page_layout($layout)
-    {
-    }
-    /**
-     * Return current content layout
-     *
-     * @since 1.0.0
-     * @return mixed content layout.
-     */
-    function astra_get_content_layout()
-    {
-    }
-    /**
-     * Function to check if it is Internet Explorer.
-     *
-     * @return true | false boolean
-     */
-    function astra_check_is_ie()
-    {
-    }
-    /**
-     * Replace header logo.
-     *
-     * @param array  $image Size.
-     * @param int    $attachment_id Image id.
-     * @param sting  $size Size name.
-     * @param string $icon Icon.
-     *
-     * @return array Size of image
-     */
-    function astra_replace_header_logo($image, $attachment_id, $size, $icon)
-    {
-    }
-    /**
-     * Strpos over an array.
-     *
-     * @since  1.2.4
-     * @param  String  $haystack The string to search in.
-     * @param  Array   $needles  Array of needles to be passed to strpos().
-     * @param  integer $offset   If specified, search will start this number of characters counted from the beginning of the string. If the offset is negative, the search will start this number of characters counted from the end of the string.
-     *
-     * @return bool            True if haystack if part of any of the $needles.
-     */
-    function astra_strposa($haystack, $needles, $offset = 0)
-    {
-    }
-    /**
-     * Get a specific property of an array without needing to check if that property exists.
-     *
-     * Provide a default value if you want to return a specific value if the property is not set.
-     *
-     * @since  1.2.7
-     * @access public
-     * @author Gravity Forms - Easiest Tool to Create Advanced Forms for Your WordPress-Powered Website.
-     * @link  https://www.gravityforms.com/
-     *
-     * @param array  $array   Array from which the property's value should be retrieved.
-     * @param string $prop    Name of the property to be retrieved.
-     * @param string $default Optional. Value that should be returned if the property is not set or empty. Defaults to null.
-     *
-     * @return null|string|mixed The value
-     */
-    function astra_get_prop($array, $prop, $default = \null)
-    {
-    }
-    /**
-     * Build list of attributes into a string and apply contextual filter on string.
-     *
-     * The contextual filter is of the form `astra_attr_{context}_output`.
-     *
-     * @since 1.6.2
-     * @credits - Genesis Theme By StudioPress.
-     *
-     * @param string $context    The context, to build filter name.
-     * @param array  $attributes Optional. Extra attributes to merge with defaults.
-     * @param array  $args       Optional. Custom data to pass to filter.
-     * @return string String of HTML attributes and values.
-     */
-    function astra_attr($context, $attributes = array(), $args = array())
-    {
-    }
-    /**
-     * Get the theme author details
-     *
-     * @since  3.1.0
-     * @return array            Return theme author URL and name.
-     */
-    function astra_get_theme_author_details()
-    {
-    }
-    /**
-     * Remove Base Color > Background Color option from the customize array.
-     *
-     * @since 2.4.0
-     * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-     * @return $wp_customize
-     */
-    function astra_remove_controls($wp_customize)
-    {
-    }
-    /**
-     * Add dropdown icon if menu item has children.
-     *
-     * @since 3.3.0
-     *
-     * @param string   $title The menu item title.
-     * @param WP_Post  $item All of our menu item data.
-     * @param stdClass $args All of our menu item args.
-     * @param int      $depth Depth of menu item.
-     * @return string The menu item.
-     */
-    function astra_dropdown_icon_to_menu_link($title, $item, $args, $depth)
-    {
-    }
-    /**
-     * Is theme existing header footer configs enable.
-     *
-     * @since 3.0.0
-     *
-     * @return boolean true/false.
-     */
-    function astra_existing_header_footer_configs()
-    {
-    }
-    /**
-     * Get Spacing value
-     *
-     * @param  array  $value        Responsive spacing value with unit.
-     * @param  string $operation    + | - | * | /.
-     * @param  string $from         Perform operation from the value.
-     * @param  string $from_unit    Perform operation from the value of unit.
-     *
-     * @since 3.0.0
-     * @return mixed
-     */
-    function astra_calculate_spacing($value, $operation = '', $from = '', $from_unit = '')
-    {
-    }
-    /**
-     * Generate HTML Open markup
-     *
-     * @param string $context unique markup key.
-     * @param array  $args {
-     *      Contains markup arguments.
-     *     @type array  attrs    Initial attributes to apply to `open` markup.
-     *     @type bool   echo    Flag indicating whether to echo or return the resultant string.
-     * }
-     * @since 3.3.0
-     * @return mixed
-     */
-    function astra_markup_open($context, $args = array())
-    {
-    }
-    /**
-     * Generate HTML close markup
-     *
-     * @param string $context unique markup key.
-     * @param array  $args {
-     *      Contains markup arguments.
-     *     @type string close   Closing HTML markup.
-     *     @type array  attrs    Initial attributes to apply to `open` markup.
-     *     @type bool   echo    Flag indicating whether to echo or return the resultant string.
-     * }
-     * @since 3.3.0
-     * @return mixed
-     */
-    function astra_markup_close($context, $args = array())
-    {
-    }
-    /**
-     * Provision to update display rules for visibility of Related Posts section in Astra.
-     *
-     * @since 3.4.0
-     * @return bool
-     */
-    function astra_target_rules_for_related_posts()
-    {
-    }
-    /**
-     * Check if elementor plugin is active on the site.
-     *
-     * @since 3.7.0
-     * @return bool
-     */
-    function astra_is_elemetor_active()
-    {
-    }
-    /**
-     * Check the Astra addon version.
-     * For  major update and frequently we used version_compare, added a function for this for easy maintenance.
-     *
-     * @param string $version Astra addon version.
-     * @param string $compare Compare symbols.
-     * @since  3.9.2
-     */
-    function astra_addon_check_version($version, $compare)
-    {
-    }
-    /**
-     * Get a stylesheet URL for a webfont.
-     *
-     * @since 3.6.0
-     *
-     * @param string $url    The URL of the remote webfont.
-     * @param string $format The font-format. If you need to support IE, change this to "woff".
-     *
-     * @return string Returns the CSS.
-     */
-    function astra_get_webfont_url($url, $format = 'woff2')
-    {
-    }
-    /**
-     * Get the file preloads.
-     *
-     * @param string $url    The URL of the remote webfont.
-     * @param string $format The font-format. If you need to support IE, change this to "woff".
-     */
-    function astra_load_preload_local_fonts($url, $format = 'woff2')
-    {
-    }
-    /**
-     * Set flag to manage backward compatibility for v3.5.0 earlier users for the transparent header border bottom default value changed.
-     *
-     * @since 3.6.0
-     */
-    function astra_get_transparent_header_default_value()
-    {
-    }
-    /**
-     * Check compatibility for content background and typography options.
-     *
-     * @since 3.7.0
-     */
-    function astra_has_gcp_typo_preset_compatibility()
-    {
-    }
-    /**
-     * Check whether user is exising or new to apply the updated default values for button padding & support GB button paddings with global button padding options.
-     *
-     * @since 3.6.3
-     * @return string
-     */
-    function astra_button_default_padding_updated()
-    {
-    }
-    /**
-     * Check is WordPress version is greater than or equal to beta 5.8 version.
-     *
-     * @since 3.6.5
-     * @return boolean
-     */
-    function astra_has_widgets_block_editor()
-    {
-    }
-    /**
-     * Check whether user is exising or new to override the default margin space added to Elementor-TOC widget.
-     *
-     * @since 3.6.7
-     * @return boolean
-     */
-    function astra_can_remove_elementor_toc_margin_space()
-    {
-    }
-    /**
-     * This will check if user is new and apply global color format. This is to manage backward compatibility for colors.
-     *
-     * @since 3.7.0
-     * @return boolean false if it is an existing user, true for new user.
-     */
-    function astra_has_global_color_format_support()
-    {
-    }
-    /**
-     * Check whether widget specific config, dynamic CSS, preview JS needs to remove or not. Following cases considered while implementing this.
-     *
-     * 1. Is user is from old Astra setup.
-     * 2. Check if user is new but on lesser WordPress 5.8 versions.
-     * 3. User is new with block widget editor.
-     *
-     * @since 3.6.8
-     * @return boolean
-     */
-    function astra_remove_widget_design_options()
-    {
-    }
-    /**
-     * Get Global Color Palettes
-     *
-     * @return array color palettes array.
-     * @since 3.7.0
-     */
-    function astra_get_palette_colors()
-    {
-    }
-    /**
-     * Get typography presets data.
-     *
-     * @return array Typography Presets data array.
-     * @since 3.7.0
-     */
-    function astra_get_typography_presets()
-    {
-    }
-    /**
-     * Clear Astra + Astra Pro assets cache.
-     *
-     * @since 3.6.9
-     * @return void
-     */
-    function astra_clear_theme_addon_asset_cache()
-    {
-    }
-    /**
-     * Check if Theme Global Colors need to be disable in Elementor global color settings.
-     *
-     * @since 3.7.4
-     * @return bool
-     */
-    function astra_maybe_disable_global_color_in_elementor()
-    {
-    }
-    /**
-     * Check is Elementor Pro version is greater than or equal to beta 3.5 version.
-     *
-     * @since 3.7.5
-     * @return boolean
-     */
-    function astra_check_elementor_pro_3_5_version()
-    {
-    }
-    /**
-     * Should Content BG settings apply to Fullwidth Contained/Stretched layout or not?
-     *
-     * Do not apply content background to fullwidth layouts in following cases -
-     * 1. For backward compatibility.
-     * 2. When site layout is Max-width.
-     * 3. When site layout is Padded.
-     *
-     * @since 3.7.8
-     * @return boolean
-     */
-    function astra_apply_content_background_fullwidth_layouts()
-    {
-    }
-    /**
-     * Search Component static CSS.
-     *
-     * @return string
-     * @since 3.5.0
-     */
-    function astra_search_static_css()
-    {
-    }
-    /**
-     * Showcase "Upgrade to Pro" notices for Astra & here is the filter work as central control to enable/disable those notices from customizer, meta settings, admin area, pro post types pages.
-     *
-     * @since 3.9.4
-     * @return bool
-     */
-    function astra_showcase_upgrade_notices()
-    {
-    }
-    /**
-     * Function which will return CSS for font-extras control.
-     * It includes - line-height, letter-spacing, text-decoration, font-style.
-     *
-     * @param array  $config contains extra font settings.
-     * @param string $setting basis on this setting will return.
-     * @param mixed  $unit Unit.
-     *
-     * @since 4.0.0
-     */
-    function astra_get_font_extras($config, $setting, $unit = \false)
-    {
-    }
-    /**
-     * Function which will return CSS array for font specific props for further parsing CSS.
-     * It includes - font-family, font-weight, font-size, line-height, text-transform, letter-spacing, text-decoration, color (optional).
-     *
-     * @param string $font_family Font family.
-     * @param string $font_weight Font weight.
-     * @param array  $font_size Font size.
-     * @param string $font_extras contains all font controls.
-     * @param string $color In most of cases color is also added, so included optional param here.
-     *
-     * @return array  array of build CSS font settings.
-     *
-     * @since 4.0.0
-     */
-    function astra_get_font_array_css($font_family, $font_weight, $font_size, $font_extras, $color = '')
-    {
-    }
-    /**
-     * Create instance of Astra_WebFont_Loader class.
-     *
-     * @param string $font_url Google font URL to set data.
-     * @return object
-     * @since 3.6.0
-     */
-    function astra_webfont_loader_instance($font_url = '')
-    {
-    }
-    /**
-     * Add a pingback url auto-discovery header for singularly identifiable articles.
-     */
-    function astra_pingback_header()
-    {
-    }
-    /**
-     * Adds schema tags to the body classes.
-     *
-     * @since 1.0.0
-     */
-    function astra_schema_body()
-    {
-    }
-    /**
-     * Adds custom classes to the array of body classes.
-     *
-     * @since 1.0.0
-     * @param array $classes Classes for the body element.
-     * @return array
-     */
-    function astra_body_classes($classes)
-    {
-    }
-    /**
-     * Astra Pagination
-     *
-     * @since 1.0.0
-     * @return void            Generate & echo pagination markup.
-     */
-    function astra_number_pagination()
-    {
-    }
-    /**
-     * Return or echo site logo markup.
-     *
-     * @since 1.0.0
-     * @param  string  $device Device name.
-     * @param  boolean $echo Echo markup.
-     * @return mixed echo or return markup.
-     */
-    function astra_logo($device = 'desktop', $echo = \true)
-    {
-    }
-    /**
-     * Add custom attribute to custom site logo.
-     *
-     * @param mixed $html custom logo html.
-     * @since 4.1.0
-     * @return mixed custom logo html.
-     */
-    function astra_add_custom_logo_attributes($html)
-    {
-    }
-    /**
-     * Return or echo site logo markup.
-     *
-     * @since 2.2.0
-     * @param boolean $display_site_title Site title enable or not.
-     * @param boolean $display_site_tagline Site tagline enable or not.
-     * @param  string  $device   Device name.
-     *
-     * @return string return markup.
-     */
-    function astra_get_site_title_tagline($display_site_title, $display_site_tagline, $device = 'desktop')
-    {
-    }
-    /**
-     * Return the selected sections
-     *
-     * @since 1.0.0
-     * @param  string $option Custom content type. E.g. search, text-html etc.
-     * @return array         Array of Custom contents.
-     */
-    function astra_get_dynamic_header_content($option)
-    {
-    }
-    /**
-     * Adding Wrapper for Search Form.
-     *
-     * @since 1.0.0
-     * @param  string $option   Search Option name.
-     * @param  string $device   Device name.
-     * @return mixed Search HTML structure created.
-     */
-    function astra_get_search($option = '', $device = '')
-    {
-    }
-    /**
-     * Get custom HTML added by user.
-     *
-     * @since 1.0.0
-     * @param  string $option_name Option name.
-     * @return String TEXT/HTML added by user in options panel.
-     */
-    function astra_get_custom_html($option_name = '')
-    {
-    }
-    /**
-     * Get custom HTML added by user.
-     *
-     * @since 1.0.0
-     * @param string $button_text Button Text.
-     * @param string $button_options Button Link.
-     * @param string $button_style Button Style.
-     * @return String Button added by user in options panel.
-     */
-    function astra_get_custom_button($button_text = '', $button_options = '', $button_style = '')
-    {
-    }
-    /**
-     * Get custom widget added by user.
-     *
-     * @since  1.0.1.1
-     * @param  string $option_name Option name.
-     * @return Widget added by user in options panel.
-     */
-    function astra_get_custom_widget($option_name = '')
-    {
-    }
-    /**
-     * Function to get Small Left/Right Footer
-     *
-     * @since 1.0.0
-     * @param string $section   Sections of Small Footer.
-     * @return mixed            Markup of sections.
-     */
-    function astra_get_small_footer($section = '')
-    {
-    }
-    /**
-     * Function to get Small Footer Custom Text
-     *
-     * @since 1.0.14
-     * @param string $option Custom text option name.
-     * @return mixed         Markup of custom text option.
-     */
-    function astra_get_small_footer_custom_text($option = '')
-    {
-    }
-    /**
-     * Function to get Footer Menu
-     *
-     * @since 1.0.0
-     * @return html
-     */
-    function astra_get_small_footer_menu()
-    {
-    }
-    /**
-     * Site Header - <header>
-     *
-     * @since 1.0.0
-     */
-    function astra_header_markup()
-    {
-    }
-    /**
-     * Site Title / Logo
-     *
-     * @since 1.0.0
-     */
-    function astra_site_branding_markup()
-    {
-    }
-    /**
-     * Toggle Button Markup
-     *
-     * @since 1.0.0
-     */
-    function astra_toggle_buttons_markup()
-    {
-    }
-    /**
-     * Site Title / Logo
-     *
-     * @since 1.0.0
-     */
-    function astra_primary_navigation_markup()
-    {
-    }
-    /**
-     * Add CSS classes for all menu links inside WP Nav menu items.
-     *
-     * Right now, if Addon is active we add 'menu-link' class through walker_nav_menu_start_el, but if only theme is being used no clas is assigned to anchors.
-     *
-     * As we are replacing tag based selector assets to class selector, adding 'menu-link' selector to all anchors inside menu items.
-     * Ex. .main-header-menu a => .main-header-menu .menu-link
-     *
-     * @since 2.5.0
-     * @param array $atts   An array of all parameters assigned to menu anchors.
-     */
-    function astra_menu_anchor_class_for_nav_menus($atts)
-    {
-    }
-    /**
-     * Add CSS classes for all menu links inside WP Page Menu items.
-     *
-     * As we are replacing tag based selector to class selector, adding 'menu-link' selector to all anchors inside menu items.
-     *
-     * @since 2.5.0
-     * @param array $atts   An array of all parameters assigned to menu anchors.
-     */
-    function astra_menu_anchor_class_for_page_menus($atts)
-    {
-    }
-    /**
-     * Add CSS classes from wp_nav_menu the wp_page_menu()'s menu items.
-     * This will help avoid targeting wp_page_menu and wp_nav_manu separately in CSS/JS.
-     *
-     * @since 1.6.9
-     * @param array   $css_class    An array of CSS classes to be applied
-     *                              to each list item.
-     * @param WP_Post $page         Page data object.
-     * @param int     $depth        Depth of page, used for padding.
-     * @param array   $args         An array of arguments.
-     * @param int     $current_page ID of the current page.
-     * @return Array CSS classes with added menu class `menu-item`
-     */
-    function astra_page_css_class($css_class, $page, $depth, $args, $current_page)
-    {
-    }
-    /**
-     * Site Footer - <footer>
-     *
-     * @since 1.0.0
-     */
-    function astra_footer_markup()
-    {
-    }
-    /**
-     * Function to get Header Breakpoint
-     *
-     * @since 1.4.0 Added Mobile Header Breakpoint option from customizer.
-     * @since 1.0.0
-     * @return number
-     */
-    function astra_header_break_point()
-    {
-    }
-    /**
-     * Function to get Edit Post Link
-     *
-     * @since 1.0.0
-     * @param string $text      Anchor Text.
-     * @param string $before    Anchor Text.
-     * @param string $after     Anchor Text.
-     * @param int    $id           Anchor Text.
-     * @param string $class     Anchor Text.
-     * @return void
-     */
-    function astra_edit_post_link($text, $before = '', $after = '', $id = 0, $class = 'post-edit-link')
-    {
-    }
-    /**
-     * Function to get Header Classes
-     *
-     * @since 1.0.0
-     */
-    function astra_header_classes()
-    {
-    }
-    /**
-     * Return classnames for <header> element.
-     *
-     * @since 2.1.0
-     * @return Array classnames for the <header>
-     */
-    function astra_get_header_classes()
-    {
-    }
-    /**
-     * Function to get Footer Classes
-     *
-     * @since 1.0.0
-     */
-    function astra_footer_classes()
-    {
-    }
-    /**
-     * Return classnames for <footer> element.
-     *
-     * @since 2.1.0
-     * @return Array classnames for the <footer>
-     */
-    function astra_get_footer_classes()
-    {
-    }
-    /**
-     * Function filter comment form's default fields
-     *
-     * @since 1.0.0
-     * @param array $fields Array of comment form's default fields.
-     * @return array        Comment form fields.
-     */
-    function astra_comment_form_default_fields_markup($fields)
-    {
-    }
-    /**
-     * Function filter comment form arguments
-     *
-     * @since 1.0.0
-     * @param array $args   Comment form arguments.
-     * @return array
-     */
-    function astra_comment_form_default_markup($args)
-    {
-    }
-    /**
-     * Display Blog Post Excerpt
-     *
-     * @since 1.0.0
-     */
-    function astra_the_excerpt()
-    {
-    }
-    /**
-     * Get Sidebar
-     *
-     * @since 1.0.1.1
-     * @param  string $sidebar_id   Sidebar Id.
-     * @return void
-     */
-    function astra_get_sidebar($sidebar_id)
-    {
-    }
-    /**
-     * Get Footer Default Sidebar
-     *
-     * @param  string $sidebar_id   Sidebar Id..
-     * @return void
-     */
-    function astra_get_footer_widget($sidebar_id)
-    {
-    }
-    /**
-     * Astra entry header class
-     *
-     * @param bool $echo output being echoed or not.
-     *
-     * @since 1.0.15
-     */
-    function astra_entry_header_class($echo = \true)
-    {
-    }
-    /**
-     * Astra get post thumbnail image
-     *
-     * @since 1.0.15
-     * @param string  $before Markup before thumbnail image.
-     * @param string  $after  Markup after thumbnail image.
-     * @param boolean $echo   Output print or return.
-     * @return string|void
-     */
-    function astra_get_post_thumbnail($before = '', $after = '', $echo = \true)
-    {
-    }
-    /**
-     * Replace header logo.
-     *
-     * @param array  $attr Image.
-     * @param object $attachment Image obj.
-     * @param sting  $size Size name.
-     *
-     * @return array Image attr.
-     */
-    function astra_replace_header_attr($attr, $attachment, $size)
-    {
-    }
-    /**
-     * Astra Color Palletes.
-     *
-     * @return array Color Palletes.
-     */
-    function astra_color_palette()
-    {
-    }
-    /**
-     * Get theme name.
-     *
-     * @return string Theme Name.
-     */
-    function astra_get_theme_name()
-    {
-    }
-    /**
-     * Get Addon name.
-     *
-     * @return string Addon Name.
-     */
-    function astra_get_addon_name()
-    {
-    }
-    /**
-     * Added this filter to modify the post navigation template to remove the h2 tag from screen reader text.
-     */
-    function astra_post_navigation_template()
-    {
-    }
-    /**
-     * Prevent onboarding of Elementor.
-     *
-     * @param bool $network_wide Whether to enable the plugin for all sites in the network
-     *                            or just the current site. Multisite only. Default false.
-     *
-     * @since 3.9.0
-     */
-    function astra_skip_elementor_onboarding($network_wide)
-    {
-    }
-    /**
-     * Footer disable on archive pages.
-     *
-     * @param bool $display_footer for controling the header and footer enable/disable options.
-     *
-     * @since 3.9.4
-     */
-    function astra_footer_bar_display_cb($display_footer)
-    {
-    }
-    \define('ASTRA_THEME_POST_STRUCTURE_DIR', \ASTRA_THEME_DIR . 'inc/modules/posts-structures/');
-    \define('ASTRA_THEME_POST_STRUCTURE_URI', \ASTRA_THEME_URI . 'inc/modules/posts-structures/');
-    /**
-     * Archive Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Post Structures.
-     *
-     * @since 4.0.0
-     */
-    function astra_post_archive_structure_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    /**
-     * Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
-     * @return String Generated dynamic CSS for Post Structures.
-     *
-     * @since 4.0.0
-     */
-    function astra_post_single_structure_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
-    {
-    }
-    \define('ASTRA_RELATED_POSTS_DIR', \ASTRA_THEME_DIR . 'inc/modules/related-posts/');
-    /**
-     * Related Posts - Dynamic CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for Related Posts.
-     *
-     * @since 3.4.0
-     */
-    function astra_related_posts_css($dynamic_css)
-    {
-    }
-    /**
-     * Related Posts - Static CSS
-     *
-     * @param  string $dynamic_css          Astra Dynamic CSS.
-     * @return String Generated dynamic CSS for Related Posts.
-     *
-     * @since 3.5.0
-     */
-    function astra_related_posts_static_css($dynamic_css)
+    function astra_register_menu_locations()
     {
     }
     /**
@@ -16745,105 +14981,143 @@ namespace {
     {
     }
     /**
-     * Prints HTML with meta information for the categories, tags and comments.
+     * Scroll To Top Addon
+     *
+     * @since 4.0.0
+     * @package Astra
      */
-    function astra_entry_footer()
+    \define('ASTRA_SCROLL_TO_TOP_DIR', \ASTRA_THEME_DIR . 'inc/addons/scroll-to-top/');
+    \define('ASTRA_SCROLL_TO_TOP_URL', \ASTRA_THEME_URI . 'inc/addons/scroll-to-top/');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return string
+     */
+    function astra_scroll_to_top_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {
     }
     /**
-     * Header Footer builder - Migration of options.
+     * Scroll to Top - Static CSS
      *
-     * @since 3.0.0
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Scroll to Top.
      *
-     * @return void
+     * @since 4.0.0
      */
-    function astra_header_builder_migration()
+    function astra_scroll_to_top_static_css($dynamic_css)
     {
     }
     /**
-     * Header Footer builder - Migration of Primary Header.
+     * Dynamic CSS
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @param  String $dynamic_css          Astra Dynamic CSS.
+     * @param  String $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Dynamic CSS.
      */
-    function astra_primary_header_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_ext_transparent_header_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {
     }
     /**
-     * Header Footer builder - Migration of Below Header.
+     * Dynamic CSS
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for above header transparent header.
      */
-    function astra_below_header_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_ext_transparent_above_header_sections_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {
     }
     /**
-     * Header Footer builder - Migration of Above Header.
+     * Dynamic CSS
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS.
      */
-    function astra_above_header_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_ext_transparent_below_header_sections_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_THEME_TRANSPARENT_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/addons/transparent-header/');
+    \define('ASTRA_THEME_TRANSPARENT_HEADER_URI', \ASTRA_THEME_URI . 'inc/addons/transparent-header/');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Breadcrumb.
+     *
+     * @since 1.7.0
+     */
+    function astra_breadcrumb_section_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {
     }
     /**
-     * Header Footer builder - Migration of Footer.
+     * Astra Get Breadcrumb
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * Gets the basic Breadcrumb wrapper div & content
+     *
+     * @since 1.8.1
+     * @param boolean $echo Whether to echo or not.
+     * @return string
      */
-    function astra_footer_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_get_breadcrumb($echo = \true)
     {
     }
     /**
-     * Header Footer builder - Migration of Footer Widgets.
+     * Get selected breadcrumb.
+     * Returns or echo the breadcrumb depending upon the argument.
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @since  1.8.1
+     * @access public
+     * @param  boolean $echo  Whether to echo or not.
+     * @return string Selected Breadcrumb.
      */
-    function astra_footer_widgets_migration($theme_options, $used_elements, $widget_options)
+    function astra_get_selected_breadcrumb($echo = \true)
     {
     }
     /**
-     * Header Footer builder - Migration of Primary Menu.
+     * Deprecating astra_breadcrumb_trail function.
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @since 1.8.1
+     * @deprecated 1.8.1 Use astra_get_breadcrumb()
+     * @param array  $args List of args.
+     * @see astra_breadcrumb_trail()
+     *
+     * @return string new breadcrumb function.
      */
-    function astra_primary_menu_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_breadcrumb_trail($args = array())
     {
     }
     /**
-     * Header Footer builder - Migration of Sticky Header.
+     * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
+     * which should be used in theme templates.
      *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
+     * @since  1.8.1
+     * @access public
+     * @param  boolean $echo  Whether to echo or not.
+     * @return string Selected Breadcrumb.
      */
-    function astra_sticky_header_builder_migration($theme_options, $used_elements, $widget_options)
+    function astra_get_breadcrumb_trail($echo = \true)
     {
     }
+    \define('ASTRA_THEME_BREADCRUMBS_DIR', \ASTRA_THEME_DIR . 'inc/addons/breadcrumbs/');
+    \define('ASTRA_THEME_BREADCRUMBS_URI', \ASTRA_THEME_URI . 'inc/addons/breadcrumbs/');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 2.1.4
+     */
+    function astra_heading_colors_section_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_THEME_HEADING_COLORS_DIR', \ASTRA_THEME_DIR . 'inc/addons/heading-colors/');
+    \define('ASTRA_THEME_HEADING_COLORS_URI', \ASTRA_THEME_URI . 'inc/addons/heading-colors/');
     /**
      * Check if we need to load icons as font or SVG.
      *
@@ -17220,110 +15494,6 @@ namespace {
     function astra_theme_background_updater_4_0_2()
     {
     }
-	/**
-	 * Checks whether content style is boxed for current layout.
-	 *
-	 * @since 4.2.0
-     * @param mixed $post_id Current post ID.
-	 * @return boolean
-	 */
-    function astra_is_content_style_boxed( $post_id = false )
-    {
-    }
-	/**
-	 * Check if the current page is a third party page.
-	 *
-	 * @since 4.2.0
-	 * @param bool $is_sidebar_option Optional. Whether to check sidebar option needed for Lifterlms case. Default false.
-	 * @return string|bool Returns the name of third party if page belongs to any, otherwise returns false.
-	 */
-	function astra_with_third_party( $is_sidebar_option = false)
-    {
-    }
-	/**
-	 * Check if the sidebar style is boxed.
-	 *
-	 * @since 4.2.0
-     * @param mixed $post_id Current post ID.
-	 * @return bool Whether the sidebar style is boxed.
-	 */
-	function astra_is_sidebar_style_boxed( $post_id = false )
-    {
-    }
-	/**
-	 * Migrate old meta layout to new layout.
-	 *
-	 * @since 4.2.0
-	 * @param mixed $meta_layout
-	 * @return mixed new layout.
-	 */
-	function astra_migrate_meta_layout( $meta_layout )
-    {
-    }
-    /**
-     * Return current content layout as per new layout selection.
-     *
-     * @since 4.2.0
-     * @param mixed $new_content_option The new content layout option.
-     * @param mixed $level The level of the layout.
-     * @param mixed $post_id The id to fetch post meta.
-     * @param mixed $old_meta The old content layout option for migration cases.
-     * @return mixed content layout.
-     */
-	function astra_toggle_layout( $new_content_option, $level, $post_id = false, $old_meta = false )
-    {
-    }
-    /**
-     * Handle migration from old to new layouts.
-     *
-     * Migration cases for old users, old layouts -> new layouts.
-     * @since 4.2.0
-     * @param mixed $old_layout
-     * @param mixed $new_layout
-     * @param mixed $content_style
-     * @param mixed $sidebar_style
-     * @param array $theme_options
-     * @return array $theme_options The updated theme options.
-     */
-    function astra_apply_layout_migration( $old_layout, $new_layout, $content_style, $sidebar_style, $theme_options )
-    {
-    }
-    /**
-     * Applies an unboxed container to the content.
-     *
-     * @since 4.2.0
-     * @param array $content_bg_obj The background object for the content.
-     * @param bool  $is_boxed Container style is boxed or not.
-     * @param bool  $is_sidebar_boxed Sidebar style is boxed or not.
-     * @param mixed $current_layout The current container layout applied.
-     * @return array $content_bg_obj The updated background object for the content.
-     */
-    function astra_apply_unboxed_container( $content_bg_obj, $is_boxed, $is_sidebar_boxed, $current_layout )
-    {
-    }
-	/**
-	 * Switch to legacy boxed layouts (Content Boxed, Boxed) as per content style selection.
-	 *
-	 * @since 4.2.0
-	 * @param mixed $content_layout Current layout.
-	 * @param boolean $is_boxed Current content style.
-	 * @param boolean $is_sidebar_boxed Current sidebar style.
-     * @param mixed $post_id Current post ID.
-	 * @return mixed The content layout.
-	 */
-	function astra_apply_boxed_layouts( $content_layout, $is_boxed, $is_sidebar_boxed, $post_id = false )
-    {
-    }
-	/**
-	 * WooCommerce, LifterLMS, EDD Archive (Shop, Courses, Memberships etc) Meta value.
-	 *
-	 * @since 4.2.0
-	 * @param mixed $option name of the option to fetch.
-	 * @return mixed meta_value
-	 */
-	function astra_third_party_archive_meta( $option )
-    {
-    }
     /**
      * Handle backward compatibility on version 4.1.0
      *
@@ -17331,6 +15501,17 @@ namespace {
      * @return void
      */
     function astra_theme_background_updater_4_1_0()
+    {
+    }
+    /**
+     * 4.1.4 backward handling cases.
+     *
+     * 1. Migrating users to combined color overlay option to new dedicated overlay options.
+     *
+     * @since 4.1.4
+     * @return void
+     */
+    function astra_theme_background_updater_4_1_4()
     {
     }
     /**
@@ -17343,7 +15524,7 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version 4.1.7
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
      *
      * @since 4.1.7
      * @return void
@@ -17352,78 +15533,1385 @@ namespace {
     {
     }
     /**
-     * WordPress filter - Widget Tags
+     * Migrating users to new container layout options
      *
-     * @param  array $args Tag arguments.
-     * @return array       Modified tag arguments.
+     * @since 4.2.0
+     * @return void
      */
-    function astra_widget_tag_cloud_args($args = array())
+    function astra_theme_background_updater_4_2_0()
     {
     }
     /**
-     * WordPress filter - Widget Categories
+     * Handle migration from old to new layouts.
      *
-     * @param  array $tags_data Tags data.
-     * @return array            Modified tags data.
+     * Migration cases for old users, old layouts -> new layouts.
+     *
+     * @since 4.2.0
+     * @param mixed $old_layout
+     * @param mixed $new_layout
+     * @param mixed $content_style
+     * @param mixed $sidebar_style
+     * @param array $theme_options
+     * @return array $theme_options The updated theme options.
      */
-    function astra_filter_widget_tag_cloud($tags_data)
+    function astra_apply_layout_migration($old_layout, $new_layout, $content_style, $sidebar_style, $theme_options)
     {
     }
     /**
-     * Register widget area.
+     * Handle backward compatibility on version 4.2.2
      *
-     * @see https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+     * @since 4.2.2
+     * @return void
      */
-    function astra_widgets_init()
+    function astra_theme_background_updater_4_2_2()
     {
     }
     /**
-     * Search Form for Astra theme.
+     * Header Footer builder - Migration of options.
      *
-     * @package     Astra
-     * @author      Brainstorm Force
-     * @copyright   Copyright (c) 2020, Brainstorm Force
-     * @link        https://www.brainstormforce.com
-     * @since       Astra 3.3.0
+     * @since 3.0.0
+     *
+     * @return void
      */
+    function astra_header_builder_migration()
+    {
+    }
     /**
-     * Adding argument checks to avoid rendering search-form markup from other places & to easily use get_search_form() function.
+     * Header Footer builder - Migration of Primary Header.
      *
-     * @see https://themes.trac.wordpress.org/ticket/101061
-     * @since 3.6.1
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
      */
-    $astra_search_input_placeholder = isset($args['input_placeholder']) ? $args['input_placeholder'] : \astra_default_strings('string-search-input-placeholder', \false);
+    function astra_primary_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
     /**
-     * Template for 404
+     * Header Footer builder - Migration of Below Header.
      *
-     * @package     Astra
-     * @author      Astra
-     * @copyright   Copyright (c) 2020, Astra
-     * @link        https://wpastra.com/
-     * @since       Astra 1.0.0
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
      */
-    $astra_404_subtitle_tag = \true === \astra_check_is_structural_setup() ? 'h3' : 'div';
+    function astra_below_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
     /**
-     * Template part for displaying archive post's entry banner.
+     * Header Footer builder - Migration of Above Header.
      *
-     * @link https://codex.wordpress.org/Template_Hierarchy
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_above_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Footer.
      *
-     * @package Astra
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_footer_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Footer Widgets.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_footer_widgets_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Primary Menu.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_primary_menu_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Sticky Header.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_sticky_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Function to get Body Font Family
+     *
+     * @since 1.0.0
+     * @return string
+     */
+    function astra_body_font_family()
+    {
+    }
+    /**
+     * Function to Add Header Breakpoint Style
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @since 1.5.2 Remove ob_start, ob_get_clean and .main-header-bar-wrap::before{content} for our .ast-header-break-point class
+     * @since 1.0.0
+     */
+    function astra_header_breakpoint_style($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    /**
+     * Function filter comment form arguments
+     *
+     * @since 1.0.0
+     * @param array $layout     Comment form arguments.
+     * @return array
+     */
+    function astra_404_page_layout($layout)
+    {
+    }
+    /**
+     * Return current content layout.
+     *
+     * @since 1.0.0
+     * @return mixed content layout.
+     */
+    function astra_get_content_layout()
+    {
+    }
+    /**
+     * Return current content layout as per new layout selection.
+     *
+     * @since 4.2.0
+     * @param mixed $new_content_option The new content layout option.
+     * @param mixed $level The level of the layout.
+     * @param mixed $post_id The id to fetch post meta.
+     * @param mixed $old_meta The old content layout option for migration cases.
+     * @return mixed content layout.
+     */
+    function astra_toggle_layout($new_content_option, $level, $post_id = \false, $old_meta = \false)
+    {
+    }
+    /**
+     * Migrate old meta layout to new layout.
+     *
+     * @since 4.2.0
+     * @param mixed $meta_layout
+     * @return mixed new layout.
+     */
+    function astra_migrate_meta_layout($meta_layout)
+    {
+    }
+    /**
+     * Function to check if it is Internet Explorer.
+     *
+     * @return true | false boolean
+     */
+    function astra_check_is_ie()
+    {
+    }
+    /**
+     * Replace header logo.
+     *
+     * @param array  $image Size.
+     * @param int    $attachment_id Image id.
+     * @param sting  $size Size name.
+     * @param string $icon Icon.
+     *
+     * @return array Size of image
+     */
+    function astra_replace_header_logo($image, $attachment_id, $size, $icon)
+    {
+    }
+    /**
+     * Strpos over an array.
+     *
+     * @since  1.2.4
+     * @param  String  $haystack The string to search in.
+     * @param  Array   $needles  Array of needles to be passed to strpos().
+     * @param  integer $offset   If specified, search will start this number of characters counted from the beginning of the string. If the offset is negative, the search will start this number of characters counted from the end of the string.
+     *
+     * @return bool            True if haystack if part of any of the $needles.
+     */
+    function astra_strposa($haystack, $needles, $offset = 0)
+    {
+    }
+    /**
+     * Get a specific property of an array without needing to check if that property exists.
+     *
+     * Provide a default value if you want to return a specific value if the property is not set.
+     *
+     * @since  1.2.7
+     * @access public
+     * @author Gravity Forms - Easiest Tool to Create Advanced Forms for Your WordPress-Powered Website.
+     * @link  https://www.gravityforms.com/
+     *
+     * @param array  $array   Array from which the property's value should be retrieved.
+     * @param string $prop    Name of the property to be retrieved.
+     * @param string $default Optional. Value that should be returned if the property is not set or empty. Defaults to null.
+     *
+     * @return null|string|mixed The value
+     */
+    function astra_get_prop($array, $prop, $default = \null)
+    {
+    }
+    /**
+     * Build list of attributes into a string and apply contextual filter on string.
+     *
+     * The contextual filter is of the form `astra_attr_{context}_output`.
+     *
+     * @since 1.6.2
+     * @credits - Genesis Theme By StudioPress.
+     *
+     * @param string $context    The context, to build filter name.
+     * @param array  $attributes Optional. Extra attributes to merge with defaults.
+     * @param array  $args       Optional. Custom data to pass to filter.
+     * @return string String of HTML attributes and values.
+     */
+    function astra_attr($context, $attributes = array(), $args = array())
+    {
+    }
+    /**
+     * Get the theme author details
+     *
+     * @since  3.1.0
+     * @return array            Return theme author URL and name.
+     */
+    function astra_get_theme_author_details()
+    {
+    }
+    /**
+     * Remove Base Color > Background Color option from the customize array.
+     *
+     * @since 2.4.0
+     * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+     * @return $wp_customize
+     */
+    function astra_remove_controls($wp_customize)
+    {
+    }
+    /**
+     * Add dropdown icon if menu item has children.
+     *
+     * @since 3.3.0
+     *
+     * @param string   $title The menu item title.
+     * @param WP_Post  $item All of our menu item data.
+     * @param stdClass $args All of our menu item args.
+     * @param int      $depth Depth of menu item.
+     * @return string The menu item.
+     */
+    function astra_dropdown_icon_to_menu_link($title, $item, $args, $depth)
+    {
+    }
+    /**
+     * Is theme existing header footer configs enable.
+     *
+     * @since 3.0.0
+     *
+     * @return boolean true/false.
+     */
+    function astra_existing_header_footer_configs()
+    {
+    }
+    /**
+     * Get Spacing value
+     *
+     * @param  array  $value        Responsive spacing value with unit.
+     * @param  string $operation    + | - | * | /.
+     * @param  string $from         Perform operation from the value.
+     * @param  string $from_unit    Perform operation from the value of unit.
+     *
+     * @since 3.0.0
+     * @return mixed
+     */
+    function astra_calculate_spacing($value, $operation = '', $from = '', $from_unit = '')
+    {
+    }
+    /**
+     * Generate HTML Open markup
+     *
+     * @param string $context unique markup key.
+     * @param array  $args {
+     *      Contains markup arguments.
+     *     @type array  attrs    Initial attributes to apply to `open` markup.
+     *     @type bool   echo    Flag indicating whether to echo or return the resultant string.
+     * }
+     * @since 3.3.0
+     * @return mixed
+     */
+    function astra_markup_open($context, $args = array())
+    {
+    }
+    /**
+     * Generate HTML close markup
+     *
+     * @param string $context unique markup key.
+     * @param array  $args {
+     *      Contains markup arguments.
+     *     @type string close   Closing HTML markup.
+     *     @type array  attrs    Initial attributes to apply to `open` markup.
+     *     @type bool   echo    Flag indicating whether to echo or return the resultant string.
+     * }
+     * @since 3.3.0
+     * @return mixed
+     */
+    function astra_markup_close($context, $args = array())
+    {
+    }
+    /**
+     * Provision to update display rules for visibility of Related Posts section in Astra.
+     *
+     * @since 3.4.0
+     * @return bool
+     */
+    function astra_target_rules_for_related_posts()
+    {
+    }
+    /**
+     * Check if elementor plugin is active on the site.
+     *
+     * @since 3.7.0
+     * @return bool
+     */
+    function astra_is_elemetor_active()
+    {
+    }
+    /**
+     * Check the Astra addon version.
+     * For  major update and frequently we used version_compare, added a function for this for easy maintenance.
+     *
+     * @param string $version Astra addon version.
+     * @param string $compare Compare symbols.
+     * @since  3.9.2
+     */
+    function astra_addon_check_version($version, $compare)
+    {
+    }
+    /**
+     * Get a stylesheet URL for a webfont.
+     *
+     * @since 3.6.0
+     *
+     * @param string $url    The URL of the remote webfont.
+     * @param string $format The font-format. If you need to support IE, change this to "woff".
+     *
+     * @return string Returns the CSS.
+     */
+    function astra_get_webfont_url($url, $format = 'woff2')
+    {
+    }
+    /**
+     * Get the file preloads.
+     *
+     * @param string $url    The URL of the remote webfont.
+     * @param string $format The font-format. If you need to support IE, change this to "woff".
+     */
+    function astra_load_preload_local_fonts($url, $format = 'woff2')
+    {
+    }
+    /**
+     * Set flag to manage backward compatibility for v3.5.0 earlier users for the transparent header border bottom default value changed.
+     *
+     * @since 3.6.0
+     */
+    function astra_get_transparent_header_default_value()
+    {
+    }
+    /**
+     * Check compatibility for content background and typography options.
+     *
+     * @since 3.7.0
+     */
+    function astra_has_gcp_typo_preset_compatibility()
+    {
+    }
+    /**
+     * Check whether user is existing or new to apply the updated default values for button padding & support GB button paddings with global button padding options.
+     *
+     * @since 3.6.3
+     * @return string
+     */
+    function astra_button_default_padding_updated()
+    {
+    }
+    /**
+     * Check is WordPress version is greater than or equal to beta 5.8 version.
+     *
+     * @since 3.6.5
+     * @return boolean
+     */
+    function astra_has_widgets_block_editor()
+    {
+    }
+    /**
+     * Check whether user is exising or new to override the default margin space added to Elementor-TOC widget.
+     *
+     * @since 3.6.7
+     * @return boolean
+     */
+    function astra_can_remove_elementor_toc_margin_space()
+    {
+    }
+    /**
+     * Check whether user is exising or new to override the hr tag styling for elementor
+     *
+     * @since 4.3.0
+     * @return boolean
+     */
+    function astra_can_add_styling_for_hr()
+    {
+    }
+    /**
+     * This will check if user is new and apply global color format. This is to manage backward compatibility for colors.
+     *
+     * @since 3.7.0
+     * @return boolean false if it is an existing user, true for new user.
+     */
+    function astra_has_global_color_format_support()
+    {
+    }
+    /**
+     * Check whether widget specific config, dynamic CSS, preview JS needs to remove or not. Following cases considered while implementing this.
+     *
+     * 1. Is user is from old Astra setup.
+     * 2. Check if user is new but on lesser WordPress 5.8 versions.
+     * 3. User is new with block widget editor.
+     *
+     * @since 3.6.8
+     * @return boolean
+     */
+    function astra_remove_widget_design_options()
+    {
+    }
+    /**
+     * Get Global Color Palettes
+     *
+     * @return array color palettes array.
+     * @since 3.7.0
+     */
+    function astra_get_palette_colors()
+    {
+    }
+    /**
+     * Get typography presets data.
+     *
+     * @return array Typography Presets data array.
+     * @since 3.7.0
+     */
+    function astra_get_typography_presets()
+    {
+    }
+    /**
+     * Clear Astra + Astra Pro assets cache.
+     *
+     * @since 3.6.9
+     * @return void
+     */
+    function astra_clear_theme_addon_asset_cache()
+    {
+    }
+    /**
+     * Check if Theme Global Colors need to be disable in Elementor global color settings.
+     *
+     * @since 3.7.4
+     * @return bool
+     */
+    function astra_maybe_disable_global_color_in_elementor()
+    {
+    }
+    /**
+     * Check is Elementor Pro version is greater than or equal to beta 3.5 version.
+     *
+     * @since 3.7.5
+     * @return boolean
+     */
+    function astra_check_elementor_pro_3_5_version()
+    {
+    }
+    /**
+     * Should Content BG settings apply to Fullwidth Contained/Stretched layout or not?
+     *
+     * Do not apply content background to fullwidth layouts in following cases -
+     * 1. For backward compatibility.
+     * 2. When site layout is Max-width.
+     * 3. When site layout is Padded.
+     *
+     * @since 3.7.8
+     * @return boolean
+     */
+    function astra_apply_content_background_fullwidth_layouts()
+    {
+    }
+    /**
+     * Search Component static CSS.
+     *
+     * @return string
+     * @since 3.5.0
+     */
+    function astra_search_static_css()
+    {
+    }
+    /**
+     * Showcase "Upgrade to Pro" notices for Astra & here is the filter work as central control to enable/disable those notices from customizer, meta settings, admin area, pro post types pages.
+     *
+     * @since 3.9.4
+     * @return bool
+     */
+    function astra_showcase_upgrade_notices()
+    {
+    }
+    /**
+     * Function which will return CSS for font-extras control.
+     * It includes - line-height, letter-spacing, text-decoration, font-style.
+     *
+     * @param array  $config contains extra font settings.
+     * @param string $setting basis on this setting will return.
+     * @param mixed  $unit Unit.
+     *
      * @since 4.0.0
      */
-    $astra_post_type = \strval(\get_post_type());
+    function astra_get_font_extras($config, $setting, $unit = \false)
+    {
+    }
     /**
-     * Template part for displaying the footer component.
+     * Function which will return CSS array for font specific props for further parsing CSS.
+     * It includes - font-family, font-weight, font-size, line-height, text-transform, letter-spacing, text-decoration, color (optional).
      *
-     * @package Astra
+     * @param string $font_family Font family.
+     * @param string $font_weight Font weight.
+     * @param array  $font_size Font size.
+     * @param string $font_extras contains all font controls.
+     * @param string $color In most of cases color is also added, so included optional param here.
+     * @return array  array of build CSS font settings.
+     *
+     * @since 4.0.0
      */
-    $astra_component_slug = \get_query_var('type');
+    function astra_get_font_array_css($font_family, $font_weight, $font_size, $font_extras, $color = '')
+    {
+    }
     /**
-     * Template part for displaying the a row of the footer
+     * Return the array of site's available image size.
      *
-     * @package Astra Builder
+     * @since x.x.x
+     * @return array
      */
-    $astra_footer_row = \get_query_var('row');
+    function astra_get_site_image_sizes()
+    {
+    }
+    /**
+     * Return the aspect-ratio for dynamic image.
+     *
+     * @param string $aspect_ratio_type Aspect ratio type.
+     * @param string $predefined_scale Predefined scale.
+     * @param string $custom_scale_width Custom scale width.
+     * @param string $custom_scale_height Custom scale height.
+     *
+     * @since x.x.x
+     * @return string
+     */
+    function astra_get_dynamic_image_aspect_ratio($aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height)
+    {
+    }
+    /**
+     * Adds custom classes to the array of body classes.
+     *
+     * @since 1.0.0
+     * @param array $classes Classes for the body element.
+     * @return array
+     */
+    function astra_single_body_class($classes)
+    {
+    }
+    /**
+     * Adds custom classes to the array of body classes.
+     *
+     * @since 1.0.0
+     * @param array $classes Classes for the body element.
+     * @return array
+     */
+    function astra_single_post_class($classes)
+    {
+    }
+    /**
+     * Template for comments and pingbacks.
+     *
+     * To override this walker in a child theme without modifying the comments template
+     * simply create your own astra_theme_comment(), and that function will be used instead.
+     *
+     * Used as a callback by wp_list_comments() for displaying the comments.
+     *
+     * @param  string $comment Comment.
+     * @param  array  $args    Comment arguments.
+     * @param  number $depth   Depth.
+     * @return mixed          Comment markup.
+     */
+    function astra_theme_comment($comment, $args, $depth)
+    {
+    }
+    /**
+     * Get Post Navigation
+     *
+     * Checks post navigation, if exists return as button.
+     *
+     * @return mixed Post Navigation Buttons
+     */
+    function astra_single_post_navigation_markup()
+    {
+    }
+    /**
+     * Adds custom classes to the array of body classes.
+     *
+     * @since 1.0
+     * @param array $classes Classes for the body element.
+     * @return array
+     */
+    function astra_blog_body_classes($classes)
+    {
+    }
+    /**
+     * Adds custom classes to the array of post grid classes.
+     *
+     * @since 1.0
+     * @param array $classes Classes for the post element.
+     * @return array
+     */
+    function astra_post_class_blog_grid($classes)
+    {
+    }
+    /**
+     * Prints HTML with meta information for the current post-date/time and author.
+     *
+     * @since 1.0
+     * @return mixed            Markup.
+     */
+    function astra_blog_get_post_meta()
+    {
+    }
+    /**
+     * To featured image / gallery / audio / video etc. As per the post format.
+     *
+     * @since 1.0
+     * @return mixed
+     */
+    function astra_blog_post_get_featured_item()
+    {
+    }
+    /**
+     * Blog post Thubmnail, Title & Blog Meta order
+     *
+     * @since  1.0.8
+     */
+    function astra_blog_post_thumbnail_and_title_order()
+    {
+    }
+    /**
+     * Blog post Thumbnail
+     *
+     * @param string $type Type of post.
+     * @since  1.0.8
+     */
+    function astra_get_blog_post_thumbnail($type = 'archive')
+    {
+    }
+    /**
+     * Blog post Thumbnail
+     *
+     * @since  1.0.8
+     */
+    function astra_get_blog_post_title_meta()
+    {
+    }
+    /**
+     * Get audio files from post content
+     *
+     * @param  number $post_id Post id.
+     * @return mixed          Iframe.
+     */
+    function astra_get_audios_from_post($post_id)
+    {
+    }
+    /**
+     * Get first image from post content
+     *
+     * @since 1.0
+     * @param  number $post_id Post id.
+     * @return mixed
+     */
+    function astra_get_video_from_post($post_id)
+    {
+    }
+    /**
+     * Get last word of string to get meta-key of custom post structure.
+     *
+     * @since 4.0.0
+     * @param string $string from this get last word.
+     * @return string $last_word result.
+     */
+    function astra_get_last_meta_word($string)
+    {
+    }
+    /**
+     * Get the current archive description.
+     *
+     * @since 4.0.0
+     * @param string $post_type post type.
+     * @return string $description Description for archive.
+     */
+    function astra_get_archive_description($post_type)
+    {
+    }
+    /**
+     * Custom single post Title & Meta order display.
+     *
+     * @since 4.0.0
+     * @param array $structure archive or single post structure.
+     * @return mixed
+     */
+    function astra_banner_elements_order($structure = array())
+    {
+    }
+	/**
+	 * Render the featured image at top of entry content.
+	 *
+	 * Customizer settings: Single {post_type} > {post_type} Title > Structure > Featured Image > Image Position
+	 *
+	 * @since x.x.x
+	 * @return void
+	 */
+    function astra_single_content_image()
+    {
+    }
+    /**
+     * Prepare markup for taxonomies.
+     *
+     * @param string $control_tax Taxonomy subcontrol name.
+     * @param int    $loop_count Meta loop counter to decide separator appearance.
+     * @param string $separator Separator.
+     *
+     * @return string $output Taxonomy output.
+     */
+    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator)
+    {
+    }
+    /**
+     * Post meta
+     *
+     * @param  array  $post_meta Post meta.
+     * @param  string $separator Separator.
+     * @return string            post meta markup.
+     */
+    function astra_get_post_meta($post_meta, $separator = '/')
+    {
+    }
+    /**
+     * Get post format as per new configurations set in customizer.
+     *
+     * @return string HTML markup for date span.
+     * @since 4.1.0
+     */
+    function astra_get_dynamic_post_format()
+    {
+    }
+    /**
+     * Function to get Date of Post
+     *
+     * @return html                Markup.
+     */
+    function astra_post_date()
+    {
+    }
+    /**
+     * Function to get Author name.
+     *
+     * @return null|string $author_name Author name.
+     * @since 4.0.0
+     */
+    function astra_post_author_name()
+    {
+    }
+    /**
+     * Function to get Author of Post
+     *
+     * @param  string $output_filter Filter string.
+     * @return html                Markup.
+     */
+    function astra_post_author($output_filter = '')
+    {
+    }
+    /**
+     * Function to get Read More Link of Post
+     *
+     * @param  string $output_filter Filter string.
+     * @return html                Markup.
+     */
+    function astra_post_link($output_filter = '')
+    {
+    }
+    /**
+     * Function to get Number of Comments of Post
+     *
+     * @param  string $output_filter Output filter.
+     * @return html                Markup.
+     */
+    function astra_post_comments($output_filter = '')
+    {
+    }
+    /**
+     * Function to get Tags applied of Post
+     *
+     * @param  string $output_filter Output filter.
+     * @return html                Markup.
+     */
+    function astra_post_tags($output_filter = '')
+    {
+    }
+    /**
+     * Function to get Categories applied of Post
+     *
+     * @param  string $output_filter Output filter.
+     * @return html                Markup.
+     */
+    function astra_post_categories($output_filter = '')
+    {
+    }
+    /**
+     * Layout class
+     *
+     * @param  string $class Class.
+     */
+    function astra_blog_layout_class($class = '')
+    {
+    }
+    /**
+     * Retrieve the classes for the body element as an array.
+     *
+     * @param string $class Class.
+     */
+    function astra_get_blog_layout_class($class = '')
+    {
+    }
+    /**
+     * Filters the Read More link text.
+     *
+     * @param  string $more_link_element Read More link element.
+     * @param  string $more_link_text Read More text.
+     * @return html                Markup.
+     */
+    function astra_the_content_more_link($more_link_element = '', $more_link_text = '')
+    {
+    }
+    /**
+     * Footer disable on archive pages.
+     *
+     * @param bool $display_footer for controling the header and footer enable/disable options.
+     *
+     * @since 3.9.4
+     */
+    function astra_footer_bar_display_cb($display_footer)
+    {
+    }
+    /**
+     * Create instance of Astra_WebFont_Loader class.
+     *
+     * @param string $font_url Google font URL to set data.
+     * @return object
+     * @since 3.6.0
+     */
+    function astra_webfont_loader_instance($font_url = '')
+    {
+    }
+    /**
+     * Related Posts - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Related Posts.
+     *
+     * @since 3.4.0
+     */
+    function astra_related_posts_css($dynamic_css)
+    {
+    }
+    /**
+     * Related Posts - Static CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Related Posts.
+     *
+     * @since 3.5.0
+     */
+    function astra_related_posts_static_css($dynamic_css)
+    {
+    }
+    \define('ASTRA_RELATED_POSTS_DIR', \ASTRA_THEME_DIR . 'inc/modules/related-posts/');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Post Structures.
+     *
+     * @since 4.0.0
+     */
+    function astra_post_single_structure_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    /**
+     * Archive Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Post Structures.
+     *
+     * @since 4.0.0
+     */
+    function astra_post_archive_structure_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_THEME_POST_STRUCTURE_DIR', \ASTRA_THEME_DIR . 'inc/modules/posts-structures/');
+    \define('ASTRA_THEME_POST_STRUCTURE_URI', \ASTRA_THEME_URI . 'inc/modules/posts-structures/');
+    /**
+     * Whether to fix the footer right-margin space not working case or not.
+     *
+     * As this affects the frontend, added this backward compatibility for existing users.
+     *
+     * @since 3.6.7
+     * @return boolean false if it is an existing user, true if not.
+     */
+    function astra_support_footer_widget_right_margin()
+    {
+    }
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_widget_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_WIDGET_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/widget');
+    \define('ASTRA_BUILDER_FOOTER_WIDGET_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/widget');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Social Icons Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_social_icon_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_SOCIAL_ICONS_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/social-icon');
+    \define('ASTRA_BUILDER_FOOTER_SOCIAL_ICONS_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/social-icon');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for above Footer.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_above_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_ABOVE_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/above-footer');
+    \define('ASTRA_BUILDER_FOOTER_ABOVE_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/above-footer');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_html_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_HTML_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/html');
+    \define('ASTRA_BUILDER_FOOTER_HTML_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/html');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_button_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_FOOTER_BUTTON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/button');
+    \define('ASTRA_FOOTER_BUTTON_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/button');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Footer Menu Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_footer_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    /**
+     * Footer menu static CSS
+     *
+     * @since 3.5.0
+     * @return string
+     */
+    function astra_footer_menu_static_css()
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/menu');
+    \define('ASTRA_BUILDER_FOOTER_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/menu');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Primary Footer.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_primary_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_PRIMARY_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/primary-footer');
+    \define('ASTRA_BUILDER_FOOTER_PRIMARY_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/primary-footer');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_copyright_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_COPYRIGHT_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/copyright');
+    \define('ASTRA_BUILDER_FOOTER_COPYRIGHT_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/copyright');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for below Footer.
+     *
+     * @since 3.0.0
+     */
+    function astra_fb_below_footer_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_FOOTER_BELOW_FOOTER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/footer/below-footer');
+    \define('ASTRA_BUILDER_FOOTER_BELOW_FOOTER_URI', \ASTRA_THEME_URI . 'inc/builder/type/footer/below-footer');
+    /**
+     * Below Header Row - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_below_header_row_setting($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BELOW_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/below-header');
+    \define('ASTRA_BELOW_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/below-header');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_widget_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_HEADER_WIDGET_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/widget');
+    \define('ASTRA_BUILDER_HEADER_WIDGET_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/widget');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 2.1.4
+     */
+    function astra_hb_social_icon_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_SOCIAL_ICON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/social-icon');
+    \define('ASTRA_HEADER_SOCIAL_ICON_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/social-icon');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_primary_header_breakpoint_style($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_PRIMARY_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/primary-header');
+    \define('ASTRA_PRIMARY_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/primary-header');
+    /**
+     * Position markup
+     *
+     * @since 3.9.0
+     * @param  string $postion  Position.
+     * @param  string $device Device type.
+     * @return array
+     */
+    function astra_cart_position($postion, $device)
+    {
+    }
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Search.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_woo_cart_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_WOO_CART_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/woo-cart');
+    \define('ASTRA_HEADER_WOO_CART_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/woo-cart');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Header Menu Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_mobile_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_BUILDER_MOBILE_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/mobile-menu');
+    \define('ASTRA_BUILDER_MOBILE_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/mobile-menu');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_html_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_HTML_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/html');
+    \define('ASTRA_HEADER_HTML_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/html');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Search.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_search_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_SEARCH_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/search');
+    \define('ASTRA_HEADER_SEARCH_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/search');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_button_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_BUTTON_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/button');
+    \define('ASTRA_HEADER_BUTTON_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/button');
+    /**
+     * Above Header Row - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_above_header_row_setting($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_ABOVE_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/above-header');
+    \define('ASTRA_ABOVE_HEADER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/above-header');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_menu_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    /**
+     * Load Menu hover style static CSS if any one of the menu hover style is selected.
+     *
+     * @return string
+     * @since 3.5.0
+     */
+    function astra_menu_hover_style_css()
+    {
+    }
+    \define('ASTRA_HEADER_MENU_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/menu');
+    \define('ASTRA_HEADER_MENU_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/menu');
+    /**
+     * Off Canvas Row - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_off_canvas_row_setting($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    /**
+     * Add static CSS for Off-canvas flyout.
+     *
+     * @since 3.4.0
+     * @return string.
+     */
+    function astra_off_canvas_static_css()
+    {
+    }
+    /**
+     * Add static CSS for Dropdown Type.
+     *
+     * @since 3.4.0
+     * @return string.
+     */
+    function astra_dropdown_type_static_css()
+    {
+    }
+    \define('ASTRA_OFF_CANVAS_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/off-canvas');
+    \define('ASTRA_OFF_CANVAS_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/off-canvas');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Account.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_account_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_ACCOUNT_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/account');
+    \define('ASTRA_HEADER_ACCOUNT_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/account');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Search.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_edd_cart_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_EDD_CART_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/edd-cart');
+    \define('ASTRA_HEADER_EDD_CART_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/edd-cart');
+    /**
+     * Mobile Trigger - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Heading Colors.
+     *
+     * @since 3.0.0
+     */
+    function astra_mobile_trigger_row_setting($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_MOBILE_TRIGGER_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/mobile-trigger');
+    \define('ASTRA_MOBILE_TRIGGER_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/mobile-trigger');
+    /**
+     * Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return String Generated dynamic CSS for Site Identity.
+     *
+     * @since 3.0.0
+     */
+    function astra_hb_site_identity_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
+    \define('ASTRA_HEADER_SITE_IDENTITY_DIR', \ASTRA_THEME_DIR . 'inc/builder/type/header/site-identity');
+    \define('ASTRA_HEADER_SITE_IDENTITY_URI', \ASTRA_THEME_URI . 'inc/builder/type/header/site-identity');
+    /**
+     * Get global class.
+     *
+     * @return object
+     */
+    function astra_builder()
+    {
+    }
+    /**
+     * Prints HTML with meta information for the categories, tags and comments.
+     */
+    function astra_entry_footer()
+    {
+    }
     /**
      * Template for Small Footer Layout 2
      *
@@ -17445,6 +16933,59 @@ namespace {
      */
     $astra_footer_section_1 = \astra_get_small_footer('footer-sml-section-1');
     /**
+     * Template part for displaying the a row of the footer
+     *
+     * @package Astra Builder
+     */
+    $astra_footer_row = \get_query_var('row');
+    /**
+     * Template part for displaying the footer component.
+     *
+     * @package Astra
+     */
+    $astra_component_slug = \get_query_var('type');
+    /**
+     * Template part for displaying single post's entry banner.
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package Astra
+     * @since 4.0.0
+     */
+    $astra_post_type = \strval(\get_post_type());
+    /**
+     * Template part for displaying archive post's entry banner.
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package Astra
+     * @since 4.0.0
+     */
+    $astra_post_type = \strval(\get_post_type());
+    /**
+     * Scroll To Top Template
+     *
+     * @package Astra
+     * @since 4.0.0
+     */
+    $astra_addon_scroll_top_alignment = \astra_get_option('scroll-to-top-icon-position');
+    /**
+     * Template for 404
+     *
+     * @package     Astra
+     * @author      Astra
+     * @copyright   Copyright (c) 2020, Astra
+     * @link        https://wpastra.com/
+     * @since       Astra 1.0.0
+     */
+    $astra_404_subtitle_tag = \true === \astra_check_is_structural_setup() ? 'h3' : 'div';
+    /**
+     * Template part for displaying the Mobile Header
+     *
+     * @package Astra Builder
+     */
+    $astra_mobile_header_type = \astra_get_option('mobile-header-type');
+    /**
      * Template part for header component.
      *
      * @package Astra
@@ -17457,37 +16998,31 @@ namespace {
      */
     $astra_mobile_header_type = \astra_get_option('mobile-header-type');
     /**
-     * Template part for displaying the a row of the header
-     *
-     * @package Astra Builder
-     */
-    $astra_header_row = \get_query_var('row');
-    /**
-     * Template part for displaying the Mobile Header
-     *
-     * @package Astra Builder
-     */
-    $astra_mobile_header_type = \astra_get_option('mobile-header-type');
-    /**
      * Template part for displaying a row of the mobile header
      *
      * @package Astra Builder
      */
     $astra_row = \get_query_var('row');
     /**
-     * Scroll To Top Template
+     * Template part for displaying the a row of the header
      *
-     * @package Astra
-     * @since 4.0.0
+     * @package Astra Builder
      */
-    $astra_addon_scroll_top_alignment = \astra_get_option('scroll-to-top-icon-position');
+    $astra_header_row = \get_query_var('row');
     /**
-     * Template part for displaying single post's entry banner.
+     * Search Form for Astra theme.
      *
-     * @link https://codex.wordpress.org/Template_Hierarchy
-     *
-     * @package Astra
-     * @since 4.0.0
+     * @package     Astra
+     * @author      Brainstorm Force
+     * @copyright   Copyright (c) 2020, Brainstorm Force
+     * @link        https://www.brainstormforce.com
+     * @since       Astra 3.3.0
      */
-    $astra_post_type = \strval(\get_post_type());
+    /**
+     * Adding argument checks to avoid rendering search-form markup from other places & to easily use get_search_form() function.
+     *
+     * @see https://themes.trac.wordpress.org/ticket/101061
+     * @since 3.6.1
+     */
+    $astra_search_input_placeholder = isset($args['input_placeholder']) ? $args['input_placeholder'] : \astra_default_strings('string-search-input-placeholder', \false);
 }

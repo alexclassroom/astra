@@ -6,10 +6,21 @@ import { __ } from "@wordpress/i18n";
 const RadioImageComponent = props => {
 
 	const [props_value, setPropsValue] = useState(props.control.setting.get());
+	const { input_attrs = null } = props.control.params;
 
 	const onLayoutChange = (value) => {
 		setPropsValue(value);
 		props.control.setting.set(value);
+
+		if ( null !== input_attrs && input_attrs.hasOwnProperty('dependents') && input_attrs.dependents ) {
+			let subControlsToggleEvent = new CustomEvent('AstraToggleSubControls', {
+				'detail': {
+					'controlValue': value,
+					'dependents': input_attrs.dependents
+				}
+			});
+			document.dispatchEvent(subControlsToggleEvent);
+		}
 	};
 
 	const {

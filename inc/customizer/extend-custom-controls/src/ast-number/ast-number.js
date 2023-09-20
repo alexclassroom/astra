@@ -7,7 +7,7 @@ import svgIcons from "../../../../../assets/svg/svgs.json";
 import {Dashicon} from '@wordpress/components';
 
 const NumberComponent = (props) => {
-	const { description, input_attrs, responsive, title } =
+	const { description, input_attrs, responsive, title, qty_selector } =
 		props.control.params;
 
 	const defaultValue = props?.control?.setting?.get()
@@ -30,8 +30,14 @@ const NumberComponent = (props) => {
 	const [value, setValue] = useState(
 		defaultValue ? defaultValue : defaultFallback
 	);
+	const [ numberState, setNumberState ] = useState( defaultValue );
 
-	const saveValue = (current, key) => {
+	const handleChange = event => {
+		props.control.setting.set(event.target.value);
+		setNumberState( event.target.value );
+	};
+
+	const saveValue = (current, key="") => {
 		const currentInt = parseInt(current);
 
 		if (responsive) {
@@ -86,7 +92,6 @@ const NumberComponent = (props) => {
 		} else {
 			plus = () => handlePlusMinus("plus");
 			minus = () => handlePlusMinus("minus");
-			140;
 		}
 
 		return (
@@ -189,20 +194,32 @@ const NumberComponent = (props) => {
 		);
 	}
 
-	return (
-		<>
-			<div className="ast-control-wrapper">
-				<div className="ast-title-wrapper">
-					{labelHtml}
-					{responsiveHtml}
-				</div>
+	if( qty_selector ) {
+		return (
+			<>
 				<div className="ast-control-wrapper">
-					{inputHtml}
+					<div className="ast-title-wrapper">
+						{labelHtml}
+						{responsiveHtml}
+					</div>
+					<div className="ast-control-wrapper">
+						{inputHtml}
+					</div>
 				</div>
-			</div>
-			{descriptionHtml}
-		</>
-	);
+				{descriptionHtml}
+			</>
+		);
+	} else {
+		return (
+			<label className='customizer-text'>
+				<input
+					type="number"
+					value={ numberState }
+					onChange={ handleChange }
+				/>
+			</label>
+		);
+	}
 };
 
 NumberComponent.propTypes = {

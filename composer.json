@@ -33,9 +33,16 @@
     "post-update-cmd": "vendor/bin/cghooks update",
     "format": "vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
     "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist --report-summary --report-source",
+    "phpcs": "vendor/bin/phpcs",
+    "phpcbf": "vendor/bin/phpcbf",
     "psalm": "./vendor/bin/psalm",
     "gen-stubs": "vendor/bin/generate-stubs astra/ --out=tests/php/static-analysis-stubs/astra-stubs.php",
-    "update-stubs": "rm -f tests/php/static-analysis-stubs/astra-stubs.php && grunt release-no-clean && composer gen-stubs"
+    "update-stubs": "rm -f tests/php/static-analysis-stubs/astra-stubs.php && grunt release-no-clean && composer gen-stubs",
+    "commit:hook:pre": [
+      "cp .scripts/git-hooks/pre-commit .git/hooks/",
+      "chmod +x .git/hooks/pre-commit",
+      "echo 'pre-commit hook copied'"
+    ]
   },
   "config": {
     "allow-plugins": {

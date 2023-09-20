@@ -167,7 +167,7 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 		if ( 'none' !== $background_type ) {
 			if ( class_exists( 'WooCommerce' ) && 'product' === $current_post_type ) {
 				if ( 'custom' === $background_type ) {
-					$custom_background                                       = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-banner-custom-bg' );
+					$custom_background = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-banner-custom-bg' );
 					$css_output_desktop['.archive section.ast-archive-description'] = astra_get_responsive_background_obj( $custom_background, 'desktop' );
 					$css_output_tablet['.archive section.ast-archive-description']  = astra_get_responsive_background_obj( $custom_background, 'tablet' );
 					$css_output_mobile['.archive section.ast-archive-description']  = astra_get_responsive_background_obj( $custom_background, 'mobile' );
@@ -207,7 +207,7 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 					}
 				}
 			} else {
-				$custom_background                                       = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-banner-custom-bg' );
+				$custom_background = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-banner-custom-bg' );
 				$css_output_desktop['.archive section.ast-archive-description'] = astra_get_responsive_background_obj( $custom_background, 'desktop' );
 				$css_output_tablet['.archive section.ast-archive-description']  = astra_get_responsive_background_obj( $custom_background, 'tablet' );
 				$css_output_mobile['.archive section.ast-archive-description']  = astra_get_responsive_background_obj( $custom_background, 'mobile' );

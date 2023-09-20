@@ -105,6 +105,7 @@
   top: 0;
   right: 0;
   color: var(--ast-customizer-color-6);
+  cursor: help;
 }
 
 .customize-control.customize-control-ast-toggle-control .ast-control-tooltip {
@@ -148,6 +149,21 @@
 .ast-fields-wrap .customize-control .ast-control-tooltip {
   right: 15px;
   top: 6px;
+}
+
+.customize-control .ast-sortable-subfields-wrap .ast-control-tooltip {
+    position: absolute !important;
+    top: 40%;
+    right: 0px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.customize-control .ast-sortable-subfields-wrap .customize-control-ast-toggle .ast-control-tooltip {
+	right: 30px;
+	top: 50%;
+}
+.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
+    top: 24px;
 }
 
 /* Select2 WP 5.3 compatibility */

@@ -743,6 +743,20 @@
 					});
 				});
 				AstCustomizerAPI.moveDefaultSection();
+
+				// Sub controls context logic build.
+				let contextualSubControls = AstraBuilderCustomizerData.js_configs.contextual_sub_controls || [];
+				if ( contextualSubControls ) {
+					$.each( contextualSubControls, function( index, control ) {
+						let subControlsToggleEvent = new CustomEvent('AstraToggleSubControls', {
+							'detail': {
+								'controlValue': control.default,
+								'dependents': control.input_attrs.dependents
+							}
+						});
+						document.dispatchEvent(subControlsToggleEvent);
+					} );
+				}
 			});
 		}, 200);
 
@@ -820,7 +834,6 @@
 			);
 
 		});
-
 	});
 
 })(jQuery, wp.customize);

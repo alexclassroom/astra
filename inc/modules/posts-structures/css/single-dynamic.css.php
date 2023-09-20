@@ -49,6 +49,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		$selector = 'header.entry-header' . $exclude_attr;
 	}
 
+	$site_content_width = astra_get_option( 'site-content-width', 1200 );
 	$horz_alignment   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-horizontal-alignment' );
 	$desk_h_alignment = ( isset( $horz_alignment['desktop'] ) ) ? $horz_alignment['desktop'] : '';
 	$tab_h_alignment  = ( isset( $horz_alignment['tablet'] ) ) ? $horz_alignment['tablet'] : '';
@@ -73,11 +74,6 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 	$custom_width   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-banner-custom-width', 1200 );
 
 	$single_structure        = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-structure', 'page' === $current_post_type ? array( 'ast-dynamic-single-' . $current_post_type . '-image', 'ast-dynamic-single-' . $current_post_type . '-title' ) : array( 'ast-dynamic-single-' . $current_post_type . '-title', 'ast-dynamic-single-' . $current_post_type . '-meta' ) );
-	$use_featured_background = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-featured-as-background', false );
-	$custom_background       = astra_get_option(
-		'ast-dynamic-single-' . $current_post_type . '-banner-background',
-		Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-background' )
-	);
 
 	// Banner Text typography dynamic stylings.
 	$banner_text_font_size = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-size' );
@@ -91,26 +87,42 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 	$css_output_min_tablet  = array();
 	$narrow_container_width = astra_get_option( 'narrow-container-max-width', apply_filters( 'astra_narrow_container_width', 750 ) );
 
+	// Aspect Ratio processing.
+	$aspect_ratio_type    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-type', '' );
+	$predefined_scale     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-pre-scale' );
+	$custom_scale_width   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-width', 16 );
+	$custom_scale_height  = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-height', 9 );
+	$aspect_ratio         = astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height );
+	$with_aspect_img_width = 'predefined' === $aspect_ratio_type || 'custom' === $aspect_ratio_type ? '100%' : '';
+
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
+		$image_wrap_alignment = ( false === astra_get_option( 'v4-4-0-backward-option', true ) ) ? '' : 'center';
 		/**
 		 * Desktop CSS.
 		 */
 		$css_output_desktop = array(
-			$selector                               => array(
+			$selector                                  => array(
 				'text-align' => $desk_h_alignment,
 			),
-			$selector . ' *'                        => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
-			$selector . ' .entry-title'             => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
+			$selector . ' *'                           => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
+			$selector . ' .entry-title'                => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
 			$selector . ' .entry-meta, ' . $selector . ' .entry-meta *' => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-weight' ), $banner_meta_font_size, 'ast-dynamic-single-' . $current_post_type . '-meta-font-extras' ),
-			$selector . ' a, ' . $selector . ' a *' => array(
+			$selector . ' a, ' . $selector . ' a *'    => array(
 				'color' => esc_attr( $link_color ),
 			),
 			$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' > *:not(:last-child)'     => array(
+			$selector . ' > *:not(:last-child)'        => array(
 				'margin-bottom' => $elements_gap . 'px',
+			),
+			$selector . ' .post-thumb-img-content' => array(
+				'text-align'  => $image_wrap_alignment,
+			),
+			$selector . ' .post-thumb-img-content img' => array(
+				'aspect-ratio'  => $aspect_ratio,
+				'width' => $with_aspect_img_width,
 			),
 		);
 		/**
@@ -150,6 +162,13 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		);
 	} else {
 		$entry_title_selector = is_customize_preview() ? $selector . ' .ast-container .entry-title' : $selector . ' .entry-title';
+		$image_position       = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-position', 'inside' );
+		$use_featured_background = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-featured-as-background', false );
+		$custom_background       = astra_get_option(
+			'ast-dynamic-single-' . $current_post_type . '-banner-background',
+			Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-background' )
+		);
+
 		/**
 		 * Desktop CSS.
 		 */
@@ -188,6 +207,10 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			),
 			$selector . ' .ast-container a:hover, ' . $selector . ' .ast-container a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
+			),
+			'.single .post-thumb-img-content img' => array(
+				'aspect-ratio'  => $aspect_ratio,
+				'width' => $with_aspect_img_width,
 			),
 		);
 
@@ -266,7 +289,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$css_output_desktop[ $selector . '[data-banner-width-type="custom"]' ]['max-width'] = $custom_width . 'px';
 		}
 
-		if ( in_array( 'ast-dynamic-single-' . $current_post_type . '-image', $single_structure ) && $use_featured_background ) {
+		if ( 'outside' !== $image_position && in_array( 'ast-dynamic-single-' . $current_post_type . '-image', $single_structure ) && $use_featured_background ) {
 			/** @psalm-suppress PossiblyFalseArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			$feat_image_src = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
 			/** @psalm-suppress PossiblyFalseArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -285,9 +308,14 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 				}
 			}
 		}
+
+		if ( 'outside' === $image_position ) {
+			$css_output_desktop[ '.single article .post-thumb' ] = array(
+				'margin-bottom'       => '2em',
+			);
+		}
 	}
 
-	$site_content_width = astra_get_option( 'site-content-width', 1200 );
 	$dynamic_css       .= '
 		.ast-single-entry-banner {
 			-js-display: flex;

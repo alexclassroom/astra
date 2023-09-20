@@ -132,7 +132,7 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 				$content_layout = astra_toggle_layout( 'ast-site-content-layout', 'meta', false, $old_meta_content_layout );
 			} else {
 				$content_layout = astra_get_option_meta( 'ast-site-content-layout', '', true );
-	
+
 				// If post meta value is present, apply new layout option.
 				if ( $content_layout ) {
 					$content_layout = astra_toggle_layout( 'ast-site-content-layout', 'meta', false );
@@ -156,7 +156,7 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 			$content_layout = '';
 			$post_type      = strval( get_post_type() );
 			$content_layout = astra_toggle_layout( 'archive-' . $post_type . '-ast-content-layout', 'archive', false );
-			
+
 			if ( is_search() ) {
 				$content_layout = astra_toggle_layout( 'archive-post-ast-content-layout', 'archive', false );
 			}
@@ -801,7 +801,7 @@ function astra_can_remove_elementor_toc_margin_space() {
 
 /**
  * Check whether user is exising or new to override the hr tag styling for elementor
- * 
+ *
  * @since 4.3.0
  * @return boolean
  */
@@ -1142,4 +1142,59 @@ function astra_get_font_array_css( $font_family, $font_weight, $font_size, $font
 		'letter-spacing'  => astra_get_font_extras( $font_extras_ast_option, 'letter-spacing', 'letter-spacing-unit' ),
 		'text-decoration' => astra_get_font_extras( $font_extras_ast_option, 'text-decoration' ),
 	);
+}
+
+/**
+ * Return the array of site's available image size.
+ *
+ * @since x.x.x
+ * @return array
+ */
+function astra_get_site_image_sizes() {
+	$image_sizes = array(
+		'thumbnail'    => __( 'Thumbnail', 'astra' ),
+		'medium'       => __( 'Medium', 'astra' ),
+		'medium_large' => __( 'Medium Large', 'astra' ),
+		'large'        => __( 'Large', 'astra' ),
+		'full'         => __( 'Full Size', 'astra' ),
+	);
+
+	$all_sizes = get_intermediate_image_sizes(); // Gets the available intermediate image size names on site.
+
+	$refactored_sizes = array(
+		'full' => __( 'Full Size', 'astra' ),
+	);
+
+	foreach ( $all_sizes as $size ) {
+		if ( isset( $image_sizes[ $size ] ) ) {
+			$refactored_sizes[ $size ] = $image_sizes[ $size ];
+		} else {
+			$refactored_sizes[ $size ] = $size;
+		}
+	}
+
+	return $refactored_sizes;
+}
+
+/**
+ * Return the aspect-ratio for dynamic image.
+ *
+ * @param string $aspect_ratio_type Aspect ratio type.
+ * @param string $predefined_scale Predefined scale.
+ * @param string $custom_scale_width Custom scale width.
+ * @param string $custom_scale_height Custom scale height.
+ *
+ * @since x.x.x
+ * @return string
+ */
+function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height ) {
+	$aspect_ratio_css = '';
+	if ( '' !== $aspect_ratio_type ) {
+		if ( 'custom' === $aspect_ratio_type ) {
+			$aspect_ratio_css = absint( $custom_scale_width ) . '/' . absint( $custom_scale_height );
+		} else {
+			$aspect_ratio_css = $predefined_scale;
+		}
+	}
+	return $aspect_ratio_css;
 }

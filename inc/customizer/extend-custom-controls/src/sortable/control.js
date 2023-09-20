@@ -412,7 +412,12 @@ export const sortableControl = wp.customize.astraControl.extend( {
 				let control_full_name = attr.name.replace('[', '-');
 				control_full_name = control_full_name.replace(']', '');
 
-				fields_html += "<li id='customize-control-" + control_full_name + "' class='customize-control customize-control-" + attr.control + "' >";
+				let ast_class = '';
+				if ( attr ?. divider ?. ast_class ) {
+					ast_class = `${ attr.divider.ast_class} `;
+				}
+
+				fields_html += "<li id='customize-control-" + control_full_name + "' class='customize-control customize-control-" + attr.control + ' ' + ast_class + "' >";
 
 				if( jQuery( '#tmpl-' + template_id ).length ) {
 					fields_html += template(attr);

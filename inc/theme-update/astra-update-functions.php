@@ -1424,3 +1424,17 @@ function astra_theme_background_updater_4_2_2() {
 		update_option( 'astra-settings', $theme_options );
 	}
 }
+
+/**
+ * Handle backward compatibility on version x.x.x
+ *
+ * @since x.x.x
+ * @return void
+ */
+function astra_theme_background_updater_4_4_0() {
+	$theme_options = get_option( 'astra-settings', array() );
+	if ( ! isset( $theme_options['v4-4-0-backward-option'] ) ) {
+		$theme_options['v4-4-0-backward-option'] = false;
+		update_option( 'astra-settings', $theme_options );
+	}
+}

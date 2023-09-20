@@ -345,6 +345,8 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 	}
 }
 
+add_filter( 'excerpt_more', 'astra_post_link', 20 );
+
 /**
  * Function to get Number of Comments of Post
  *
