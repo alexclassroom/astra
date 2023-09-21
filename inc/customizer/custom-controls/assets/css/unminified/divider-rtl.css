@@ -249,3 +249,7 @@
     width: 100%;
     right: 0px;
 }
+
+.ast-top-dotted-divider .ast-control-tooltip {
+    top: 24px;
+}
