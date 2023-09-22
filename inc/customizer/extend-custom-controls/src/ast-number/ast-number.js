@@ -1,6 +1,6 @@
 import { __experimentalNumberControl as NumberControl } from "@wordpress/components";
 import PropTypes from "prop-types";
-import { useState } from "@wordpress/element";
+import { useState, useEffect } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import parse from "html-react-parser";
 import svgIcons from "../../../../../assets/svg/svgs.json";
@@ -51,7 +51,7 @@ const NumberComponent = (props) => {
 			props.control.setting.set(currentInt);
 		}
 	};
-	const handlePlusMinus = (type, key = "") => {
+	const handlePlusMinus = ( type, key = "") => {
 		const obj = {
 			...value,
 		};
@@ -60,26 +60,30 @@ const NumberComponent = (props) => {
 			if (responsive) {
 				obj[key] = value[key] + 1;
 				setValue(obj);
-				props.control.setting.set(obj);
 			} else {
 				setValue((current) => current + 1);
-				props.control.setting.set(value);
 			}
 		} else {
 			if (responsive) {
 				if (min < value[key]) {
 					obj[key] = value[key] - 1;
 					setValue(obj);
-					props.control.setting.set(obj);
 				}
 			} else {
 				if (min < value) {
 					setValue((current) => current - 1);
-					props.control.setting.set(value);
 				}
 			}
 		}
 	};
+
+
+	useEffect(() => {
+		setValue(value);
+		props.control.setting.set(value);
+	  },[value])
+
+
 
 	const renderSettings = (key) => {
 		let plus;

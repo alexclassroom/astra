@@ -321,6 +321,22 @@ wp.customize( 'astra-settings[blog-meta-date-format]', function( setting ) {
 	} );
 } );
 
+astra_refresh_customizer(
+    'astra-settings[blog-image-ratio-type]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-ratio-pre-scale]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-custom-scale-width]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-custom-scale-height]'
+);
+
 // Global Typography Refresh - START
 const bodyFontFamily = [
 	'body-font-family',
