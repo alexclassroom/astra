@@ -384,6 +384,91 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'renderAs'   => 'text',
 			),
 
+			array(
+				'name'       => ASTRA_THEME_SETTINGS . '[related-posts-box-placement]',
+				'default'    => astra_get_option( 'related-posts-box-placement' ),
+				'type'       => 'control',
+				'section'  => 'section-blog-single',
+				'priority' => 12,
+				'title'      => __( 'Section Placement', 'astra' ),
+				'control'    => 'ast-selector',
+				'description' => __( 'This will place the content relative to the post container or outside of it.', 'astra' ),
+				'choices'    => array(
+					'inside' => __( 'Default', 'astra' ),
+					'outside' => __( 'Outside', 'astra' ),
+				),
+				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'context'  => array(
+					Astra_Builder_Helper::$general_tab_config,
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
+						'operator' => '==',
+						'value'    => true,
+					),
+				),
+				'responsive' => false,
+				'renderAs'   => 'text',
+			),
+			array(
+				'name'       => ASTRA_THEME_SETTINGS . '[related-posts-outside-location]',
+				'default'    => astra_get_option( 'related-posts-outside-location' ),
+				'type'       => 'control',
+				'section'  => 'section-blog-single',
+				'priority' => 12,
+				'title'      => __( 'Location', 'astra' ),
+				'control'    => 'ast-selector',
+				'choices'    => array(
+					'below' => __( 'Below Comments', 'astra' ),
+					'above' => __( 'Above Comments', 'astra' ),
+				),
+				'context'     => array(
+					Astra_Builder_Helper::$general_tab_config,
+					'relation' => 'AND',
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
+						'operator' => '==',
+						'value'    => true,
+					),
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-box-placement]',
+						'operator' => '==',
+						'value'    => 'outside',
+					),
+				),
+				'responsive' => false,
+				'renderAs'   => 'text',
+			),
+			array(
+				'name'       => ASTRA_THEME_SETTINGS . '[related-posts-container-width]',
+				'default'    => astra_get_option( 'related-posts-container-width' ),
+				'type'       => 'control',
+				'section'  => 'section-blog-single',
+				'priority' => 12,
+				'title'      => __( 'Structure', 'astra' ),
+				'control'    => 'ast-selector',
+				'choices'    => array(
+					'default'     => __( 'Default', 'astra' ),
+					'wide' => __( 'Wide', 'astra' ),
+					'full' => __( 'Full', 'astra' ),
+				),
+				'context'     => array(
+					Astra_Builder_Helper::$general_tab_config,
+					'relation' => 'AND',
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
+						'operator' => '==',
+						'value'    => true,
+					),
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-box-placement]',
+						'operator' => '==',
+						'value'    => 'outside',
+					),
+				),
+				'responsive' => false,
+				'renderAs'   => 'text',
+			),
+
 			/**
 			 * Option: Related Posts colors setting group
 			 */
@@ -628,7 +713,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					),
 				),
 				'title'             => __( 'Section Background', 'astra' ),
-				'divider'           => array( 'ast_class' => 'ast-bottom-section-divider' ),
+				'divider'           => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
 			),
 
 			/**

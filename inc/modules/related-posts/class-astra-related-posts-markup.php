@@ -24,7 +24,22 @@ class Astra_Related_Posts_Markup {
 	 *  Constructor
 	 */
 	public function __construct() {
-		add_action( 'astra_entry_after', array( $this, 'astra_related_posts_markup' ), 10 );
+		add_action( 'astra_content_before', array( $this, 'initialize_related_posts' ) );
+	}
+
+	/**
+	 * Initialize related posts module in Astra.
+	 *
+	 * @since x.x.x
+	 */
+	public function initialize_related_posts() {
+		$action = 'astra_entry_after';
+		$location = astra_get_option( 'related-posts-outside-location' );
+		$module_placement = astra_get_option( 'related-posts-box-placement' );
+		if ( 'outside' === $module_placement && 'below' === $location ) {
+			$action = 'astra_after_comments_module';
+		}
+		add_action( $action, array( $this, 'astra_related_posts_markup' ), 10 );
 	}
 
 	/**
@@ -53,6 +68,8 @@ class Astra_Related_Posts_Markup {
 		$related_post_structure    = astra_get_option_meta( 'related-posts-structure' );
 		$exclude_ids               = apply_filters( 'astra_related_posts_exclude_post_ids', array( $post_id ), $post_id );
 		$related_posts_total_count = absint( astra_get_option( 'related-posts-total-count', 2 ) );
+		$module_container_width    = astra_get_option( 'related-posts-container-width' );
+		$module_container_width    = 'inside' === astra_get_option( 'related-posts-box-placement' ) ? '' : 'ast-container--' . $module_container_width;
 
 		// Get related posts by WP_Query.
 		$query_posts = $this->astra_get_related_posts_by_query( $post_id );
@@ -93,7 +110,7 @@ class Astra_Related_Posts_Markup {
 
 					if ( false === $related_posts_section_loaded ) {
 
-						echo '<div class="ast-single-related-posts-container">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo '<div class="ast-single-related-posts-container ' . esc_attr( $module_container_width ) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 						do_action( 'astra_related_posts_title_before' );
 

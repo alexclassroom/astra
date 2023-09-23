@@ -186,7 +186,7 @@ if ( ! class_exists( 'Astra_Loop' ) ) :
 		public function loop_markup( $is_page = false ) {
 			?>
 			<main id="main" class="site-main">
-				<?php 
+				<?php
 				if ( have_posts() ) :
 					do_action( 'astra_template_parts_content_top' );
 
@@ -203,7 +203,7 @@ if ( ! class_exists( 'Astra_Loop' ) ) :
 					do_action( 'astra_template_parts_content_bottom' );
 					else :
 						do_action( 'astra_template_parts_content_none' );
-					endif; 
+					endif;
 					?>
 			</main><!-- #main -->
 			<?php

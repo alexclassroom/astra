@@ -469,6 +469,10 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet-unit'  => 'em',
 						'mobile-unit'  => 'em',
 					),
+					// Single Comments.
+					'comments-box-placement' => 'inside',
+					'comment-form-position' => 'below',
+					'comments-box-container-width' => 'default',
 
 					// Container.
 					'single-page-ast-content-layout'       => false === astra_check_is_structural_setup() ? 'default' : 'normal-width-container',

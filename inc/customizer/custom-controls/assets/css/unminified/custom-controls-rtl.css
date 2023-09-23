@@ -2055,6 +2055,10 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
     right: 0px;
 }
 
+.ast-top-dotted-divider .ast-control-tooltip {
+    top: 24px;
+}
+
 .ast-typo-presets {
 	width: 100%;
     display: flex;
