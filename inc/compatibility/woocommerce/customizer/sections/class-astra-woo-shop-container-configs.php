@@ -72,6 +72,7 @@ if ( ! class_exists( 'Astra_Woo_Shop_Container_Configs' ) ) {
 					'default'    => astra_get_option( 'woocommerce-content-style', 'default' ),
 					'priority'   => 5,
 					'title'      => __( 'Container Style', 'astra' ),
+					'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
 					'choices'    => array(
 						'default' => 'Default',
 						'unboxed' => 'Unboxed',
@@ -79,22 +80,7 @@ if ( ! class_exists( 'Astra_Woo_Shop_Container_Configs' ) ) {
 					),
 					'renderAs'   => 'text',
 					'responsive' => false,
-					'divider'    => array( 'ast_class' => 'ast-top-divider' ),
-				),
-
-				/**
-				 * Help Text: Woocommerce Content Style.
-				 */
-				array(
-					'name'     => ASTRA_THEME_SETTINGS . '[woocommerce-content-style-description]',
-					'type'     => 'control',
-					'control'  => 'ast-description',
-					'section'  => 'section-woo-general',
-					'priority' => 5,
-					'title'    => '',
-					'help'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'divider'  => array( 'ast_class' => 'ast-bottom-spacing' ),
-					'settings' => array(),
+					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				),
 			);
 
@@ -105,4 +91,3 @@ if ( ! class_exists( 'Astra_Woo_Shop_Container_Configs' ) ) {
 }
 
 new Astra_Woo_Shop_Container_Configs();
-

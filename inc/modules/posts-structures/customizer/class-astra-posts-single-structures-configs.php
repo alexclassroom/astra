@@ -110,6 +110,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'default'    => astra_get_option( 'single-' . $post_type . '-content-style', 'default' ),
 				'priority'   => 3,
 				'title'      => __( 'Container Style', 'astra' ),
+				'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
 				'choices'    => array(
 					'default' => 'Default',
 					'unboxed' => 'Unboxed',
@@ -117,22 +118,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 				'renderAs'   => 'text',
 				'responsive' => false,
-				'divider'    => array( 'ast_class' => 'ast-top-divider' ),
-			),
-
-			/**
-			 * Help Text: Single Content Style.
-			 */
-			array(
-				'name'     => ASTRA_THEME_SETTINGS . '[single-' . $post_type . '-content-style-description]',
-				'type'     => 'control',
-				'control'  => 'ast-description',
-				'section'  => $parent_section,
-				'priority' => 3,
-				'title'    => '',
-				'help'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-				'divider'  => array( 'ast_class' => 'ast-bottom-spacing' ),
-				'settings' => array(),
+				'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
 			),
 
 			/**
@@ -145,6 +131,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_choices' ),
 				'section'           => $parent_section,
 				'default'           => astra_get_option( 'single-' . $post_type . '-sidebar-layout', 'default' ),
+				'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 				'priority'          => 3,
 				'title'             => __( 'Sidebar Layout', 'astra' ),
 				'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
@@ -166,22 +153,6 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 					),
 				),
-			),
-
-			/**
-			 * Help Text: Single Sidebar Layout.
-			 */
-			array(
-				'name'     => ASTRA_THEME_SETTINGS . '[single-' . $post_type . '-sidebar-layout-description]',
-				'type'     => 'control',
-				'control'  => 'ast-description',
-				'section'  => $parent_section,
-				'priority' => 3,
-				'title'    => '',
-				'help'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
-				'divider'  => array( 'ast_class' => 'ast-bottom-spacing' ),
-				'settings' => array(),
-				'hide'     => ( ! Astra_Dynamic_CSS::astra_fullwidth_sidebar_support() ),
 			),
 
 			/**

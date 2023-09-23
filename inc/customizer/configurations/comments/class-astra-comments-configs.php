@@ -44,10 +44,10 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'priority' => 20,
 					'title'      => __( 'Section Placement', 'astra' ),
 					'control'    => 'ast-selector',
-					'description' => __( 'This will place the content relative to the post container or outside of it.', 'astra' ),
+					'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
 					'choices'    => array(
-						'inside' => __( 'Default', 'astra' ),
-						'outside' => __( 'Outside', 'astra' ),
+						'inside' => __( 'Contained', 'astra' ),
+						'outside' => __( 'Separated', 'astra' ),
 					),
 					'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 					'context'  => Astra_Builder_Helper::$general_tab,

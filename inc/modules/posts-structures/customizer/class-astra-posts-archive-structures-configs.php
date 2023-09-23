@@ -121,22 +121,8 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
-				'divider'    => array( 'ast_class' => 'ast-top-divider' ),
-			),
-
-			/**
-			 * Help Text: Archive Content Style.
-			 */
-			array(
-				'name'     => ASTRA_THEME_SETTINGS . '[archive-' . $post_type . '-content-style-description]',
-				'type'     => 'control',
-				'control'  => 'ast-description',
-				'section'  => $parent_section,
-				'priority' => 5,
-				'title'    => '',
-				'help'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-				'divider'  => array( 'ast_class' => 'ast-bottom-spacing' ),
-				'settings' => array(),
+				'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+				'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
 			),
 
 			/**
@@ -151,6 +137,7 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 				'default'           => astra_get_option( 'archive-' . $post_type . '-sidebar-layout', 'default' ),
 				'priority'          => 5,
 				'title'             => __( 'Sidebar Layout', 'astra' ),
+				'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 				'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				'choices'           => array(
 					'default'       => array(
@@ -170,22 +157,6 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 					),
 				),
-			),
-
-			/**
-			 * Help Text: Archive Sidebar Layout.
-			 */
-			array(
-				'name'     => ASTRA_THEME_SETTINGS . '[archive-' . $post_type . '-sidebar-layout-description]',
-				'type'     => 'control',
-				'control'  => 'ast-description',
-				'section'  => $parent_section,
-				'priority' => 5,
-				'title'    => '',
-				'help'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
-				'divider'  => array( 'ast_class' => 'ast-bottom-spacing' ),
-				'settings' => array(),
-				'hide'     => ( ! Astra_Dynamic_CSS::astra_fullwidth_sidebar_support() ),
 			),
 
 			/**

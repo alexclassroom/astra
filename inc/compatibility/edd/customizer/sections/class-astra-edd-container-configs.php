@@ -70,6 +70,7 @@ if ( ! class_exists( 'Astra_Edd_Container_Configs' ) ) {
 					'control'    => 'ast-selector',
 					'section'    => 'section-edd-general',
 					'default'    => astra_get_option( 'edd-content-style', 'default' ),
+					'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
 					'priority'   => 5,
 					'title'      => __( 'Container Style', 'astra' ),
 					'choices'    => array(
@@ -79,20 +80,6 @@ if ( ! class_exists( 'Astra_Edd_Container_Configs' ) ) {
 					),
 					'renderAs'   => 'text',
 					'responsive' => false,
-				),
-
-				/**
-				 * Help Text: EDD Content Style Option.
-				 */
-				array(
-					'name'     => ASTRA_THEME_SETTINGS . '[edd-content-style-description]',
-					'type'     => 'control',
-					'control'  => 'ast-description',
-					'section'  => 'section-edd-general',
-					'priority' => 5,
-					'title'    => '',
-					'help'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'settings' => array(),
 				),
 			);
 

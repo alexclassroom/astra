@@ -1591,7 +1591,8 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
 	right: 30px;
 	top: 50%;
 }
-.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
+.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip,
+.ast-top-section-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
     top: 24px;
 }
 
@@ -2056,7 +2057,10 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
 }
 
 .ast-top-dotted-divider .ast-control-tooltip {
-    top: 24px;
+    top: 22px;
+}
+.ast-top-section-divider .ast-control-tooltip {
+    top: 30px;
 }
 
 .ast-typo-presets {

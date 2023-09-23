@@ -392,10 +392,10 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'priority' => 12,
 				'title'      => __( 'Section Placement', 'astra' ),
 				'control'    => 'ast-selector',
-				'description' => __( 'This will place the content relative to the post container or outside of it.', 'astra' ),
+				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
 				'choices'    => array(
-					'inside' => __( 'Default', 'astra' ),
-					'outside' => __( 'Outside', 'astra' ),
+					'inside' => __( 'Contained', 'astra' ),
+					'outside' => __( 'Separated', 'astra' ),
 				),
 				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				'context'  => array(
