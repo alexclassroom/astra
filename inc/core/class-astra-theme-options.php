@@ -133,10 +133,8 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					// Blog.
 					'blog-post-structure'                  => array(
 						'image',
-						'category',
-						'tag',
-						'title-meta',
 						'title',
+						'title-meta',
 						'excerpt',
 						'read-more',
 					),
