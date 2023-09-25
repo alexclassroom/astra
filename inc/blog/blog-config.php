@@ -202,7 +202,7 @@ function astra_get_dynamic_post_format() {
 	 * @since x.x.x
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type_slug Style slug.
-	 * @return html Markup.
+	 * @return mixed Markup.
 	 */
 function astra_get_category_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
@@ -215,10 +215,13 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 		$style_type_class = ' ' . $style_type;
 		/* translators: used between list items, there is a space after the comma */
 		$get_category_html = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
-		if ( 'badge' === $style_type ) {
-			$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
-		} else {
-			$categories_list = $get_category_html;
+		if ( $get_category_html ) {
+			if ( 'badge' === $style_type ) {
+				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
+			} else {
+				$categories_list = $get_category_html;
+			}
 		}
 	} else {
 		$categories_list = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
@@ -251,10 +254,12 @@ function astra_get_tag_list( $filter_name, $style_type_slug ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list_html = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
 
-		if ( 'badge' === $style_type ) {
-			$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
-		} else {
-			$tags_list = $tags_list_html;
+		if ( $tags_list_html ) {
+			if ( 'badge' === $style_type ) {
+				$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
+			} else {
+				$tags_list = $tags_list_html;
+			}
 		}
 	} else {
 		/* translators: used between list items, there is a space after the comma */
