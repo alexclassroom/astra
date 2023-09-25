@@ -200,7 +200,7 @@ function astra_get_dynamic_post_format() {
 	 * @param  string $style_type_slug Style slug.
 	 * @return html Markup.
 	 */
-function astra_get_category_list( $filter_name, $style_type_slug = '' ) {
+function astra_get_category_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
 	$separator        = ', ';
 	$categories_list  = '';
@@ -212,8 +212,7 @@ function astra_get_category_list( $filter_name, $style_type_slug = '' ) {
 		/* translators: used between list items, there is a space after the comma */
 		$get_category_html = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
 		if ( 'badge' === $style_type ) {
-			$categories_list = str_replace( ' rel="category">', ' rel="category" class="ast-button">', $get_category_html );
-			
+			$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
 		} else {
 			$categories_list = $get_category_html;
 		}
@@ -248,13 +247,13 @@ function astra_get_tag_list( $filter_name, $style_type_slug ) {
 		$tags_list_html = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
 
 		if ( 'badge' === $style_type ) {
-			$tags_list = str_replace( ' rel="tag">', ' rel="tag" class="ast-button">', $tags_list_html );
+			$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
 		} else {
 			$tags_list = $tags_list_html;
-		}   
+		}
 	} else {
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '',  apply_filters( 'astra_' . $filter_name, $separator ), 'astra'  );
+		$tags_list = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ), 'astra' );
 	}
 
 	if ( $tags_list ) {

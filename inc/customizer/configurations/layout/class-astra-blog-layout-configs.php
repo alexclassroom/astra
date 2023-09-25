@@ -325,6 +325,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'm/d/Y'  => '11/06/2010',
 						'd/m/Y'  => '06/11/2010',
 					),
+					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				),
 
 				/**
@@ -444,6 +445,21 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'control'     => 'ast-select',
 					'choices'     => astra_get_site_image_sizes(),
 					'description' => __( 'Note: Image Size & Ratio won\'t work if Image Position set as Background.', 'astra' ),
+				),
+
+				/**
+				 * Option: Display read more as button
+				 */
+				array(
+					'name'    => 'blog-featured-bordered-image',
+					'parent'  => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'default' => astra_get_option( 'blog-featured-bordered-image' ),
+					'type'    => 'sub-control',
+					'linked'  => 'image',
+					'control' => 'ast-toggle',
+					'section' => 'section-blog',
+					'title'   => __( 'Bordered Image', 'astra-addon' ),
+					'divider' => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				),
 			);
 
