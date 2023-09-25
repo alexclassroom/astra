@@ -237,7 +237,7 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 	 * @since x.x.x
 	 * @param  string $filter_name Filter name.
 	 * @param string $style_type_slug style type slug.
-	 * @return html Markup.
+	 * @return mixed Markup.
 	 */
 function astra_get_tag_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
@@ -474,7 +474,7 @@ if ( ! function_exists( 'astra_post_comments' ) ) {
  * Function to get Tags applied of Post
  *
  * @since 1.0.0
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_post_tags' ) ) {
 
@@ -483,7 +483,7 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
 	 *
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
-	 * @return html Markup.
+	 * @return mixed Markup.
 	 */
 	function astra_post_tags( $filter_name, $style_type ) {
 		return apply_filters( 'astra_' . $filter_name, astra_get_tag_list( $filter_name . '_separator', $style_type ) );
@@ -494,7 +494,7 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
  * Function to get Categories of Post
  *
  * @since 1.0.0
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_post_categories' ) ) {
 
@@ -503,7 +503,7 @@ if ( ! function_exists( 'astra_post_categories' ) ) {
 	 *
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
-	 * @return html Markup.
+	 * @return mixed Markup.
 	 */
 	function astra_post_categories( $filter_name, $style_type ) {
 		return apply_filters( 'astra_' . $filter_name, astra_get_category_list( $filter_name . '_separator', $style_type ) );
@@ -633,7 +633,7 @@ if ( ! function_exists( 'astra_get_blog_layout_class' ) ) {
  * Function to get Content Read More Link of Post
  *
  * @since 1.2.7
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_the_content_more_link' ) ) {
 
@@ -642,7 +642,7 @@ if ( ! function_exists( 'astra_the_content_more_link' ) ) {
 	 *
 	 * @param  string $more_link_element Read More link element.
 	 * @param  string $more_link_text Read More text.
-	 * @return html                Markup.
+	 * @return mixed                Markup.
 	 */
 	function astra_the_content_more_link( $more_link_element = '', $more_link_text = '' ) {
 
