@@ -102,12 +102,16 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 
 				case 'author':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
+					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 						$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
 						if ( $author_avatar ) {
-							$get_author_id       = get_the_author_meta( 'ID' );
+							$get_author_id = get_the_author_meta( 'ID' );
+							/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 							$get_author_gravatar = get_avatar_url( $get_author_id, array( 'size' => astra_get_option( 'blog-meta-author-avatar-size', 25 ) ) );
-							$output_str         .= '<img class=' . esc_attr( 'ast-author-image' ) . ' src="' . $get_author_gravatar . '" alt="' . get_the_title() . '" />';
+								/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+							$output_str .= '<img class=' . esc_attr( 'ast-author-image' ) . ' src="' . $get_author_gravatar . '" alt="' . get_the_title() . '" />';
+								/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						}
 					}
 					$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
@@ -119,7 +123,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 					break;
 
 				case 'category':
-					$category = astra_post_categories( '', 'post_categories', 'blog-meta-category-style' );
+					$category = astra_post_categories( 'post_categories', 'blog-meta-category-style' );
 					if ( '' != $category ) {
 						$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
 						$output_str .= $category;
@@ -127,7 +131,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 					break;
 
 				case 'tag':
-					$tags = astra_post_tags( '', 'post_tags', 'blog-meta-tag-style' );
+					$tags = astra_post_tags( 'post_tags', 'blog-meta-tag-style' );
 					if ( '' != $tags ) {
 						$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
 						$output_str .= $tags;
@@ -204,7 +208,7 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
 	$separator        = ', ';
 	$categories_list  = '';
-
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 		$style_type       = astra_get_option( $style_type_slug );
 		$separator        = 'badge' === $style_type ? ' ' : $separator;
@@ -238,6 +242,7 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 function astra_get_tag_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
 	$separator        = ', ';
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 		$style_type       = astra_get_option( $style_type_slug );
 		$separator        = 'badge' === $style_type ? ' ' : $separator;
@@ -476,13 +481,12 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
 	/**
 	 * Function to get Tags applied of Post
 	 *
-	 * @param  string $output_filter Output filter.
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
 	 * @return html Markup.
 	 */
-	function astra_post_tags( $output_filter = '', $filter_name, $style_type ) {
-		return apply_filters( 'astra_' . $filter_name, astra_get_tag_list( $filter_name . '_separator', $style_type ), $output_filter );
+	function astra_post_tags( $filter_name, $style_type ) {
+		return apply_filters( 'astra_' . $filter_name, astra_get_tag_list( $filter_name . '_separator', $style_type ) );
 	}
 }
 
@@ -497,13 +501,12 @@ if ( ! function_exists( 'astra_post_categories' ) ) {
 	/**
 	 * Function to get Categories applied of Post
 	 *
-	 * @param  string $output_filter Output filter.
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
 	 * @return html Markup.
 	 */
-	function astra_post_categories( $output_filter = '', $filter_name, $style_type ) {
-		return apply_filters( 'astra_' . $filter_name, astra_get_category_list( $filter_name . '_separator', $style_type ), $output_filter );
+	function astra_post_categories( $filter_name, $style_type ) {
+		return apply_filters( 'astra_' . $filter_name, astra_get_category_list( $filter_name . '_separator', $style_type ) );
 	}
 }
 /**
