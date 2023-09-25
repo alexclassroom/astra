@@ -4919,12 +4919,10 @@ namespace {
         /**
          * Load default starter meta.
          *
-         * @since 4.0.2
-         * @param mixed  $value Value.
-         * @param int    $post_id Post id.
-         * @param string $meta_key Meta key.
-         *
-         * @return string Meta value.
+         * @param  string $html The oEmbed markup.
+         * @param  string $url The URL being embedded.
+         * @param  array  $attr An array of attributes.
+		     * @param  bool   $core_yt_block Whether the oEmbed is being rendered by the core YouTube block.
          */
         public function starter_meta($value, $post_id, $meta_key)
         {
@@ -9555,21 +9553,16 @@ namespace {
         public function register_configuration($configurations, $wp_customize)
         {
         }
-    }
-    /**
-     * Register Body Color Customizer Configurations.
-     */
-    class Astra_Body_Colors_Configs extends \Astra_Customizer_Config_Base
-    {
         /**
-         * Register Body Color Customizer Configurations.
+         * Adds a responsive embed wrapper around oEmbed content
          *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
+         * @param  string $html The oEmbed markup.
+         * @param  string $url The URL being embedded.
+         * @param  array  $attr An array of attributes.
+         *
+         * @return string       Updated embed markup.
          */
-        public function register_configuration($configurations, $wp_customize)
+        public function responsive_oembed_wrapper($html, $url, $attr)
         {
         }
     }
