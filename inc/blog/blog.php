@@ -597,3 +597,20 @@ function astra_single_content_image() {
 		do_action( 'astra_single_content_featured_image_after' );
 	}
 }
+
+
+/**
+ * Blog Post Per Page
+ *
+ * @since x.x.x
+ * @param WP_Query $query Query.
+ */
+function astra_blog_post_per_page( $query ) {
+
+	if ( $query->is_main_query() ) {
+		$limit = apply_filters( 'astra_blog_post_per_page', astra_get_option( 'blog-post-per-page' ) );
+		$query->set( 'posts_per_page', $limit );
+	}
+}
+
+add_action( 'pre_get_posts', 'astra_blog_post_per_page' );
