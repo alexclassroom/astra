@@ -245,6 +245,7 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 function astra_get_tag_list( $filter_name, $style_type_slug ) {
 	$style_type_class = '';
 	$separator        = ', ';
+	$tags_list        = '';
 	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 		$style_type       = astra_get_option( $style_type_slug );
@@ -256,6 +257,7 @@ function astra_get_tag_list( $filter_name, $style_type_slug ) {
 
 		if ( $tags_list_html ) {
 			if ( 'badge' === $style_type ) {
+				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
 			} else {
 				$tags_list = $tags_list_html;
