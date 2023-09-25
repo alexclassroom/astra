@@ -424,8 +424,6 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 	}
 }
 
-add_filter( 'excerpt_more', 'astra_post_link', 20 );
-
 /**
  * Function to get Number of Comments of Post
  *
@@ -500,7 +498,7 @@ if ( ! function_exists( 'astra_post_categories' ) ) {
 	 * Function to get Categories applied of Post
 	 *
 	 * @param  string $output_filter Output filter.
-	 * @param  string $f_name Filter name.
+	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
 	 * @return html Markup.
 	 */

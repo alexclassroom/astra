@@ -158,10 +158,23 @@ if ( ! function_exists( 'astra_blog_post_thumbnail_and_title_order' ) ) {
 	 * Blog post Thubmnail, Title & Blog Meta order
 	 *
 	 * @since  1.0.8
+	 * @param array $remove_elements Remove unwanted sections.
 	 */
-	function astra_blog_post_thumbnail_and_title_order() {
+	function astra_blog_post_thumbnail_and_title_order( $remove_elements = '' ) {
 
 		$blog_post_thumb_title_order = astra_get_option( 'blog-post-structure' );
+
+		$remove_post_element = apply_filters( 'astra_remove_post_elements', $remove_elements );
+
+		if ( isset( $blog_post_thumb_title_order ) && isset( $remove_post_element ) ) {
+			foreach ( $remove_post_element as $single ) {
+				$key = array_search( $single, $blog_post_thumb_title_order );
+				if ( ( $key ) !== false ) {
+					unset( $blog_post_thumb_title_order[ $key ] );
+				}
+			}
+		}
+
 		if ( is_singular() ) {
 			return astra_banner_elements_order();
 		}
@@ -241,7 +254,7 @@ if ( ! function_exists( 'astra_get_blog_post_thumbnail' ) ) {
 
 		if ( 'archive' === $type ) {
 			// Blog Post Featured Image.
-			astra_get_post_thumbnail( '<div class="ast-blog-featured-section post-thumb ' . astra_attr( 'ast-grid-blog-col' ) . '">', '</div>' );
+			astra_get_post_thumbnail( '<div class="ast-blog-featured-section post-thumb">', '</div>' );
 		} elseif ( 'single' === $type ) {
 			// Single Post Featured Image.
 			astra_get_post_thumbnail();
