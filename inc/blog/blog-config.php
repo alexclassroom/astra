@@ -113,25 +113,28 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 	 *
 	 * @param  array  $post_meta Post meta.
 	 * @param  string $separator Separator.
+	 * @param  string $render_by Render by Single|Related Posts|Blog.
 	 * @return string            post meta markup.
 	 */
-	function astra_get_post_meta( $post_meta, $separator = '/' ) {
+	function astra_get_post_meta( $post_meta, $separator = '/', $render_by = '' ) {
 
 		$output_str = '';
 		$loop_count = 1;
 
-		$single_meta_separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+		if ( is_singular() && 'single-post' === $render_by ) {
+			$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+		}
 
-		$separator = apply_filters( 'astra_post_meta_separator', is_singular() ? $single_meta_separator : $separator );
+		$separator = apply_filters( 'astra_post_meta_separator', $separator );
 
 		foreach ( $post_meta as $meta_value ) {
 
 			switch ( $meta_value ) {
 
 				case 'author':
-					$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+					$author_prefix_label = 'single-post' === $render_by ? astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) ) : astra_default_strings( 'string-blog-meta-author-by', false );
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
+					$output_str .= 'single-post' === $render_by ? astra_author_avatar() : '' . esc_html( $author_prefix_label ) . astra_post_author();
 					break;
 
 				case 'date':

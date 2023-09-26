@@ -79,7 +79,7 @@ if ( ! function_exists( 'astra_blog_get_post_meta' ) ) {
 
 		if ( in_array( $current_post_type, $post_type_array ) && is_array( $post_meta ) && $enable_meta ) {
 
-			$output_str = astra_get_post_meta( $post_meta );
+			$output_str = astra_get_post_meta( $post_meta, '/', 'blog' );
 
 			if ( ! empty( $output_str ) ) {
 				echo apply_filters( 'astra_blog_post_meta', '<div class="entry-meta">' . $output_str . '</div>', $output_str ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -466,7 +466,7 @@ function astra_banner_elements_order( $structure = array() ) {
 				$post_meta = astra_get_option( 'ast-dynamic-single-' . $post_type . '-metadata', array( 'comments', 'author', 'date' ) );
 				$output    = '';
 				if ( ! empty( $post_meta ) ) {
-					$output_str = astra_get_post_meta( $post_meta );
+					$output_str = astra_get_post_meta( $post_meta, '/', 'single-post' );
 					if ( ! empty( $output_str ) ) {
 						$output = apply_filters( 'astra_single_post_meta', '<div class="entry-meta">' . $output_str . '</div>' ); // WPCS: XSS OK.
 					}
