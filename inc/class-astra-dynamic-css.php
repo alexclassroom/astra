@@ -3389,7 +3389,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				}
 
-				if ( 'layout-6' === $blog_layout) {
+				if ( 'layout-6' === $blog_layout ) {
 
 				}
 
