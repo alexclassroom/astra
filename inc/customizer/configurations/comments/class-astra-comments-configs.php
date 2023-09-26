@@ -85,7 +85,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'type'       => 'control',
 					'section'  => 'section-blog-single',
 					'priority' => 20,
-					'title'      => __( 'Location', 'astra' ),
+					'title'      => __( 'Form Position', 'astra' ),
 					'control'    => 'ast-selector',
 					'choices'    => array(
 						'below' => __( 'Below Comments', 'astra' ),
