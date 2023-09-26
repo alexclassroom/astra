@@ -3370,6 +3370,32 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css      .= astra_parse_css( $single_blog_css, astra_get_tablet_breakpoint( '', 1 ) );
 			endif;
 
+			// Blog Layouts ~ Note : Only for free version as its static.
+
+			$blog_layout     = astra_get_option( 'blog-layout' );
+			$blog_layout_css = '';
+
+			if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+				if ( 'layout-4' === $blog_layout ) {
+					$blog_layout_css = array(
+						'.ast-article-post .post-thumb-img-content img' => array(
+							'aspect-ratio' => $aspect_ratio,
+							'width'        => $with_aspect_img_width,
+						),
+					);
+				}
+
+				if ( 'layout-5' === $blog_layout ) {
+
+				}
+
+				if ( 'layout-6' === $blog_layout) {
+
+				}
+
+				$parse_css .= astra_parse_css( $blog_layout_css );
+			}
+
 			// Blog Archive Featured Image.
 			if ( $aspect_ratio && $with_aspect_img_width ) {
 
