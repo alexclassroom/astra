@@ -4217,8 +4217,9 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 1.6em;
 }
 
-.post-content > .cat-links, .post-content > .tags-links {
+.post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
   display: block;
+  margin-bottom: 1em;
 }
 
 .read-more {

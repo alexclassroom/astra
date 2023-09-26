@@ -34,8 +34,9 @@
 }
 
 .post-content {
-	> .cat-links, > .tags-links {
+	> .cat-links, > .tags-links, > .read-more {
 		display: block;
+		margin-bottom: 1em;
 	}
 }
 
