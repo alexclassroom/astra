@@ -81,35 +81,36 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				);
 
 				$blog_meta_choices = array(
-					'comments' => __( 'Comments', 'astra' ),
-					'category' => array(
+					'comments'  => __( 'Comments', 'astra' ),
+					'category'  => array(
 						'clone'       => false,
 						'is_parent'   => true,
 						'main_index'  => 'category',
 						'clone_limit' => 1,
 						'title'       => __( 'Categories', 'astra' ),
 					),
-					'author'   => array(
+					'author'    => array(
 						'clone'       => false,
 						'is_parent'   => true,
 						'main_index'  => 'author',
 						'clone_limit' => 1,
 						'title'       => __( 'Author', 'astra' ),
 					),
-					'date'     => array(
+					'date'      => array(
 						'clone'       => false,
 						'is_parent'   => true,
 						'main_index'  => 'date',
 						'clone_limit' => 1,
 						'title'       => __( 'Published Date', 'astra' ),
 					),
-					'tag'      => array(
+					'tag'       => array(
 						'clone'       => false,
 						'is_parent'   => true,
 						'main_index'  => 'tag',
 						'clone_limit' => 1,
 						'title'       => __( 'Tags', 'astra' ),
 					),
+					'read-time' => __( 'Read Time', 'astra' ),
 				);
 
 			} else {
@@ -142,12 +143,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					),
 					'tag'      => __( 'Tags', 'astra' ),
 				);
-			}
-
-			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$blog_meta_choices['read-time'] = __( 'Last updated', 'astra' );
 			}
 
 			$_configs = array(
