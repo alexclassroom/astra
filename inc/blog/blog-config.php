@@ -134,7 +134,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 				case 'author':
 					$author_prefix_label = 'single-post' === $render_by ? astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) ) : astra_default_strings( 'string-blog-meta-author-by', false );
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= 'single-post' === $render_by ? astra_author_avatar() : '' . esc_html( $author_prefix_label ) . astra_post_author();
+					$output_str .= 'single-post' === $render_by ? astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author() : '' . esc_html( $author_prefix_label ) . astra_post_author();
 					break;
 
 				case 'date':
