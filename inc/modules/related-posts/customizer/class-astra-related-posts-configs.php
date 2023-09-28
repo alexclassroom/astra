@@ -231,6 +231,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				),
 				'section'     => 'section-blog-single',
 				'title'       => __( 'Excerpt Word Count', 'astra' ),
+				'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
 				'priority'    => 12,
 				'input_attrs' => array(
 					'min'  => 0,

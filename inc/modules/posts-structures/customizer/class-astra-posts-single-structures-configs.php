@@ -291,6 +291,13 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 			}
 
 			$structure_sub_controls = array();
+			$structure_sub_controls[ $title_section . '-meta' ] = array(
+				'clone'       => false,
+				'is_parent'   => true,
+				'main_index'  => $title_section . '-meta',
+				'clone_limit' => 2,
+				'title'       => __( 'Meta', 'astra' ),
+			);
 			// Add featured as background sub-control.
 			$structure_sub_controls[ $title_section . '-image' ] = array(
 				'clone'       => false,
@@ -458,7 +465,6 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'choices'           => array_merge(
 						array(
 							$title_section . '-title'      => __( 'Title', 'astra' ),
-							$title_section . '-meta'       => __( 'Meta', 'astra' ),
 							$title_section . '-breadcrumb' => __( 'Breadcrumb', 'astra' ),
 							$title_section . '-excerpt'    => __( 'Excerpt', 'astra' ),
 						),
@@ -839,12 +845,15 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				 * Option: Meta Data Separator.
 				 */
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata-separator]',
+					'name'       => $title_section . '-metadata-separator',
 					'default'    => astra_get_option( $title_section . '-metadata-separator', '/' ),
-					'type'       => 'control',
-					'control'    => 'ast-selector',
+					'type'       => 'sub-control',
+					'transport'  => 'postMessage',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'linked'     => $title_section . '-meta',
 					'section'    => $title_section,
-					'priority'   => 26,
+					'priority'   => 10,
+					'control'    => 'ast-selector',
 					'title'      => __( 'Meta Items Divider', 'astra' ),
 					'choices'    => array(
 						'/' => '/',
@@ -853,19 +862,8 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 						'•' => '•',
 						'none' => __( 'None', 'astra' ),
 					),
-					'context'   => array(
-						Astra_Builder_Helper::$general_tab_config,
-						'relation' => 'AND',
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
-							'operator' => 'contains',
-							'value'    => $title_section . '-meta',
-						),
-					),
-					'divider'           => array( 'ast_class' => 'ast-bottom-spacing' ),
-					'transport'  => 'postMessage',
-					'renderAs'   => 'text',
 					'responsive' => false,
+					'renderAs'   => 'text',
 				),
 
 				/**
