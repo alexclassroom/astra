@@ -430,6 +430,61 @@ function astra_comments_css( $dynamic_css ) {
 			);
 		}
 
+		if ( false ) {
+			$dynamic_css .= '
+				.ast-comment-cite-wrap cite a {
+					font-weight: 600;
+					font-size: 16px;
+				}
+				span.ast-reply-link {
+					order: 1;
+				}
+				span.ast-edit-link {
+					order: 2;
+					margin-left: 16px;
+				}
+				a.comment-edit-link, a.comment-reply-link {
+					font-size: 14px;
+					transition: all 0.2s;
+				}
+				header.ast-comment-meta {
+					text-transform: inherit;
+				}
+				.ast-comment-list .children {
+					margin-top: 3em;
+				}
+				@media(min-width: ' . astra_get_mobile_breakpoint( '', 1 ) . 'px) {
+					header.ast-comment-meta {
+						display: flex;
+						width: 100%;
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
+					a.comment-reply-link {
+						padding: 0px 10px;
+						border-radius: 3px;
+						display: block;
+						height: 25px;
+						border: none;
+					}
+					.ast-comment-time {
+						display: flex;
+						margin-left: auto;
+					}
+					section.ast-comment-content.comment {
+						padding-left: 70px;
+					}
+					.ast-comment:hover .comment-reply-link {
+						background: ' . astra_get_option( 'theme-color' ) . ';
+						color: #fff;
+					}
+					.ast-comment:hover a.comment-edit-link {
+						text-decoration: underline;
+					}
+				}
+			';
+		}
+
 		return $dynamic_css .= astra_parse_css( $global_button_comment_tablet, '', astra_get_tablet_breakpoint() );
 	}
 	return $dynamic_css;
