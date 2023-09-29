@@ -308,7 +308,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 					'control'     => 'ast-select',
 					'choices'     => astra_get_site_image_sizes(),
-					'description' => __( 'Note: Image Size & Ratio won\'t work if Image Position set as Background.', 'astra' ),
 				),
 
 				/**

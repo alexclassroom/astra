@@ -27,7 +27,7 @@ const NumberComponent = (props) => {
 	}
 
 	const [value, setValue] = useState(
-		defaultValue ? defaultValue : defaultFallback
+		defaultValue ? parseInt(defaultValue) : defaultFallback
 	);
 	const [ numberState, setNumberState ] = useState( defaultValue );
 
