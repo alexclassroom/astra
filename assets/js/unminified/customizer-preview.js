@@ -36,6 +36,16 @@ function astra_font_size_rem( size, with_rem, device ) {
 	return css;
 }
 
+/**
+ * Refresh customizer iframe.
+ */
+function astra_refresh_customizer( control ) {
+	wp.customize( control, function( value ) {
+		value.bind( function( value ) {
+			wp.customize.preview.send( 'refresh' );
+		} );
+	} );
+}
 
 /**
  * Apply CSS for the element
@@ -1754,6 +1764,20 @@ function hasWordPressWidgetBlockEditor() {
         'color',
         '.ast-site-identity .site-description'
     );
+
+	astra_refresh_customizer( 'astra-settings[related-metadata-separator]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-pre-scale]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-width]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-height]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-size]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-prefix-label]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-avatar]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-avatar-size]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-meta-date-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-date-format]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-category-style]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-tag-style]' );
 
 	function astraHandleButtonPresetPreview( btnSelector ) {
 

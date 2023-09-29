@@ -73,21 +73,21 @@ if ( ! class_exists( 'Astra_Lifter_Container_Configs' ) ) {
 				 * Option: Content Style Option.
 				 */
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[lifterlms-content-style]',
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'section'    => $section,
-					'default'    => astra_get_option( 'lifterlms-content-style', 'default' ),
-					'priority'   => 1,
-					'title'      => __( 'Container Style', 'astra' ),
-					'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'choices'    => array(
+					'name'        => ASTRA_THEME_SETTINGS . '[lifterlms-content-style]',
+					'type'        => 'control',
+					'control'     => 'ast-selector',
+					'section'     => $section,
+					'default'     => astra_get_option( 'lifterlms-content-style', 'default' ),
+					'priority'    => 1,
+					'title'       => __( 'Container Style', 'astra' ),
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+					'choices'     => array(
 						'default' => 'Default',
 						'unboxed' => 'Unboxed',
 						'boxed'   => 'Boxed',
 					),
-					'renderAs'   => 'text',
-					'responsive' => false,
+					'renderAs'    => 'text',
+					'responsive'  => false,
 				),
 			);
 

@@ -43,7 +43,7 @@ if ( ! class_exists( 'Astra_Sidebar_Layout_Configs' ) ) {
 					'section'           => 'section-sidebars',
 					'default'           => astra_get_option( 'site-sidebar-layout' ),
 					'priority'          => 5,
-					'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 					'title'             => __( 'Default Layout', 'astra' ),
 					'choices'           => array(
 						'no-sidebar'    => array(

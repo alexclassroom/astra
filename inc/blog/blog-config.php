@@ -50,7 +50,7 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 			$tax_badge_selector = '';
 			if ( '' !== $badge_style ) {
 				$tax_badge_selector = 'badge' === $badge_style ? 'ast-button ast-badge-tax' : 'ast-underline-text';
-				$separator = 'badge' === $badge_style ? '' : $separator;
+				$separator          = 'badge' === $badge_style ? '' : $separator;
 			}
 
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -59,8 +59,8 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 		}
 
 		$join_separator = 'badge' === $badge_style ? ' ' : ', ';
-		$all_terms  = join( $join_separator, $term_links );
-		$output_str = '<span class="ast-terms-link">' . $all_terms . '</span>';
+		$all_terms      = join( $join_separator, $term_links );
+		$output_str     = '<span class="ast-terms-link">' . $all_terms . '</span>';
 
 		return ( 1 != $loop_count ) ? ' ' . $separator . ' ' . $output_str : $output_str;
 	}
@@ -90,13 +90,21 @@ function astra_get_author_id() {
  * Function to get Author Avatar.
  *
  * @since x.x.x
+ * @param string $get_for Get for.
  * @return mixed $avatar Author Avatar.
  */
-function astra_author_avatar() {
+function astra_author_avatar( $get_for = 'single-post' ) {
 	$avatar = '';
-	if ( is_singular() && astra_get_option( 'ast-dynamic-single-' . get_post_type() . '-author-avatar', false ) ) {
-		$avatar_image_size = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar-size', 30 );
-		$avatar = '<span class="ast-author-avatar">' . get_avatar( astra_get_author_id(), ( 2 * $avatar_image_size ) ) . '</span>';
+	if ( is_singular() ) {
+		if ( 'single-post' === $get_for && astra_get_option( 'ast-dynamic-single-' . get_post_type() . '-author-avatar', false ) ) {
+			$avatar_image_size = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar-size', 30 );
+			$avatar            = '<span class="ast-author-avatar">' . get_avatar( astra_get_author_id(), ( 2 * $avatar_image_size ) ) . '</span>';
+		} elseif ( 'related-post' === $get_for && astra_get_option( 'related-posts-author-avatar', false ) ) {
+			$avatar_image_size = astra_get_option( 'related-posts-author-avatar-size', 30 );
+			$avatar            = '<span class="ast-author-avatar">' . get_avatar( astra_get_author_id(), ( 2 * $avatar_image_size ) ) . '</span>';
+		} else {
+			$avatar = '';
+		}
 	}
 	return $avatar;
 }
@@ -132,14 +140,22 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 			switch ( $meta_value ) {
 
 				case 'author':
-					$author_prefix_label = 'single-post' === $render_by ? astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) ) : astra_default_strings( 'string-blog-meta-author-by', false );
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= 'single-post' === $render_by ? astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author() : '' . esc_html( $author_prefix_label ) . astra_post_author();
+					if ( 'single-post' === $render_by ) {
+						$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+						$output_str         .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
+					} elseif ( 'related-posts' === $render_by ) {
+						$author_prefix_label = astra_get_option( 'related-posts-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+						$output_str         .= astra_author_avatar( 'related-post' ) . esc_html( $author_prefix_label ) . astra_post_author();
+					} else {
+						$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+					}
 					break;
 
 				case 'date':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= astra_post_date();
+					$get_for     = 'related-posts' === $render_by ? 'related-post' : 'single-post';
+					$output_str .= astra_post_date( $get_for );
 					break;
 
 				case 'category':
@@ -184,15 +200,23 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 /**
  * Get post format as per new configurations set in customizer.
  *
+ * @param string $get_for Get for.
  * @return string HTML markup for date span.
  * @since 4.1.0
  */
-function astra_get_dynamic_post_format() {
-	$post_type          = strval( get_post_type() );
-	$is_singular        = is_singular() ? true : false;
-	$date_format_option = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-date-format', '' ) : astra_get_option( 'blog-meta-date-format', '' );
-	$date_type          = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-meta-date-type', 'published' ) : astra_get_option( 'blog-meta-date-type', 'published' );
-	$date_format        = apply_filters( 'astra_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+function astra_get_dynamic_post_format( $get_for = 'single-post' ) {
+	$is_singular = is_singular() ? true : false;
+
+	if ( 'related-post' === $get_for ) {
+		$date_format_option = astra_get_option( 'related-posts-date-format', '' );
+		$date_type          = astra_get_option( 'related-posts-meta-date-type', 'published' );
+		$date_format        = apply_filters( 'astra_related_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+	} else {
+		$post_type          = strval( get_post_type() );
+		$date_format_option = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-date-format', '' ) : astra_get_option( 'blog-meta-date-format', '' );
+		$date_type          = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-meta-date-type', 'published' ) : astra_get_option( 'blog-meta-date-type', 'published' );
+		$date_format        = apply_filters( 'astra_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+	}
 
 	$published_date = strval( get_the_date( $date_format ) );
 	$modified_date  = strval( get_the_modified_date( $date_format ) );
@@ -227,12 +251,13 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 	/**
 	 * Function to get Date of Post
 	 *
+	 * @param $get_for Get for single/related post/etc.
 	 * @return html                Markup.
 	 */
-	function astra_post_date() {
+	function astra_post_date( $get_for = 'single-post' ) {
 		$output  = '';
 		$output .= '<span class="posted-on">';
-		$output .= astra_get_dynamic_post_format();
+		$output .= astra_get_dynamic_post_format( $get_for );
 		$output .= '</span>';
 		return apply_filters( 'astra_post_date', $output );
 	}

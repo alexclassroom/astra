@@ -72,20 +72,20 @@ if ( ! class_exists( 'Astra_Site_Container_Layout_Configs' ) ) {
 				 * Option: Global Content Style.
 				 */
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[site-content-style]',
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'section'    => 'section-container-layout',
-					'default'    => astra_get_option( 'site-content-style', 'boxed' ),
-					'priority'   => 9,
-					'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'title'      => __( 'Container Style', 'astra' ),
-					'choices'    => array(
+					'name'        => ASTRA_THEME_SETTINGS . '[site-content-style]',
+					'type'        => 'control',
+					'control'     => 'ast-selector',
+					'section'     => 'section-container-layout',
+					'default'     => astra_get_option( 'site-content-style', 'boxed' ),
+					'priority'    => 9,
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+					'title'       => __( 'Container Style', 'astra' ),
+					'choices'     => array(
 						'unboxed' => __( 'Unboxed', 'astra' ),
 						'boxed'   => __( 'Boxed', 'astra' ),
 					),
-					'responsive' => false,
-					'renderAs'   => 'text',
+					'responsive'  => false,
+					'renderAs'    => 'text',
 				),
 
 				/**

@@ -62,7 +62,7 @@ if ( ! class_exists( 'Astra_Woo_Shop_Sidebar_Configs' ) ) {
 							'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
 

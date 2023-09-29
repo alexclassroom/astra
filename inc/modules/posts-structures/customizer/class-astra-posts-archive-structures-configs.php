@@ -107,22 +107,22 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 			 * Option: Archive Content Style.
 			 */
 			array(
-				'name'       => ASTRA_THEME_SETTINGS . '[archive-' . $post_type . '-content-style]',
-				'type'       => 'control',
-				'control'    => 'ast-selector',
-				'section'    => $parent_section,
-				'default'    => astra_get_option( 'archive-' . $post_type . '-content-style', 'default' ),
-				'priority'   => 5,
-				'title'      => __( 'Container Style', 'astra' ),
-				'choices'    => array(
+				'name'        => ASTRA_THEME_SETTINGS . '[archive-' . $post_type . '-content-style]',
+				'type'        => 'control',
+				'control'     => 'ast-selector',
+				'section'     => $parent_section,
+				'default'     => astra_get_option( 'archive-' . $post_type . '-content-style', 'default' ),
+				'priority'    => 5,
+				'title'       => __( 'Container Style', 'astra' ),
+				'choices'     => array(
 					'default' => 'Default',
 					'unboxed' => 'Unboxed',
 					'boxed'   => 'Boxed',
 				),
-				'responsive' => false,
-				'renderAs'   => 'text',
-				'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-				'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'responsive'  => false,
+				'renderAs'    => 'text',
+				'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 			),
 
 			/**
@@ -137,7 +137,7 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 				'default'           => astra_get_option( 'archive-' . $post_type . '-sidebar-layout', 'default' ),
 				'priority'          => 5,
 				'title'             => __( 'Sidebar Layout', 'astra' ),
-				'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+				'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 				'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				'choices'           => array(
 					'default'       => array(

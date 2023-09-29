@@ -85,7 +85,7 @@ if ( ! class_exists( 'Astra_Lifter_Sidebar_Configs' ) ) {
 							'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
 
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Astra_Lifter_Sidebar_Configs' ) ) {
 							'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'     => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
 					'divider'           => $lifter_lms_section_divider ? array( 'ast_class' => 'ast-section-spacing ast-top-section-divider' ) : array( 'ast_class' => 'ast-section-spacing' ),
 				),
 

@@ -65,22 +65,22 @@ if ( ! class_exists( 'Astra_Woo_Shop_Container_Configs' ) ) {
 				 * Option: Content Style Option.
 				 */
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[woocommerce-content-style]',
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'section'    => 'section-woo-general',
-					'default'    => astra_get_option( 'woocommerce-content-style', 'default' ),
-					'priority'   => 5,
-					'title'      => __( 'Container Style', 'astra' ),
-					'description'     => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'choices'    => array(
+					'name'        => ASTRA_THEME_SETTINGS . '[woocommerce-content-style]',
+					'type'        => 'control',
+					'control'     => 'ast-selector',
+					'section'     => 'section-woo-general',
+					'default'     => astra_get_option( 'woocommerce-content-style', 'default' ),
+					'priority'    => 5,
+					'title'       => __( 'Container Style', 'astra' ),
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+					'choices'     => array(
 						'default' => 'Default',
 						'unboxed' => 'Unboxed',
 						'boxed'   => 'Boxed',
 					),
-					'renderAs'   => 'text',
-					'responsive' => false,
-					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'renderAs'    => 'text',
+					'responsive'  => false,
+					'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				),
 			);
 

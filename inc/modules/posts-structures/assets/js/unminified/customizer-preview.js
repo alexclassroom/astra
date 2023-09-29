@@ -50,14 +50,6 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 	} );
 }
 
-function astra_refresh_customizer( control ) {
-	wp.customize( control, function( value ) {
-		value.bind( function( value ) {
-			wp.customize.preview.send( 'refresh' );
-		} );
-	} );
-}
-
 ( function( $ ) {
 
 	var postTypesCount = AstraPostStrcturesData.post_types.length || false,

@@ -1231,7 +1231,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'margin-bottom' => astra_responsive_spacing( $single_post_outside_spacing, 'bottom', 'desktop' ),
 				),
 				'.ast-narrow-container.single.ast-separate-container .post-navigation' => array(
-					'margin-top'    => '0',
+					'margin-top' => '0',
 				),
 				'.ast-left-sidebar.ast-single-post #primary, .ast-right-sidebar.ast-single-post #primary, .ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary, .ast-narrow-container.ast-single-post #primary' => array(
 					'padding-left'  => astra_responsive_spacing( $single_post_outside_spacing, 'left', 'desktop' ),
@@ -1894,11 +1894,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'line-height' => 'inherit',
 					),
 				);
-				if ( ! Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ) {
-					$default_layout_update_css[ '.ast-separate-container .comment-form-position-above .comment-respond' ] = array(
+				if ( ! self::astra_check_4_4_0_compatibility() ) {
+					$default_layout_update_css['.ast-separate-container .comment-form-position-above .comment-respond'] = array(
 						'margin-bottom' => '2em',
 					);
-					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry'] = array(
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
 						'margin-bottom' => '2em',
 					);
 				}

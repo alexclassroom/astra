@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 }
 
 $comment_form_position = astra_get_option( 'comment-form-position', 'below' );
-$container_selector = 'outside' === astra_get_option( 'comments-box-placement' ) ? 'ast-container--' . astra_get_option( 'comments-box-container-width', 'default' ) : '';
+$container_selector    = 'outside' === astra_get_option( 'comments-box-placement' ) ? 'ast-container--' . astra_get_option( 'comments-box-container-width', 'default' ) : '';
 ?>
 
 <div id="comments" class="comments-area comment-form-position-<?php echo esc_attr( $comment_form_position ); ?> <?php echo esc_attr( $container_selector ); ?>">
@@ -102,9 +102,9 @@ $container_selector = 'outside' === astra_get_option( 'comments-box-placement' )
 	<?php endif; ?>
 
 	<?php
-		if ( 'below' === $comment_form_position ) {
-			comment_form();
-		}
+	if ( 'below' === $comment_form_position ) {
+		comment_form();
+	}
 	?>
 
 	<?php astra_comments_after(); ?>

@@ -477,7 +477,7 @@ function astra_banner_elements_order( $structure = array() ) {
 
 			case 'single-image':
 				$featured_background = astra_get_option( 'ast-dynamic-single-' . $post_type . '-featured-as-background', false );
-				$image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-position', 'inside' );
+				$image_position      = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-position', 'inside' );
 
 				if ( ( 'layout-2' === $layout_type && 'inside' === $image_position && false === $featured_background ) || 'layout-1' === $layout_type ) {
 					do_action( 'astra_blog_single_featured_image_before' );
@@ -488,7 +488,7 @@ function astra_banner_elements_order( $structure = array() ) {
 
 			case 'single-taxonomy':
 				do_action( 'astra_single_post_banner_taxonomies_before' );
-				echo astra_get_dynamic_taxonomy( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy', 1, astra_get_option( 'ast-dynamic-single-' . $post_type .'-metadata-separator' ), astra_get_option( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy-style', '' ), true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo astra_get_dynamic_taxonomy( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy', 1, astra_get_option( 'ast-dynamic-single-' . $post_type . '-metadata-separator' ), astra_get_option( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy-style', '' ), true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				do_action( 'astra_single_post_banner_taxonomies_after' );
 				break;
 
@@ -539,8 +539,8 @@ function astra_single_content_image() {
 	if ( is_null( $post ) ) {
 		return;
 	}
-	$post_type = $post->post_type;
-	$layout_type = astra_get_option( 'ast-dynamic-single-' . $post_type . '-layout', 'layout-1' );
+	$post_type      = $post->post_type;
+	$layout_type    = astra_get_option( 'ast-dynamic-single-' . $post_type . '-layout', 'layout-1' );
 	$image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-position', 'inside' );
 
 	if ( 'layout-2' === $layout_type && 'outside' === $image_position ) {

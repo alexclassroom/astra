@@ -260,7 +260,7 @@ if ( ! class_exists( 'Astra_After_Setup_Theme' ) ) {
 			if ( $core_yt_block ) {
 				if ( astra_strposa( $url, $allowed_providers ) && $add_astra_oembed_wrapper ) {
 					$embed_html = wp_oembed_get( $url );
-					$html = false !== $embed_html ? '<div class="wp-block-embed__wrapper"> <div class="ast-oembed-container" style="height: 100%;">' . $embed_html . '</div> </div>' : '';
+					$html       = false !== $embed_html ? '<div class="wp-block-embed__wrapper"> <div class="ast-oembed-container" style="height: 100%;">' . $embed_html . '</div> </div>' : '';
 				}
 			} else {
 				if ( astra_strposa( $url, $allowed_providers ) && $add_astra_oembed_wrapper ) {
