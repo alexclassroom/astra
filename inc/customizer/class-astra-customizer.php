@@ -586,6 +586,10 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 					$configuration['value'] = $val;
 					break;
 
+				case 'ast-select-multi':
+					$configuration['value'] = $val;
+					break;
+
 			} // Switch End.
 
 			if ( isset( $configuration['id'] ) ) {
