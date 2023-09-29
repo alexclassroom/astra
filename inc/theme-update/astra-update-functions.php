@@ -1433,8 +1433,8 @@ function astra_theme_background_updater_4_2_2() {
  */
 function astra_theme_background_updater_4_4_0() {
 	$theme_options = get_option( 'astra-settings', array() );
-	if ( ! isset( $theme_options['v4-4-0-backward-option'] ) ) {
-		$theme_options['v4-4-0-backward-option'] = false;
+	if ( ! isset( $theme_options['single_core_improvement'] ) ) {
+		$theme_options['single_core_improvement'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}
 }

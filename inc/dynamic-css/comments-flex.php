@@ -154,7 +154,7 @@ function astra_comments_css( $dynamic_css ) {
             background-color: #fff;
           }
 
-          .ast-separate-container .ast-comment-list li.depth-1 .children li {
+          .ast-separate-container .ast-comment-list li.depth-1 .children li, .ast-narrow-container .ast-comment-list li.depth-1 .children li {
             padding-bottom: 0;
             padding-top: 0;
             margin-bottom: 0;
@@ -175,12 +175,12 @@ function astra_comments_css( $dynamic_css ) {
             margin-bottom: 0;
           }
 
-          .ast-separate-container .ast-comment-list .bypostauthor {
+          .ast-separate-container .ast-comment-list .bypostauthor, .ast-narrow-container .ast-comment-list .bypostauthor {
             padding: 2em;
             margin-bottom: 1em;
           }
 
-          .ast-separate-container .ast-comment-list .bypostauthor li {
+          .ast-separate-container .ast-comment-list .bypostauthor li, .ast-narrow-container .ast-comment-list .bypostauthor li {
             background: transparent;
             margin-bottom: 0;
             padding: 0 0 0 2em;
@@ -317,9 +317,6 @@ function astra_comments_css( $dynamic_css ) {
                 justify-content: right;
                 padding: 0 3.4em 1.60em;
             }
-            .ast-comment-time .timendate{
-                margin-right: 0.5em;
-            }
             .comments-area #wp-comment-cookies-consent {
                 margin-right: 10px;
             }
@@ -430,16 +427,16 @@ function astra_comments_css( $dynamic_css ) {
 			);
 		}
 
-		if ( false ) {
+		if ( Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ) {
 			$dynamic_css .= '
 				.ast-comment-cite-wrap cite a {
 					font-weight: 600;
-					font-size: 16px;
+					font-size: 18px;
 				}
-				span.ast-reply-link {
+				.logged-in span.ast-reply-link {
 					order: 1;
 				}
-				span.ast-edit-link {
+				.logged-in span.ast-edit-link {
 					order: 2;
 					margin-left: 16px;
 				}
@@ -453,6 +450,12 @@ function astra_comments_css( $dynamic_css ) {
 				.ast-comment-list .children {
 					margin-top: 3em;
 				}
+				.ast-page-builder-template .ast-comment-list .children {
+					margin-top: 0em;
+				}
+				.ast-page-builder-template .ast-comment-meta {
+					padding: 0 22px;
+				}
 				@media(min-width: ' . astra_get_mobile_breakpoint( '', 1 ) . 'px) {
 					header.ast-comment-meta {
 						display: flex;
@@ -461,11 +464,14 @@ function astra_comments_css( $dynamic_css ) {
 						padding-bottom: 0;
 					}
 					a.comment-reply-link {
-						padding: 0px 10px;
+						padding: 0px 8px 0 6px;
 						border-radius: 3px;
 						display: block;
 						height: 25px;
 						border: none;
+					}
+					.ast-separate-container .ast-comment-list li.depth-1, .hentry, .ast-narrow-container .ast-comment-list li.depth-1, .hentry {
+						margin-bottom: 0;
 					}
 					.ast-comment-time {
 						display: flex;
@@ -473,6 +479,7 @@ function astra_comments_css( $dynamic_css ) {
 					}
 					section.ast-comment-content.comment {
 						padding-left: 70px;
+						margin-top: -10px;
 					}
 					.ast-comment:hover .comment-reply-link {
 						background: ' . astra_get_option( 'theme-color' ) . ';
@@ -481,6 +488,43 @@ function astra_comments_css( $dynamic_css ) {
 					.ast-comment:hover a.comment-edit-link {
 						text-decoration: underline;
 					}
+					svg.ast-reply-icon {
+						fill: ' . astra_get_option( 'theme-color' ) . ';
+						margin-right: 5px;
+						padding-top: 2px;
+						transition: all 0.2s;
+					}
+					.ast-comment:hover svg.ast-reply-icon {
+						fill: #fff;
+					}
+				}
+				.ast-comment-content.comment p {
+					margin-bottom: 16px;
+				}
+				.ast-comment-list .ast-comment-edit-reply-wrap {
+					justify-content: flex-start;
+				}
+				.ast-separate-container .ast-comment-list .comment + .comment, .ast-narrow-container .ast-comment-list .comment + .comment {
+					padding-top: 20px;
+				}
+				.comment-awaiting-moderation {
+					margin-top: 20px;
+				}
+				.comment-respond {
+					border-' . esc_attr( 'below' === astra_get_option( 'comment-form-position' ) ? 'top' : 'bottom' ) . ': 1px solid var(--ast-border-color);
+				}
+				.ast-comment-list > .comment:last-child .ast-comment {
+					border: none;
+				}
+				.ast-page-builder-template .comment-respond {
+					border-top: none;
+					padding-bottom: 2em;
+				}
+			';
+		} else {
+			$dynamic_css .= '
+				.ast-comment-time .timendate{
+					margin-right: 0.5em;
 				}
 			';
 		}

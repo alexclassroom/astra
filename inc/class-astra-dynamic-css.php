@@ -1854,7 +1854,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'#secondary h2'                   => array(
 						'font-size' => '1.7rem',
 					),
-					'.ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-comment-list li.depth-1, .ast-separate-container .comment-respond' => array(
+					'.ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1, .ast-separate-container .comment-respond, .ast-narrow-container .comment-respond' => array(
 						'padding' => '3em',
 					),
 
@@ -1864,13 +1864,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 					'.ast-article-single .wp-block-post-template-is-layout-grid' => array(
 						'padding-' . $ltr_left => '0',
-					),
-
-					'.ast-separate-container .ast-comment-list li.depth-1, .hentry' => array(
-						'margin-bottom' => '2em',
-					),
-					'.ast-separate-container .comment-form-position-above .comment-respond' => array(
-						'margin-bottom' => '2em',
 					),
 					'.ast-separate-container .ast-archive-description, .ast-separate-container .ast-author-box' => array(
 						'border-bottom' => '1px solid var(--ast-border-color)',
@@ -1901,6 +1894,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'line-height' => 'inherit',
 					),
 				);
+				if ( ! Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ) {
+					$default_layout_update_css[ '.ast-separate-container .comment-form-position-above .comment-respond' ] = array(
+						'margin-bottom' => '2em',
+					);
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry'] = array(
+						'margin-bottom' => '2em',
+					);
+				}
 				/* Parse CSS from array() -> Desktop CSS */
 				$parse_css .= astra_parse_css( $default_layout_update_css );
 
@@ -5015,6 +5016,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		public static function astra_core_form_btns_styling() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
 			return apply_filters( 'astra_core_form_btns_styling', isset( $astra_settings['v4-2-2-core-form-btns-styling'] ) ? false : true );
+		}
+
+		/**
+		 * In x.x.x version we are having new stylings.
+		 * 1. Comments area refined.
+		 *
+		 * @return bool true|false.
+		 * @since x.x.x
+		 */
+		public static function astra_check_4_4_0_compatibility() {
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_get_option_single_core_improvement', isset( $astra_settings['single_core_improvement'] ) ? false : true );
 		}
 	}
 }
