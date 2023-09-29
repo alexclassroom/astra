@@ -126,7 +126,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'step' => 1,
 						'max'  => 500,
 					),
-					'divider'      => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'divider'      => array( 'ast_class' => ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ? 'ast-top-dotted-divider' : 'ast-top-section-divider' ),
 				),
 
 				/**
@@ -296,18 +296,18 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 * Option: Image Size.
 				 */
 				array(
-					'name'        => 'blog-image-size',
-					'default'     => astra_get_option( 'blog-image-size', 'large' ),
-					'parent'      => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
-					'section'     => 'section-blog',
-					'linked'      => 'image',
-					'type'        => 'sub-control',
-					'priority'    => 17,
-					'transport'   => 'postMessage',
-					'title'       => __( 'Image Size', 'astra' ),
-					'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
-					'control'     => 'ast-select',
-					'choices'     => astra_get_site_image_sizes(),
+					'name'      => 'blog-image-size',
+					'default'   => astra_get_option( 'blog-image-size', 'large' ),
+					'parent'    => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'   => 'section-blog',
+					'linked'    => 'image',
+					'type'      => 'sub-control',
+					'priority'  => 17,
+					'transport' => 'postMessage',
+					'title'     => __( 'Image Size', 'astra' ),
+					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'control'   => 'ast-select',
+					'choices'   => astra_get_site_image_sizes(),
 				),
 
 				/**
