@@ -228,7 +228,7 @@ function astra_get_category_list( $filter_name, $style_type_slug ) {
 	}
 
 	if ( $categories_list ) {
-		return '<span class="cat-links' . $style_type_class . '">' . $categories_list . '</span>';
+		return '<span class="ast-blog-single-element cat-links' . $style_type_class . '">' . $categories_list . '</span>';
 	} else {
 		return '';
 	}
@@ -269,7 +269,7 @@ function astra_get_tag_list( $filter_name, $style_type_slug ) {
 	}
 
 	if ( $tags_list ) {
-		return '<span class="tags-links' . $style_type_class . '">' . $tags_list . '</span>';
+		return '<span class="ast-blog-single-element tags-links' . $style_type_class . '">' . $tags_list . '</span>';
 	} else {
 		return '';
 	}
@@ -430,7 +430,7 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 			esc_html( '%s' ),
 			'<a class="' . esc_attr( implode( ' ', $read_more_classes ) ) . '" href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . ' ' . $read_more_text . '</a>'
 		);
-		$output    = '<p class="read-more"> ' . $post_link . '</p>';
+		$output    = '<p class="ast-blog-single-element read-more"> ' . $post_link . '</p>';
 
 		echo wp_kses_post( apply_filters( 'astra_post_link', $output, $output_filter ) );
 	}

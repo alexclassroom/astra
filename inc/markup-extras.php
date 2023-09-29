@@ -1588,13 +1588,18 @@ if ( ! function_exists( 'astra_the_excerpt' ) ) {
 		$excerpt_type = apply_filters( 'astra_excerpt_type', astra_get_option( 'blog-post-content' ) );
 
 		do_action( 'astra_the_excerpt_before', $excerpt_type );
-
-		if ( 'full-content' === $excerpt_type ) {
-			the_content();
-		} else {
-			the_excerpt();
-			add_filter( 'excerpt_more', '__return_false' );
-		}
+		?>
+			<div class="ast-excerpt-container ast-blog-single-element">
+				<?php
+					if ( 'full-content' === $excerpt_type ) {
+						the_content();
+					} else {
+						the_excerpt();
+						add_filter( 'excerpt_more', '__return_false' );
+					}
+				?>
+			</div>
+		<?php
 
 		do_action( 'astra_the_excerpt_after', $excerpt_type );
 	}

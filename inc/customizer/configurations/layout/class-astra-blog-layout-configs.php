@@ -52,11 +52,11 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 
 			$new_blog_layouts = array(
 				'blog-layout-4' => array(
-					'label' => __( 'List', 'astra' ),
+					'label' => __( 'Grid', 'astra' ),
 					'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-4', false ) : '',
 				),
 				'blog-layout-5' => array(
-					'label' => __( 'Grid', 'astra' ),
+					'label' => __( 'List', 'astra' ),
 					'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-5', false ) : '',
 				),
 				'blog-layout-6' => array(

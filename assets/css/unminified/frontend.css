@@ -2913,7 +2913,7 @@ input[type="color"]::-webkit-color-swatch {
 
 .post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: .8em;
 }
 
 .read-more {
@@ -2991,6 +2991,20 @@ input[type="color"]::-webkit-color-swatch {
   padding-left: 0;
   padding-right: 0;
   position: relative;
+}
+
+.post-thumb-img-content img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.blog-layout-5 .ast-blog-featured-section {
+  margin-bottom: 0;
+}
+
+.blog-layout-5 {
+  margin-bottom: 2em;
 }
 
 .blog .posted-on {
