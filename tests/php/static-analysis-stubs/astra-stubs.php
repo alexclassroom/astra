@@ -11199,6 +11199,13 @@ namespace {
         {
         }
         /**
+         * Get Page Background Toggle Options.
+         * @since x.x.x
+         */
+        public function get_page_bg_toggle_options()
+        {
+        }
+        /**
          * Checking the page headers are available and have some posts with it.
          *
          * @since 3.8.0
@@ -12352,13 +12359,13 @@ namespace {
     \define('ASTRA_THEME_SETTINGS', 'astra-settings');
     \define('ASTRA_THEME_DIR', \trailingslashit(\get_template_directory()));
     \define('ASTRA_THEME_URI', \trailingslashit(\esc_url(\get_template_directory_uri())));
-    \define('ASTRA_PRO_UPGRADE_URL', 'https://wpastra.com/pro/?utm_source=dashboard&utm_medium=free-theme&utm_campaign=upgrade-now');
-    \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', 'https://wpastra.com/pro/?utm_source=customizer&utm_medium=free-theme&utm_campaign=upgrade');
     /**
      * Minimum Version requirement of the Astra Pro addon.
      * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
      */
     \define('ASTRA_EXT_MIN_VER', '4.1.0');
+    \define('ASTRA_PRO_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'dashboard', 'free-theme', 'upgrade-now'));
+    \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'customizer', 'free-theme', 'upgrade'));
     /**
      * Astra Get Breadcrumb
      *
@@ -12467,6 +12474,17 @@ namespace {
     }
     \define('ASTRA_THEME_TRANSPARENT_HEADER_DIR', \ASTRA_THEME_DIR . 'inc/addons/transparent-header/');
     \define('ASTRA_THEME_TRANSPARENT_HEADER_URI', \ASTRA_THEME_URI . 'inc/addons/transparent-header/');
+    /**
+     * To avoid multiple Transparent color in submenu anchor tag.
+     * Old Users - Will not reflect directly.
+     * New Users - Will see the changes
+     *
+     * @return bool true|false.
+     * @since x.x.x
+     */
+    function astra_has_submenu_transperent_styling()
+    {
+    }
     /**
      * Dynamic CSS
      *
@@ -12778,6 +12796,15 @@ namespace {
      * @return void
      */
     function astra_single_content_image()
+    {
+    }
+    /**
+     * Blog Post Per Page
+     *
+     * @since x.x.x
+     * @param WP_Query $query Query.
+     */
+    function astra_blog_post_per_page($query)
     {
     }
     /**
@@ -15545,19 +15572,6 @@ namespace {
     {
     }
     /**
-     * Check whether widget specific config, dynamic CSS, preview JS needs to remove or not. Following cases considered while implementing this.
-     *
-     * 1. Is user is from old Astra setup.
-     * 2. Check if user is new but on lesser WordPress 5.8 versions.
-     * 3. User is new with block widget editor.
-     *
-     * @since 3.6.8
-     * @return boolean
-     */
-    function astra_remove_widget_design_options()
-    {
-    }
-    /**
      * Get Global Color Palettes
      *
      * @return array color palettes array.
@@ -16940,6 +16954,15 @@ namespace {
      * @return void
      */
     function astra_theme_background_updater_4_4_0()
+    {
+    }
+    /**
+     * Handle backward compatibility on version x.x.x
+     *
+     * @since x.x.x
+     * @return void
+     */
+    function astra_theme_background_updater_4_3_2()
     {
     }
     /**

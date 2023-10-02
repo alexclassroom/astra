@@ -284,7 +284,7 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 				'padding-left'  => '0',
 				'padding-right' => '0',
 			),
-			$selector . ' h1'             => array(
+			$selector . ' .ast-container h1'             => array(
 				'font-size' => astra_responsive_font( $banner_title_font_size, 'tablet' ),
 			),
 			$selector . ' *'              => array(
@@ -308,7 +308,7 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 				'margin-bottom'  => astra_responsive_spacing( $banner_margin, 'bottom', 'mobile' ),
 				'margin-left'    => astra_responsive_spacing( $banner_margin, 'left', 'mobile' ),
 			),
-			$selector . ' h1' => array(
+			$selector . ' .ast-container h1' => array(
 				'font-size' => astra_responsive_font( $banner_title_font_size, 'mobile' ),
 			),
 			$selector . ' *'  => array(

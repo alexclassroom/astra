@@ -11,6 +11,7 @@ import AstSelectorControl from './ast-selector.js';
 import svgIcons from '../../../../assets/svg/svgs.json';
 import { SelectControl, PanelBody, Modal } from '@wordpress/components';
 import parse from 'html-react-parser';
+import ResponsiveBackground from './responsive-background.js';
 
 const { __ } = wp.i18n;
 
@@ -24,6 +25,8 @@ const MetaSettings = props => {
 
     const openModal = () => setOpen( true );
     const closeModal = () => setOpen( false );
+
+    const [ showHelpText, setShowHelpText ] = useState( false );
 
 	const is_hide_content_layout_sidebar = astMetaParams.is_hide_content_layout_sidebar;
 
@@ -55,6 +58,11 @@ const MetaSettings = props => {
 
 	// Page header optins.
 	const pageHeaderOptions = Object.entries( astMetaParams.page_header_options ).map( ( [ key, name ] ) => {
+		return ( { label: name, value: key } );
+	} );
+
+	// Page header optins.
+	const pageBgToggleOptions = Object.entries( astMetaParams.page_bg_toggle_options ).map( ( [ key, name ] ) => {
 		return ( { label: name, value: key } );
 	} );
 
@@ -306,10 +314,10 @@ const MetaSettings = props => {
 												</section>
 											</td>
 										</tr>
-										{ bottomTableSpacing }
 										{/* Sticky Header Setting */}
 										{ 'disabled' !== props.meta['ast-main-header-display'] && astMetaParams.is_addon_activated && astMetaParams.sticky_addon_enabled &&
 											<>
+												{ bottomTableSpacing }
 												{ topTableSpacing }
 												<tr className="ast-advanced-hook-row">
 													<td className="ast-advanced-hook-row-heading">
@@ -328,11 +336,11 @@ const MetaSettings = props => {
 														</section>
 													</td>
 												</tr>
-												{ topTableSpacing }
 											</>
 										}
 										{ astMetaParams.is_addon_activated && astMetaParams.sticky_addon_enabled && 'enabled' == props.meta['stick-header-meta'] &&
 											<>
+											{ topTableSpacing }
 												<tr className="ast-advanced-hook-row">
 													<td className="ast-advanced-hook-row-heading">
 														<label> { astMetaParams.sticky_header_title }</label>
@@ -342,6 +350,75 @@ const MetaSettings = props => {
 															<div className="ast-sticky-header-options components-base-control__field">
 																{stickyHeadderOptions}
 															</div>
+														</section>
+													</td>
+												</tr>
+											</>
+										}
+
+										{/* Page Background */}
+										{ astMetaParams.is_addon_activated && astMetaParams.color_addon_enabled &&
+											<>
+											{ bottomTableSpacing }
+											{ topTableSpacing }
+												<tr className="ast-advanced-hook-row">
+													<td className="ast-advanced-hook-row-heading ast-show-help-text-container">
+														<label> { astMetaParams.ast_page_bg_title }</label>
+														<><i className="ast-control-tooltip dashicons dashicons-editor-help"></i>
+														{ undefined !== props.meta['ast-page-background-enabled'] && 'enabled' === props.meta['ast-page-background-enabled'] ?
+														<span className="ast-dashicons-custom-tooltip"> { astMetaParams.surface_color_help_text }</span> :
+														<span className="ast-dashicons-custom-tooltip" style={{bottom:'15px', top: 'unset'}}> { astMetaParams.surface_color_help_text }</span>
+														}
+														</>
+													</td>
+													<td className="ast-advanced-hook-row-content">
+														<section>
+
+															{/* Toggle for Page Background */}
+															<div className="components-base-control__field">
+																<AstSelectorControl
+																	metavalue = { ( undefined !== props.meta['ast-page-background-enabled'] && ''!== props.meta['ast-page-background-enabled'] ? props.meta['ast-page-background-enabled'] : 'default' ) }
+																	choices = { pageBgToggleOptions }
+																	id = { 'ast-page-background-enabled' }
+																	onChange={ ( val ) => {
+																		props.setMetaFieldValue( val, 'ast-page-background-enabled' );
+																	} }
+																/>
+															</div>
+
+															{/* Responsive Bg Control */}
+															{ undefined !== props.meta['ast-page-background-enabled'] && 'enabled' === props.meta['ast-page-background-enabled'] &&
+																<>
+																<div id="customize-control-astra-settings-site-layout-outside-bg-obj-responsive" className='customize-control customize-control-ast-responsive-background'>
+																	<ResponsiveBackground 
+																		metavalue = { ( undefined !== props.meta['ast-page-background-meta'] && ''!== props.meta['ast-page-background-meta'] ? props.meta['ast-page-background-meta'] : 'default' ) }
+																		control={ {
+																				'controlName' : 'ast-page-background-meta',
+																				'default' : astMetaParams.site_page_bg_meta_default,
+																				'ignore_responsive_btns' : false,
+																				'setMetaFieldValue' : props.setMetaFieldValue,
+																				'label' : astMetaParams.page_bg_dynamic_title,
+																				'description' : '',
+																			} }
+																		id = { 'ast-page-background-meta' }
+																	/>
+																</div>
+																<div id="customize-control-astra-settings-content-bg-obj-responsive" className='customize-control customize-control-ast-responsive-background'>
+																	<ResponsiveBackground 
+																		metavalue = { ( undefined !== props.meta['ast-content-background-meta'] && ''!== props.meta['ast-content-background-meta'] ? props.meta['ast-content-background-meta'] : 'default' ) }
+																		control={ {
+																				'controlName' : 'ast-content-background-meta',
+																				'default' : astMetaParams.content_page_bg_meta_default,
+																				'ignore_responsive_btns' : false,
+																				'setMetaFieldValue' : props.setMetaFieldValue,
+																				'label' : 'Content Background',
+																				'description' : '',
+																			} }
+																		id = { 'ast-content-background-meta' }
+																	/>
+																</div>
+																</>
+															}
 														</section>
 													</td>
 												</tr>
