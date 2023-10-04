@@ -204,7 +204,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'section'    => 'section-blog-single',
 				'priority'   => 10,
 				'control'    => 'ast-selector',
-				'title'      => __( 'Meta Items Divider', 'astra' ),
+				'title'      => __( 'Divider Type', 'astra' ),
 				'choices'    => array(
 					'/'    => '/',
 					'-'    => '-',
@@ -362,7 +362,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'type'      => 'sub-control',
 				'control'   => 'ast-text-input',
 				'section'   => 'section-blog-single',
-				'divider'   => array( 'ast_class' => 'ast-bottom-section-divider' ),
+				'divider'   => array( 'ast_class' => 'ast-bottom-dotted-divider ast-bottom-section-spacing' ),
 				'title'     => __( 'Prefix Label', 'astra' ),
 				'priority'  => 1,
 				'transport' => 'postMessage',

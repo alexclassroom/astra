@@ -75,33 +75,14 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 			selector = 'body .ast-single-entry-banner[data-post-type="' + postType + '"], header.entry-header';
 		}
 
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-date-format]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy-style]'
-		);
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-date-format]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy-style]' );
 
 		wp.customize( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar-size]', function( value ) {
 			value.bind( function( size ) {
@@ -190,20 +171,20 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-elements-gap]',
 			'margin-bottom',
-			' header.entry-header > *:not(:last-child), body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container > *:not(:last-child)',
+			'header.entry-header > *:not(:last-child), body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container > *:not(:last-child), header.entry-header .read-more, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .read-more',
 			'px'
 		);
 
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-banner-text-color]',
 			'color',
-			' header.entry-header *, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container *',
+			'header.entry-header *, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container *',
 		);
 
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-banner-title-color]',
 			'color',
-			' header.entry-header .entry-title, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .entry-title',
+			'header.entry-header .entry-title, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .entry-title',
 		);
 
 		astra_css(

@@ -307,10 +307,10 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				'title'       => __( 'Featured Image', 'astra' ),
 			);
 			// Add taxonomy in structural sub-control.
-			$structure_sub_controls[ $title_section . '-taxonomy' ] = array(
+			$structure_sub_controls[ $title_section . '-str-taxonomy' ] = array(
 				'clone'       => false,
 				'is_parent'   => true,
-				'main_index'  => $title_section . '-taxonomy',
+				'main_index'  => $title_section . '-str-taxonomy',
 				'clone_limit' => 2,
 				'title'       => __( 'Taxonomies', 'astra' ),
 			);
@@ -681,7 +681,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'name'      => $title_section . '-structural-taxonomy',
 					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
 					'default'   => astra_get_option( $title_section . '-structural-taxonomy' ),
-					'linked'    => $title_section . '-taxonomy',
+					'linked'    => $title_section . '-str-taxonomy',
 					'type'      => 'sub-control',
 					'control'   => 'ast-select',
 					'transport' => 'refresh',
@@ -699,7 +699,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'section'    => $title_section,
 					'default'    => astra_get_option( $title_section . '-structural-taxonomy-style', '' ),
 					'priority'   => 2,
-					'linked'     => $title_section . '-taxonomy',
+					'linked'     => $title_section . '-str-taxonomy',
 					'transport'  => 'refresh',
 					'title'      => __( 'Style', 'astra' ),
 					'choices'    => array(
@@ -750,7 +750,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'type'      => 'sub-control',
 					'control'   => 'ast-text-input',
 					'section'   => $title_section,
-					'divider'   => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'   => array( 'ast_class' => 'ast-bottom-dotted-divider ast-bottom-section-spacing' ),
 					'title'     => __( 'Prefix Label', 'astra' ),
 					'priority'  => 1,
 					'transport' => 'postMessage',
@@ -854,7 +854,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'section'    => $title_section,
 					'priority'   => 10,
 					'control'    => 'ast-selector',
-					'title'      => __( 'Meta Items Divider', 'astra' ),
+					'title'      => __( 'Divider Type', 'astra' ),
 					'choices'    => array(
 						'/'    => '/',
 						'-'    => '-',

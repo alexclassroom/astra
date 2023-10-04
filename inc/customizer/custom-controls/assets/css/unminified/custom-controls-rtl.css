@@ -1205,10 +1205,6 @@
 .ast-field-settings-modal .ast-color-btn-clear-wrap {
     left: 78px;
 }
-.ast-field-settings-modal .customize-control-ast-color.customize-control,
-.ast-field-settings-modal .customize-control-ast-color.customize-control:first-child {
-    margin-top: 25px;
-}
 .astra-color-picker-wrap .components-color-picker__inputs-wrapper {
 	min-width: unset;
 }
@@ -1903,12 +1899,17 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
 * CSS for ast-spacing attribute started.
 */
 
-.customize-control.ast-bottom-spacing {
+.customize-control.ast-bottom-spacing, .ast-field-settings-modal .customize-control.ast-bottom-spacing {
 	margin-bottom: 16px;
 }
-
-.customize-control.ast-top-spacing {
+.customize-control.ast-top-spacing, .ast-field-settings-modal .customize-control.ast-top-spacing {
 	margin-top: 16px;
+}
+li.customize-control.ast-bottom-section-spacing {
+	margin-bottom: 24px;
+}
+li.customize-control.ast-top-section-spacing {
+	margin-top: 24px;
 }
 
 /*
@@ -1955,6 +1956,9 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
     bottom: 25px;
 }
 
+.ast-top-dotted-divider > * {
+    margin-top: -5px !important;
+}
 
 /*
 * CSS for ast-section-divider attribute started.

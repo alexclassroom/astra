@@ -115,7 +115,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' > *:not(:last-child)'        => array(
+			$selector . ' > *:not(:last-child), ' . $selector . ' .read-more'        => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
 			$selector . ' .post-thumb-img-content'     => array(
@@ -192,7 +192,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			),
 			$selector . '[data-banner-layout="layout-2"]' => astra_get_responsive_background_obj( $custom_background, 'desktop' ),
 			$selector . ' .ast-container *'               => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
-			$selector . ' .ast-container > *:not(:last-child)' => array(
+			$selector . ' .ast-container > *:not(:last-child), ' . $selector . ' .read-more' => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
 			'.ast-page-builder-template ' . $selector . ' .ast-container' => array(

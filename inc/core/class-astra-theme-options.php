@@ -470,7 +470,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'mobile-unit'  => 'em',
 					),
 					// Single Comments.
-					'comments-box-placement'               => 'inside',
+					'comments-box-placement'               => 'outside',
 					'comment-form-position'                => 'below',
 					'comments-box-container-width'         => 'default',
 

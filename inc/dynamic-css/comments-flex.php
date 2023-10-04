@@ -72,7 +72,9 @@ function astra_comments_css( $dynamic_css ) {
             padding-bottom: ' . esc_attr( $padding_ast_comment_list ) . ';
             list-style: none;
           }
-
+		  .site-content article .comments-area {
+			border-top: 1px solid var(--ast-border-color);
+		}
           .ast-comment-list li {
             list-style: none;
           }
