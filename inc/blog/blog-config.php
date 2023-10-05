@@ -82,7 +82,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 			$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
-			if ( $divider_type ) {
+			if ( 'none' !== $divider_type ) {
 				$separator = $divider_type;
 			} else {
 				$separator = '';
