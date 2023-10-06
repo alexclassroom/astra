@@ -1752,10 +1752,6 @@ p.demo_store[data-position="bottom"],
   float: none;
 }
 
-.woocommerce-js a.added_to_cart {
-  display: none;
-}
-
 .woocommerce-js #reviews .woocommerce-Reviews-title {
   display: none;
 }
@@ -2892,6 +2888,10 @@ p.demo_store[data-position="bottom"],
 .woocommerce-js.single-product a.added_to_cart {
   padding: 0.4em 0.4em 0;
   display: inline-block;
+}
+
+.woocommerce a.added_to_cart {
+  display: none;
 }
 
 .woocommerce,

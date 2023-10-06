@@ -326,6 +326,10 @@ astra_refresh_customizer(
 );
 
 astra_refresh_customizer(
+    'astra-settings[blog-image-size]'
+);
+
+astra_refresh_customizer(
     'astra-settings[blog-image-ratio-pre-scale]'
 );
 
@@ -337,11 +341,11 @@ astra_refresh_customizer(
     'astra-settings[blog-image-custom-scale-height]'
 );
 
-wp.customize( 'astra-settings[blog-post-per-page]', function( setting ) {
-    setting.bind( function( single ) {
-        wp.customize.preview.send( 'refresh' );
-    });
-} );
+astra_refresh_customizer(
+    'astra-settings[blog-post-per-page]'
+);
+
+console.log('asdsad');
 
 // Global Typography Refresh - START
 const bodyFontFamily = [

@@ -1498,10 +1498,6 @@ p.demo_store,
 		float: none;
 	}
 
-	a.added_to_cart {
-		display: none;
-	}
-
 	/**
 	 * Reviews
 	 */
@@ -2528,6 +2524,12 @@ p.demo_store,
 	&.single-product a.added_to_cart {
 		padding: 0.4em 0.4em 0;
 		display: inline-block;
+	}
+}
+
+.woocommerce {
+	a.added_to_cart {
+		display: none;
 	}
 }
 

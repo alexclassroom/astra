@@ -469,18 +469,24 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'astra-block-editor-script', $js_uri, false, ASTRA_THEME_VERSION, 'all' );
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
+			$content_bg_obj = astra_get_option( 'content-bg-obj-responsive' );
+			$site_bg_obj    = astra_get_option( 'site-layout-outside-bg-obj-responsive' );
+
 			$astra_global_palette_instance = new Astra_Global_Palette();
 			$astra_colors                  = array(
-				'var(--ast-global-color-0)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-0)' ),
-				'var(--ast-global-color-1)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-1)' ),
-				'var(--ast-global-color-2)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-2)' ),
-				'var(--ast-global-color-3)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-3)' ),
-				'var(--ast-global-color-4)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-4)' ),
-				'var(--ast-global-color-5)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-5)' ),
-				'var(--ast-global-color-6)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-6)' ),
-				'var(--ast-global-color-7)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-7)' ),
-				'var(--ast-global-color-8)' => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-8)' ),
-				'ast_wp_version_higher_6_3' => astra_wp_version_compare( '6.2.99', '>' ),
+				'var(--ast-global-color-0)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-0)' ),
+				'var(--ast-global-color-1)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-1)' ),
+				'var(--ast-global-color-2)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-2)' ),
+				'var(--ast-global-color-3)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-3)' ),
+				'var(--ast-global-color-4)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-4)' ),
+				'var(--ast-global-color-5)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-5)' ),
+				'var(--ast-global-color-6)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-6)' ),
+				'var(--ast-global-color-7)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-7)' ),
+				'var(--ast-global-color-8)'  => $astra_global_palette_instance->get_color_by_palette_variable( 'var(--ast-global-color-8)' ),
+				'ast_wp_version_higher_6_3'  => astra_wp_version_compare( '6.2.99', '>' ),
+				'apply_content_bg_fullwidth' => astra_apply_content_background_fullwidth_layouts(),
+				'customizer_content_bg_obj'  => $content_bg_obj,
+				'customizer_site_bg_obj'     => $site_bg_obj,
 			);
 
 			wp_localize_script( 'astra-block-editor-script', 'astraColors', apply_filters( 'astra_theme_root_colors', $astra_colors ) );

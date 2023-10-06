@@ -79,18 +79,13 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		$output_str = '';
 		$loop_count = 1;
 
-		if ( defined( 'ASTRA_EXT_VER' ) ) {
+		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 			$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
-			if ( $divider_type ) {
-				if ( 'line' === $divider_type ) {
-					$separator = '|';
-				}
-				if ( 'dot' === $divider_type ) {
-					$separator = '.';
-				}
-				if ( 'none' === $divider_type ) {
-					$separator = '';
-				}
+			if ( 'none' !== $divider_type ) {
+				$separator = $divider_type;
+			} else {
+				$separator = '';
 			}
 		}
 
@@ -114,7 +109,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 								/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						}
 					}
-					$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+					$output_str .= esc_html( astra_get_option( 'blog-meta-author-avatar-prefix-label' ) ) . astra_post_author();
 					break;
 
 				case 'date':

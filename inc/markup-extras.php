@@ -1770,17 +1770,21 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 		$output = '';
 
 		$check_is_singular = is_singular();
+		$check_is_archive = ( is_archive() || is_search() || is_home() );
 
 		$featured_image      = true;
 		$featured_image_size = 'large';
 		$post_type           = strval( get_post_type() );
 
 		if ( $check_is_singular ) {
-			$is_featured_image   = astra_get_option_meta( 'ast-featured-img' );
 			$featured_image_size = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-size', 'large' );
-		} else {
-			$is_featured_image = astra_get_option( 'ast-featured-img' );
 		}
+
+		if( $check_is_archive ) {
+			$featured_image_size = astra_get_option( 'blog-image-size', 'large' );
+		}
+
+		$is_featured_image = astra_get_option( 'ast-featured-img' );
 
 		if ( 'disabled' === $is_featured_image ) {
 			$featured_image = false;
