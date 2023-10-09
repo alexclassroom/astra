@@ -33,13 +33,22 @@ class Astra_Related_Posts_Markup {
 	 * @since x.x.x
 	 */
 	public function initialize_related_posts() {
-		$action           = 'astra_entry_after';
+		$priority         = 10;
 		$location         = astra_get_option( 'related-posts-outside-location' );
 		$module_placement = astra_get_option( 'related-posts-box-placement' );
-		if ( 'outside' === $module_placement && 'below' === $location ) {
-			$action = 'astra_after_comments_module';
+		if ( 'outside' === $module_placement ) {
+			if ( 'inside' === astra_get_option( 'comments-box-placement' ) ) {
+				$action = 'astra_entry_after';
+			} else {
+				$action = 'below' === $location ? 'astra_after_comments_module' : 'astra_entry_after';
+			}
+		} elseif ( 'inside' === $module_placement ) {
+			$action = 'astra_entry_bottom';
+			$priority = 'below' === $location ? 20 : 10;
+		} else {
+			$action = 'astra_entry_after';
 		}
-		add_action( $action, array( $this, 'astra_related_posts_markup' ), 10 );
+		add_action( $action, array( $this, 'astra_related_posts_markup' ), $priority );
 	}
 
 	/**
@@ -207,7 +216,7 @@ class Astra_Related_Posts_Markup {
 		$cta_text = apply_filters( 'astra_related_post_read_more_text', astra_get_option( 'blog-read-more-text' ) );
 
 		$blog_read_more_as_button = astra_get_option( 'blog-read-more-as-button' );
-		$show_read_more_as_button = apply_filters( 'astra_related_post_read_more_as_button', astra_get_option( 'related-posts-read-more-as-button', $blog_read_more_as_button ) );
+		$show_read_more_as_button = apply_filters( 'astra_related_post_read_more_as_button', $blog_read_more_as_button );
 
 		$class = '';
 

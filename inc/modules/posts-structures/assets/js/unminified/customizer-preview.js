@@ -80,6 +80,9 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-style]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1-style]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2-style]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy-style]' );

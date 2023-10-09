@@ -213,6 +213,10 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 				'aspect-ratio' => $aspect_ratio,
 				'width'        => $with_aspect_img_width,
 			),
+			'.ast-single-entry-banner .read-more .ast-button'         => array(
+				'margin-top' => '0.5em',
+				'display'    => 'inline-block',
+			),
 		);
 
 		/**

@@ -785,7 +785,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'transport'   => 'postMessage',
 					'section'     => $title_section,
 					'priority'    => 10,
-					'title'       => __( 'Avatar Size', 'astra' ),
+					'title'       => __( 'Image Size', 'astra' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
 						'min'  => 1,
@@ -1420,6 +1420,26 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 						'priority'  => 5,
 						'title'     => __( 'Taxonomy', 'astra' ),
 						'choices'   => $taxonomies,
+					);
+					$_configs[] = array(
+						'name'       => $title_section . '-taxonomy' . $control_suffix . '-style',
+						'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
+						'default'    => astra_get_option( $title_section . '-taxonomy' . $control_suffix . '-style', '' ),
+						'linked'    => $title_section . '-taxonomy' . $control_suffix,
+						'type'       => 'sub-control',
+						'control'    => 'ast-selector',
+						'section'    => $title_section,
+						'priority'   => 10,
+						'transport'  => 'refresh',
+						'title'      => __( 'Style', 'astra' ),
+						'choices'    => array(
+							''          => __( 'Default', 'astra' ),
+							'badge'     => __( 'Badge', 'astra' ),
+							'underline' => __( 'Underline', 'astra' ),
+						),
+						'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+						'responsive' => false,
+						'renderAs'   => 'text',
 					);
 				}
 			}

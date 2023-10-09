@@ -60,6 +60,9 @@ function astra_related_posts_static_css( $dynamic_css ) {
 			margin: 0;
 			position: relative;
 		}
+		.single article .ast-single-related-posts-container {
+			border-top: 1px solid var(--ast-border-color);
+		}
 		';
 
 		if ( true === astra_check_is_structural_setup() ) {

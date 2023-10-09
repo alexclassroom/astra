@@ -50,7 +50,7 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 			$tax_badge_selector = '';
 			if ( '' !== $badge_style ) {
 				$tax_badge_selector = 'badge' === $badge_style ? 'ast-button ast-badge-tax' : 'ast-underline-text';
-				$separator          = 'badge' === $badge_style ? '' : $separator;
+				// $separator          = 'badge' === $badge_style ? '' : $separator;
 			}
 
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -187,7 +187,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 			}
 
 			if ( strpos( $meta_value, '-taxonomy' ) !== false ) {
-				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator );
+				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator, astra_get_option( $meta_value . '-style', '' ) );
 			}
 
 			$loop_count ++;

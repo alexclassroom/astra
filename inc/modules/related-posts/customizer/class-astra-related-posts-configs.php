@@ -389,7 +389,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'transport'   => 'postMessage',
 				'section'     => 'section-blog-single',
 				'priority'    => 10,
-				'title'       => __( 'Avatar Size', 'astra' ),
+				'title'       => __( 'Image Size', 'astra' ),
 				'suffix'      => 'px',
 				'input_attrs' => array(
 					'min'  => 1,
@@ -528,30 +528,6 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					'step' => 1,
 					'max'  => 60,
 				),
-			),
-			array(
-				'name'     => ASTRA_THEME_SETTINGS . '[related-posts-read-more-as-button]',
-				'default'  => astra_get_option( 'related-posts-read-more-as-button' ),
-				'type'     => 'control',
-				'control'  => 'ast-toggle-control',
-				'section'  => 'section-blog-single',
-				'context'  => array(
-					Astra_Builder_Helper::$general_tab_config,
-					'relation' => 'AND',
-					array(
-						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
-						'operator' => '==',
-						'value'    => true,
-					),
-					array(
-						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts-excerpt]',
-						'operator' => '==',
-						'value'    => true,
-					),
-				),
-				'title'    => __( 'Display Read More as Button', 'astra-addon' ),
-				'priority' => 12,
-				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
 			),
 
 			/**
@@ -736,6 +712,8 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					'below' => __( 'Below Comments', 'astra' ),
 					'above' => __( 'Above Comments', 'astra' ),
 				),
+				'description' => __( 'To sync this option with comments, use the same positioning for both sections: Contained or Separated.', 'astra' ),
+				'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(
 					Astra_Builder_Helper::$general_tab_config,
 					'relation' => 'AND',
@@ -743,11 +721,6 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
 						'operator' => '==',
 						'value'    => true,
-					),
-					array(
-						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-box-placement]',
-						'operator' => '==',
-						'value'    => 'outside',
 					),
 				),
 				'responsive' => false,
@@ -766,6 +739,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					'wide'    => __( 'Wide', 'astra' ),
 					'full'    => __( 'Full', 'astra' ),
 				),
+				'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(
 					Astra_Builder_Helper::$general_tab_config,
 					'relation' => 'AND',
@@ -895,6 +869,41 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'title'     => __( 'Meta Font', 'astra' ),
 				'section'   => 'section-blog-single',
 				'transport' => 'postMessage',
+			),
+			array(
+				'name'              => ASTRA_THEME_SETTINGS . '[related-post-padding]',
+				'default'           => astra_get_option( 'related-post-padding' ),
+				'type'              => 'control',
+				'control'           => 'ast-responsive-spacing',
+				'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
+				'section'           => 'section-blog-single',
+				'title'             => __( 'Spacing', 'astra-addon' ),
+				'linked_choices'    => true,
+				'transport'         => 'postMessage',
+				'unit_choices'      => array( 'px', 'em', '%' ),
+				'choices'           => array(
+					'top'    => __( 'Top', 'astra-addon' ),
+					'right'  => __( 'Right', 'astra-addon' ),
+					'bottom' => __( 'Bottom', 'astra-addon' ),
+					'left'   => __( 'Left', 'astra-addon' ),
+				),
+				'priority'          => 18,
+				'divider'           => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'context'   => array(
+					true === Astra_Builder_Helper::$is_header_footer_builder_active ?
+					Astra_Builder_Helper::$design_tab_config : Astra_Builder_Helper::$general_tab_config,
+					'relation' => 'AND',
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
+						'operator' => '==',
+						'value'    => true,
+					),
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-structure]',
+						'operator' => 'contains',
+						'value'    => 'title-meta',
+					),
+				),
 			),
 
 			/**

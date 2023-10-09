@@ -1744,6 +1744,8 @@ function hasWordPressWidgetBlockEditor() {
 	astra_responsive_font_size( 'astra-settings[related-posts-content-font-size]', '.ast-related-post-content .ast-related-post-excerpt' );
 	astra_font_extras_css( 'related-posts-content-font-extras', '.ast-related-post-content .ast-related-post-excerpt' );
 
+	astra_responsive_spacing( 'astra-settings[related-post-padding]', 'body .site-content .ast-single-related-posts-container', 'padding', [ 'top', 'right', 'bottom', 'left' ] );
+
 	// Title Color.
     astra_css(
         'astra-settings[header-color-site-title]',
