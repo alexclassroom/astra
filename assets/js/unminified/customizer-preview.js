@@ -796,7 +796,7 @@ function hasWordPressWidgetBlockEditor() {
 		var dynamicSelector = '.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts, .ast-separate-container .comments-count-wrapper, .ast-separate-container .comments-area .comments-title, .ast-single-related-posts-container, .ast-plain-container';
 
 		if( 'blog-layout-1' == blog_layout && 1 != blog_grid ) {
-			dynamicSelector   += ', .ast-separate-container .blog-layout-1, .ast-separate-container .blog-layout-2, .ast-separate-container .blog-layout-3';
+			dynamicSelector   += ', .ast-separate-container .ast-article-inner';
 		} else {
 			dynamicSelector   += ', .ast-separate-container .ast-article-post';
 		}

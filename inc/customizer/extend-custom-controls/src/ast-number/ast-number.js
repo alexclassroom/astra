@@ -58,10 +58,14 @@ const NumberComponent = (props) => {
 
 		if ("plus" === type) {
 			if (responsive) {
-				obj[key] = value[key] + 1;
-				setValue(obj);
+				if (max > value[key]) {
+					obj[key] = value[key] + 1;
+					setValue(obj);
+				}
 			} else {
-				setValue((current) => current + 1);
+				if (max > value) {
+					setValue((current) => current + 1);
+				}
 			}
 		} else {
 			if (responsive) {

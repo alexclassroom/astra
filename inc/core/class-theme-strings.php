@@ -69,8 +69,8 @@ if ( ! function_exists( 'astra_default_strings' ) ) {
 				'string-blog-meta-leave-a-comment'       => __( 'Leave a Comment', 'astra' ),
 				'string-blog-meta-one-comment'           => __( '1 Comment', 'astra' ),
 				'string-blog-meta-multiple-comment'      => __( '% Comments', 'astra' ),
-				'string-blog-navigation-next'            => __( 'Next', 'astra' ) . ' <span class="ast-right-arrow">'. Astra_Builder_UI_Controller::fetch_svg_icon( 'arrow-right-thin' ) . '</span>',
-				'string-blog-navigation-previous'        => '<span class="ast-left-arrow">'. Astra_Builder_UI_Controller::fetch_svg_icon( 'arrow-left-thin' ) . '</span> ' . __( 'Previous', 'astra' ),
+				'string-blog-navigation-next'            => __( 'Next', 'astra' ) . ' <span class="ast-right-arrow">🡪</span>',
+				'string-blog-navigation-previous'        => '<span class="ast-left-arrow">🡨</span> ' . __( 'Previous', 'astra' ),
 
 				// Single Post Default Strings.
 				'string-single-page-links-before'        => __( 'Pages:', 'astra' ),
@@ -86,8 +86,8 @@ if ( ! function_exists( 'astra_default_strings' ) ) {
 		);
 
 		if ( is_rtl() ) {
-			$defaults['string-blog-navigation-next']     = __( 'Next', 'astra' ) . ' <span class="ast-left-arrow">'. Astra_Builder_UI_Controller::fetch_svg_icon( 'arrow-left-thin' ) . '</span>';
-			$defaults['string-blog-navigation-previous'] = '<span class="ast-right-arrow">'. Astra_Builder_UI_Controller::fetch_svg_icon( 'arrow-right-thin' ) . '</span> ' . __( 'Previous', 'astra' );
+			$defaults['string-blog-navigation-next']     = __( 'Next', 'astra' ) . ' <span class="ast-left-arrow">🡨</span>';
+			$defaults['string-blog-navigation-previous'] = '<span class="ast-right-arrow">🡪</span> ' . __( 'Previous', 'astra' );
 
 			/* translators: 1: Post type label */
 			$defaults['string-single-navigation-next'] = __( 'Next %s', 'astra' ) . ' <span class="ast-left-arrow">&larr;</span>';

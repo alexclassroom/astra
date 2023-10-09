@@ -345,8 +345,6 @@ astra_refresh_customizer(
     'astra-settings[blog-post-per-page]'
 );
 
-console.log('asdsad');
-
 // Global Typography Refresh - START
 const bodyFontFamily = [
 	'body-font-family',

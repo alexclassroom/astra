@@ -24,7 +24,7 @@ function astra_pagination_css( $dynamic_css ) {
 
 	if ( astra_check_pagination_enabled() || false !== apply_filters( 'astra_enable_pagination_css', false ) ) {
 
-        $text_color         = astra_get_option( 'text-color' );
+		$text_color       = astra_get_option( 'text-color' );
 		$link_hover_color = astra_get_option( 'link-h-color' );
 
 		$pagination_color_output = array(
@@ -49,12 +49,16 @@ function astra_pagination_css( $dynamic_css ) {
                 line-height: calc(2.33333em - 3px);
             }
 
-            .ast-pagination .next.page-numbers {
+            .ast-pagination-default .ast-pagination .next.page-numbers {
                 padding-right: 0;
             }
 
-            .ast-pagination .prev.page-numbers {
+            .ast-pagination-default .ast-pagination .prev.page-numbers {
                 padding-left: 0;
+            }
+
+            .ast-pagination-default .post-page-numbers.current .page-link, .ast-pagination-default .ast-pagination .page-numbers.current {
+                border-radius: 8px;
             }
 
             .ast-pagination {
@@ -157,11 +161,11 @@ function astra_pagination_css( $dynamic_css ) {
 		if ( is_rtl() ) {
 			$pagination_static_css .= '
 
-            .ast-pagination .next.page-numbers {
+            .ast-pagination-default .ast-pagination .next.page-numbers {
                 padding-left: 0;
             }
 
-            .ast-pagination .prev.page-numbers {
+            .ast-pagination-default .ast-pagination .prev.page-numbers {
                 padding-right: 0;
             }
 
