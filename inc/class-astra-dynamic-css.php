@@ -3541,6 +3541,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'color' => '#fff',
 						),
 
+						$bl_selector . ' .badge .ast-button,' . $bl_selector . ' .badge .ast-button:hover' => array(
+							'border-color'     => '#fff',
+							'background-color' => 'transparent',
+						),
+
 						$bl_selector . ' .blog-layout-6 .ast-blog-featured-section:before' => array(
 							'position'         => 'absolute',
 							'top'              => '0',

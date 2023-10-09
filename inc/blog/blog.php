@@ -195,14 +195,14 @@ if ( ! function_exists( 'astra_blog_post_thumbnail_and_title_order' ) ) {
 					// Blog Categories.
 					case 'category':
 						do_action( 'astra_blog_archive_category_before' );
-						echo wp_kses_post( astra_post_categories( 'astra_blog_archive_category', 'blog-category-style' ) );
+						echo wp_kses_post( astra_post_categories( 'astra_blog_archive_category', 'blog-category-style', true ) );
 						do_action( 'astra_blog_archive_category_after' );
 						break;
 
 					// Blog Tags.
 					case 'tag':
 						do_action( 'astra_blog_archive_tag_before' );
-						echo wp_kses_post( astra_post_tags( 'astra_blog_archive_tag', 'blog-tag-style' ) );
+						echo wp_kses_post( astra_post_tags( 'astra_blog_archive_tag', 'blog-tag-style', true ) );
 						do_action( 'astra_blog_archive_tag_after' );
 						break;
 
@@ -277,7 +277,7 @@ if ( ! function_exists( 'astra_get_blog_post_title_meta' ) ) {
 		// Blog Post Title and Blog Post Meta.
 		do_action( 'astra_archive_entry_header_before' );
 		?>
-		<header class="entry-header ast-blog-single-element">
+		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<?php
 
 				do_action( 'astra_archive_post_meta_before' );
@@ -687,7 +687,8 @@ function astra_blog_layout_template() {
  * Blog Custom excerpt length.
  *
  * @since x.x.x
- * @return void
+ * @param int $length Length.
+ * @return int
  */
 function astra_custom_excerpt_length( $length ) {
 	$blog_layout = astra_get_option( 'blog-layout' );
@@ -700,9 +701,10 @@ add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 999 );
  * Remove link from featured image for layout 6
  *
  * @since x.x.x
- * @return void
+ * @param string $content Content.
+ * @return mixed
  */
-function astra_remove_link_from_featured_image() {
+function astra_remove_link_from_featured_image( $content = '' ) {
 	$blog_layout = astra_get_option( 'blog-layout' );
 
 	if ( is_archive() || is_home() || is_search() ) {
@@ -711,6 +713,7 @@ function astra_remove_link_from_featured_image() {
 			add_filter( 'astra_blog_post_featured_image_link_before', '__return_false' );
 		}
 	}
+	return $content;
 	
 }
 add_filter( 'wp', 'astra_remove_link_from_featured_image' );
