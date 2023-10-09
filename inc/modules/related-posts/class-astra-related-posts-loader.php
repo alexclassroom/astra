@@ -211,7 +211,7 @@ class Astra_Related_Posts_Loader {
 			'tablet-unit'  => 'px',
 			'mobile-unit'  => 'px',
 		);
-		$defaults['related-post-padding']   = array(
+		$defaults['related-post-padding']              = array(
 			'desktop'      => array(
 				'top'    => '',
 				'right'  => '',

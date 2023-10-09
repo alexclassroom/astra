@@ -1423,9 +1423,9 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					);
 					$_configs[] = array(
 						'name'       => $title_section . '-taxonomy' . $control_suffix . '-style',
-						'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
+						'parent'     => ASTRA_THEME_SETTINGS . '[' . $title_section . '-metadata]',
 						'default'    => astra_get_option( $title_section . '-taxonomy' . $control_suffix . '-style', '' ),
-						'linked'    => $title_section . '-taxonomy' . $control_suffix,
+						'linked'     => $title_section . '-taxonomy' . $control_suffix,
 						'type'       => 'sub-control',
 						'control'    => 'ast-selector',
 						'section'    => $title_section,

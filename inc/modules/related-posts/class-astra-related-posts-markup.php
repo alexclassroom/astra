@@ -43,7 +43,7 @@ class Astra_Related_Posts_Markup {
 				$action = 'below' === $location ? 'astra_after_comments_module' : 'astra_entry_after';
 			}
 		} elseif ( 'inside' === $module_placement ) {
-			$action = 'astra_entry_bottom';
+			$action   = 'astra_entry_bottom';
 			$priority = 'below' === $location ? 20 : 10;
 		} else {
 			$action = 'astra_entry_after';

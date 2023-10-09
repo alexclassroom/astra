@@ -701,20 +701,20 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'renderAs'    => 'text',
 			),
 			array(
-				'name'       => ASTRA_THEME_SETTINGS . '[related-posts-outside-location]',
-				'default'    => astra_get_option( 'related-posts-outside-location' ),
-				'type'       => 'control',
-				'section'    => 'section-blog-single',
-				'priority'   => 12,
-				'title'      => __( 'Location', 'astra' ),
-				'control'    => 'ast-selector',
-				'choices'    => array(
+				'name'        => ASTRA_THEME_SETTINGS . '[related-posts-outside-location]',
+				'default'     => astra_get_option( 'related-posts-outside-location' ),
+				'type'        => 'control',
+				'section'     => 'section-blog-single',
+				'priority'    => 12,
+				'title'       => __( 'Location', 'astra' ),
+				'control'     => 'ast-selector',
+				'choices'     => array(
 					'below' => __( 'Below Comments', 'astra' ),
 					'above' => __( 'Above Comments', 'astra' ),
 				),
 				'description' => __( 'To sync this option with comments, use the same positioning for both sections: Contained or Separated.', 'astra' ),
 				'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
-				'context'    => array(
+				'context'     => array(
 					Astra_Builder_Helper::$general_tab_config,
 					'relation' => 'AND',
 					array(
@@ -723,8 +723,8 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'responsive' => false,
-				'renderAs'   => 'text',
+				'responsive'  => false,
+				'renderAs'    => 'text',
 			),
 			array(
 				'name'       => ASTRA_THEME_SETTINGS . '[related-posts-container-width]',
@@ -739,7 +739,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					'wide'    => __( 'Wide', 'astra' ),
 					'full'    => __( 'Full', 'astra' ),
 				),
-				'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
+				'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(
 					Astra_Builder_Helper::$general_tab_config,
 					'relation' => 'AND',
@@ -889,7 +889,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				),
 				'priority'          => 18,
 				'divider'           => array( 'ast_class' => 'ast-top-dotted-divider' ),
-				'context'   => array(
+				'context'           => array(
 					true === Astra_Builder_Helper::$is_header_footer_builder_active ?
 					Astra_Builder_Helper::$design_tab_config : Astra_Builder_Helper::$general_tab_config,
 					'relation' => 'AND',

@@ -115,7 +115,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' > *:not(:last-child), ' . $selector . ' .read-more'        => array(
+			$selector . ' > *:not(:last-child), ' . $selector . ' .read-more' => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
 			$selector . ' .post-thumb-img-content'     => array(
@@ -213,7 +213,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 				'aspect-ratio' => $aspect_ratio,
 				'width'        => $with_aspect_img_width,
 			),
-			'.ast-single-entry-banner .read-more .ast-button'         => array(
+			'.ast-single-entry-banner .read-more .ast-button' => array(
 				'margin-top' => '0.5em',
 				'display'    => 'inline-block',
 			),
