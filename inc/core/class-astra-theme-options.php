@@ -122,7 +122,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 
 			$astra_options        = self::get_astra_options();
 			$post_per_page        = intval( get_option( 'posts_per_page' ) );
-			$astra_blog_backwards = true;
+			$astra_blog_backwards = astra_get_option( 'v4-5-0-backward-option' );
 			// Defaults list of options.
 			self::$defaults = apply_filters(
 				'astra_theme_defaults',
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'read-more',
 					),
 					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
-					'blog-layout'                          => $astra_blog_backwards ? 'blog-layout-1' : 'blog-layout-4',
+					'blog-layout'                          => false === $astra_blog_backwards ? 'blog-layout-1' : 'blog-layout-4',
 					'blog-width'                           => 'default',
 					'blog-meta-date-type'                  => 'published',
 					'blog-meta-date-format'                => '',

@@ -3471,6 +3471,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'margin-' . $rtl_right . '' => '0',
 						),
 
+						$bl_selector . ' .ast-article-inner' => array(
+							'width' => '100%',
+						),
+
 						$bl_selector . ' .blog-layout-5' => array(
 							'display'        => 'flex',
 							'flex-wrap'      => 'wrap',
@@ -3484,8 +3488,20 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 
 						$bl_selector . ' .ast-blog-featured-section' => array(
-							'width' => '25%',
+							'width'         => '25%',
+							'margin-bottom' => '0',
 						),
+
+						$bl_selector . ' .post-thumb-img-content' => array(
+							'height' => '100%',
+						),
+
+						$bl_selector . ' .ast-blog-featured-section img' => array(
+							'width'      => '100%',
+							'height'     => '100%',
+							'object-fit' => 'cover',
+						),
+
 						$bl_selector . ' .post-content'  => array(
 							'width'                     => '75%',
 							'padding-' . $rtl_left . '' => '1.5em',

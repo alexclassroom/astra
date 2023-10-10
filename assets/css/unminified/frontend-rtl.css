@@ -2993,20 +2993,6 @@ input[type="color"]::-webkit-color-swatch {
   position: relative;
 }
 
-.post-thumb-img-content img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
-
-.blog-layout-5 .ast-blog-featured-section {
-  margin-bottom: 0;
-}
-
-.blog-layout-5 {
-  margin-bottom: 2em;
-}
-
 .blog .posted-on {
   z-index: 1;
 }

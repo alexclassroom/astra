@@ -101,7 +101,7 @@ function astra_content_background_css( $dynamic_css ) {
 
 
 	// Blog Pro Layout Colors.
-	if ( ( 'blog-layout-1' == $blog_layout || 'blog-layout-4' == $blog_layout || 'blog-layout-5' == $blog_layout || 'blog-layout-6' == $blog_layout ) && 1 != $blog_grid ) {
+	if ( ( 'blog-layout-1' == $blog_layout || 'blog-layout-4' == $blog_layout || 'blog-layout-6' == $blog_layout ) && 1 != $blog_grid ) {
 		$blog_layouts        = array(
 			'.ast-separate-container .ast-article-inner' => astra_get_responsive_background_obj( $content_bg_obj, 'desktop' ),
 		);
