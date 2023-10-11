@@ -29,6 +29,7 @@ astra
 
 # Ignore Composer's directories
 vendor/
+wordpress/
 cghooks.lock
 
 # Dynamic CSS file.

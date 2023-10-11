@@ -1,5 +1,9 @@
 v4.4.0 (Unreleased)
+- New: Header Builder - Search - Introducing a new feature Live Search.
+- New: Header Builder - Search - Post Types selection option to filter Live Search results within.
+- New: Header Builder - Search - Option to adjust search bar width.
 - New: Introducing a feature of Sticky Sidebar functionality for enhanced user experience. (Needs Doc)
+- New: Introducing Primary & Secondary Button styles under Global - Buttons. (Needs Doc)
 - New: Introducing new Twitter-X Icon added for Social Sharing and Social Icons.
 - New: Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for single layouts.
 - New: WooCommerce - Compatibility for a pro cart shortcode 'astra_woo_slide_in_cart', which adds support for a slide-in cart feature. (Needs Doc).
@@ -22,6 +26,7 @@ v4.4.0 (Unreleased)
 - Fix: Desktop header creates visibility jerk on the exact tablet breakpoint.
 - Fix: Header Builder - Anchor tag link getting submenu background color which creates multiple color layer issues.
 - Fix: Social Share - Wrong SVG icon (Ravelry) showing on frontend due to incorrect path.
+- Fix: Comment Form - On active & focus of form fields they look improper.
 
 v4.3.1
 - Fix: Block - Lists block style type updated to "disc" after v4.3.0 update.

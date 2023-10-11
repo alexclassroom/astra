@@ -136,6 +136,12 @@ function astra_onload_function() {
 				}
 
 				titleBlock = editorDocument.querySelector( '.edit-post-visual-editor__post-title-wrapper' );
+
+				// Add Google Fonts CSS to iframe.
+				var fontCss = document.getElementById('astra-google-fonts-css');
+				if ( fontCss && editorDocument && editorDocument.head ) {
+					editorDocument.head.appendChild( fontCss.cloneNode(true) );
+				}
 			}
 
 			// Compatibility for updating layout in editor with direct reflection.

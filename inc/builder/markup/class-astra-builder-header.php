@@ -20,7 +20,7 @@ if ( ! class_exists( 'Astra_Builder_Header' ) ) {
 		/**
 		 * Member Variable
 		 *
-		 * @var null instance
+		 * @var mixed instance
 		 */
 		private static $instance = null;
 

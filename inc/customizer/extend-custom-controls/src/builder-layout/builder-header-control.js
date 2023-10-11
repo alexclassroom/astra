@@ -12,7 +12,35 @@ const toggleBuilderSection = (props) => {
 	});
 };
 
+
 const BuilderHeader = (props) => {
+
+	/**
+	 * Determines the appropriate tab titles for a given control section based
+	 * on the provided props.
+	 *
+	 * @returns {object} An object containing tab titles.
+	 * @property {string} generalTab - The title for the general tab.
+	 * @property {string} designTab - The title for the design tab.
+	 */
+	const getTabTitles = () => {
+		let generalTab = __('General', 'astra');
+		let designTab  = __('Design', 'astra');
+		if ( 'section-header-builder-layout' === props.control.params.section || 'section-footer-builder-layout' === props.control.params.section ) {
+			generalTab = __('Elements', 'astra');
+		}
+		else if ( 'section-buttons' === props.control.params.section ) {
+			generalTab = __('Primary', 'astra');
+			designTab  = __('Secondary', 'astra');
+		}
+		return {
+			generalTab,
+			designTab
+		}
+	}
+	
+	const { generalTab, designTab } = getTabTitles();
+
 	if ("section-footer-builder" === props.control.params.section || "section-header-builder" === props.control.params.section) {
 		return (
 			<React.Fragment>
@@ -49,14 +77,14 @@ const BuilderHeader = (props) => {
 					   className={"nav-tab ahfb-general-tab ahfb-compontent-tabs-button " + (('general' === props.tab) ? "nav-tab-active" : "")}
 					   data-tab="general">
 						<span>
-							{ 'section-header-builder-layout' === props.control.params.section || 'section-footer-builder-layout' === props.control.params.section ? __('Elements', 'astra') : __('General', 'astra') }
+							{ generalTab }
 						</span>
 					</a>
 					<a href="#"
 					   className={"nav-tab ahfb-design-tab ahfb-compontent-tabs-button " + (('design' === props.tab) ? "nav-tab-active" : "")}
 					   data-tab="design">
 						<span>
-							{ __('Design', 'astra') }
+							{ designTab } 
 						</span>
 					</a>
 				</div>

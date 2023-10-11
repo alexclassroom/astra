@@ -174,13 +174,14 @@ class Astra_Gutenberg {
 			return $block_content;
 		}
 
-		$video_url = ! empty( $block['attrs']['url'] ) ? esc_url( $block['attrs']['url'] ) : '';
+		$video_url     = ! empty( $block['attrs']['url'] ) ? esc_url( $block['attrs']['url'] ) : '';
 		$replace_regex = '/<div\s+class="wp-block-embed__wrapper">(.*?)<\/div>/s';
 
 		$updated_content = preg_replace_callback(
 			$replace_regex,
 			/**
 			 * Add iframe wrapper for videos.
+			 *
 			 * @param  array $matches Matches.
 			 * @return mixed          Updated content.
 			 */

@@ -685,7 +685,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 							'overlay-gradient'      => '',
 						),
 					),
-					'content_page_bg_meta_default'     => array(
+					'content_page_bg_meta_default'   => array(
 						'desktop' => array(
 							'background-color'      => 'var(' . $palette_css_var_prefix . '5)',
 							'background-image'      => '',
@@ -726,11 +726,11 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 							'overlay-gradient'      => '',
 						),
 					),
-					'isWP_5_9'                    => astra_wp_version_compare( '5.8.99', '>=' ),
-					'ast_page_bg_title'           => __( 'Surface Colors', 'astra' ),
-					'page_bg_toggle_options'      => $this->get_page_bg_toggle_options(),
-					'surface_color_help_text'     => __( 'Enabling this option will override global > colors > surface color options', 'astra' ),
-					'page_bg_dynamic_title'       => $page_bg_dynamic_title,
+					'isWP_5_9'                       => astra_wp_version_compare( '5.8.99', '>=' ),
+					'ast_page_bg_title'              => __( 'Surface Colors', 'astra' ),
+					'page_bg_toggle_options'         => $this->get_page_bg_toggle_options(),
+					'surface_color_help_text'        => __( 'Enabling this option will override global > colors > surface color options', 'astra' ),
+					'page_bg_dynamic_title'          => $page_bg_dynamic_title,
 				)
 			);
 
@@ -968,12 +968,13 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 
 		/**
 		 * Get Page Background Toggle Options.
+		 *
 		 * @since x.x.x
 		 */
 		public function get_page_bg_toggle_options() {
 			return array(
-				'default'  => __( 'Inherit', 'astra' ),
-				'enabled'  => __( 'Enabled', 'astra' ),
+				'default' => __( 'Inherit', 'astra' ),
+				'enabled' => __( 'Enabled', 'astra' ),
 			);
 		}
 
@@ -1301,37 +1302,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'desktop' => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1339,37 +1340,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'tablet'  => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1377,37 +1378,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'mobile'  => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1415,7 +1416,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 							),
 						),
 					),
-					'default'      => array(
+					'default'       => array(
 						'desktop' => array(
 							'background-color'      => $apply_new_default_values ? 'var(--ast-global-color-4)' : '',
 							'background-image'      => '',
@@ -1474,37 +1475,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'desktop' => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1512,37 +1513,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'tablet'  => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1550,37 +1551,37 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 								'mobile'  => array(
 									'type'       => 'object',
 									'properties' => array(
-										'background-color'      => array(
+										'background-color' => array(
 											'type' => 'string',
 										),
-										'background-image'      => array(
+										'background-image' => array(
 											'type' => 'string',
 										),
-										'background-repeat'     => array(
+										'background-repeat' => array(
 											'type' => 'string',
 										),
-										'background-position'   => array(
+										'background-position' => array(
 											'type' => 'string',
 										),
-										'background-size'       => array(
+										'background-size'  => array(
 											'type' => 'string',
 										),
 										'background-attachment' => array(
 											'type' => 'string',
 										),
-										'background-type'       => array(
+										'background-type'  => array(
 											'type' => 'string',
 										),
-										'background-media'      => array(
+										'background-media' => array(
 											'type' => 'string',
 										),
-										'overlay-type'          => array(
+										'overlay-type'     => array(
 											'type' => 'string',
 										),
-										'overlay-color'         => array(
+										'overlay-color'    => array(
 											'type' => 'string',
 										),
-										'overlay-gradient'      => array(
+										'overlay-gradient' => array(
 											'type' => 'string',
 										),
 									),
@@ -1588,7 +1589,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 							),
 						),
 					),
-					'default'      => array(
+					'default'       => array(
 						'desktop' => array(
 							'background-color'      => 'var(' . $palette_css_var_prefix . '5)',
 							'background-image'      => '',
@@ -1639,9 +1640,9 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 		 * @since 3.7.8
 		 */
 		public static function post_meta_options() {
-			$palette_css_var_prefix = Astra_Global_Palette::get_css_variable_prefix();
+			$palette_css_var_prefix   = Astra_Global_Palette::get_css_variable_prefix();
 			$apply_new_default_values = astra_button_default_padding_updated();
-			self::$meta_option = apply_filters(
+			self::$meta_option        = apply_filters(
 				'astra_meta_box_options',
 				array(
 					'ast-global-header-display'     => array(
@@ -1697,55 +1698,55 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 					'ast-breadcrumbs-content'       => array(
 						'sanitize' => 'FILTER_SANITIZE_STRING',
 					),
-					'ast-page-background-enabled'    => array(
+					'ast-page-background-enabled'   => array(
 						'default'  => 'default',
 						'sanitize' => 'FILTER_DEFAULT',
 					),
-					'ast-page-background-meta'    => array(
+					'ast-page-background-meta'      => array(
 						'default'  => array(
-						'desktop' => array(
-							'background-color'      => $apply_new_default_values ? 'var(--ast-global-color-4)' : '',
-							'background-image'      => '',
-							'background-repeat'     => 'repeat',
-							'background-position'   => 'center center',
-							'background-size'       => 'auto',
-							'background-attachment' => 'scroll',
-							'background-type'       => '',
-							'background-media'      => '',
-							'overlay-type'          => '',
-							'overlay-color'         => '',
-							'overlay-gradient'      => '',
+							'desktop' => array(
+								'background-color'      => $apply_new_default_values ? 'var(--ast-global-color-4)' : '',
+								'background-image'      => '',
+								'background-repeat'     => 'repeat',
+								'background-position'   => 'center center',
+								'background-size'       => 'auto',
+								'background-attachment' => 'scroll',
+								'background-type'       => '',
+								'background-media'      => '',
+								'overlay-type'          => '',
+								'overlay-color'         => '',
+								'overlay-gradient'      => '',
+							),
+							'tablet'  => array(
+								'background-color'      => '',
+								'background-image'      => '',
+								'background-repeat'     => 'repeat',
+								'background-position'   => 'center center',
+								'background-size'       => 'auto',
+								'background-attachment' => 'scroll',
+								'background-type'       => '',
+								'background-media'      => '',
+								'overlay-type'          => '',
+								'overlay-color'         => '',
+								'overlay-gradient'      => '',
+							),
+							'mobile'  => array(
+								'background-color'      => '',
+								'background-image'      => '',
+								'background-repeat'     => 'repeat',
+								'background-position'   => 'center center',
+								'background-size'       => 'auto',
+								'background-attachment' => 'scroll',
+								'background-type'       => '',
+								'background-media'      => '',
+								'overlay-type'          => '',
+								'overlay-color'         => '',
+								'overlay-gradient'      => '',
+							),
 						),
-						'tablet'  => array(
-							'background-color'      => '',
-							'background-image'      => '',
-							'background-repeat'     => 'repeat',
-							'background-position'   => 'center center',
-							'background-size'       => 'auto',
-							'background-attachment' => 'scroll',
-							'background-type'       => '',
-							'background-media'      => '',
-							'overlay-type'          => '',
-							'overlay-color'         => '',
-							'overlay-gradient'      => '',
-						),
-						'mobile'  => array(
-							'background-color'      => '',
-							'background-image'      => '',
-							'background-repeat'     => 'repeat',
-							'background-position'   => 'center center',
-							'background-size'       => 'auto',
-							'background-attachment' => 'scroll',
-							'background-type'       => '',
-							'background-media'      => '',
-							'overlay-type'          => '',
-							'overlay-color'         => '',
-							'overlay-gradient'      => '',
-						),
-					),
 						'sanitize' => 'FILTER_DEFAULT',
 					),
-					'ast-content-background-meta'    => array(
+					'ast-content-background-meta'   => array(
 						'default'  => array(
 							'desktop' => array(
 								'background-color'      => 'var(' . $palette_css_var_prefix . '5)',

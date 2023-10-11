@@ -198,6 +198,12 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 					$default_assets['js']['astra-mobile-cart'] = 'mobile-cart';
 				}
 
+				/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				if ( true === Astra_Builder_Helper::$is_header_footer_builder_active && Astra_Builder_Helper::is_component_loaded( 'search', 'header' ) && astra_get_option( 'live-search', false ) ) {
+					/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					$default_assets['js']['astra-live-search'] = 'live-search';
+				}
+
 				if ( class_exists( 'WooCommerce' ) ) {
 					if ( is_product() && astra_get_option( 'single-product-sticky-add-to-cart' ) ) {
 						$default_assets['js']['astra-sticky-add-to-cart'] = 'sticky-add-to-cart';
@@ -396,6 +402,28 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 			);
 
 			wp_localize_script( 'astra-mobile-cart', 'astra_cart', apply_filters( 'astra_cart_js_localize', $astra_cart_localize_data ) );
+
+			if ( true === Astra_Builder_Helper::$is_header_footer_builder_active && Astra_Builder_Helper::is_component_loaded( 'search', 'header' ) && astra_get_option( 'live-search', false ) ) {
+				$search_post_types = array();
+				$search_within_val = astra_get_option( 'live-search-post-types' );
+				if ( ! empty( $search_within_val ) && is_array( $search_within_val ) ) {
+					foreach ( $search_within_val as $post_type => $value ) {
+						if ( $value && post_type_exists( $post_type ) ) {
+							$search_post_types[] = $post_type;
+						}
+					}
+				}
+
+				$astra_live_search_localize_data = array(
+					'rest_api_url' => get_rest_url(),
+					'search_posts_per_page' => 5,
+					'search_post_types' => $search_post_types,
+					'search_language' => astra_get_current_language_slug(),
+					'no_live_results_found' => __( 'No results found', 'astra-addon' ),
+				);
+
+				wp_localize_script( 'astra-live-search', 'astra_search', apply_filters( 'astra_search_js_localize', $astra_live_search_localize_data ) );
+			}
 
 			if ( class_exists( 'woocommerce' ) ) {
 				$is_astra_pro = function_exists( 'astra_has_pro_woocommerce_addon' ) ? astra_has_pro_woocommerce_addon() : false;

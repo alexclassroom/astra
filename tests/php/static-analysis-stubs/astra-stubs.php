@@ -3027,6 +3027,17 @@ namespace {
         public function __construct()
         {
         }
+        /**
+         * Update REST Post Query for live search.
+         *
+         * @since x.x.x
+         * @param array $args Query args.
+         * @param array $request Request args.
+         * @return array
+         */
+        public function astra_update_rest_post_query($args, $request)
+        {
+        }
     }
     /**
      * Customizer Initialization
@@ -9456,6 +9467,23 @@ namespace {
     class Astra_Header_Search_Component_Configs extends \Astra_Customizer_Config_Base
     {
         /**
+         * Post types for live search.
+         *
+         * @since x.x.x
+         */
+        public function get_live_search_posttypes()
+        {
+        }
+        /**
+         * Get formatted live search post types.
+         *
+         * @since x.x.x
+         * @return array
+         */
+        public function get_search_post_types_choices()
+        {
+        }
+        /**
          * Register Builder Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
@@ -11200,6 +11228,7 @@ namespace {
         }
         /**
          * Get Page Background Toggle Options.
+         *
          * @since x.x.x
          */
         public function get_page_bg_toggle_options()
@@ -12555,28 +12584,6 @@ namespace {
     {
     }
     /**
-     * Get category List.
-     *
-     * @since x.x.x
-     * @param  string $filter_name Filter name.
-     * @param  string $style_type_slug Style slug.
-     * @return mixed Markup.
-     */
-    function astra_get_category_list($filter_name, $style_type_slug)
-    {
-    }
-    /**
-     * Get tag List.
-     *
-     * @since x.x.x
-     * @param  string $filter_name Filter name.
-     * @param string $style_type_slug style type slug.
-     * @return mixed Markup.
-     */
-    function astra_get_tag_list($filter_name, $style_type_slug)
-    {
-    }
-    /**
      * Function to get Date of Post
      *
      * @return html                Markup.
@@ -12623,21 +12630,19 @@ namespace {
     /**
      * Function to get Tags applied of Post
      *
-     * @param  string $filter_name Filter name.
-     * @param  string $style_type Style type slug.
-     * @return mixed Markup.
+     * @param  string $output_filter Output filter.
+     * @return html                Markup.
      */
-    function astra_post_tags($filter_name, $style_type)
+    function astra_post_tags($output_filter = '')
     {
     }
     /**
      * Function to get Categories applied of Post
      *
-     * @param  string $filter_name Filter name.
-     * @param  string $style_type Style type slug.
-     * @return mixed Markup.
+     * @param  string $output_filter Output filter.
+     * @return html                Markup.
      */
-    function astra_post_categories($filter_name, $style_type)
+    function astra_post_categories($output_filter = '')
     {
     }
     /**
@@ -12661,7 +12666,7 @@ namespace {
      *
      * @param  string $more_link_element Read More link element.
      * @param  string $more_link_text Read More text.
-     * @return mixed                Markup.
+     * @return html                Markup.
      */
     function astra_the_content_more_link($more_link_element = '', $more_link_text = '')
     {
@@ -12708,9 +12713,8 @@ namespace {
      * Blog post Thubmnail, Title & Blog Meta order
      *
      * @since  1.0.8
-     * @param array $remove_elements Remove unwanted sections.
      */
-    function astra_blog_post_thumbnail_and_title_order($remove_elements = array())
+    function astra_blog_post_thumbnail_and_title_order()
     {
     }
     /**
@@ -12728,14 +12732,6 @@ namespace {
      * @since  1.0.8
      */
     function astra_get_blog_post_title_meta()
-    {
-    }
-    /**
-     * Blog post title
-     *
-     * @since  x.x.x
-     */
-    function astra_get_blog_post_title()
     {
     }
     /**
@@ -12796,15 +12792,6 @@ namespace {
      * @return void
      */
     function astra_single_content_image()
-    {
-    }
-    /**
-     * Blog Post Per Page
-     *
-     * @since x.x.x
-     * @param WP_Query $query Query.
-     */
-    function astra_blog_post_per_page($query)
     {
     }
     /**
@@ -15230,6 +15217,15 @@ namespace {
     {
     }
     /**
+     * Live Search - Dynamic CSS.
+     *
+     * @param string $dynamic_css
+     * @since x.x.x
+     */
+    function astra_live_search_css($dynamic_css)
+    {
+    }
+    /**
      * Pagination - Dynamic CSS
      *
      * @param  string $dynamic_css          Astra Dynamic CSS.
@@ -15350,7 +15346,7 @@ namespace {
      * @param string $prop    Name of the property to be retrieved.
      * @param string $default Optional. Value that should be returned if the property is not set or empty. Defaults to null.
      *
-     * @return null|string|mixed The value
+     * @return string|mixed The value
      */
     function astra_get_prop($array, $prop, $default = \null)
     {
@@ -15698,6 +15694,28 @@ namespace {
      * @return string
      */
     function astra_get_dynamic_image_aspect_ratio($aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height)
+    {
+    }
+    /**
+     * Getting site active language & compatible with other plugins.
+     *
+     * @since x.x.x
+     * @return string
+     */
+    function astra_get_current_language_slug()
+    {
+    }
+    /**
+     * Function which will return the supported post types from core.
+     *
+     * Further processing includes:
+     * 1. Dynamic customizer
+     * 2. Live Search
+     *
+     * @since x.x.x
+     * @return array
+     */
+    function astra_get_queried_post_types()
     {
     }
     /**

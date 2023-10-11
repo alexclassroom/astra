@@ -11,34 +11,42 @@ const ButtonPresetsComponent = (props) => {
 
 	const [state, setState] = value ? useState(value) : useState( defaultValue );
 
+	let dynamicKey = '';
+	if ( undefined !== option && option.includes( 'secondary' ) ) {
+		dynamicKey = 'secondary-';
+	}
+
 	const onChangePreset = ( presetKey ) => {
 
 		const buttonRadiusFields = options[ presetKey ][ 'button-radius-fields' ];
-		const btnBackgroundColor = options[ presetKey ][ 'button-bg-color' ];
 		const borderWidth = options[ presetKey ][ 'border-size' ];
 		const padding = options[ presetKey ][ 'button-padding' ];
 
 		// Padding
 		props.customizer
-			.control( 'astra-settings[theme-button-padding]' )
+			.control( 'astra-settings[' + dynamicKey + 'theme-button-padding]' )
 			.setting.set( padding );
 
 		props.customizer
-			.control( 'astra-settings[theme-button-padding]' )
+			.control( 'astra-settings[' + dynamicKey + 'theme-button-padding]' )
 			.renderContent();
 
 		// Button Radius.
 		props.customizer
-			.control( 'astra-settings[button-radius-fields]' )
+			.control( 'astra-settings[' + dynamicKey + 'button-radius-fields]' )
 			.setting.set( buttonRadiusFields );
 
 		props.customizer
-			.control( 'astra-settings[button-radius-fields]' )
+			.control( 'astra-settings[' + dynamicKey + 'button-radius-fields]' )
 			.renderContent();
 
 		// Border size.
 		props.customizer
-			.control( 'astra-settings[theme-button-border-group-border-size]' )
+			.control( 'astra-settings[' + dynamicKey + 'theme-button-border-group-border-size]' )
+			.renderContent();
+
+		props.customizer
+			.control( 'astra-settings[' + dynamicKey + 'theme-button-border-group-border-size]' )
 			.setting.set( borderWidth );
 
 		setState( presetKey );
@@ -52,13 +60,13 @@ const ButtonPresetsComponent = (props) => {
 
 	const onResetClick = () => {
 		const btnOptions = [
-			'button-radius-fields',
-			'theme-button-border-group-border-size',
-			'theme-button-padding',
-			'button-bg-color',
-			'button-color',
-			'button-h-color',
-			'button-bg-h-color'
+			dynamicKey + 'button-radius-fields',
+			dynamicKey + 'theme-button-border-group-border-size',
+			dynamicKey + 'theme-button-padding',
+			dynamicKey + 'button-bg-color',
+			dynamicKey + 'button-color',
+			dynamicKey + 'button-h-color',
+			dynamicKey + 'button-bg-h-color'
 		];
 
 		btnOptions.forEach( function( btnOption ) {
