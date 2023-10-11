@@ -47,10 +47,16 @@ if ( ! function_exists( 'astra_post_class_blog_grid' ) ) {
 	 * @return array
 	 */
 	function astra_post_class_blog_grid( $classes ) {
-
+		$blog_layout = astra_get_option( 'blog-layout' );
 		if ( is_archive() || is_home() || is_search() ) {
 			$classes[] = astra_attr( 'ast-blog-col' );
 			$classes[] = 'ast-article-post';
+
+			if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+				if ( 'blog-layout-4' === $blog_layout ) {
+					$classes[] = 'remove-featured-img-padding';
+				}
+			}       
 		}
 
 		return $classes;
@@ -58,6 +64,20 @@ if ( ! function_exists( 'astra_post_class_blog_grid' ) ) {
 }
 
 add_filter( 'post_class', 'astra_post_class_blog_grid' );
+
+/**
+ * Add Body Classes
+ *
+ * @param array $classes Blog Layout Class Array.
+ * @since x.x.x
+ * @return array
+ */
+function astra_add_blog_layout_class( $classes ) {
+	$classes[] = 'ast-article-inner';
+	return $classes;
+}
+
+add_filter( 'astra_blog_layout_class', 'astra_add_blog_layout_class' );
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -632,14 +652,21 @@ function astra_primary_class_blog_layout( $classes ) {
 		$blog_layout = astra_get_option( 'blog-layout' );
 
 		if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+			
 			// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 			if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 				$blog_layout = 'blog-layout-4';
+			}
+
+			if ( 'blog-layout-4' == $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
+				$classes[] = 'ast-grid-3';
+				
 			}
 		}
 
 		if ( 'blog-layout-4' == $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 			$classes[] = 'ast-' . esc_attr( $blog_layout );
+			
 		}
 
 		$classes = apply_filters( 'astra_primary_class_blog_grid', $classes );

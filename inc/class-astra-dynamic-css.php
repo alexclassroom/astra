@@ -3388,6 +3388,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			if ( is_search() || is_archive() || is_home() ) {
 
+				
+
 				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
 					// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 					if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
@@ -3395,7 +3397,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					}
 				}
 
-				$bl_selector = 'div.ast-' . esc_attr( $blog_layout );
+				$bl_selector = '.ast-' . esc_attr( $blog_layout );
 
 
 				$blog_layout_css = array();
@@ -3404,46 +3406,39 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 					$blog_layout_css = array(
 
-						'.ast-separate-container ' . $bl_selector . ' .ast-row,' . $bl_selector . ' .ast-row' => array(
-							'margin-' . $rtl_left . ''  => '-1em',
-							'margin-' . $rtl_right . '' => '-1em',
-						),
-
 						$bl_selector . ' .ast-article-post' => array(
-							'border'        => '0',
-							'margin-bottom' => '2em',
+							'border' => '0',
 						),
 
+						$bl_selector . ' .ast-article-inner .wp-post-image' => array(
+							'width' => '100%',
+						),
 					);
 				}
 
 				if ( 'blog-layout-4' === $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 					$blog_layout_css[ $bl_selector . ' .ast-row' ] = array(
-						'display'   => 'flex',
-						'flex-wrap' => 'wrap',
+						'display'     => 'flex',
+						'flex-wrap'   => 'wrap',
+						'flex-flow'   => 'row wrap',
+						'align-items' => 'stretch',
 					);
 				}
 
 				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
 					if ( 'blog-layout-4' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 						$blog_layout_css[ $bl_selector . ' .ast-article-post' ] = array(
-							'width' => '33.33%',
+							'width'            => '33.33%',
+							'padding'          => '0 1em 0',
+							'margin-bottom'    => '2em',
+							'border-bottom'    => '0',
+							'background-color' => 'transparent',
 						);
 					}
-
-					if ( 'blog-layout-4' === $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
-						$blog_layout_css['.ast-separate-container .ast-article-post'] = array(
-							'box-shadow' => '0px 6px 15px -2px rgba(16, 24, 40, 0.05)',
-						);
-					}
-
-					if ( 'blog-layout-4' === $blog_layout ) {
-						$blog_layout_css[ '.ast-separate-container ' . $bl_selector . ' .ast-blog-featured-section' ] = array(
-							'margin-top'                => '-1.5em',
-							'margin-' . $rtl_left . ''  => '-1.5em',
-							'margin-' . $rtl_right . '' => '-1.5em',
-						);
-					}
+					$blog_layout_css[ '.ast-separate-container ' . $bl_selector . ' .ast-article-inner' ] = array(
+						'height'     => '100%',
+						'box-shadow' => '0px 6px 15px -2px rgba(16, 24, 40, 0.05)',
+					);
 				}
 
 				$parse_css .= astra_parse_css( $blog_layout_css );
@@ -3457,6 +3452,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'padding-' . $rtl_right . '' => '0',
 						),
 
+						'.ast-separate-container .ast-article-post.remove-featured-img-padding .blog-layout-4 .post-content .ast-blog-featured-section:first-child .post-thumb-img-content' => array(
+							'margin-top' => '-1.5em',
+						),
+
+						'.ast-separate-container .ast-article-post.remove-featured-img-padding .blog-layout-4 .post-content .ast-blog-featured-section .post-thumb-img-content' => array(
+							'margin-' . $rtl_left . ''  => '-1.5em',
+							'margin-' . $rtl_right . '' => '-1.5em',
+						),
+
+						'.ast-separate-container .ast-grid-3 .' . $blog_layout  => array(
+							'padding' => '1.5em',
+						),
 					);
 
 					$parse_css .= astra_parse_css( $blog_layout_grid_css );
@@ -3482,9 +3489,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 
 						$bl_selector . ' .ast-article-post' => array(
-							'padding'          => '0',
-							'border-bottom'    => '0',
-							'background-color' => 'transparent',
+							'padding'       => '0',
+							'border-bottom' => '0',
 						),
 
 						$bl_selector . ' .ast-blog-featured-section' => array(
@@ -3515,6 +3521,13 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 					);
 
+					if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+						$blog_layout_list_css[ $bl_selector . ' .ast-article-post' ] = array(
+							'padding'       => '0',
+							'margin-bottom' => '2em',
+						);
+					}
+
 					$parse_css .= astra_parse_css( $blog_layout_list_css );
 				}
 
@@ -3540,6 +3553,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 
 						$bl_selector . ' .blog-layout-6 .post-thumb-img-content,' . $bl_selector . ' .blog-layout-6 .post-thumb-img-content img' => array(
+							'width'  => '100%',
 							'height' => '100%',
 						),
 
@@ -3573,6 +3587,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'height'           => '100%',
 							'background-color' => 'rgba(30, 41, 59, 0.65)',
 							'border-radius'    => '4px',
+						),
+
+						'.ast-grid-3 .' . $blog_layout => array(
+							'padding' => '1.5em',
 						),
 					);
 
