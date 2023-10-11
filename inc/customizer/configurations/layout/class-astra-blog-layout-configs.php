@@ -33,7 +33,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 			$astra_backwards  = astra_get_option( 'v4-5-0-backward-option' );
 			$old_blog_layouts = array();
 			$new_blog_layouts = array();
-			$if_astra_addon   = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$if_astra_addon = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			if ( false === $astra_backwards ) {
 				$old_blog_layouts = array(

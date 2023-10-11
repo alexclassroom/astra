@@ -217,22 +217,26 @@ if ( ! function_exists( 'astra_blog_post_thumbnail_and_title_order' ) ) {
 					// Blog Categories.
 					case 'category':
 						do_action( 'astra_blog_archive_category_before' );
-						/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						// @codingStandardsIgnoreStart
+						/**
+						 * @psalm-suppress InvalidArgument
+						* @psalm-suppress TooManyArguments
+						 */
 						echo astra_post_categories( 'astra_blog_archive_category', 'blog-category-style', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						// @codingStandardsIgnoreEnd
 						do_action( 'astra_blog_archive_category_after' );
 						break;
 
 					// Blog Tags.
 					case 'tag':
 						do_action( 'astra_blog_archive_tag_before' );
-						/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						// @codingStandardsIgnoreStart
+						/**
+						 * @psalm-suppress InvalidArgument
+						* @psalm-suppress TooManyArguments
+						 */
 						echo astra_post_tags( 'astra_blog_archive_tag', 'blog-tag-style', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						// @codingStandardsIgnoreEnd
 						do_action( 'astra_blog_archive_tag_after' );
 						break;
 
