@@ -36,15 +36,19 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 
 			if ( false === $astra_backwards ) {
 				$old_blog_layouts = array(
-					'blog-layout-1' => array(
+					'blog-layout-classic' => array(
+						'label' => __( 'Classic Layout', 'astra-addon' ),
+						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-3', false ) : '',
+					),
+					'blog-layout-1'       => array(
 						'label' => __( 'Layout 1', 'astra-addon' ),
 						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-1', false ) : '',
 					),
-					'blog-layout-2' => array(
+					'blog-layout-2'       => array(
 						'label' => __( 'Layout 2', 'astra-addon' ),
 						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-2', false ) : '',
 					),
-					'blog-layout-3' => array(
+					'blog-layout-3'       => array(
 						'label' => __( 'Layout 3', 'astra-addon' ),
 						'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-3', false ) : '',
 					),
@@ -65,6 +69,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-6', false ) : '',
 				),
 			);
+			
 
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 				$blog_layout = array_merge(

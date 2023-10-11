@@ -665,7 +665,7 @@ function astra_primary_class_blog_layout( $classes ) {
 		}
 
 		if ( 'blog-layout-4' == $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
-			$classes[] = 'ast-' . esc_attr( $blog_layout );
+			$classes[] = 'ast-' . esc_attr( $blog_layout ) . '-grid';
 			
 		}
 
