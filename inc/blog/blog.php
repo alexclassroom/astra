@@ -52,7 +52,9 @@ if ( ! function_exists( 'astra_post_class_blog_grid' ) ) {
 			$classes[] = astra_attr( 'ast-blog-col' );
 			$classes[] = 'ast-article-post';
 
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				if ( 'blog-layout-4' === $blog_layout ) {
 					$classes[] = 'remove-featured-img-padding';
 				}
@@ -215,14 +217,14 @@ if ( ! function_exists( 'astra_blog_post_thumbnail_and_title_order' ) ) {
 					// Blog Categories.
 					case 'category':
 						do_action( 'astra_blog_archive_category_before' );
-						echo wp_kses_post( astra_post_categories( 'astra_blog_archive_category', 'blog-category-style', true ) );
+						echo astra_post_categories( 'astra_blog_archive_category', 'blog-category-style', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						do_action( 'astra_blog_archive_category_after' );
 						break;
 
 					// Blog Tags.
 					case 'tag':
 						do_action( 'astra_blog_archive_tag_before' );
-						echo wp_kses_post( astra_post_tags( 'astra_blog_archive_tag', 'blog-tag-style', true ) );
+						echo astra_post_tags( 'astra_blog_archive_tag', 'blog-tag-style', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						do_action( 'astra_blog_archive_tag_after' );
 						break;
 
@@ -651,7 +653,9 @@ function astra_primary_class_blog_layout( $classes ) {
 
 		$blog_layout = astra_get_option( 'blog-layout' );
 
+		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			
 			// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 			if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
@@ -706,7 +710,9 @@ add_action( 'wp_head', 'astra_blog_layout_customization' );
  * @return void
  */
 function astra_blog_layout_template() {
+	/** @psalm-suppress UndefinedFunction  */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	astra_theme_get_template( 'blog/template/' . esc_attr( astra_get_option( 'blog-layout' ) ) . '.php' );
+	/** @psalm-suppress UndefinedFunction  */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 }
 
 

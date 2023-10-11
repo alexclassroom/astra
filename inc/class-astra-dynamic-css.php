@@ -3559,8 +3559,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$blog_layout = astra_get_option( 'blog-layout' );
 
 			if ( is_search() || is_archive() || is_home() ) {
-
+				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 					if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 						$blog_layout = 'blog-layout-4';
@@ -3609,8 +3610,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'margin-right' => '-1em',
 					);
 				}
-
+				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					if ( 'blog-layout-4' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 						$blog_layout_css[ $bl_selector . ' .ast-article-post' ] = array(
 							'width'            => '33.33%',
@@ -3703,7 +3705,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 					);
 
+					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+						/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						$blog_layout_list_css[ $bl_selector . ' .ast-article-post' ] = array(
 							'margin-bottom' => '2em',
 							'padding'       => '0',

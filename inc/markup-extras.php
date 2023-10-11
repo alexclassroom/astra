@@ -1591,12 +1591,12 @@ if ( ! function_exists( 'astra_the_excerpt' ) ) {
 		?>
 			<div class="ast-excerpt-container ast-blog-single-element">
 				<?php
-					if ( 'full-content' === $excerpt_type ) {
-						the_content();
-					} else {
-						the_excerpt();
-						add_filter( 'excerpt_more', '__return_false' );
-					}
+				if ( 'full-content' === $excerpt_type ) {
+					the_content();
+				} else {
+					the_excerpt();
+					add_filter( 'excerpt_more', '__return_false' );
+				}
 				?>
 			</div>
 		<?php
@@ -1770,7 +1770,7 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 		$output = '';
 
 		$check_is_singular = is_singular();
-		$check_is_archive = ( is_archive() || is_search() || is_home() );
+		$check_is_archive  = ( is_archive() || is_search() || is_home() );
 
 		$featured_image      = true;
 		$featured_image_size = 'large';
@@ -1780,7 +1780,7 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 			$featured_image_size = astra_get_option( 'ast-dynamic-single-' . $post_type . '-image-size', 'large' );
 		}
 
-		if( $check_is_archive ) {
+		if ( $check_is_archive ) {
 			$featured_image_size = astra_get_option( 'blog-image-size', 'large' );
 		}
 

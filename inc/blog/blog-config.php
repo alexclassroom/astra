@@ -197,7 +197,7 @@ function astra_get_dynamic_post_format() {
 	 * @since x.x.x
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type_slug Style slug.
-	 * @param  string $post_meta Post meta.
+	 * @param  bool   $post_meta Post meta.
 	 * @return mixed Markup.
 	 */
 function astra_get_category_list( $filter_name, $style_type_slug, $post_meta ) {
@@ -238,7 +238,7 @@ function astra_get_category_list( $filter_name, $style_type_slug, $post_meta ) {
 	 * @since x.x.x
 	 * @param  string $filter_name Filter name.
 	 * @param string $style_type_slug style type slug.
-	 * @param  string $post_meta Post meta.
+	 * @param  bool   $post_meta Post meta.
 	 * @return mixed Markup.
 	 */
 function astra_get_tag_list( $filter_name, $style_type_slug, $post_meta ) {
@@ -491,7 +491,7 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
 	 *
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
-	 * @param  string $post_meta Post meta.
+	 * @param  bool   $post_meta Post meta.
 	 * @return mixed Markup.
 	 */
 	function astra_post_tags( $filter_name, $style_type, $post_meta ) {
@@ -512,7 +512,7 @@ if ( ! function_exists( 'astra_post_categories' ) ) {
 	 *
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type Style type slug.
-	 * @param  string $post_meta Post meta.
+	 * @param  bool   $post_meta Post meta.
 	 * @return mixed Markup.
 	 */
 	function astra_post_categories( $filter_name, $style_type, $post_meta ) {

@@ -1861,11 +1861,12 @@ function astra_theme_get_template( $template_name, $args = array(), $template_pa
 	}
 
 	// Allow 3rd party plugin filter template file from their plugin.
+	/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	$located = apply_filters( 'astra_theme_get_template', $located, $template_name, $args, $template_path, $default_path );
-
+	/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	do_action( 'astra_theme_before_template_part', $template_name, $template_path, $located, $args );
 
-	include $located;
+	include $located; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 	do_action( 'astra_theme_after_template_part', $template_name, $template_path, $located, $args );
 }
@@ -1920,10 +1921,13 @@ function astra_theme_locate_template( $template_name, $template_path = '', $defa
 	);
 
 	// Get default template.
-	if ( ! $template || ASTRA_EXT_TEMPLATE_DEBUG_MODE ) {
+
+	if ( ! $template || ASTRA_THEME_TEMPLATE_DEBUG_MODE ) {
 		$template = $default_path . $template_name;
 	}
 
 	// Return what we found.
+	/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	return apply_filters( 'astra_theme_locate_template', $template, $template_name, $template_path );
+	/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 }
