@@ -1921,8 +1921,9 @@ function astra_theme_locate_template( $template_name, $template_path = '', $defa
 	);
 
 	// Get default template.
-
+	/** @psalm-suppress UndefinedConstant */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( ! $template || ASTRA_THEME_TEMPLATE_DEBUG_MODE ) {
+		/** @psalm-suppress UndefinedConstant */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$template = $default_path . $template_name;
 	}
 

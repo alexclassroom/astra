@@ -124,7 +124,9 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 			$post_per_page        = intval( get_option( 'posts_per_page' ) );
 			$astra_blog_backwards = astra_get_option( 'v4-5-0-backward-option' );
 
-			if ( ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				$selected_layout = false === $astra_blog_backwards ? 'blog-layout-1' : 'blog-layout-4';
 			} else {
 				$selected_layout = false === $astra_blog_backwards ? 'blog-layout-classic' : 'blog-layout-4';

@@ -33,6 +33,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 			$astra_backwards  = astra_get_option( 'v4-5-0-backward-option' );
 			$old_blog_layouts = array();
 			$new_blog_layouts = array();
+			$if_astra_addon   = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
 
 			if ( false === $astra_backwards ) {
 				$old_blog_layouts = array(
@@ -71,7 +72,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 			);
 			
 
-			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+			if ( $if_astra_addon ) {
 				$blog_layout = array_merge(
 					$old_blog_layouts,
 					$new_blog_layouts
@@ -205,7 +206,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'step' => 1,
 						'max'  => 500,
 					),
-					'divider'      => array( 'ast_class' => ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ? 'ast-top-dotted-divider' : 'ast-top-section-divider' ),
+					'divider'      => array( 'ast_class' => ( $if_astra_addon ) ? 'ast-top-dotted-divider' : 'ast-top-section-divider' ),
 				),
 
 				/**
