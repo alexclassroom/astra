@@ -435,6 +435,9 @@ function astra_comments_css( $dynamic_css ) {
 					font-weight: 600;
 					font-size: 18px;
 				}
+				.ast-comment-cite-wrap {
+					margin-left: -7px;
+				}
 				.logged-in span.ast-reply-link {
 					order: 1;
 				}
