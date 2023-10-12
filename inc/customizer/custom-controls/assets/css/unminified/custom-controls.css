@@ -1800,6 +1800,10 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
   font-weight: 400;
 }
 
+.customize-control .customize-control-description {
+	display: none;
+}
+
 .customize-control-ast-divider hr {
 	margin-top: 0;
     margin-bottom: 0;

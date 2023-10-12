@@ -18,3 +18,7 @@
   line-height: 16px;
   font-weight: 400;
 }
+
+.customize-control .customize-control-description {
+	display: none;
+}
