@@ -52,3 +52,23 @@
 .ast-alignment-wrapper.stack-after-3 .ast-multiselector-inner-wrap:nth-child(3n) {
     margin-left: 0;
 }
+
+[CLASS*="stack-after-"].ast-alignment-wrapper {
+    margin-right: -5px;
+    margin-left: -5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+[CLASS*="stack-after-"].ast-alignment-wrapper .ast-multiselector-inner-wrap {
+	margin: 5px;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+    border-radius: 0;
+}
+.ast-alignment-wrapper.stack-after-2 .ast-multiselector-inner-wrap {
+    flex: 0 0 calc(45% - 10px);
+}
+.ast-alignment-wrapper.stack-after-3 .ast-multiselector-inner-wrap {
+	flex: 0 0 calc(28% - 10px);
+}

@@ -4,7 +4,7 @@ import { Component } from '@wordpress/element';
 import { Dashicon, Button, ColorIndicator, TabPanel, GradientPicker, __experimentalGradientPicker, ColorPicker, SelectControl, ColorPalette } from '@wordpress/components';
 import { MediaUpload } from '@wordpress/media-utils';
 
-const AstraGradientPicker = AstraBuilderCustomizerData.isWP_5_9 ? GradientPicker : __experimentalGradientPicker;
+const AstraGradientPicker = astMetaParams.isWP_5_9 ? GradientPicker : __experimentalGradientPicker;
 const defaultGradient = 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)';
 
 const maybeGetColorForVariable = ( color, palette ) => {
@@ -74,6 +74,46 @@ class AstraColorPickerControl extends Component {
 			this.setState( { refresh: true } );
 		}
 	}
+
+	componentDidMount() {
+		// Add a click event listener to the document when the component mounts.
+		document.addEventListener('click', this.handleClickOutside);
+	}
+
+	componentDidUpdate() {
+		
+		// If the color picker is already open, hide the second color picker.
+		if ( document.querySelectorAll('.open').length > 1 ) {
+			const colorPickerPosition = 1;
+			const otherColorPicker = document.querySelectorAll('.astra-popover-color')[colorPickerPosition];
+			if( otherColorPicker ) {
+				otherColorPicker.style.display = 'none';
+			}
+		}
+	}
+	
+	componentWillUnmount() {
+		// Remove the event listener when the component unmounts.
+		document.removeEventListener('click', this.handleClickOutside);
+	}
+
+	handleClickOutside = (event) => {
+		
+		// If clicked on elements outside the range then close the modal.
+		const isOutsideClickRange =  ( !event.target.closest('.astra-popover-color') && !event.target.closest('.astra-advanced-color-indicate') && !event.target.closest('.media-modal-content') && !event.target.closest('.dashicons-format-image') && !event.target.closest('.components-popover__content') && !event.target.closest('.ast-bg-img-remove') );
+
+		if (this.state.isVisible && isOutsideClickRange ) {
+		  
+			// If the click is outside the modal, close it.
+		  this.closePicker();
+		}
+	};
+
+	closePicker = () => {
+		if ( this.state.isVisible === true ) {
+			this.setState( { isVisible: false } );
+		}
+	};
 
 	render() {
 
@@ -145,10 +185,21 @@ class AstraColorPickerControl extends Component {
 
 		let finalpaletteColors = [];
 		const defaultGradient = 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)';
-		let globalColorPalette = wp.customize.control( 'astra-settings[global-color-palette]' ).setting.get();
+		let globalColorPalette = { 'palette' : [
+			"#046bd2",
+			"#045cb4",
+			"#1e293b",
+			"#334155",
+			"#f9fafb",
+			"#FFFFFF",
+			"#e2e8f0",
+			"#cbd5e1",
+			"#94a3b8"
+		  ]};
+
 		Object.entries(globalColorPalette.palette).forEach(([ index, color])=>{
-			let palettePrefix = astra.customizer.globalPaletteStylePrefix;
-			const paletteLables = astra.customizer.globalPaletteLabels;
+			let palettePrefix = '--ast-global-color-';
+			const paletteLables = ['Color  1', 'Color  2', 'Color  3', 'Color  4', 'Color  5', 'Color  6', 'Color  7', 'Color  8', 'Color  9'];
 			let paletteColors = {};
 			Object.assign( paletteColors, { name: paletteLables[index], color: 'var('+ palettePrefix + index +')' } );
 			finalpaletteColors.push( paletteColors );
@@ -159,7 +210,7 @@ class AstraColorPickerControl extends Component {
 				<div className={ ( this.props.color && this.props.color.includes('var') ) ? 'color-button-wrap has-global-palette-color' : 'color-button-wrap' } >
 					<Button className={ isVisible ? 'astra-color-icon-indicate open' : 'astra-color-icon-indicate' } onClick={ () => { isVisible ? toggleClose() : toggleVisible() } }>
 						{ ( 'color' === backgroundType || 'gradient' === backgroundType ) &&
-						<ColorIndicator className="astra-advanced-color-indicate" colorValue={ this.props.color } >
+						<ColorIndicator className="astra-advanced-color-indicate" colorValue={ this.props.color }>
 							<span className="global-color">{ globalIconSVG() }</span>
 							</ColorIndicator>
 						}
@@ -171,6 +222,8 @@ class AstraColorPickerControl extends Component {
 						}
 					</Button>
 				</div>
+
+				{ /** Color Picker Modal */ }
 				<div className={"astra-color-picker-wrap " + (isVisible ? 'picker-open' : '')}>
 					<>
 						{ isVisible && (
@@ -189,7 +242,7 @@ class AstraColorPickerControl extends Component {
 													tabout = (
 														<>
 															<AstraGradientPicker
-																className={`ast-gradient-color-picker ${ AstraBuilderCustomizerData.isWP_5_9 ? 'ast-gradient-ui': '' }`}
+																className={`ast-gradient-color-picker ${ astMetaParams.isWP_5_9 ? 'ast-gradient-ui': '' }`}
 																gradients={[]}
 																value={ this.props.color && this.props.color.includes( 'gradient' ) ? this.props.color : defaultGradient }
 																onChange={ ( gradient ) => this.onChangeGradientComplete( gradient ) }
@@ -303,7 +356,6 @@ class AstraColorPickerControl extends Component {
 			this.setState( { refresh: true } );
 		}
 		this.props.onChangeComplete( '', 'color' );
-		wp.customize.previewer.refresh();
 	}
 
 	onColorResetClick() {
@@ -434,11 +486,22 @@ class AstraColorPickerControl extends Component {
 		];
 
 		let finalpaletteColors = [];
-		let globalColorPalette = wp.customize.control( 'astra-settings[global-color-palette]' ).setting.get();
+		const defaultGradient = 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)';
+		let globalColorPalette = { 'palette' : [
+			"#046bd2",
+			"#045cb4",
+			"#1e293b",
+			"#334155",
+			"#f9fafb",
+			"#FFFFFF",
+			"#e2e8f0",
+			"#cbd5e1",
+			"#94a3b8"
+		  ]};
 
 		Object.entries(globalColorPalette.palette).forEach(([ index, color])=>{
-			let palettePrefix = astra.customizer.globalPaletteStylePrefix;
-			const paletteLables = astra.customizer.globalPaletteLabels;
+			let palettePrefix = '--ast-global-color-';
+			const paletteLables = ['Color  1', 'Color  2', 'Color  3', 'Color  4', 'Color  5', 'Color  6', 'Color  7', 'Color  8', 'Color  9'];
 			let paletteColors = {};
 			Object.assign( paletteColors, { name: paletteLables[index], color: 'var('+ palettePrefix + index +')' } );
 			finalpaletteColors.push( paletteColors );
@@ -457,12 +520,12 @@ class AstraColorPickerControl extends Component {
 					value={ ( this.props.media && this.props.media ? this.props.media :  '' ) }
 					render={ ( { open } ) => (
 						<Button className="upload-button button-add-media" isDefault onClick={ () => this.open( open ) }>
-							{ ( ! this.props.media && ! this.props.backgroundImage ) ? __( "Select Background Image", 'astra' )  : __( "Replace image", 'astra' )  }
+							{ ( ! this.props.media.url && ! this.props.backgroundImage ) ? __( "Select Background Image", 'astra' )  : __( "Replace image", 'astra' )  }
 						</Button>
 					) }
 				/>
 
-				{ ( this.props.media || this.props.backgroundImage ) &&
+				{ ( this.props.media.url || this.props.backgroundImage ) &&
 				<>
 					<Button className="ast-bg-img-remove" onClick={ this.onRemoveImage } isLink isDestructive>
 						{ __( "Remove Image", 'astra' ) }
@@ -537,7 +600,7 @@ class AstraColorPickerControl extends Component {
 												tabout = (
 													<>
 														<AstraGradientPicker
-															className={`ast-gradient-color-picker ${ AstraBuilderCustomizerData.isWP_5_9 ? 'ast-gradient-ui': '' }`}
+															className={`ast-gradient-color-picker ${ astMetaParams.isWP_5_9 ? 'ast-gradient-ui': '' }`}
 															gradients={[]}
 															value={ this.props.overlayGradient || defaultGradient }
 															onChange={ ( gradient ) => this.onChangeOverlayGradientComplete( gradient ) }

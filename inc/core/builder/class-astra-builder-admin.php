@@ -18,7 +18,7 @@ final class Astra_Builder_Admin {
 	/**
 	 * Member Variable
 	 *
-	 * @var null instance
+	 * @var mixed instance
 	 */
 	private static $instance = null;
 

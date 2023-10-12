@@ -1438,3 +1438,48 @@ function astra_theme_background_updater_4_4_0() {
 		update_option( 'astra-settings', $theme_options );
 	}
 }
+
+/**
+ * Handle backward compatibility on version x.x.x
+ *
+ * @since x.x.x
+ * @return void
+ */
+function astra_theme_background_updater_4_3_2() {
+	$theme_options = get_option( 'astra-settings', array() );
+
+	if ( ! isset( $theme_options['v4-3-2-submenu-css'] ) ) {
+		$theme_options['v4-3-2-submenu-css'] = false;
+
+		// Migrate primary button outline styles to secondary buttons.
+		if ( isset( $theme_options['font-family-button'] ) ) {
+			$theme_options['secondary-font-family-button'] = $theme_options['font-family-button'];
+		}
+		if ( isset( $theme_options['font-size-button'] ) ) {
+			$theme_options['secondary-font-size-button'] = $theme_options['font-size-button'];
+		}
+		if ( isset( $theme_options['font-weight-button'] ) ) {
+			$theme_options['secondary-font-weight-button'] = $theme_options['font-weight-button'];
+		}
+		if ( isset( $theme_options['font-extras-button'] ) ) {
+			$theme_options['secondary-font-extras-button'] = $theme_options['font-extras-button'];
+		}
+		if ( isset( $theme_options['button-bg-color'] ) ) {
+			$theme_options['secondary-button-bg-color'] = $theme_options['button-bg-color'];
+		}
+		if ( isset( $theme_options['button-bg-h-color'] ) ) {
+			$theme_options['secondary-button-bg-h-color'] = $theme_options['button-bg-h-color'];
+		}
+		if ( isset( $theme_options['theme-button-border-group-border-color'] ) ) {
+			$theme_options['secondary-theme-button-border-group-border-color'] = $theme_options['theme-button-border-group-border-color'];
+		}
+		if ( isset( $theme_options['theme-button-border-group-border-h-color'] ) ) {
+			$theme_options['secondary-theme-button-border-group-border-h-color'] = $theme_options['secondary-theme-button-border-group-border-h-color'];
+		}
+		if ( isset( $theme_options['button-radius-fields'] ) ) {
+			$theme_options['secondary-button-radius-fields'] = $theme_options['button-radius-fields'];
+		}
+
+		update_option( 'astra-settings', $theme_options );
+	}
+}

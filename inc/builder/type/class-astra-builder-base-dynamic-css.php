@@ -20,7 +20,7 @@ if ( ! class_exists( 'Astra_Builder_Base_Dynamic_CSS' ) ) {
 		/**
 		 * Member Variable
 		 *
-		 * @var null instance
+		 * @var mixed instance
 		 */
 		private static $instance = null;
 

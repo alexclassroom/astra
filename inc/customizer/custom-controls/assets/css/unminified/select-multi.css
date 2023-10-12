@@ -67,3 +67,7 @@
 .ast-customizer-select-multi .ast-multi-select__menu *, .ast-customizer-select-multi .ast-multi-select__multi-value__remove {
     cursor: pointer;
 }
+
+.ast-customizer-select-multi .ast-multi-select__menu {
+    z-index: 2;
+}

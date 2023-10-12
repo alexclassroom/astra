@@ -1765,8 +1765,10 @@ input[type="text"].select2-search__field {
 }
 
 .ast-section-toggle-icon span {
-  font-size: 16px;
-  line-height: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
 }
 
 .customize-control-ast-section-toggle {
@@ -2616,6 +2618,26 @@ span.customize-control-title.ast-group-section-title {
     margin-right: 0;
 }
 
+[CLASS*="stack-after-"].ast-alignment-wrapper {
+    margin-left: -5px;
+    margin-right: -5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+[CLASS*="stack-after-"].ast-alignment-wrapper .ast-multiselector-inner-wrap {
+	margin: 5px;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+    border-radius: 0;
+}
+.ast-alignment-wrapper.stack-after-2 .ast-multiselector-inner-wrap {
+    flex: 0 0 calc(45% - 10px);
+}
+.ast-alignment-wrapper.stack-after-3 .ast-multiselector-inner-wrap {
+	flex: 0 0 calc(28% - 10px);
+}
+
 .ast-fields-wrap [ID*="-image-custom-scale-width"], .ast-fields-wrap [ID*="-image-custom-scale-height"] {
     display: inline-flex;
 }
@@ -2671,7 +2693,7 @@ span.customize-control-title.ast-group-section-title {
 }
 
 .customize-control-ast-radio-icon .ast-options {
-    background-color: var(--ast-customizer-color-9);
+    background-color: transparent;
     margin: 0;
     line-height: 0;
 }
@@ -2693,6 +2715,7 @@ span.customize-control-title.ast-group-section-title {
     text-align: center;
     line-height: 28px;
     width: 100%;
+	font-size: 16px;
 }
 
 .customize-control-ast-radio-icon .ast-options li {
@@ -2714,6 +2737,7 @@ span.customize-control-title.ast-group-section-title {
     background-color: var(--ast-customizer-color-1);
     color: var(--ast-customizer-color-10);
     border-color: var(--ast-customizer-color-1);
+    margin-right: 1px;
 }
 
 .customize-control-ast-row-layout .ast-responsive-btns {
@@ -3776,6 +3800,10 @@ span.customize-control-title.ast-group-section-title {
 
 .ast-customizer-select-multi .ast-multi-select__menu *, .ast-customizer-select-multi .ast-multi-select__multi-value__remove {
     cursor: pointer;
+}
+
+.ast-customizer-select-multi .ast-multi-select__menu {
+    z-index: 2;
 }
 .ast-variant-select > div {
 	border-color: #dddddd;
