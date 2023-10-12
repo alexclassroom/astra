@@ -3771,7 +3771,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'z-index'  => '1',
 						),
 
-						$bl_selector . ' .blog-layout-6 .ast-blog-single-element *' => array(
+						$bl_selector . ' .blog-layout-6 .ast-blog-single-element *, ' . $bl_selector . ' .blog-layout-6 .ast-blog-single-element *:hover' => array(
 							'color' => '#fff',
 						),
 
