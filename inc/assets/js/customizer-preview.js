@@ -322,6 +322,10 @@ wp.customize( 'astra-settings[blog-meta-date-format]', function( setting ) {
 } );
 
 astra_refresh_customizer(
+    'astra-settings[blog-hover-effect]'
+);
+
+astra_refresh_customizer(
     'astra-settings[blog-image-ratio-type]'
 );
 
@@ -343,10 +347,6 @@ astra_refresh_customizer(
 
 astra_refresh_customizer(
     'astra-settings[blog-post-per-page]'
-);
-
-astra_refresh_customizer(
-    'astra-settings[blog-hover-effect]'
 );
 
 // Global Typography Refresh - START

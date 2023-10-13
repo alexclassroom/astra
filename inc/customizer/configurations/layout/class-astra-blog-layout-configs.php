@@ -349,17 +349,16 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 * Option: Image Scale height.
 				 */
 				array(
-					'name'              => 'blog-image-custom-scale-height',
-					'default'           => astra_get_option( 'blog-image-custom-scale-height', 9 ),
-					'type'              => 'sub-control',
-					'control'           => 'ast-number',
-					'qty_selector'      => false,
-					'transport'         => 'postMessage',
-					'parent'            => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
-					'section'           => 'section-blog',
-					'linked'            => 'image',
-					'priority'          => 12,
-					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+					'name'         => 'blog-image-custom-scale-height',
+					'default'      => astra_get_option( 'blog-image-custom-scale-height', 9 ),
+					'type'         => 'sub-control',
+					'control'      => 'ast-number',
+					'qty_selector' => false,
+					'transport'    => 'postMessage',
+					'parent'       => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'      => 'section-blog',
+					'linked'       => 'image',
+					'priority'     => 12,
 				),
 
 				array(
