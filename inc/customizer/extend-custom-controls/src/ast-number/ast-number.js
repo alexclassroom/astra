@@ -13,7 +13,17 @@ const NumberComponent = (props) => {
 		? props.control.setting.get()
 		: "";
 
-	let defaultFallback = 1;
+	let defaultFallback;
+
+	if( responsive ) {
+		defaultFallback = {
+			desktop: 1,
+			tablet: 1,
+			mobile: 1,
+		}
+	} else {
+		defaultFallback = 1;
+	}
 
 	let min = input_attrs?.min ? input_attrs?.min : 1;
 	min = min > 0 ? min : 1;
@@ -26,9 +36,12 @@ const NumberComponent = (props) => {
 		defaultValue.mobile = defaultValue?.mobile ? defaultValue.mobile : 1;
 	}
 
+	const defValue = responsive ? defaultValue : parseInt(defaultValue);
+
 	const [value, setValue] = useState(
-		defaultValue ? parseInt(defaultValue) : defaultFallback
+		defaultValue ? defValue : defaultFallback
 	);
+	
 	const [ numberState, setNumberState ] = useState( defaultValue );
 
 	const handleChange = event => {
