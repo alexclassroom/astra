@@ -3841,33 +3841,65 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::blog_layout_static_css() );
 			}
 
-			// Blog Archive Featured Image.
-			if ( $aspect_ratio && $with_aspect_img_width ) {
+			if ( is_search() || is_archive() || is_home() ) {
 
-				if ( is_search() || is_archive() || is_home() ) {
-					$blog_featured_image = array(
-						'.ast-article-post .post-thumb-img-content img' => array(
-							'aspect-ratio' => $aspect_ratio,
-							'width'        => $with_aspect_img_width,
+				// Blog Archive Featured Image.
+				if ( $aspect_ratio && $with_aspect_img_width ) {
+						$blog_featured_image = array(
+							'.ast-article-post .post-thumb-img-content img' => array(
+								'aspect-ratio' => $aspect_ratio,
+								'width'        => $with_aspect_img_width,
+							),
+						);
+						$parse_css          .= astra_parse_css( $blog_featured_image );
+				}
+
+				$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
+
+				if ( $author_avatar ) {
+					$blog_author_css = array(
+						'.ast-author-image' => array(
+							'aspect-ratio'              => '1/1',
+							'border-radius'             => '100%',
+							'margin-' . $rtl_right . '' => '.5em',
 						),
 					);
-					$parse_css          .= astra_parse_css( $blog_featured_image );
+					$parse_css      .= astra_parse_css( $blog_author_css );
+				}
+
+				$blog_archive_hover_effect = astra_get_option( 'blog-hover-effect' );
+
+				if ( 'none' !== $blog_archive_hover_effect ) {
+
+					$blog_archive_hover_effect_css = array(
+						'.ast-article-post .post-thumb-img-content' => array(
+							'overflow' => 'hidden',
+						),
+					);
+
+					if ( 'zoom-in' === $blog_archive_hover_effect ) {
+						$blog_archive_hover_effect_css['.ast-article-post .post-thumb-img-content img']       = array(
+							'transform'  => 'scale(1)',
+							'transition' => 'transform .5s ease',
+						);
+						$blog_archive_hover_effect_css['.ast-article-post:hover .post-thumb-img-content img'] = array(
+							'transform' => 'scale(1.1)',
+						);
+					}
+
+					if ( 'zoom-out' === $blog_archive_hover_effect ) {
+						$blog_archive_hover_effect_css['.ast-article-post .post-thumb-img-content img']       = array(
+							'transform'  => 'scale(1.1)',
+							'transition' => 'transform .5s ease',
+						);
+						$blog_archive_hover_effect_css['.ast-article-post:hover .post-thumb-img-content img'] = array(
+							'transform' => 'scale(1)',
+						);
+					}
+
+					$parse_css .= astra_parse_css( $blog_archive_hover_effect_css );
 				}
 			}
-
-			$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
-
-			if ( $author_avatar ) {
-				$blog_author_css = array(
-					'.ast-author-image' => array(
-						'aspect-ratio'              => '1/1',
-						'border-radius'             => '100%',
-						'margin-' . $rtl_right . '' => '.5em',
-					),
-				);
-				$parse_css      .= astra_parse_css( $blog_author_css );
-			}
-
 
 			// Primary Submenu Border Width & Color.
 			$submenu_border_style = array(

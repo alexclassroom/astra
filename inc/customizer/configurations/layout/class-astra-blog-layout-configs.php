@@ -375,6 +375,28 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				),
 
 				/**
+				 * Option: Blog Hover Effect.
+				 */
+				array(
+					'name'      => 'blog-hover-effect',
+					'default'   => astra_get_option( 'blog-hover-effect' ),
+					'parent'    => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'   => 'section-blog',
+					'linked'    => 'image',
+					'type'      => 'sub-control',
+					'priority'  => 17,
+					'transport' => 'postMessage',
+					'title'     => __( 'Hover Effect', 'astra' ),
+					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'control'   => 'ast-select',
+					'choices'   => array(
+						'none'     => 'None',
+						'zoom-in'  => 'Zoom In',
+						'zoom-out' => 'Zoom Out',
+					),
+				),
+
+				/**
 				 * Option: Image Size.
 				 */
 				array(

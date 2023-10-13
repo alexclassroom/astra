@@ -149,6 +149,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'read-more',
 					),
 					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
+					'blog-hover-effect'                    => 'none',
 					'blog-layout'                          => $selected_layout,
 					'blog-width'                           => 'default',
 					'blog-meta-date-type'                  => 'published',
