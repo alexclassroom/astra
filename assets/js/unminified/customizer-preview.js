@@ -1553,7 +1553,7 @@ function hasWordPressWidgetBlockEditor() {
 
 	wp.customize( 'astra-settings[secondary-theme-button-border-group-border-size]', function( value ) {
 		value.bind( function( border ) {
-		
+
 			var dynamicStyle = '.wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button';
 
 			if( '' != border.top || '' != border.right || '' != border.bottom || '' != border.left ) {
@@ -1707,7 +1707,7 @@ function hasWordPressWidgetBlockEditor() {
 
 		// Theme Secondary Button - Background Hover Color
 		astra_css( 'astra-settings[secondary-button-bg-h-color]', 'background-color', '.wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-buttons .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color):hover, .wp-block-buttons .wp-block-button.wp-block-button__link.is-style-outline:not(.has-text-color):hover, .ast-outline-button:hover, .ast-outline-button:focus' );
-		
+
 		astra_css( 'astra-settings[theme-button-border-group-border-color]', 'border-color', '.menu-toggle, button, .ast-button, .ast-custom-button, .button, input#submit, input[type="button"], input[type="submit"], input[type="reset"], .wp-block-button .wp-block-button__link' + astraCustomizer.v4_2_2_core_form_btns_styling + btn_border_color_ele + search_button_selector + ', ' + global_builder_btn + woo_btn_normal_sector );
 
 		// Theme Secondary Button - Border Color
@@ -1925,7 +1925,7 @@ function hasWordPressWidgetBlockEditor() {
 						+ btnSelector + '	{ background: transparent }'
 						+ '</style>'
 					);
-				} 
+				}
 				else {
 
 					jQuery( 'style#astra-settings-button-bg-color-background-color' ).remove();
@@ -2237,7 +2237,7 @@ function hasWordPressWidgetBlockEditor() {
 
 				var buttonTextColor = wp.customize( 'astra-settings[secondary-button-color]' ).get();
 				var buttonBorderColor = wp.customize( 'astra-settings[secondary-theme-button-border-group-border-color]' ).get();
-				
+
 				// If button has outline preset.
 				if( 'button_04' === buttonPreset || 'button_05' === buttonPreset || 'button_06' === buttonPreset ) {
 

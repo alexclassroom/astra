@@ -732,12 +732,12 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'type'       => 'control',
 				'section'    => 'section-blog-single',
 				'priority'   => 12,
-				'title'      => __( 'Structure', 'astra' ),
+				'title'      => __( 'Container Structure', 'astra' ),
 				'control'    => 'ast-selector',
 				'choices'    => array(
-					'default' => __( 'Default', 'astra' ),
-					'wide'    => __( 'Wide', 'astra' ),
-					'full'    => __( 'Full', 'astra' ),
+					'narrow'    => __( 'Narrow', 'astra' ),
+					'normal'    => __( 'Normal', 'astra' ),
+					'' => __( 'Full Width', 'astra' ),
 				),
 				'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(

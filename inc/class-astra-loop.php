@@ -266,14 +266,18 @@ if ( ! class_exists( 'Astra_Loop' ) ) :
 		 * @return void
 		 */
 		public function comment_layout_adjustments() {
-			$comments_section_placement = astra_get_option( 'comments-box-placement', 'outside' );
-
-			if ( 'inside' === $comments_section_placement ) {
+			$comments_section_placement = astra_get_option( 'comments-box-placement', '' );
+			if ( '' !== $comments_section_placement ) {
 				remove_action( 'astra_page_template_parts_content', array( $this, 'template_parts_comments' ), 15 );
 				remove_action( 'astra_template_parts_content', array( $this, 'template_parts_comments' ), 15 );
 
-				// Insert it in the content.
-				add_action( 'astra_entry_bottom', array( $this, 'template_parts_comments' ), 15 );
+				if ( 'outside' === $comments_section_placement ) {
+					// Pop out of the content.
+					add_action( 'astra_content_after', array( $this, 'template_parts_comments' ), 15 );
+				} else {
+					// Insert it in the content.
+					add_action( 'astra_entry_bottom', array( $this, 'template_parts_comments' ), 12 );
+				}
 			}
 		}
 	}

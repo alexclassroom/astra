@@ -87,7 +87,7 @@ class Astra_Related_Posts_Loader {
 		$defaults['enable-related-posts-excerpt']            = false;
 		$defaults['related-posts-box-placement']             = 'outside';
 		$defaults['related-posts-outside-location']          = 'above';
-		$defaults['related-posts-container-width']           = 'default';
+		$defaults['related-posts-container-width']           = '';
 		$defaults['related-posts-excerpt-count']             = 25;
 		$defaults['related-posts-based-on']                  = 'categories';
 		$defaults['related-posts-order-by']                  = 'date';

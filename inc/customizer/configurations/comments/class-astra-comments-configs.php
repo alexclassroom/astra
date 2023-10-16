@@ -46,6 +46,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'control'     => 'ast-selector',
 					'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
 					'choices'     => array(
+						''        => __( 'Default', 'astra' ),
 						'inside'  => __( 'Contained', 'astra' ),
 						'outside' => __( 'Separated', 'astra' ),
 					),
@@ -60,12 +61,12 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'type'       => 'control',
 					'section'    => 'section-blog-single',
 					'priority'   => 20,
-					'title'      => __( 'Structure', 'astra' ),
+					'title'      => __( 'Container Structure', 'astra' ),
 					'control'    => 'ast-selector',
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'wide'    => __( 'Wide', 'astra' ),
-						'full'    => __( 'Full', 'astra' ),
+						'narrow'    => __( 'Narrow', 'astra' ),
+						'normal'    => __( 'Normal', 'astra' ),
+						'' => __( 'Full Width', 'astra' ),
 					),
 					'context'    => array(
 						Astra_Builder_Helper::$general_tab_config,
@@ -76,6 +77,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 							'value'    => 'outside',
 						),
 					),
+					'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 					'responsive' => false,
 					'renderAs'   => 'text',
 				),

@@ -527,9 +527,9 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'mobile-unit'  => 'em',
 					),
 					// Single Comments.
-					'comments-box-placement'               => 'outside',
+					'comments-box-placement'               => '',
 					'comment-form-position'                => 'below',
-					'comments-box-container-width'         => 'default',
+					'comments-box-container-width'         => '',
 
 					// Container.
 					'single-page-ast-content-layout'       => false === astra_check_is_structural_setup() ? 'default' : 'normal-width-container',

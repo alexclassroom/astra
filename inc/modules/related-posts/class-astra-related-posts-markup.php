@@ -40,7 +40,8 @@ class Astra_Related_Posts_Markup {
 			if ( 'inside' === astra_get_option( 'comments-box-placement' ) ) {
 				$action = 'astra_entry_after';
 			} else {
-				$action = 'below' === $location ? 'astra_after_comments_module' : 'astra_entry_after';
+				$priority = 'below' === $location ? 20 : 9;
+				$action = 'astra_content_after';
 			}
 		} elseif ( 'inside' === $module_placement ) {
 			$action   = 'astra_entry_bottom';

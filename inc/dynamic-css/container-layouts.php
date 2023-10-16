@@ -88,23 +88,16 @@ function astra_container_layout_css() {
 
 	$page_container_css .= '
 		@media (min-width: ' . astra_get_tablet_breakpoint( '', 1 ) . 'px) {
-			.site-content .ast-container--wide {
-				margin-left: calc( -50vw + 50%);
-				margin-right: calc( -50vw + 50%);
-				max-width: unset;
-				width: unset;
-			}
-			.site-content .ast-container--wide > * {
-				max-width: var(--ast-normal-container-width);
-				width: unset;
+			.ast-desktop .ast-container--normal, .ast-desktop .ast-container--narrow {
+				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
 			}
-			.site-content .ast-container--full {
-				margin-left: calc( -50vw + 50%);
-				margin-right: calc( -50vw + 50%);
-				max-width: 100vw;
-				width: 100vw;
+			.ast-desktop .ast-container--normal {
+				max-width: var(--ast-normal-container-width);
+			}
+			.ast-desktop .ast-container--narrow {
+				max-width: var(--ast-narrow-container-width);
 			}
 		}
 	';
