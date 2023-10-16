@@ -33,6 +33,9 @@ $container_selector    = 'outside' === astra_get_option( 'comments-box-placement
 	<?php astra_comments_before(); ?>
 
 	<?php
+	if ( 'above' === $comment_form_position ) {
+		comment_form();
+	}
 	if ( have_comments() ) :
 		astra_markup_open( 'comment-count-wrapper' );
 		?>
@@ -53,9 +56,6 @@ $container_selector    = 'outside' === astra_get_option( 'comments-box-placement
 			</h3>
 		<?php
 		astra_markup_close( 'comment-count-wrapper' );
-		if ( 'above' === $comment_form_position ) {
-			comment_form();
-		}
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 			?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" aria-label="<?php esc_attr_e( 'Comments Navigation', 'astra' ); ?>">
