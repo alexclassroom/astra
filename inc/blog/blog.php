@@ -649,8 +649,6 @@ function astra_blog_post_per_page( $query ) {
 
 add_action( 'pre_get_posts', 'astra_blog_post_per_page' );
 
-
-
 /**
  * Add Blog Layout Class
  *
