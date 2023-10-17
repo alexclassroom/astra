@@ -867,6 +867,18 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
             }
         }
 	}
+	var SearchInputs = document.querySelectorAll( '.search-field' );
+	SearchInputs.forEach(input => {
+		input.addEventListener('focus', function (e) {
+			var sibling = this.parentNode.parentNode.parentNode.querySelector( '.ast-search-menu-icon' );
+			astraToggleClass( sibling, 'ast-dropdown-active' );
+		});
+		input.addEventListener('blur', function (e) {
+			var sibling = this.parentNode.parentNode.parentNode.querySelector( '.ast-search-menu-icon' );
+			sibling.classList.remove( 'ast-dropdown-active' );
+			astraToggleClass( sibling, 'ast-dropdown-active' );
+		});
+	});
 
 	/* Hide Dropdown on body click*/
 	body.onclick = function( event ) {
@@ -928,7 +940,6 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 				}
 			}
 		}
-		
 
 		button.onclick = function() {
 			if ( -1 !== containerMenu.className.indexOf( 'toggled' ) ) {

@@ -763,7 +763,7 @@ class Astra_WP_Editor_CSS {
 				$scndry_btn_text_color = astra_get_foreground_color( $theme_color );
 			}
 			$outline_button_css_desktop['.editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .editor-styles-wrapper .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)'] = array(
-				'background-color' => empty ( $scndry_btn_bg_color ) ? esc_attr( $theme_color ) : esc_attr( $scndry_btn_bg_color ),
+				'background-color' => empty( $scndry_btn_bg_color ) ? esc_attr( $theme_color ) : esc_attr( $scndry_btn_bg_color ),
 				'color'            => esc_attr( $scndry_btn_text_color ),
 			);
 		}

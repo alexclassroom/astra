@@ -946,7 +946,7 @@ function astra_search_static_css() {
 	.ast-search-menu-icon .search-field {
 		border: none;
 		background-color: transparent;
-		transition: width .2s;
+		transition: all .3s;
 		border-radius: inherit;
 		color: inherit;
 		font-size: inherit;
@@ -980,6 +980,7 @@ function astra_search_static_css() {
 			width : 100%;
 			padding : 0.60em;
 			padding-left : 5.5em;
+			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
 			padding-right: 3em;
@@ -1009,6 +1010,7 @@ function astra_search_static_css() {
 			width : 100%;
 			padding : 0.60em;
 			padding-right : 5.5em;
+			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
 			padding-left: 3em;
@@ -1110,10 +1112,11 @@ function astra_get_font_array_css( $font_family, $font_weight, $font_size, $font
 /**
  * Return the array of site's available image size.
  *
+ * @param boolean $add_custom Add custom image size.
  * @since x.x.x
  * @return array
  */
-function astra_get_site_image_sizes() {
+function astra_get_site_image_sizes( $add_custom = false ) {
 	$image_sizes = array(
 		'thumbnail'    => __( 'Thumbnail', 'astra' ),
 		'medium'       => __( 'Medium', 'astra' ),
@@ -1134,6 +1137,12 @@ function astra_get_site_image_sizes() {
 		} else {
 			$refactored_sizes[ $size ] = $size;
 		}
+	}
+
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	if ( $add_custom && defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		$refactored_sizes['custom'] = __( 'Custom', 'astra' );
 	}
 
 	return $refactored_sizes;
@@ -1170,7 +1179,7 @@ function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_s
  */
 function astra_get_current_language_slug() {
 	$lang = '';
-	if ( function_exists('pll_current_language' ) ) {
+	if ( function_exists( 'pll_current_language' ) ) {
 		$lang = pll_current_language();
 	}
 	return apply_filters( 'astra_addon_site_current_language', $lang );

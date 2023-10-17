@@ -52,3 +52,6 @@
 	white-space: break-spaces;
 	inline-size: max-content;
 }
+.ast-top-dotted-divider .ast-control-tooltip.dashicons-editor-help {
+    top: 20px;
+}

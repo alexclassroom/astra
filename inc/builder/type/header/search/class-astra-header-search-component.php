@@ -56,12 +56,12 @@ class Astra_Header_Search_Component {
 		) {
 			$search_post_types = explode( ':', sanitize_text_field( $request['post_type'] ) );
 
-			$args = [
+			$args = array(
 				'posts_per_page' => ! empty( $args['posts_per_page'] ) ? $args['posts_per_page'] : 10,
-				'post_type' => $search_post_types,
-				'paged' => 1,
-				's' => ! empty( $args['s'] ) ? $args['s'] : '',
-			];
+				'post_type'      => $search_post_types,
+				'paged'          => 1,
+				's'              => ! empty( $args['s'] ) ? $args['s'] : '',
+			);
 		}
 
 		return $args;

@@ -45,7 +45,7 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 	 * @return array
 	 */
 	public function get_search_post_types_choices() {
-		$all_post_types = $this->get_live_search_posttypes();
+		$all_post_types    = $this->get_live_search_posttypes();
 		$post_type_choices = array();
 		foreach ( $all_post_types as $post_type ) {
 			$post_type_object = get_post_type_object( $post_type );
@@ -139,7 +139,7 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 			 */
 			array(
 				'name'        => ASTRA_THEME_SETTINGS . '[header-search-width]',
-				'section'   => $_section,
+				'section'     => $_section,
 				'priority'    => 2,
 				'transport'   => 'postMessage',
 				'default'     => astra_get_option( 'header-search-width' ),
@@ -182,13 +182,13 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 			 * Option: Live Search based on Post Types.
 			 */
 			array(
-				'name'      => ASTRA_THEME_SETTINGS . '[live-search-post-types]',
-				'default'   => astra_get_option( 'live-search-post-types' ),
-				'type'      => 'control',
-				'control'   => 'ast-multi-selector',
-				'section'   => $_section,
-				'priority'  => 5,
-				'title'     => __( 'Search Within Post Types', 'astra' ),
+				'name'        => ASTRA_THEME_SETTINGS . '[live-search-post-types]',
+				'default'     => astra_get_option( 'live-search-post-types' ),
+				'type'        => 'control',
+				'control'     => 'ast-multi-selector',
+				'section'     => $_section,
+				'priority'    => 5,
+				'title'       => __( 'Search Within Post Types', 'astra' ),
 				'context'     => array(
 					Astra_Builder_Helper::$general_tab_config,
 					array(
@@ -197,11 +197,11 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 						'value'    => true,
 					),
 				),
-				'transport' => 'refresh',
-				'choices'   => $this->get_search_post_types_choices(),
-				'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
-				'renderAs'  => 'text',
-				'input_attrs'     => array(
+				'transport'   => 'refresh',
+				'choices'     => $this->get_search_post_types_choices(),
+				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'renderAs'    => 'text',
+				'input_attrs' => array(
 					'stack_after' => 2, // Currently stack options supports after 2 & 3.
 				),
 			),

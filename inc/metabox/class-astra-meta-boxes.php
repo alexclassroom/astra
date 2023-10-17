@@ -596,6 +596,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 			wp_enqueue_style( 'astra-meta-box', $css_uri . '/metabox' . $file_prefix . '.css', array(), ASTRA_THEME_VERSION );
 
 			wp_enqueue_script( 'astra-meta-settings' );
+			wp_set_script_translations( 'astra-meta-settings', 'astra' );
 			$astra_ext_extension_class_exists = class_exists( 'Astra_Ext_Extension' ) ? true : false;
 
 			$ast_content_layout_sidebar = false;

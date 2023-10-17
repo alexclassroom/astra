@@ -415,10 +415,10 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 				}
 
 				$astra_live_search_localize_data = array(
-					'rest_api_url' => get_rest_url(),
+					'rest_api_url'          => get_rest_url(),
 					'search_posts_per_page' => 5,
-					'search_post_types' => $search_post_types,
-					'search_language' => astra_get_current_language_slug(),
+					'search_post_types'     => $search_post_types,
+					'search_language'       => astra_get_current_language_slug(),
 					'no_live_results_found' => __( 'No results found', 'astra-addon' ),
 				);
 

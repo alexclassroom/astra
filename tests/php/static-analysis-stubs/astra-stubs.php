@@ -3518,6 +3518,15 @@ namespace {
         public static function astra_core_form_btns_styling()
         {
         }
+        /**
+         * Improve full screen search Submit button style.
+         *
+         * @since x.x.x
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function astra_upgrade_fullscreen_search_submit_style()
+        {
+        }
     }
     /**
      * Global palette class
@@ -12392,7 +12401,7 @@ namespace {
      * Minimum Version requirement of the Astra Pro addon.
      * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
      */
-    \define('ASTRA_EXT_MIN_VER', '4.1.0');
+    \define('ASTRA_EXT_MIN_VER', '4.4.0');
     \define('ASTRA_PRO_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'dashboard', 'free-theme', 'upgrade-now'));
     \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'customizer', 'free-theme', 'upgrade'));
     /**
@@ -12781,17 +12790,6 @@ namespace {
      * @return mixed
      */
     function astra_banner_elements_order($structure = array())
-    {
-    }
-    /**
-     * Render the featured image at top of entry content.
-     *
-     * Customizer settings: Single {post_type} > {post_type} Title > Structure > Featured Image > Image Position
-     *
-     * @since x.x.x
-     * @return void
-     */
-    function astra_single_content_image()
     {
     }
     /**
@@ -15676,10 +15674,11 @@ namespace {
     /**
      * Return the array of site's available image size.
      *
+     * @param boolean $add_custom Add custom image size.
      * @since x.x.x
      * @return array
      */
-    function astra_get_site_image_sizes()
+    function astra_get_site_image_sizes($add_custom = \false)
     {
     }
     /**
@@ -16208,6 +16207,14 @@ namespace {
      * @return void
      */
     function astra_render_header_svg_mask()
+    {
+    }
+    /**
+     * Render Featured Image for single post at 'astra_entry_before' hook before post <article>
+     *
+     * @since x.x.x
+     */
+    function astra_single_post_entry_featured_image()
     {
     }
     /**
@@ -16971,7 +16978,7 @@ namespace {
      * @since x.x.x
      * @return void
      */
-    function astra_theme_background_updater_4_4_0()
+    function astra_theme_background_updater_4_3_2()
     {
     }
     /**
@@ -16980,7 +16987,7 @@ namespace {
      * @since x.x.x
      * @return void
      */
-    function astra_theme_background_updater_4_3_2()
+    function astra_theme_background_updater_4_4_0()
     {
     }
     /**

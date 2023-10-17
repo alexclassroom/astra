@@ -1790,6 +1790,8 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
   font-size: 11px;
   line-height: 16px;
   font-weight: 400;
+  text-wrap: wrap;
+  display: inline-block;
 }
 
 .customize-control-ast-description a.button {
@@ -2683,19 +2685,28 @@ span.customize-control-title.ast-group-section-title {
 }
 
 
-.ast-fields-wrap [ID*="-image-custom-scale-width"], .ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-width"], li[ID*="-image-custom-scale-height"] {
     display: inline-flex;
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-height"] {
+	float: none;
     padding: 0 !important;
     width: calc(50% + 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-width"] {
+li[ID*="-image-custom-scale-width"] {
     width: calc(50% - 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"]:before {
+li[ID*="-image-custom-scale-height"]:before {
     content: ':';
     padding: 0 10px;
+	line-height: 30px;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden {
+    float: unset;
+    width: unset;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
+    content: unset;
 }
 
 /* Hide spin buttons for WebKit (Chrome, Safari) */
@@ -3789,8 +3800,8 @@ span.customize-control-title.ast-group-section-title {
 .ast-customizer-select-multi .ast-multi-select__value-container {
     overflow-x: hidden;
     flex-wrap: nowrap;
-    padding-left: 5px;
-    padding-right: 25px;
+    padding-left: 10px;
+    padding-right: 30px;
 }
 
 .ast-customizer-select-multi:before {
@@ -3811,7 +3822,7 @@ span.customize-control-title.ast-group-section-title {
     position: absolute;
     font-family: dashicons;
     font-size: 16px;
-    margin-right: 7px;
+    margin-right: 15px;
     pointer-events: none;
     z-index: 1;
     top: 13px;
@@ -3851,6 +3862,7 @@ span.customize-control-title.ast-group-section-title {
 .ast-customizer-select-multi .ast-multi-select__menu {
     z-index: 2;
 }
+
 .ast-variant-select > div {
 	border-color: #dddddd;
 }
@@ -4753,6 +4765,9 @@ span.customize-control-title.ast-group-section-title {
 	display: flex;
 	white-space: break-spaces;
 	inline-size: max-content;
+}
+.ast-top-dotted-divider .ast-control-tooltip.dashicons-editor-help {
+    top: 20px;
 }
 
 .select2-container {

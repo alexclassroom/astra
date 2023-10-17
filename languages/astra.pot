@@ -3218,7 +3218,7 @@ msgstr ""
 #: inc/core/class-theme-strings.php:46
 #: inc/core/class-theme-strings.php:47
 #: inc/core/class-theme-strings.php:48
-msgid "Search &hellip;"
+msgid "Search..."
 msgstr ""
 
 #: inc/core/class-theme-strings.php:51
@@ -3333,7 +3333,7 @@ msgstr ""
 
 #: inc/core/common-functions.php:1234
 msgctxt "placeholder"
-msgid "Search &hellip;"
+msgid "Search..."
 msgstr ""
 
 #: inc/customizer/astra-pro/class-astra-pro-upgrade-link-configs.php:34

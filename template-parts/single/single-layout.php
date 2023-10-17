@@ -31,8 +31,6 @@
 
 	<?php astra_single_header_after(); ?>
 
-	<?php astra_single_content_image(); ?>
-
 	<div class="entry-content clear"
 	<?php
 				echo astra_attr(

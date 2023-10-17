@@ -163,7 +163,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 				'priority'       => 80,
 				'capability'     => 'edit_theme_options',
 				'theme_supports' => '',
-				'title'          => 'Site Identity',
+				'title'          => __( 'Site Identity', 'astra' ),
 				'description'    => '',
 			);
 			// Register panel.
@@ -175,7 +175,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 				'priority'       => 80,
 				'capability'     => 'edit_theme_options',
 				'theme_supports' => '',
-				'title'          => 'Site Identity',
+				'title'          => __( 'Site Identity', 'astra' ),
 				'description'    => '',
 			);
 
@@ -646,7 +646,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			$config['type']            = isset( $config['ast_type'] ) ? $config['ast_type'] : 'ast_section';
 			$config['active']          = true;
 			$config['id']              = $section_name;
-			$config['customizeAction'] = sprintf( 'Customizing ▸ %s', astra_get_prop( $config, 'title' ) );
+			$config['customizeAction'] = sprintf( __( 'Customizing ▸ %s', 'astra' ), astra_get_prop( $config, 'title' ) );
 
 			if ( isset( $config['clone_type'] ) && isset( $config['clone_index'] ) ) {
 
@@ -1386,7 +1386,7 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			?>
 
 			<option value="inherit"><?php esc_html_e( 'Default System Font', 'astra' ); ?></option>
-			<optgroup label="Other System Fonts">
+			<optgroup label="<?php echo esc_attr_e( 'Other System Fonts', 'astra' ); ?>">
 
 			<?php
 
