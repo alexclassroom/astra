@@ -722,9 +722,7 @@ add_action( 'wp_head', 'astra_blog_layout_customization' );
  * @return void
  */
 function astra_blog_layout_template() {
-	/** @psalm-suppress UndefinedFunction  */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-	astra_theme_get_template( 'blog/template/' . esc_attr( astra_get_option( 'blog-layout' ) ) . '.php' );
-	/** @psalm-suppress UndefinedFunction  */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	get_template_part( 'template-parts/blog/' . esc_attr( astra_get_option( 'blog-layout' ) ) );
 }
 
 
