@@ -726,7 +726,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'line-height' => '1.45',
 					'color'       => esc_attr( $link_color ),
 				),
-				'.entry-meta a:hover:not(.ast-button), .entry-meta a:hover:not(.ast-button) *, .entry-meta a:focus:not(.ast-button), .entry-meta a:focus:not(.ast-button) *, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
+				'.entry-meta a:hover, .entry-meta a:hover *, .entry-meta a:focus, .entry-meta a:focus *, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
 					'color' => esc_attr( $link_hover_color ),
 				),
 
