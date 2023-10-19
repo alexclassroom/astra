@@ -120,16 +120,15 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 			 */
 			$apply_new_default_color_typo_values = Astra_Dynamic_CSS::astra_check_default_color_typo();
 
-			$astra_options        = self::get_astra_options();
-			$post_per_page        = intval( get_option( 'posts_per_page' ) );
-			$astra_blog_backwards = astra_get_option( 'v4-5-0-backward-option' );
+			$astra_options = self::get_astra_options();
+			$post_per_page = intval( get_option( 'posts_per_page' ) );
 
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$selected_layout = false === $astra_blog_backwards ? 'blog-layout-1' : 'blog-layout-4';
+				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-1' : 'blog-layout-4';
 			} else {
-				$selected_layout = false === $astra_blog_backwards ? 'blog-layout-classic' : 'blog-layout-4';
+				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-classic' : 'blog-layout-4';
 			}
 
 			// Defaults list of options.

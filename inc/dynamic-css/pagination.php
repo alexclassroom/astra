@@ -64,7 +64,7 @@ function astra_pagination_css( $dynamic_css ) {
             .ast-pagination {
                 display: inline-block;
                 width: 100%;
-                padding-top: 1em;
+                padding-top: 2em;
                 text-align: center;
             }
             .ast-pagination .page-numbers {
