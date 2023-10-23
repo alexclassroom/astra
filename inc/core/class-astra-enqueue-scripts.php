@@ -419,7 +419,7 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 					'search_posts_per_page' => 5,
 					'search_post_types'     => $search_post_types,
 					'search_language'       => astra_get_current_language_slug(),
-					'no_live_results_found' => __( 'No results found', 'astra-addon' ),
+					'no_live_results_found' => __( 'No results found', 'astra' ),
 				);
 
 				wp_localize_script( 'astra-live-search', 'astra_search', apply_filters( 'astra_search_js_localize', $astra_live_search_localize_data ) );

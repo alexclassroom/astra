@@ -36,13 +36,23 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 		return $dynamic_css;
 	}
 
+	// SureCart Shop Page Banner Support.
+	$surecart_shop_support = ( defined( 'SURECART_PLUGIN_FILE' ) && is_page() && get_the_ID() === absint( get_option( 'surecart_shop_page_id' ) ) ) ? true : false;
+	if ( $surecart_shop_support ) {
+		$current_post_type = 'sc_product';
+	}
+
 	$layout_type     = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-layout', 'layout-1' );
 	$layout_2_active = ( 'layout-2' === $layout_type ) ? true : false;
 
 	if ( $layout_2_active ) {
 		$selector = '.ast-archive-entry-banner[data-post-type="' . $current_post_type . '"]';
 	} else {
-		$selector = 'body.archive .ast-archive-description';
+		if ( $surecart_shop_support ) {
+			$selector = 'body.page .ast-archive-description';
+		} else {
+			$selector = 'body.archive .ast-archive-description';
+		}
 	}
 
 	$horz_alignment   = astra_get_option( 'ast-dynamic-archive-' . $current_post_type . '-horizontal-alignment' );

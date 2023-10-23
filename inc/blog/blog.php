@@ -442,6 +442,11 @@ function astra_get_last_meta_word( $string ) {
 function astra_get_archive_description( $post_type ) {
 	$description = '';
 
+	if ( defined( 'SURECART_PLUGIN_FILE' ) && is_page() && get_the_ID() === absint( get_option( 'surecart_shop_page_id' ) ) ) {
+		$description = astra_get_option( 'ast-dynamic-archive-sc_product-custom-description', '' );
+		return $description;
+	}
+
 	if ( ! is_search() ) {
 
 		$get_archive_description = get_the_archive_description();
@@ -491,7 +496,7 @@ function astra_banner_elements_order( $structure = array() ) {
 		return astra_blog_post_thumbnail_and_title_order();
 	}
 
-	$post_type = $post->post_type;
+	$post_type = strval( $post->post_type );
 
 	$prefix      = 'archive';
 	$structure   = astra_get_option( 'ast-dynamic-' . $prefix . '-' . $post_type . '-structure', array( 'ast-dynamic-' . $prefix . '-' . $post_type . '-title', 'ast-dynamic-' . $prefix . '-' . $post_type . '-description' ) );
@@ -507,8 +512,10 @@ function astra_banner_elements_order( $structure = array() ) {
 	}
 
 	do_action( 'astra_single_post_banner_before' );
+	$post_type = apply_filters( 'astra_banner_elements_post_type', $post_type );
+	$prefix = apply_filters( 'astra_banner_elements_prefix', $prefix );
 
-	foreach ( $structure as $metaval ) {
+	foreach ( apply_filters( 'astra_banner_elements_structure', $structure ) as $metaval ) {
 		$meta_key = $prefix . '-' . astra_get_last_meta_word( $metaval );
 		switch ( $meta_key ) {
 			case 'single-breadcrumb':

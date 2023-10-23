@@ -9,6 +9,7 @@ v4.4.0 (Unreleased)
 - New: WooCommerce - Compatibility for a pro cart shortcode 'astra_woo_slide_in_cart', which adds support for a slide-in cart feature. (Needs Doc).
 - Improvement: Added a new filter 'astra_woo_shop_product_title_link' to remove the product title link from the product page.
 - Improvement: Header-Footer Builder - Enabled widget design options by default and it is supported for editor blocks as well.
+- Improvement: Updated default colors from color palette on fresh setup for better UI/UX.
 - Fix: Resolved console error which originated from "menu-toggle-close" element click on the frontend.
 - Fix: Theme's meta-box modal UI getting extra space after WordPress-6.3.
 - Fix: After WordPress 6.3 bottom spacing of 'figure' tag is missing.
@@ -23,7 +24,7 @@ v4.4.0 (Unreleased)
 - Fix: Breadcrumb - PHP warnings while accessing "name"/"rewrite" properties of the post object.
 - Fix: WooCommerce - Ultimate Addons for Elementor's Product widget missing with "View Cart" button.
 - Fix: Blog/Archive - Banner title font size is not working in responsive mode.
-- Fix: Desktop header creates visibility jerk on the exact tablet breakpoint.
+- Fix: Header Builder - CLS issue due to appearing desktop and mobile header together on responsive devices.
 - Fix: Header Builder - Anchor tag link getting submenu background color which creates multiple color layer issues.
 - Fix: Social Share - Wrong SVG icon (Ravelry) showing on frontend due to incorrect path.
 - Fix: Comment Form - On active & focus of form fields they look improper.

@@ -228,7 +228,7 @@ function astra_is_content_style_boxed( $post_id = false ) {
 			$is_boxed = false;
 		}
 	}
-	return $is_boxed;
+	return apply_filters( 'astra_is_content_layout_boxed', $is_boxed );
 }
 
 /**
@@ -336,7 +336,7 @@ function astra_is_sidebar_style_boxed( $post_id = false ) {
 		}
 	}
 
-	return $is_sidebar_boxed;
+	return apply_filters( 'astra_is_sidebar_layout_boxed', $is_sidebar_boxed );
 }
 
 /**

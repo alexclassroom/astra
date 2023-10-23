@@ -238,7 +238,7 @@ function astra_toggle_layout( $new_content_option, $level, $post_id = false, $ol
  * Migrate old meta layout to new layout.
  *
  * @since 4.2.0
- * @param mixed $meta_layout
+ * @param mixed $meta_layout Meta Layout.
  * @return mixed new layout.
  */
 function astra_migrate_meta_layout( $meta_layout ) {
@@ -983,14 +983,13 @@ function astra_search_static_css() {
 			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
-			padding-right: 3em;
+			padding-right: 2em;
 			padding-left: unset;
 			right: -1em;
 			left: unset;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form .search-field {
 			margin-left: unset;
-			margin-right: 10px;
 		}
 		.ast-search-menu-icon.slide-search .search-form {
 			-webkit-backface-visibility: visible;
@@ -1013,14 +1012,13 @@ function astra_search_static_css() {
 			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
-			padding-left: 3em;
+			padding-left: 2em;
 			padding-right: unset;
 			left: -1em;
 			right: unset;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form .search-field {
 			margin-right: unset;
-			margin-left: 10px;
 		}
 		.ast-search-menu-icon.slide-search .search-form {
 			-webkit-backface-visibility: visible;
@@ -1125,7 +1123,9 @@ function astra_get_site_image_sizes( $add_custom = false ) {
 		'full'         => __( 'Full Size', 'astra' ),
 	);
 
-	$all_sizes = get_intermediate_image_sizes(); // Gets the available intermediate image size names on site.
+	// Gets the available intermediate image size names on site.  
+	$all_sizes = get_intermediate_image_sizes();  // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_intermediate_image_sizes_get_intermediate_image_sizes -- Required for image sizes to work.
+
 
 	$refactored_sizes = array(
 		'full' => __( 'Full Size', 'astra' ),
@@ -1215,6 +1215,7 @@ function astra_get_queried_post_types() {
 			'astra_adv_header',
 			'elementor_library',
 			'brizy_template',
+			'sc_collection',
 
 			'course',
 			'lesson',
