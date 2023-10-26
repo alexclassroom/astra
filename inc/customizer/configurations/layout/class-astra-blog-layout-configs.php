@@ -357,17 +357,16 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 * Option: Image Scale height.
 				 */
 				array(
-					'name'              => 'blog-image-custom-scale-height',
-					'default'           => astra_get_option( 'blog-image-custom-scale-height', 9 ),
-					'type'              => 'sub-control',
-					'control'           => 'ast-number',
-					'qty_selector'      => false,
-					'transport'         => 'postMessage',
-					'parent'            => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
-					'section'           => 'section-blog',
-					'linked'            => 'image',
-					'priority'          => 12,
-					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+					'name'         => 'blog-image-custom-scale-height',
+					'default'      => astra_get_option( 'blog-image-custom-scale-height', 9 ),
+					'type'         => 'sub-control',
+					'control'      => 'ast-number',
+					'qty_selector' => false,
+					'transport'    => 'postMessage',
+					'parent'       => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'      => 'section-blog',
+					'linked'       => 'image',
+					'priority'     => 12,
 				),
 
 				array(
@@ -380,6 +379,28 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'priority' => 14,
 					'label'    => '',
 					'help'     => sprintf( /* translators: 1: link open markup, 2: link close markup */ __( 'Calculate a personalized image ratio using this %1$s online tool %2$s for your image dimensions.', 'astra' ), '<a href="https://www.digitalrebellion.com/webapps/aspectcalc" target="_blank">', '</a>' ),
+				),
+
+				/**
+				 * Option: Blog Hover Effect.
+				 */
+				array(
+					'name'      => 'blog-hover-effect',
+					'default'   => astra_get_option( 'blog-hover-effect' ),
+					'parent'    => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'   => 'section-blog',
+					'linked'    => 'image',
+					'type'      => 'sub-control',
+					'priority'  => 17,
+					'transport' => 'postMessage',
+					'title'     => __( 'Hover Effect', 'astra' ),
+					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'control'   => 'ast-select',
+					'choices'   => array(
+						'none'     => __( 'None', 'astra' ),
+						'zoom-in'  => __( 'Zoom In', 'astra' ),
+						'zoom-out' => __( 'Zoom Out', 'astra' ),
+					),
 				),
 
 				/**
