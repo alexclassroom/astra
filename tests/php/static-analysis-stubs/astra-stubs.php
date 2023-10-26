@@ -3030,7 +3030,7 @@ namespace {
         /**
          * Update REST Post Query for live search.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @param array $args Query args.
          * @param array $request Request args.
          * @return array
@@ -3491,7 +3491,7 @@ namespace {
          * Dynamic CSS to make Sidebar Sticky.
          *
          * @return string Sticky Sidebar CSS.
-         * @since x.x.x
+         * @since 4.4.0
          */
         public static function astra_sticky_sidebar_css()
         {
@@ -3521,7 +3521,7 @@ namespace {
         /**
          * Improve full screen search Submit button style.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @return boolean false if it is an existing user, true if not.
          */
         public static function astra_4_4_0_compatibility()
@@ -4836,7 +4836,7 @@ namespace {
         /**
          * Add iframe wrapper for videos.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @access public
          *
          * @param string $block_content Rendered block content.
@@ -9478,7 +9478,7 @@ namespace {
         /**
          * Post types for live search.
          *
-         * @since x.x.x
+         * @since 4.4.0
          */
         public function get_live_search_posttypes()
         {
@@ -9486,7 +9486,7 @@ namespace {
         /**
          * Get formatted live search post types.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @return array
          */
         public function get_search_post_types_choices()
@@ -11238,7 +11238,7 @@ namespace {
         /**
          * Get Page Background Toggle Options.
          *
-         * @since x.x.x
+         * @since 4.4.0
          */
         public function get_page_bg_toggle_options()
         {
@@ -12518,7 +12518,7 @@ namespace {
      * New Users - Will see the changes
      *
      * @return bool true|false.
-     * @since x.x.x
+     * @since 4.4.0
      */
     function astra_has_submenu_transperent_styling()
     {
@@ -15218,7 +15218,7 @@ namespace {
      * Live Search - Dynamic CSS.
      *
      * @param string $dynamic_css
-     * @since x.x.x
+     * @since 4.4.0
      */
     function astra_live_search_css($dynamic_css)
     {
@@ -15675,7 +15675,7 @@ namespace {
      * Return the array of site's available image size.
      *
      * @param boolean $add_custom Add custom image size.
-     * @since x.x.x
+     * @since 4.4.0
      * @return array
      */
     function astra_get_site_image_sizes($add_custom = \false)
@@ -15689,7 +15689,7 @@ namespace {
      * @param string $custom_scale_width Custom scale width.
      * @param string $custom_scale_height Custom scale height.
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return string
      */
     function astra_get_dynamic_image_aspect_ratio($aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height)
@@ -15698,7 +15698,7 @@ namespace {
     /**
      * Getting site active language & compatible with other plugins.
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return string
      */
     function astra_get_current_language_slug()
@@ -15711,7 +15711,7 @@ namespace {
      * 1. Dynamic customizer
      * 2. Live Search
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return array
      */
     function astra_get_queried_post_types()
@@ -16212,7 +16212,7 @@ namespace {
     /**
      * Render Featured Image for single post at 'astra_entry_before' hook before post <article>
      *
-     * @since x.x.x
+     * @since 4.4.0
      */
     function astra_single_post_entry_featured_image()
     {
@@ -16973,18 +16973,18 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.4.0
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return void
      */
     function astra_theme_background_updater_4_3_2()
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.4.0
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return void
      */
     function astra_theme_background_updater_4_4_0()

@@ -3,7 +3,7 @@
  * Live Search - Dynamic CSS
  *
  * @package astra
- * @since x.x.x
+ * @since 4.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ add_filter( 'astra_dynamic_theme_css', 'astra_live_search_css', 12 );
  * Live Search - Dynamic CSS.
  *
  * @param string $dynamic_css
- * @since x.x.x
+ * @since 4.4.0
  */
 function astra_live_search_css( $dynamic_css ) {
 	$ltr_left  = is_rtl() ? 'right' : 'left';

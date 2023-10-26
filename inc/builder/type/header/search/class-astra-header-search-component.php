@@ -43,7 +43,7 @@ class Astra_Header_Search_Component {
 	/**
 	 * Update REST Post Query for live search.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @param array $args Query args.
 	 * @param array $request Request args.
 	 * @return array

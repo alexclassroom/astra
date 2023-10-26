@@ -1,12 +1,12 @@
-v4.4.0 (Unreleased)
-- New: Header Builder - Search - Introducing a new feature Live Search.
+v4.4.0
+- New: Header Builder - Search - Introducing a new feature Live Search. ( https://wpastra.com/docs/live-search/ )
 - New: Header Builder - Search - Post Types selection option to filter Live Search results within.
 - New: Header Builder - Search - Option to adjust search bar width.
-- New: Introducing a feature of Sticky Sidebar functionality for enhanced user experience. (Needs Doc)
-- New: Introducing Primary & Secondary Button styles under Global - Buttons. (Needs Doc)
+- New: Introducing a feature of Sticky Sidebar functionality for enhanced user experience. ( https://wpastra.com/docs/sticky-sidebar/ )
+- New: Introducing Primary & Secondary Button styles under Global - Buttons. ( https://wpastra.com/docs/secondary-buttons/ )
 - New: Introducing new Twitter-X Icon added for Social Sharing and Social Icons.
-- New: Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for single layouts.
-- New: WooCommerce - Compatibility for a pro cart shortcode 'astra_woo_slide_in_cart', which adds support for a slide-in cart feature. (Needs Doc).
+- New: Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for single banner layouts. ( https://wpastra.com/docs/featured-image-options-for-single-banner-layouts/ )
+- New: WooCommerce - Compatibility for a pro cart shortcode 'astra_woo_slide_in_cart', which adds support for a slide-in cart feature.
 - Improvement: Added a new filter 'astra_woo_shop_product_title_link' to remove the product title link from the product page.
 - Improvement: Header-Footer Builder - Enabled widget design options by default and it is supported for editor blocks as well.
 - Improvement: Updated default colors from color palette on fresh setup for better UI/UX.

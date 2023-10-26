@@ -16,7 +16,7 @@ if ( ! defined( 'SURECART_PLUGIN_FILE' ) ) {
 /**
  * Astra SureCart Compatibility
  *
- * @since x.x.x
+ * @since 4.4.0
  */
 class Astra_SureCart {
 
@@ -60,7 +60,7 @@ class Astra_SureCart {
 	 * Check is SureCart Shop Page.
 	 *
 	 * @return bool True if SureCart Shop Page.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function astra_is_surecart_shop_page() {
 		if ( ! is_customize_preview() && ! is_null( $this->shop_page_status ) ) {
@@ -68,7 +68,7 @@ class Astra_SureCart {
 		}
 
 		$this->shop_page_status = false;
-		$supported_post_types = Astra_Posts_Structure_Loader::get_supported_post_types();
+		$supported_post_types   = Astra_Posts_Structure_Loader::get_supported_post_types();
 		if ( ! in_array( $this->post_type, $supported_post_types ) ) {
 			$this->shop_page_status = false;
 		}
@@ -90,7 +90,7 @@ class Astra_SureCart {
 	 *
 	 * @param string $sidebar_layout Layout type.
 	 * @return string $sidebar_layout Layout type.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function sc_shop_sidebar_layout( $sidebar_layout ) {
 		if ( $this->astra_is_surecart_shop_page() ) {
@@ -109,7 +109,7 @@ class Astra_SureCart {
 	 *
 	 * @param string $content_layout Layout type.
 	 * @return string $content_layout Layout type.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function sc_shop_content_layout( $content_layout ) {
 		if ( $this->astra_is_surecart_shop_page() ) {
@@ -128,7 +128,7 @@ class Astra_SureCart {
 	 *
 	 * @param string $is_style_boxed Layout style.
 	 * @return string $is_style_boxed Layout style.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function sc_shop_content_boxed_layout( $is_style_boxed ) {
 		if ( $this->astra_is_surecart_shop_page() ) {
@@ -147,7 +147,7 @@ class Astra_SureCart {
 	 *
 	 * @param string $is_style_boxed Layout style.
 	 * @return string $is_style_boxed Layout style.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function sc_shop_sidebar_boxed_layout( $is_style_boxed ) {
 		if ( $this->astra_is_surecart_shop_page() ) {
@@ -165,7 +165,7 @@ class Astra_SureCart {
 	 * SureCart Archive Banner Support.
 	 * Making 'Shop Page' as archive of SureCart Products.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function astra_surecart_archive_page_banner_support() {
 		if ( false === $this->astra_is_surecart_shop_page() ) {
@@ -181,7 +181,7 @@ class Astra_SureCart {
 			return;
 		}
 
-		$banner_layout     = astra_get_option( 'ast-dynamic-archive-sc_product-layout', 'layout-1' );
+		$banner_layout = astra_get_option( 'ast-dynamic-archive-sc_product-layout', 'layout-1' );
 		add_filter( 'astra_banner_elements_structure', array( $this, 'update_astra_banner_elements_structure' ) );
 		add_filter( 'astra_banner_elements_post_type', array( $this, 'update_astra_banner_elements_post_type' ) );
 		add_filter( 'astra_banner_elements_prefix', array( $this, 'update_astra_banner_elements_prefix' ) );
@@ -200,7 +200,7 @@ class Astra_SureCart {
 	/**
 	 * Enable layout 1 for some cases. Ex. SureCart Product.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @return void
 	 */
 	public function astra_force_render_banner_layout_1() {
@@ -219,7 +219,7 @@ class Astra_SureCart {
 	/**
 	 * SureCart Hero Section.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function astra_surecart_hero_section() {
 		if ( false === apply_filters( 'astra_apply_hero_header_banner', true ) ) {
@@ -236,8 +236,9 @@ class Astra_SureCart {
 
 	/**
 	 * SureCart Section banner element structure.
+	 *
 	 * @param array $structure Elements structure.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function update_astra_banner_elements_structure( $structure ) {
 		return astra_get_option( 'ast-dynamic-archive-' . $this->post_type . '-structure', array( 'ast-dynamic-archive-' . $this->post_type . '-title', 'ast-dynamic-archive-' . $this->post_type . '-description' ) );
@@ -245,8 +246,9 @@ class Astra_SureCart {
 
 	/**
 	 * SureCart Section banner reference post type.
+	 *
 	 * @param string $post_type Post type.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function update_astra_banner_elements_post_type( $post_type ) {
 		return $this->post_type;
@@ -254,8 +256,9 @@ class Astra_SureCart {
 
 	/**
 	 * SureCart Section banner prefix.
+	 *
 	 * @param string $prefix Prefix.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function update_astra_banner_elements_prefix( $prefix ) {
 		return 'archive';
@@ -266,7 +269,7 @@ class Astra_SureCart {
 	 *
 	 * @param string $title Default archive title.
 	 * @param int    $post_id Post ID.
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @return string
 	 */
 	public function update_the_title( $title, $post_id ) {
@@ -281,7 +284,7 @@ class Astra_SureCart {
 	/**
 	 * Disable Astra's next page's banner as we already loaded.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function disable_page_loaded_banner_area() {
 		add_filter( 'astra_apply_hero_header_banner', '__return_false' );
@@ -292,7 +295,7 @@ class Astra_SureCart {
 	/**
 	 * Revert SureCart Support, after banner loaded.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function revert_surecart_support() {
 		if ( false === $this->astra_is_surecart_shop_page() ) {
@@ -311,6 +314,7 @@ class Astra_SureCart {
 
 /**
  * Kicking this off by object.
- * @since x.x.x
+ *
+ * @since 4.4.0
  */
 new Astra_SureCart();

@@ -28,7 +28,7 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 	/**
 	 * Post types for live search.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 */
 	public function get_live_search_posttypes() {
 		$supported_post_types = array();
@@ -41,7 +41,7 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 	/**
 	 * Get formatted live search post types.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @return array
 	 */
 	public function get_search_post_types_choices() {

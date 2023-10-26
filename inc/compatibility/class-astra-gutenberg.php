@@ -150,7 +150,7 @@ class Astra_Gutenberg {
 	/**
 	 * Add iframe wrapper for videos.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @access public
 	 *
 	 * @param string $block_content Rendered block content.

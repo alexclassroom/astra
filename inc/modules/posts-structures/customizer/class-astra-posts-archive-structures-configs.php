@@ -1008,9 +1008,9 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 	/**
 	 * Get Dynamic Section Title.
 	 *
-	 * @since x.x.x
+	 * @since 4.4.0
 	 * @param object|null $post_type_object Post type object.
-	 * @param string $post_type Post type.
+	 * @param string      $post_type Post type.
 	 * @return string
 	 */
 	public function get_dynamic_section_title( $post_type_object, $post_type ) {

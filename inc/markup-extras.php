@@ -2068,13 +2068,13 @@ add_action( 'wp_footer', 'astra_render_header_svg_mask' );
 /**
  * Render Featured Image for single post at 'astra_entry_before' hook before post <article>
  *
- * @since x.x.x
+ * @since 4.4.0
  */
 function astra_single_post_entry_featured_image() {
-	$is_featured_image   = astra_get_option( 'article-featured-image', false );
-	$featured_image_size = astra_get_option( 'article-featured-image-size', 'large' );
+	$post_type           = strval( get_post_type() );
+	$featured_image_size = astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-size', 'large' );
 
-	if ( apply_filters( 'astra_post_featured_image_condition', ( is_single() && has_post_thumbnail() && $is_featured_image ) ) ) {
+	if ( apply_filters( 'astra_post_featured_image_condition', ( has_post_thumbnail() ) ) ) {
 		do_action( 'astra_article_featured_image_before' );
 
 		$output     = '';
@@ -2089,7 +2089,7 @@ function astra_single_post_entry_featured_image() {
 			)
 		);
 		if ( '' != $post_thumb ) {
-			$featured_image_width = astra_get_option( 'article-featured-image-width-type', 'wide' );
+			$featured_image_width = 'layout-1' === astra_get_option( 'ast-dynamic-single-' . $post_type . '-layout', 'layout-1' ) ? astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-width-type', 'wide' ) : '';
 			$output              .= '<div class="ast-single-post-featured-section post-thumb ast-article-image-container--' . esc_attr( $featured_image_width ) . '">';
 			$output              .= $post_thumb;
 			$output              .= '</div>';
@@ -2102,4 +2102,34 @@ function astra_single_post_entry_featured_image() {
 	}
 }
 
-add_action( 'astra_entry_before', 'astra_single_post_entry_featured_image' );
+/**
+ * Prepare rendering Featured Image for single post at 'astra_header_after' hook after header.
+ * Required on single post only.
+ *
+ * @since 4.4.0
+ */
+function astra_setup_article_featured_image() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$post_type           = strval( get_post_type() );
+	$banner_title_layout = astra_get_option( 'ast-dynamic-single-' . $post_type . '-layout', 'layout-1' );
+	$single_structure    = astra_get_option( 'ast-dynamic-single-' . $post_type . '-structure', astra_get_option( 'ast-dynamic-single-' . $post_type . '-structure', 'page' === $post_type ? array( 'ast-dynamic-single-' . $post_type . '-image', 'ast-dynamic-single-' . $post_type . '-title' ) : array( 'ast-dynamic-single-' . $post_type . '-title', 'ast-dynamic-single-' . $post_type . '-meta' ) ) );
+
+	if ( ! in_array( 'ast-dynamic-single-' . $post_type . '-image', $single_structure ) ) {
+		return;
+	}
+
+	if ( 'layout-1' === $banner_title_layout ) {
+		$article_featured_image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-position-layout-1', 'behind' );
+	} else {
+		$article_featured_image_position = astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-position-layout-2', 'none' );
+	}
+
+	if ( 'none' !== $article_featured_image_position ) {
+		add_action( 'astra_entry_before', 'astra_single_post_entry_featured_image' );
+	}
+}
+
+add_action( 'astra_header_after', 'astra_setup_article_featured_image' );

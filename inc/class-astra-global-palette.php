@@ -124,7 +124,7 @@ class Astra_Global_Palette {
 		 * @since 4.0.0
 		 */
 		$apply_new_default_color_typo_values = Astra_Dynamic_CSS::astra_check_default_color_typo();
-		$update_colors_for_starter_library = Astra_Dynamic_CSS::astra_4_4_0_compatibility();
+		$update_colors_for_starter_library   = Astra_Dynamic_CSS::astra_4_4_0_compatibility();
 
 		return array(
 			'currentPalette' => 'palette_1',

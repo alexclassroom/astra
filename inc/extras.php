@@ -965,7 +965,7 @@ function astra_search_static_css() {
 		opacity: 1;
 		position: relative;
 	}
-	.ast-search-menu-icon.ast-dropdown-active .search-field {
+	.ast-search-menu-icon.ast-dropdown-active .search-field, .ast-dropdown-active.ast-search-menu-icon.slide-search input.search-field {
 		width: 235px;
 	}
 	.ast-header-search .ast-search-menu-icon.slide-search .search-form, .ast-header-search .ast-search-menu-icon.ast-inline-search .search-form {
@@ -1111,7 +1111,7 @@ function astra_get_font_array_css( $font_family, $font_weight, $font_size, $font
  * Return the array of site's available image size.
  *
  * @param boolean $add_custom Add custom image size.
- * @since x.x.x
+ * @since 4.4.0
  * @return array
  */
 function astra_get_site_image_sizes( $add_custom = false ) {
@@ -1123,7 +1123,7 @@ function astra_get_site_image_sizes( $add_custom = false ) {
 		'full'         => __( 'Full Size', 'astra' ),
 	);
 
-	// Gets the available intermediate image size names on site.  
+	// Gets the available intermediate image size names on site.
 	$all_sizes = get_intermediate_image_sizes();  // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_intermediate_image_sizes_get_intermediate_image_sizes -- Required for image sizes to work.
 
 
@@ -1156,12 +1156,12 @@ function astra_get_site_image_sizes( $add_custom = false ) {
  * @param string $custom_scale_width Custom scale width.
  * @param string $custom_scale_height Custom scale height.
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return string
  */
 function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height ) {
 	$aspect_ratio_css = '';
-	if ( '' !== $aspect_ratio_type ) {
+	if ( 'default' !== $aspect_ratio_type ) {
 		if ( 'custom' === $aspect_ratio_type ) {
 			$aspect_ratio_css = absint( $custom_scale_width ) . '/' . absint( $custom_scale_height );
 		} else {
@@ -1174,7 +1174,7 @@ function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_s
 /**
  * Getting site active language & compatible with other plugins.
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return string
  */
 function astra_get_current_language_slug() {
@@ -1192,7 +1192,7 @@ function astra_get_current_language_slug() {
  * 1. Dynamic customizer
  * 2. Live Search
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return array
  */
 function astra_get_queried_post_types() {

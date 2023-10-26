@@ -53,6 +53,7 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 function astra_refresh_customizer( control ) {
 	wp.customize( control, function( value ) {
 		value.bind( function( value ) {
+			console.error(value);
 			wp.customize.preview.send( 'refresh' );
 		} );
 	} );
@@ -85,6 +86,38 @@ function astra_refresh_customizer( control ) {
 
 		astra_refresh_customizer(
 			'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-1]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-2]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-width-type]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-type]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-pre-scale]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-width]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-height]'
+		);
+
+		astra_refresh_customizer(
+			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-size]'
 		);
 
 		astra_refresh_customizer(
