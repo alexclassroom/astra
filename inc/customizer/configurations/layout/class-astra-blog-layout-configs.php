@@ -389,9 +389,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
 					'control'   => 'ast-select',
 					'choices'   => array(
-						'none'     => 'None',
-						'zoom-in'  => 'Zoom In',
-						'zoom-out' => 'Zoom Out',
+						'none'     => __( 'None', 'astra' ),
+						'zoom-in'  => __( 'Zoom In', 'astra' ),
+						'zoom-out' => __( 'Zoom Out', 'astra' ),
 					),
 				),
 
