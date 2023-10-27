@@ -1712,10 +1712,12 @@ input[type="text"].select2-search__field {
 /* Toggle Section Control */
 .ast-section-toggle {
 	display: grid;
-    grid-template-columns: 70% 15% 15%;
+    grid-template-columns: 70% 20% 10%;
     align-items: center;
-    padding: 16px 0 16px 14px;
+    padding: 0 0 0 12px;
     height: 100%;
+	align-items: center;
+    align-content: center;
 }
 
 .ast-section-toggle label {
@@ -1725,6 +1727,15 @@ input[type="text"].select2-search__field {
     height: 100%;
     display: inline-flex;
     align-items: center;
+}
+
+.ast-section-toggle > label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: auto;
+    line-height: 50px;
 }
 
 .ast-section-toggle:not(.active) > label {
@@ -1758,15 +1769,14 @@ input[type="text"].select2-search__field {
     color: var(--wp-admin-theme-color);
     cursor: pointer;
     line-height: 20px;
-    margin-left: 10px;
     height: 100%;
     display: inline-flex;
     align-items: center;
 }
 
 .ast-section-toggle-icon span {
-	font-size: 16px;
-	line-height: 16px;
+  font-size: 16px;
+  line-height: 20px;
 	width: 16px;
 	height: 16px;
 }
@@ -1787,6 +1797,8 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
   font-size: 11px;
   line-height: 16px;
   font-weight: 400;
+  text-wrap: wrap;
+  display: inline-block;
 }
 
 .customize-control-ast-description a.button {
@@ -2638,19 +2650,28 @@ span.customize-control-title.ast-group-section-title {
 	flex: 0 0 calc(28% - 10px);
 }
 
-.ast-fields-wrap [ID*="-image-custom-scale-width"], .ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-width"], li[ID*="-image-custom-scale-height"] {
     display: inline-flex;
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-height"] {
+	float: none;
     padding: 0 !important;
     width: calc(50% + 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-width"] {
+li[ID*="-image-custom-scale-width"] {
     width: calc(50% - 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"]:before {
+li[ID*="-image-custom-scale-height"]:before {
     content: ':';
     padding: 0 10px;
+	line-height: 30px;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden {
+    float: unset;
+    width: unset;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
+    content: unset;
 }
 
 /* Hide spin buttons for WebKit (Chrome, Safari) */
@@ -3743,8 +3764,8 @@ span.customize-control-title.ast-group-section-title {
 .ast-customizer-select-multi .ast-multi-select__value-container {
     overflow-x: hidden;
     flex-wrap: nowrap;
-    padding-left: 5px;
-    padding-right: 25px;
+    padding-left: 10px;
+    padding-right: 30px;
 }
 
 .ast-customizer-select-multi:before {
@@ -3765,7 +3786,7 @@ span.customize-control-title.ast-group-section-title {
     position: absolute;
     font-family: dashicons;
     font-size: 16px;
-    margin-right: 7px;
+    margin-right: 15px;
     pointer-events: none;
     z-index: 1;
     top: 13px;
@@ -3805,6 +3826,7 @@ span.customize-control-title.ast-group-section-title {
 .ast-customizer-select-multi .ast-multi-select__menu {
     z-index: 2;
 }
+
 .ast-variant-select > div {
 	border-color: #dddddd;
 }
@@ -4647,6 +4669,10 @@ span.customize-control-title.ast-group-section-title {
 .ast-switch:not(:checked), .ast-switch:checked {
   opacity: 0;
 }
+.customize-control-ast-section-toggle .components-form-toggle {
+	margin-left: 5px;
+	text-align: right;
+}
 
 /* Wordpress 6.1 Compatibility CSS for toggle UI */
 .components-toggle-control .components-base-control__field {
@@ -4709,6 +4735,20 @@ span.customize-control-title.ast-group-section-title {
 	display: flex;
 	white-space: break-spaces;
 	inline-size: max-content;
+}
+.ast-top-dotted-divider .ast-control-tooltip.dashicons-editor-help {
+    top: 22px;
+}
+.customize-control.ast-bottom-dotted-divider.customize-control-ast-toggle-control .ast-control-tooltip {
+    top: 8px;
+}
+.customize-control.customize-control-ast-select.ast-top-dotted-divider .ast-control-tooltip {
+    top: 36px;
+}
+.customize-control-ast-sortable .customize-control-ast-selector .dashicons.ast-control-tooltip {
+    top: 18%;
+    padding: 0;
+    font-size: 20px;
 }
 
 .select2-container {

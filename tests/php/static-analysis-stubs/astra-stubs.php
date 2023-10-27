@@ -3030,7 +3030,7 @@ namespace {
         /**
          * Update REST Post Query for live search.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @param array $args Query args.
          * @param array $request Request args.
          * @return array
@@ -3491,7 +3491,7 @@ namespace {
          * Dynamic CSS to make Sidebar Sticky.
          *
          * @return string Sticky Sidebar CSS.
-         * @since x.x.x
+         * @since 4.4.0
          */
         public static function astra_sticky_sidebar_css()
         {
@@ -3516,6 +3516,15 @@ namespace {
          * @since 4.2.2
          */
         public static function astra_core_form_btns_styling()
+        {
+        }
+        /**
+         * Improve full screen search Submit button style.
+         *
+         * @since 4.4.0
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function astra_4_4_0_compatibility()
         {
         }
     }
@@ -4827,7 +4836,7 @@ namespace {
         /**
          * Add iframe wrapper for videos.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @access public
          *
          * @param string $block_content Rendered block content.
@@ -4991,7 +5000,7 @@ namespace {
         /**
          * Return starter content definition.
          *
-         * @return mixed|void 
+         * @return mixed|void
          * @since 4.0.0
          */
         public function get()
@@ -7575,7 +7584,7 @@ namespace {
         public function __construct()
         {
         }
-        /** 
+        /**
          * Comment count wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7585,7 +7594,7 @@ namespace {
         public function comment_count_wrapper_open($args)
         {
         }
-        /** 
+        /**
          * Comment count wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7595,7 +7604,7 @@ namespace {
         public function comment_count_wrapper_close($args)
         {
         }
-        /** 
+        /**
          * Comment data wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7605,7 +7614,7 @@ namespace {
         public function ast_comment_data_wrap_open($args)
         {
         }
-        /** 
+        /**
          * Comment data wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7615,7 +7624,7 @@ namespace {
         public function ast_comment_data_wrap_close($args)
         {
         }
-        /** 
+        /**
          * Comment meta wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7625,7 +7634,7 @@ namespace {
         public function ast_comment_meta_wrap_open($args)
         {
         }
-        /** 
+        /**
          * Comment meta wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7635,7 +7644,7 @@ namespace {
         public function ast_comment_meta_wrap_close($args)
         {
         }
-        /** 
+        /**
          * Comment time div attributes.
          *
          * @since 3.3.0
@@ -7644,7 +7653,7 @@ namespace {
         public function ast_comment_time_attr()
         {
         }
-        /** 
+        /**
          * Comment cite wrapper div attributes.
          *
          * @since 3.3.0
@@ -7689,16 +7698,16 @@ namespace {
         public function ast_grid_col_6()
         {
         }
-        /** 
+        /**
          * Comment form grid classes.
          *
-         * @since 3.3.0 
+         * @since 3.3.0
          * @return string.
          */
         public function comment_form_grid_class()
         {
         }
-        /** 
+        /**
          * Removed grid layout classes and make common class for same style
          *
          * @since 3.3.0
@@ -7707,7 +7716,7 @@ namespace {
         public function ast_grid_lg_12()
         {
         }
-        /** 
+        /**
          * Layout-4 grid css backward comaptibility.
          *
          * @return string.
@@ -7715,7 +7724,7 @@ namespace {
         public function ast_layout_4_grid()
         {
         }
-        /** 
+        /**
          * Layout-2 grid css backward comaptibility.
          *
          * @return string.
@@ -7723,7 +7732,7 @@ namespace {
         public function ast_layout_2_grid()
         {
         }
-        /** 
+        /**
          * Layout-1 grid css backward comaptibility.
          *
          * @return string.
@@ -7731,7 +7740,7 @@ namespace {
         public function ast_layout_1_grid()
         {
         }
-        /** 
+        /**
          * Layout-3 grid css backward comaptibility.
          *
          * @return string.
@@ -7739,7 +7748,7 @@ namespace {
         public function ast_layout_3_grid()
         {
         }
-        /** 
+        /**
          * Layout-5 grid css backward comaptibility.
          *
          * @return string.
@@ -7747,7 +7756,7 @@ namespace {
         public function ast_layout_5_grid()
         {
         }
-        /** 
+        /**
          * Layout-6 grid css backward comaptibility.
          *
          * @return string.
@@ -7757,7 +7766,7 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -7767,7 +7776,7 @@ namespace {
         }
         /**
          * Footer widget closing div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -7797,7 +7806,7 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         * 
+         *
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -9469,7 +9478,7 @@ namespace {
         /**
          * Post types for live search.
          *
-         * @since x.x.x
+         * @since 4.4.0
          */
         public function get_live_search_posttypes()
         {
@@ -9477,7 +9486,7 @@ namespace {
         /**
          * Get formatted live search post types.
          *
-         * @since x.x.x
+         * @since 4.4.0
          * @return array
          */
         public function get_search_post_types_choices()
@@ -11229,7 +11238,7 @@ namespace {
         /**
          * Get Page Background Toggle Options.
          *
-         * @since x.x.x
+         * @since 4.4.0
          */
         public function get_page_bg_toggle_options()
         {
@@ -12392,7 +12401,7 @@ namespace {
      * Minimum Version requirement of the Astra Pro addon.
      * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
      */
-    \define('ASTRA_EXT_MIN_VER', '4.1.0');
+    \define('ASTRA_EXT_MIN_VER', '4.4.0');
     \define('ASTRA_PRO_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'dashboard', 'free-theme', 'upgrade-now'));
     \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'customizer', 'free-theme', 'upgrade'));
     /**
@@ -12509,7 +12518,7 @@ namespace {
      * New Users - Will see the changes
      *
      * @return bool true|false.
-     * @since x.x.x
+     * @since 4.4.0
      */
     function astra_has_submenu_transperent_styling()
     {
@@ -12781,17 +12790,6 @@ namespace {
      * @return mixed
      */
     function astra_banner_elements_order($structure = array())
-    {
-    }
-    /**
-     * Render the featured image at top of entry content.
-     *
-     * Customizer settings: Single {post_type} > {post_type} Title > Structure > Featured Image > Image Position
-     *
-     * @since x.x.x
-     * @return void
-     */
-    function astra_single_content_image()
     {
     }
     /**
@@ -13365,7 +13363,7 @@ namespace {
     }
     /**
      * Home starter content.
-     * 
+     *
      * @since 4.0.0
      * @package Astra\Compatibility\Starter_Content
      */
@@ -13725,7 +13723,7 @@ namespace {
      *
      * @param string $title for MyAccount title endpoint.
      * @return string
-     * 
+     *
      * @since 4.3.0
      */
     function astra_get_wc_endpoints_title($title)
@@ -15190,7 +15188,7 @@ namespace {
     /**
      * Old Header Menu Last Item - Dynamic CSS.
      *
-     * @param string $dynamic_css 
+     * @param string $dynamic_css
      * @since 3.5.0
      */
     function astra_old_header_custom_menu_css($dynamic_css)
@@ -15220,7 +15218,7 @@ namespace {
      * Live Search - Dynamic CSS.
      *
      * @param string $dynamic_css
-     * @since x.x.x
+     * @since 4.4.0
      */
     function astra_live_search_css($dynamic_css)
     {
@@ -15676,10 +15674,11 @@ namespace {
     /**
      * Return the array of site's available image size.
      *
-     * @since x.x.x
+     * @param boolean $add_custom Add custom image size.
+     * @since 4.4.0
      * @return array
      */
-    function astra_get_site_image_sizes()
+    function astra_get_site_image_sizes($add_custom = \false)
     {
     }
     /**
@@ -15690,7 +15689,7 @@ namespace {
      * @param string $custom_scale_width Custom scale width.
      * @param string $custom_scale_height Custom scale height.
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return string
      */
     function astra_get_dynamic_image_aspect_ratio($aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height)
@@ -15699,7 +15698,7 @@ namespace {
     /**
      * Getting site active language & compatible with other plugins.
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return string
      */
     function astra_get_current_language_slug()
@@ -15712,7 +15711,7 @@ namespace {
      * 1. Dynamic customizer
      * 2. Live Search
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return array
      */
     function astra_get_queried_post_types()
@@ -16208,6 +16207,14 @@ namespace {
      * @return void
      */
     function astra_render_header_svg_mask()
+    {
+    }
+    /**
+     * Render Featured Image for single post at 'astra_entry_before' hook before post <article>
+     *
+     * @since 4.4.0
+     */
+    function astra_single_post_entry_featured_image()
     {
     }
     /**
@@ -16996,21 +17003,21 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.4.0
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return void
      */
     function astra_theme_background_updater_4_4_0()
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.4.0
      *
-     * @since x.x.x
+     * @since 4.4.0
      * @return void
      */
-    function astra_theme_background_updater_4_3_2()
+    function astra_theme_background_updater_4_6_0()
     {
     }
     /**

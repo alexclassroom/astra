@@ -54,7 +54,7 @@ const Docs = ({ setOpen }) => {
 					<div className="max-w-5xl mx-auto w-full relative">
 						<input
 							type="search"
-							placeholder="Search"
+							placeholder={__("Search", "astra")}
 							className="w-full ast-docs-search-fields text-base"
 							onChange={(e) => setSearchKeyword(e.target.value)}
 						/>

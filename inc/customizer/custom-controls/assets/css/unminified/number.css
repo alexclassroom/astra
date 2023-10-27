@@ -1,16 +1,25 @@
-.ast-fields-wrap [ID*="-image-custom-scale-width"], .ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-width"], li[ID*="-image-custom-scale-height"] {
     display: inline-flex;
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"] {
+li[ID*="-image-custom-scale-height"] {
+	float: none;
     padding: 0 !important;
     width: calc(50% + 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-width"] {
+li[ID*="-image-custom-scale-width"] {
     width: calc(50% - 10px);
 }
-.ast-fields-wrap [ID*="-image-custom-scale-height"]:before {
+li[ID*="-image-custom-scale-height"]:before {
     content: ':';
     padding: 0 10px;
+	line-height: 30px;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden {
+    float: unset;
+    width: unset;
+}
+li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
+    content: unset;
 }
 
 /* Hide spin buttons for WebKit (Chrome, Safari) */

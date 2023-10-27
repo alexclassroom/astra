@@ -3,7 +3,7 @@
  * Live Search - Dynamic CSS
  *
  * @package astra
- * @since x.x.x
+ * @since 4.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,10 +16,10 @@ add_filter( 'astra_dynamic_theme_css', 'astra_live_search_css', 12 );
  * Live Search - Dynamic CSS.
  *
  * @param string $dynamic_css
- * @since x.x.x
+ * @since 4.4.0
  */
 function astra_live_search_css( $dynamic_css ) {
-	$ltr_left = is_rtl() ? 'right' : 'left';
+	$ltr_left  = is_rtl() ? 'right' : 'left';
 	$ltr_right = is_rtl() ? 'left' : 'right';
 
 	$heading_base_color = astra_get_option( 'heading-base-color' );
@@ -87,19 +87,19 @@ function astra_live_search_css( $dynamic_css ) {
 		$search_width    = astra_get_option( 'header-search-width' );
 		$search_selector = '.ast-header-search .ast-search-menu-icon';
 
-		$container_css = array(
-			$search_selector . ' .search-field'           => array(
-				'width'    => ! empty( $search_width['desktop'] ) ? astra_get_css_value( $search_width['desktop'], 'px' ) : 'auto',
+		$container_css        = array(
+			$search_selector . ' .search-field' => array(
+				'width' => ! empty( $search_width['desktop'] ) ? astra_get_css_value( $search_width['desktop'], 'px' ) : 'auto',
 			),
 		);
 		$container_css_tablet = array(
-			$search_selector . ' .search-field'           => array(
-				'width'    => ! empty( $search_width['tablet'] ) ? astra_get_css_value( $search_width['tablet'], 'px' ) : '100%',
+			$search_selector . ' .search-field' => array(
+				'width' => ! empty( $search_width['tablet'] ) ? astra_get_css_value( $search_width['tablet'], 'px' ) : '100%',
 			),
 		);
 		$container_css_mobile = array(
-			$search_selector . ' .search-field'           => array(
-				'width'    => ! empty( $search_width['mobile'] ) ? astra_get_css_value( $search_width['mobile'], 'px' ) : '100%',
+			$search_selector . ' .search-field' => array(
+				'width' => ! empty( $search_width['mobile'] ) ? astra_get_css_value( $search_width['mobile'], 'px' ) : '100%',
 			),
 		);
 

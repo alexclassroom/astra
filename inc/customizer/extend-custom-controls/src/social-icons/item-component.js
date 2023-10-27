@@ -42,36 +42,51 @@ const ItemComponent = props => {
 					}));
 				}}
 			>
-				<Tooltip text={__("Toggle Item Visiblity", "astra")}>
-					<Button className="ahfb-sorter-visiblity">
-						<span
-							dangerouslySetInnerHTML={{
-								__html: selectedIcon,
-							}}
-						/>
-					</Button>
-				</Tooltip>
+				<Button className="ahfb-sorter-visiblity">
+					<span
+						dangerouslySetInnerHTML={{
+							__html: selectedIcon,
+						}}
+					/>
+				</Button>
 				<span className="ahfb-sorter-title">
 					{undefined !== props.item.label && "" !== props.item.label
 						? props.item.label
 						: __("Social Item", "astra")}
 				</span>
 				<Button
-					className={`ahfb-sorter-item-expand ${
-						props.item.enabled
-							? "item-is-visible"
-							: "item-is-hidden"
-					}`}
-					onClick={(e) => {
-						e.stopPropagation();
-						props.toggleEnabled(
-							props.item.enabled ? false : true,
-							props.index
-						);
+					className="ahfb-sorter-item-expand"
+					onClick={() => {
+						setState((prevState) => ({
+							...prevState,
+							open: state.open ? false : true,
+						}));
 					}}
 				>
-					<Dashicon icon="visibility" />
+					{state.open ? (
+						<Dashicon icon="arrow-up-alt2" />
+					) : (
+						<Dashicon icon="arrow-down-alt2" />
+					)}
 				</Button>
+				<Tooltip text={__("Toggle Item Visiblity", "astra")}>
+					<Button
+						className={`ahfb-sorter-item-expand ahfb-sorter-item-visibility ${
+							props.item.enabled
+								? "item-is-visible"
+								: "item-is-hidden"
+						}`}
+						onClick={(e) => {
+							e.stopPropagation();
+							props.toggleEnabled(
+								props.item.enabled ? false : true,
+								props.index
+							);
+						}}
+					>
+						<Dashicon icon="visibility" />
+					</Button>
+				</Tooltip>
 				<Button
 					className="ahfb-sorter-item-remove"
 					isDestructive

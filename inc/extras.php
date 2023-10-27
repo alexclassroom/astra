@@ -238,7 +238,7 @@ function astra_toggle_layout( $new_content_option, $level, $post_id = false, $ol
  * Migrate old meta layout to new layout.
  *
  * @since 4.2.0
- * @param mixed $meta_layout
+ * @param mixed $meta_layout Meta Layout.
  * @return mixed new layout.
  */
 function astra_migrate_meta_layout( $meta_layout ) {
@@ -946,7 +946,7 @@ function astra_search_static_css() {
 	.ast-search-menu-icon .search-field {
 		border: none;
 		background-color: transparent;
-		transition: width .2s;
+		transition: all .3s;
 		border-radius: inherit;
 		color: inherit;
 		font-size: inherit;
@@ -965,7 +965,7 @@ function astra_search_static_css() {
 		opacity: 1;
 		position: relative;
 	}
-	.ast-search-menu-icon.ast-dropdown-active .search-field {
+	.ast-search-menu-icon.ast-dropdown-active .search-field, .ast-dropdown-active.ast-search-menu-icon.slide-search input.search-field {
 		width: 235px;
 	}
 	.ast-header-search .ast-search-menu-icon.slide-search .search-form, .ast-header-search .ast-search-menu-icon.ast-inline-search .search-form {
@@ -980,16 +980,16 @@ function astra_search_static_css() {
 			width : 100%;
 			padding : 0.60em;
 			padding-left : 5.5em;
+			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
-			padding-right: 3em;
+			padding-right: 2em;
 			padding-left: unset;
 			right: -1em;
 			left: unset;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form .search-field {
 			margin-left: unset;
-			margin-right: 10px;
 		}
 		.ast-search-menu-icon.slide-search .search-form {
 			-webkit-backface-visibility: visible;
@@ -1009,16 +1009,16 @@ function astra_search_static_css() {
 			width : 100%;
 			padding : 0.60em;
 			padding-right : 5.5em;
+			transition: all 0.2s;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form {
-			padding-left: 3em;
+			padding-left: 2em;
 			padding-right: unset;
 			left: -1em;
 			right: unset;
 		}
 		.site-header-section-left .ast-search-menu-icon.slide-search .search-form .search-field {
 			margin-right: unset;
-			margin-left: 10px;
 		}
 		.ast-search-menu-icon.slide-search .search-form {
 			-webkit-backface-visibility: visible;
@@ -1110,10 +1110,11 @@ function astra_get_font_array_css( $font_family, $font_weight, $font_size, $font
 /**
  * Return the array of site's available image size.
  *
- * @since x.x.x
+ * @param boolean $add_custom Add custom image size.
+ * @since 4.4.0
  * @return array
  */
-function astra_get_site_image_sizes() {
+function astra_get_site_image_sizes( $add_custom = false ) {
 	$image_sizes = array(
 		'thumbnail'    => __( 'Thumbnail', 'astra' ),
 		'medium'       => __( 'Medium', 'astra' ),
@@ -1122,7 +1123,9 @@ function astra_get_site_image_sizes() {
 		'full'         => __( 'Full Size', 'astra' ),
 	);
 
-	$all_sizes = get_intermediate_image_sizes(); // Gets the available intermediate image size names on site.
+	// Gets the available intermediate image size names on site.
+	$all_sizes = get_intermediate_image_sizes();  // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_intermediate_image_sizes_get_intermediate_image_sizes -- Required for image sizes to work.
+
 
 	$refactored_sizes = array(
 		'full' => __( 'Full Size', 'astra' ),
@@ -1136,6 +1139,12 @@ function astra_get_site_image_sizes() {
 		}
 	}
 
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	if ( $add_custom && defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		$refactored_sizes['custom'] = __( 'Custom', 'astra' );
+	}
+
 	return $refactored_sizes;
 }
 
@@ -1147,12 +1156,12 @@ function astra_get_site_image_sizes() {
  * @param string $custom_scale_width Custom scale width.
  * @param string $custom_scale_height Custom scale height.
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return string
  */
 function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height ) {
 	$aspect_ratio_css = '';
-	if ( '' !== $aspect_ratio_type ) {
+	if ( 'default' !== $aspect_ratio_type ) {
 		if ( 'custom' === $aspect_ratio_type ) {
 			$aspect_ratio_css = absint( $custom_scale_width ) . '/' . absint( $custom_scale_height );
 		} else {
@@ -1165,12 +1174,12 @@ function astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_s
 /**
  * Getting site active language & compatible with other plugins.
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return string
  */
 function astra_get_current_language_slug() {
 	$lang = '';
-	if ( function_exists('pll_current_language' ) ) {
+	if ( function_exists( 'pll_current_language' ) ) {
 		$lang = pll_current_language();
 	}
 	return apply_filters( 'astra_addon_site_current_language', $lang );
@@ -1183,7 +1192,7 @@ function astra_get_current_language_slug() {
  * 1. Dynamic customizer
  * 2. Live Search
  *
- * @since x.x.x
+ * @since 4.4.0
  * @return array
  */
 function astra_get_queried_post_types() {
@@ -1206,6 +1215,7 @@ function astra_get_queried_post_types() {
 			'astra_adv_header',
 			'elementor_library',
 			'brizy_template',
+			'sc_collection',
 
 			'course',
 			'lesson',

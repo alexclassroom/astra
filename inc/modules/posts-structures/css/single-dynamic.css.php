@@ -88,13 +88,12 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 	$narrow_container_width = astra_get_option( 'narrow-container-max-width', apply_filters( 'astra_narrow_container_width', 750 ) );
 	$author_avatar_size     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-author-avatar-size' );
 
-	// Aspect Ratio processing.
-	$aspect_ratio_type     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-type', '' );
-	$predefined_scale      = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-ratio-pre-scale' );
-	$custom_scale_width    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-width', 16 );
-	$custom_scale_height   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-image-custom-scale-height', 9 );
-	$aspect_ratio          = astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height );
-	$with_aspect_img_width = 'predefined' === $aspect_ratio_type || 'custom' === $aspect_ratio_type ? '100%' : '';
+	// Aspect ratio.
+	$aspect_ratio_type   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-ratio-type', 'predefined' );
+	$predefined_scale    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-ratio-pre-scale', '16/9' );
+	$custom_scale_width  = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-custom-scale-width', 16 );
+	$custom_scale_height = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-custom-scale-height', 9 );
+	$aspect_ratio        = astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height );
 
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
@@ -103,27 +102,26 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		 * Desktop CSS.
 		 */
 		$css_output_desktop = array(
-			$selector                                  => array(
+			$selector                               => array(
 				'text-align' => $desk_h_alignment,
 			),
-			$selector . ' *'                           => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
-			$selector . ' .entry-title'                => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
+			$selector . ' *'                        => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
+			$selector . ' .entry-title'             => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
 			$selector . ' .entry-meta, ' . $selector . ' .entry-meta *' => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-meta-font-weight' ), $banner_meta_font_size, 'ast-dynamic-single-' . $current_post_type . '-meta-font-extras' ),
-			$selector . ' a, ' . $selector . ' a *'    => array(
+			$selector . ' a, ' . $selector . ' a *' => array(
 				'color' => esc_attr( $link_color ),
 			),
 			$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' > *:not(:last-child), ' . $selector . ' .read-more' => array(
+			$selector . ' > *:not(:last-child)'     => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
-			$selector . ' .post-thumb-img-content'     => array(
+			$selector . ' .post-thumb-img-content'  => array(
 				'text-align' => $image_wrap_alignment,
 			),
-			$selector . ' .post-thumb-img-content img' => array(
+			$selector . ' .post-thumb img, .ast-single-post-featured-section.post-thumb img' => array(
 				'aspect-ratio' => $aspect_ratio,
-				'width'        => $with_aspect_img_width,
 			),
 		);
 		/**
@@ -209,13 +207,12 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' .ast-container a:hover, ' . $selector . ' .ast-container a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			'.single .post-thumb-img-content img'         => array(
-				'aspect-ratio' => $aspect_ratio,
-				'width'        => $with_aspect_img_width,
-			),
 			'.ast-single-entry-banner .read-more .ast-button' => array(
 				'margin-top' => '0.5em',
 				'display'    => 'inline-block',
+			),
+			$selector . ' .post-thumb img'                => array(
+				'aspect-ratio' => $aspect_ratio,
 			),
 		);
 

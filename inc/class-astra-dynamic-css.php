@@ -530,7 +530,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$h6_properties = array_merge( $h6_properties, $h6_font_properties );
 			}
 
-			$link_selector = ( true === $update_customizer_strctural_defaults ) ? 'a' : 'a, .page-title';
+			$link_selector                   = ( true === $update_customizer_strctural_defaults ) ? 'a' : 'a, .page-title';
+			$transparent_search_box_bg_color = astra_get_option( 'transparent-header-search-box-background-color', '#fff' );
 
 			$css_output = array(
 
@@ -747,13 +748,37 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 
 				// Search.
-				'.ast-search-menu-icon .search-form button.search-submit:focus svg' => array(
-					'margin-right' => '1px',
-				),
 				'.ast-search-menu-icon .search-form button.search-submit' => array(
 					'padding' => '0 4px',
 				),
+				'.ast-search-menu-icon form.search-form' => array(
+					'padding-right' => '0',
+				),
+				'.ast-search-menu-icon.slide-search input.search-field' => array(
+					'width' => '0',
+				),
+				'.ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-form, .ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-field:focus' => array(
+					'border-color' => 'var(--ast-global-color-0)',
+					'transition'   => 'all 0.2s',
+				),
+				'.search-form input.search-field:focus'  => array(
+					'outline' => 'none', // Making highlight by border that's why making outline none.
+				),
 			);
+
+			if ( self::astra_4_4_0_compatibility() ) {
+				$css_output['.ast-search-menu-icon .search-form button.search-submit:focus, .ast-theme-transparent-header .ast-header-search .ast-dropdown-active .ast-icon, .ast-theme-transparent-header .ast-inline-search .search-field:focus .ast-icon'] = array(
+					'color' => 'var(--ast-global-color-1)',
+				);
+				$css_output['.ast-header-search .slide-search .search-form'] = array(
+					'border' => '2px solid var(--ast-global-color-0)',
+				);
+
+				// Reduced specificity so that it does not override customizer background color option.
+				$css_output['.ast-header-search .slide-search .search-field'] = array(
+					'background-color' => '#fff', // Referred by main.css.
+				);
+			}
 
 			/*  This is a fix issue with logo height for normal and transparent logo so that they are the same */
 			if ( ! apply_filters( 'astra_site_svg_logo_equal_height', astra_get_option( 'astra-site-svg-logo-equal-height', true ) ) ) {
@@ -826,7 +851,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				$reset_underline_from_anchors = self::unset_builder_elements_underline();
 
-				$excluding_anchor_selectors = $reset_underline_from_anchors ? '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button, .ast-single-post .entry-content .uagb-tab a, .ast-single-post .entry-content .uagb-ifb-cta a, .ast-single-post .entry-content .wp-block-uagb-buttons a, .ast-single-post .entry-content .uabb-module-content a, .ast-single-post .entry-content .uagb-post-grid a, .ast-single-post .entry-content .uagb-timeline a, .ast-single-post .entry-content .uagb-toc__wrap a, .ast-single-post .entry-content .uagb-taxomony-box a, .ast-single-post .entry-content .woocommerce a, .entry-content .wp-block-latest-posts > li > a, .ast-single-post .entry-content .wp-block-file__button, .ast-single-post .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link' : '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button,  .ast-single-post .wp-block-button.is-style-outline .wp-block-button__link';
+				$excluding_anchor_selectors = $reset_underline_from_anchors ? '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button, .ast-single-post .entry-content .uagb-tab a, .ast-single-post .entry-content .uagb-ifb-cta a, .ast-single-post .entry-content .wp-block-uagb-buttons a, .ast-single-post .entry-content .uabb-module-content a, .ast-single-post .entry-content .uagb-post-grid a, .ast-single-post .entry-content .uagb-timeline a, .ast-single-post .entry-content .uagb-toc__wrap a, .ast-single-post .entry-content .uagb-taxomony-box a, .ast-single-post .entry-content .woocommerce a, .entry-content .wp-block-latest-posts > li > a, .ast-single-post .entry-content .wp-block-file__button, li.ast-post-filter-single, .ast-single-post .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link' : '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button, li.ast-post-filter-single, .ast-single-post .wp-block-button.is-style-outline .wp-block-button__link, div.ast-custom-button';
 
 				$excluding_anchor_selectors = apply_filters( 'astra_remove_underline_anchor_links', $excluding_anchor_selectors );
 
@@ -838,7 +863,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			// Accessibility options.
 			$enable_site_accessibility        = astra_get_option( 'site-accessibility-toggle', false );
 			$html_selectors_focus_visible     = 'a:focus-visible, .ast-menu-toggle:focus-visible, .site .skip-link:focus-visible, .wp-block-loginout input:focus-visible, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper, .ast-header-navigation-arrow:focus-visible, .woocommerce .wc-proceed-to-checkout > .checkout-button:focus-visible, .woocommerce .woocommerce-MyAccount-navigation ul li a:focus-visible, .ast-orders-table__row .ast-orders-table__cell:focus-visible, .woocommerce .woocommerce-order-details .order-again > .button:focus-visible, .woocommerce .woocommerce-message a.button.wc-forward:focus-visible, .woocommerce #minus_qty:focus-visible, .woocommerce #plus_qty:focus-visible, a#ast-apply-coupon:focus-visible, .woocommerce .woocommerce-info a:focus-visible, .woocommerce .astra-shop-summary-wrap a:focus-visible, .woocommerce a.wc-forward:focus-visible, #ast-apply-coupon:focus-visible, .woocommerce-js .woocommerce-mini-cart-item a.remove:focus-visible';
-			$html_selectors_focus_only_inputs = 'input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="search"]:focus, input[type="number"]:focus, textarea:focus, .wp-block-search__input:focus, [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus, .ast-mobile-popup-drawer.active .menu-toggle-close:focus, .woocommerce-ordering select.orderby:focus, #ast-scroll-top:focus, #coupon_code:focus, .woocommerce-page #comment:focus, .woocommerce #reviews #respond input#submit:focus, .woocommerce a.add_to_cart_button:focus, .woocommerce .button.single_add_to_cart_button:focus, .woocommerce .woocommerce-cart-form button:focus, .woocommerce .woocommerce-cart-form__cart-item .quantity .qty:focus, .woocommerce .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce #order_comments:focus, .woocommerce #place_order:focus, .woocommerce .woocommerce-address-fields .woocommerce-address-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce .woocommerce-MyAccount-content form button:focus, .woocommerce .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row .woocommerce-Input.input-text:focus, .woocommerce .ast-woocommerce-container .woocommerce-pagination ul.page-numbers li a:focus, body #content .woocommerce form .form-row .select2-container--default .select2-selection--single:focus, #ast-coupon-code:focus, .woocommerce.woocommerce-js .quantity input[type=number]:focus, .woocommerce-js .woocommerce-mini-cart-item .quantity input[type=number]:focus, .woocommerce p#ast-coupon-trigger:focus, .ast-search-menu-icon .search-form button.search-submit:focus';
+			$html_selectors_focus_only_inputs = 'input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="number"]:focus, textarea:focus, .wp-block-search__input:focus, [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus, .ast-mobile-popup-drawer.active .menu-toggle-close:focus, .woocommerce-ordering select.orderby:focus, #ast-scroll-top:focus, #coupon_code:focus, .woocommerce-page #comment:focus, .woocommerce #reviews #respond input#submit:focus, .woocommerce a.add_to_cart_button:focus, .woocommerce .button.single_add_to_cart_button:focus, .woocommerce .woocommerce-cart-form button:focus, .woocommerce .woocommerce-cart-form__cart-item .quantity .qty:focus, .woocommerce .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce #order_comments:focus, .woocommerce #place_order:focus, .woocommerce .woocommerce-address-fields .woocommerce-address-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce .woocommerce-MyAccount-content form button:focus, .woocommerce .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row .woocommerce-Input.input-text:focus, .woocommerce .ast-woocommerce-container .woocommerce-pagination ul.page-numbers li a:focus, body #content .woocommerce form .form-row .select2-container--default .select2-selection--single:focus, #ast-coupon-code:focus, .woocommerce.woocommerce-js .quantity input[type=number]:focus, .woocommerce-js .woocommerce-mini-cart-item .quantity input[type=number]:focus, .woocommerce p#ast-coupon-trigger:focus';
 
 			if ( $enable_site_accessibility ) {
 				$outline_style = astra_get_option( 'site-accessibility-highlight-type' );
@@ -1069,7 +1094,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'display' => 'none',
 						),
 					),
-					astra_get_tablet_breakpoint()
+					astra_get_tablet_breakpoint( '', 1 )
 				);
 			}
 
@@ -1826,23 +1851,24 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$border_right_val                        = '';
 			$border_bottom_val                       = '';
 			$border_left_val                         = '';
+			$gutenberg_core_patterns_compat          = self::gutenberg_core_patterns_compat();
 
 			// Secondary color.
-			if ( empty( $scndry_btn_text_color ) ) {
+			if ( empty( $scndry_btn_text_color ) && $gutenberg_core_patterns_compat ) {
 				$btn_color_val = empty( $btn_border_color ) ? esc_attr( $btn_bg_color ) : esc_attr( $btn_border_color );
 			} else {
 				$btn_color_val = $scndry_btn_text_color;
 			}
 
 			// Secondary border color.
-			if ( empty( $scndry_btn_border_color ) && empty( $scndry_btn_bg_color ) ) {
+			if ( empty( $scndry_btn_border_color ) && empty( $scndry_btn_bg_color ) && $gutenberg_core_patterns_compat ) {
 				$btn_border_color_val = empty( $btn_border_color ) ? esc_attr( $btn_bg_color ) : esc_attr( $btn_border_color );
 			} else {
 				$btn_border_color_val = empty( $scndry_btn_border_color ) ? esc_attr( $scndry_btn_bg_color ) : esc_attr( $scndry_btn_border_color );
 			}
 
 			// Secondary border hover color.
-			if ( empty( $scndry_btn_border_h_color ) ) {
+			if ( empty( $scndry_btn_border_h_color ) && $gutenberg_core_patterns_compat ) {
 				$btn_border_h_color_val = empty( $btn_border_h_color ) ? esc_attr( $btn_bg_hover_color ) : esc_attr( $btn_border_h_color );
 			} else {
 				$btn_border_h_color_val = $scndry_btn_border_h_color;
@@ -1871,7 +1897,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'border-left-width'          => esc_attr( $border_left_val ),
 					'font-family'                => astra_get_font_family( $scndry_theme_btn_font_family ),
 					'font-weight'                => esc_attr( $scndry_theme_btn_font_weight ),
-					'font-size'                  => astra_get_font_css_value( $scndry_theme_btn_font_size['desktop'], $scndry_theme_btn_font_size['desktop-unit'] ),
+					'font-size'                  => isset( $scndry_theme_btn_font_size['desktop'] ) && isset( $scndry_theme_btn_font_size['desktop-unit'] ) && is_array( $scndry_theme_btn_font_size ) ? astra_get_font_css_value( $scndry_theme_btn_font_size['desktop'], $scndry_theme_btn_font_size['desktop-unit'] ) : '',
 					'line-height'                => esc_attr( $scndry_theme_btn_line_height ),
 					'text-transform'             => esc_attr( $scndry_theme_btn_text_transform ),
 					'text-decoration'            => esc_attr( $scndry_theme_btn_text_decoration ),
@@ -1890,14 +1916,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'color' => esc_attr( $btn_color_val ),
 				),
 				'.wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-buttons .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color):hover, .wp-block-buttons .wp-block-button.wp-block-button__link.is-style-outline:not(.has-text-color):hover, .ast-outline-button:hover, .ast-outline-button:focus' => array(
-					'color'            => empty( $scndry_btn_text_hover_color ) ? esc_attr( $btn_text_hover_color ) : esc_attr( $scndry_btn_text_hover_color ),
-					'background-color' => empty( $scndry_btn_bg_hover_color ) ? esc_attr( $btn_bg_hover_color ) : esc_attr( $scndry_btn_bg_hover_color ),
+					'color'            => empty( $scndry_btn_text_hover_color ) && $gutenberg_core_patterns_compat ? esc_attr( $btn_text_hover_color ) : esc_attr( $scndry_btn_text_hover_color ),
+					'background-color' => empty( $scndry_btn_bg_hover_color ) && $gutenberg_core_patterns_compat ? esc_attr( $btn_bg_hover_color ) : esc_attr( $scndry_btn_bg_hover_color ),
 					'border-color'     => esc_attr( $btn_border_h_color_val ),
 				),
 			);
 
 			$outline_button_css_tablet = array(
-				'.wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button' => array(
+				$outline_button_selector => array(
 					'font-size'                  => astra_responsive_font( $scndry_theme_btn_font_size, 'tablet' ),
 					'padding-top'                => astra_responsive_spacing( $scndry_theme_btn_padding, 'top', 'tablet' ),
 					'padding-right'              => astra_responsive_spacing( $scndry_theme_btn_padding, 'right', 'tablet' ),
@@ -1911,7 +1937,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			);
 
 			$outline_button_css_mobile = array(
-				'.wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button' => array(
+				$outline_button_selector => array(
 					'font-size'                  => astra_responsive_font( $scndry_theme_btn_font_size, 'mobile' ),
 					'padding-top'                => astra_responsive_spacing( $scndry_theme_btn_padding, 'top', 'mobile' ),
 					'padding-right'              => astra_responsive_spacing( $scndry_theme_btn_padding, 'right', 'mobile' ),
@@ -1932,7 +1958,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					$scndry_btn_text_color = astra_get_foreground_color( $theme_color );
 				}
 				$outline_button_css_desktop['.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)'] = array(
-					'background-color' => empty ( $scndry_btn_bg_color ) ? esc_attr( $theme_color ) : esc_attr( $scndry_btn_bg_color ),
+					'background-color' => empty( $scndry_btn_bg_color ) ? esc_attr( $theme_color ) : esc_attr( $scndry_btn_bg_color ),
 					'color'            => esc_attr( $scndry_btn_text_color ),
 				);
 			}
@@ -1949,7 +1975,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			/**
 			 * Add margin-bottom to the figure element conditionally for WordPress 6.3 or above.
 			 *
-			 * @since x.x.x
+			 * @since 4.4.0
 			 */
 			if ( astra_wp_version_compare( '6.3', '>=' ) ) {
 				$figure_margin_bottom = array(
@@ -2080,7 +2106,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'line-height' => 'inherit',
 					),
 				);
-				if ( ! self::astra_check_4_4_0_compatibility() ) {
+				if ( ! self::astra_4_6_0_compatibility() ) {
 					$default_layout_update_css['.ast-separate-container .comment-form-position-above .comment-respond'] = array(
 						'margin-bottom' => '2em',
 					);
@@ -5145,7 +5171,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * Dynamic CSS to make Sidebar Sticky.
 		 *
 		 * @return string Sticky Sidebar CSS.
-		 * @since x.x.x
+		 * @since 4.4.0
 		 */
 		public static function astra_sticky_sidebar_css() {
 			$css = '';
@@ -5209,9 +5235,21 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @return bool true|false.
 		 * @since x.x.x
 		 */
-		public static function astra_check_4_4_0_compatibility() {
+		public static function astra_4_6_0_compatibility() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
 			return apply_filters( 'astra_get_option_single_core_improvement', isset( $astra_settings['single_core_improvement'] ) ? false : true );
+		}
+
+		/**
+		 * Improve full screen search Submit button style.
+		 *
+		 * @since 4.4.0
+		 * @return boolean false if it is an existing user, true if not.
+		 */
+		public static function astra_4_4_0_compatibility() {
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
+			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
 		}
 	}
 }

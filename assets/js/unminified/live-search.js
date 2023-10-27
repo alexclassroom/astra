@@ -19,7 +19,7 @@
 			processedHtml += `<label class="ast-search--posttype-heading"> ${postType}s </label>`;
 			postsData.map((post) => {
 				const searchPostTitle = decodeHTMLEntities(post.title.rendered);
-				processedHtml += `<a class="ast-search-item" role="option" target="_blank" href="${post.link}"> <span> ${searchPostTitle} </span> </a>`;
+				processedHtml += `<a class="ast-search-item" role="option" target="_self" href="${post.link}"> <span> ${searchPostTitle} </span> </a>`;
 			});
 		});
 

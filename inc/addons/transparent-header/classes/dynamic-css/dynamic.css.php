@@ -17,7 +17,7 @@ add_filter( 'astra_dynamic_theme_css', 'astra_ext_transparent_header_dynamic_css
  * New Users - Will see the changes
  *
  * @return bool true|false.
- * @since x.x.x
+ * @since 4.4.0
  */
 function astra_has_submenu_transperent_styling() {
 	$astra_settings = get_option( ASTRA_THEME_SETTINGS );
