@@ -32,6 +32,9 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
+		$related_structure_sub_controls = array();
+		$meta_config_options            = array();
+
 		$related_structure_sub_controls['featured-image'] = array(
 			'clone'       => false,
 			'is_parent'   => true,

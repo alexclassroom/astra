@@ -97,7 +97,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
-		$image_wrap_alignment = Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ? 'center' : '';
+		$image_wrap_alignment = Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? 'center' : '';
 		/**
 		 * Desktop CSS.
 		 */

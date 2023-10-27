@@ -12562,25 +12562,14 @@ namespace {
     {
     }
     /**
-     * Prepare markup for taxonomies.
-     *
-     * @param string $control_tax Taxonomy subcontrol name.
-     * @param int    $loop_count Meta loop counter to decide separator appearance.
-     * @param string $separator Separator.
-     *
-     * @return string $output Taxonomy output.
-     */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator)
-    {
-    }
-    /**
-     * Post meta
-     *
-     * @param  array  $post_meta Post meta.
-     * @param  string $separator Separator.
-     * @return string            post meta markup.
-     */
-    function astra_get_post_meta($post_meta, $separator = '/')
+	 * Post meta
+	 *
+	 * @param  array  $post_meta Post meta.
+	 * @param  string $separator Separator.
+	 * @param  string $render_by Render by Single|Related Posts|Blog.
+	 * @return string            post meta markup.
+	 */
+    function astra_get_post_meta($post_meta, $separator = '/', $render_by = '')
     {
     }
     /**
@@ -12592,14 +12581,15 @@ namespace {
     function astra_get_dynamic_post_format()
     {
     }
-    /**
-     * Function to get Date of Post
-     *
-     * @return html                Markup.
-     */
-    function astra_post_date()
-    {
-    }
+	/**
+	 * Function to get Date of Post
+	 *
+	 * @param string $get_for Get for single/related post/etc.
+	 * @return string Markup.
+	 */
+	function astra_post_date( $get_for = 'single-post' )
+	{
+	}
     /**
      * Function to get Author name.
      *

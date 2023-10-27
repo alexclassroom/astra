@@ -162,7 +162,7 @@ class Astra_Related_Posts_Markup {
 														<header class="entry-header related-entry-header">
 														<?php
 															$this->astra_get_related_post_title( $post_id );
-															echo apply_filters( 'astra_related_posts_meta_html', '<div class="entry-meta ast-related-cat-style--' . $related_category_style . ' ast-related-tag-style--' . $related_tag_style . '">' . $output_str . '</div>', $output_str ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+															echo apply_filters( 'astra_related_posts_meta_html', '<div class="entry-meta ast-related-cat-style--' . $related_category_style . ' ast-related-tag-style--' . $related_tag_style . '">' . $output_str . '</div>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 														?>
 														</header>
 													<?php

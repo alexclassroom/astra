@@ -152,6 +152,7 @@ function astra_related_posts_css( $dynamic_css ) {
 
 		$btn_text_color                   = astra_get_option( 'button-color', '#fff' );
 		$btn_border_color                 = astra_get_option( 'theme-button-border-group-border-color' );
+		$btn_border_h_color               = astra_get_option( 'theme-button-border-group-border-h-color' );
 		$theme_color                      = astra_get_option( 'theme-color' );
 		$link_hover_color                 = astra_get_option( 'link-h-color' );
 		$btn_bg_color                     = astra_get_option( 'button-bg-color', $theme_color );
@@ -180,7 +181,6 @@ function astra_related_posts_css( $dynamic_css ) {
 			'border-right-width'  => ( isset( $global_custom_button_border_size['right'] ) && '' !== $global_custom_button_border_size['right'] ) ? astra_get_css_value( $global_custom_button_border_size['right'], 'px' ) : '0',
 			'border-left-width'   => ( isset( $global_custom_button_border_size['left'] ) && '' !== $global_custom_button_border_size['left'] ) ? astra_get_css_value( $global_custom_button_border_size['left'], 'px' ) : '0',
 			'border-bottom-width' => ( isset( $global_custom_button_border_size['bottom'] ) && '' !== $global_custom_button_border_size['bottom'] ) ? astra_get_css_value( $global_custom_button_border_size['bottom'], 'px' ) : '0',
-			'color'               => esc_attr( $btn_text_color ),
 			'padding'             => '4px 8px',
 			'border-radius'       => '3px',
 			'font-size'           => 'inherit',

@@ -28,7 +28,7 @@ function astra_comments_css( $dynamic_css ) {
 		$theme_color    = astra_get_option( 'theme-color' );
 		$link_color     = astra_get_option( 'link-color', $theme_color );
 		$is_site_rtl    = is_rtl();
-		$reply_title_space_threshold = Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ? 1.3 : 1.66666;
+		$reply_title_space_threshold = Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? 1.3 : 1.66666;
 
 		if ( is_array( $body_font_size ) ) {
 			$body_font_size_desktop = ( isset( $body_font_size['desktop'] ) && '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
@@ -427,7 +427,7 @@ function astra_comments_css( $dynamic_css ) {
 			);
 		}
 
-		if ( Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ) {
+		if ( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ) {
 			$dynamic_css .= '
 				.ast-comment-cite-wrap cite {
 					font-weight: 600;

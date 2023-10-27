@@ -96,7 +96,7 @@ function astra_get_author_id() {
 function astra_author_avatar( $get_for = 'single-post' ) {
 	$avatar = '';
 	if ( is_singular() ) {
-		if ( 'single-post' === $get_for && astra_get_option( 'ast-dynamic-single-' . get_post_type() . '-author-avatar', false ) ) {
+		if ( 'single-post' === $get_for && astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar', false ) ) {
 			$avatar_image_size = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar-size', 30 );
 			$avatar            = '<span class="ast-author-avatar">' . get_avatar( astra_get_author_id(), $avatar_image_size ) . '</span>';
 		} elseif ( 'related-post' === $get_for && astra_get_option( 'related-posts-author-avatar', false ) ) {
@@ -255,8 +255,8 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 	/**
 	 * Function to get Date of Post
 	 *
-	 * @param $get_for Get for single/related post/etc.
-	 * @return html                Markup.
+	 * @param string $get_for Get for single/related post/etc.
+	 * @return string Markup.
 	 */
 	function astra_post_date( $get_for = 'single-post' ) {
 		$output  = '';
