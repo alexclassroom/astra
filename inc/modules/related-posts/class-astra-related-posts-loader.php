@@ -101,8 +101,8 @@ class Astra_Related_Posts_Loader {
 			'featured-image',
 			'title-meta',
 		);
-		$defaults['related-posts-tag-style']                 = '';
-		$defaults['related-posts-category-style']            = '';
+		$defaults['related-posts-tag-style']                 = 'none';
+		$defaults['related-posts-category-style']            = 'none';
 		$defaults['related-posts-date-format']               = '';
 		$defaults['related-posts-meta-date-type']            = 'published';
 		$defaults['related-posts-author-avatar-size']        = '';

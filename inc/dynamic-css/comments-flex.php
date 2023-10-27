@@ -429,9 +429,9 @@ function astra_comments_css( $dynamic_css ) {
 
 		if ( Astra_Dynamic_CSS::astra_check_4_4_0_compatibility() ) {
 			$dynamic_css .= '
-				.ast-comment-cite-wrap cite a {
+				.ast-comment-cite-wrap cite {
 					font-weight: 600;
-					font-size: 18px;
+					font-size: 1.2em;
 				}
 				.logged-in span.ast-reply-link {
 					order: 1;

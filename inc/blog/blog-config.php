@@ -130,7 +130,11 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		$loop_count = 1;
 
 		if ( is_singular() && 'single-post' === $render_by ) {
-			$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+			$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '&nbsp' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+		}
+
+		if ( 'related-posts' === $render_by ) {
+			$separator = 'none' === $separator ? '&nbsp' : $separator;
 		}
 
 		$separator = apply_filters( 'astra_post_meta_separator', $separator );
