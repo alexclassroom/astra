@@ -150,9 +150,13 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 						$output_str         .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
 					} elseif ( 'related-posts' === $render_by ) {
 						$author_prefix_label = astra_get_option( 'related-posts-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						$output_str         .= astra_author_avatar( 'related-post' ) . esc_html( $author_prefix_label ) . astra_post_author();
+						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					} else {
+						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					}
 					break;
 
@@ -270,7 +274,7 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 /**
  * Function to get Author name.
  *
- * @return string $author_name Author name.
+ * @return mixed $author_name Author name.
  * @since 4.0.0
  */
 function astra_post_author_name() {

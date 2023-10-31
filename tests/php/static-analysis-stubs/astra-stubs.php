@@ -12593,7 +12593,7 @@ namespace {
     /**
      * Function to get Author name.
      *
-     * @return string $author_name Author name.
+     * @return mixed $author_name Author name.
      * @since 4.0.0
      */
     function astra_post_author_name()
@@ -14161,8 +14161,8 @@ namespace {
     /**
      * Get the mobile breakpoint value.
      *
-     * @param string $min min.
-     * @param string $max max.
+     * @param mixed $min min.
+     * @param mixed $max max.
      *
      * @since 2.4.0
      *
