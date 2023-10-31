@@ -136,7 +136,7 @@ function astra_container_layout_css() {
 	/** @psalm-suppress InvalidCast */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 	$page_container_css .= '
-		@media (min-width: ' . astra_get_tablet_breakpoint( '', 1 ) . 'px) {
+		@media (min-width: ' . strval( astra_get_tablet_breakpoint( '', 1 ) ) . 'px) {
 			.ast-desktop .ast-container--normal, .ast-desktop .ast-container--narrow {
 				width: 100%;
 				margin-left: auto;
