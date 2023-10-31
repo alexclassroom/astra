@@ -85,7 +85,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 			if ( 'none' !== $divider_type ) {
 				$separator = $divider_type;
 			} else {
-				$separator = '';
+				$separator = '&nbsp';
 			}
 		}
 
