@@ -84,6 +84,22 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 		if ( 'page' === $post_type ) {
 			return array(); // Page archive not require.
 		}
+
+		$reveal_effect = array();
+		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) && ! ( 'post' === $post_type || 'product' === $post_type ) ) {
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$reveal_effect = array(
+				'name'     => ASTRA_THEME_SETTINGS . '[archive-' . $post_type . '-ast-reveal-effect]',
+				'section'  => $parent_section,
+				'type'     => 'control',
+				'control'  => 'ast-toggle-control',
+				'default'  => astra_get_option( 'archive-' . $post_type . '-ast-reveal-effect', false ),
+				'title'    => __( 'Reveal Effect', 'astra' ),
+				'priority' => 5,
+				'divider'  => array( 'ast_class' => 'ast-section-spacing ast-top-section-divider' ),
+			);
+		}
 		return array(
 
 			/**
@@ -208,6 +224,8 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 				'renderAs'   => 'text',
 				'divider'    => array( 'ast_class' => 'ast-top-divider' ),
 			),
+
+			$reveal_effect,
 		);
 	}
 
