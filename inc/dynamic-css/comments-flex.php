@@ -482,12 +482,12 @@ function astra_comments_css( $dynamic_css ) {
 				.ast-comment-list .comment + .comment {
 					border-top: 1px solid var(--ast-border-color);
 				}
-				@media(min-width: ' . astra_get_tablet_breakpoint() . 'px) {
+				@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
 					.ast-comment-cite-wrap {
 						margin-left: -7px;
 					}
 				}
-				@media(min-width: ' . astra_get_mobile_breakpoint( '', 1 ) . 'px) {
+				@media(min-width: ' . strval( astra_get_mobile_breakpoint( '', 1 ) ) . 'px) {
 					header.ast-comment-meta {
 						display: flex;
 						width: 100%;
@@ -546,7 +546,7 @@ function astra_comments_css( $dynamic_css ) {
 					.site-content article .comment-respond {
 						padding-bottom: 2em;
 					}
-					@media(min-width: ' . astra_get_tablet_breakpoint() . 'px) {
+					@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
 						.site-content article .ast-comment-list li.depth-1 {
 							padding: 2em;
 						}

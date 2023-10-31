@@ -152,7 +152,7 @@ if ( ! function_exists( 'astra_get_font_css_value' ) ) {
 	 *  astra_get_css_value( VALUE, 'tablet' );
 	 *  astra_get_css_value( VALUE, 'mobile' );
 	 *
-	 * @param  string $value        CSS value.
+	 * @param  mixed  $value        CSS value.
 	 * @param  string $unit         CSS unit.
 	 * @param  string $device       CSS device.
 	 * @return mixed                CSS value depends on $unit & $device

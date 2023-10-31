@@ -12593,7 +12593,7 @@ namespace {
     /**
      * Function to get Author name.
      *
-     * @return null|string $author_name Author name.
+     * @return string $author_name Author name.
      * @since 4.0.0
      */
     function astra_post_author_name()
@@ -13838,7 +13838,7 @@ namespace {
      *  astra_get_css_value( VALUE, 'tablet' );
      *  astra_get_css_value( VALUE, 'mobile' );
      *
-     * @param  string $value        CSS value.
+     * @param  mixed  $value        CSS value.
      * @param  string $unit         CSS unit.
      * @param  string $device       CSS device.
      * @return mixed                CSS value depends on $unit & $device
