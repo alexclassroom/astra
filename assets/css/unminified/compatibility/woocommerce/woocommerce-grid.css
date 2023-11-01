@@ -4904,3 +4904,7 @@ button.pswp__button--zoom:hover {
 .woocommerce-js .sold-individually .button.single_add_to_cart_button {
   margin-left: -1em;
 }
+
+.sidebar-main .ast-mini-cart-empty .woocommerce-mini-cart__empty-message {
+  display: none;
+}
