@@ -581,11 +581,12 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 					}
 
 					break;
-
 				case 'ast-font-variant':
 					$configuration['value'] = $val;
 					break;
-
+				case 'ast-number':
+					$configuration['value'] = $val;
+					break;
 				case 'ast-select-multi':
 					$configuration['value'] = $val;
 					break;

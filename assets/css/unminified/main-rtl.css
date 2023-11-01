@@ -2676,8 +2676,17 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 1.6em;
 }
 
+.post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
+  display: block;
+  margin-bottom: .8em;
+}
+
 .read-more {
   margin-bottom: 0;
+}
+
+.read-more a {
+  display: inline-block;
 }
 
 .read-more .ast-right-arrow {
@@ -2694,6 +2703,11 @@ input[type="color"]::-webkit-color-swatch {
 
 .ast-blog-featured-section {
   margin-bottom: 1.5em;
+}
+
+.blog-layout-3 .ast-blog-featured-section,
+.blog-layout-2 .ast-blog-featured-section {
+  margin-bottom: 0;
 }
 
 .error404 .page-header {

@@ -2650,6 +2650,67 @@ span.customize-control-title.ast-group-section-title {
 	flex: 0 0 calc(28% - 10px);
 }
 
+.customize-control-ast-number .ast-number-single{
+    display: flex;
+    border: 1px solid #D1D5DB;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 96px;
+}
+
+.customize-control-ast-number .components-input-control__container {
+    text-align: center;
+}
+
+.customize-control-ast-number .components-input-control__input {
+    text-align: center;
+}
+
+.customize-control-ast-number .ast-number-single .dashicon.dashicons  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #676879;
+    font-size: 10px;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.customize-control-ast-number .components-input-control__backdrop {
+    border: 0 !important;
+}
+
+.customize-control-ast-number .ast-number-single input[type=number]::-webkit-inner-spin-button, 
+.customize-control-ast-number .ast-number-single input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.customize-control-ast-number .ast-control-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customize-control-ast-number .ast-title-wrapper {
+    width: 50%;
+}
+
+.customize-control-ast-number .ast-number-single{
+    display: none
+}
+
+.customize-control-ast-number .ast-number-single.active{
+    display: flex;
+}
+
+.customize-control-ast-number .ast-responsive-btns{
+    margin-right: 0.5em;
+}
+
+
 li[ID*="-image-custom-scale-width"], li[ID*="-image-custom-scale-height"] {
     display: inline-flex;
 }
@@ -2695,6 +2756,7 @@ li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
 .customize-control-ast-number input[type="number"]::-ms-reveal {
   display: none;
 }
+
 
 .customize-control-ast-radio-icon .ast-control-wrap {
     display: flex;
@@ -4617,14 +4679,12 @@ li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
 
 .ast-togglecontrol-wrapper .toggle-control-label, .ast-togglecontrol-wrapper .components-toggle-control__label {
   font-size: 14px;
-  font-weight: 600;
 }
 
 .customize-control-ast-toggle-control .components-toggle-control .components-toggle-control__label, .ast-togglecontrol-wrapper label {
   display: flex;
   flex: 1 1 auto;
   font-size: 14px;
-  font-weight: 600;
 }
 
 .ast-switch ~ label {

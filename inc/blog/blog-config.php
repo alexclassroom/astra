@@ -129,12 +129,22 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		$output_str = '';
 		$loop_count = 1;
 
-		if ( is_singular() && 'single-post' === $render_by ) {
-			$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '&nbsp' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
-		}
-
-		if ( 'related-posts' === $render_by ) {
-			$separator = 'none' === $separator ? '&nbsp' : $separator;
+		if ( is_singular() ) {
+			if ( 'single-post' === $render_by ) {
+				$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '&nbsp' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+			} else if ( 'related-posts' === $render_by ) {
+				$separator = 'none' === $separator ? '&nbsp' : $separator;
+			}
+		} else {
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+				$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
+				if ( 'none' !== $divider_type ) {
+					$separator = $divider_type;
+				} else {
+					$separator = '&nbsp';
+				}
+			}
 		}
 
 		$separator = apply_filters( 'astra_post_meta_separator', $separator );
@@ -145,18 +155,34 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 
 				case 'author':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					if ( 'single-post' === $render_by ) {
-						$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
-						$output_str         .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
-					} elseif ( 'related-posts' === $render_by ) {
-						$author_prefix_label = astra_get_option( 'related-posts-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
-						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						$output_str         .= astra_author_avatar( 'related-post' ) . esc_html( $author_prefix_label ) . astra_post_author();
-						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					if ( is_singular() ) {
+						if ( 'single-post' === $render_by ) {
+							$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+							$output_str         .= astra_author_avatar() . esc_html( $author_prefix_label ) . astra_post_author();
+						} elseif ( 'related-posts' === $render_by ) {
+							$author_prefix_label = astra_get_option( 'related-posts-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+							/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+							$output_str         .= astra_author_avatar( 'related-post' ) . esc_html( $author_prefix_label ) . astra_post_author();
+							/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						} else {
+							/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+							$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
+							/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						}
 					} else {
-						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . astra_post_author();
-						/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+							$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
+							if ( $author_avatar ) {
+								$get_author_id = get_the_author_meta( 'ID' );
+								/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+								$get_author_gravatar = get_avatar_url( $get_author_id, array( 'size' => astra_get_option( 'blog-meta-author-avatar-size', 25 ) ) );
+									/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+								$output_str .= '<img class=' . esc_attr( 'ast-author-image' ) . ' src="' . $get_author_gravatar . '" alt="' . get_the_title() . '" />';
+									/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+							}
+						}
+						$output_str .= esc_html( astra_get_option( 'blog-meta-author-avatar-prefix-label' ) ) . astra_post_author();
 					}
 					break;
 
@@ -167,7 +193,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 					break;
 
 				case 'category':
-					$category = astra_post_categories();
+					$category = astra_post_categories( 'post_categories', 'blog-meta-category-style', false );
 					if ( '' != $category ) {
 						$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
 						$output_str .= $category;
@@ -175,7 +201,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 					break;
 
 				case 'tag':
-					$tags = astra_post_tags();
+					$tags = astra_post_tags( 'post_tags', 'blog-meta-tag-style', false );
 					if ( '' != $tags ) {
 						$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
 						$output_str .= $tags;
@@ -246,6 +272,91 @@ function astra_get_dynamic_post_format( $get_for = 'single-post' ) {
 	}
 
 	return sprintf( '<span class="%1$s" itemprop="%2$s"> %3$s </span>', $class, $itemprop, $date );
+}
+
+	/**
+	 * Get category List.
+	 *
+	 * @since x.x.x
+	 * @param  string $filter_name Filter name.
+	 * @param  string $style_type_slug Style slug.
+	 * @param  bool   $post_meta Post meta.
+	 * @return mixed Markup.
+	 */
+function astra_get_category_list( $filter_name, $style_type_slug, $post_meta ) {
+	$style_type_class = '';
+	$separator        = ', ';
+	$categories_list  = '';
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+		$style_type       = astra_get_option( $style_type_slug );
+		$separator        = 'badge' === $style_type ? ' ' : $separator;
+		$style_type_class = ' ' . $style_type;
+		/* translators: used between list items, there is a space after the comma */
+		$get_category_html = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
+		if ( $get_category_html ) {
+			if ( 'badge' === $style_type ) {
+				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
+			} else {
+				$categories_list = $get_category_html;
+			}
+		}
+	} else {
+		$categories_list = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
+	}
+
+	$post_tax_class = $post_meta ? 'ast-blog-single-element ' : '';
+
+	if ( $categories_list ) {
+		return '<span class="' . $post_tax_class . 'ast-taxonomy-container cat-links' . $style_type_class . '">' . $categories_list . '</span>';
+	} else {
+		return '';
+	}
+}
+
+	/**
+	 * Get tag List.
+	 *
+	 * @since x.x.x
+	 * @param  string $filter_name Filter name.
+	 * @param string $style_type_slug style type slug.
+	 * @param  bool   $post_meta Post meta.
+	 * @return mixed Markup.
+	 */
+function astra_get_tag_list( $filter_name, $style_type_slug, $post_meta ) {
+	$style_type_class = '';
+	$separator        = ', ';
+	$tags_list        = '';
+	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+		$style_type       = astra_get_option( $style_type_slug );
+		$separator        = 'badge' === $style_type ? ' ' : $separator;
+		$style_type_class = ' ' . $style_type;
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list_html = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
+
+		if ( $tags_list_html ) {
+			if ( 'badge' === $style_type ) {
+				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
+			} else {
+				$tags_list = $tags_list_html;
+			}
+		}
+	} else {
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
+	}
+
+	$post_tax_class = $post_meta ? 'ast-blog-single-element ' : '';
+
+	if ( $tags_list ) {
+		return '<span class="' . $post_tax_class . 'ast-taxonomy-container tags-links' . $style_type_class . '">' . $tags_list . '</span>';
+	} else {
+		return '';
+	}
 }
 
 /**
@@ -390,20 +501,18 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 			return $output_filter;
 		}
 
-		$read_more_text    = apply_filters( 'astra_post_read_more', __( 'Read More &raquo;', 'astra' ) );
+		$read_more_text    = apply_filters( 'astra_post_read_more', __( 'Read More &#x1F865;', 'astra' ) );
 		$read_more_classes = apply_filters( 'astra_post_read_more_class', array() );
 
 		$post_link = sprintf(
 			esc_html( '%s' ),
 			'<a class="' . esc_attr( implode( ' ', $read_more_classes ) ) . '" href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . ' ' . $read_more_text . '</a>'
 		);
+		$output    = '<p class="ast-blog-single-element ast-read-more-container read-more"> ' . $post_link . '</p>';
 
-		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
-
-		return apply_filters( 'astra_post_link', $output, $output_filter );
+		echo wp_kses_post( apply_filters( 'astra_post_link', $output, $output_filter ) );
 	}
 }
-add_filter( 'excerpt_more', 'astra_post_link', 20 );
 
 /**
  * Function to get Number of Comments of Post
@@ -450,28 +559,20 @@ if ( ! function_exists( 'astra_post_comments' ) ) {
  * Function to get Tags applied of Post
  *
  * @since 1.0.0
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_post_tags' ) ) {
 
 	/**
 	 * Function to get Tags applied of Post
 	 *
-	 * @param  string $output_filter Output filter.
-	 * @return html                Markup.
+	 * @param  string $filter_name Filter name.
+	 * @param  string $style_type Style type slug.
+	 * @param  bool   $post_meta Post meta.
+	 * @return mixed Markup.
 	 */
-	function astra_post_tags( $output_filter = '' ) {
-
-		$output = '';
-
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'astra' ) );
-
-		if ( $tags_list ) {
-			$output .= '<span class="tags-links">' . $tags_list . '</span>';
-		}
-
-		return apply_filters( 'astra_post_tags', $output, $output_filter );
+	function astra_post_tags( $filter_name, $style_type, $post_meta ) {
+		return apply_filters( 'astra_' . $filter_name, astra_get_tag_list( $filter_name . '_separator', $style_type, $post_meta ) );
 	}
 }
 
@@ -479,31 +580,22 @@ if ( ! function_exists( 'astra_post_tags' ) ) {
  * Function to get Categories of Post
  *
  * @since 1.0.0
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_post_categories' ) ) {
 
 	/**
 	 * Function to get Categories applied of Post
 	 *
-	 * @param  string $output_filter Output filter.
-	 * @return html                Markup.
+	 * @param  string $filter_name Filter name.
+	 * @param  string $style_type Style type slug.
+	 * @param  bool   $post_meta Post meta.
+	 * @return mixed Markup.
 	 */
-	function astra_post_categories( $output_filter = '' ) {
-
-		$output = '';
-
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'astra' ) );
-
-		if ( $categories_list ) {
-			$output .= '<span class="cat-links">' . $categories_list . '</span>';
-		}
-
-		return apply_filters( 'astra_post_categories', $output, $output_filter );
+	function astra_post_categories( $filter_name, $style_type, $post_meta ) {
+		return apply_filters( 'astra_' . $filter_name, astra_get_category_list( $filter_name . '_separator', $style_type, $post_meta ) );
 	}
 }
-
 /**
  * Display classes for primary div
  *
@@ -628,7 +720,7 @@ if ( ! function_exists( 'astra_get_blog_layout_class' ) ) {
  * Function to get Content Read More Link of Post
  *
  * @since 1.2.7
- * @return html
+ * @return mixed
  */
 if ( ! function_exists( 'astra_the_content_more_link' ) ) {
 
@@ -637,7 +729,7 @@ if ( ! function_exists( 'astra_the_content_more_link' ) ) {
 	 *
 	 * @param  string $more_link_element Read More link element.
 	 * @param  string $more_link_text Read More text.
-	 * @return html                Markup.
+	 * @return mixed                Markup.
 	 */
 	function astra_the_content_more_link( $more_link_element = '', $more_link_text = '' ) {
 
