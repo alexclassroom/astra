@@ -3459,6 +3459,11 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 1.5em;
 }
 
+.blog-layout-3 .ast-blog-featured-section,
+.blog-layout-2 .ast-blog-featured-section {
+  margin-bottom: 0;
+}
+
 .error404 .page-header {
   margin-bottom: 1.5em;
 }
