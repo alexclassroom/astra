@@ -30,7 +30,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
-			$astra_backwards = astra_get_option( 'v4-5-0-backward-option' );
+			$astra_backwards = astra_get_option( 'v4-6-0-backward-option' );
 
 			$old_blog_layouts      = array();
 			$old_blog_layouts_free = array();
@@ -77,7 +77,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'path'  => ( class_exists( 'Astra_Builder_UI_Controller' ) ) ? Astra_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-6', false ) : '',
 				),
 			);
-			
+
 
 			if ( $if_astra_addon ) {
 				$blog_layout = array_merge(

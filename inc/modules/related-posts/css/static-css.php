@@ -29,6 +29,9 @@ function astra_related_posts_static_css( $dynamic_css ) {
 		.ast-related-post-title, .entry-meta * {
 			word-break: break-word;
 		}
+		.ast-related-post-cta.read-more .ast-related-post-link {
+			text-decoration: none;
+		}
 		.ast-page-builder-template .ast-related-post .entry-header, .ast-related-post-content .entry-header, .ast-related-post-content .entry-meta {
 			margin: 1em auto 1em auto;
 			padding: 0;
@@ -56,6 +59,9 @@ function astra_related_posts_static_css( $dynamic_css ) {
 		.ast-related-posts-inner-section .post-thumb-img-content {
 			margin: 0;
 			position: relative;
+		}
+		.single article .ast-single-related-posts-container {
+			border-top: 1px solid var(--ast-border-color);
 		}
 		';
 

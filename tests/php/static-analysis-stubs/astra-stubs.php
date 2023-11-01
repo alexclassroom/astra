@@ -12562,25 +12562,14 @@ namespace {
     {
     }
     /**
-     * Prepare markup for taxonomies.
-     *
-     * @param string $control_tax Taxonomy subcontrol name.
-     * @param int    $loop_count Meta loop counter to decide separator appearance.
-     * @param string $separator Separator.
-     *
-     * @return string $output Taxonomy output.
-     */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator)
-    {
-    }
-    /**
-     * Post meta
-     *
-     * @param  array  $post_meta Post meta.
-     * @param  string $separator Separator.
-     * @return string            post meta markup.
-     */
-    function astra_get_post_meta($post_meta, $separator = '/')
+	 * Post meta
+	 *
+	 * @param  array  $post_meta Post meta.
+	 * @param  string $separator Separator.
+	 * @param  string $render_by Render by Single|Related Posts|Blog.
+	 * @return string            post meta markup.
+	 */
+    function astra_get_post_meta($post_meta, $separator = '/', $render_by = '')
     {
     }
     /**
@@ -12592,18 +12581,19 @@ namespace {
     function astra_get_dynamic_post_format()
     {
     }
-    /**
-     * Function to get Date of Post
-     *
-     * @return html                Markup.
-     */
-    function astra_post_date()
-    {
-    }
+	/**
+	 * Function to get Date of Post
+	 *
+	 * @param string $get_for Get for single/related post/etc.
+	 * @return string Markup.
+	 */
+	function astra_post_date( $get_for = 'single-post' )
+	{
+	}
     /**
      * Function to get Author name.
      *
-     * @return null|string $author_name Author name.
+     * @return mixed $author_name Author name.
      * @since 4.0.0
      */
     function astra_post_author_name()
@@ -13848,7 +13838,7 @@ namespace {
      *  astra_get_css_value( VALUE, 'tablet' );
      *  astra_get_css_value( VALUE, 'mobile' );
      *
-     * @param  string $value        CSS value.
+     * @param  mixed  $value        CSS value.
      * @param  string $unit         CSS unit.
      * @param  string $device       CSS device.
      * @return mixed                CSS value depends on $unit & $device
@@ -14171,8 +14161,8 @@ namespace {
     /**
      * Get the mobile breakpoint value.
      *
-     * @param string $min min.
-     * @param string $max max.
+     * @param mixed $min min.
+     * @param mixed $max max.
      *
      * @since 2.4.0
      *
@@ -16489,6 +16479,36 @@ namespace {
     {
     }
     /**
+     * Prepare markup for taxonomies.
+     *
+     * @param string $control_tax Taxonomy subcontrol name.
+     * @param int    $loop_count Meta loop counter to decide separator appearance.
+     * @param string $separator Separator.
+  	 * @param string $badge_style For taxonomies as badge styles.
+     * @return string $output Taxonomy output.
+     */
+    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '')
+    {
+    }
+    /**
+     * Function to get Author ID.
+     *
+     * @since x.x.x
+     * @return mixed $author_id Author ID.
+     */
+    function astra_get_author_id()
+    {
+    }
+    /**
+     * Function to get Author Avatar.
+     *
+     * @since x.x.x
+     * @return mixed $avatar Author Avatar.
+     */
+    function astra_author_avatar()
+    {
+    }
+    /**
      * Header Footer builder - Migration of Footer Widgets.
      *
      * @since 3.0.0
@@ -16978,7 +16998,7 @@ namespace {
      * @since 4.4.0
      * @return void
      */
-    function astra_theme_background_updater_4_3_2()
+    function astra_theme_background_updater_4_4_0()
     {
     }
     /**
@@ -16987,7 +17007,7 @@ namespace {
      * @since 4.4.0
      * @return void
      */
-    function astra_theme_background_updater_4_4_0()
+    function astra_theme_background_updater_4_6_0()
     {
     }
     /**

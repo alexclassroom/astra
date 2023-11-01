@@ -97,12 +97,17 @@
 * CSS for ast-spacing attribute started.
 */
 
-.customize-control.ast-bottom-spacing {
+.customize-control.ast-bottom-spacing, .ast-field-settings-modal .customize-control.ast-bottom-spacing {
 	margin-bottom: 16px;
 }
-
-.customize-control.ast-top-spacing {
+.customize-control.ast-top-spacing, .ast-field-settings-modal .customize-control.ast-top-spacing {
 	margin-top: 16px;
+}
+li.customize-control.ast-bottom-section-spacing {
+	margin-bottom: 24px;
+}
+li.customize-control.ast-top-section-spacing {
+	margin-top: 24px;
 }
 
 /*
@@ -149,6 +154,9 @@
     bottom: 25px;
 }
 
+.ast-top-dotted-divider > * {
+    margin-top: -5px !important;
+}
 
 /*
 * CSS for ast-section-divider attribute started.
@@ -248,4 +256,11 @@
 .ast-fields-wrap .customize-control.ast-bottom-section-divider::after, .ast-fields-wrap .customize-control.ast-top-section-divider::before {
     width: 100%;
     left: 0px;
+}
+
+.ast-top-dotted-divider .ast-control-tooltip {
+    top: 22px;
+}
+.ast-top-section-divider .ast-control-tooltip {
+    top: 30px;
 }

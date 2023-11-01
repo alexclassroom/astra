@@ -1,4 +1,6 @@
 v4.5.0 (Unreleased)
+- New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
+- New: Related Posts - Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for featured image meta. ( https://wpastra.com/docs/featured-image-options-for-single-banner-layouts/ )
 - Fix: Default colors from customizer palette are mismatch with frontend global colors & with block editor's theme colors.
 - Fix: Smooth Scroll fails to navigate by keyboard on-focus and eventually breaks Accessibility.
 - Fix: WooCommerce - Duplicate 'No Products in the Cart' Message in WooCommerce Cart Widget.

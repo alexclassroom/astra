@@ -559,6 +559,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'--ast-container-default-xxs-padding' => ( true === $update_customizer_strctural_defaults ) ? '1.8em' : '1.4em',
 					'--ast-code-block-background'         => ( true === self::astra_check_default_color_typo() ) ? '#ECEFF3' : '#EEEEEE',
 					'--ast-comment-inputs-background'     => ( true === self::astra_check_default_color_typo() ) ? '#F9FAFB' : '#FAFAFA',
+					'--ast-normal-container-width'        => $site_content_width . 'px',
+					'--ast-narrow-container-width'        => $narrow_container_max_width . 'px',
 				),
 
 				// HTML.
@@ -1294,6 +1296,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary, .ast-plain-container.ast-single-post #primary, .ast-narrow-container.ast-single-post #primary' => array(
 					'margin-top'    => astra_responsive_spacing( $single_post_outside_spacing, 'top', 'desktop' ),
 					'margin-bottom' => astra_responsive_spacing( $single_post_outside_spacing, 'bottom', 'desktop' ),
+				),
+				'.ast-narrow-container.single.ast-separate-container .post-navigation' => array(
+					'margin-top' => '0',
 				),
 				'.ast-left-sidebar.ast-single-post #primary, .ast-right-sidebar.ast-single-post #primary, .ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary, .ast-narrow-container.ast-single-post #primary' => array(
 					'padding-left'  => astra_responsive_spacing( $single_post_outside_spacing, 'left', 'desktop' ),
@@ -2068,7 +2073,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'#secondary h2'                   => array(
 						'font-size' => '1.7rem',
 					),
-					'.ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-comment-list li.depth-1, .ast-separate-container .comment-respond' => array(
+					'.ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1, .ast-separate-container .comment-respond, .ast-narrow-container .comment-respond' => array(
 						'padding' => '3em',
 					),
 
@@ -2078,10 +2083,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 					'.ast-article-single .wp-block-post-template-is-layout-grid' => array(
 						'padding-' . $ltr_left => '0',
-					),
-
-					'.ast-separate-container .ast-comment-list li.depth-1, .hentry' => array(
-						'margin-bottom' => '2em',
 					),
 					'.ast-separate-container .ast-archive-description, .ast-separate-container .ast-author-box' => array(
 						'border-bottom' => '1px solid var(--ast-border-color)',
@@ -2119,6 +2120,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'line-height' => 'inherit',
 					),
 				);
+				if ( ! self::astra_4_6_0_compatibility() ) {
+					$default_layout_update_css['.ast-separate-container .comment-form-position-above .comment-respond'] = array(
+						'margin-bottom' => '2em',
+					);
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+						'margin-bottom' => '2em',
+					);
+				}
 				/* Parse CSS from array() -> Desktop CSS */
 				$parse_css .= astra_parse_css( $default_layout_update_css );
 
@@ -5576,6 +5585,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		public static function astra_core_form_btns_styling() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
 			return apply_filters( 'astra_core_form_btns_styling', isset( $astra_settings['v4-2-2-core-form-btns-styling'] ) ? false : true );
+		}
+
+		/**
+		 * In x.x.x version we are having new stylings.
+		 * 1. Comments area refined.
+		 *
+		 * @return bool true|false.
+		 * @since x.x.x
+		 */
+		public static function astra_4_6_0_compatibility() {
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_get_option_v4-6-0-backward-option', isset( $astra_settings['v4-6-0-backward-option'] ) ? false : true );
 		}
 
 		/**

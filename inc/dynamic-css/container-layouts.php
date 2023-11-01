@@ -135,9 +135,25 @@ function astra_container_layout_css() {
 	$tablet_breakpoint = (string) astra_get_tablet_breakpoint();
 	/** @psalm-suppress InvalidCast */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
+	$page_container_css .= '
+		@media (min-width: ' . strval( astra_get_tablet_breakpoint( '', 1 ) ) . 'px) {
+			.ast-desktop .ast-container--normal, .ast-desktop .ast-container--narrow {
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.ast-desktop .ast-container--normal {
+				max-width: var(--ast-normal-container-width);
+			}
+			.ast-desktop .ast-container--narrow {
+				max-width: var(--ast-narrow-container-width);
+			}
+		}
+	';
+
 	if ( 'page-builder' === $container_layout ) {
 
-		$page_container_css = '
+		$page_container_css .= '
         .ast-page-builder-template .hentry {
             margin: 0;
           }

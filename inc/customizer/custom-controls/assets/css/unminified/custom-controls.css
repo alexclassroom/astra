@@ -1205,10 +1205,6 @@
 .ast-field-settings-modal .ast-color-btn-clear-wrap {
     right: 78px;
 }
-.ast-field-settings-modal .customize-control-ast-color.customize-control,
-.ast-field-settings-modal .customize-control-ast-color.customize-control:first-child {
-    margin-top: 25px;
-}
 .astra-color-picker-wrap .components-color-picker__inputs-wrapper {
 	min-width: unset;
 }
@@ -1591,7 +1587,8 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
 	right: 30px;
 	top: 50%;
 }
-.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
+.ast-top-dotted-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip,
+.ast-top-section-divider .dashicons-editor-help[data-title]:hover ~ .ast-dashicons-custom-tooltip {
     top: 24px;
 }
 
@@ -1817,6 +1814,10 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
   font-weight: 400;
 }
 
+.customize-control .customize-control-description {
+	display: none;
+}
+
 .customize-control-ast-divider hr {
 	margin-top: 0;
     margin-bottom: 0;
@@ -1916,12 +1917,17 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
 * CSS for ast-spacing attribute started.
 */
 
-.customize-control.ast-bottom-spacing {
+.customize-control.ast-bottom-spacing, .ast-field-settings-modal .customize-control.ast-bottom-spacing {
 	margin-bottom: 16px;
 }
-
-.customize-control.ast-top-spacing {
+.customize-control.ast-top-spacing, .ast-field-settings-modal .customize-control.ast-top-spacing {
 	margin-top: 16px;
+}
+li.customize-control.ast-bottom-section-spacing {
+	margin-bottom: 24px;
+}
+li.customize-control.ast-top-section-spacing {
+	margin-top: 24px;
 }
 
 /*
@@ -1968,6 +1974,9 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
     bottom: 25px;
 }
 
+.ast-top-dotted-divider > * {
+    margin-top: -5px !important;
+}
 
 /*
 * CSS for ast-section-divider attribute started.
@@ -2067,6 +2076,13 @@ li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
 .ast-fields-wrap .customize-control.ast-bottom-section-divider::after, .ast-fields-wrap .customize-control.ast-top-section-divider::before {
     width: 100%;
     left: 0px;
+}
+
+.ast-top-dotted-divider .ast-control-tooltip {
+    top: 22px;
+}
+.ast-top-section-divider .ast-control-tooltip {
+    top: 30px;
 }
 
 .ast-typo-presets {

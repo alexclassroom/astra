@@ -84,57 +84,42 @@ function astra_refresh_customizer( control ) {
 			selector = 'body .ast-single-entry-banner[data-post-type="' + postType + '"], header.entry-header';
 		}
 
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]'
-		);
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-date-format]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-style]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1-style]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2-style]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-structural-taxonomy-style]' );
 
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-1]'
-		);
+		wp.customize( 'astra-settings[ast-dynamic-single-' + postType + '-author-avatar-size]', function( value ) {
+			value.bind( function( size ) {
+				var dynamicStyle = '';
+				dynamicStyle +=  '.entry-meta .ast-author-avatar img {';
+				dynamicStyle += 'width: ' + size + 'px;';
+				dynamicStyle += 'height: ' + size + 'px;';
+				dynamicStyle += '} ';
 
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-2]'
-		);
+				astra_add_dynamic_css( 'ast-dynamic-single-' + postType + '-author-avatar-size', dynamicStyle );
+			} );
+		} );
 
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-width-type]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-type]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-pre-scale]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-width]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-height]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-size]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-date-format]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-1]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-taxonomy-2]'
-		);
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-1]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-position-layout-2]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-width-type]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-type]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-ratio-pre-scale]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-width]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-height]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-size]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-metadata-separator]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-prefix-label]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-featured-as-background]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-banner-featured-overlay]' );
 
 		astra_dynamic_build_css(
 			'ast-dynamic-single-' + postType + '-horizontal-alignment',
@@ -149,14 +134,6 @@ function astra_refresh_customizer( control ) {
 			'min-height',
 			selector,
 			'px'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-featured-as-background]'
-		);
-
-		astra_refresh_customizer(
-			'astra-settings[ast-dynamic-single-' + postType + '-banner-featured-overlay]'
 		);
 
 		astra_apply_responsive_background_css( 'astra-settings[ast-dynamic-single-' + postType + '-banner-background]', ' body .ast-single-entry-banner[data-post-type="' + postType + '"]', 'desktop' );
@@ -179,20 +156,20 @@ function astra_refresh_customizer( control ) {
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-elements-gap]',
 			'margin-bottom',
-			' header.entry-header > *:not(:last-child), body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container > *:not(:last-child)',
+			'header.entry-header > *:not(:last-child), body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container > *:not(:last-child), header.entry-header .read-more, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .read-more',
 			'px'
 		);
 
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-banner-text-color]',
 			'color',
-			' header.entry-header *, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container *',
+			'header.entry-header *, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container *',
 		);
 
 		astra_css(
 			'astra-settings[ast-dynamic-single-' + postType + '-banner-title-color]',
 			'color',
-			' header.entry-header .entry-title, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .entry-title',
+			'header.entry-header .entry-title, body .ast-single-entry-banner[data-post-type="' + postType + '"] .ast-container .entry-title',
 		);
 
 		astra_css(

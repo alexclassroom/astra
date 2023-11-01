@@ -152,7 +152,7 @@ if ( ! function_exists( 'astra_get_font_css_value' ) ) {
 	 *  astra_get_css_value( VALUE, 'tablet' );
 	 *  astra_get_css_value( VALUE, 'mobile' );
 	 *
-	 * @param  string $value        CSS value.
+	 * @param  mixed  $value        CSS value.
 	 * @param  string $unit         CSS unit.
 	 * @param  string $device       CSS device.
 	 * @return mixed                CSS value depends on $unit & $device
@@ -1330,8 +1330,8 @@ function astra_get_tablet_breakpoint( $min = '', $max = '' ) {
 /**
  * Get the mobile breakpoint value.
  *
- * @param string $min min.
- * @param string $max max.
+ * @param mixed $min min.
+ * @param mixed $max max.
  *
  * @since 2.4.0
  *

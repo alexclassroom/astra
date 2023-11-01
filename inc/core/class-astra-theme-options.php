@@ -126,9 +126,9 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
 				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-1' : 'blog-layout-4';
+				$selected_layout = ( isset( $astra_options['v4-6-0-backward-option'] ) && false === $astra_options['v4-6-0-backward-option'] ) ? 'blog-layout-1' : 'blog-layout-4';
 			} else {
-				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-classic' : 'blog-layout-4';
+				$selected_layout = ( isset( $astra_options['v4-6-0-backward-option'] ) && false === $astra_options['v4-6-0-backward-option'] ) ? 'blog-layout-classic' : 'blog-layout-4';
 			}
 
 			// Defaults list of options.
@@ -541,6 +541,10 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet-unit'  => 'em',
 						'mobile-unit'  => 'em',
 					),
+					// Single Comments.
+					'comments-box-placement'               => '',
+					'comment-form-position'                => 'below',
+					'comments-box-container-width'         => '',
 
 					// Container.
 					'single-page-ast-content-layout'       => false === astra_check_is_structural_setup() ? 'default' : 'normal-width-container',

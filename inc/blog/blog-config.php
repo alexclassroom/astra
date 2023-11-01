@@ -16,10 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $control_tax Taxonomy subcontrol name.
  * @param int    $loop_count Meta loop counter to decide separator appearance.
  * @param string $separator Separator.
+ * @param string $badge_style For taxonomies as badge styles.
  *
  * @return string $output Taxonomy output.
  */
-function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator ) {
+function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $badge_style = '' ) {
 
 	$tax_type = astra_get_option( $control_tax );
 	$post_id  = get_the_ID();
@@ -46,18 +47,66 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator ) {
 				continue;
 			}
 
+			$tax_badge_selector = '';
+			if ( '' !== $badge_style ) {
+				$tax_badge_selector = 'badge' === $badge_style ? 'ast-button ast-badge-tax' : 'ast-underline-text';
+				// $separator          = 'badge' === $badge_style ? '' : $separator;
+			}
+
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$term_links[] = '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
+			$term_links[] = '<a href="' . esc_url( $term_link ) . '" class="' . esc_attr( $tax_badge_selector ) . '">' . esc_html( $term->name ) . '</a>';
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		}
 
-		$all_terms  = join( ', ', $term_links );
-		$output_str = '<span class="ast-terms-link">' . $all_terms . '</span>';
+		$join_separator = 'badge' === $badge_style ? ' ' : ', ';
+		$all_terms      = join( $join_separator, $term_links );
+		$output_str     = '<span class="ast-terms-link">' . $all_terms . '</span>';
 
 		return ( 1 != $loop_count ) ? ' ' . $separator . ' ' . $output_str : $output_str;
 	}
 
 	return '';
+}
+
+/**
+ * Function to get Author ID.
+ *
+ * @since x.x.x
+ * @return mixed $author_id Author ID.
+ */
+function astra_get_author_id() {
+	global $post;
+	if ( isset( $post->post_author ) ) {
+		$author_id = $post->post_author;
+	} elseif ( is_callable( 'get_the_author_meta' ) ) {
+		$author_id = get_the_author_meta( 'ID' );
+	} else {
+		$author_id = 1;
+	}
+	return $author_id;
+}
+
+/**
+ * Function to get Author Avatar.
+ *
+ * @since x.x.x
+ * @param string $get_for Get for.
+ * @return mixed $avatar Author Avatar.
+ */
+function astra_author_avatar( $get_for = 'single-post' ) {
+	$avatar = '';
+	if ( is_singular() ) {
+		if ( 'single-post' === $get_for && astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar', false ) ) {
+			$avatar_image_size = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-avatar-size', 30 );
+			$avatar            = '<span class="ast-author-avatar">' . strval( get_avatar( astra_get_author_id(), $avatar_image_size ) ) . '</span>';
+		} elseif ( 'related-post' === $get_for && astra_get_option( 'related-posts-author-avatar', false ) ) {
+			$avatar_image_size = astra_get_option( 'related-posts-author-avatar-size', 30 );
+			$avatar            = '<span class="ast-author-avatar">' . strval( get_avatar( astra_get_author_id(), $avatar_image_size ) ) . '</span>';
+		} else {
+			$avatar = '';
+		}
+	}
+	return $avatar;
 }
 
 /**
@@ -72,20 +121,29 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 	 *
 	 * @param  array  $post_meta Post meta.
 	 * @param  string $separator Separator.
+	 * @param  string $render_by Render by Single|Related Posts|Blog.
 	 * @return string            post meta markup.
 	 */
-	function astra_get_post_meta( $post_meta, $separator = '/' ) {
+	function astra_get_post_meta( $post_meta, $separator = '/', $render_by = '' ) {
 
 		$output_str = '';
 		$loop_count = 1;
 
-		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-			$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
-			if ( 'none' !== $divider_type ) {
-				$separator = $divider_type;
-			} else {
-				$separator = '&nbsp';
+		if ( is_singular() ) {
+			if ( 'single-post' === $render_by ) {
+				$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '&nbsp' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
+			} else if ( 'related-posts' === $render_by ) {
+				$separator = 'none' === $separator ? '&nbsp' : $separator;
+			}
+		} else {
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+				$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
+				if ( 'none' !== $divider_type ) {
+					$separator = $divider_type;
+				} else {
+					$separator = '&nbsp';
+				}
 			}
 		}
 
@@ -97,24 +155,40 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 
 				case 'author':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-					if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-						$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
-						if ( $author_avatar ) {
-							$get_author_id = get_the_author_meta( 'ID' );
-							/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-							$get_author_gravatar = get_avatar_url( $get_author_id, array( 'size' => astra_get_option( 'blog-meta-author-avatar-size', 25 ) ) );
-								/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-							$output_str .= '<img class=' . esc_attr( 'ast-author-image' ) . ' src="' . $get_author_gravatar . '" alt="' . get_the_title() . '" />';
-								/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					$astra_post_author_html = '' . astra_post_author();
+					/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					if ( is_singular() ) {
+						if ( 'single-post' === $render_by ) {
+							$author_prefix_label = astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+							$output_str         .= astra_author_avatar() . esc_html( $author_prefix_label ) . $astra_post_author_html;
+						} elseif ( 'related-posts' === $render_by ) {
+							$author_prefix_label = astra_get_option( 'related-posts-author-prefix-label', astra_default_strings( 'string-blog-meta-author-by', false ) );
+							$output_str         .= astra_author_avatar( 'related-post' ) . esc_html( $author_prefix_label ) . $astra_post_author_html;
+						} else {
+							$output_str .= esc_html( astra_default_strings( 'string-blog-meta-author-by', false ) ) . $astra_post_author_html;
 						}
+					} else {
+						/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+						if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+							$author_avatar = astra_get_option( 'blog-meta-author-avatar' );
+							if ( $author_avatar ) {
+								$get_author_id = get_the_author_meta( 'ID' );
+								/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+								$get_author_gravatar = get_avatar_url( $get_author_id, array( 'size' => astra_get_option( 'blog-meta-author-avatar-size', 25 ) ) );
+									/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+								$output_str .= '<img class=' . esc_attr( 'ast-author-image' ) . ' src="' . $get_author_gravatar . '" alt="' . get_the_title() . '" />';
+									/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+							}
+						}
+						$output_str .= esc_html( astra_get_option( 'blog-meta-author-avatar-prefix-label' ) ) . $astra_post_author_html;
 					}
-					$output_str .= esc_html( astra_get_option( 'blog-meta-author-avatar-prefix-label' ) ) . astra_post_author();
 					break;
 
 				case 'date':
 					$output_str .= ( 1 != $loop_count && '' != $output_str ) ? ' ' . $separator . ' ' : '';
-					$output_str .= astra_post_date();
+					$get_for     = 'related-posts' === $render_by ? 'related-post' : 'single-post';
+					$output_str .= astra_post_date( $get_for );
 					break;
 
 				case 'category':
@@ -146,7 +220,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 			}
 
 			if ( strpos( $meta_value, '-taxonomy' ) !== false ) {
-				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator );
+				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator, astra_get_option( $meta_value . '-style', '' ) );
 			}
 
 			$loop_count ++;
@@ -159,15 +233,23 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 /**
  * Get post format as per new configurations set in customizer.
  *
+ * @param string $get_for Get for.
  * @return string HTML markup for date span.
  * @since 4.1.0
  */
-function astra_get_dynamic_post_format() {
-	$post_type          = strval( get_post_type() );
-	$is_singular        = is_singular() ? true : false;
-	$date_format_option = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-date-format', '' ) : astra_get_option( 'blog-meta-date-format', '' );
-	$date_type          = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-meta-date-type', 'published' ) : astra_get_option( 'blog-meta-date-type', 'published' );
-	$date_format        = apply_filters( 'astra_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+function astra_get_dynamic_post_format( $get_for = 'single-post' ) {
+	$is_singular = is_singular() ? true : false;
+
+	if ( 'related-post' === $get_for ) {
+		$date_format_option = astra_get_option( 'related-posts-date-format', '' );
+		$date_type          = astra_get_option( 'related-posts-meta-date-type', 'published' );
+		$date_format        = apply_filters( 'astra_related_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+	} else {
+		$post_type          = strval( get_post_type() );
+		$date_format_option = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-date-format', '' ) : astra_get_option( 'blog-meta-date-format', '' );
+		$date_type          = $is_singular ? astra_get_option( 'ast-dynamic-single-' . esc_attr( $post_type ) . '-meta-date-type', 'published' ) : astra_get_option( 'blog-meta-date-type', 'published' );
+		$date_format        = apply_filters( 'astra_post_date_format', ( '' === $date_format_option ) ? get_option( 'date_format' ) : $date_format_option );
+	}
 
 	$published_date = strval( get_the_date( $date_format ) );
 	$modified_date  = strval( get_the_modified_date( $date_format ) );
@@ -287,12 +369,13 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 	/**
 	 * Function to get Date of Post
 	 *
-	 * @return html                Markup.
+	 * @param string $get_for Get for single/related post/etc.
+	 * @return string Markup.
 	 */
-	function astra_post_date() {
+	function astra_post_date( $get_for = 'single-post' ) {
 		$output  = '';
 		$output .= '<span class="posted-on">';
-		$output .= astra_get_dynamic_post_format();
+		$output .= astra_get_dynamic_post_format( $get_for );
 		$output .= '</span>';
 		return apply_filters( 'astra_post_date', $output );
 	}
@@ -301,7 +384,7 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 /**
  * Function to get Author name.
  *
- * @return null|string $author_name Author name.
+ * @return mixed $author_name Author name.
  * @since 4.0.0
  */
 function astra_post_author_name() {
@@ -346,14 +429,7 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 	 */
 	function astra_post_author( $output_filter = '' ) {
 
-		global $post;
-		if ( isset( $post->post_author ) ) {
-			$author_id = $post->post_author;
-		} elseif ( is_callable( 'get_the_author_meta' ) ) {
-			$author_id = get_the_author_meta( 'ID' );
-		} else {
-			$author_id = 1;
-		}
+		$author_id = astra_get_author_id();
 
 		ob_start();
 

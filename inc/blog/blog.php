@@ -101,7 +101,7 @@ if ( ! function_exists( 'astra_blog_get_post_meta' ) ) {
 
 		if ( in_array( $current_post_type, $post_type_array ) && is_array( $post_meta ) && $enable_meta ) {
 
-			$output_str = astra_get_post_meta( $post_meta );
+			$output_str = astra_get_post_meta( $post_meta, '/', 'blog' );
 
 			if ( ! empty( $output_str ) ) {
 				echo apply_filters( 'astra_blog_post_meta', '<div class="entry-meta">' . $output_str . '</div>', $output_str ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -561,7 +561,7 @@ function astra_banner_elements_order( $structure = array() ) {
 				$post_meta = astra_get_option( 'ast-dynamic-single-' . $post_type . '-metadata', array( 'comments', 'author', 'date' ) );
 				$output    = '';
 				if ( ! empty( $post_meta ) ) {
-					$output_str = astra_get_post_meta( $post_meta );
+					$output_str = astra_get_post_meta( $post_meta, '/', 'single-post' );
 					if ( ! empty( $output_str ) ) {
 						$output = apply_filters( 'astra_single_post_meta', '<div class="entry-meta">' . $output_str . '</div>' ); // WPCS: XSS OK.
 					}
@@ -588,6 +588,13 @@ function astra_banner_elements_order( $structure = array() ) {
 					astra_get_blog_post_thumbnail( 'single' );
 					do_action( 'astra_blog_single_featured_image_after' );
 				}
+				break;
+
+			case 'single-taxonomy':
+			case 'single-str-taxonomy':
+				do_action( 'astra_single_post_banner_taxonomies_before' );
+				echo astra_get_dynamic_taxonomy( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy', 1, astra_get_option( 'ast-dynamic-single-' . $post_type . '-metadata-separator' ), astra_get_option( 'ast-dynamic-single-' . $post_type . '-structural-taxonomy-style', '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				do_action( 'astra_single_post_banner_taxonomies_after' );
 				break;
 
 			case 'archive-title':

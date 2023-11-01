@@ -36,6 +36,16 @@ function astra_font_size_rem( size, with_rem, device ) {
 	return css;
 }
 
+/**
+ * Refresh customizer iframe.
+ */
+function astra_refresh_customizer( control ) {
+	wp.customize( control, function( value ) {
+		value.bind( function( value ) {
+			wp.customize.preview.send( 'refresh' );
+		} );
+	} );
+}
 
 /**
  * Apply CSS for the element
@@ -1543,7 +1553,7 @@ function hasWordPressWidgetBlockEditor() {
 
 	wp.customize( 'astra-settings[secondary-theme-button-border-group-border-size]', function( value ) {
 		value.bind( function( border ) {
-		
+
 			var dynamicStyle = '.wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button';
 
 			if( '' != border.top || '' != border.right || '' != border.bottom || '' != border.left ) {
@@ -1697,7 +1707,7 @@ function hasWordPressWidgetBlockEditor() {
 
 		// Theme Secondary Button - Background Hover Color
 		astra_css( 'astra-settings[secondary-button-bg-h-color]', 'background-color', '.wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-buttons .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color):hover, .wp-block-buttons .wp-block-button.wp-block-button__link.is-style-outline:not(.has-text-color):hover, .ast-outline-button:hover, .ast-outline-button:focus' );
-		
+
 		astra_css( 'astra-settings[theme-button-border-group-border-color]', 'border-color', '.menu-toggle, button, .ast-button, .ast-custom-button, .button, input#submit, input[type="button"], input[type="submit"], input[type="reset"], .wp-block-button .wp-block-button__link' + astraCustomizer.v4_2_2_core_form_btns_styling + btn_border_color_ele + search_button_selector + ', ' + global_builder_btn + woo_btn_normal_sector );
 
 		// Theme Secondary Button - Border Color
@@ -1823,6 +1833,8 @@ function hasWordPressWidgetBlockEditor() {
 	astra_responsive_font_size( 'astra-settings[related-posts-content-font-size]', '.ast-related-post-content .ast-related-post-excerpt' );
 	astra_font_extras_css( 'related-posts-content-font-extras', '.ast-related-post-content .ast-related-post-excerpt' );
 
+	astra_responsive_spacing( 'astra-settings[related-post-padding]', 'body .site-content .ast-single-related-posts-container', 'padding', [ 'top', 'right', 'bottom', 'left' ] );
+
 	// Title Color.
     astra_css(
         'astra-settings[header-color-site-title]',
@@ -1843,6 +1855,20 @@ function hasWordPressWidgetBlockEditor() {
         'color',
         '.ast-site-identity .site-description'
     );
+
+	astra_refresh_customizer( 'astra-settings[related-metadata-separator]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-pre-scale]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-width]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-height]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-size]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-prefix-label]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-avatar]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-avatar-size]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-meta-date-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-date-format]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-category-style]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-tag-style]' );
 
 	function astraHandleButtonPresetPreview( btnSelector ) {
 
@@ -1899,7 +1925,7 @@ function hasWordPressWidgetBlockEditor() {
 						+ btnSelector + '	{ background: transparent }'
 						+ '</style>'
 					);
-				} 
+				}
 				else {
 
 					jQuery( 'style#astra-settings-button-bg-color-background-color' ).remove();
@@ -2211,7 +2237,7 @@ function hasWordPressWidgetBlockEditor() {
 
 				var buttonTextColor = wp.customize( 'astra-settings[secondary-button-color]' ).get();
 				var buttonBorderColor = wp.customize( 'astra-settings[secondary-theme-button-border-group-border-color]' ).get();
-				
+
 				// If button has outline preset.
 				if( 'button_04' === buttonPreset || 'button_05' === buttonPreset || 'button_06' === buttonPreset ) {
 
