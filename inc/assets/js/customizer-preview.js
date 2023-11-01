@@ -321,6 +321,34 @@ wp.customize( 'astra-settings[blog-meta-date-format]', function( setting ) {
 	} );
 } );
 
+astra_refresh_customizer(
+    'astra-settings[blog-hover-effect]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-ratio-type]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-size]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-ratio-pre-scale]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-custom-scale-width]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-image-custom-scale-height]'
+);
+
+astra_refresh_customizer(
+    'astra-settings[blog-post-per-page]'
+);
+
 // Global Typography Refresh - START
 const bodyFontFamily = [
 	'body-font-family',

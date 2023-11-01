@@ -1368,11 +1368,11 @@ function astra_theme_background_updater_4_2_0() {
  * Migration cases for old users, old layouts -> new layouts.
  *
  * @since 4.2.0
- * @param mixed $old_layout
- * @param mixed $new_layout
- * @param mixed $content_style
- * @param mixed $sidebar_style
- * @param array $theme_options
+ * @param mixed $old_layout old_layout.
+ * @param mixed $new_layout new_layout.
+ * @param mixed $content_style content_style.
+ * @param mixed $sidebar_style sidebar_style.
+ * @param array $theme_options theme_options.
  * @return array $theme_options The updated theme options.
  */
 function astra_apply_layout_migration( $old_layout, $new_layout, $content_style, $sidebar_style, $theme_options ) {
@@ -1476,3 +1476,18 @@ function astra_theme_background_updater_4_4_0() {
 		update_option( 'astra-settings', $theme_options );
 	}
 }
+
+/**
+ * Handle backward compatibility on version x.x.x
+ *
+ * @since x.x.x
+ * @return void
+ */
+function astra_theme_background_updater_4_5_0() {
+	$theme_options = get_option( 'astra-settings', array() );
+	if ( ! isset( $theme_options['v4-5-0-backward-option'] ) ) {
+		$theme_options['v4-5-0-backward-option'] = false;
+		update_option( 'astra-settings', $theme_options );
+	}
+}
+

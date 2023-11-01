@@ -33,8 +33,17 @@
 	}
 }
 
+.post-content {
+	> .cat-links, > .tags-links, > .read-more {
+		display: block;
+		margin-bottom: .8em;
+	}
+}
 
 .read-more {
+	a {
+		display: inline-block;
+	}
 	margin-bottom: 0;
 	.ast-right-arrow {
 		font-size: 1em;
@@ -54,7 +63,6 @@
 
 .ast-blog-featured-section {
 	margin-bottom: 1.5em;
-
 }
 
 .error404 .page-header {

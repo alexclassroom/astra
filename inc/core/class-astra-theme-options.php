@@ -121,6 +121,15 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 			$apply_new_default_color_typo_values = Astra_Dynamic_CSS::astra_check_default_color_typo();
 
 			$astra_options = self::get_astra_options();
+			$post_per_page = intval( get_option( 'posts_per_page' ) );
+
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
+				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-1' : 'blog-layout-4';
+			} else {
+				$selected_layout = ( isset( $astra_options['v4-5-0-backward-option'] ) && false === $astra_options['v4-5-0-backward-option'] ) ? 'blog-layout-classic' : 'blog-layout-4';
+			}
 
 			// Defaults list of options.
 			self::$defaults = apply_filters(
@@ -133,8 +142,14 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					// Blog.
 					'blog-post-structure'                  => array(
 						'image',
+						'title',
 						'title-meta',
+						'excerpt',
+						'read-more',
 					),
+					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
+					'blog-hover-effect'                    => 'none',
+					'blog-layout'                          => $selected_layout,
 					'blog-width'                           => 'default',
 					'blog-meta-date-type'                  => 'published',
 					'blog-meta-date-format'                => '',
