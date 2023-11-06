@@ -30,7 +30,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
-			$astra_backwards = astra_get_option( 'v4-6-0-backward-option' );
+			$astra_backwards = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
 
 			$old_blog_layouts      = array();
 			$old_blog_layouts_free = array();
@@ -419,6 +419,32 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
 					'control'   => 'ast-select',
 					'choices'   => astra_get_site_image_sizes(),
+				),
+
+				/**
+				 * Option: Card Radius
+				 */
+				array(
+					'name'           => ASTRA_THEME_SETTINGS . '[post-card-border-radius]',
+					'default'        => astra_get_option( 'post-card-border-radius' ),
+					'type'           => 'control',
+					'control'        => 'ast-responsive-spacing',
+					'transport'      => 'postMessage',
+					'section'        => 'section-blog',
+					'title'          => __( 'Card Border Radius', 'astra' ),
+					'suffix'         => 'px',
+					'priority'       => 1,
+					'divider'        => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),
+					'context'        => Astra_Builder_Helper::$design_tab,
+					'linked_choices' => true,
+					'unit_choices'   => array( 'px', 'em', '%' ),
+					'choices'        => array(
+						'top'    => __( 'Top', 'astra' ),
+						'right'  => __( 'Right', 'astra' ),
+						'bottom' => __( 'Bottom', 'astra' ),
+						'left'   => __( 'Left', 'astra' ),
+					),
+					'connected'      => false,
 				),
 			);
 

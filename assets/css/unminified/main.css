@@ -1002,7 +1002,7 @@ textarea,
 
 .entry-title,
 .entry-title a {
-  font-weight: normal;
+  font-weight: var(--ast-blog-title-font-weight, normal);
 }
 
 /*----------  Media ----------*/

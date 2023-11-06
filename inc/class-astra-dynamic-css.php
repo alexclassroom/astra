@@ -144,6 +144,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$site_tagline_font_size = astra_get_option( 'font-size-site-tagline' );
 
 			$archive_post_title_font_size = astra_get_option( 'font-size-page-title' );
+			$archive_cards_radius         = astra_get_option( 'post-card-border-radius' );
 			$heading_h1_font_size         = astra_get_option( 'font-size-h1' );
 			$heading_h2_font_size         = astra_get_option( 'font-size-h2' );
 			$heading_h3_font_size         = astra_get_option( 'font-size-h3' );
@@ -561,6 +562,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'--ast-comment-inputs-background'     => ( true === self::astra_check_default_color_typo() ) ? '#F9FAFB' : '#FAFAFA',
 					'--ast-normal-container-width'        => $site_content_width . 'px',
 					'--ast-narrow-container-width'        => $narrow_container_max_width . 'px',
+					'--ast-blog-title-font-weight'        => self::astra_4_6_0_compatibility() ? '600' : 'normal',
 				),
 
 				// HTML.
@@ -622,7 +624,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-title'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'desktop' ),
 				),
-				// Conditionally select the css selectors with or without achors.
+				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'desktop' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'desktop' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'desktop' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'desktop' ),
+					'overflow'                   => 'hidden',
+				),
+				// Conditionally select the css selectors with or without anchors.
 				self::conditional_headings_css_selectors(
 					'h1, .entry-content h1, .entry-content h1 a',
 					'h1, .entry-content h1'
@@ -3317,6 +3326,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'tablet', 30 ),
 				),
+				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'tablet' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'tablet' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'tablet' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'tablet' ),
+				),
 
 				// Conditionally select the css selectors with or without achors.
 				self::conditional_headings_css_selectors(
@@ -3408,6 +3423,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'mobile', 30 ),
+				),
+				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'mobile' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'mobile' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'mobile' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'mobile' ),
 				),
 
 				// Conditionally select the css selectors with or without achors.
@@ -5588,8 +5609,21 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
+		 * Improve full screen search Submit button style.
+		 *
+		 * @since 4.4.0
+		 * @return boolean false if it is an existing user, true if not.
+		 */
+		public static function astra_4_4_0_compatibility() {
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
+			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
+		}
+
+		/**
 		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
+		 * 2. Defaults improvement for single-blog layouts.
 		 *
 		 * @return bool true|false.
 		 * @since x.x.x
@@ -5616,19 +5650,5 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			return $blog_layout_css;
 		}
-
-		/**
-		 * Improve full screen search Submit button style.
-		 *
-		 * @since 4.4.0
-		 * @return boolean false if it is an existing user, true if not.
-		 */
-		public static function astra_4_4_0_compatibility() {
-			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
-			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
-			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
-		}
 	}
 }
-
-

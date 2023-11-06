@@ -500,7 +500,7 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 			return $output_filter;
 		}
 
-		$read_more_text    = apply_filters( 'astra_post_read_more', __( 'Read More &#x1F865;', 'astra' ) );
+		$read_more_text    = apply_filters( 'astra_post_read_more', __( 'Read More »', 'astra' ) );
 		$read_more_classes = apply_filters( 'astra_post_read_more_class', array() );
 
 		$post_link = sprintf(
