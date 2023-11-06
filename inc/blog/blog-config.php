@@ -136,14 +136,11 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 				$separator = 'none' === $separator ? '&nbsp' : $separator;
 			}
 		} else {
-			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-				$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
-				if ( 'none' !== $divider_type ) {
-					$separator = $divider_type;
-				} else {
-					$separator = '&nbsp';
-				}
+			$divider_type = astra_get_option( 'blog-post-meta-divider-type' );
+			if ( 'none' !== $divider_type ) {
+				$separator = $divider_type;
+			} else {
+				$separator = '&nbsp';
 			}
 		}
 
@@ -286,23 +283,19 @@ function astra_get_category_list( $filter_name, $style_type_slug, $post_meta ) {
 	$style_type_class = '';
 	$separator        = ', ';
 	$categories_list  = '';
-	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-		$style_type       = astra_get_option( $style_type_slug );
-		$separator        = 'badge' === $style_type ? ' ' : $separator;
-		$style_type_class = ' ' . $style_type;
-		/* translators: used between list items, there is a space after the comma */
-		$get_category_html = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
-		if ( $get_category_html ) {
-			if ( 'badge' === $style_type ) {
-				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
-			} else {
-				$categories_list = $get_category_html;
-			}
+
+	$style_type       = astra_get_option( $style_type_slug );
+	$separator        = 'badge' === $style_type ? ' ' : $separator;
+	$style_type_class = ' ' . $style_type;
+	/* translators: used between list items, there is a space after the comma */
+	$get_category_html = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
+	if ( $get_category_html ) {
+		if ( 'badge' === $style_type ) {
+			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$categories_list = str_replace( '<a', '<a class="ast-button"', $get_category_html );
+		} else {
+			$categories_list = $get_category_html;
 		}
-	} else {
-		$categories_list = get_the_category_list( apply_filters( 'astra_' . $filter_name, $separator ) );
 	}
 
 	$post_tax_class = $post_meta ? 'ast-blog-single-element ' : '';
@@ -327,26 +320,21 @@ function astra_get_tag_list( $filter_name, $style_type_slug, $post_meta ) {
 	$style_type_class = '';
 	$separator        = ', ';
 	$tags_list        = '';
-	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-	if ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) {
-		$style_type       = astra_get_option( $style_type_slug );
-		$separator        = 'badge' === $style_type ? ' ' : $separator;
-		$style_type_class = ' ' . $style_type;
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list_html = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
+	$style_type       = astra_get_option( $style_type_slug );
+	$separator        = 'badge' === $style_type ? ' ' : $separator;
+	$style_type_class = ' ' . $style_type;
 
-		if ( $tags_list_html ) {
-			if ( 'badge' === $style_type ) {
-				/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
-			} else {
-				$tags_list = $tags_list_html;
-			}
+	/* translators: used between list items, there is a space after the comma */
+	$tags_list_html = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
+
+	if ( $tags_list_html ) {
+		if ( 'badge' === $style_type ) {
+			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$tags_list = str_replace( '<a', '<a class="ast-button"', $tags_list_html );
+		} else {
+			$tags_list = $tags_list_html;
 		}
-	} else {
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', apply_filters( 'astra_' . $filter_name, $separator ) );
 	}
 
 	$post_tax_class = $post_meta ? 'ast-blog-single-element ' : '';

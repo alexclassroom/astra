@@ -114,6 +114,84 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						),
 						'context'           => ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) ?
 							Astra_Builder_Helper::$design_tab : Astra_Builder_Helper::$general_tab,
+						'divider'           => array( 'ast_class' => 'ast-top-spacing' ),
+					),
+					array(
+						'name'              => ASTRA_THEME_SETTINGS . '[font-size-post-meta]',
+						'control'           => 'ast-responsive-slider',
+						'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
+						'section'           => 'section-blog',
+						'type'              => 'control',
+						'transport'         => 'postMessage',
+						'title'             => __( 'Meta Font Size', 'astra' ),
+						'priority'          => 140,
+						'default'           => astra_get_option( 'font-size-post-meta' ),
+						'suffix'            => array( 'px', 'em' ),
+						'input_attrs'       => array(
+							'px' => array(
+								'min'  => 0,
+								'step' => 1,
+								'max'  => 100,
+							),
+							'em' => array(
+								'min'  => 0,
+								'step' => 0.01,
+								'max'  => 20,
+							),
+						),
+						'context'           => ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) ?
+							Astra_Builder_Helper::$design_tab : Astra_Builder_Helper::$general_tab,
+						'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
+					),
+					array(
+						'name'              => ASTRA_THEME_SETTINGS . '[font-size-post-tax]',
+						'control'           => 'ast-responsive-slider',
+						'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
+						'section'           => 'section-blog',
+						'type'              => 'control',
+						'transport'         => 'postMessage',
+						'title'             => __( 'Taxonomy Font Size', 'astra' ),
+						'priority'          => 140,
+						'default'           => astra_get_option( 'font-size-post-tax' ),
+						'suffix'            => array( 'px', 'em' ),
+						'input_attrs'       => array(
+							'px' => array(
+								'min'  => 0,
+								'step' => 1,
+								'max'  => 100,
+							),
+							'em' => array(
+								'min'  => 0,
+								'step' => 0.01,
+								'max'  => 20,
+							),
+						),
+						'context'   => array(
+							Astra_Builder_Helper::$design_tab_config,
+							array(
+								'relation' => 'OR',
+								array(
+									'setting'  => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+									'operator' => 'contains',
+									'value'    => 'category',
+								),
+								array(
+									'setting'  => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+									'operator' => 'contains',
+									'value'    => 'tag',
+								),
+								array(
+									'setting'  => ASTRA_THEME_SETTINGS . '[blog-meta]',
+									'operator' => 'contains',
+									'value'    => 'category',
+								),
+								array(
+									'setting'  => ASTRA_THEME_SETTINGS . '[blog-meta]',
+									'operator' => 'contains',
+									'value'    => 'tag',
+								),
+							),
+						),
 						'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
 					),
 				);

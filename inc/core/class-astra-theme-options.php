@@ -141,7 +141,13 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					'blog-single-max-width'                => 1200,
 
 					// Blog.
-					'blog-post-structure'                  => array(
+					'blog-post-structure'                  => $blog_defaults_update ? array(
+						'image',
+						'category',
+						'title',
+						'title-meta',
+						'excerpt',
+					) : array(
 						'image',
 						'title',
 						'title-meta',
@@ -149,14 +155,17 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'read-more',
 					),
 					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
-					'blog-hover-effect'                    => 'none',
+					'blog-hover-effect'                    => $blog_defaults_update ? 'zoom-in' : 'none',
 					'blog-layout'                          => $selected_layout,
 					'blog-width'                           => 'default',
 					'blog-meta-date-type'                  => 'published',
 					'blog-meta-date-format'                => '',
 					'blog-max-width'                       => 1200,
 					'blog-post-content'                    => 'excerpt',
-					'blog-meta'                            => array(
+					'blog-meta'                            => $blog_defaults_update ? array(
+						'author',
+						'date',
+					) : array(
 						'comments',
 						'category',
 						'author',
@@ -184,6 +193,15 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet-unit'  => 'px',
 						'mobile-unit'  => 'px',
 					),
+					'blog-category-style'                  => 'default',
+					'blog-tag-style'                       => 'default',
+					'blog-post-meta-divider-type'          => '/',
+					'blog-meta-category-style'             => 'default',
+					'blog-meta-tag-style'                  => 'default',
+					'blog-image-ratio-type'                => $blog_defaults_update ? 'predefined' : '',
+					'blog-image-ratio-pre-scale'           => '16/9',
+					'blog-image-custom-scale-width'        => 16,
+					'blog-image-custom-scale-height'       => 9,
 					// Colors.
 					'text-color'                           => 'var(' . $palette_css_var_prefix . '3)',
 					'link-color'                           => 'var(' . $palette_css_var_prefix . '0)',
@@ -656,6 +674,22 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					),
 					'font-size-page-title'                 => array(
 						'desktop'      => $blog_defaults_update ? 20 : 26,
+						'tablet'       => '',
+						'mobile'       => '',
+						'desktop-unit' => 'px',
+						'tablet-unit'  => 'px',
+						'mobile-unit'  => 'px',
+					),
+					'font-size-post-tax'   => array(
+						'desktop'      => 14,
+						'tablet'       => '',
+						'mobile'       => '',
+						'desktop-unit' => 'px',
+						'tablet-unit'  => 'px',
+						'mobile-unit'  => 'px',
+					),
+					'font-size-post-meta'   => array(
+						'desktop'      => 13,
 						'tablet'       => '',
 						'mobile'       => '',
 						'desktop-unit' => 'px',

@@ -2895,7 +2895,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .entry-header {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   word-wrap: break-word;
 }
 
@@ -2914,6 +2914,15 @@ input[type="color"]::-webkit-color-swatch {
 .post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
   display: block;
   margin-bottom: .8em;
+  font-weight: 500;
+}
+
+.post-content > .read-more {
+  margin-top: 1.5em;
+}
+
+.ast-article-inner {
+  width: 100%;
 }
 
 .read-more {

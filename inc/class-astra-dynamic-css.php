@@ -144,7 +144,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$site_tagline_font_size = astra_get_option( 'font-size-site-tagline' );
 
 			$archive_post_title_font_size = astra_get_option( 'font-size-page-title' );
+			$archive_post_meta_font_size  = astra_get_option( 'font-size-post-meta' );
+			$archive_post_tax_font_size   = astra_get_option( 'font-size-post-tax' );
 			$archive_cards_radius         = astra_get_option( 'post-card-border-radius' );
+
 			$heading_h1_font_size         = astra_get_option( 'font-size-h1' );
 			$heading_h2_font_size         = astra_get_option( 'font-size-h2' );
 			$heading_h3_font_size         = astra_get_option( 'font-size-h3' );
@@ -623,6 +626,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 				'.entry-title'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'desktop' ),
+				),
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'desktop' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'desktop' ),
 				),
 				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'desktop' ),
@@ -2121,7 +2130,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'width' => '100%',
 					),
 					'.entry-title'                    => array(
-						'margin-bottom' => '0.5em',
+						'margin-bottom' => self::astra_4_6_0_compatibility() ? '0.6em' : '0.5em',
 					),
 					'.ast-archive-description p'      => array(
 						'font-size'   => 'inherit',
@@ -3326,6 +3335,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'tablet', 30 ),
 				),
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'tablet' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'tablet' ),
+				),
 				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'tablet' ),
 					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'tablet' ),
@@ -3423,6 +3438,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'mobile', 30 ),
+				),
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'mobile' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'mobile' ),
 				),
 				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'mobile' ),
@@ -3613,11 +3634,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			endif;
 
 			$blog_layout = astra_get_option( 'blog-layout' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$blog_addon_condition = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			if ( is_search() || is_archive() || is_home() ) {
-				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
-					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				if ( ! ( $blog_addon_condition ) ) {
 					// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 					if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 						$blog_layout = 'blog-layout-4';
@@ -3642,13 +3664,13 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 					);
 
-					if ( 1 === $blog_grid ) {
+					if ( $blog_addon_condition && 1 === $blog_grid ) {
 						$blog_layout_css['.ast-separate-container .ast-article-post'] = array(
 							'padding' => '1.5em',
 						);
 					}
 
-					if ( 1 !== $blog_grid ) {
+					if ( ! defined( 'ASTRA_EXT_VER' ) || ( $blog_addon_condition && 1 !== $blog_grid ) ) {
 						$blog_layout_css['.ast-separate-container .ast-article-inner'] = array(
 							'padding' => '1.5em',
 						);
@@ -3751,6 +3773,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						$bl_selector . ' .post-content'  => array(
 							'width'                     => '75%',
 							'padding-' . $rtl_left . '' => '1.5em',
+						),
+
+						$bl_selector . ' .ast-no-thumb .ast-blog-featured-section' => array(
+							'width'         => 'unset',
+						),
+
+						$bl_selector . ' .ast-no-thumb .post-content'  => array(
+							'width'                     => '100%',
 						),
 
 						'.ast-separate-container ' . $bl_selector . ' .post-content' => array(
@@ -3860,7 +3890,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						);
 					}
 
-
 					if ( 1 === $blog_grid ) {
 						$blog_layout_cover_css['.ast-plain-container .ast-article-post'] = array(
 							'padding' => '1.5em',
@@ -3895,9 +3924,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css .= astra_parse_css( $blog_layout_css_responsive, '', astra_get_tablet_breakpoint() );
 
 				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::blog_layout_static_css() );
-			}
-
-			if ( is_search() || is_archive() || is_home() ) {
 
 				// Blog Archive Featured Image.
 				if ( $aspect_ratio && $with_aspect_img_width ) {
@@ -3954,6 +3980,28 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					}
 
 					$parse_css .= astra_parse_css( $blog_archive_hover_effect_css );
+				}
+
+				// Post elements.
+				$categories_styles      = astra_get_option( 'blog-category-style' );
+				$tag_styles             = astra_get_option( 'blog-tag-style' );
+				$categories_meta_styles = astra_get_option( 'blog-meta-category-style' );
+				$tag_meta_styles        = astra_get_option( 'blog-meta-tag-style' );
+
+				if ( $categories_styles || $tag_styles || $categories_meta_styles || $tag_meta_styles ) {
+					$post_tax_style = '
+						.cat-links.badge a, .tags-links.badge a {
+							padding: 4px 8px;
+							border-radius: 3px;
+							font-weight: 400;
+						}
+					';
+					$post_tax_style .= '
+						.cat-links.underline a, .tags-links.underline a{
+							text-decoration: underline;
+						}
+					';
+					$parse_css .= Astra_Enqueue_Scripts::trim_css( $post_tax_style );
 				}
 			}
 
