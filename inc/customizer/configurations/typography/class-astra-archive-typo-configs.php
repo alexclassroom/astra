@@ -114,7 +114,7 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						),
 						'context'           => ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) ?
 							Astra_Builder_Helper::$design_tab : Astra_Builder_Helper::$general_tab,
-						'divider'           => array( 'ast_class' => 'ast-top-spacing' ),
+						'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 					),
 					array(
 						'name'              => ASTRA_THEME_SETTINGS . '[font-size-post-meta]',

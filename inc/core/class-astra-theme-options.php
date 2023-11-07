@@ -139,6 +139,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					// Blog Single.
 					'blog-single-width'                    => 'default',
 					'blog-single-max-width'                => 1200,
+					'single-post-ast-content-layout'       => $blog_defaults_update ? 'narrow-width-container' : 'default',
 
 					// Blog.
 					'blog-post-structure'                  => $blog_defaults_update ? array(
@@ -591,7 +592,6 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					// Container.
 					'single-page-ast-content-layout'       => false === astra_check_is_structural_setup() ? 'default' : 'normal-width-container',
 					'single-page-content-style'            => false === astra_check_is_structural_setup() ? 'default' : 'unboxed',
-					'single-post-ast-content-layout'       => 'default',
 					'single-post-content-style'            => 'default',
 					'archive-post-ast-content-layout'      => 'default',
 					'ast-site-content-layout'              => 'normal-width-container',

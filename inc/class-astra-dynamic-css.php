@@ -210,6 +210,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$font_weight_prop                    = ( $is_widget_title_support_font_weight ) ? 'inherit' : 'normal';
 
 			$update_customizer_strctural_defaults = astra_check_is_structural_setup();
+			$blog_layout = astra_get_option( 'blog-layout' );
 
 			// Fallback for H1 - headings typography.
 			if ( 'inherit' == $h1_font_family ) {
@@ -633,7 +634,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.ast-blog-meta-container'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'desktop' ),
 				),
-				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner, .archive .ast-article-post .ast-article-inner:hover, .blog .ast-article-post .ast-article-inner:hover' : '.archive .ast-article-post, .blog .ast-article-post, .archive .ast-article-post:hover, .blog .ast-article-post:hover' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'desktop' ),
 					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'desktop' ),
 					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'desktop' ),
@@ -3341,7 +3342,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.ast-blog-meta-container'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'tablet' ),
 				),
-				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' : '.archive .ast-article-post, .blog .ast-article-post' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'tablet' ),
 					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'tablet' ),
 					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'tablet' ),
@@ -3445,7 +3446,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.ast-blog-meta-container'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'mobile' ),
 				),
-				'.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' => array(
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' : '.archive .ast-article-post, .blog .ast-article-post' => array(
 					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'mobile' ),
 					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'mobile' ),
 					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'mobile' ),
@@ -3633,7 +3634,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css      .= astra_parse_css( $single_blog_css, astra_get_tablet_breakpoint( '', 1 ) );
 			endif;
 
-			$blog_layout = astra_get_option( 'blog-layout' );
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			$blog_addon_condition = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort

@@ -718,7 +718,6 @@ function astra_blog_layout_template() {
 	get_template_part( 'template-parts/blog/' . esc_attr( astra_get_option( 'blog-layout' ) ) );
 }
 
-
 /**
  * Blog Custom excerpt length.
  *
@@ -730,8 +729,7 @@ function astra_custom_excerpt_length( $length ) {
 	$blog_layout = astra_get_option( 'blog-layout' );
 	return 'blog-layout-4' === $blog_layout ? 20 : $length;
 }
-add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 999 );
-
+add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 1 );
 
 /**
  * Remove link from featured image for layout 6

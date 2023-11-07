@@ -493,7 +493,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'title'          => __( 'Card Border Radius', 'astra' ),
 					'suffix'         => 'px',
 					'priority'       => 1,
-					'divider'        => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),
+					'divider'        => array( 'ast_class' => 'ast-section-spacing' ),
 					'context'        => Astra_Builder_Helper::$design_tab,
 					'linked_choices' => true,
 					'unit_choices'   => array( 'px', 'em', '%' ),
