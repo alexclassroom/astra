@@ -1136,6 +1136,7 @@ function hasWordPressWidgetBlockEditor() {
 	astra_refresh_customizer( 'astra-settings[blog-tag-style]' );
 	astra_refresh_customizer( 'astra-settings[blog-post-meta-divider-type]' );
 	astra_refresh_customizer( 'astra-settings[blog-meta-tag-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-post-content]' );
 
 	wp.customize( 'astra-settings[post-card-border-radius]', function( setting ) {
 		setting.bind( function( border ) {

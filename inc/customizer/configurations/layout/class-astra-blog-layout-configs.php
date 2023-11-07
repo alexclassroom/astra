@@ -233,6 +233,63 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'divider'  => array( 'ast_class' => 'ast-section-spacing ast-bottom-spacing' ),
 				),
 
+				array(
+					'name'              => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'default'           => astra_get_option( 'blog-post-structure' ),
+					'type'              => 'control',
+					'control'           => 'ast-sortable',
+					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_multi_choices' ),
+					'section'           => 'section-blog',
+					'priority'          => 52,
+					'title'             => __( 'Post Elements', 'astra' ),
+					'divider'           => array( 'ast_class' => 'ast-top-spacing' ),
+					'choices'           => array(
+						'image'      => array(
+							'clone'       => false,
+							'is_parent'   => true,
+							'main_index'  => 'image',
+							'clone_limit' => 1,
+							'title'       => __( 'Featured Image', 'astra' ),
+						),
+						'category'   => array(
+							'clone'       => false,
+							'is_parent'   => true,
+							'main_index'  => 'category',
+							'clone_limit' => 1,
+							'title'       => __( 'Categories', 'astra' ),
+						),
+						'tag'        => array(
+							'clone'       => false,
+							'is_parent'   => true,
+							'main_index'  => 'tag',
+							'clone_limit' => 1,
+							'title'       => __( 'Tags', 'astra' ),
+						),
+						'title'      => __( 'Title', 'astra' ),
+						'title-meta' => array(
+							'clone'       => false,
+							'is_parent'   => true,
+							'main_index'  => 'title-meta',
+							'clone_limit' => 1,
+							'title'       => __( 'Post Meta', 'astra' ),
+						),
+						'excerpt'    => array(
+							'clone'       => false,
+							'is_parent'   => true,
+							'main_index'  => 'excerpt',
+							'clone_limit' => 1,
+							'title'       => __( 'Excerpt', 'astra' ),
+						),
+						'read-more'  => array(
+							'clone'       => false,
+							'is_parent'   => defined( 'ASTRA_EXT_VER' ) ? true : false,
+							'main_index'  => 'read-more',
+							'clone_limit' => 1,
+							'title'       => __( 'Read More', 'astra' ),
+						),
+					),
+				),
+
 				/**
 				 * Option: Date Meta Type.
 				 */
@@ -465,9 +522,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'priority'   => 75,
 					'transport'  => 'refresh',
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra-addon' ),
-						'badge'     => __( 'Badge', 'astra-addon' ),
-						'underline' => __( 'Underline', 'astra-addon' ),
+						'default'   => __( 'Default', 'astra' ),
+						'badge'     => __( 'Badge', 'astra' ),
+						'underline' => __( 'Underline', 'astra' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -488,9 +545,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'linked'     => 'tag',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra-addon' ),
-						'badge'     => __( 'Badge', 'astra-addon' ),
-						'underline' => __( 'Underline', 'astra-addon' ),
+						'default'   => __( 'Default', 'astra' ),
+						'badge'     => __( 'Badge', 'astra' ),
+						'underline' => __( 'Underline', 'astra' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -516,7 +573,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'-'    => '-',
 						'|'    => '|',
 						'•'    => '•',
-						'none' => __( 'None', 'astra-addon' ),
+						'none' => __( 'None', 'astra' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -537,8 +594,8 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'linked'     => 'category',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra-addon' ),
-						'underline' => __( 'Underline', 'astra-addon' ),
+						'default'   => __( 'Default', 'astra' ),
+						'underline' => __( 'Underline', 'astra' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -559,8 +616,8 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'linked'     => 'tag',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra-addon' ),
-						'underline' => __( 'Underline', 'astra-addon' ),
+						'default'   => __( 'Default', 'astra' ),
+						'underline' => __( 'Underline', 'astra' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -579,50 +636,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 			}
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( ! defined( 'ASTRA_EXT_VER' ) || ( defined( 'ASTRA_EXT_VER' ) && ! Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
-				$_configs[] = array(
-					'name'              => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
-					'default'           => astra_get_option( 'blog-post-structure' ),
-					'type'              => 'control',
-					'control'           => 'ast-sortable',
-					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_multi_choices' ),
-					'section'           => 'section-blog',
-					'priority'          => 52,
-					'title'             => __( 'Post Elements', 'astra' ),
-					'divider'           => array( 'ast_class' => 'ast-top-spacing' ),
-					'choices'           => array(
-						'image'      => array(
-							'clone'       => false,
-							'is_parent'   => true,
-							'main_index'  => 'image',
-							'clone_limit' => 1,
-							'title'       => __( 'Featured Image', 'astra' ),
-						),
-						'category'   => array(
-							'clone'       => false,
-							'is_parent'   => true,
-							'main_index'  => 'category',
-							'clone_limit' => 1,
-							'title'       => __( 'Categories', 'astra' ),
-						),
-						'tag'        => array(
-							'clone'       => false,
-							'is_parent'   => true,
-							'main_index'  => 'tag',
-							'clone_limit' => 1,
-							'title'       => __( 'Tags', 'astra' ),
-						),
-						'title'      => __( 'Title', 'astra' ),
-						'title-meta' => array(
-							'clone'       => false,
-							'is_parent'   => true,
-							'main_index'  => 'title-meta',
-							'clone_limit' => 1,
-							'title'       => __( 'Post Meta', 'astra' ),
-						),
-						'excerpt'    => __( 'Excerpt', 'astra' ),
-						'read-more'  => __( 'Read More', 'astra' ),
-					),
-				);
 
 				$_configs[] = array(
 					'name'              => ASTRA_THEME_SETTINGS . '[blog-meta]',
