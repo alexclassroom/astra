@@ -25,6 +25,7 @@ function astra_pagination_css( $dynamic_css ) {
 	if ( astra_check_pagination_enabled() || false !== apply_filters( 'astra_enable_pagination_css', false ) ) {
 
 		$text_color       = astra_get_option( 'text-color' );
+		$link_color       = astra_get_option( 'link-color' );
 		$link_hover_color = astra_get_option( 'link-h-color' );
 
 		$pagination_color_output = array(
@@ -32,8 +33,8 @@ function astra_pagination_css( $dynamic_css ) {
 				'display' => 'inherit',
 				'float'   => 'none',
 			),
-			'.ast-pagination a'                  => array(
-				'color' => esc_attr( $text_color ),
+			'.ast-pagination a, .nav-links a'                  => array(
+				'color' => esc_attr( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? $text_color : $link_color ),
 			),
 			'.ast-pagination a:hover, .ast-pagination a:focus, .ast-pagination > span:hover:not(.dots), .ast-pagination > span.current' => array(
 				'color' => esc_attr( $link_hover_color ),

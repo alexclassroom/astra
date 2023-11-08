@@ -772,7 +772,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				// Pagination.
 				'.page-links .page-link, .single .post-navigation a' => array(
-					'color' => esc_attr( $link_color ),
+					'color' => esc_attr( self::astra_4_4_0_compatibility() ? $text_color : $link_color ),
+				),
+				'.page-links .page-link:hover, .single .post-navigation a:hover' => array(
+					'color' => esc_attr( $link_hover_color ),
 				),
 
 				// Menu Toggle Border Radius.
@@ -2145,6 +2148,15 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					);
 					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
 						'margin-bottom' => '2em',
+					);
+				} else {
+					$default_layout_update_css['.ast-article-single img'] = array(
+						'box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+						'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+						'-moz-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+					);
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+						'margin-bottom' => '1.5em',
 					);
 				}
 				/* Parse CSS from array() -> Desktop CSS */
