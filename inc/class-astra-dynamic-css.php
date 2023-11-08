@@ -466,7 +466,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$blog_max_width                         = astra_get_option( 'blog-max-width' );
 			$mobile_header_toggle_btn_style_color   = astra_get_option( 'mobile-header-toggle-btn-style-color', $btn_bg_color );
 			$mobile_header_toggle_btn_border_radius = astra_get_option( 'mobile-header-toggle-btn-border-radius' );
-			$aspect_ratio_type                      = astra_get_option( 'blog-image-ratio-type', '' );
+			$aspect_ratio_type                      = astra_get_option( 'blog-image-ratio-type' );
 			$predefined_scale                       = astra_get_option( 'blog-image-ratio-pre-scale' );
 			$custom_scale_width                     = astra_get_option( 'blog-image-custom-scale-width', 16 );
 			$custom_scale_height                    = astra_get_option( 'blog-image-custom-scale-height', 9 );

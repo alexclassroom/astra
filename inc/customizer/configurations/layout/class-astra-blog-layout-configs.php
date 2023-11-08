@@ -344,7 +344,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 */
 				array(
 					'name'                   => 'blog-image-ratio-type',
-					'default'                => astra_get_option( 'blog-image-ratio-type', 'predefined' ),
+					'default'                => astra_get_option( 'blog-image-ratio-type' ),
 					'type'                   => 'sub-control',
 					'transport'              => 'postMessage',
 					'parent'                 => ASTRA_THEME_SETTINGS . '[blog-post-structure]',

@@ -75,7 +75,9 @@ add_filter( 'post_class', 'astra_post_class_blog_grid' );
  * @return array
  */
 function astra_add_blog_layout_class( $classes ) {
-	$classes[] = 'ast-article-inner';
+	if ( ! is_singular() ) {
+		$classes[] = 'ast-article-inner';
+	}
 	return $classes;
 }
 
