@@ -7,6 +7,7 @@
 
 		<exclude-pattern>tests/</exclude-pattern>
 	</rule>
+	<config name="testVersion" value="5.3-"/>
 
 	<rule ref="WPThemeReview" >
 		<exclude-pattern>tests/</exclude-pattern>
@@ -59,6 +60,8 @@
 	<arg value="s"/>
 
 	<exclude-pattern>tests/php/static-analysis-stubs/*</exclude-pattern>
+	<exclude-pattern>*/tests/bootstrap.php</exclude-pattern>
+	<exclude-pattern>*/tests/wp-config.php</exclude-pattern>
 	<exclude-pattern>inc/addons/breadcrumbs/class-astra-breadcrumb-trail.php</exclude-pattern>
 	<exclude-pattern>inc/google-fonts.php</exclude-pattern>
 	<exclude-pattern>*/index.asset.php</exclude-pattern>
@@ -68,6 +71,7 @@
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<!-- Exclude Libraries -->
 	<exclude-pattern>*/inc/lib/*</exclude-pattern>
+	<exclude-pattern>*/wordpress/*</exclude-pattern>
 
 	<rule ref="Internal.Exception">
 		<severity>0</severity>

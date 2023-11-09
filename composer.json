@@ -13,7 +13,11 @@
     "phpcompatibility/phpcompatibility-wp": "*",
     "wp-coding-standards/wpcs": "^2.1.0",
     "wptrt/wpthemereview": "^0.2.0",
-    "automattic/vipwpcs": "^2.3"
+    "automattic/vipwpcs": "^2.3",
+    "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5",
+    "roots/wordpress": "^6.0",
+    "wp-phpunit/wp-phpunit": "^6.0",
+    "yoast/phpunit-polyfills": "^1.0"
   },
   "extra": {
     "hooks": {
@@ -35,9 +39,10 @@
     "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist --report-summary --report-source",
     "phpcs": "vendor/bin/phpcs",
     "phpcbf": "vendor/bin/phpcbf",
-    "psalm": "./vendor/bin/psalm",
+    "psalm": "vendor/bin/psalm",
     "gen-stubs": "vendor/bin/generate-stubs astra/ --out=tests/php/static-analysis-stubs/astra-stubs.php",
     "update-stubs": "rm -f tests/php/static-analysis-stubs/astra-stubs.php && grunt release-no-clean && composer gen-stubs",
+    "test": "vendor/bin/phpunit",
     "commit:hook:pre": [
       "cp .scripts/git-hooks/pre-commit .git/hooks/",
       "chmod +x .git/hooks/pre-commit",

@@ -5669,31 +5669,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Improve full screen search Submit button style.
-		 *
-		 * @since 4.4.0
-		 * @return boolean false if it is an existing user, true if not.
-		 */
-		public static function astra_4_4_0_compatibility() {
-			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
-			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
-			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
-		}
-
-		/**
-		 * In x.x.x version we are having new stylings.
-		 * 1. Comments area refined.
-		 * 2. Defaults improvement for single-blog layouts.
-		 *
-		 * @return bool true|false.
-		 * @since x.x.x
-		 */
-		public static function astra_4_6_0_compatibility() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
-			return apply_filters( 'astra_get_option_v4-6-0-backward-option', isset( $astra_settings['v4-6-0-backward-option'] ) ? false : true );
-		}
-
-		/**
 		 * Load Blog Layout static CSS when it is enabled.
 		 *
 		 * @since x.x.x
@@ -5709,6 +5684,43 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			';
 
 			return $blog_layout_css;
+		}
+
+		/**
+		 * Improve full screen search Submit button style.
+		 *
+		 * @since 4.4.0
+		 * @return boolean false if it is an existing user, true if not.
+		 */
+		public static function astra_4_4_0_compatibility() {
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
+			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
+		}
+
+		/**
+		 * Check version x.x.x backward compatibility.
+		 *
+		 * @since x.x.x
+		 * @return boolean false if it is an existing user, true if not.
+		 */
+		public static function astra_4_5_0_compatibility() {
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings['v4-5-0-backward-option'] = isset( $astra_settings['v4-5-0-backward-option'] ) ? false : true;
+			return apply_filters( 'astra_upgrade_color_styles', $astra_settings['v4-5-0-backward-option'] );
+		}
+
+		/**
+		 * In x.x.x version we are having new stylings.
+		 * 1. Comments area refined.
+		 * 2. Defaults improvement for single-blog layouts.
+		 *
+		 * @return bool true|false.
+		 * @since x.x.x
+		 */
+		public static function astra_4_6_0_compatibility() {
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_get_option_v4-6-0-backward-option', isset( $astra_settings['v4-6-0-backward-option'] ) ? false : true );
 		}
 	}
 }

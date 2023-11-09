@@ -557,6 +557,10 @@ module.exports = function (grunt) {
                         dest: 'assets/css/minified/compatibility/edd.min-rtl.css',
                     },
                     {
+                        src: 'assets/css/unminified/compatibility/edd-grid-rtl.css',
+                        dest: 'assets/css/minified/compatibility/edd-grid.min-rtl.css',
+                    },
+                    {
                         src: 'assets/css/unminified/galleries-rtl.css',
                         dest: 'assets/css/minified/galleries.min-rtl.css',
                     },

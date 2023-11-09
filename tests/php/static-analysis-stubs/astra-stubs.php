@@ -3519,12 +3519,39 @@ namespace {
         {
         }
         /**
+         * In x.x.x version we are having new stylings.
+         * 1. Comments area refined.
+         *
+         * @return bool true|false.
+         * @since x.x.x
+         */
+        public static function astra_4_6_0_compatibility()
+        {
+        }
+        /**
+         * Load Blog Layout static CSS when it is enabled.
+         *
+         * @since x.x.x
+         */
+        public static function blog_layout_static_css()
+        {
+        }
+        /**
          * Improve full screen search Submit button style.
          *
          * @since 4.4.0
          * @return boolean false if it is an existing user, true if not.
          */
         public static function astra_4_4_0_compatibility()
+        {
+        }
+        /**
+         * Check version x.x.x backward compatibility.
+         *
+         * @since x.x.x
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function astra_4_5_0_compatibility()
         {
         }
     }
@@ -3788,6 +3815,15 @@ namespace {
          * @return void
          */
         public function astra_templat_part_wrap_close()
+        {
+        }
+        /**
+         * Comment layout adjustments
+         *
+         * @since 1.2.7
+         * @return void
+         */
+        public function comment_layout_adjustments()
         {
         }
     }
@@ -5004,6 +5040,167 @@ namespace {
          * @since 4.0.0
          */
         public function get()
+        {
+        }
+    }
+    /**
+     * Astra SureCart Compatibility
+     *
+     * @since 4.4.0
+     */
+    class Astra_SureCart
+    {
+        /**
+         * The post type slug.
+         *
+         * @var string
+         */
+        public $post_type = 'sc_product';
+        /**
+         * Shop Page ID.
+         *
+         * @var int
+         */
+        public $shop_page_id = 0;
+        /**
+         * SureCart Shop Page Status.
+         *
+         * @var null|bool
+         */
+        public $shop_page_status = \null;
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Check is SureCart Shop Page.
+         *
+         * @return bool True if SureCart Shop Page.
+         * @since 4.4.0
+         */
+        public function astra_is_surecart_shop_page()
+        {
+        }
+        /**
+         * SureCart Shop Sidebar Layout
+         *
+         * @param string $sidebar_layout Layout type.
+         * @return string $sidebar_layout Layout type.
+         * @since 4.4.0
+         */
+        public function sc_shop_sidebar_layout($sidebar_layout)
+        {
+        }
+        /**
+         * SureCart Shop Container
+         *
+         * @param string $content_layout Layout type.
+         * @return string $content_layout Layout type.
+         * @since 4.4.0
+         */
+        public function sc_shop_content_layout($content_layout)
+        {
+        }
+        /**
+         * SureCart Shop Container Style
+         *
+         * @param string $is_style_boxed Layout style.
+         * @return string $is_style_boxed Layout style.
+         * @since 4.4.0
+         */
+        public function sc_shop_content_boxed_layout($is_style_boxed)
+        {
+        }
+        /**
+         * SureCart Shop Sidebar Style
+         *
+         * @param string $is_style_boxed Layout style.
+         * @return string $is_style_boxed Layout style.
+         * @since 4.4.0
+         */
+        public function sc_shop_sidebar_boxed_layout($is_style_boxed)
+        {
+        }
+        /**
+         * SureCart Archive Banner Support.
+         * Making 'Shop Page' as archive of SureCart Products.
+         *
+         * @since 4.4.0
+         */
+        public function astra_surecart_archive_page_banner_support()
+        {
+        }
+        /**
+         * Enable layout 1 for some cases. Ex. SureCart Product.
+         *
+         * @since 4.4.0
+         * @return void
+         */
+        public function astra_force_render_banner_layout_1()
+        {
+        }
+        /**
+         * SureCart Hero Section.
+         *
+         * @since 4.4.0
+         */
+        public function astra_surecart_hero_section()
+        {
+        }
+        /**
+         * SureCart Section banner element structure.
+         *
+         * @param array $structure Elements structure.
+         * @since 4.4.0
+         */
+        public function update_astra_banner_elements_structure($structure)
+        {
+        }
+        /**
+         * SureCart Section banner reference post type.
+         *
+         * @param string $post_type Post type.
+         * @since 4.4.0
+         */
+        public function update_astra_banner_elements_post_type($post_type)
+        {
+        }
+        /**
+         * SureCart Section banner prefix.
+         *
+         * @param string $prefix Prefix.
+         * @since 4.4.0
+         */
+        public function update_astra_banner_elements_prefix($prefix)
+        {
+        }
+        /**
+         * Support custom title & description support for archive.
+         *
+         * @param string $title Default archive title.
+         * @param int    $post_id Post ID.
+         * @since 4.4.0
+         * @return string
+         */
+        public function update_the_title($title, $post_id)
+        {
+        }
+        /**
+         * Disable Astra's next page's banner as we already loaded.
+         *
+         * @since 4.4.0
+         */
+        public function disable_page_loaded_banner_area()
+        {
+        }
+        /**
+         * Revert SureCart Support, after banner loaded.
+         *
+         * @since 4.4.0
+         */
+        public function revert_surecart_support()
         {
         }
     }
@@ -7584,7 +7781,7 @@ namespace {
         public function __construct()
         {
         }
-        /**
+        /** 
          * Comment count wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7594,7 +7791,7 @@ namespace {
         public function comment_count_wrapper_open($args)
         {
         }
-        /**
+        /** 
          * Comment count wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7604,7 +7801,7 @@ namespace {
         public function comment_count_wrapper_close($args)
         {
         }
-        /**
+        /** 
          * Comment data wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7614,7 +7811,7 @@ namespace {
         public function ast_comment_data_wrap_open($args)
         {
         }
-        /**
+        /** 
          * Comment data wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7624,7 +7821,7 @@ namespace {
         public function ast_comment_data_wrap_close($args)
         {
         }
-        /**
+        /** 
          * Comment meta wrapper opening div.
          *
          * @param array $args markup arguments.
@@ -7634,7 +7831,7 @@ namespace {
         public function ast_comment_meta_wrap_open($args)
         {
         }
-        /**
+        /** 
          * Comment meta wrapper closing div.
          *
          * @param array $args markup arguments.
@@ -7644,7 +7841,7 @@ namespace {
         public function ast_comment_meta_wrap_close($args)
         {
         }
-        /**
+        /** 
          * Comment time div attributes.
          *
          * @since 3.3.0
@@ -7653,7 +7850,7 @@ namespace {
         public function ast_comment_time_attr()
         {
         }
-        /**
+        /** 
          * Comment cite wrapper div attributes.
          *
          * @since 3.3.0
@@ -7698,16 +7895,16 @@ namespace {
         public function ast_grid_col_6()
         {
         }
-        /**
+        /** 
          * Comment form grid classes.
          *
-         * @since 3.3.0
+         * @since 3.3.0 
          * @return string.
          */
         public function comment_form_grid_class()
         {
         }
-        /**
+        /** 
          * Removed grid layout classes and make common class for same style
          *
          * @since 3.3.0
@@ -7716,7 +7913,7 @@ namespace {
         public function ast_grid_lg_12()
         {
         }
-        /**
+        /** 
          * Layout-4 grid css backward comaptibility.
          *
          * @return string.
@@ -7724,7 +7921,7 @@ namespace {
         public function ast_layout_4_grid()
         {
         }
-        /**
+        /** 
          * Layout-2 grid css backward comaptibility.
          *
          * @return string.
@@ -7732,7 +7929,7 @@ namespace {
         public function ast_layout_2_grid()
         {
         }
-        /**
+        /** 
          * Layout-1 grid css backward comaptibility.
          *
          * @return string.
@@ -7740,7 +7937,7 @@ namespace {
         public function ast_layout_1_grid()
         {
         }
-        /**
+        /** 
          * Layout-3 grid css backward comaptibility.
          *
          * @return string.
@@ -7748,7 +7945,7 @@ namespace {
         public function ast_layout_3_grid()
         {
         }
-        /**
+        /** 
          * Layout-5 grid css backward comaptibility.
          *
          * @return string.
@@ -7756,7 +7953,7 @@ namespace {
         public function ast_layout_5_grid()
         {
         }
-        /**
+        /** 
          * Layout-6 grid css backward comaptibility.
          *
          * @return string.
@@ -7766,7 +7963,7 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         *
+         * 
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -7776,7 +7973,7 @@ namespace {
         }
         /**
          * Footer widget closing div.
-         *
+         * 
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -7806,7 +8003,7 @@ namespace {
         }
         /**
          * Footer widget opening div.
-         *
+         * 
          * @since 3.3.0
          * @param array $args div attributes.
          * @return array.
@@ -9621,6 +9818,23 @@ namespace {
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
          * @since 1.4.3
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
+        {
+        }
+    }
+    /**
+     * Register Comments Customizer Configurations.
+     */
+    class Astra_Comments_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Comments Customizer Configurations.
+         *
+         * @param Array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since 3.8.0
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -11452,6 +11666,17 @@ namespace {
         public function register_configuration($configurations, $wp_customize)
         {
         }
+        /**
+         * Get Dynamic Section Title.
+         *
+         * @since 4.4.0
+         * @param object|null $post_type_object Post type object.
+         * @param string      $post_type Post type.
+         * @return string
+         */
+        public function get_dynamic_section_title($post_type_object, $post_type)
+        {
+        }
     }
     /**
      * Register Posts Strctures Customizer Configurations.
@@ -11491,6 +11716,17 @@ namespace {
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
+        {
+        }
+        /**
+         * Get Dynamic Section Title.
+         *
+         * @since 4.4.0
+         * @param object|null $post_type_object Post type object.
+         * @param string      $post_type Post type.
+         * @return string
+         */
+        public function get_dynamic_section_title($post_type_object, $post_type)
         {
         }
     }
@@ -11595,6 +11831,14 @@ namespace {
          *  Constructor
          */
         public function __construct()
+        {
+        }
+        /**
+         * Initialize related posts module in Astra.
+         *
+         * @since x.x.x
+         */
+        public function initialize_related_posts()
         {
         }
         /**
@@ -12393,7 +12637,7 @@ namespace {
     /**
      * Define Constants
      */
-    \define('ASTRA_THEME_VERSION', '4.4.0');
+    \define('ASTRA_THEME_VERSION', '4.6.0');
     \define('ASTRA_THEME_SETTINGS', 'astra-settings');
     \define('ASTRA_THEME_DIR', \trailingslashit(\get_template_directory()));
     \define('ASTRA_THEME_URI', \trailingslashit(\esc_url(\get_template_directory_uri())));
@@ -12401,7 +12645,7 @@ namespace {
      * Minimum Version requirement of the Astra Pro addon.
      * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
      */
-    \define('ASTRA_EXT_MIN_VER', '4.4.0');
+    \define('ASTRA_EXT_MIN_VER', '4.6.0');
     \define('ASTRA_PRO_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'dashboard', 'free-theme', 'upgrade-now'));
     \define('ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', \astra_get_pro_url('https://wpastra.com/pro/', 'customizer', 'free-theme', 'upgrade'));
     /**
@@ -12562,34 +12806,91 @@ namespace {
     {
     }
     /**
-	 * Post meta
-	 *
-	 * @param  array  $post_meta Post meta.
-	 * @param  string $separator Separator.
-	 * @param  string $render_by Render by Single|Related Posts|Blog.
-	 * @return string            post meta markup.
-	 */
+     * Prepare markup for taxonomies.
+     *
+     * @param string $control_tax Taxonomy subcontrol name.
+     * @param int    $loop_count Meta loop counter to decide separator appearance.
+     * @param string $separator Separator.
+     * @param string $badge_style For taxonomies as badge styles.
+     *
+     * @return string $output Taxonomy output.
+     */
+    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '')
+    {
+    }
+    /**
+     * Function to get Author ID.
+     *
+     * @since x.x.x
+     * @return mixed $author_id Author ID.
+     */
+    function astra_get_author_id()
+    {
+    }
+    /**
+     * Function to get Author Avatar.
+     *
+     * @since x.x.x
+     * @param string $get_for Get for.
+     * @return mixed $avatar Author Avatar.
+     */
+    function astra_author_avatar($get_for = 'single-post')
+    {
+    }
+    /**
+     * Post meta
+     *
+     * @param  array  $post_meta Post meta.
+     * @param  string $separator Separator.
+     * @param  string $render_by Render by Single|Related Posts|Blog.
+     * @return string            post meta markup.
+     */
     function astra_get_post_meta($post_meta, $separator = '/', $render_by = '')
     {
     }
     /**
      * Get post format as per new configurations set in customizer.
      *
+     * @param string $get_for Get for.
      * @return string HTML markup for date span.
      * @since 4.1.0
      */
-    function astra_get_dynamic_post_format()
+    function astra_get_dynamic_post_format($get_for = 'single-post')
     {
     }
-	/**
-	 * Function to get Date of Post
-	 *
-	 * @param string $get_for Get for single/related post/etc.
-	 * @return string Markup.
-	 */
-	function astra_post_date( $get_for = 'single-post' )
-	{
-	}
+    /**
+     * Get category List.
+     *
+     * @since x.x.x
+     * @param  string $filter_name Filter name.
+     * @param  string $style_type_slug Style slug.
+     * @param  bool   $post_meta Post meta.
+     * @return mixed Markup.
+     */
+    function astra_get_category_list($filter_name, $style_type_slug, $post_meta)
+    {
+    }
+    /**
+     * Get tag List.
+     *
+     * @since x.x.x
+     * @param  string $filter_name Filter name.
+     * @param string $style_type_slug style type slug.
+     * @param  bool   $post_meta Post meta.
+     * @return mixed Markup.
+     */
+    function astra_get_tag_list($filter_name, $style_type_slug, $post_meta)
+    {
+    }
+    /**
+     * Function to get Date of Post
+     *
+     * @param string $get_for Get for single/related post/etc.
+     * @return string Markup.
+     */
+    function astra_post_date($get_for = 'single-post')
+    {
+    }
     /**
      * Function to get Author name.
      *
@@ -12629,19 +12930,23 @@ namespace {
     /**
      * Function to get Tags applied of Post
      *
-     * @param  string $output_filter Output filter.
-     * @return html                Markup.
+     * @param  string $filter_name Filter name.
+     * @param  string $style_type Style type slug.
+     * @param  bool   $post_meta Post meta.
+     * @return mixed Markup.
      */
-    function astra_post_tags($output_filter = '')
+    function astra_post_tags($filter_name, $style_type, $post_meta)
     {
     }
     /**
      * Function to get Categories applied of Post
      *
-     * @param  string $output_filter Output filter.
-     * @return html                Markup.
+     * @param  string $filter_name Filter name.
+     * @param  string $style_type Style type slug.
+     * @param  bool   $post_meta Post meta.
+     * @return mixed Markup.
      */
-    function astra_post_categories($output_filter = '')
+    function astra_post_categories($filter_name, $style_type, $post_meta)
     {
     }
     /**
@@ -12665,7 +12970,7 @@ namespace {
      *
      * @param  string $more_link_element Read More link element.
      * @param  string $more_link_text Read More text.
-     * @return html                Markup.
+     * @return mixed                Markup.
      */
     function astra_the_content_more_link($more_link_element = '', $more_link_text = '')
     {
@@ -12691,6 +12996,16 @@ namespace {
     {
     }
     /**
+     * Add Body Classes
+     *
+     * @param array $classes Blog Layout Class Array.
+     * @since x.x.x
+     * @return array
+     */
+    function astra_add_blog_layout_class($classes)
+    {
+    }
+    /**
      * Prints HTML with meta information for the current post-date/time and author.
      *
      * @since 1.0
@@ -12712,8 +13027,9 @@ namespace {
      * Blog post Thubmnail, Title & Blog Meta order
      *
      * @since  1.0.8
+     * @param array $remove_elements Remove unwanted sections.
      */
-    function astra_blog_post_thumbnail_and_title_order()
+    function astra_blog_post_thumbnail_and_title_order($remove_elements = array())
     {
     }
     /**
@@ -12731,6 +13047,14 @@ namespace {
      * @since  1.0.8
      */
     function astra_get_blog_post_title_meta()
+    {
+    }
+    /**
+     * Blog post title
+     *
+     * @since  x.x.x
+     */
+    function astra_get_blog_post_title()
     {
     }
     /**
@@ -12780,6 +13104,63 @@ namespace {
      * @return mixed
      */
     function astra_banner_elements_order($structure = array())
+    {
+    }
+    /**
+     * Blog Post Per Page
+     *
+     * @since x.x.x
+     * @param WP_Query $query Query.
+     */
+    function astra_blog_post_per_page($query)
+    {
+    }
+    /**
+     * Add Blog Layout Class
+     *
+     * @param array $classes Body Class Array.
+     * @since x.x.x
+     * @return array
+     */
+    function astra_primary_class_blog_layout($classes)
+    {
+    }
+    /**
+     * Blog Layout Customization
+     *
+     * @since x.x.x
+     * @return void
+     */
+    function astra_blog_layout_customization()
+    {
+    }
+    /**
+     * Blog Layout Template Markup
+     *
+     * @since x.x.x
+     * @return void
+     */
+    function astra_blog_layout_template()
+    {
+    }
+    /**
+     * Blog Custom excerpt length.
+     *
+     * @since x.x.x
+     * @param int $length Length.
+     * @return int
+     */
+    function astra_custom_excerpt_length($length)
+    {
+    }
+    /**
+     * Remove link from featured image for layout 6
+     *
+     * @since x.x.x
+     * @param string $content Content.
+     * @return mixed
+     */
+    function astra_remove_link_from_featured_image($content = '')
     {
     }
     /**
@@ -13353,7 +13734,7 @@ namespace {
     }
     /**
      * Home starter content.
-     *
+     * 
      * @since 4.0.0
      * @package Astra\Compatibility\Starter_Content
      */
@@ -13713,7 +14094,7 @@ namespace {
      *
      * @param string $title for MyAccount title endpoint.
      * @return string
-     *
+     * 
      * @since 4.3.0
      */
     function astra_get_wc_endpoints_title($title)
@@ -15178,7 +15559,7 @@ namespace {
     /**
      * Old Header Menu Last Item - Dynamic CSS.
      *
-     * @param string $dynamic_css
+     * @param string $dynamic_css 
      * @since 3.5.0
      */
     function astra_old_header_custom_menu_css($dynamic_css)
@@ -15280,7 +15661,7 @@ namespace {
      * Migrate old meta layout to new layout.
      *
      * @since 4.2.0
-     * @param mixed $meta_layout
+     * @param mixed $meta_layout Meta Layout.
      * @return mixed new layout.
      */
     function astra_migrate_meta_layout($meta_layout)
@@ -15705,6 +16086,15 @@ namespace {
      * @return array
      */
     function astra_get_queried_post_types()
+    {
+    }
+    /**
+     * Get Global Color Palette's presets
+     *
+     * @return array color presets array.
+     * @since x.x.x
+     */
+    function astra_get_palette_presets()
     {
     }
     /**
@@ -16208,6 +16598,15 @@ namespace {
     {
     }
     /**
+     * Prepare rendering Featured Image for single post at 'astra_header_after' hook after header.
+     * Required on single post only.
+     *
+     * @since 4.4.0
+     */
+    function astra_setup_article_featured_image()
+    {
+    }
+    /**
      * Footer disable on archive pages.
      *
      * @param bool $display_footer for controling the header and footer enable/disable options.
@@ -16476,36 +16875,6 @@ namespace {
      * @return array
      */
     function astra_footer_builder_migration($theme_options, $used_elements, $widget_options)
-    {
-    }
-    /**
-     * Prepare markup for taxonomies.
-     *
-     * @param string $control_tax Taxonomy subcontrol name.
-     * @param int    $loop_count Meta loop counter to decide separator appearance.
-     * @param string $separator Separator.
-  	 * @param string $badge_style For taxonomies as badge styles.
-     * @return string $output Taxonomy output.
-     */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '')
-    {
-    }
-    /**
-     * Function to get Author ID.
-     *
-     * @since x.x.x
-     * @return mixed $author_id Author ID.
-     */
-    function astra_get_author_id()
-    {
-    }
-    /**
-     * Function to get Author Avatar.
-     *
-     * @since x.x.x
-     * @return mixed $avatar Author Avatar.
-     */
-    function astra_author_avatar()
     {
     }
     /**
@@ -16973,11 +17342,11 @@ namespace {
      * Migration cases for old users, old layouts -> new layouts.
      *
      * @since 4.2.0
-     * @param mixed $old_layout
-     * @param mixed $new_layout
-     * @param mixed $content_style
-     * @param mixed $sidebar_style
-     * @param array $theme_options
+     * @param mixed $old_layout old_layout.
+     * @param mixed $new_layout new_layout.
+     * @param mixed $content_style content_style.
+     * @param mixed $sidebar_style sidebar_style.
+     * @param array $theme_options theme_options.
      * @return array $theme_options The updated theme options.
      */
     function astra_apply_layout_migration($old_layout, $new_layout, $content_style, $sidebar_style, $theme_options)
@@ -16993,7 +17362,7 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version 4.4.0
+     * Handle backward compatibility on version x.x.x
      *
      * @since 4.4.0
      * @return void
@@ -17002,9 +17371,18 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version 4.4.0
+     * Handle backward compatibility on version x.x.x
      *
-     * @since 4.4.0
+     * @since x.x.x
+     * @return void
+     */
+    function astra_theme_background_updater_4_5_0()
+    {
+    }
+    /**
+     * Handle backward compatibility on version x.x.x
+     *
+     * @since x.x.x
      * @return void
      */
     function astra_theme_background_updater_4_6_0()
@@ -17070,7 +17448,7 @@ namespace {
      * @package Astra
      * @since 4.0.0
      */
-    $astra_post_type = \strval(\get_post_type());
+    $astra_post_type = !empty($args) && !empty($args['post_type']) ? $args['post_type'] : \strval(\get_post_type());
     /**
      * Template part for displaying the footer component.
      *

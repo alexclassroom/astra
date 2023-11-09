@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import AstraColorPickerControl from "../common/astra-color-picker-control";
 import { useEffect, useState } from "react";
 import { __ } from "@wordpress/i18n";
+import { Button } from '@wordpress/components';
 
 const ColorPaletteComponent = (props) => {
 	const value = props.control.setting.get();
@@ -120,7 +121,7 @@ const ColorPaletteComponent = (props) => {
 		</>
 	);
 
-	var paletteOptions = (
+	let paletteOptions = (
 		<>
 			{Object.keys(state.palettes).map((paletteKey, index) => {
 				return (
@@ -135,7 +136,7 @@ const ColorPaletteComponent = (props) => {
 					>
 						<section onClick={() => onPaletteChange(paletteKey)}>
 							{state.palettes[paletteKey].map((color, index) => {
-								if( index < 4 ) {
+								if( index < 5 ) {
 									return (
 										<div className="ast-single-color-container" style={{ backgroundColor: color }} key={index}></div>
 									)
@@ -148,6 +149,51 @@ const ColorPaletteComponent = (props) => {
 							</span>
 						</section>
 					</div>
+				);
+			})}
+		</>
+	);
+
+	const toggleClose = () => {
+		let parent_wrap = jQuery('.customize-control-ast-color-palette');
+		parent_wrap.find( '.ast-field-settings-modal' ).hide();
+		parent_wrap.find( '.ast-adv-toggle-icon.open' ).removeClass('open');
+	};
+
+	const handlePresetAssignment = (presetKey) => {
+		if ( state.presets && state.presets[presetKey] ) {
+			state.presets[presetKey].map( ( item, index ) => {
+				handleChangeComplete( index, { hex: item } );
+			} );
+			toggleClose();
+		}
+	};
+
+	let presetOptions = (
+		<>
+			{state.presets && Object.keys(state.presets).map((presetKey, index) => {
+				return (
+					<section className="ast-palette-presets-inner-wrap" key={index}>
+						<span className="ast-preset-label-wrap">
+							{__("Color Preset", "astra") + " " + (index + 1)}
+						</span>
+						<Button
+							onClick={ () => handlePresetAssignment( presetKey ) }
+							className={ 'ast-preset-palette-item' }
+						>
+							{state.presets[presetKey].map((color, subIndex) => {
+								return (
+									<div className="ast-palette-individual-item-wrap" key={subIndex}>
+										<span
+											className='ast-palette-individual-item'
+											style={{ color: color }}
+											>
+										</span>
+									</div>
+								);
+							})}
+						</Button>
+					</section>
 				);
 			})}
 		</>
@@ -175,18 +221,21 @@ const ColorPaletteComponent = (props) => {
 			<div className="ast-toggle-desc-wrap">
 				<label className="customizer-text">{labelHtml}</label>
 				<span className="ast-adv-toggle-icon dashicons" data-control={name}></span>
-
 			</div>
-
-			<div className="ast-color-palette-wrapper">{paletteColors}</div>
 
 			<div className="ast-field-settings-wrap">
 				<div className="ast-field-settings-modal">
-					<div className="ast-color-palette-container">
-						{paletteOptions}
+					<div className="ast-color-preset-container">
+						{presetOptions}
 					</div>
 				</div>
 			</div>
+
+			<div className="ast-color-palette-container">
+				{paletteOptions}
+			</div>
+
+			<div className="ast-color-palette-wrapper">{paletteColors}</div>
 		</>
 	);
 };

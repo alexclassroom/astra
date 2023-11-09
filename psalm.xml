@@ -6,6 +6,7 @@
             <directory name="vendor/"/>
             <directory name="tests/"/>
             <directory name="node_modules/"/>
+            <directory name="wordpress/"/>
             <directory name="bin/"/>
             <directory name="inc/lib/"/>
         </ignoreFiles>
