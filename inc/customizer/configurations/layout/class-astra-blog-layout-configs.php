@@ -516,7 +516,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'title'      => __( 'Style', 'astra' ),
 					'default'    => astra_get_option( 'blog-category-style' ),
 					'type'       => 'sub-control',
-					'transport'  => 'postMessage',
 					'control'    => 'ast-selector',
 					'linked'     => 'category',
 					'priority'   => 75,

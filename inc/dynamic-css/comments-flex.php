@@ -63,7 +63,7 @@ function astra_comments_css( $dynamic_css ) {
           }
 
           .comments-title {
-            font-weight: ' . esc_attr( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? 600 : normal ) . ';
+            font-weight: ' . esc_attr( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? '600' : 'normal' ) . ';
             word-wrap: break-word;
           }
 
