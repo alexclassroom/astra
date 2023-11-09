@@ -137,11 +137,6 @@ function astra_onload_function() {
 
 				titleBlock = editorDocument.querySelector( '.edit-post-visual-editor__post-title-wrapper' );
 
-				// Add Google Fonts CSS to iframe.
-				var fontCss = document.getElementById('astra-google-fonts-css');
-				if ( fontCss && editorDocument && editorDocument.head ) {
-					editorDocument.head.appendChild( fontCss.cloneNode(true) );
-				}
 			}
 
 			// Compatibility for updating layout in editor with direct reflection.
@@ -445,7 +440,7 @@ function astra_onload_function() {
 				wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-enabled'])
 				? wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-enabled']
 				: 'default';
-	
+
 				if ( 'enabled' === backgroundToggle ) {
 					if ( isUnboxedContainer ) {
 						updatePageBackground( false, isUnboxedContainer );
@@ -455,12 +450,7 @@ function astra_onload_function() {
 					}
 				}
 				else if ( 'default' === backgroundToggle ) {
-					if ( isUnboxedContainer ) {
-						updatePageBackground( true, isUnboxedContainer );
-					}
-					else {
-						updatePageBackground( true );
-					}
+					updatePageBackground( true );
 				}
 			}
 
@@ -472,25 +462,6 @@ function astra_onload_function() {
 * Updates the page background css from the color picker.
 */
 const updatePageBackground = ( apply_customizer_default = false, isUnboxedContainer = false ) => {
-
-	let bgObj = (undefined !== wp.data.select('core/editor') &&
-    null !== wp.data.select('core/editor') &&
-    undefined !== wp.data.select('core/editor').getEditedPostAttribute('meta') &&
-    wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-meta'])
-    ? wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-meta']
-    : 'default';
-
-	let contentObj = (undefined !== wp.data.select('core/editor') &&
-    null !== wp.data.select('core/editor') &&
-    undefined !== wp.data.select('core/editor').getEditedPostAttribute('meta') &&
-    wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-content-background-meta'])
-    ? wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-content-background-meta']
-    : 'default';
-
-	if ( apply_customizer_default ) {
-		bgObj = astraColors.customizer_site_bg_obj;
-		contentObj = astraColors.customizer_content_bg_obj;
-	}
 
 	// Document as per wp version.
 	editorDoc = document;
@@ -511,6 +482,53 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 			editorDoc = iframe.contentWindow.document || iframe.contentDocument;
 		}
 	}
+
+	if ( apply_customizer_default ) {
+
+		if ( document ) {
+			const pageBgWrapper = document.querySelector('#editor .edit-post-visual-editor');
+
+			if ( pageBgWrapper ) {
+				pageBgWrapper.style['background-color'] = '';
+				pageBgWrapper.style['background-image'] = '';
+				pageBgWrapper.style['background-size'] = '';
+				pageBgWrapper.style['background-position'] = '';
+				pageBgWrapper.style['background-repeat'] = '';
+				pageBgWrapper.style['background-attachment'] = '';
+
+			}
+		}
+
+		if ( editorDoc ) {
+
+			const contentBgWrapper = editorDoc.querySelector('.editor-styles-wrapper');
+
+			if ( contentBgWrapper ) {
+				contentBgWrapper.style['background-color'] = '';
+				contentBgWrapper.style['background-image'] = '';
+				contentBgWrapper.style['background-size'] = '';
+				contentBgWrapper.style['background-position'] = '';
+				contentBgWrapper.style['background-repeat'] = '';
+				contentBgWrapper.style['background-attachment'] = '';				
+			}
+		}
+
+		return;
+	}
+
+	let bgObj = (undefined !== wp.data.select('core/editor') &&
+    null !== wp.data.select('core/editor') &&
+    undefined !== wp.data.select('core/editor').getEditedPostAttribute('meta') &&
+    wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-meta'])
+    ? wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-page-background-meta']
+    : 'default';
+
+	let contentObj = (undefined !== wp.data.select('core/editor') &&
+    null !== wp.data.select('core/editor') &&
+    undefined !== wp.data.select('core/editor').getEditedPostAttribute('meta') &&
+    wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-content-background-meta'])
+    ? wp.data.select('core/editor').getEditedPostAttribute('meta')['ast-content-background-meta']
+    : 'default';
 
 	if ( desktopPreview.length > 0 ) {
 
@@ -638,7 +656,6 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 
 		}
 	}
-
 
 }
 
