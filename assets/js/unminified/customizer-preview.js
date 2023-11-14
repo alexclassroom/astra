@@ -1161,6 +1161,8 @@ function hasWordPressWidgetBlockEditor() {
 		} );
 	} );
 
+	astra_css( 'astra-settings[post-card-featured-overlay]', 'background-color', '.ast-blog-layout-6-grid .ast-article-inner .post-thumb::after' );
+
 	// Check if anchors should be loaded in the CSS for headings.
 	if (true == astraCustomizer.includeAnchorsInHeadindsCss) {
 		astra_responsive_font_size('astra-settings[font-size-h1]', 'h1, .entry-content h1, .entry-content h1 a');

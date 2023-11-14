@@ -506,6 +506,26 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'connected'      => false,
 				),
 
+				array(
+					'name'           => ASTRA_THEME_SETTINGS . '[post-card-featured-overlay]',
+					'default'        => astra_get_option( 'post-card-featured-overlay' ),
+					'type'     => 'control',
+					'control'  => 'ast-color',
+					'section'        => 'section-blog',
+					'priority' => 1,
+					'title'    => __( 'Cards Background Overlay', 'astra' ),
+					'transport'      => 'postMessage',
+					'context'  => array(
+						Astra_Builder_Helper::$design_tab_config,
+						'relation' => 'AND',
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[blog-layout]',
+							'operator' => '===',
+							'value'    => 'blog-layout-6',
+						),
+					),
+				),
+
 				/**
 				 * Option: Blog Category Style
 				 */

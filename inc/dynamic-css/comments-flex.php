@@ -535,20 +535,20 @@ function astra_comments_css( $dynamic_css ) {
 						padding-left: 70px;
 						margin-top: -10px;
 					}
-					.ast-comment:hover .comment-reply-link {
+					.ast-comment .comment-reply-link:hover {
 						background: ' . astra_get_option( 'theme-color' ) . ';
 						color: #fff;
 					}
-					.ast-comment:hover a.comment-edit-link {
+					.ast-comment .comment-edit-link:hover {
 						text-decoration: underline;
 					}
 					svg.ast-reply-icon {
 						fill: currentColor;
 						margin-right: 5px;
 						padding-top: 2px;
-						transition: all 0.2s;
+						transition: none;
 					}
-					.ast-comment:hover svg.ast-reply-icon {
+					.comment-reply-link:hover .ast-reply-icon {
 						fill: #fff;
 					}
 				}

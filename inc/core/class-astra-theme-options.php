@@ -213,6 +213,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet-unit'  => 'px',
 						'mobile-unit'  => 'px',
 					),
+					'post-card-featured-overlay'           => '',
 					'blog-category-style'                  => 'default',
 					'blog-tag-style'                       => 'default',
 					'blog-post-meta-divider-type'          => '/',
