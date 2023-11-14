@@ -615,6 +615,7 @@ module.exports = function (grunt) {
                     '!codesniffer.ruleset.xml',
                     '!vendor/**',
                     '!composer.json',
+                    '!sonar-project.properties',
                     '!composer.lock',
                     '!package-lock.json',
                     '!phpcs.xml.dist',
