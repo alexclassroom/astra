@@ -2171,6 +2171,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
 						'margin-bottom' => '1.5em',
 					);
+					$default_layout_update_css['.site-content section.ast-archive-description']         = array(
+						'margin-bottom' => '2em',
+					);
 				}
 				/* Parse CSS from array() -> Desktop CSS */
 				$parse_css .= astra_parse_css( $default_layout_update_css );
