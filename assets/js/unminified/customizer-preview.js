@@ -1128,6 +1128,40 @@ function hasWordPressWidgetBlockEditor() {
 	} );
 
 	astra_responsive_font_size( 'astra-settings[font-size-page-title]', 'body:not(.ast-single-post) .entry-title' );
+	astra_responsive_font_size( 'astra-settings[font-size-post-meta]', '.entry-meta, .read-more' );
+	astra_responsive_font_size( 'astra-settings[font-size-post-tax]', '.ast-blog-single-element.ast-taxonomy-container a' );
+
+	astra_refresh_customizer( 'astra-settings[blog-meta-category-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-category-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-tag-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-post-meta-divider-type]' );
+	astra_refresh_customizer( 'astra-settings[blog-meta-tag-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-post-content]' );
+
+	wp.customize( 'astra-settings[post-card-border-radius]', function( setting ) {
+		setting.bind( function( border ) {
+			let tabletBreakPoint    = astraBuilderPreview.tablet_break_point || 921,
+				mobileBreakPoint    = astraBuilderPreview.mobile_break_point || 544;
+
+			let globalSelector = '.archive .ast-article-post, .blog .ast-article-post, .archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner';
+
+			let dynamicStyle = globalSelector + '{ border-top-left-radius :' + border['desktop']['top'] + border['desktop-unit']
+					+ '; border-bottom-right-radius :' + border['desktop']['bottom'] + border['desktop-unit'] + '; border-bottom-left-radius :'
+					+ border['desktop']['left'] + border['desktop-unit'] + '; border-top-right-radius :' + border['desktop']['right'] + border['desktop-unit'] + '; } ';
+
+			dynamicStyle += '@media (max-width: ' + tabletBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + border['tablet']['top'] + border['tablet-unit']
+					+ '; border-bottom-right-radius :' + border['tablet']['bottom'] + border['tablet-unit'] + '; border-bottom-left-radius :'
+					+ border['tablet']['left'] + border['tablet-unit'] + '; border-top-right-radius :' + border['tablet']['right'] + border['tablet-unit'] + '; } } ';
+
+			dynamicStyle += '@media (max-width: ' + mobileBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + border['mobile']['top'] + border['mobile-unit']
+					+ '; border-bottom-right-radius :' + border['mobile']['bottom'] + border['mobile-unit'] + '; border-bottom-left-radius :'
+					+ border['mobile']['left'] + border['mobile-unit'] + '; border-top-right-radius :' + border['mobile']['right'] + border['mobile-unit'] + '; } } ';
+
+			astra_add_dynamic_css( 'post-card-border-radius', dynamicStyle );
+		} );
+	} );
+
+	astra_css( 'astra-settings[post-card-featured-overlay]', 'background-color', '.ast-blog-layout-6-grid .ast-article-inner .post-thumb::after' );
 
 	// Check if anchors should be loaded in the CSS for headings.
 	if (true == astraCustomizer.includeAnchorsInHeadindsCss) {

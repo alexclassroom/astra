@@ -101,7 +101,7 @@ function astra_content_background_css( $dynamic_css ) {
 
 
 	// Blog Pro Layout Colors.
-	if ( ( 'blog-layout-1' == $blog_layout || 'blog-layout-4' == $blog_layout || 'blog-layout-6' == $blog_layout ) && 1 != $blog_grid ) {
+	if ( ( 'blog-layout-1' == $blog_layout || 'blog-layout-4' == $blog_layout || 'blog-layout-6' == $blog_layout ) || ( defined( 'ASTRA_EXT_VER' ) && 1 !== $blog_grid ) ) {
 		$blog_layouts        = array(
 			'.ast-separate-container .ast-article-inner' => astra_get_responsive_background_obj( $content_bg_obj, 'desktop' ),
 		);
@@ -178,10 +178,10 @@ function astra_content_background_css( $dynamic_css ) {
  * @return array $content_bg_obj The updated background object for the content.
  */
 function astra_apply_unboxed_container( $content_bg_obj, $is_boxed, $is_sidebar_boxed, $current_layout ) {
-	
+
 	$site_bg_obj             = astra_get_option( 'site-layout-outside-bg-obj-responsive' );
 	$meta_background_enabled = astra_get_option_meta( 'ast-page-background-enabled' );
-	
+
 	// Check for third party pages meta.
 	if ( '' === $meta_background_enabled && astra_with_third_party() ) {
 		$meta_background_enabled = astra_third_party_archive_meta( 'ast-page-background-enabled' );

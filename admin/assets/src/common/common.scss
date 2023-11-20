@@ -149,6 +149,10 @@
 	pointer-events: all;
 	z-index: 999;
 }
+.astra-changelog-description * {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
 
 // RTL version compat.
 [dir=rtl] .astra-dashboard-app button.bg-astra[aria-checked=false] span {

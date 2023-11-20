@@ -144,6 +144,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$site_tagline_font_size = astra_get_option( 'font-size-site-tagline' );
 
 			$archive_post_title_font_size = astra_get_option( 'font-size-page-title' );
+			$archive_post_meta_font_size  = astra_get_option( 'font-size-post-meta' );
+			$archive_post_tax_font_size   = astra_get_option( 'font-size-post-tax' );
+			$archive_cards_radius         = astra_get_option( 'post-card-border-radius' );
+			$archive_cards_overlay        = astra_get_option( 'post-card-featured-overlay' );
+
 			$heading_h1_font_size         = astra_get_option( 'font-size-h1' );
 			$heading_h2_font_size         = astra_get_option( 'font-size-h2' );
 			$heading_h3_font_size         = astra_get_option( 'font-size-h3' );
@@ -206,6 +211,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$font_weight_prop                    = ( $is_widget_title_support_font_weight ) ? 'inherit' : 'normal';
 
 			$update_customizer_strctural_defaults = astra_check_is_structural_setup();
+			$blog_layout = astra_get_option( 'blog-layout' );
 
 			// Fallback for H1 - headings typography.
 			if ( 'inherit' == $h1_font_family ) {
@@ -461,7 +467,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$blog_max_width                         = astra_get_option( 'blog-max-width' );
 			$mobile_header_toggle_btn_style_color   = astra_get_option( 'mobile-header-toggle-btn-style-color', $btn_bg_color );
 			$mobile_header_toggle_btn_border_radius = astra_get_option( 'mobile-header-toggle-btn-border-radius' );
-			$aspect_ratio_type                      = astra_get_option( 'blog-image-ratio-type', '' );
+			$aspect_ratio_type                      = astra_get_option( 'blog-image-ratio-type' );
 			$predefined_scale                       = astra_get_option( 'blog-image-ratio-pre-scale' );
 			$custom_scale_width                     = astra_get_option( 'blog-image-custom-scale-width', 16 );
 			$custom_scale_height                    = astra_get_option( 'blog-image-custom-scale-height', 9 );
@@ -561,6 +567,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'--ast-comment-inputs-background'     => ( true === self::astra_check_default_color_typo() ) ? '#F9FAFB' : '#FAFAFA',
 					'--ast-normal-container-width'        => $site_content_width . 'px',
 					'--ast-narrow-container-width'        => $narrow_container_max_width . 'px',
+					'--ast-blog-title-font-weight'        => self::astra_4_6_0_compatibility() ? '600' : 'normal',
 				),
 
 				// HTML.
@@ -622,7 +629,20 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-title'                           => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'desktop' ),
 				),
-				// Conditionally select the css selectors with or without achors.
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'desktop' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'desktop' ),
+				),
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner, .archive .ast-article-post .ast-article-inner:hover, .blog .ast-article-post .ast-article-inner:hover' : '.archive .ast-article-post, .blog .ast-article-post, .ast-article-post .post-thumb-img-content, .ast-blog-layout-6-grid .ast-article-inner .post-thumb::after, .archive .ast-article-post:hover, .blog .ast-article-post:hover' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'desktop' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'desktop' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'desktop' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'desktop' ),
+					'overflow'                   => 'hidden',
+				),
+				// Conditionally select the css selectors with or without anchors.
 				self::conditional_headings_css_selectors(
 					'h1, .entry-content h1, .entry-content h1 a',
 					'h1, .entry-content h1'
@@ -753,7 +773,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				// Pagination.
 				'.page-links .page-link, .single .post-navigation a' => array(
-					'color' => esc_attr( $link_color ),
+					'color' => esc_attr( self::astra_4_4_0_compatibility() ? $text_color : $link_color ),
+				),
+				'.page-links .page-link:hover, .single .post-navigation a:hover' => array(
+					'color' => esc_attr( $link_hover_color ),
 				),
 
 				// Menu Toggle Border Radius.
@@ -779,6 +802,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'outline' => 'none', // Making highlight by border that's why making outline none.
 				),
 			);
+
+			if ( 'blog-layout-6'  === $blog_layout ) {
+				$css_output['.ast-blog-layout-6-grid .ast-article-inner .post-thumb::after'] = array(
+					'content' => '""',
+					'background' => $archive_cards_overlay,
+					'position' => 'absolute',
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+				);
+			}
 
 			if ( self::astra_4_4_0_compatibility() ) {
 				$css_output['.ast-search-menu-icon .search-form button.search-submit:focus, .ast-theme-transparent-header .ast-header-search .ast-dropdown-active .ast-icon, .ast-theme-transparent-header .ast-inline-search .search-field:focus .ast-icon'] = array(
@@ -2112,7 +2147,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'width' => '100%',
 					),
 					'.entry-title'                    => array(
-						'margin-bottom' => '0.5em',
+						'margin-bottom' => self::astra_4_6_0_compatibility() ? '0.6em' : '0.5em',
 					),
 					'.ast-archive-description p'      => array(
 						'font-size'   => 'inherit',
@@ -2125,6 +2160,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'margin-bottom' => '2em',
 					);
 					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+						'margin-bottom' => '2em',
+					);
+				} else {
+					$default_layout_update_css['.ast-article-single img'] = array(
+						'box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+						'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+						'-moz-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+					);
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+						'margin-bottom' => '1.5em',
+					);
+					$default_layout_update_css['.site-content section.ast-archive-description']         = array(
 						'margin-bottom' => '2em',
 					);
 				}
@@ -3317,6 +3364,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'tablet', 30 ),
 				),
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'tablet' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'tablet' ),
+				),
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' : '.archive .ast-article-post, .ast-article-post .post-thumb-img-content, .ast-blog-layout-6-grid .ast-article-inner .post-thumb::after, .blog .ast-article-post' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'tablet' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'tablet' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'tablet' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'tablet' ),
+				),
 
 				// Conditionally select the css selectors with or without achors.
 				self::conditional_headings_css_selectors(
@@ -3408,6 +3467,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 				'.entry-title'                   => array(
 					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'mobile', 30 ),
+				),
+				'.ast-blog-single-element.ast-taxonomy-container a'         => array(
+					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'mobile' ),
+				),
+				'.ast-blog-meta-container'                           => array(
+					'font-size' => astra_responsive_font( $archive_post_meta_font_size, 'mobile' ),
+				),
+				'blog-layout-4'  === $blog_layout ? '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner' : '.archive .ast-article-post, .ast-article-post .post-thumb-img-content, .ast-blog-layout-6-grid .ast-article-inner .post-thumb::after, .blog .ast-article-post' => array(
+					'border-top-left-radius'     => astra_responsive_spacing( $archive_cards_radius, 'top', 'mobile' ),
+					'border-top-right-radius'    => astra_responsive_spacing( $archive_cards_radius, 'right', 'mobile' ),
+					'border-bottom-right-radius' => astra_responsive_spacing( $archive_cards_radius, 'bottom', 'mobile' ),
+					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'mobile' ),
 				),
 
 				// Conditionally select the css selectors with or without achors.
@@ -3591,12 +3662,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css      .= astra_parse_css( $single_blog_css, astra_get_tablet_breakpoint( '', 1 ) );
 			endif;
 
-			$blog_layout = astra_get_option( 'blog-layout' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$blog_addon_condition = defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' );
+			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			if ( is_search() || is_archive() || is_home() ) {
-				/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
-					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				if ( ! ( $blog_addon_condition ) ) {
 					// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 					if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 						$blog_layout = 'blog-layout-4';
@@ -3621,13 +3692,15 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 					);
 
-					if ( 1 === $blog_grid ) {
+					if ( $blog_addon_condition && 1 === $blog_grid ) {
 						$blog_layout_css['.ast-separate-container .ast-article-post'] = array(
 							'padding' => '1.5em',
 						);
 					}
 
-					if ( 1 !== $blog_grid ) {
+					/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) || ( $blog_addon_condition && 1 !== $blog_grid ) ) {
+						/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						$blog_layout_css['.ast-separate-container .ast-article-inner'] = array(
 							'padding' => '1.5em',
 						);
@@ -3730,6 +3803,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						$bl_selector . ' .post-content'  => array(
 							'width'                     => '75%',
 							'padding-' . $rtl_left . '' => '1.5em',
+						),
+
+						$bl_selector . ' .ast-no-thumb .ast-blog-featured-section' => array(
+							'width'         => 'unset',
+						),
+
+						$bl_selector . ' .ast-no-thumb .post-content'  => array(
+							'width'                     => '100%',
 						),
 
 						'.ast-separate-container ' . $bl_selector . ' .post-content' => array(
@@ -3839,7 +3920,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						);
 					}
 
-
 					if ( 1 === $blog_grid ) {
 						$blog_layout_cover_css['.ast-plain-container .ast-article-post'] = array(
 							'padding' => '1.5em',
@@ -3874,9 +3954,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css .= astra_parse_css( $blog_layout_css_responsive, '', astra_get_tablet_breakpoint() );
 
 				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::blog_layout_static_css() );
-			}
-
-			if ( is_search() || is_archive() || is_home() ) {
 
 				// Blog Archive Featured Image.
 				if ( $aspect_ratio && $with_aspect_img_width ) {
@@ -3933,6 +4010,28 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					}
 
 					$parse_css .= astra_parse_css( $blog_archive_hover_effect_css );
+				}
+
+				// Post elements.
+				$categories_styles      = astra_get_option( 'blog-category-style' );
+				$tag_styles             = astra_get_option( 'blog-tag-style' );
+				$categories_meta_styles = astra_get_option( 'blog-meta-category-style' );
+				$tag_meta_styles        = astra_get_option( 'blog-meta-tag-style' );
+
+				if ( $categories_styles || $tag_styles || $categories_meta_styles || $tag_meta_styles ) {
+					$post_tax_style = '
+						.cat-links.badge a, .tags-links.badge a {
+							padding: 4px 8px;
+							border-radius: 3px;
+							font-weight: 400;
+						}
+					';
+					$post_tax_style .= '
+						.cat-links.underline a, .tags-links.underline a{
+							text-decoration: underline;
+						}
+					';
+					$parse_css .= Astra_Enqueue_Scripts::trim_css( $post_tax_style );
 				}
 			}
 
@@ -5588,18 +5687,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * In x.x.x version we are having new stylings.
-		 * 1. Comments area refined.
-		 *
-		 * @return bool true|false.
-		 * @since x.x.x
-		 */
-		public static function astra_4_6_0_compatibility() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
-			return apply_filters( 'astra_get_option_v4-6-0-backward-option', isset( $astra_settings['v4-6-0-backward-option'] ) ? false : true );
-		}
-
-		/**
 		 * Load Blog Layout static CSS when it is enabled.
 		 *
 		 * @since x.x.x
@@ -5640,7 +5727,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$astra_settings['v4-5-0-backward-option'] = isset( $astra_settings['v4-5-0-backward-option'] ) ? false : true;
 			return apply_filters( 'astra_upgrade_color_styles', $astra_settings['v4-5-0-backward-option'] );
 		}
+
+		/**
+		 * In x.x.x version we are having new stylings.
+		 * 1. Comments area refined.
+		 * 2. Defaults improvement for single-blog layouts.
+		 *
+		 * @return bool true|false.
+		 * @since x.x.x
+		 */
+		public static function astra_4_6_0_compatibility() {
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_get_option_v4-6-0-backward-option', isset( $astra_settings['v4-6-0-backward-option'] ) ? false : true );
+		}
 	}
 }
-
-

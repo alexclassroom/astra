@@ -58,7 +58,7 @@ if ( ! function_exists( 'astra_post_class_blog_grid' ) ) {
 				if ( 'blog-layout-4' === $blog_layout ) {
 					$classes[] = 'remove-featured-img-padding';
 				}
-			}       
+			}
 		}
 
 		return $classes;
@@ -75,7 +75,9 @@ add_filter( 'post_class', 'astra_post_class_blog_grid' );
  * @return array
  */
 function astra_add_blog_layout_class( $classes ) {
-	$classes[] = 'ast-article-inner';
+	if ( ! is_singular() ) {
+		$classes[] = 'ast-article-inner';
+	}
 	return $classes;
 }
 
@@ -661,7 +663,7 @@ function astra_primary_class_blog_layout( $classes ) {
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( ! ( defined( 'ASTRA_EXT_VER' ) && Astra_Ext_Extension::is_active( 'blog-pro' ) ) ) {
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			
+
 			// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
 			if ( 'blog-layout-1' == $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 				$blog_layout = 'blog-layout-4';
@@ -669,13 +671,13 @@ function astra_primary_class_blog_layout( $classes ) {
 
 			if ( 'blog-layout-4' == $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 				$classes[] = 'ast-grid-3';
-				
+
 			}
 		}
 
 		if ( 'blog-layout-4' == $blog_layout || 'blog-layout-5' === $blog_layout || 'blog-layout-6' === $blog_layout ) {
 			$classes[] = 'ast-' . esc_attr( $blog_layout ) . '-grid';
-			
+
 		}
 
 		$classes = apply_filters( 'astra_primary_class_blog_grid', $classes );
@@ -718,7 +720,6 @@ function astra_blog_layout_template() {
 	get_template_part( 'template-parts/blog/' . esc_attr( astra_get_option( 'blog-layout' ) ) );
 }
 
-
 /**
  * Blog Custom excerpt length.
  *
@@ -730,8 +731,7 @@ function astra_custom_excerpt_length( $length ) {
 	$blog_layout = astra_get_option( 'blog-layout' );
 	return 'blog-layout-4' === $blog_layout ? 20 : $length;
 }
-add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 999 );
-
+add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 1 );
 
 /**
  * Remove link from featured image for layout 6
@@ -750,6 +750,6 @@ function astra_remove_link_from_featured_image( $content = '' ) {
 		}
 	}
 	return $content;
-	
+
 }
 add_filter( 'wp', 'astra_remove_link_from_featured_image' );

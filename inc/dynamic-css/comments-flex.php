@@ -63,7 +63,7 @@ function astra_comments_css( $dynamic_css ) {
           }
 
           .comments-title {
-            font-weight: normal;
+            font-weight: ' . esc_attr( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? '600' : 'normal' ) . ';
             word-wrap: break-word;
           }
 
@@ -106,7 +106,7 @@ function astra_comments_css( $dynamic_css ) {
 
           .comment-reply-title {
             padding-top: 1em;
-            font-weight: normal;
+            font-weight: ' . esc_attr( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? '600' : 'normal' ) . ';
             line-height: 1.65;
           }
 
@@ -174,6 +174,16 @@ function astra_comments_css( $dynamic_css ) {
             background-color: transparent;
           }
 
+		  .ast-comment-list .comment .comment-respond {
+			padding-bottom: 2em;
+			border-bottom: none;
+		  }
+
+		  .ast-separate-container .ast-comment-list .comment .comment-respond,
+		  .ast-narrow-container .ast-comment-list .comment .comment-respond {
+			padding-bottom: 0;
+		  }
+
           .ast-separate-container .ast-comment-list .pingback p {
             margin-bottom: 0;
           }
@@ -240,10 +250,24 @@ function astra_comments_css( $dynamic_css ) {
 		$content_layout   = astra_apply_boxed_layouts( $content_layout, $is_boxed, $is_sidebar_boxed );
 		if ( 'page-builder' == $content_layout || 'plain-container' == $content_layout ) {
 			$single_post_comment_css .= '
-            .ast-comment-list li.depth-1 .ast-comment,
-            .ast-comment-list li.depth-2 .ast-comment {
-              border-bottom: 1px solid ' . esc_attr( $border_color ) . ';
-            }';
+				.ast-plain-container .comment-reply-title {
+					padding-top: 1em;
+				}
+				.ast-page-builder-template .comment-respond {
+					border-top: none;
+					padding-bottom: 2em;
+				}
+			';
+		} else {
+			$single_post_comment_css .= '
+				.ast-comment-list .children {
+					margin-top: 3em;
+				}
+				.comment-reply-title {
+					padding-top: 0;
+					margin-bottom: 1em;
+				}
+			';
 		}
 
 		if ( $is_site_rtl ) {
@@ -260,8 +284,8 @@ function astra_comments_css( $dynamic_css ) {
 
             .ast-comment-list #cancel-comment-reply-link {
                 white-space: nowrap;
-                font-size: 15px;
-                font-size: 1rem;
+                font-size: 13px;
+				font-weight: normal;
                 margin-right: 1em;
             }
 
@@ -304,8 +328,8 @@ function astra_comments_css( $dynamic_css ) {
 
             .ast-comment-list #cancel-comment-reply-link {
                 white-space: nowrap;
-                font-size: 15px;
-                font-size: 1rem;
+                font-size: 13px;
+		font-weight: normal;
                 margin-left: 1em;
             }
 
@@ -348,7 +372,7 @@ function astra_comments_css( $dynamic_css ) {
 		$global_button_comment_mobile = array(
 			'.ast-separate-container .ast-comment-list li.depth-1' => array(
 				'padding'       => '1.5em 1em',
-				'margin-bottom' => '1.5em',
+				'margin-bottom' => Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? '0' : '1.5em',
 			),
 			'.ast-separate-container .ast-comment-list .bypostauthor' => array(
 				'padding' => '.5em',
@@ -441,14 +465,11 @@ function astra_comments_css( $dynamic_css ) {
 					margin-left: 16px;
 				}
 				a.comment-edit-link, a.comment-reply-link {
-					font-size: 14px;
+					font-size: 13px;
 					transition: all 0.2s;
 				}
 				header.ast-comment-meta {
 					text-transform: inherit;
-				}
-				.ast-comment-list .children {
-					margin-top: 3em;
 				}
 				.ast-page-builder-template .ast-comment-list .children {
 					margin-top: 0em;
@@ -465,19 +486,22 @@ function astra_comments_css( $dynamic_css ) {
 				.comment-awaiting-moderation {
 					margin-top: 20px;
 				}
-				.comment-respond {
-					border-' . esc_attr( 'below' === astra_get_option( 'comment-form-position' ) ? 'top' : 'bottom' ) . ': 1px solid var(--ast-border-color);
+				.entry-content ul li, .entry-content ol li {
+					margin-bottom: 10px;
+				}
+				.ast-comment-list + .comment-respond {
+					border-top: 1px solid var(--ast-border-color);
 				}
 				.ast-comment-list > .comment:last-child .ast-comment {
 					border: none;
 				}
-				.ast-page-builder-template .comment-respond {
-					border-top: none;
-					padding-bottom: 2em;
+				.comment .comment-reply-title {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
 				}
-				.comment-reply-title {
-					padding-top: 0;
-					margin-bottom: 1em;
+				.ast-separate-container .comment .comment-respond {
+					margin-top: 2em;
 				}
 				.ast-comment-list .comment + .comment {
 					border-top: 1px solid var(--ast-border-color);
@@ -495,13 +519,12 @@ function astra_comments_css( $dynamic_css ) {
 						padding-bottom: 0;
 					}
 					a.comment-reply-link {
-						padding: 0px 8px 0 6px;
+						padding: 2px 8px;
 						border-radius: 3px;
 						display: block;
-						height: 25px;
 						border: none;
 					}
-					.ast-separate-container .ast-comment-list li.depth-1, .hentry, .ast-narrow-container .ast-comment-list li.depth-1, .hentry {
+					.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
 						margin-bottom: 0;
 					}
 					.ast-comment-time {
@@ -512,24 +535,31 @@ function astra_comments_css( $dynamic_css ) {
 						padding-left: 70px;
 						margin-top: -10px;
 					}
-					.ast-comment:hover .comment-reply-link {
+					.ast-comment .comment-reply-link:hover {
 						background: ' . astra_get_option( 'theme-color' ) . ';
 						color: #fff;
 					}
-					.ast-comment:hover a.comment-edit-link {
+					.ast-comment .comment-edit-link:hover {
 						text-decoration: underline;
 					}
 					svg.ast-reply-icon {
-						fill: ' . astra_get_option( 'theme-color' ) . ';
+						fill: currentColor;
 						margin-right: 5px;
 						padding-top: 2px;
-						transition: all 0.2s;
+						transition: none;
 					}
-					.ast-comment:hover svg.ast-reply-icon {
+					.comment-reply-link:hover .ast-reply-icon {
 						fill: #fff;
 					}
 				}
 			';
+			if ( 'above' === astra_get_option( 'comment-form-position' ) ) {
+				$dynamic_css .= '
+					.comment-respond {
+						border-bottom: 1px solid var(--ast-border-color);
+					}
+				';
+			}
 			$comments_section_placement = astra_get_option( 'comments-box-placement', '' );
 			if ( 'inside' === $comments_section_placement ) {
 				$dynamic_css .= '

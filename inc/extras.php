@@ -186,7 +186,7 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 function astra_toggle_layout( $new_content_option, $level, $post_id = false, $old_meta = false ) {
 
 	// Dynamic layout option for meta case.
-	$dynamic_layout_option = 'meta' === $level ? astra_get_option_meta( $new_content_option, '', true ) : astra_get_option( $new_content_option, 'default' );
+	$dynamic_layout_option = 'meta' === $level ? astra_get_option_meta( $new_content_option, '', true ) : astra_get_option( $new_content_option, 'post' === strval( get_post_type() ) ? 'narrow-width-container' : 'default' );
 	$current_layout        = '';
 
 	// Get meta value by ID if specified.
