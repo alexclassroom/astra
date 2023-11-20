@@ -2119,7 +2119,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'.ast-article-single .wp-block-post-template-is-layout-grid' => array(
 						'padding-' . $ltr_left => '0',
 					),
-					'.ast-separate-container .ast-archive-description, .ast-separate-container .ast-author-box' => array(
+					'.ast-separate-container .ast-author-box' => array(
 						'border-bottom' => '1px solid var(--ast-border-color)',
 					),
 					'.ast-separate-container .comments-title' => array(
