@@ -35,8 +35,7 @@ class Astra_Footer_Html_Component_Configs extends Astra_Customizer_Config_Base {
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
-		$configurations = Astra_Html_Component_Configs::register_configuration( $configurations, 'footer', 'section-fb-html-' );
-
+		$configurations = astra_html_footer_configuration( $configurations );
 		return $configurations;
 	}
 }

@@ -153,7 +153,9 @@ const ExtensionCard = ( props ) => {
 												method: 'POST',
 												body: reFormData,
 											} ).then( ( data ) => {
-												// Do nothing.
+												if ( "advanced-hooks" === slug ) {
+													location.reload(); // Do reload screen.
+												}
 											} );
 										}
 									} );

@@ -20,7 +20,7 @@ add_filter( 'astra_theme_defaults', 'astra_hf_builder_customizer_defaults' );
  */
 function astra_hf_builder_customizer_defaults( $defaults ) {
 
-	$astra_options = Astra_Theme_Options::get_astra_options();
+	$astra_options                              = Astra_Theme_Options::get_astra_options();
 	$astra_update_footer_row_vertical_alignment = Astra_Dynamic_CSS::astra_4_5_0_compatibility();
 
 	/**

@@ -35,7 +35,7 @@ class Astra_Header_Html_Component_Configs extends Astra_Customizer_Config_Base {
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
-		$configurations = Astra_Html_Component_Configs::register_configuration( $configurations, 'header', 'section-hb-html-' );
+		$configurations = astra_header_html_configuration( $configurations );
 
 		return $configurations;
 	}
