@@ -321,7 +321,7 @@ function astra_comments_css( $dynamic_css ) {
             .ast-comment-list #cancel-comment-reply-link {
                 white-space: nowrap;
                 font-size: 13px;
-				font-weight: normal;
+                font-weight: normal;
                 margin-right: 1em;
             }
 
