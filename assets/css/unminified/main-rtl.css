@@ -2679,7 +2679,7 @@ input[type="color"]::-webkit-color-swatch {
 .post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
   display: block;
   margin-bottom: .8em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .post-content > .read-more {
