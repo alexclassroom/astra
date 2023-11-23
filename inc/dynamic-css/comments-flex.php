@@ -522,8 +522,10 @@ function astra_comments_css( $dynamic_css ) {
 				.entry-content ul li, .entry-content ol li {
 					margin-bottom: 10px;
 				}
-				.ast-comment-list + .comment-respond {
+				.comment-respond {
 					padding-top: 2em;
+				}
+				.ast-comment-list + .comment-respond {
 					border-top: 1px solid var(--ast-border-color);
 				}
 				.comment .comment-reply-title {
