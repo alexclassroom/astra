@@ -34,9 +34,7 @@ class Astra_Header_Search_Component_Configs extends Astra_Customizer_Config_Base
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
-
 		$_configs = astra_header_search_configuration();
-
 		return array_merge( $configurations, $_configs );
 	}
 }

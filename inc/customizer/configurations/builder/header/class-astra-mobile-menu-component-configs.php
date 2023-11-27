@@ -32,11 +32,8 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 		 * @return Array Astra Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
-
-			$_configs = astra_header_mobile_menu_configuration();
-
+			$_configs       = astra_header_mobile_menu_configuration();
 			$configurations = array_merge( $configurations, $_configs );
-
 			return $configurations;
 		}
 	}

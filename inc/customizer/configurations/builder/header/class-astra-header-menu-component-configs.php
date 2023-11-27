@@ -34,7 +34,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 		public function register_configuration( $configurations, $wp_customize ) {
 			$menu_config    = astra_header_menu_configuration();
 			$configurations = array_merge( $configurations, $menu_config );
-
 			return $configurations;
 		}
 	}
