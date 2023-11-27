@@ -210,13 +210,23 @@ function astra_comments_css( $dynamic_css ) {
 				.ast-comment {
 					padding-top: 3em;
 					padding-bottom: 3em;
-					border-top: 1px solid var(--ast-border-color);
-				}
-				.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
-					padding-left: 3em;
-					padding-right: 3em;
+					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 				}
 			';
+
+			$is_boxed         = astra_is_content_style_boxed();
+			$content_layout   = astra_get_content_layout();
+
+			$post_with_boxed_layout = ( 'plain-container' === $content_layout || 'narrow-container' === $content_layout ) && $is_boxed ? true : false;
+			if ( $post_with_boxed_layout ) {
+				$single_post_comment_css .= '
+					.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
+						padding-left: 2.5em;
+						padding-right: 2.5em;
+					}
+				';
+			}
+
 		} else {
 			$single_post_comment_css .= '
 				.ast-comment-list .comment + .comment {
@@ -526,7 +536,7 @@ function astra_comments_css( $dynamic_css ) {
 					padding-top: 2em;
 				}
 				.ast-comment-list + .comment-respond {
-					border-top: 1px solid var(--ast-border-color);
+					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 				}
 				.comment .comment-reply-title {
 					display: flex;

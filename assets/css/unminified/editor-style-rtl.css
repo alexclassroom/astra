@@ -1328,11 +1328,11 @@ li > ol {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1em;
 }
 
 b,
@@ -1369,6 +1369,10 @@ blockquote {
 
 address {
   margin: 0 0 1.5em;
+}
+
+address, cite {
+  font-style: italic;
 }
 
 abbr,
@@ -1452,11 +1456,11 @@ table {
 }
 
 th {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 th, td {
-  padding: 8px;
+  padding: 0.7em 1em;
   border-width: 0 0 1px 1px;
 }
 

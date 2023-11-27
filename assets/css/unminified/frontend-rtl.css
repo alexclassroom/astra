@@ -629,11 +629,11 @@ li > ol {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1em;
 }
 
 b,
@@ -670,6 +670,10 @@ blockquote {
 
 address {
   margin: 0 0 1.5em;
+}
+
+address, cite {
+  font-style: italic;
 }
 
 abbr,
@@ -753,11 +757,11 @@ table {
 }
 
 th {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 th, td {
-  padding: 8px;
+  padding: 0.7em 1em;
   border-width: 0 0 1px 1px;
 }
 
@@ -1761,8 +1765,9 @@ body {
 .post-navigation a {
   background: transparent;
   font-size: 16px;
-  font-size: 1.06666rem;
-  padding: 0 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 var(--ast-post-nav-space, 1.5em);
   height: 2.33333em;
   line-height: calc(2.33333em - 3px);
 }
@@ -3108,8 +3113,8 @@ input[type="color"]::-webkit-color-swatch {
 
 .single .post-navigation {
   margin: 0;
-  padding: 2em 0 0;
-  border-top: 1px solid var(--ast-border-color);
+  padding: var(--ast-single-post-nav-padding, 2em 0 0);
+  border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 }
 
 @media (max-width: 768px) {
@@ -3196,8 +3201,8 @@ input[type="color"]::-webkit-color-swatch {
 
 .ast-separate-container .post-navigation {
   border-top: 0;
-  padding-right: 3.33333em;
-  padding-left: 3.33333em;
+  padding-right: var(--ast-post-nav-space, 3.33333em);
+  padding-left: var(--ast-post-nav-space, 3.33333em);
 }
 
 @media (max-width: 420px) {

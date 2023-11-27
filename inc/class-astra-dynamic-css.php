@@ -584,7 +584,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'font-family'     => astra_get_font_family( $body_font_family ),
 					'font-weight'     => esc_attr( $body_font_weight ),
 					'font-size'       => astra_responsive_font( $body_font_size, 'desktop' ),
-					'line-height'     => esc_attr( $body_line_height ),
+					'line-height'     => 'var(--ast-body-line-height,' . esc_attr( $body_line_height ) . ')',
 					'text-transform'  => esc_attr( $body_text_transform ),
 					'text-decoration' => esc_attr( $body_text_decoration ),
 					'letter-spacing'  => esc_attr( $body_letter_spacing ),
@@ -1154,6 +1154,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			} else {
 				require_once ASTRA_THEME_DIR . 'inc/dynamic-css/comments-flex.php'; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			}
+
+			// Single post improvement.
+			require_once ASTRA_THEME_DIR . 'inc/dynamic-css/single-post.php'; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			$live_search_enabled = astra_get_option( 'live-search', false );
 			if ( true === Astra_Builder_Helper::$is_header_footer_builder_active && Astra_Builder_Helper::is_component_loaded( 'search', 'header' ) && $live_search_enabled ) {
@@ -2221,7 +2224,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				$default_medium_layout_css = array(
 					'.ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-author-box, .ast-separate-container .ast-404-layout-1, .ast-separate-container .no-results' => array(
-						'padding' => '3em',
+						'padding' => self::astra_4_6_0_compatibility() && is_single() ? '2.5em' : '3em',
 					),
 				);
 
