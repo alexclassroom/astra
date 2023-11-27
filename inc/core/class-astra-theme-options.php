@@ -169,10 +169,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'excerpt',
 					) : array(
 						'image',
-						'title',
 						'title-meta',
-						'excerpt',
-						'read-more',
 					),
 					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
 					'blog-hover-effect'                    => $blog_defaults_update ? 'zoom-in' : 'none',
