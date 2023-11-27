@@ -553,6 +553,7 @@ function astra_comments_css( $dynamic_css ) {
 					.ast-comment-time {
 						display: flex;
 						margin-left: auto;
+						font-weight: 500;
 					}
 					section.ast-comment-content.comment {
 						padding-left: 50px;
