@@ -1508,7 +1508,7 @@ function astra_theme_background_updater_4_5_0() {
  */
 function astra_theme_background_updater_4_6_0() {
 	$theme_options = get_option( 'astra-settings', array() );
-	// if ( ! isset( $theme_options['v4-6-0-backward-option'] ) ) {
+	if ( ! isset( $theme_options['v4-6-0-backward-option'] ) ) {
 		$theme_options['v4-6-0-backward-option'] = false;
 		/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$blog_post_structure = isset( $theme_options['blog-post-structure'] ) ? $theme_options['blog-post-structure'] : array( 'image', 'title-meta' );
@@ -1528,9 +1528,12 @@ function astra_theme_background_updater_4_6_0() {
 				}
 			}
 
+			$migrated_post_structure[] = 'excerpt';
+			$migrated_post_structure[] = 'read-more';
+
 			$theme_options[ 'blog-post-structure' ] = $migrated_post_structure;
 		}
 
 		update_option( 'astra-settings', $theme_options );
-	// }
+	}
 }
