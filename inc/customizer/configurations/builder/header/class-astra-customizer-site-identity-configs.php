@@ -32,7 +32,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 		 * @return Array Astra Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
-
 			$_configs = astra_header_site_identity_configuration();
 
 			$wp_customize->remove_control( 'astra-settings[divider-section-site-identity-logo]' );

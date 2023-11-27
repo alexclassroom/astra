@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array Astra Customizer Configurations with updated configurations.
  */
 function astra_header_menu_configuration() {
-	$_configs = array();
+	$menu_configs = array();
 
 	$component_limit = defined( 'ASTRA_EXT_VER' ) ? Astra_Builder_Helper::$component_limit : Astra_Builder_Helper::$num_of_header_menu;
 
@@ -646,17 +646,17 @@ function astra_header_menu_configuration() {
 			),
 		);
 
-		$_configs[] = Astra_Builder_Base_Configuration::prepare_visibility_tab( $_section );
-		$_configs[] = $_configs;
+		$menu_configs[] = Astra_Builder_Base_Configuration::prepare_visibility_tab( $_section );
+		$menu_configs[] = $_configs;
 	}
 
-	$_configs = call_user_func_array( 'array_merge', $_configs + array( array() ) );
+	$menu_configs = call_user_func_array( 'array_merge', $menu_configs + array( array() ) );
 
 	if ( Astra_Builder_Customizer::astra_collect_customizer_builder_data() ) {
-		array_map( 'astra_save_header_customizer_configs', $_configs );
+		array_map( 'astra_save_header_customizer_configs', $menu_configs );
 	}
 
-	return $_configs;
+	return $menu_configs;
 }
 
 if ( Astra_Builder_Customizer::astra_collect_customizer_builder_data() ) {
