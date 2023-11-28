@@ -210,7 +210,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$font_weight_prop                    = ( $is_widget_title_support_font_weight ) ? 'inherit' : 'normal';
 
 			$update_customizer_strctural_defaults = astra_check_is_structural_setup();
-			$blog_layout = astra_get_option( 'blog-layout' );
+			$blog_layout = astra_get_blog_layout();
 
 			// Fallback for H1 - headings typography.
 			if ( 'inherit' == $h1_font_family ) {

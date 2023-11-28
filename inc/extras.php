@@ -1375,3 +1375,25 @@ function astra_get_palette_presets() {
 		),
 	);
 }
+
+/**
+ * Get Astra blog layout design.
+ * Search / Blog.
+ *
+ * @return string $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_layout() {
+	return ( is_search() && '' !== astra_get_option( 'ast-search-results-style' ) ) ? astra_get_option( 'ast-search-results-style' ) : astra_get_option( 'blog-layout' );
+}
+
+/**
+ * Get Astra blog posts per page count.
+ * Search / Blog.
+ *
+ * @return int $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_posts_per_page() {
+	return ( is_search() && astra_get_option( 'ast-search-results-per-page' ) ) ? astra_get_option( 'ast-search-results-per-page' ) : astra_get_option( 'blog-post-per-page' );
+}

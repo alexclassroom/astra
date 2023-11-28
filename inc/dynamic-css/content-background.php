@@ -41,7 +41,7 @@ function astra_content_background_css( $dynamic_css ) {
 		$content_bg_obj = astra_get_option_meta( 'ast-content-background-meta' );
 	}
 
-	$blog_layout             = astra_get_option( 'blog-layout' );
+	$blog_layout             = astra_get_blog_layout();
 	$blog_grid               = astra_get_option( 'blog-grid' );
 	$sidebar_default_css     = $content_bg_obj;
 	$is_boxed                = astra_is_content_style_boxed();
