@@ -209,7 +209,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 					'default'           => astra_get_option( $title_section . '-structure' ),
 					'priority'          => 20,
 					'title'             => __( 'Structure', 'astra' ),
-					'divider'           => ( 'post' !== $post_type ) ? array( 'ast_class' => 'ast-top-divider ast-bottom-spacing' ) : array( 'ast_class' => 'ast-bottom-spacing' ),
+					'divider'           => array( 'ast_class' => 'ast-bottom-spacing' ),
 					'choices'           => $archive_structure_choices,
 				),
 
@@ -582,7 +582,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 				),
 				array(
 					'name'              => ASTRA_THEME_SETTINGS . '[' . $title_section . '-banner-padding]',
-					'default'           => astra_get_option( $title_section . '-banner-padding', ( class_exists( 'WooCommerce' ) && 'product' === $post_type ) ? Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-spacing' ) : Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-padding' ) ),
+					'default'           => astra_get_option( $title_section . '-banner-padding', Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-padding' ) ),
 					'type'              => 'control',
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
