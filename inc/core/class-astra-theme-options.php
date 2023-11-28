@@ -167,6 +167,22 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'date',
 					),
 
+					// Search.
+					'section-search-page-title-structure' => array(
+						'section-search-page-title-title',
+					),
+					'section-search-page-title-custom-title'       => __( 'Search Results for:', 'astra' ),
+					'section-search-page-title-custom-description' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'astra' ),
+					'section-search-page-title-title-font-weight'  => $blog_defaults_update ? '600' : '',
+					'section-search-page-title-title-font-size'    => array(
+						'desktop'      => $blog_defaults_update ? 32 : '',
+						'tablet'       => '',
+						'mobile'       => '',
+						'desktop-unit' => 'px',
+						'tablet-unit'  => 'px',
+						'mobile-unit'  => 'px',
+					),
+
 					// Blog.
 					'blog-post-structure'                  => $blog_defaults_update ? array(
 						'image',

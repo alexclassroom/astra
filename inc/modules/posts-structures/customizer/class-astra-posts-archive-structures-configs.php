@@ -755,32 +755,6 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 				/**
 				 * Option: Text Font Size
 				 */
-
-				array(
-					'name'              => $title_section . '-text-font-size',
-					'parent'            => ASTRA_THEME_SETTINGS . '[' . $title_section . '-banner-text-typography-group]',
-					'section'           => $title_section,
-					'type'              => 'sub-control',
-					'control'           => 'ast-responsive-slider',
-					'default'           => astra_get_option( $title_section . '-text-font-size', Astra_Posts_Structure_Loader::get_customizer_default( 'font-size' ) ),
-					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
-					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
-					'suffix'            => array( 'px', 'em' ),
-					'input_attrs'       => array(
-						'px' => array(
-							'min'  => 0,
-							'step' => 1,
-							'max'  => 200,
-						),
-						'em' => array(
-							'min'  => 0,
-							'step' => 1,
-							'max'  => 20,
-						),
-					),
-				),
-
 				array(
 					'name'              => $title_section . '-text-font-size',
 					'parent'            => ASTRA_THEME_SETTINGS . '[' . $title_section . '-banner-text-typography-group]',

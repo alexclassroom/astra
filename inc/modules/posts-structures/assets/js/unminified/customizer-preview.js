@@ -63,6 +63,8 @@ function astra_refresh_customizer( control ) {
 
 	var postTypesCount = AstraPostStrcturesData.post_types.length || false,
 		postTypes = AstraPostStrcturesData.post_types || [],
+		specialsTypesCount = AstraPostStrcturesData.special_pages.length || false,
+		specialsTypes = AstraPostStrcturesData.special_pages || [],
 		tablet_break_point    = AstraPostStrcturesData.tablet_break_point || 768,
 		mobile_break_point    = AstraPostStrcturesData.mobile_break_point || 544;
 
@@ -354,6 +356,147 @@ function astra_refresh_customizer( control ) {
 		astra_css( 'astra-settings[ast-dynamic-archive-' + postType + '-text-font-weight]', 'font-weight', 'body .ast-archive-entry-banner[data-post-type="' + postType + '"], body .ast-archive-entry-banner[data-post-type="' + postType + '"] *, ' + layout1BodySelector + ' .ast-archive-description, ' + layout1BodySelector + ' .ast-archive-description *' );
 		astra_responsive_font_size( 'astra-settings[ast-dynamic-archive-' + postType + '-text-font-size]', 'body .ast-archive-entry-banner[data-post-type="' + postType + '"], body .ast-archive-entry-banner[data-post-type="' + postType + '"] *, ' + layout1BodySelector + ' .ast-archive-description, ' + layout1BodySelector + ' .ast-archive-description *' );
 		astra_font_extras_css( 'ast-dynamic-archive-' + postType + '-text-font-extras', 'body .ast-archive-entry-banner[data-post-type="' + postType + '"] .ast-container *, ' + layout1BodySelector + ' .ast-archive-description *' );
+	}
+
+	/**
+	 * For special pages.
+	 */
+	for ( var index = 0; index < specialsTypesCount; index++ ) {
+		var postType = specialsTypes[ index ],
+			sectionKey = 'section-' + postType + '-page-title',
+			sectionAstraSettingKey = 'astra-settings[' + sectionKey,
+			layoutType = ( undefined !== wp.customize( sectionAstraSettingKey + '-layout]' ) ) ? wp.customize( sectionAstraSettingKey + '-layout]' ).get() : 'both',
+			selector = '.search .ast-archive-entry-banner, .search .ast-archive-description';
+
+		astra_refresh_customizer(
+			sectionAstraSettingKey + '-custom-title]'
+		);
+
+		astra_refresh_customizer(
+			sectionAstraSettingKey + '-custom-description]'
+		);
+
+		astra_dynamic_build_css(
+			sectionKey + '-horizontal-alignment',
+			sectionAstraSettingKey + '-horizontal-alignment]',
+			'text-align',
+			selector
+		);
+
+		astra_dynamic_build_css(
+			sectionKey + '-banner-height',
+			sectionAstraSettingKey + '-banner-height]',
+			'min-height',
+			selector,
+			'px'
+		);
+
+		wp.customize( sectionAstraSettingKey + 'banner-width-type]', function( value ) {
+			value.bind( function( type ) {
+				if ( 'custom' === type ) {
+					jQuery(selector).attr( 'data-banner-width-type', 'custom' );
+					var customWidthSize = wp.customize( sectionAstraSettingKey + 'banner-custom-width]' ).get(),
+						dynamicStyle = '';
+						dynamicStyle += selector + '[data-banner-width-type="custom"] {';
+						dynamicStyle += 'max-width: ' + customWidthSize + 'px;';
+						dynamicStyle += '} ';
+					astra_add_dynamic_css( sectionKey + '-banner-width-type', dynamicStyle );
+				} else {
+					jQuery(selector).attr( 'data-banner-width-type', 'full' );
+				}
+			} );
+		} );
+
+		wp.customize( sectionAstraSettingKey + '-banner-height]', function( value ) {
+			value.bind( function( size ) {
+
+				if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
+					var dynamicStyle = '';
+					dynamicStyle += selector + ' {';
+					dynamicStyle += 'min-height: ' + size.desktop + 'px;';
+					dynamicStyle += '} ';
+
+					dynamicStyle +=  '@media (max-width: ' + tablet_break_point + 'px) {';
+					dynamicStyle += selector + ' {';
+					dynamicStyle += 'min-height: ' + size.tablet + 'px;';
+					dynamicStyle += '} ';
+					dynamicStyle += '} ';
+
+					dynamicStyle +=  '@media (max-width: ' + mobile_break_point + 'px) {';
+					dynamicStyle += selector + ' {';
+					dynamicStyle += 'min-height: ' + size.mobile + 'px;';
+					dynamicStyle += '} ';
+					dynamicStyle += '} ';
+
+					astra_add_dynamic_css( sectionKey + '-banner-height', dynamicStyle );
+				}
+			} );
+		} );
+
+		astra_css(
+			sectionAstraSettingKey + '-vertical-alignment]',
+			'justify-content',
+			selector
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-banner-custom-width]',
+			'max-width',
+			selector + '[data-banner-width-type="custom"]',
+			'px'
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-elements-gap]',
+			'margin-bottom',
+			'.search .ast-archive-description > *:not(:last-child), .search .ast-archive-entry-banner[data-post-type="' + postType + '"] .ast-container > *:not(:last-child)',
+			'px'
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-banner-text-color]',
+			'color',
+			'.search .ast-archive-entry-banner .ast-container *, .search .ast-archive-description *'
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-banner-title-color]',
+			'color',
+			'.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *'
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-banner-link-color]',
+			'color',
+			selector + ' .ast-container a, ' + '.search .ast-archive-description a, .search .ast-archive-entry-banner[data-post-type="' + postType + '"] .ast-container a *, ' + '.search .ast-archive-description a *'
+		);
+
+		astra_css(
+			sectionAstraSettingKey + '-banner-link-hover-color]',
+			'color',
+			selector + ' .ast-container a:hover, ' + '.search .ast-archive-description a:hover, .search .ast-archive-entry-banner[data-post-type="' + postType + '"] .ast-container a:hover *, ' + '.search .ast-archive-description a:hover *'
+		);
+
+		astra_apply_responsive_background_css( sectionAstraSettingKey + '-banner-custom-bg]', '.search .ast-archive-entry-banner[data-banner-background-type="custom"], .search .ast-archive-description', 'desktop' );
+		astra_apply_responsive_background_css( sectionAstraSettingKey + '-banner-custom-bg]', '.search .ast-archive-entry-banner[data-banner-background-type="custom"], .search .ast-archive-description', 'tablet' );
+		astra_apply_responsive_background_css( sectionAstraSettingKey + '-banner-custom-bg]', '.search .ast-archive-entry-banner[data-banner-background-type="custom"], .search .ast-archive-description', 'mobile' );
+
+		astra_responsive_spacing( sectionAstraSettingKey + '-banner-padding]', selector + ' .ast-container, ' + '.search .ast-archive-description', 'padding',  ['top', 'right', 'bottom', 'left' ] );
+		astra_responsive_spacing( sectionAstraSettingKey + '-banner-margin]', selector + ', ' + '.search .ast-archive-description', 'margin',  ['top', 'right', 'bottom', 'left' ] );
+
+		// Banner - Title.
+		astra_generate_outside_font_family_css( sectionAstraSettingKey + '-title-font-family]', '.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-description .ast-archive-title, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *' );
+		astra_generate_font_weight_css( sectionAstraSettingKey + '-title-font-family]', sectionAstraSettingKey + '-title-font-weight]', 'font-weight', '.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-description .ast-archive-title, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *' );
+		astra_css( sectionAstraSettingKey + '-title-font-weight]', 'font-weight',  '.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-description .ast-archive-title, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *' );
+		astra_responsive_font_size( sectionAstraSettingKey + '-title-font-size]', '.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-description .ast-archive-title, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *' );
+		astra_font_extras_css( sectionKey + '-title-font-extras', '.search .ast-archive-entry-banner .ast-container h1, .search .ast-archive-description h1, .search .ast-archive-description .ast-archive-title, .search .ast-archive-entry-banner .ast-container h1 *, .search .ast-archive-description h1 *' );
+
+		// Banner - Text.
+		astra_generate_outside_font_family_css( sectionAstraSettingKey + '-text-font-family]',  '.search .ast-archive-description *, .search .ast-archive-entry-banner .ast-container *' );
+		astra_generate_font_weight_css( sectionAstraSettingKey + '-text-font-family]', sectionAstraSettingKey + '-text-font-weight]', 'font-weight', '.search .ast-archive-description *, .search .ast-archive-entry-banner .ast-container *' );
+		astra_css( sectionAstraSettingKey + '-text-font-weight]', 'font-weight', '.search .ast-archive-description *, .search .ast-archive-entry-banner .ast-container *' );
+		astra_responsive_font_size( sectionAstraSettingKey + '-text-font-size]', '.search .ast-archive-description *, .search .ast-archive-entry-banner .ast-container *' );
+		astra_font_extras_css( sectionKey + '-text-font-extras', '.search .ast-archive-description *, .search .ast-archive-entry-banner .ast-container *' );
 	}
 
 } )( jQuery );

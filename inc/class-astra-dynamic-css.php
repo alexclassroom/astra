@@ -1089,7 +1089,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			/* Parse CSS from array() */
 			$parse_css .= astra_parse_css( $css_output );
-			
+
 			if ( defined( 'BORLABS_COOKIE_VERSION' ) ) {
 				$oembed_wrapper = array(
 					'body .ast-oembed-container > *' => array(
@@ -1099,7 +1099,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'height'   => '100%',
 						( $is_site_rtl ? 'right' : 'left' ) => '0',
 					),
-				);                                       
+				);
 			} else {
 				$oembed_wrapper = array(
 					'body .ast-oembed-container *' => array(
@@ -1109,11 +1109,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'height'   => '100%',
 						( $is_site_rtl ? 'right' : 'left' ) => '0',
 					),
-				);         
+				);
 			}
 
-			$parse_css .= astra_parse_css( $oembed_wrapper );  
-			
+			$parse_css .= astra_parse_css( $oembed_wrapper );
+
 			if ( ! Astra_Builder_Helper::$is_header_footer_builder_active ) {
 
 				$old_header_mobile_toggle = array(

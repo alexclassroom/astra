@@ -950,19 +950,29 @@ function astra_use_dynamic_blog_layouts() {
  * @since 4.0.0
  */
 function astra_get_taxonomy_banner_legacy_layout() {
+	$post_type        = strval( get_post_type() );
+	$banner_structure = is_search() ? astra_get_option( 'section-search-page-title-structure', array( 'section-search-page-title-title' ) ) : astra_get_option( 'ast-dynamic-archive-' . $post_type . '-structure', array( 'ast-dynamic-archive-' . $post_type . '-title', 'ast-dynamic-archive-' . $post_type . '-description' ) );
+
+	if ( empty( $banner_structure ) ) {
+		return;
+	}
+
 	?>
 		<section class="ast-archive-description">
 			<?php
-				$post_type        = strval( get_post_type() );
-				$banner_structure = astra_get_option( 'ast-dynamic-archive-' . $post_type . '-structure', array( 'ast-dynamic-archive-' . $post_type . '-title', 'ast-dynamic-archive-' . $post_type . '-description' ) );
 			foreach ( $banner_structure as $metaval ) {
 				$meta_key = 'archive-' . astra_get_last_meta_word( $metaval );
 				switch ( $meta_key ) {
 					case 'archive-title':
 						do_action( 'astra_before_archive_title' );
-						add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
-						the_archive_title( '<h1 class="page-title ast-archive-title">', '</h1>' );
-						remove_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+						if ( is_search() ) {
+							$title = apply_filters( 'astra_the_search_page_title', sprintf( /* translators: 1: search string */ __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
+							?> <h1 class="page-title ast-archive-title"> <?php echo $title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </h1> <?php
+						} else {
+							add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+							the_archive_title( '<h1 class="page-title ast-archive-title">', '</h1>' );
+							remove_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+						}
 						do_action( 'astra_after_archive_title' );
 						break;
 					case 'archive-breadcrumb':
@@ -974,7 +984,11 @@ function astra_get_taxonomy_banner_legacy_layout() {
 						break;
 					case 'archive-description':
 						do_action( 'astra_before_archive_description' );
-						echo wp_kses_post( wpautop( get_the_archive_description() ) );
+						if ( is_search() ) {
+							echo wp_kses_post( wpautop( astra_get_option( 'section-search-page-title-custom-description' ) ) );
+						} else {
+							echo wp_kses_post( wpautop( get_the_archive_description() ) );
+						}
 						do_action( 'astra_after_archive_description' );
 						break;
 				}
@@ -1019,23 +1033,6 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 
 				<?php
 
-				// Search.
-			} elseif ( is_search() ) {
-				?>
-
-				<section class="ast-archive-description">
-					<?php do_action( 'astra_before_archive_title' ); ?>
-					<?php
-						/* translators: 1: search string */
-						$title = apply_filters( 'astra_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
-					?>
-					<h1 class="page-title ast-archive-title"> <?php echo $title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </h1>
-					<?php do_action( 'astra_after_archive_title' ); ?>
-				</section>
-
-				<?php
-
-				// Other.
 			} else {
 				echo wp_kses_post( astra_get_taxonomy_banner_legacy_layout() );
 			}

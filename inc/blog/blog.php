@@ -449,8 +449,10 @@ function astra_get_archive_description( $post_type ) {
 		return $description;
 	}
 
-	if ( ! is_search() ) {
-
+	if ( is_search() ) {
+		$description = astra_get_option( 'section-search-page-title-custom-description', '' );
+		return $description;
+	} else {
 		$get_archive_description = get_the_archive_description();
 		$get_author_meta         = trim( get_the_author_meta( 'description' ) );
 
@@ -488,9 +490,13 @@ function astra_banner_elements_order( $structure = array() ) {
 		return;
 	}
 
-	global $post;
-	if ( is_null( $post ) ) {
-		return;
+	$post_type = '';
+	if ( ! is_search() ) {
+		global $post;
+		if ( is_null( $post ) ) {
+			return;
+		}
+		$post_type = strval( $post->post_type );
 	}
 
 	// If Blog / Latest Post page is active then looping required structural order.
@@ -498,10 +504,8 @@ function astra_banner_elements_order( $structure = array() ) {
 		return astra_blog_post_thumbnail_and_title_order();
 	}
 
-	$post_type = strval( $post->post_type );
-
 	$prefix      = 'archive';
-	$structure   = astra_get_option( 'ast-dynamic-' . $prefix . '-' . $post_type . '-structure', array( 'ast-dynamic-' . $prefix . '-' . $post_type . '-title', 'ast-dynamic-' . $prefix . '-' . $post_type . '-description' ) );
+	$structure   = empty( $structure ) ? astra_get_option( 'ast-dynamic-' . $prefix . '-' . $post_type . '-structure', array( 'ast-dynamic-' . $prefix . '-' . $post_type . '-title', 'ast-dynamic-' . $prefix . '-' . $post_type . '-description' ) ) : $structure;
 	$layout_type = astra_get_option( 'ast-dynamic-' . $prefix . '-' . $post_type . '-layout', 'layout-1' );
 
 	if ( is_singular() ) {
