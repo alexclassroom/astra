@@ -1,0 +1,399 @@
+/** Layout **/
+.ast-theme-builder #adminmenuback,
+.ast-theme-builder #adminmenumain,
+.ast-theme-builder #adminmenuwrap,
+.ast-theme-builder #wpadminbar,
+.ast-theme-builder #wpfooter {
+	display: none;
+}
+
+.ast-theme-builder #wpcontent {
+	margin: 0px;
+	padding: 0px;
+}
+
+.ast-tb-app {
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+	position: absolute;
+	border-radius: 0;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+}
+.ast-tb-main {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+	overflow: hidden;
+	flex-grow: 1;
+}
+
+/** Header **/
+.ast-tb-header {
+	min-height: 64px;
+	background-color: white;
+	padding-left: 24px;
+	padding-right: 24px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid var(--dashboard-border-primary, #dce0e6);
+}
+
+.ast-tb-header-items {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	width: 99%;
+}
+
+.ast-tb-main-title {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+	border-right: 1px solid #e2e8f0;
+	border-left: 1px solid #e2e8f0;
+	padding: 0 20px 0 20px;
+}
+
+.ast-tb-breadcrumbs {
+	color: #4b5563;
+	font-size: 13.081px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 23.546px;
+}
+
+.ast-tb-crumb-icon {
+	padding: 0 8px 0 8px;
+}
+
+/** Sidebar **/
+.ast-tb-sidebar {
+	border-right: 1px solid #e5e7eb;
+	background: #fff;
+	min-width: 280px;
+	height: 100%;
+	top: 65px;
+	background-color: white;
+	padding: 40px 20px 40px 20px;
+}
+
+.ast-tb-sidebar-header {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 40px;
+	padding-left: 10px;
+	cursor: pointer;
+	justify-content: space-between;
+}
+
+.ast-tb-sidebar-header-left {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ast-tb-sidebar-header-right {
+	display: flex;
+	align-items: center;
+}
+
+.ast-tb-sidebar-header-right > svg {
+	width: 14px;
+	position: relative;
+	right: 20px;
+}
+
+.ast-tb-sidebar-header:hover {
+	background: #eff6ff;
+}
+
+.ast-tb-sidebar-header > h2 {
+	color: #1e293b;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.ast-tb-sidebar-subtitle {
+	margin-bottom: 30px;
+}
+.ast-tb-sidebar-subtitle > h3 {
+	color: #1e293b;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.ast-tb-sidebar-item {
+	display: flex;
+	align-items: center;
+	padding: 12px 8px 10px 8px;
+	gap: 8px;
+	cursor: pointer;
+	justify-content: space-between;
+	max-height: 28px;
+}
+
+.ast-tb-sidebar-item:hover {
+	background: #eff6ff;
+}
+
+.ast-tb-sidebar-item-selected {
+	background: #eff6ff;
+}
+
+.ast-tb-sidebar-item-label {
+	color: #1e293b;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px;
+	padding-bottom: 2px;
+}
+
+.ast-tb-sidebar-item-svg {
+	position: relative;
+	right: 30px;
+}
+
+.ast-tb-all-layouts-btn {
+	cursor: pointer;
+}
+
+/** Canvas **/
+.ast-tb-canvas {
+	flex-grow: 1;
+	position: relative;
+	height: 100%;
+	overflow-y: auto;
+	padding: 40px;
+}
+
+.ast-tb-canvas-header > h2 {
+	color: #000;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 28px; /* 140% */
+	letter-spacing: -0.4px;
+}
+
+.ast-tb-canvas-header {
+	border-bottom: 1px solid #d1d5db;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ast-tb-card {
+	border-radius: 4px;
+	border: 1px solid #f9fafb;
+	/* Post Shadow */
+	box-shadow: 0px 6px 15px -2px rgba(16, 24, 40, 0.05);
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	padding-top: 15px;
+	max-width: 200px;
+	max-height: 240px;
+}
+
+.ast-tb-card-title-wrapper {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+h3.ast-tb-create-new-card-title {
+	margin-left: 5%;
+}
+
+.ast-tb-canvas-content-row {
+	margin-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+}
+
+.ast-tb-canvas-body {
+	margin-bottom: 100px;
+}
+
+/** Card **/
+.ast-tb-card-svg-icon {
+	height: 200px;
+}
+
+.ast-tb-card-title {
+	color: #1e293b;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	margin: 0;
+}
+
+.ast-tb-card-title-wrapper {
+	display: flex;
+	width: 120%;
+	margin-top: 15px;
+	border-top: 1px solid #e9e9e9;
+	padding-top: 10px;
+}
+
+.ast-tb-card-title-wrapper > svg {
+	margin-left: 5%;
+}
+
+.ast-tb-canvas-content-row-flex {
+	margin-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+}
+
+.ast-tb-category-parent {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.ast-tb-category-parent:last-child {
+	margin-bottom: 100px;
+}
+
+.ast-tb-btn {
+	display: flex;
+	padding: 8px 14px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	border-radius: 6px;
+	border: 1px #046bd2;
+	background: #046bd2;
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	color: #fff;
+	height: 35px;
+	cursor: pointer;
+}
+
+.ast-tb-card-hover-btn {
+	border-radius: 4px;
+	border: 1px solid #046bd2;
+	background: #046bd2;
+	box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.06),
+		0px 4px 8px -2px rgba(0, 0, 0, 0.1);
+	display: flex;
+	padding: 8px 20px 8px 12px;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	color: #fff;
+	height: 35px;
+	width: 150px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+.ast-tb-card-hover-btn:hover {
+	background: #035fbc;
+}
+.ast-tb-btn:hover {
+	background: #035fbc;
+}
+
+.ast-tb-card-parent {
+	position: relative;
+}
+
+.ast-tb-link,
+.ast-tb-link:focus,
+.ast-tb-link:hover,
+.ast-tb-link:active {
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+}
+
+.ast-tb-locked {
+	position: absolute;
+	top: 30%;
+	left: 35%;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	z-index: 3;
+}
+
+.ast-tb-locked > svg {
+	width: 25px;
+}
+
+.ast-tb-locked button {
+	width: 80px;
+	padding: 8px 8px 8px 8px;
+	cursor: pointer;
+}
+
+.ast-tb-sidebar-item-left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.ast-tb-sidebar-item-right svg {
+	width: 14px;
+	color: #3C434A;
+	position: relative;
+	right: 20px;
+}
+
+.ast-tb-sidebar-help {
+	bottom: 40px;
+	display: flex;
+	align-items: center;
+	padding: 12px 8px 10px 8px;
+	gap: 8px;
+	cursor: pointer;
+	min-width: 265px;
+	justify-content: flex-start;
+}
+
+.ast-tb-card-blur-on-hover {
+	filter: blur(2.5px);
+}
+
+.ast-tb-breadcrumb-icon {
+	position: relative;
+	top: 2px;
+}
+
+.ast-tb-card-icon-wrapper-hover {
+	filter: blur(2.5px);
+}
+
+.ast-tb-help-divider {
+	width: 100%;
+	border-top: 1px solid #E2E8F0;
+    margin-top: 24px;
+	margin-bottom: 16px;
+}
+
+.ast-tb-header-close {
+	cursor: pointer;
+}

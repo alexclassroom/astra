@@ -8,6 +8,9 @@
   /**
      * Fade
      */
+  /**
+    * Submenu should be visible while navigating site using tab keys.
+    */
 }
 
 .ast-desktop .astra-menu-animation-slide-up > .menu-item > .astra-full-megamenu-wrapper,
@@ -87,4 +90,9 @@
 .ast-desktop .astra-menu-animation-fade > .full-width-mega.menu-item:hover > .astra-full-megamenu-wrapper {
   -js-display: flex;
   display: flex;
+}
+
+.ast-desktop .menu-item.ast-menu-hover > .sub-menu.toggled-on {
+  opacity: 1;
+  visibility: visible;
 }

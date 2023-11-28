@@ -774,6 +774,18 @@ function astra_button_default_padding_updated() {
 }
 
 /**
+ * Check whether user is existing or new to apply the updated default values for secondary button padding.
+ *
+ * @since x.x.x
+ * @return string
+ */
+function astra_scndry_btn_default_padding() {
+	$astra_settings  = get_option( ASTRA_THEME_SETTINGS, array() );
+	$padding_updated = isset( $astra_settings['scndry-btn-default-padding'] ) ? $astra_settings['scndry-btn-default-padding'] : true;
+	return apply_filters( 'astra_update_secondary_button_padding_defaults', $padding_updated );
+}
+
+/**
  * Check is WordPress version is greater than or equal to beta 5.8 version.
  *
  * @since 3.6.5
@@ -1247,11 +1259,11 @@ function astra_get_queried_post_types() {
  * Get Global Color Palette's presets
  *
  * @return array color presets array.
- * @since x.x.x
+ * @since 4.5.0
  */
 function astra_get_palette_presets() {
 	return array(
-		'preset_1' => array(
+		'preset_1'  => array(
 			'#0067FF',
 			'#005EE9',
 			'#0F172A',
@@ -1262,7 +1274,7 @@ function astra_get_palette_presets() {
 			'#070614',
 			'#222222',
 		),
-		'preset_2' => array(
+		'preset_2'  => array(
 			'#6528F7',
 			'#5511F8',
 			'#0F172A',
@@ -1273,7 +1285,7 @@ function astra_get_palette_presets() {
 			'#0D0614',
 			'#222222',
 		),
-		'preset_3' => array(
+		'preset_3'  => array(
 			'#DD183B',
 			'#CC1939',
 			'#0F172A',
@@ -1284,7 +1296,7 @@ function astra_get_palette_presets() {
 			'#140609',
 			'#222222',
 		),
-		'preset_4' => array(
+		'preset_4'  => array(
 			'#54B435',
 			'#379237',
 			'#0F172A',
@@ -1295,7 +1307,7 @@ function astra_get_palette_presets() {
 			'#0C1406',
 			'#222222',
 		),
-		'preset_5' => array(
+		'preset_5'  => array(
 			'#DCA54A',
 			'#D09A40',
 			'#0F172A',
@@ -1306,7 +1318,7 @@ function astra_get_palette_presets() {
 			'#141004',
 			'#222222',
 		),
-		'preset_6' => array(
+		'preset_6'  => array(
 			'#FB5FAB',
 			'#EA559D',
 			'#0F172A',
@@ -1317,7 +1329,7 @@ function astra_get_palette_presets() {
 			'#140610',
 			'#222222',
 		),
-		'preset_7' => array(
+		'preset_7'  => array(
 			'#1B9C85',
 			'#178E79',
 			'#0F172A',
@@ -1328,7 +1340,7 @@ function astra_get_palette_presets() {
 			'#06140C',
 			'#222222',
 		),
-		'preset_8' => array(
+		'preset_8'  => array(
 			'#FD9800',
 			'#E98C00',
 			'#0F172A',
@@ -1339,7 +1351,7 @@ function astra_get_palette_presets() {
 			'#141006',
 			'#222222',
 		),
-		'preset_9' => array(
+		'preset_9'  => array(
 			'#FF6210',
 			'#F15808',
 			'#1C0D0A',

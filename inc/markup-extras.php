@@ -194,8 +194,8 @@ function astra_is_content_style_boxed( $post_id = false ) {
 		// Get global content style if third party is default.
 		$global_content_style = ( 'default' === $third_party_content_style || empty( $third_party_content_style ) ) ? $global_content_style : $third_party_content_style;
 
-		// Woo Cart & Checkout Page.
-		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) ) {
+		// Woo Cart & Checkout Page
+		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) && empty( $meta_content_style ) ) {
 			return ( 'boxed' === $global_content_style );
 		}
 
@@ -301,8 +301,8 @@ function astra_is_sidebar_style_boxed( $post_id = false ) {
 		// Get global sidebar style if third party is default.
 		$global_sidebar_style = ( 'default' === $third_party_sidebar_style || empty( $third_party_sidebar_style ) ) ? $global_sidebar_style : $third_party_sidebar_style;
 
-		// Woo Cart & Checkout Page.
-		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) ) {
+		// Woo Cart & Checkout Page
+		if ( 'woocommerce' === $third_party && ( is_cart() || is_checkout() ) && empty( $meta_sidebar_style ) ) {
 			return ( 'boxed' === $global_sidebar_style );
 		}
 
@@ -1885,6 +1885,9 @@ if ( ! function_exists( 'astra_replace_header_attr' ) ) :
 			if ( 'svg' == $file_extension ) {
 				$existing_classes = isset( $attr['class'] ) ? $attr['class'] : '';
 				$attr['class']    = $existing_classes . ' astra-logo-svg';
+			}
+			if ( 'gif' === $file_extension ) {
+				$attr['srcset'] = $attachment->guid;
 			}
 		}
 

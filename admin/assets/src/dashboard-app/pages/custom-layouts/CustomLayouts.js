@@ -62,11 +62,11 @@ const CustomLayouts = () => {
 								className="text-2xl font-semibold leading-7 text-slate-800"
 								id="modal-title"
 							>
-								{ __( 'Custom Layouts', 'astra' ) }
+								{ __( 'Site Builder', 'astra' ) }
 							</h4>
 							<div className="mt-2">
 								<p className="text-sm leading-[1.375rem] text-slate-500 text-center">
-									{ __( 'Upgrade to Astra Pro to get access to Custom Layouts, which allow you to create a unique header, footer, 404 pages, and custom content.', 'astra' ) }
+									{ __( 'Upgrade to Astra Pro to get access to the Site Builder, which allow you to create a unique header, footer, 404 pages, and custom content.', 'astra' ) }
 								</p>
 							</div>
 							{

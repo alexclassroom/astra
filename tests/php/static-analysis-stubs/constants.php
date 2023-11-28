@@ -17,3 +17,5 @@ define( 'ASTRA_THEME_POST_STRUCTURE_URI', '' );
 define( 'ASTRA_SCROLL_TO_TOP_DIR', '' );
 define( 'ASTRA_SCROLL_TO_TOP_URL', '' );
 define( 'ASTRA_PRO_CUSTOMIZER_UPGRADE_URL', '' );
+define( 'ASTRA_THEME_BUILDER_FREE_DIR', ASTRA_THEME_DIR . 'admin/assets/theme-builder/' );
+define( 'ASTRA_THEME_BUILDER_FREE_URI', ASTRA_THEME_URI . 'admin/assets/theme-builder/' );

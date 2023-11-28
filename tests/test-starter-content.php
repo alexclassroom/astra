@@ -21,11 +21,11 @@ class Tests_Astra_StarterContent extends WP_UnitTestCase {
 
 		$hydrated_starter_content = $astra_starter_content->get();
 
-		$this->assertSame( "{{logo}}", $hydrated_starter_content['theme_mods']['custom_logo'] );
-		$this->assertSame( "page", $hydrated_starter_content['options']['show_on_front'] );
-		$this->assertSame( "Logo", $hydrated_starter_content['attachments']['logo']['post_title'] );
-		$this->assertSame( "Primary", $hydrated_starter_content['nav_menus']['primary']['name'] );
-		$this->assertSame( "Primary", $hydrated_starter_content['nav_menus']['mobile_menu']['name'] );
-		$this->assertSame( "inc/assets/images/starter-content/logo.png", $hydrated_starter_content['attachments']['logo']['file'] );
+		$this->assertSame( '{{logo}}', $hydrated_starter_content['theme_mods']['custom_logo'] );
+		$this->assertSame( 'page', $hydrated_starter_content['options']['show_on_front'] );
+		$this->assertSame( 'Logo', $hydrated_starter_content['attachments']['logo']['post_title'] );
+		$this->assertSame( 'Primary', $hydrated_starter_content['nav_menus']['primary']['name'] );
+		$this->assertSame( 'Primary', $hydrated_starter_content['nav_menus']['mobile_menu']['name'] );
+		$this->assertSame( 'inc/assets/images/starter-content/logo.png', $hydrated_starter_content['attachments']['logo']['file'] );
 	}
 }

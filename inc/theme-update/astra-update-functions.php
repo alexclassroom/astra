@@ -1479,9 +1479,9 @@ function astra_theme_background_updater_4_4_0() {
 }
 
 /**
- * Handle backward compatibility on version x.x.x
+ * Handle backward compatibility on version 4.5.0.
  *
- * @since x.x.x
+ * @since 4.5.0
  * @return void
  */
 function astra_theme_background_updater_4_5_0() {
@@ -1496,6 +1496,21 @@ function astra_theme_background_updater_4_5_0() {
 			update_option( 'astra-color-palettes', $palette_options );
 		}
 
+		update_option( 'astra-settings', $theme_options );
+	}
+}
+
+/**
+ * Handle backward compatibility on version 4.5.2.
+ *
+ * @since x.x.x
+ * @return void
+ */
+function astra_theme_background_updater_4_5_2() {
+	$theme_options = get_option( 'astra-settings', array() );
+
+	if ( ! isset( $theme_options['scndry-btn-default-padding'] ) ) {
+		$theme_options['scndry-btn-default-padding'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}
 }

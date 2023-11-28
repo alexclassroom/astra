@@ -1,8 +1,25 @@
 v4.6.0 (Unreleased)
+- New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
 - New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
 - New: Related Posts - Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for featured image meta.
+- Improvement: Improved accessibility by adding aria-label and title attributes to the shopping cart link.
+- Improvement: Secondary Button Styles - Padding default values updated for Page Builder button's support.
+- Fix: Secondary Button Styles - Background color option does not apply background color to outline button as expected.
+- Fix: Header Builder - After resizing the GIF stops working on the frontend as a site logo.
+- Fix: Submenu animation not working while navigating site using tab key.
+- Fix: Broken UI fix for YouTube block with BorLabs cookie plugin.
 
-v4.5.0 (Unreleased)
+v4.5.1
+- Improvement: Compatibility with WooCommerce 8.3.
+- Improvement: Introducing a new filter 'astra_embed_wrapper_class' to add a class to the iframe wrapper for embed blocks.
+- Fix: Function parameter value was wrong in 'responsive_oembed_wrapper' callback while processing embed blocks iframe. (Props: https://github.com/IngoWinter)
+- Fix: Embed block (Twitter, SoundCloud, Spotify) does not appear on the frontend.
+- Fix: Customizer - Avoid premature closing of Gradient Color Picker.
+- Fix: WooCommerce - Container related meta are settings not working on Cart & Checkout Page.
+- Fix: Submenu border width of old header footer builder causing site crashing issue.
+
+v4.5.0
+- New: Introducing Site Builder theme preview (formerly known as Custom Layout).
 - New: Introducing fresh color presets to supercharge your site design.
 - Fix: Footer Builder - Above and Below Footer vertical alignment options are not working.
 - Fix: EDD - Mini cart widget UI broken in the RTL mode.
