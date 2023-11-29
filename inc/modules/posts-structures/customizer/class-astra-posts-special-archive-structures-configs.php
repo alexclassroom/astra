@@ -728,25 +728,44 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 						'step' => 1,
 						'max'  => 500,
 					),
-					'divider'      => array( 'ast_class' => ( $if_astra_addon ) ? 'ast-top-dotted-divider' : 'ast-top-section-divider' ),
+					'divider'      => array( 'ast_class' => 'ast-top-dotted-divider ast-bottom-section-divider' ),
 				),
 
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-layout-width]',
-					'default'    => astra_get_option( 'ast-' . $special_type . '-layout-width', 'default' ),
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'section'    => $section,
-					'priority'   => 50,
-					'transport'  => 'postMessage',
-					'title'      => __( 'Content Width', 'astra' ),
-					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'custom'  => __( 'Custom', 'astra' ),
+					'name'     => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search]',
+					'default'  => astra_get_option( 'ast-' . $special_type . '-live-search' ),
+					'type'     => 'control',
+					'control'  => 'ast-toggle-control',
+					'section'      => $section,
+					'description'       => __( 'This option activates Live Search support for the search box on the no results page.', 'astra' ),
+					'title'    => __( 'Live Search', 'astra' ),
+					'priority' => 15,
+					'context'  => Astra_Builder_Helper::$general_tab,
+				),
+
+				array(
+					'name'        => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search-post-types]',
+					'default'     => astra_get_option( 'ast-' . $special_type . '-live-search-post-types' ),
+					'type'        => 'control',
+					'section'      => $section,
+					'control'     => 'ast-multi-selector',
+					'priority'    => 15,
+					'title'       => __( 'Search Within Post Types', 'astra' ),
+					'context'     => array(
+						Astra_Builder_Helper::$general_tab_config,
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search]',
+							'operator' => '==',
+							'value'    => true,
+						),
 					),
-					'responsive' => false,
-					'renderAs'   => 'text',
-					'divider'    => array( 'ast_class' => 'ast-top-section-divider' ),
+					'transport'   => 'refresh',
+					'choices'     => astra_customizer_search_post_types_choices(),
+					'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'renderAs'    => 'text',
+					'input_attrs' => array(
+						'stack_after' => 2, // Currently stack options supports after 2 & 3.
+					),
 				),
 			);
 

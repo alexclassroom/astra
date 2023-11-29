@@ -29,7 +29,7 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 	$current_post_type    = strval( get_post_type() );
 	$supported_post_types = Astra_Posts_Structure_Loader::get_supported_post_types();
 
-	if ( ! in_array( $current_post_type, $supported_post_types ) ) {
+	if ( is_search() || ! in_array( $current_post_type, $supported_post_types ) ) {
 		return $dynamic_css;
 	}
 	if ( false === astra_get_option( 'ast-archive-' . $current_post_type . '-title', ( class_exists( 'WooCommerce' ) && 'product' === $current_post_type ) ? false : true ) ) {

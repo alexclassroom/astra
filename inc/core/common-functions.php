@@ -951,7 +951,7 @@ function astra_use_dynamic_blog_layouts() {
  */
 function astra_get_taxonomy_banner_legacy_layout() {
 	$post_type        = strval( get_post_type() );
-	$banner_structure = is_search() ? astra_get_option( 'section-search-page-title-structure', array( 'section-search-page-title-title' ) ) : astra_get_option( 'ast-dynamic-archive-' . $post_type . '-structure', array( 'ast-dynamic-archive-' . $post_type . '-title', 'ast-dynamic-archive-' . $post_type . '-description' ) );
+	$banner_structure = is_search() ? astra_get_option( 'section-search-page-title-structure' ) : astra_get_option( 'ast-dynamic-archive-' . $post_type . '-structure', array( 'ast-dynamic-archive-' . $post_type . '-title', 'ast-dynamic-archive-' . $post_type . '-description' ) );
 
 	if ( empty( $banner_structure ) ) {
 		return;

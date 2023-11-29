@@ -54,7 +54,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 		}
 
 		$elements_gap   = astra_get_option( $title_section . '-elements-gap', 10 );
-		$banner_padding = astra_get_option( $title_section . '-banner-padding', ( class_exists( 'WooCommerce' ) && 'product' === $current_post_type ) ? Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-spacing' ) : Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-padding' ) );
+		$banner_padding = astra_get_option( $title_section . '-banner-padding', Astra_Posts_Structure_Loader::get_customizer_default( 'responsive-padding' ) );
 		$banner_margin  = astra_get_option( $title_section . '-banner-margin' );
 
 		$banner_height      = astra_get_option( $title_section . '-banner-height' );

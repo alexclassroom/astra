@@ -168,7 +168,10 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					),
 
 					// Search.
-					'section-search-page-title-structure' => array(
+					'section-search-page-title-structure' => $blog_defaults_update ? array(
+						'section-search-page-title-title',
+						'section-search-page-title-breadcrumb',
+					) : array(
 						'section-search-page-title-title',
 					),
 					'section-search-page-title-custom-title'       => __( 'Search Results for:', 'astra' ),
@@ -181,6 +184,21 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'desktop-unit' => 'px',
 						'tablet-unit'  => 'px',
 						'mobile-unit'  => 'px',
+					),
+					'ast-search-results-per-page'                   => 10,
+					'section-search-page-title-horizontal-alignment' => $blog_defaults_update ? array(
+						'desktop' => 'center',
+						'tablet'  => 'center',
+						'mobile'  => 'center',
+					) : array(
+						'desktop' => '',
+						'tablet'  => '',
+						'mobile'  => '',
+					),
+					$defaults['ast-search-live-search']            = false,
+					$defaults['ast-search-live-search-post-types'] = array(
+						'post' => 1,
+						'page' => 1,
 					),
 
 					// Blog.

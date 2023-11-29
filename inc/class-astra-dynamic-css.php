@@ -1178,7 +1178,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			}
 
 			$live_search_enabled = astra_get_option( 'live-search', false );
-			if ( true === Astra_Builder_Helper::$is_header_footer_builder_active && Astra_Builder_Helper::is_component_loaded( 'search', 'header' ) && $live_search_enabled ) {
+			if ( ( true === Astra_Builder_Helper::$is_header_footer_builder_active && Astra_Builder_Helper::is_component_loaded( 'search', 'header' ) && $live_search_enabled ) || ( is_search() && true === astra_get_option( 'ast-search-live-search' ) ) ) {
 				// Live search CSS.
 				require_once ASTRA_THEME_DIR . 'inc/dynamic-css/live-search.php'; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			}
@@ -2220,6 +2220,30 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					$default_layout_update_css['.site-content section.ast-archive-description']         = array(
 						'margin-bottom' => '2em',
 					);
+
+					// Search page.
+					if ( is_search() ) {
+						$default_layout_update_css['.no-results']         = array(
+							'text-align' => 'center',
+						);
+						$default_layout_update_css['.no-results .search-form']         = array(
+							'max-width' => '370px',
+							'margin' => '0 auto',
+						);
+						$default_layout_update_css['.no-results .search-field']         = array(
+							'width' => '100%',
+						);
+						$default_layout_update_css['.search .site-main .no-results .ast-search-submit']         = array(
+							'display' => 'block',
+						);
+						$default_layout_update_css['.search .ast-live-search-results']         = array(
+							'max-height' => '200px',
+						);
+						$default_layout_update_css['.search-no-results .site-content .ast-archive-description, .search-no-results .site-content .no-results']         = array(
+							'max-width' => 'var(--ast-narrow-container-width)',
+							'margin'    => '0 auto 2em',
+						);
+					}
 				}
 				/* Parse CSS from array() -> Desktop CSS */
 				$parse_css .= astra_parse_css( $default_layout_update_css );
