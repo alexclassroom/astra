@@ -2239,10 +2239,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						$default_layout_update_css['.search .ast-live-search-results']         = array(
 							'max-height' => '200px',
 						);
-						$default_layout_update_css['.search-no-results .site-content .ast-archive-description, .search-no-results .site-content .no-results']         = array(
-							'max-width' => 'var(--ast-narrow-container-width)',
-							'margin'    => '0 auto 2em',
-						);
 					}
 				}
 				/* Parse CSS from array() -> Desktop CSS */
