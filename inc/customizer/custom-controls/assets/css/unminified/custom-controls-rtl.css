@@ -1811,7 +1811,7 @@ input[type="text"].select2-search__field {
 }
 
 .customize-control.customize-control-ast-section-toggle {
-    border: 1px dashed var(--ast-customizer-color-7);
+    border: 1px dashed var(--ast-customizer-color-1);
     background: var(--ast-customizer-color-11);
     cursor: pointer;
     box-shadow: none !important;
@@ -1828,6 +1828,7 @@ input[type="text"].select2-search__field {
     padding-top: 0;
     padding-bottom: 0;
 	margin-bottom: 9px;
+	margin-top: 24px;
 }
 .customize-control.customize-control-ast-section-toggle:hover {
     background: var(--ast-customizer-color-9);
@@ -1843,10 +1844,11 @@ input[type="text"].select2-search__field {
 }
 
 .ast-section-toggle-icon span {
-  font-size: 16px;
-  line-height: 20px;
+	font-size: 16px;
+	line-height: 20px;
 	width: 16px;
 	height: 16px;
+	margin-top: -4px;
 }
 
 .customize-control-ast-section-toggle {
