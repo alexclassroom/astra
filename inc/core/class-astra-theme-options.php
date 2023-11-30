@@ -176,10 +176,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'excerpt',
 					) : array(
 						'image',
-						'title',
 						'title-meta',
-						'excerpt',
-						'read-more',
 					),
 					'blog-post-per-page'                   => $post_per_page ? $post_per_page : 10,
 					'blog-hover-effect'                    => $blog_defaults_update ? 'zoom-in' : 'none',
@@ -637,7 +634,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'mobile-unit'  => 'px',
 					),
 					'body-font-extras'                     => array(
-						'line-height'         => ! isset( $astra_options['body-font-extras'] ) && isset( $astra_options['body-line-height'] ) ? $astra_options['body-line-height'] : '1.6',
+						'line-height'         => ! isset( $astra_options['body-font-extras'] ) && isset( $astra_options['body-line-height'] ) ? $astra_options['body-line-height'] : '1.65',
 						'line-height-unit'    => 'em',
 						'letter-spacing'      => '',
 						'letter-spacing-unit' => 'px',

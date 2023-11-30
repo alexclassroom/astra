@@ -37,7 +37,7 @@
 	> .cat-links, > .tags-links, > .read-more {
 		display: block;
 		margin-bottom: .8em;
-		font-weight: 500;
+		font-weight: 600;
 	}
 }
 
@@ -49,6 +49,7 @@
 
 .ast-article-inner {
     width: 100%;
+	overflow-wrap: break-word;
 }
 
 .read-more {

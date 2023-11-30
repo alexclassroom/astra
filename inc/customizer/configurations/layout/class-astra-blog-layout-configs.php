@@ -336,7 +336,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'm/d/Y'  => '11/06/2010',
 						'd/m/Y'  => '06/11/2010',
 					),
-					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				),
 
 				/**
@@ -682,7 +681,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 							'is_parent'   => true,
 							'main_index'  => 'date',
 							'clone_limit' => 1,
-							'title'       => __( 'Published Date', 'astra' ),
+							'title'       => __( 'Date', 'astra' ),
 						),
 						'tag'      => __( 'Tags', 'astra' ),
 					),

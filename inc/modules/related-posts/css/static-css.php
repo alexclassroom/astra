@@ -61,7 +61,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 			position: relative;
 		}
 		.single article .ast-single-related-posts-container {
-			border-top: 1px solid var(--ast-border-color);
+			border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 		}
 		';
 
@@ -72,7 +72,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 
 			$dynamic_css .= '
 				.ast-single-related-posts-container {
-					border-top: 1px solid var(--ast-border-color);
+					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 					margin: 2em 0 0;
 				}
 				.ast-separate-container .ast-single-related-posts-container {

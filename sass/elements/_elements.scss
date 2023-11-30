@@ -33,11 +33,11 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 1.5em 1em;
 }
 
 b, strong {
@@ -71,6 +71,10 @@ blockquote {
 
 address {
 	margin: 0 0 1.5em;
+}
+
+address, cite {
+	font-style: italic;
 }
 
 abbr,
