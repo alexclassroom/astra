@@ -37,7 +37,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
-		$section   = 'ast-section-search-page';
+		$section = 'ast-section-search-page';
 
 		$blog_layout = array(
 			'blog-layout-4' => array(
@@ -59,11 +59,11 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 		foreach ( Astra_Posts_Structure_Loader::get_special_page_types() as $index => $special_type ) {
-			$section   = 'ast-section-' . $special_type . '-page';
+			$section       = 'ast-section-' . $special_type . '-page';
 			$title_section = 'section-' . $special_type . '-page-title';
 
-			$archive_structure_choices = array();
-			$archive_structure_choices[ $title_section . '-title' ] = array(
+			$archive_structure_choices                                    = array();
+			$archive_structure_choices[ $title_section . '-title' ]       = array(
 				'clone'       => false,
 				'is_parent'   => true,
 				'main_index'  => $title_section . '-title',
@@ -77,7 +77,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 				'clone_limit' => 2,
 				'title'       => __( 'Subheading', 'astra' ),
 			);
-			$archive_structure_choices[$title_section . '-breadcrumb'] = __( 'Breadcrumb', 'astra' );
+			$archive_structure_choices[ $title_section . '-breadcrumb' ]  = __( 'Breadcrumb', 'astra' );
 
 			$_configs = array(
 
@@ -708,7 +708,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 					'section'           => $section,
 					'default'           => astra_get_option( 'ast-' . $special_type . '-results-style' ),
 					'priority'          => 14,
-					'divider'    => array( 'ast_class' => 'ast-top-section-divider' ),
+					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 					'title'             => __( 'Results Layout', 'astra' ),
 					'choices'           => $blog_layout,
 				),
@@ -732,22 +732,22 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 				),
 
 				array(
-					'name'     => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search]',
-					'default'  => astra_get_option( 'ast-' . $special_type . '-live-search' ),
-					'type'     => 'control',
-					'control'  => 'ast-toggle-control',
-					'section'      => $section,
-					'description'       => __( 'This option activates Live Search support for the search box on the no results page.', 'astra' ),
-					'title'    => __( 'Live Search', 'astra' ),
-					'priority' => 15,
-					'context'  => Astra_Builder_Helper::$general_tab,
+					'name'        => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search]',
+					'default'     => astra_get_option( 'ast-' . $special_type . '-live-search' ),
+					'type'        => 'control',
+					'control'     => 'ast-toggle-control',
+					'section'     => $section,
+					'description' => __( 'This option activates Live Search support for the search box on the no results page.', 'astra' ),
+					'title'       => __( 'Live Search', 'astra' ),
+					'priority'    => 15,
+					'context'     => Astra_Builder_Helper::$general_tab,
 				),
 
 				array(
 					'name'        => ASTRA_THEME_SETTINGS . '[ast-' . $special_type . '-live-search-post-types]',
 					'default'     => astra_get_option( 'ast-' . $special_type . '-live-search-post-types' ),
 					'type'        => 'control',
-					'section'      => $section,
+					'section'     => $section,
 					'control'     => 'ast-multi-selector',
 					'priority'    => 15,
 					'title'       => __( 'Search Within Post Types', 'astra' ),

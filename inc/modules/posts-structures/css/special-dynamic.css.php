@@ -32,7 +32,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 
 	foreach ( Astra_Posts_Structure_Loader::get_special_page_types() as $index => $special_type ) {
 
-		$title_section = 'section-' . $special_type . '-page-title';
+		$title_section   = 'section-' . $special_type . '-page-title';
 		$layout_type     = astra_get_option( $title_section . '-layout', 'layout-1' );
 		$layout_2_active = ( 'layout-2' === $layout_type ) ? true : false;
 
@@ -89,7 +89,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 			 * Desktop CSS.
 			 */
 			$css_output_desktop = array(
-				$selector                               => array(
+				$selector                                 => array(
 					'max-width'      => $site_content_width . 'px',
 					'width'          => '100%',
 					'text-align'     => $desk_h_alignment,
@@ -102,15 +102,15 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 					'margin-left'    => astra_responsive_spacing( $banner_margin, 'left', 'desktop' ),
 					'margin-right'   => astra_responsive_spacing( $banner_margin, 'right', 'desktop' ),
 				),
-				$selector . ' *'                        => astra_get_font_array_css( astra_get_option( $title_section . '-text-font-family' ), astra_get_option( $title_section . '-text-font-weight' ), $banner_text_font_size, $title_section . '-text-font-extras', $text_color ),
+				$selector . ' *'                          => astra_get_font_array_css( astra_get_option( $title_section . '-text-font-family' ), astra_get_option( $title_section . '-text-font-weight' ), $banner_text_font_size, $title_section . '-text-font-extras', $text_color ),
 				$selector . ' h1, ' . $selector . ' h1 *' => astra_get_font_array_css( astra_get_option( $title_section . '-title-font-family' ), astra_get_option( $title_section . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, $title_section . '-title-font-extras', $title_color ),
-				$selector . ' a, ' . $selector . ' a *' => array(
+				$selector . ' a, ' . $selector . ' a *'   => array(
 					'color' => esc_attr( $link_color ),
 				),
 				$selector . ' a:hover, ' . $selector . ' a:hover *' => array(
 					'color' => esc_attr( $link_hover_color ),
 				),
-				$selector . ' > *:not(:last-child)'     => array(
+				$selector . ' > *:not(:last-child)'       => array(
 					'margin-bottom' => $elements_gap . 'px',
 				),
 			);
@@ -119,7 +119,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 			 * Tablet CSS.
 			 */
 			$css_output_tablet = array(
-				$selector                         => array(
+				$selector         => array(
 					'text-align'     => $tab_h_alignment,
 					'padding-top'    => astra_responsive_spacing( $banner_padding, 'top', 'tablet' ),
 					'padding-right'  => astra_responsive_spacing( $banner_padding, 'right', 'tablet' ),
@@ -133,7 +133,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 				$selector . ' h1' => array(
 					'font-size' => astra_responsive_font( $banner_title_font_size, 'tablet' ),
 				),
-				$selector . ' *'                  => array(
+				$selector . ' *'  => array(
 					'font-size' => astra_responsive_font( $banner_text_font_size, 'tablet' ),
 				),
 			);
@@ -142,7 +142,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 			 * Mobile CSS.
 			 */
 			$css_output_mobile = array(
-				$selector                         => array(
+				$selector         => array(
 					'text-align'     => $mob_h_alignment,
 					'padding-top'    => astra_responsive_spacing( $banner_padding, 'top', 'mobile' ),
 					'padding-right'  => astra_responsive_spacing( $banner_padding, 'right', 'mobile' ),
@@ -156,7 +156,7 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 				$selector . ' h1' => array(
 					'font-size' => astra_responsive_font( $banner_title_font_size, 'mobile' ),
 				),
-				$selector . ' *'                  => array(
+				$selector . ' *'  => array(
 					'font-size' => astra_responsive_font( $banner_text_font_size, 'mobile' ),
 				),
 			);

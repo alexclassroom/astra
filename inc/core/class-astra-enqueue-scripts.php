@@ -427,7 +427,7 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 						if ( $value && post_type_exists( $post_type ) ) {
 							$search_page_post_types[] = $post_type;
 							/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-							$post_type_object                     = get_post_type_object( $post_type );
+							$post_type_object                          = get_post_type_object( $post_type );
 							$search_page_post_type_label[ $post_type ] = is_object( $post_type_object ) && isset( $post_type_object->labels->name ) ? esc_html( $post_type_object->labels->name ) : $post_type;
 							/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						}
@@ -435,14 +435,14 @@ if ( ! class_exists( 'Astra_Enqueue_Scripts' ) ) {
 				}
 
 				$astra_live_search_localize_data = array(
-					'rest_api_url'             => get_rest_url(),
-					'search_posts_per_page'    => 5,
-					'search_post_types'        => $search_post_types,
-					'search_post_types_labels' => $search_post_type_label,
-					'search_language'          => astra_get_current_language_slug(),
-					'no_live_results_found'    => __( 'No results found', 'astra' ),
-					'search_page_condition'    => is_search() && true === astra_get_option( 'ast-search-live-search' ) ? true : false,
-					'search_page_post_types'   => $search_page_post_types,
+					'rest_api_url'                 => get_rest_url(),
+					'search_posts_per_page'        => 5,
+					'search_post_types'            => $search_post_types,
+					'search_post_types_labels'     => $search_post_type_label,
+					'search_language'              => astra_get_current_language_slug(),
+					'no_live_results_found'        => __( 'No results found', 'astra' ),
+					'search_page_condition'        => is_search() && true === astra_get_option( 'ast-search-live-search' ) ? true : false,
+					'search_page_post_types'       => $search_page_post_types,
 					'search_page_post_type_labels' => $search_page_post_type_label,
 				);
 

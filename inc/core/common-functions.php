@@ -967,7 +967,9 @@ function astra_get_taxonomy_banner_legacy_layout() {
 						do_action( 'astra_before_archive_title' );
 						if ( is_search() ) {
 							$title = apply_filters( 'astra_the_search_page_title', sprintf( /* translators: 1: search string */ __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
-							?> <h1 class="page-title ast-archive-title"> <?php echo $title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </h1> <?php
+							?>
+							 <h1 class="page-title ast-archive-title"> <?php echo $title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </h1> 
+																				  <?php
 						} else {
 							add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 							the_archive_title( '<h1 class="page-title ast-archive-title">', '</h1>' );

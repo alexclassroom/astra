@@ -265,7 +265,7 @@ class Astra_Posts_Structure_Loader {
 	 */
 	public static function get_special_page_types() {
 		$special_pages = array(
-			'search'
+			'search',
 		);
 
 		return apply_filters( 'astra_dynamic_special_pages', $special_pages );

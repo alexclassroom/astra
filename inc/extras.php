@@ -159,8 +159,8 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 
 			if ( is_search() ) {
 				$search_content_layout = astra_get_option( 'ast-search-content-layout', 'default' );
-				$content_layout_key = 'default' !== $search_content_layout ? 'ast-search-content-layout' : 'archive-post-ast-content-layout';
-				$content_layout = astra_toggle_layout( $content_layout_key, 'archive', false );
+				$content_layout_key    = 'default' !== $search_content_layout ? 'ast-search-content-layout' : 'archive-post-ast-content-layout';
+				$content_layout        = astra_toggle_layout( $content_layout_key, 'archive', false );
 			}
 
 			if ( 'default' == $content_layout || empty( $content_layout ) ) {

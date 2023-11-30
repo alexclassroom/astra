@@ -8,11 +8,11 @@
  * @since 4.0.0
  */
 
-$special_type      = ! empty( $args ) && ! empty( $args['type'] ) ? $args['type'] : 'search';
+$special_type         = ! empty( $args ) && ! empty( $args['type'] ) ? $args['type'] : 'search';
 $astra_banner_control = 'section-' . esc_attr( $special_type ) . '-page-title';
 
 // If description is the only meta available in structure & its blank then no need to render banner markup.
-$astra_archive_structure       = astra_get_option( $astra_banner_control . '-structure', array( $astra_banner_control . '-title' ) );
+$astra_archive_structure = astra_get_option( $astra_banner_control . '-structure', array( $astra_banner_control . '-title' ) );
 
 if ( empty( $astra_archive_structure ) ) {
 	return;

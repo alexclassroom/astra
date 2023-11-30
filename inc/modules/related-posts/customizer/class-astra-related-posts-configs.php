@@ -738,9 +738,9 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'title'      => __( 'Container Structure', 'astra' ),
 				'control'    => 'ast-selector',
 				'choices'    => array(
-					'narrow'    => __( 'Narrow', 'astra' ),
-					'normal'    => __( 'Normal', 'astra' ),
-					'' => __( 'Full Width', 'astra' ),
+					'narrow' => __( 'Narrow', 'astra' ),
+					'normal' => __( 'Normal', 'astra' ),
+					''       => __( 'Full Width', 'astra' ),
 				),
 				'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(

@@ -10318,6 +10318,15 @@ namespace {
         {
         }
         /**
+         * Get special pages query.
+         *
+         * @since x.x.x
+         * @return array $special_pages
+         */
+        public static function get_special_page_types()
+        {
+        }
+        /**
          * Customizer preview support.
          *
          * @since 4.0.0
@@ -10333,6 +10342,25 @@ namespace {
          * @since 4.0.0
          */
         public static function get_customizer_default($key)
+        {
+        }
+    }
+    /**
+     * Register Posts Structures Customizer Configurations.
+     *
+     * @since x.x.x
+     */
+    class Astra_Posts_Special_Archive_Structures_Configs extends \Astra_Customizer_Config_Base
+    {
+        /**
+         * Register Posts Structures Customizer Configurations.
+         *
+         * @param array                $configurations Astra Customizer Configurations.
+         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
+         * @since x.x.x
+         * @return Array Astra Customizer Configurations with updated configurations.
+         */
+        public function register_configuration($configurations, $wp_customize)
         {
         }
     }
@@ -16967,6 +16995,26 @@ namespace {
     {
     }
     /**
+     * Get Astra blog layout design.
+     * Search / Blog.
+     *
+     * @return string $blog_layout.
+     * @since x.x.x
+     */
+    function astra_get_blog_layout()
+    {
+    }
+    /**
+     * Get Astra blog posts per page count.
+     * Search / Blog.
+     *
+     * @return int $blog_layout.
+     * @since x.x.x
+     */
+    function astra_get_blog_posts_per_page()
+    {
+    }
+    /**
      * Adds custom classes to the array of body classes.
      *
      * @since 1.0.0
@@ -17437,6 +17485,18 @@ namespace {
     function astra_post_archive_structure_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {
     }
+    /**
+     * Special Pages Dynamic CSS.
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+     * @return string Generated dynamic CSS for Post Structures.
+     *
+     * @since x.x.x
+     */
+    function astra_special_archive_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
+    {
+    }
     \define('ASTRA_THEME_POST_STRUCTURE_DIR', \ASTRA_THEME_DIR . 'inc/modules/posts-structures/');
     \define('ASTRA_THEME_POST_STRUCTURE_URI', \ASTRA_THEME_URI . 'inc/modules/posts-structures/');
     /**
@@ -17895,6 +17955,15 @@ namespace {
      * @package Astra
      */
     $astra_component_slug = \get_query_var('type');
+    /**
+     * Template part for displaying archive post's entry banner.
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package Astra
+     * @since 4.0.0
+     */
+    $special_type = !empty($args) && !empty($args['type']) ? $args['type'] : 'search';
     /**
      * Template part for displaying single post's entry banner.
      *

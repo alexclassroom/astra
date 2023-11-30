@@ -36,11 +36,11 @@
 
 			<p><?php echo esc_html( astra_default_strings( 'string-search-nothing-found-message', false ) ); ?></p>
 			<?php
-				if ( is_callable( 'Astra_Dynamic_CSS::astra_4_6_0_compatibility' ) && Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
-					the_widget( 'WP_Widget_Search' );
-				} else {
-					get_search_form();
-				}
+			if ( is_callable( 'Astra_Dynamic_CSS::astra_4_6_0_compatibility' ) && Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
+				the_widget( 'WP_Widget_Search' );
+			} else {
+				get_search_form();
+			}
 			?>
 
 		<?php else : ?>

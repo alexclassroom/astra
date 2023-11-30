@@ -701,7 +701,7 @@ add_filter( 'astra_primary_class', 'astra_primary_class_blog_layout' );
  * @return void
  */
 function astra_blog_layout_customization() {
-	$blog_layout = astra_get_blog_layout();
+	$blog_layout       = astra_get_blog_layout();
 	$blog_layout_slugs = array( 'blog-layout-4', 'blog-layout-5', 'blog-layout-6' );
 
 	if ( in_array( $blog_layout, $blog_layout_slugs ) ) {

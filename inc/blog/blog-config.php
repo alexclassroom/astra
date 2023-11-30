@@ -132,7 +132,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 		if ( is_singular() ) {
 			if ( 'single-post' === $render_by ) {
 				$separator = 'none' === astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' ) ? '&nbsp' : astra_get_option( 'ast-dynamic-single-' . strval( get_post_type() ) . '-metadata-separator', '/' );
-			} else if ( 'related-posts' === $render_by ) {
+			} elseif ( 'related-posts' === $render_by ) {
 				$separator = 'none' === $separator ? '&nbsp' : $separator;
 			}
 		} else {

@@ -24,10 +24,10 @@ function astra_comments_css( $dynamic_css ) {
 
 	if ( astra_check_current_post_comment_enabled() || 0 < get_comments_number() ) {
 
-		$body_font_size = astra_get_option( 'font-size-body' );
-		$theme_color    = astra_get_option( 'theme-color' );
-		$link_color     = astra_get_option( 'link-color', $theme_color );
-		$is_site_rtl    = is_rtl();
+		$body_font_size              = astra_get_option( 'font-size-body' );
+		$theme_color                 = astra_get_option( 'theme-color' );
+		$link_color                  = astra_get_option( 'link-color', $theme_color );
+		$is_site_rtl                 = is_rtl();
 		$reply_title_space_threshold = Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? 1.3 : 1.66666;
 
 		if ( is_array( $body_font_size ) ) {

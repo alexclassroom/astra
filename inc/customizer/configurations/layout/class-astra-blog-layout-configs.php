@@ -442,20 +442,20 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				 * Option: Blog Hover Effect.
 				 */
 				array(
-					'name'      => 'blog-hover-effect',
-					'default'   => astra_get_option( 'blog-hover-effect' ),
-					'parent'    => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
-					'section'   => 'section-blog',
-					'linked'    => 'image',
-					'type'      => 'sub-control',
-					'priority'  => 17,
-					'transport' => 'postMessage',
-					'title'     => __( 'Hover Effect', 'astra' ),
-					'divider'   => array( 'ast_class' => 'ast-top-dotted-divider' ),
-					'control'   => 'ast-selector',
+					'name'       => 'blog-hover-effect',
+					'default'    => astra_get_option( 'blog-hover-effect' ),
+					'parent'     => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
+					'section'    => 'section-blog',
+					'linked'     => 'image',
+					'type'       => 'sub-control',
+					'priority'   => 17,
+					'transport'  => 'postMessage',
+					'title'      => __( 'Hover Effect', 'astra' ),
+					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'control'    => 'ast-selector',
 					'responsive' => false,
 					'renderAs'   => 'text',
-					'choices'   => array(
+					'choices'    => array(
 						'none'     => __( 'None', 'astra' ),
 						'zoom-in'  => __( 'Zoom In', 'astra' ),
 						'zoom-out' => __( 'Zoom Out', 'astra' ),
@@ -507,15 +507,15 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				),
 
 				array(
-					'name'           => ASTRA_THEME_SETTINGS . '[post-card-featured-overlay]',
-					'default'        => astra_get_option( 'post-card-featured-overlay' ),
-					'type'     => 'control',
-					'control'  => 'ast-color',
-					'section'        => 'section-blog',
-					'priority' => 1,
-					'title'    => __( 'Cards Background Overlay', 'astra' ),
-					'transport'      => 'postMessage',
-					'context'  => array(
+					'name'      => ASTRA_THEME_SETTINGS . '[post-card-featured-overlay]',
+					'default'   => astra_get_option( 'post-card-featured-overlay' ),
+					'type'      => 'control',
+					'control'   => 'ast-color',
+					'section'   => 'section-blog',
+					'priority'  => 1,
+					'title'     => __( 'Cards Background Overlay', 'astra' ),
+					'transport' => 'postMessage',
+					'context'   => array(
 						Astra_Builder_Helper::$design_tab_config,
 						'relation' => 'AND',
 						array(
