@@ -71,6 +71,8 @@ if ( ! function_exists( 'astra_default_strings' ) ) {
 				'string-blog-meta-multiple-comment'      => __( '% Comments', 'astra' ),
 				'string-blog-navigation-next'            => __( 'Next', 'astra' ) . ' <span class="ast-right-arrow">&rarr;</span>',
 				'string-blog-navigation-previous'        => '<span class="ast-left-arrow">&larr;</span> ' . __( 'Previous', 'astra' ),
+				'string-next-text'                       => __( 'Next', 'astra' ),
+				'string-previous-text'                   => __( 'Previous', 'astra' ),
 
 				// Single Post Default Strings.
 				'string-single-page-links-before'        => __( 'Pages:', 'astra' ),

@@ -1811,7 +1811,7 @@ input[type="text"].select2-search__field {
 }
 
 .customize-control.customize-control-ast-section-toggle {
-    border: 1px dashed var(--ast-customizer-color-7);
+    border: 1px dashed var(--ast-customizer-color-1);
     background: var(--ast-customizer-color-11);
     cursor: pointer;
     box-shadow: none !important;
@@ -1827,6 +1827,7 @@ input[type="text"].select2-search__field {
     transition: all 0.2s;
     padding-top: 0;
     padding-bottom: 0;
+	margin-top: 24px;
 	margin-bottom: 9px;
 }
 .customize-control.customize-control-ast-section-toggle:hover {

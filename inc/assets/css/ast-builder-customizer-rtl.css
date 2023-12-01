@@ -636,12 +636,16 @@
 }
 
 .ahfb-builder-item-start button.ahfb-builder-item {
-    border: 1px dashed var(--ast-customizer-color-7);
+    border: 1px dashed var(--ast-customizer-color-1);
     background: var(--ast-customizer-color-11);
     cursor: pointer;
     box-shadow: none !important;
 	line-height: 42px;
 	font-size: 14px;
+}
+
+.ahfb-builder-item:hover .dashicons, .ahfb-builder-item.active-builder-item .dashicons {
+    color: var(--ast-customizer-color-4);
 }
 
 .ast-builder-elements-section .ast-builder-elements-notice  {

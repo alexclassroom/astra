@@ -484,6 +484,7 @@ if ( ! function_exists( 'astra_number_pagination' ) ) {
 				'next_text'    => astra_default_strings( 'string-blog-navigation-next', false ),
 				'taxonomy'     => 'category',
 				'in_same_term' => true,
+				'screen_reader_text' => __( 'Post pagination', 'astra' ),
 			)
 		);
 		/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort

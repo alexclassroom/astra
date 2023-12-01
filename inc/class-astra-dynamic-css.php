@@ -1268,6 +1268,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			require_once ASTRA_THEME_DIR . 'inc/dynamic-css/pagination.php'; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			// Related Posts Dynamic CSS.
 
+			// Navigation CSS.
+			if ( is_single() && self::astra_4_6_0_compatibility() ) {
+				require_once ASTRA_THEME_DIR . 'inc/dynamic-css/navigation.php'; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			}
+
 			/**
 			 *
 			 * Fix button aligment issue comming from the gutenberg plugin (v9.3.0).

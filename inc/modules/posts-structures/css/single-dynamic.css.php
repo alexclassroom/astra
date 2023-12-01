@@ -122,8 +122,11 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			),
 			$selector . ' .post-thumb img, .ast-single-post-featured-section.post-thumb img' => array(
 				'aspect-ratio' => $aspect_ratio,
+				'width' => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
+				'height' => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
 			),
 		);
+
 		/**
 		 * Tablet CSS.
 		 */
