@@ -204,9 +204,14 @@ function astra_comments_css( $dynamic_css ) {
 		if ( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
 			$single_post_comment_css .= '
 				.ast-comment {
-					padding-top: 3em;
-					padding-bottom: 3em;
+					padding-top: 2.5em;
+					padding-bottom: 2.5em;
 					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
+				}
+				.ast-separate-container .ast-comment-list .comment + .comment,
+				.ast-narrow-container .ast-comment-list .comment + .comment {
+					padding-top: 0;
+					padding-bottom: 0;
 				}
 			';
 
