@@ -35,8 +35,8 @@ class Astra_Customizer_Footer_Builder_Configs extends Astra_Customizer_Config_Ba
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
-		$configurations = astra_builder_footer_configuration( $configurations );
-		return $configurations;
+		$_configs = astra_builder_footer_configuration();
+		return array_merge( $configurations, $_configs );
 	}
 }
 

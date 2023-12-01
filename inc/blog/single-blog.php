@@ -94,8 +94,6 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 	 * @return mixed          Comment markup.
 	 */
 	function astra_theme_comment( $comment, $args, $depth ) {
-		$reply_svg = true === Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '<svg class="ast-reply-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"> <path d="M0.227189 5.19083L5.0398 1.03498C5.46106 0.671178 6.125 0.966522 6.125 1.53165V3.7206C10.5172 3.77089 14 4.65118 14 8.81361C14 10.4936 12.9177 12.158 11.7214 13.0282C11.348 13.2997 10.816 12.9589 10.9536 12.5187C12.1935 8.55357 10.3655 7.50088 6.125 7.43984V9.84378C6.125 10.4098 5.46056 10.7038 5.0398 10.3404L0.227189 6.18418C-0.0755195 5.92272 -0.0759395 5.45266 0.227189 5.19083Z"/> </svg>' : '';
-
 		switch ( $comment->comment_type ) {
 
 			case 'pingback':
@@ -111,6 +109,7 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 			default:
 				// Proceed with normal comments.
 				global $post;
+				$entry_content_class = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? ' entry-content' : '';
 				?>
 				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 
@@ -165,16 +164,15 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 								<?php astra_markup_close( 'ast-comment-meta-wrap' ); ?>
 								</header> <!-- .ast-comment-meta -->
 							</div>
-							<section class="ast-comment-content comment">
+							<section class="ast-comment-content comment <?php echo esc_attr( $entry_content_class ); ?>">
 								<?php comment_text(); ?>
 								<div class="ast-comment-edit-reply-wrap">
-									<?php edit_comment_link( astra_default_strings( 'string-comment-edit-link', false ), '<span class="ast-edit-link">', '</span>' ); ?>
 									<?php
 									comment_reply_link(
 										array_merge(
 											$args,
 											array(
-												'reply_text' => $reply_svg . astra_default_strings( 'string-comment-reply-link', false ),
+												'reply_text' => astra_default_strings( 'string-comment-reply-link', false ),
 												'add_below' => 'comment',
 												'depth'  => $depth,
 												'max_depth' => $args['max_depth'],
@@ -184,6 +182,7 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 										)
 									);
 									?>
+									<?php edit_comment_link( astra_default_strings( 'string-comment-edit-link', false ), '<span class="ast-edit-link">', '</span>' ); ?>
 								</div>
 								<?php if ( '0' == $comment->comment_approved ) : ?>
 									<p class="ast-highlight-text comment-awaiting-moderation"><?php echo esc_html( astra_default_strings( 'string-comment-awaiting-moderation', false ) ); ?></p>

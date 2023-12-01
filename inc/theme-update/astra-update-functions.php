@@ -1525,6 +1525,30 @@ function astra_theme_background_updater_4_6_0() {
 	$theme_options = get_option( 'astra-settings', array() );
 	if ( ! isset( $theme_options['v4-6-0-backward-option'] ) ) {
 		$theme_options['v4-6-0-backward-option'] = false;
+		/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		$blog_post_structure = isset( $theme_options['blog-post-structure'] ) ? $theme_options['blog-post-structure'] : array( 'image', 'title-meta' );
+		/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		$migrated_post_structure = array();
+
+		if ( ! empty( $blog_post_structure ) ) {
+			/** @psalm-suppress PossiblyInvalidIterator */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			foreach ( $blog_post_structure as $key ) {
+				/** @psalm-suppress PossiblyInvalidIterator */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				if ( 'title-meta' === $key ) {
+					$migrated_post_structure[] = 'title';
+					$migrated_post_structure[] = 'title-meta';
+				}
+				if ( 'image' === $key ) {
+					$migrated_post_structure[] = 'image';
+				}
+			}
+
+			$migrated_post_structure[] = 'excerpt';
+			$migrated_post_structure[] = 'read-more';
+
+			$theme_options[ 'blog-post-structure' ] = $migrated_post_structure;
+		}
+
 		update_option( 'astra-settings', $theme_options );
 	}
 }

@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register builder footer builder Customizer Configurations.
  *
- * @param Array $configurations Astra Customizer Configurations.
+ * @param array $configurations Astra Customizer Configurations.
  * @since x.x.x
  * @return array Astra Customizer Configurations with updated configurations.
  */

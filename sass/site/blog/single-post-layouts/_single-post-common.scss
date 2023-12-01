@@ -16,8 +16,8 @@
 	.post-navigation {
 
 		margin: 0;
-		padding: 2em 0 0;
-		border-top: 1px solid $color-border-content;
+		padding: var(--ast-single-post-nav-padding, 2em 0 0);
+		border-top: 1px solid var(--ast-single-post-border, $color-border-content);
 		@media(max-width: $mx-col-md) {
 	        padding-top: 1.5em;
 	    }
@@ -115,8 +115,8 @@
 .ast-separate-container{
 	.post-navigation {
 		border-top: 0;
-		padding-left: 3.33333em;
-		padding-right: 3.33333em;
+		padding-left: var(--ast-post-nav-space, 3.33333em);
+		padding-right: var(--ast-post-nav-space, 3.33333em);
 		@media ( max-width: $mx-col-xs ) {
 			padding-left: 0;
 			padding-right: 0;

@@ -1142,3 +1142,4 @@ nbsp
 BorLabs
 oembed
 BORLABS
+Kadence

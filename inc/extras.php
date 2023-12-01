@@ -434,35 +434,6 @@ function astra_get_theme_author_details() {
 }
 
 /**
- * Remove Base Color > Background Color option from the customize array.
- *
- * @since 2.4.0
- * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
- * @return $wp_customize
- */
-function astra_remove_controls( $wp_customize ) {
-
-	if ( defined( 'ASTRA_EXT_VER' ) && version_compare( ASTRA_EXT_VER, '2.4.0', '<=' ) ) {
-		$layout = array(
-			array(
-				'name'      => ASTRA_THEME_SETTINGS . '[site-layout-outside-bg-obj]',
-				'type'      => 'control',
-				'transport' => 'postMessage',
-				'control'   => 'ast-hidden',
-				'section'   => 'section-colors-body',
-				'priority'  => 25,
-			),
-		);
-
-		$wp_customize = array_merge( $wp_customize, $layout );
-	}
-
-	return $wp_customize;
-}
-
-add_filter( 'astra_customizer_configurations', 'astra_remove_controls', 99 );
-
-/**
  * Add dropdown icon if menu item has children.
  *
  * @since 3.3.0
