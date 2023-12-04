@@ -32,12 +32,13 @@
 		@media ( min-width: $col-xs ) {
 
 			.nav-links {
-				display: flex;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
 			}
 
 			.nav-previous,
 			.nav-next {
-				flex: auto;
+				width: 100%;
 			}
 		}
 

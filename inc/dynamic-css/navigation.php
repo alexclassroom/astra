@@ -22,10 +22,6 @@ add_filter( 'astra_dynamic_theme_css', 'astra_navigation_css', 11 );
  */
 function astra_navigation_css( $dynamic_css ) {
 	$navigation_css = '
-		.comment-navigation .nav-previous, .post-navigation .nav-previous {
-			position: relative;
-			text-align: left;
-		}
 		.comment-navigation .nav-previous:after, .post-navigation .nav-previous:after {
 			position: absolute;
 			content: "";

@@ -1735,18 +1735,16 @@ body {
 }
 
 .comment-navigation .nav-previous,
-.comment-navigation .nav-next,
 .posts-navigation .nav-previous,
-.posts-navigation .nav-next,
-.post-navigation .nav-previous,
-.post-navigation .nav-next {
-  width: 50%;
-  display: inline-block;
+.post-navigation .nav-previous {
+  position: relative;
+  text-align: right;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
+  grid-column-start: 2;
   text-align: left;
 }
 
@@ -3125,12 +3123,12 @@ input[type="color"]::-webkit-color-swatch {
 
 @media (min-width: 421px) {
   .single .post-navigation .nav-links {
-    -js-display: flex;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   .single .post-navigation .nav-previous,
   .single .post-navigation .nav-next {
-    flex: auto;
+    width: 100%;
   }
 }
 
