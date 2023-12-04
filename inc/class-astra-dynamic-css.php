@@ -552,7 +552,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$link_selector                   = ( true === $update_customizer_strctural_defaults ) ? 'a' : 'a, .page-title';
 			$transparent_search_box_bg_color = astra_get_option( 'transparent-header-search-box-background-color', '#fff' );
 			$article_space                   = self::astra_4_6_0_compatibility() ? '2.5em' : '3em';
-
 			$css_output = array(
 
 				':root'                                  => array(
@@ -642,6 +641,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'border-bottom-left-radius'  => astra_responsive_spacing( $archive_cards_radius, 'left', 'desktop' ),
 					'overflow'                   => 'hidden',
 				),
+
+
 				// Conditionally select the css selectors with or without anchors.
 				self::conditional_headings_css_selectors(
 					'h1, .entry-content h1, .entry-content h1 a',
