@@ -217,6 +217,9 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' .post-thumb img'                => array(
 				'aspect-ratio' => $aspect_ratio,
 			),
+			$selector . ' .ast-container > *:last-child' => array(
+				'margin-bottom' => '0',
+			),
 		);
 
 		/**

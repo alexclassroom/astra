@@ -554,7 +554,7 @@ function astra_banner_elements_order( $structure = array() ) {
 
 			case 'single-excerpt':
 				do_action( 'astra_single_post_banner_excerpt_before' );
-				echo '<span>' . get_the_excerpt( $post->ID ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<p>' . get_the_excerpt( $post->ID ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				do_action( 'astra_single_post_banner_excerpt_after' );
 				break;
 

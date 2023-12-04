@@ -74,7 +74,7 @@ function astra_comments_css( $dynamic_css ) {
       }
 
 	  .site-content article .comments-area {
-		border-top: 1px solid var(--ast-border-color);
+		border-top: 1px solid var(--ast-single-post-border,var(--ast-border-color));
 	  }
 
       .ast-comment-list li {

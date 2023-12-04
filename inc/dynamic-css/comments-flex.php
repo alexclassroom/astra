@@ -75,7 +75,7 @@ function astra_comments_css( $dynamic_css ) {
             list-style: none;
           }
 		  .site-content article .comments-area {
-			border-top: 1px solid var(--ast-border-color);
+			border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 		}
           .ast-comment-list li {
             list-style: none;
@@ -101,7 +101,7 @@ function astra_comments_css( $dynamic_css ) {
           .ast-comment-info img {
             border-radius: 50%;
 			box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
-    		border: 1px solid var(--ast-border-color);
+    		border: 1px solid var(--ast-single-post-border, var(--ast-border-color));
           }
           .ast-comment-cite-wrap cite {
             font-style: normal;
@@ -234,7 +234,7 @@ function astra_comments_css( $dynamic_css ) {
 					margin-bottom: 0;
 				}
 				.ast-comment-list .comment + .comment {
-					border-top: 1px solid var(--ast-border-color);
+					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 				}
 				.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
 					padding: 3em;
@@ -601,7 +601,7 @@ function astra_comments_css( $dynamic_css ) {
 			if ( 'above' === astra_get_option( 'comment-form-position' ) ) {
 				$dynamic_css .= '
 					.comment-respond {
-						border-bottom: 1px solid var(--ast-border-color);
+						border-bottom: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 					}
 				';
 			}

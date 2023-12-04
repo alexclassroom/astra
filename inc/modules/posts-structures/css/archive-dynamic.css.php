@@ -261,6 +261,9 @@ function astra_post_archive_structure_dynamic_css( $dynamic_css, $dynamic_css_fi
 			$selector . ' .ast-container > *:not(:last-child)' => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
+			$selector . ' .ast-container > *:last-child' => array(
+				'margin-bottom' => '0',
+			),
 		);
 
 		/**
