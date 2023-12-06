@@ -869,7 +869,7 @@ function astra_theme_background_updater_4_6_0() {
 			$migrated_post_structure[] = 'excerpt';
 			$migrated_post_structure[] = 'read-more';
 
-			$theme_options[ 'blog-post-structure' ] = $migrated_post_structure;
+			$theme_options['blog-post-structure'] = $migrated_post_structure;
 		}
 
 		update_option( 'astra-settings', $theme_options );

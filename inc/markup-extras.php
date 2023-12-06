@@ -498,10 +498,10 @@ if ( ! function_exists( 'astra_number_pagination' ) ) {
 		/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		the_posts_pagination(
 			array(
-				'prev_text'    => astra_default_strings( 'string-blog-navigation-previous', false ),
-				'next_text'    => astra_default_strings( 'string-blog-navigation-next', false ),
-				'taxonomy'     => 'category',
-				'in_same_term' => true,
+				'prev_text'          => astra_default_strings( 'string-blog-navigation-previous', false ),
+				'next_text'          => astra_default_strings( 'string-blog-navigation-next', false ),
+				'taxonomy'           => 'category',
+				'in_same_term'       => true,
 				'screen_reader_text' => __( 'Post pagination', 'astra' ),
 			)
 		);

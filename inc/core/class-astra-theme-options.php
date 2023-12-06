@@ -195,8 +195,8 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet'  => '',
 						'mobile'  => '',
 					),
-					'ast-search-live-search'            => false,
-					'ast-search-live-search-post-types' => array(
+					'ast-search-live-search'               => false,
+					'ast-search-live-search-post-types'    => array(
 						'post' => 1,
 						'page' => 1,
 					),

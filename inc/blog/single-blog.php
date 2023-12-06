@@ -236,8 +236,8 @@ if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
 				apply_filters(
 					'astra_single_post_navigation',
 					array(
-						'next_text' => $next_text,
-						'prev_text' => $prev_text,
+						'next_text'          => $next_text,
+						'prev_text'          => $prev_text,
 						'screen_reader_text' => __( 'Post navigation', 'astra' ),
 					)
 				)

@@ -552,7 +552,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$link_selector                   = ( true === $update_customizer_strctural_defaults ) ? 'a' : 'a, .page-title';
 			$transparent_search_box_bg_color = astra_get_option( 'transparent-header-search-box-background-color', '#fff' );
 			$article_space                   = self::astra_4_6_0_compatibility() ? '2.5em' : '3em';
-			$css_output = array(
+			$css_output                      = array(
 
 				':root'                                  => array(
 					'--ast-container-default-xlg-padding' => ( true === $update_customizer_strctural_defaults ) ? $article_space : '6.67em',
@@ -3020,10 +3020,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.ast-header-break-point.ast-header-custom-item-outside .ast-mobile-header-stack .main-header-bar .ast-search-icon' => array(
 					'margin' => '0',
 				),
-				'.ast-comment-avatar-wrap img'             => array(
+				'.ast-comment-avatar-wrap img' => array(
 					'max-width' => '2.5em',
 				),
-				'.ast-comment-meta'                        => array(
+				'.ast-comment-meta'            => array(
 					'padding' => '0 1.8888em 1.3333em',
 				),
 			);
@@ -3032,7 +3032,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$global_button_tablet['.ast-separate-container .ast-comment-list li.depth-1'] = array(
 					'padding' => '1.5em 2.14em',
 				);
-				$global_button_tablet['.ast-separate-container .comment-respond'] = array(
+				$global_button_tablet['.ast-separate-container .comment-respond']             = array(
 					'padding' => '2em 2.14em',
 				);
 			}
@@ -3967,7 +3967,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 
 						$bl_selector . ' .badge .ast-button,' . $bl_selector . ' .badge .ast-button:hover' => array(
-							'border'     => '1px solid #fff',
+							'border'           => '1px solid #fff',
 							'background-color' => 'transparent',
 						),
 
