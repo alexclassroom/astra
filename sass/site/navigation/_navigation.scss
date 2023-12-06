@@ -174,14 +174,14 @@
 		overflow: hidden;
 	}
 
-	.nav-previous,
-	.nav-next {
-		width: 50%;
-		display: inline-block;
+	.nav-previous {
+		position: relative;
+		text-align: left;
 	}
 
 	.nav-next {
-		text-align: right;
+		grid-column-start: 2;
+    	text-align: right;
 	}
 }
 

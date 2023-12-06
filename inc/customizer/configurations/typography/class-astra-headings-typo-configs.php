@@ -90,8 +90,8 @@ class Astra_Headings_Typo_Configs extends Astra_Customizer_Config_Base {
 				'transport'         => 'postMessage',
 				'priority'          => 28,
 				'title'             => __( 'Font Size', 'astra' ),
-				'suffix'            => array( 'px', 'em' ),
-				'input_attrs'       => array(
+				'suffix'      => array( 'px', 'em', 'vw' ),
+				'input_attrs' => array(
 					'px' => array(
 						'min'  => 0,
 						'step' => 1,
@@ -101,6 +101,11 @@ class Astra_Headings_Typo_Configs extends Astra_Customizer_Config_Base {
 						'min'  => 0,
 						'step' => 0.01,
 						'max'  => 20,
+					),
+					'vw' => array(
+						'min'  => 0,
+						'step' => 1,
+						'max'  => 100,
 					),
 				),
 			),

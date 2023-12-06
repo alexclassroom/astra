@@ -53,7 +53,6 @@ function astra_dynamic_build_css( addon, control, css_property, selector, unitSu
 function astra_refresh_customizer( control ) {
 	wp.customize( control, function( value ) {
 		value.bind( function( value ) {
-			console.error(value);
 			wp.customize.preview.send( 'refresh' );
 		} );
 	} );

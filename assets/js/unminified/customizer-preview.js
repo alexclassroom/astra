@@ -803,7 +803,7 @@ function hasWordPressWidgetBlockEditor() {
 		var blog_grid = (typeof ( wp.customize._value['astra-settings[blog-grid]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-grid]']._value : 1;
 		var blog_layout = (typeof ( wp.customize._value['astra-settings[blog-layout]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-layout]']._value : 'blog-layout-1';
 
-		var dynamicSelector = '.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts, .ast-separate-container .comments-count-wrapper, .ast-separate-container .comments-area .comments-title, .ast-single-related-posts-container, .ast-plain-container';
+		var dynamicSelector = '.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts, .ast-separate-container .comments-count-wrapper, .ast-separate-container .comments-area .comments-title, .ast-single-related-posts-container, .ast-plain-container, .site-content article .ast-article-inner';
 
 		if( 'blog-layout-1' == blog_layout && 1 != blog_grid ) {
 			dynamicSelector   += ', .ast-separate-container .ast-article-inner';
@@ -1140,22 +1140,36 @@ function hasWordPressWidgetBlockEditor() {
 
 	wp.customize( 'astra-settings[post-card-border-radius]', function( setting ) {
 		setting.bind( function( border ) {
+			let desktopTop = border['desktop']['top'] ? border['desktop']['top'] : 0,
+				desktopBottom = border['desktop']['bottom'] ? border['desktop']['bottom'] : 0,
+				desktopLeft = border['desktop']['left'] ? border['desktop']['left'] : 0,
+				desktopRight = border['desktop']['right'] ? border['desktop']['right'] : 0,
+				tabletTop = border['tablet']['top'] ? border['tablet']['top'] : 0,
+				tabletBottom = border['tablet']['bottom'] ? border['tablet']['bottom'] : 0,
+				tabletLeft = border['tablet']['left'] ? border['tablet']['left'] : 0,
+				tabletRight = border['tablet']['right'] ? border['tablet']['right'] : 0,
+				mobileTop = border['mobile']['top'] ? border['mobile']['top'] : 0,
+				mobileBottom = border['mobile']['bottom'] ? border['mobile']['bottom'] : 0,
+				mobileLeft = border['mobile']['left'] ? border['mobile']['left'] : 0,
+				mobileRight = border['mobile']['right'] ? border['mobile']['right'] : 0;
+
 			let tabletBreakPoint    = astraBuilderPreview.tablet_break_point || 921,
-				mobileBreakPoint    = astraBuilderPreview.mobile_break_point || 544;
+				mobileBreakPoint    = astraBuilderPreview.mobile_break_point || 544,
+				blog_layout = (typeof ( wp.customize._value['astra-settings[blog-layout]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-layout]']._value : 'blog-layout-1';
 
-			let globalSelector = '.archive .ast-article-post, .blog .ast-article-post, .archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner';
+			let globalSelector = 'blog-layout-5' === blog_layout ? '.archive .ast-article-post, .blog .ast-article-post, .archive .ast-article-post:hover, .blog .ast-article-post:hover' : '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner, .archive .ast-article-post .ast-article-inner:hover, .blog .ast-article-post .ast-article-inner:hover';
 
-			let dynamicStyle = globalSelector + '{ border-top-left-radius :' + border['desktop']['top'] + border['desktop-unit']
-					+ '; border-bottom-right-radius :' + border['desktop']['bottom'] + border['desktop-unit'] + '; border-bottom-left-radius :'
-					+ border['desktop']['left'] + border['desktop-unit'] + '; border-top-right-radius :' + border['desktop']['right'] + border['desktop-unit'] + '; } ';
+			let dynamicStyle = globalSelector + '{ border-top-left-radius :' + desktopTop + border['desktop-unit']
+					+ '; border-bottom-right-radius :' + desktopBottom + border['desktop-unit'] + '; border-bottom-left-radius :'
+					+ desktopLeft + border['desktop-unit'] + '; border-top-right-radius :' + desktopRight + border['desktop-unit'] + '; } ';
 
-			dynamicStyle += '@media (max-width: ' + tabletBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + border['tablet']['top'] + border['tablet-unit']
-					+ '; border-bottom-right-radius :' + border['tablet']['bottom'] + border['tablet-unit'] + '; border-bottom-left-radius :'
-					+ border['tablet']['left'] + border['tablet-unit'] + '; border-top-right-radius :' + border['tablet']['right'] + border['tablet-unit'] + '; } } ';
+			dynamicStyle += '@media (max-width: ' + tabletBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + tabletTop + border['tablet-unit']
+					+ '; border-bottom-right-radius :' + tabletBottom + border['tablet-unit'] + '; border-bottom-left-radius :'
+					+ tabletLeft + border['tablet-unit'] + '; border-top-right-radius :' + tabletRight + border['tablet-unit'] + '; } } ';
 
-			dynamicStyle += '@media (max-width: ' + mobileBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + border['mobile']['top'] + border['mobile-unit']
-					+ '; border-bottom-right-radius :' + border['mobile']['bottom'] + border['mobile-unit'] + '; border-bottom-left-radius :'
-					+ border['mobile']['left'] + border['mobile-unit'] + '; border-top-right-radius :' + border['mobile']['right'] + border['mobile-unit'] + '; } } ';
+			dynamicStyle += '@media (max-width: ' + mobileBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + mobileTop + border['mobile-unit']
+					+ '; border-bottom-right-radius :' + mobileBottom + border['mobile-unit'] + '; border-bottom-left-radius :'
+					+ mobileLeft + border['mobile-unit'] + '; border-top-right-radius :' + mobileRight + border['mobile-unit'] + '; } } ';
 
 			astra_add_dynamic_css( 'post-card-border-radius', dynamicStyle );
 		} );

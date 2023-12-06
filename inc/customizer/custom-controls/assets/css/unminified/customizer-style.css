@@ -108,6 +108,10 @@
   cursor: help;
 }
 
+.customize-control .ast-control-tooltip:hover {
+    color: var(--ast-customizer-color-1);
+}
+
 .customize-control.customize-control-ast-toggle-control .ast-control-tooltip {
   position: absolute;
   top: 50%;
@@ -334,6 +338,7 @@ input[type="text"].select2-search__field {
     transition: all 0.2s;
     padding-top: 0;
     padding-bottom: 0;
+	margin-top: 24px;
 	margin-bottom: 9px;
 	margin-top: 24px;
 }
@@ -352,10 +357,9 @@ input[type="text"].select2-search__field {
 
 .ast-section-toggle-icon span {
 	font-size: 16px;
-	line-height: 20px;
+	line-height: 16px;
 	width: 16px;
 	height: 16px;
-	margin-top: -4px;
 }
 
 .customize-control-ast-section-toggle {

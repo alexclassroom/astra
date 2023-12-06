@@ -17,10 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param int    $loop_count Meta loop counter to decide separator appearance.
  * @param string $separator Separator.
  * @param string $badge_style For taxonomies as badge styles.
+ * @param string $html_tag HTML tag.
  *
  * @return string $output Taxonomy output.
  */
-function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $badge_style = '' ) {
+function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $badge_style = '', $html_tag = 'p' ) {
 
 	$tax_type = astra_get_option( $control_tax );
 	$post_id  = get_the_ID();
@@ -50,7 +51,6 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 			$tax_badge_selector = '';
 			if ( '' !== $badge_style ) {
 				$tax_badge_selector = 'badge' === $badge_style ? 'ast-button ast-badge-tax' : 'ast-underline-text';
-				// $separator          = 'badge' === $badge_style ? '' : $separator;
 			}
 
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -60,7 +60,7 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 
 		$join_separator = 'badge' === $badge_style ? ' ' : ', ';
 		$all_terms      = join( $join_separator, $term_links );
-		$output_str     = '<span class="ast-terms-link">' . $all_terms . '</span>';
+		$output_str     = '<' . esc_attr( $html_tag ) . ' class="ast-terms-link">' . $all_terms . '</' . esc_attr( $html_tag ) . '>';
 
 		return ( 1 != $loop_count ) ? ' ' . $separator . ' ' . $output_str : $output_str;
 	}
@@ -217,7 +217,7 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 			}
 
 			if ( strpos( $meta_value, '-taxonomy' ) !== false ) {
-				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator, astra_get_option( $meta_value . '-style', '' ) );
+				$output_str .= astra_get_dynamic_taxonomy( $meta_value, $loop_count, $separator, astra_get_option( $meta_value . '-style', '' ), 'span' );
 			}
 
 			$loop_count ++;

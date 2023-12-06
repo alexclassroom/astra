@@ -11,6 +11,7 @@ v4.6.0 (Unreleased)
 - Fix: Submenu animation not working while navigating site using tab key.
 - Fix: Broken UI fix for YouTube block with BorLabs cookie plugin.
 - Fix: Kadence Tabs Block scrolling issue with Astra.
+- Fix: Single - Title - Featured image size option not working for Banner Layout 1.
 
 v4.5.1
 - Improvement: Compatibility with WooCommerce 8.3.

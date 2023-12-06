@@ -502,6 +502,7 @@ if ( ! function_exists( 'astra_number_pagination' ) ) {
 				'next_text'    => astra_default_strings( 'string-blog-navigation-next', false ),
 				'taxonomy'     => 'category',
 				'in_same_term' => true,
+				'screen_reader_text' => __( 'Post pagination', 'astra' ),
 			)
 		);
 		/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -1818,11 +1819,12 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 
 			if ( $featured_image && ( ! ( $check_is_singular ) || ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) ) ) {
 
+				$image_size = $check_is_singular ? astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-size', 'large' ) : 'large';
 				$post_thumb = apply_filters(
 					'astra_featured_image_markup',
 					get_the_post_thumbnail(
 						get_the_ID(),
-						apply_filters( 'astra_post_thumbnail_default_size', 'large' ),
+						apply_filters( 'astra_post_thumbnail_default_size', $image_size ),
 						apply_filters( 'astra_post_thumbnail_itemprop', '' )
 					)
 				);

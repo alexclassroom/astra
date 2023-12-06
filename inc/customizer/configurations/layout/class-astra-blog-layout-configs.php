@@ -480,6 +480,39 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 				),
 
 				/**
+				 * Option: Divider
+				 */
+				array(
+					'name'     => ASTRA_THEME_SETTINGS . '[blog-post-color-divider]',
+					'section'  => 'section-blog',
+					'title'    => __( 'Post Cards', 'astra-addon' ),
+					'type'     => 'control',
+					'control'  => 'ast-heading',
+					'priority' => 1,
+					'context'  => Astra_Builder_Helper::$design_tab,
+				),
+
+				array(
+					'name'           => ASTRA_THEME_SETTINGS . '[post-card-featured-overlay]',
+					'default'        => astra_get_option( 'post-card-featured-overlay' ),
+					'type'     => 'control',
+					'control'  => 'ast-color',
+					'section'        => 'section-blog',
+					'priority' => 2.5,
+					'title'    => __( 'Background Overlay', 'astra' ),
+					'transport'      => 'postMessage',
+					'context'  => array(
+						Astra_Builder_Helper::$design_tab_config,
+						'relation' => 'AND',
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[blog-layout]',
+							'operator' => '===',
+							'value'    => 'blog-layout-6',
+						),
+					),
+				),
+
+				/**
 				 * Option: Card Radius
 				 */
 				array(
@@ -489,9 +522,9 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'control'        => 'ast-responsive-spacing',
 					'transport'      => 'postMessage',
 					'section'        => 'section-blog',
-					'title'          => __( 'Card Border Radius', 'astra' ),
+					'title'          => __( 'Border Radius', 'astra' ),
 					'suffix'         => 'px',
-					'priority'       => 1,
+					'priority'       => $if_astra_addon ? 144 : 2.5,
 					'divider'        => array( 'ast_class' => 'ast-section-spacing' ),
 					'context'        => Astra_Builder_Helper::$design_tab,
 					'linked_choices' => true,
@@ -503,26 +536,6 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 						'left'   => __( 'Left', 'astra' ),
 					),
 					'connected'      => false,
-				),
-
-				array(
-					'name'      => ASTRA_THEME_SETTINGS . '[post-card-featured-overlay]',
-					'default'   => astra_get_option( 'post-card-featured-overlay' ),
-					'type'      => 'control',
-					'control'   => 'ast-color',
-					'section'   => 'section-blog',
-					'priority'  => 1,
-					'title'     => __( 'Cards Background Overlay', 'astra' ),
-					'transport' => 'postMessage',
-					'context'   => array(
-						Astra_Builder_Helper::$design_tab_config,
-						'relation' => 'AND',
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[blog-layout]',
-							'operator' => '===',
-							'value'    => 'blog-layout-6',
-						),
-					),
 				),
 
 				/**

@@ -94,7 +94,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 						'above' => __( 'Above Comments', 'astra' ),
 					),
 					'context'    => Astra_Builder_Helper::$general_tab,
-					'divider'    => array( 'ast_class' => 'ast-top-dotted-divider' ),
+					'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 					'responsive' => false,
 					'renderAs'   => 'text',
 				),
