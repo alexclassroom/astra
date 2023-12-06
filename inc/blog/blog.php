@@ -492,7 +492,9 @@ function astra_banner_elements_order( $structure = array() ) {
 
 	$post_type = '';
 	if ( ! is_search() ) {
+		/** @psalm-suppress InvalidGlobal */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		global $post;
+		/** @psalm-suppress InvalidGlobal */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( is_null( $post ) ) {
 			return;
 		}
