@@ -85,7 +85,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 					padding-bottom: 2em;
 				}
 				.ast-page-builder-template .ast-single-related-posts-container {
-					margin: 0;
+					margin-top: 0;
 					padding-left: 20px;
 					padding-right: 20px;
 				}

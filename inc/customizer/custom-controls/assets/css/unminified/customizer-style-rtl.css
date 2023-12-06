@@ -340,6 +340,7 @@ input[type="text"].select2-search__field {
     padding-bottom: 0;
 	margin-top: 24px;
 	margin-bottom: 9px;
+	margin-top: 24px;
 }
 .customize-control.customize-control-ast-section-toggle:hover {
     background: var(--ast-customizer-color-9);
@@ -355,10 +356,10 @@ input[type="text"].select2-search__field {
 }
 
 .ast-section-toggle-icon span {
-  font-size: 16px;
-  line-height: 16px;
-  width: 16px;
-  height: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
 }
 
 .customize-control-ast-section-toggle {
@@ -367,6 +368,7 @@ input[type="text"].select2-search__field {
 }
 
 li[ID*="accordion-section-ast-dynamic-single-"].control-section-ast_section,
-li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section {
+li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section,
+li#accordion-section-section-search-page-title.control-section-ast_section {
   display: none !important;
 }

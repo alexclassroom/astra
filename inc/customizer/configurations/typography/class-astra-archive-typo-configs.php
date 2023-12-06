@@ -166,7 +166,7 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 								'max'  => 20,
 							),
 						),
-						'context'   => array(
+						'context'           => array(
 							Astra_Builder_Helper::$design_tab_config,
 							array(
 								'relation' => 'OR',

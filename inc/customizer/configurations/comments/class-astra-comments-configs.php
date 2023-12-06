@@ -64,9 +64,9 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'title'      => __( 'Container Structure', 'astra' ),
 					'control'    => 'ast-selector',
 					'choices'    => array(
-						'narrow'    => __( 'Narrow', 'astra' ),
-						'normal'    => __( 'Normal', 'astra' ),
-						'' => __( 'Full Width', 'astra' ),
+						'narrow' => __( 'Narrow', 'astra' ),
+						'normal' => __( 'Normal', 'astra' ),
+						''       => __( 'Full Width', 'astra' ),
 					),
 					'context'    => array(
 						Astra_Builder_Helper::$general_tab_config,

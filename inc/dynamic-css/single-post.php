@@ -24,8 +24,8 @@ if ( apply_filters( 'astra_improvise_single_post_design', Astra_Dynamic_CSS::ast
  * @since x.x.x
  */
 function astra_single_post_css( $dynamic_css ) {
-	$is_boxed         = astra_is_content_style_boxed();
-	$content_layout   = astra_get_content_layout();
+	$is_boxed       = astra_is_content_style_boxed();
+	$content_layout = astra_get_content_layout();
 
 	$post_with_unboxed_layout = ( 'plain-container' === $content_layout || 'narrow-container' === $content_layout ) && ! $is_boxed ? true : false;
 

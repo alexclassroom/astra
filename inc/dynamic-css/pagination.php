@@ -33,7 +33,7 @@ function astra_pagination_css( $dynamic_css ) {
 				'display' => 'inherit',
 				'float'   => 'none',
 			),
-			'.ast-pagination a, .nav-links a'                  => array(
+			'.ast-pagination a, .nav-links a'    => array(
 				'color' => esc_attr( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? $text_color : $link_color ),
 			),
 			'.ast-pagination a:hover, .ast-pagination a:focus, .ast-pagination > span:hover:not(.dots), .ast-pagination > span.current' => array(

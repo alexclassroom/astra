@@ -228,6 +228,16 @@ function astra_is_content_style_boxed( $post_id = false ) {
 			$is_boxed = false;
 		}
 	}
+
+	// Search.
+	if ( is_search() ) {
+		$content_style = astra_get_option( 'ast-search-content-style', '' );
+
+		if ( ! empty( $content_style ) && 'default' !== $content_style ) {
+			$is_boxed = ( 'boxed' === $content_style );
+		}
+	}
+
 	return apply_filters( 'astra_is_content_layout_boxed', $is_boxed );
 }
 
@@ -333,6 +343,14 @@ function astra_is_sidebar_style_boxed( $post_id = false ) {
 			$is_sidebar_boxed = true;
 		} else {
 			$is_sidebar_boxed = false;
+		}
+	}
+
+	// Search.
+	if ( is_search() ) {
+		$sidebar_style = astra_get_option( 'ast-search-sidebar-style', '' );
+		if ( ! empty( $sidebar_style ) && 'default' !== $sidebar_style ) {
+			$is_sidebar_boxed = ( 'boxed' === $sidebar_style );
 		}
 	}
 
@@ -480,10 +498,10 @@ if ( ! function_exists( 'astra_number_pagination' ) ) {
 		/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		the_posts_pagination(
 			array(
-				'prev_text'    => astra_default_strings( 'string-blog-navigation-previous', false ),
-				'next_text'    => astra_default_strings( 'string-blog-navigation-next', false ),
-				'taxonomy'     => 'category',
-				'in_same_term' => true,
+				'prev_text'          => astra_default_strings( 'string-blog-navigation-previous', false ),
+				'next_text'          => astra_default_strings( 'string-blog-navigation-next', false ),
+				'taxonomy'           => 'category',
+				'in_same_term'       => true,
 				'screen_reader_text' => __( 'Post pagination', 'astra' ),
 			)
 		);

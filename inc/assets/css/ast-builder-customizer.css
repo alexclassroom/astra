@@ -636,7 +636,7 @@
 }
 
 .ahfb-builder-item-start button.ahfb-builder-item {
-    border: 1px dashed var(--ast-customizer-color-1);
+    border: 1px dashed var(--ast-customizer-color-7);
     background: var(--ast-customizer-color-11);
     cursor: pointer;
     box-shadow: none !important;

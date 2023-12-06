@@ -93,9 +93,9 @@ function astra_container_layout_css() {
 	$tab_one_max_breakpoint = '@media (min-width: ' . $tab_one_max_breakpoint . 'px)';
 	/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-	$current_post_type 	 = get_post_type();
-	$layout_type     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-layout', 'layout-1' );
-	$image_position          = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-position-layout-1', 'inside' );
+	$current_post_type = strval( get_post_type() );
+	$layout_type       = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-layout', 'layout-1' );
+	$image_position    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-position-layout-1', 'inside' );
 
 	if ( 'layout-1' === $layout_type && 'behind' === $image_position ) {
 		$page_container_css .= '
@@ -197,6 +197,8 @@ function astra_container_layout_css() {
             max-width: 100%;
           }';
 
+		$astra_blog_improvements = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
+		$post_navigation_selector = $astra_blog_improvements ? ', .ast-page-builder-template .post-navigation' : '';
 		if ( true === $customizer_default_update ) {
 			$page_container_css .= '
 				.ast-page-builder-template .entry-header {
@@ -209,7 +211,7 @@ function astra_container_layout_css() {
 			if ( 'disabled' !== $display_title && true === apply_filters( 'astra_stretched_layout_with_spacing', true ) && false === astra_check_any_page_builder_is_active( astra_get_post_id() ) ) {
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				$page_container_css .= '
-					.ast-single-post.ast-page-builder-template .site-main > article, .woocommerce.ast-page-builder-template .site-main {
+					.ast-single-post.ast-page-builder-template .site-main > article, .woocommerce.ast-page-builder-template .site-main' . $post_navigation_selector . ' {
 						padding-top: 2em;
 						padding-left: 20px;
 						padding-right: 20px;

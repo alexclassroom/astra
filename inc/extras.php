@@ -158,7 +158,9 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 			$content_layout = astra_toggle_layout( 'archive-' . $post_type . '-ast-content-layout', 'archive', false );
 
 			if ( is_search() ) {
-				$content_layout = astra_toggle_layout( 'archive-post-ast-content-layout', 'archive', false );
+				$search_content_layout = astra_get_option( 'ast-search-content-layout', 'default' );
+				$content_layout_key    = 'default' !== $search_content_layout ? 'ast-search-content-layout' : 'archive-post-ast-content-layout';
+				$content_layout        = astra_toggle_layout( $content_layout_key, 'archive', false );
 			}
 
 			if ( 'default' == $content_layout || empty( $content_layout ) ) {
@@ -1345,4 +1347,26 @@ function astra_get_palette_presets() {
 			'#222222',
 		),
 	);
+}
+
+/**
+ * Get Astra blog layout design.
+ * Search / Blog.
+ *
+ * @return string $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_layout() {
+	return ( is_search() && '' !== astra_get_option( 'ast-search-results-style' ) ) ? astra_get_option( 'ast-search-results-style' ) : astra_get_option( 'blog-layout' );
+}
+
+/**
+ * Get Astra blog posts per page count.
+ * Search / Blog.
+ *
+ * @return int $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_posts_per_page() {
+	return ( is_search() && astra_get_option( 'ast-search-results-per-page' ) ) ? astra_get_option( 'ast-search-results-per-page' ) : astra_get_option( 'blog-post-per-page' );
 }
