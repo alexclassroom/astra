@@ -430,7 +430,7 @@ if ( ! class_exists( 'Astra_Customizer_Register_Sections_Panels' ) ) {
 				$configs[] = array(
 					'name'     => 'ast-section-' . $special_type . '-page',
 					'type'     => 'section',
-					'priority' => 10 + $index,
+					'priority' => 10 + absint( $index ),
 					'title'    => __( ucfirst( $special_type ), 'astra' ),
 					'section'  => 'section-page-dynamic-group',
 				);

@@ -216,14 +216,17 @@ if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
 		if ( is_single() && $single_post_navigation_enabled ) {
 
 			$post_obj = get_post_type_object( get_post_type() );
+			/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$post_singular_name = ! empty( $post_obj->labels->singular_name ) ? $post_obj->labels->singular_name : '';
+			/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			$prev_text = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '<span class="ast-post-nav">' . Astra_Builder_UI_Controller::fetch_svg_icon( 'long-arrow-alt-left' ) . ' ' . astra_default_strings( 'string-previous-text', false ) . '</span> <p> %title </p>' : sprintf(
 				astra_default_strings( 'string-single-navigation-previous', false ),
-				$post_obj->labels->singular_name
+				$post_singular_name
 			);
 			$next_text = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '<span class="ast-post-nav">' . astra_default_strings( 'string-next-text', false ) . ' ' . Astra_Builder_UI_Controller::fetch_svg_icon( 'long-arrow-alt-right' ) . '</span> <p> %title </p>' : sprintf(
 				astra_default_strings( 'string-single-navigation-next', false ),
-				$post_obj->labels->singular_name
+				$post_singular_name
 			);
 
 			/**

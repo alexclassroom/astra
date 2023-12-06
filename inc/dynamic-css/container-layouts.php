@@ -93,7 +93,7 @@ function astra_container_layout_css() {
 	$tab_one_max_breakpoint = '@media (min-width: ' . $tab_one_max_breakpoint . 'px)';
 	/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-	$current_post_type 	 = get_post_type();
+	$current_post_type 	 = strval( get_post_type() );
 	$layout_type     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-layout', 'layout-1' );
 	$image_position          = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-position-layout-1', 'inside' );
 
