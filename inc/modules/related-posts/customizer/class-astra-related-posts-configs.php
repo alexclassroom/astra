@@ -497,7 +497,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider ast-bottom-dotted-divider' ),
 			),
 
 			/**
@@ -691,7 +691,6 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					'inside'  => __( 'Contained', 'astra' ),
 					'outside' => __( 'Separated', 'astra' ),
 				),
-				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				'context'     => array(
 					Astra_Builder_Helper::$general_tab_config,
 					array(

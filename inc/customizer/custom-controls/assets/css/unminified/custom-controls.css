@@ -1360,10 +1360,6 @@ section.ast-palette-presets-inner-wrap:last-child {
         width: 20px;
         top: -2px;
     }
-    .ast-color-palette .components-circular-option-picker__option-wrapper .components-circular-option-picker__option:focus::after {
-        width: 24px;
-        height: 24px;
-    }
     .astra-popover-color .ast-color-palette.components-circular-option-picker {
         width: auto;
         padding: 16px 0px 0px 8px;
@@ -1388,6 +1384,10 @@ section.ast-palette-presets-inner-wrap:last-child {
 		top: -2px;
 		width: 18px;
 	}
+	.ast-color-palette .components-circular-option-picker__option-wrapper .components-circular-option-picker__option:focus::after {
+        width: 24px;
+        height: 24px;
+    }
 }
 @supports (-moz-appearance:none) {
 	@media (max-width: 1845px) {
@@ -1599,6 +1599,10 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
   right: 0;
   color: var(--ast-customizer-color-6);
   cursor: help;
+}
+
+.customize-control .ast-control-tooltip:hover {
+    color: var(--ast-customizer-color-1);
 }
 
 .customize-control.customize-control-ast-toggle-control .ast-control-tooltip {
@@ -1845,9 +1849,9 @@ input[type="text"].select2-search__field {
 
 .ast-section-toggle-icon span {
   font-size: 16px;
-  line-height: 20px;
-	width: 16px;
-	height: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .customize-control-ast-section-toggle {
@@ -4877,6 +4881,10 @@ li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
     top: 18%;
     padding: 0;
     font-size: 20px;
+}
+.customize-control.customize-control-ast-color i.ast-control-tooltip {
+    top: 4px;
+    right: 60px;
 }
 
 .select2-container {

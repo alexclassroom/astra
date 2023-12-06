@@ -623,7 +623,7 @@ function astra_comments_css( $dynamic_css ) {
 					}
 					@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
 						.site-content article .ast-comment-list li.depth-1 {
-							padding: 2em;
+							padding: 0 2em;
 						}
 					}
 				';

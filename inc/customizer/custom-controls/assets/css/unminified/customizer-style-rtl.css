@@ -108,6 +108,10 @@
   cursor: help;
 }
 
+.customize-control .ast-control-tooltip:hover {
+    color: var(--ast-customizer-color-1);
+}
+
 .customize-control.customize-control-ast-toggle-control .ast-control-tooltip {
   position: absolute;
   top: 50%;
@@ -352,9 +356,9 @@ input[type="text"].select2-search__field {
 
 .ast-section-toggle-icon span {
   font-size: 16px;
-  line-height: 20px;
-	width: 16px;
-	height: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .customize-control-ast-section-toggle {
