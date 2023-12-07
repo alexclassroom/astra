@@ -84,7 +84,7 @@ class Astra_Related_Posts_Loader {
 		$defaults['enable-related-posts']                    = false;
 		$defaults['related-posts-title']                     = __( 'Related Posts', 'astra' );
 		$defaults['releted-posts-title-alignment']           = 'left';
-		$defaults['related-posts-total-count']               = 2;
+		$defaults['related-posts-total-count']               = $astra_blog_update ? 3 : 2;
 		$defaults['enable-related-posts-excerpt']            = false;
 		$defaults['related-posts-box-placement']             = 'outside';
 		$defaults['related-posts-outside-location']          = 'above';
@@ -94,7 +94,7 @@ class Astra_Related_Posts_Loader {
 		$defaults['related-posts-order-by']                  = 'date';
 		$defaults['related-posts-order']                     = 'asc';
 		$defaults['related-posts-grid-responsive']           = array(
-			'desktop' => '2-equal',
+			'desktop' => $astra_blog_update ? '3-equal' : '2-equal',
 			'tablet'  => '2-equal',
 			'mobile'  => 'full',
 		);
