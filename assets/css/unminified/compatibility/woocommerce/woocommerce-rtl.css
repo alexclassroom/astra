@@ -1583,6 +1583,7 @@ p.demo_store[data-position="bottom"],
 
 .woocommerce-js ul.products li.product a.ast-loop-product__link {
   display: inline-block;
+  width: 100%;
 }
 
 .woocommerce-js ul.products li.product:hover .show-on-hover {

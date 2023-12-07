@@ -218,18 +218,6 @@ p.demo_store,
 			text-align: center;
 		}
 
-		.buttons {
-			.button{
-				&,
-				&.wc-forward {
-					display: block;
-					margin-right: 0;
-					width: 100%;
-					margin-left: 0;
-				}
-			}
-		}
-
 		.woocommerce-mini-cart__empty-message {
 			margin: 1.41575em;
 		}
@@ -1364,6 +1352,7 @@ p.demo_store,
 
 		a.ast-loop-product__link {
 			display: inline-block;
+			width: 100%; // To fix the short title and Add to cart button issue ( #ast-3697 )
 		}
 
 		&:hover .show-on-hover  {
@@ -3851,6 +3840,23 @@ button.pswp__button--zoom:hover {
 			}
 		}
 
+	}
+}
+
+.woocommerce .ast-site-header-cart,
+.ast-site-header-cart {
+	.widget_shopping_cart {
+		.buttons {
+			.button {
+				&,
+				&.wc-forward {
+					display: block;
+					margin-right: 0;
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
 	}
 }
 

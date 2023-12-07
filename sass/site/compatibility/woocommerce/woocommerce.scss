@@ -1377,6 +1377,7 @@ p.demo_store,
 
 		a.ast-loop-product__link {
 			display: inline-block;
+			width: 100%; // To fix the short title and Add to cart button issue ( #ast-3697 )
 		}
 
 		&:hover .show-on-hover  {

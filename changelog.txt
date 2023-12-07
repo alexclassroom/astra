@@ -1,3 +1,6 @@
+v4.7.0 (Unreleased)
+- New: Introducing new "vw" unit support for font-size in customizer typography settings.
+
 v4.6.0 (Unreleased)
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
 - New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
@@ -12,6 +15,8 @@ v4.6.0 (Unreleased)
 - Fix: Broken UI fix for YouTube block with BorLabs cookie plugin.
 - Fix: Kadence Tabs Block scrolling issue with Astra.
 - Fix: Single - Title - Featured image size option not working for Banner Layout 1.
+- Fix: WooCommerce - Inside dropdown cart buttons are not aligned properly on WooCommerce pages.
+- Fix: WooCommerce - Shop card structure gets broken if the Add To Cart button is kept just below the title.
 
 v4.5.1
 - Improvement: Compatibility with WooCommerce 8.3.

@@ -369,6 +369,7 @@ function astra_header_mobile_trigger_configuration() {
 				'units'       => array(
 					'px' => 'px',
 					'em' => 'em',
+					'vw',
 				),
 				'context'     => Astra_Builder_Helper::$design_tab,
 			),
@@ -396,6 +397,7 @@ function astra_header_mobile_trigger_configuration() {
 				'units'       => array(
 					'px' => 'px',
 					'em' => 'em',
+					'vw' => 'vw',
 				),
 				'context'     => Astra_Builder_Helper::$design_tab,
 			),
