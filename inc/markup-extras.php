@@ -1800,6 +1800,7 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 			$is_featured_image = astra_get_option( 'ast-featured-img' );
 		}
 
+		$featured_image_size = 'large';
 		if ( $check_is_archive ) {
 			$featured_image_size = astra_get_option( 'blog-image-size', 'large' );
 		}
