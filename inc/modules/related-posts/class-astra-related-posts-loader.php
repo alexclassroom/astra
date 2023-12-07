@@ -78,6 +78,7 @@ class Astra_Related_Posts_Loader {
 		$apply_new_default_color_typo_values = Astra_Dynamic_CSS::astra_check_default_color_typo();
 
 		$astra_options = Astra_Theme_Options::get_astra_options();
+		$astra_blog_update = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
 
 		// Related Posts.
 		$defaults['enable-related-posts']                    = false;
@@ -87,7 +88,7 @@ class Astra_Related_Posts_Loader {
 		$defaults['enable-related-posts-excerpt']            = false;
 		$defaults['related-posts-box-placement']             = 'outside';
 		$defaults['related-posts-outside-location']          = 'above';
-		$defaults['related-posts-container-width']           = '';
+		$defaults['related-posts-container-width']           = $astra_blog_update ? '' : 'fallback';
 		$defaults['related-posts-excerpt-count']             = 25;
 		$defaults['related-posts-based-on']                  = 'categories';
 		$defaults['related-posts-order-by']                  = 'date';

@@ -1619,9 +1619,13 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
 
 .customize-control.customize-control-ast-toggle-control.ast-top-dotted-divider .ast-control-tooltip {
   position: absolute;
-  top: 55%;
+  top: 50%;
   right: 40px;
   transform: translateY(0);
+}
+
+.customize-control-ast-selector.customize-control .ast-control-tooltip {
+    top: -3px;
 }
 
 .customize-control.customize-control-ast-toggle-control.ast-top-divider .ast-control-tooltip {
@@ -1790,6 +1794,7 @@ input[type="text"].select2-search__field {
     height: 100%;
 	align-items: center;
     align-content: center;
+	max-height: 46px;
 }
 
 .ast-section-toggle label {

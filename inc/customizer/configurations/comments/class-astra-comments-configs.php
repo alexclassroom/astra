@@ -65,7 +65,6 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'control'    => 'ast-selector',
 					'choices'    => array(
 						'narrow' => __( 'Narrow', 'astra' ),
-						'normal' => __( 'Normal', 'astra' ),
 						''       => __( 'Full Width', 'astra' ),
 					),
 					'context'    => array(

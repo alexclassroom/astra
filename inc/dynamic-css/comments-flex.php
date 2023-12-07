@@ -226,7 +226,7 @@ function astra_comments_css( $dynamic_css ) {
 						padding-right: 2.5em;
 					}
 				';
-			}       
+			}
 		} else {
 			$single_post_comment_css .= '
 				.ast-separate-container .ast-comment-list .pingback p {
@@ -610,6 +610,9 @@ function astra_comments_css( $dynamic_css ) {
 					.site-content article .comments-title {
 						padding-top: 2em;
 					}
+					.ast-separate-container article .comments-title, .ast-narrow-container article .comments-title {
+						padding-bottom: 2em;
+					}
 					.site-content article .comment-respond {
 						padding-top: 1.5em;
 					}
@@ -622,7 +625,10 @@ function astra_comments_css( $dynamic_css ) {
 					}
 					@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
 						.site-content article .ast-comment-list li.depth-1 {
-							padding: 0 2em;
+							padding: 2em;
+						}
+						.site-content article .ast-comment-list li:first-child {
+							padding-top: 0;
 						}
 					}
 				';

@@ -1819,7 +1819,7 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 
 			if ( $featured_image && ( ! ( $check_is_singular ) || ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) ) ) {
 
-				$image_size = $check_is_singular ? astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-size', 'large' ) : 'large';
+				$image_size = $check_is_singular ? astra_get_option( 'ast-dynamic-single-' . $post_type . '-article-featured-image-size', 'large' ) : $featured_image_size;
 				$post_thumb = apply_filters(
 					'astra_featured_image_markup',
 					get_the_post_thumbnail(

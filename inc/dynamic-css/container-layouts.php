@@ -142,17 +142,31 @@ function astra_container_layout_css() {
 	/** @psalm-suppress InvalidCast */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 	$page_container_css .= '
+		.ast-narrow-container .ast-container--, .ast-separate-container.ast-no-sidebar .ast-container-- {
+			margin-left: calc( -50vw + 50%);
+			margin-right: calc( -50vw + 50%);
+		}
+		.ast-narrow-container .ast-container-- {
+			max-width: 100vw;
+			width: 100vw;
+		}
+		.ast-narrow-container .ast-single-related-posts-container.ast-container-- {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		.ast-separate-container.ast-no-sidebar .ast-container-- {
+			max-width: unset;
+			width: unset;
+		}
+		.site > .ast-single-related-posts-container {
+			margin-top: 0;
+		}
 		@media (min-width: ' . strval( astra_get_tablet_breakpoint( '', 1 ) ) . 'px) {
-			.ast-desktop .ast-container--normal, .ast-desktop .ast-container--narrow {
-				width: 100%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.ast-desktop .ast-container--normal {
-				max-width: var(--ast-normal-container-width);
-			}
 			.ast-desktop .ast-container--narrow {
 				max-width: var(--ast-narrow-container-width);
+				margin: 0 auto;
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 		}
 	';

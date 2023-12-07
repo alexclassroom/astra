@@ -682,6 +682,10 @@ if ( ! function_exists( 'astra_get_blog_layout_class' ) ) {
 			}
 		}
 
+		if ( ! in_array( 'ast-no-thumb', $classes ) && ! in_array( 'image', astra_get_option( 'blog-post-structure', array() ) ) ) {
+			$classes[] = 'ast-no-thumb';
+		}
+
 		if ( ! empty( $class ) ) {
 			if ( ! is_array( $class ) ) {
 				$class = preg_split( '#\s+#', $class );

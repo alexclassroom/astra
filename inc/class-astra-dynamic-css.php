@@ -567,6 +567,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'--ast-normal-container-width'        => $site_content_width . 'px',
 					'--ast-narrow-container-width'        => $narrow_container_max_width . 'px',
 					'--ast-blog-title-font-weight'        => self::astra_4_6_0_compatibility() ? '600' : 'normal',
+					'--ast-blog-meta-weight'              => self::astra_4_6_0_compatibility() ? '600' : 'inherit',
 				),
 
 				// HTML.
@@ -2209,9 +2210,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					),
 				);
 				if ( ! self::astra_4_6_0_compatibility() ) {
-					$default_layout_update_css['.ast-separate-container .comment-form-position-above .comment-respond'] = array(
-						'margin-bottom' => '2em',
-					);
 					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
 						'margin-bottom' => '2em',
 					);
@@ -3782,7 +3780,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						$blog_layout_css['.ast-article-inner'] = array(
 							'padding' => '1.5em',
-							'border'  => '1px solid var(--ast-single-post-border, #e1e8ed)',
 						);
 					}
 
@@ -3808,7 +3805,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 							'padding' => '0 1em 0',
 						);
 					}
-					$blog_layout_css[ '.ast-separate-container ' . $bl_selector . ' .ast-article-inner' ] = array(
+					$blog_layout_css[ $bl_selector . ' .ast-article-inner' ] = array(
 						'box-shadow' => '0px 6px 15px -2px rgba(16, 24, 40, 0.05)',
 					);
 

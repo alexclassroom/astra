@@ -43,8 +43,12 @@
 	> .cat-links, > .tags-links, > .read-more {
 		display: block;
 		margin-bottom: .8em;
-		font-weight: 600;
+		font-weight: var(--ast-blog-meta-weight, '');
 	}
+}
+
+.ast-excerpt-container > p:last-child {
+    margin-bottom: 0;
 }
 
 .post-content {
