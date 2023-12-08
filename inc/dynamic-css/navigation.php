@@ -22,15 +22,6 @@ add_filter( 'astra_dynamic_theme_css', 'astra_navigation_css', 11 );
  */
 function astra_navigation_css( $dynamic_css ) {
 	$navigation_css = '
-		.comment-navigation .nav-previous:after, .post-navigation .nav-previous:after {
-			position: absolute;
-			content: "";
-			top: 25%;
-			right: 0;
-			width: 1px;
-			height: 50%;
-			background: var(--ast-border-color);
-		}
 		.single .post-navigation a p {
 			margin-top: 0.5em;
 			margin-bottom: 0;
@@ -52,13 +43,24 @@ function astra_navigation_css( $dynamic_css ) {
 			position: relative;
 			fill: currentColor;
 		}
-		.single .post-navigation .nav-previous a {
-			text-align: left;
-			padding-right: 20px;
-		}
-		.single .post-navigation .nav-next a {
-			text-align: right;
-			padding-left: 20px;
+		@media( min-width: 421px ) {
+			.single .post-navigation .nav-previous a {
+				text-align: left;
+				padding-right: 20px;
+			}
+			.single .post-navigation .nav-next a {
+				text-align: right;
+				padding-left: 20px;
+			}
+			.comment-navigation .nav-previous:after, .post-navigation .nav-previous:after {
+				position: absolute;
+				content: "";
+				top: 25%;
+				right: 0;
+				width: 1px;
+				height: 50%;
+				background: var(--ast-single-post-border, var(--ast-border-color));
+			}
 		}
 	';
 

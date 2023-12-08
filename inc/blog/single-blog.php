@@ -198,6 +198,21 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 }
 
 /**
+ * Adjacent navigation post link attributes.
+ * @param string         $output   The adjacent post link.
+ * @param string         $format   Link anchor format.
+ * @param string         $link     Link permalink format.
+ * @param WP_Post|string $post     The adjacent post. Empty string if no corresponding post exists.
+ * @param string         $adjacent Whether the post is previous or next.
+ *
+ * @return string       Link of post URL.
+ * @since x.x.x
+ */
+function astra_adjacent_post_links_title( $output, $format, $link, $post, $adjacent ) {
+	return str_replace( 'href="', 'title="' . esc_attr( $post->post_title ) . '"' . 'href="', $output );
+}
+
+/**
  * Get Post Navigation
  */
 if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
@@ -229,6 +244,9 @@ if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
 				$post_singular_name
 			);
 
+			add_filter( 'previous_post_link', 'astra_adjacent_post_links_title', 10, 5 );
+			add_filter( 'next_post_link', 'astra_adjacent_post_links_title', 10, 5 );
+
 			/**
 			 * Filter the post pagination markup
 			 */
@@ -242,6 +260,9 @@ if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
 					)
 				)
 			);
+
+			remove_filter( 'previous_post_link', 'astra_adjacent_post_links_title', 10, 5 );
+			remove_filter( 'next_post_link', 'astra_adjacent_post_links_title', 10, 5 );
 		}
 	}
 }

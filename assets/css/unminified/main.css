@@ -2895,13 +2895,27 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 @media (min-width: 421px) {
+  .single .post-navigation a {
+    max-width: 80%;
+    width: 100%;
+  }
+}
+
+.single .post-navigation a p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (min-width: 421px) {
   .single .post-navigation .nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    -js-display: inline-flex;
+    display: inline-flex;
+    width: 100%;
   }
   .single .post-navigation .nav-previous,
   .single .post-navigation .nav-next {
-    width: 100%;
+    width: 50%;
   }
 }
 
