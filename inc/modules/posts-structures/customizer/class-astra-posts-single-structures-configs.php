@@ -589,6 +589,8 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'transport'         => 'postMessage',
 					'section'           => $title_section,
 					'priority'          => 28,
+					'qty_selector'      => true,
+					'title'             => __( 'Width', 'astra' ),
 					'input_attrs'       => array(
 						'style'       => 'text-align:center;',
 						'placeholder' => __( 'Auto', 'astra' ),
@@ -607,6 +609,8 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'priority'          => 28,
 					'parent'            => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
 					'linked'            => $title_section . '-image',
+					'qty_selector'      => true,
+					'title'             => __( 'Height', 'astra' ),
 					'input_attrs'       => array(
 						'style'       => 'text-align:center;',
 						'placeholder' => __( 'Auto', 'astra' ),

@@ -6,11 +6,7 @@
     width: 96px;
 }
 
-.customize-control-ast-number .components-input-control__container {
-    text-align: center;
-}
-
-.customize-control-ast-number .components-input-control__input {
+.customize-control-ast-number .components-input-control__container, .customize-control-ast-number .components-input-control__input {
     text-align: center;
 }
 
@@ -28,15 +24,15 @@
     border: 0 !important;
 }
 
-.customize-control-ast-number .ast-number-single input[type=number]::-webkit-inner-spin-button, 
-.customize-control-ast-number .ast-number-single input[type=number]::-webkit-outer-spin-button { 
+.customize-control-ast-number .ast-number-single input[type=number]::-webkit-inner-spin-button,
+.customize-control-ast-number .ast-number-single input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
-.customize-control-ast-number .ast-control-wrapper{
+.customize-control-ast-number .ast-control-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,44 +42,16 @@
     width: 50%;
 }
 
-.customize-control-ast-number .ast-number-single{
+.customize-control-ast-number .ast-number-single {
     display: none
 }
 
-.customize-control-ast-number .ast-number-single.active{
+.customize-control-ast-number .ast-number-single.active {
     display: flex;
 }
 
-.customize-control-ast-number .ast-responsive-btns{
+.customize-control-ast-number .ast-responsive-btns {
     margin-left: 0.5em;
-}
-
-
-li[ID*="-image-custom-scale-width"], li[ID*="-image-custom-scale-height"] {
-    display: inline-flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-li[ID*="-image-custom-scale-height"] {
-	float: none;
-    padding: 0 !important;
-    width: calc(50% + 12px);
-}
-li[ID*="-image-custom-scale-width"] {
-    width: calc(50% - 12px);
-}
-li[ID*="-image-custom-scale-height"]:before {
-    content: ':';
-    padding: 0 10px;
-	line-height: 30px;
-}
-li[ID*="-image-custom-scale-height"].customize-control-ast-hidden {
-    float: unset;
-    width: unset;
-}
-li[ID*="-image-custom-scale-height"].customize-control-ast-hidden:before {
-    content: unset;
 }
 
 /* Hide spin buttons for WebKit (Chrome, Safari) */

@@ -305,6 +305,8 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'section'           => 'section-blog-single',
 				'linked'            => 'featured-image',
 				'priority'          => 11,
+				'qty_selector'      => true,
+				'title'             => __( 'Width', 'astra' ),
 				'input_attrs'       => array(
 					'style'       => 'text-align:center;',
 					'placeholder' => __( 'Auto', 'astra' ),
@@ -323,6 +325,8 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'section'           => 'section-blog-single',
 				'linked'            => 'featured-image',
 				'priority'          => 12,
+				'qty_selector'      => true,
+				'title'             => __( 'Height', 'astra' ),
 				'input_attrs'       => array(
 					'style'       => 'text-align:center;',
 					'placeholder' => __( 'Auto', 'astra' ),
@@ -497,7 +501,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider ast-bottom-dotted-divider' ),
+				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider' ),
 			),
 
 			/**
@@ -687,6 +691,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'title'       => __( 'Section Placement', 'astra' ),
 				'control'     => 'ast-selector',
 				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
+				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				'choices'     => array(
 					'inside'  => __( 'Contained', 'astra' ),
 					'outside' => __( 'Separated', 'astra' ),
