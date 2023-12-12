@@ -227,9 +227,9 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 				),
 
 				array(
-					'name'        => $title_section . '-custom-description',
+					'name'        => $title_section . '-found-custom-description',
 					'parent'      => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
-					'default'     => astra_get_option( $title_section . '-custom-description' ),
+					'default'     => astra_get_option( $title_section . '-found-custom-description' ),
 					'linked'      => $title_section . '-description',
 					'type'        => 'sub-control',
 					'control'     => 'ast-text-input',
@@ -238,7 +238,22 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 					),
 					'section'     => $title_section,
 					'priority'    => 1,
-					'title'       => __( 'Text', 'astra' ),
+					'title'       => __( 'When Results Found', 'astra' ),
+				),
+
+				array(
+					'name'        => $title_section . '-not-found-custom-description',
+					'parent'      => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'default'     => astra_get_option( $title_section . '-not-found-custom-description' ),
+					'linked'      => $title_section . '-description',
+					'type'        => 'sub-control',
+					'control'     => 'ast-text-input',
+					'input_attrs' => array(
+						'textarea' => true,
+					),
+					'section'     => $title_section,
+					'priority'    => 1,
+					'title'       => __( 'When Results Not Found', 'astra' ),
 				),
 
 				array(

@@ -175,7 +175,8 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'section-search-page-title-title',
 					),
 					'section-search-page-title-custom-title' => __( 'Search Results for:', 'astra' ),
-					'section-search-page-title-custom-description' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'astra' ),
+					'section-search-page-title-found-custom-description' => __( 'Here are the search results for your search.', 'astra' ),
+					'section-search-page-title-not-found-custom-description' => __( 'Sorry, but we could not find anything related to your search terms. Please try again.', 'astra' ),
 					'section-search-page-title-title-font-weight' => $blog_defaults_update ? '600' : '',
 					'section-search-page-title-title-font-size' => array(
 						'desktop'      => $blog_defaults_update ? 32 : '',

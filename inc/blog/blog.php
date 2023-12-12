@@ -450,7 +450,11 @@ function astra_get_archive_description( $post_type ) {
 	}
 
 	if ( is_search() ) {
-		$description = astra_get_option( 'section-search-page-title-custom-description', '' );
+		if ( have_posts() ) {
+			$description = astra_get_option( 'section-search-page-title-found-custom-description' );
+		} else {
+			$description = astra_get_option( 'section-search-page-title-not-found-custom-description' );
+		}
 		return $description;
 	} else {
 		$get_archive_description = get_the_archive_description();
