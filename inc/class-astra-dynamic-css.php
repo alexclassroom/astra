@@ -5334,7 +5334,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'padding'       => '12px 16px',
 					'border-radius' => '4px',
 					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
-					'color'         => 'var(--ast-form-input-text, #475569)',					
+					'color'         => 'var(--ast-form-input-text, #475569)',
 				)
 			);
 
