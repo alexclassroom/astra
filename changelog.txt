@@ -1,3 +1,6 @@
+v4.6.0
+- Improvement: Default forms experience improved.
+
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
 - New: Introducing new "vw" unit support for font-size in customizer typography settings.
