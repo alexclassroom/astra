@@ -5373,7 +5373,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @since 4.2.0
 		 */
 		public static function astra_fullwidth_sidebar_support() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS, array() );
 			return apply_filters( 'astra_get_option_fullwidth_sidebar_support', isset( $astra_settings['fullwidth_sidebar_support'] ) ? false : true );
 		}
 
@@ -5386,7 +5386,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @since 4.2.2
 		 */
 		public static function astra_core_form_btns_styling() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS, array() );
 			return apply_filters( 'astra_core_form_btns_styling', isset( $astra_settings['v4-2-2-core-form-btns-styling'] ) ? false : true );
 		}
 
@@ -5397,7 +5397,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @return boolean false if it is an existing user, true if not.
 		 */
 		public static function astra_4_4_0_compatibility() {
-			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS, array() );
 			$astra_settings['v4-4-0-backward-option'] = isset( $astra_settings['v4-4-0-backward-option'] ) ? false : true;
 			return apply_filters( 'astra_addon_upgrade_fullscreen_search_submit_style', $astra_settings['v4-4-0-backward-option'] );
 		}
@@ -5409,7 +5409,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @return boolean false if it is an existing user, true if not.
 		 */
 		public static function astra_4_5_0_compatibility() {
-			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings                           = get_option( ASTRA_THEME_SETTINGS, array() );
 			$astra_settings['v4-5-0-backward-option'] = isset( $astra_settings['v4-5-0-backward-option'] ) ? false : true;
 			return apply_filters( 'astra_upgrade_color_styles', $astra_settings['v4-5-0-backward-option'] );
 		}
@@ -5421,7 +5421,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @return boolean false if it is an existing user, true if not.
 		 */
 		public static function astra_forms_default_style_update() {
-			$astra_settings                                   = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings                                   = get_option( ASTRA_THEME_SETTINGS, array() );
 			$astra_settings['ast-forms-default-style-update'] = isset( $astra_settings['ast-forms-default-style-update'] ) ? false : true;
 			return apply_filters( 'astra_forms_default_style_update', $astra_settings['ast-forms-default-style-update'] );
 		}
