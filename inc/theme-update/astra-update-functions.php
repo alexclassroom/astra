@@ -1498,6 +1498,7 @@ function astra_theme_background_updater_4_5_0() {
 		update_option( 'astra-settings', $theme_options );
 	}
 }
+
 /**
  * Handle backward compatibility on version 4.5.2.
  *
