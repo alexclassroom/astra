@@ -776,7 +776,7 @@ function astra_button_default_padding_updated() {
 /**
  * Check whether user is existing or new to apply the updated default values for secondary button padding.
  *
- * @since x.x.x
+ * @since 4.5.2
  * @return string
  */
 function astra_scndry_btn_default_padding() {

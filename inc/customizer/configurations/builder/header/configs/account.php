@@ -6,7 +6,7 @@
  * @package     Astra
  * @copyright   Copyright (c) 2023, Astra
  * @link        https://wpastra.com/
- * @since       x.x.x
+ * @since       4.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register account header builder Customizer Configurations.
  *
- * @since x.x.x
+ * @since 4.5.2
  * @return array Astra Customizer Configurations with updated configurations.
  */
 function astra_header_account_configuration() {

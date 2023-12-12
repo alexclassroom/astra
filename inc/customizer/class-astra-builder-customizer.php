@@ -419,7 +419,7 @@ final class Astra_Builder_Customizer {
 	/**
 	 * Collect Customizer Builder Data to process further.
 	 *
-	 * @since x.x.x
+	 * @since 4.5.2
 	 * @return bool
 	 */
 	public static function astra_collect_customizer_builder_data() {
