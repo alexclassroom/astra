@@ -34,7 +34,6 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'control'  => 'ast-heading',
 					'title'    => __( 'Comments', 'astra' ),
 					'priority' => 20,
-					'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
 				),
 				array(
 					'name'        => ASTRA_THEME_SETTINGS . '[comments-box-placement]',

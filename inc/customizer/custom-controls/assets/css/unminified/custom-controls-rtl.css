@@ -1867,7 +1867,8 @@ input[type="text"].select2-search__field {
 
 li[ID*="accordion-section-ast-dynamic-single-"].control-section-ast_section,
 li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section,
-li#accordion-section-section-search-page-title.control-section-ast_section {
+li#accordion-section-section-search-page-title.control-section-ast_section,
+li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
   display: none !important;
 }
 
@@ -2784,7 +2785,6 @@ span.customize-control-title.ast-group-section-title {
 .customize-control-ast-number .ast-responsive-btns {
     margin-right: 0.5em;
 }
-
 
 /* Hide spin buttons for WebKit (Chrome, Safari) */
 .customize-control-ast-number input[type="number"]::-webkit-inner-spin-button,

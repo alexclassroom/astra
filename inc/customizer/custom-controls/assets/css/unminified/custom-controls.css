@@ -1865,9 +1865,14 @@ input[type="text"].select2-search__field {
   padding-bottom: 16px;
 }
 
+li#customize-control-astra-settings-related-posts-title {
+    margin-top: 32px;
+}
+
 li[ID*="accordion-section-ast-dynamic-single-"].control-section-ast_section,
 li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section,
-li#accordion-section-section-search-page-title.control-section-ast_section {
+li#accordion-section-section-search-page-title.control-section-ast_section,
+li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
   display: none !important;
 }
 
