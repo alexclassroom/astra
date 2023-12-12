@@ -5260,23 +5260,23 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$enable_site_accessibility = astra_get_option( 'site-accessibility-toggle', false );
 			$forms_default_styling_css = array(
 				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date], select, textarea' => array(
-					'font-size'   => '16px',
-					'font-style'  => 'normal',
-					'font-weight' => '400',
-					'line-height' => '24px',
-					'width'       => '100%',
-					'padding'     => '12px 16px',
+					'font-size'     => '16px',
+					'font-style'    => 'normal',
+					'font-weight'   => '400',
+					'line-height'   => '24px',
+					'width'         => '100%',
+					'padding'       => '12px 16px',
+					'border-radius' => '4px',
+					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
+					'color'         => 'var(--ast-form-input-text, #475569)',
 				),
-				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date]' => array(
+				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date], select' => array(
 					'height' => '40px',
 				),
 				'input[type="date"]' => array(
 					'border-width' => '1px',
 					'border-style' => 'solid',
 					'border-color' => 'var(--ast-border-color)',
-				),
-				'select'             => array(
-					'height' => '50px',
 				),
 				'input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus' => array(
 					'border-color' => '#046BD2',
@@ -5292,7 +5292,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'line-height' => '20px',
 				),
 				'fieldset'           => array(
-					'padding' => '0px 30px 30px 30px',
+					'padding'       => '30px 30px 30px 30px',
+					'border-radius' => '4px',
 				),
 				'button, .ast-button, .button, input[type="button"], input[type="reset"], input[type="submit"]' => array(
 					'border-radius' => '4px',
@@ -5301,6 +5302,40 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				':root'              => array(
 					'--ast-comment-inputs-background' => '#FFF',
 				),
+				'::placeholder' => array(
+					'color' => 'var(--ast-form-field-color, #9CA3AF)',
+				),
+				'::-ms-input-placeholder' => array( /* Edge 12-18 */
+					'color' => 'var(--ast-form-field-color, #9CA3AF)',
+				),
+				// Contact 7 Form Compatibility.
+				'.wpcf7 input.wpcf7-form-control:not([type=submit]), .wpcf7 select.wpcf7-form-control, .wpcf7 textarea.wpcf7-form-control:focus' => array(
+					'padding'       => '12px 16px',
+				),
+				'.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus' => array(
+					'border-color' => '#046BD2',
+					'box-shadow'   => 'none',
+					'outline'      => 'none',
+					'color'        => 'var(--ast-form-input-focus-text, #475569)',
+				),
+				'.wpcf7 .wpcf7-not-valid-tip' => array(
+					'color' => '#DC2626',
+					'font-size' => '14px',
+					'font-weight' => '400',
+					'line-height' => '20px',
+					'margin-top' => '8px',
+				),
+				'.wpcf7 input[type=file].wpcf7-form-control' => array(
+					'font-size'     => '16px',
+					'font-style'    => 'normal',
+					'font-weight'   => '400',
+					'line-height'   => '24px',
+					'width'         => '100%',
+					'padding'       => '12px 16px',
+					'border-radius' => '4px',
+					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
+					'color'         => 'var(--ast-form-input-text, #475569)',					
+				)
 			);
 
 			// Default form styling accessibility options compatibility.
