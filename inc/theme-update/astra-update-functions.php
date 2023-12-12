@@ -1499,9 +1499,9 @@ function astra_theme_background_updater_4_5_0() {
 	}
 }
 /**
- * Handle backward compatibility on version 4.5.2
+ * Handle backward compatibility on version 4.5.2.
  *
- * @since 4.5.2.
+ * @since 4.5.2
  * @return void
  */
 function astra_theme_background_updater_4_5_2() {
