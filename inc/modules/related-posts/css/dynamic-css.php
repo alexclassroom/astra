@@ -75,8 +75,6 @@ function astra_related_posts_css( $dynamic_css ) {
 		$aspect_ratio          = astra_get_dynamic_image_aspect_ratio( $aspect_ratio_type, $predefined_scale, $custom_scale_width, $custom_scale_height );
 		$with_aspect_img_width = 'predefined' === $aspect_ratio_type || 'custom' === $aspect_ratio_type ? '100%' : '';
 
-		$inside_spacing = astra_get_option( 'related-post-padding' );
-
 		$css_desktop_output = array(
 			'.ast-single-related-posts-container .ast-related-posts-wrapper' => array(
 				'grid-template-columns' => Astra_Builder_Helper::$grid_size_mapping[ $desktop_grid ],
@@ -128,12 +126,6 @@ function astra_related_posts_css( $dynamic_css ) {
 			'.ast-related-post-content .post-thumb-img-content img' => array(
 				'aspect-ratio' => $aspect_ratio,
 				'width'        => $with_aspect_img_width,
-			),
-			'.site .ast-single-related-posts-container' => array(
-				'padding-top'    => astra_responsive_spacing( $inside_spacing, 'top', 'desktop' ),
-				'padding-right'  => astra_responsive_spacing( $inside_spacing, 'right', 'desktop' ),
-				'padding-bottom' => astra_responsive_spacing( $inside_spacing, 'bottom', 'desktop' ),
-				'padding-left'   => astra_responsive_spacing( $inside_spacing, 'left', 'desktop' ),
 			),
 		);
 
@@ -218,12 +210,6 @@ function astra_related_posts_css( $dynamic_css ) {
 			'.ast-related-posts-title'                  => array(
 				'font-size' => astra_responsive_font( $related_posts_section_title_font_size, 'tablet' ),
 			),
-			'.site .ast-single-related-posts-container' => array(
-				'padding-top'    => astra_responsive_spacing( $inside_spacing, 'top', 'tablet' ),
-				'padding-right'  => astra_responsive_spacing( $inside_spacing, 'right', 'tablet' ),
-				'padding-bottom' => astra_responsive_spacing( $inside_spacing, 'bottom', 'tablet' ),
-				'padding-left'   => astra_responsive_spacing( $inside_spacing, 'left', 'tablet' ),
-			),
 		);
 
 		if ( astra_has_global_color_format_support() ) {
@@ -254,12 +240,6 @@ function astra_related_posts_css( $dynamic_css ) {
 			'.ast-related-posts-title'                  => array(
 				'font-size' => astra_responsive_font( $related_posts_section_title_font_size, 'mobile' ),
 			),
-			'.site .ast-single-related-posts-container' => array(
-				'padding-top'    => astra_responsive_spacing( $inside_spacing, 'top', 'mobile' ),
-				'padding-right'  => astra_responsive_spacing( $inside_spacing, 'right', 'mobile' ),
-				'padding-bottom' => astra_responsive_spacing( $inside_spacing, 'bottom', 'mobile' ),
-				'padding-left'   => astra_responsive_spacing( $inside_spacing, 'left', 'mobile' ),
-			),
 		);
 
 		if ( astra_has_global_color_format_support() ) {
@@ -274,6 +254,7 @@ function astra_related_posts_css( $dynamic_css ) {
 
 		$dynamic_css .= astra_parse_css( $css_max_mobile_output, '', astra_get_mobile_breakpoint() );
 
+		$dynamic_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-related-posts', '.site .ast-single-related-posts-container' );
 		return $dynamic_css;
 	}
 

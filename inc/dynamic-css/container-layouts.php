@@ -165,8 +165,6 @@ function astra_container_layout_css() {
 			.ast-desktop .ast-container--narrow {
 				max-width: var(--ast-narrow-container-width);
 				margin: 0 auto;
-				padding-left: 20px;
-				padding-right: 20px;
 			}
 		}
 	';

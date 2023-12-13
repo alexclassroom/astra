@@ -4432,6 +4432,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				}
 			}
 
+			if ( astra_get_option( 'enable-comments-area', true ) ) {
+				$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
+			}
+
 			$parse_css .= $dynamic_css;
 			$custom_css = astra_get_option( 'custom-css' );
 

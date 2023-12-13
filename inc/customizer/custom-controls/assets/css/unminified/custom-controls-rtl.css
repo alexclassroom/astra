@@ -1865,6 +1865,10 @@ input[type="text"].select2-search__field {
   padding-bottom: 16px;
 }
 
+li#customize-control-astra-settings-related-posts-title {
+    margin-top: 32px;
+}
+
 li[ID*="accordion-section-ast-dynamic-single-"].control-section-ast_section,
 li[ID*="accordion-section-ast-dynamic-archive-"].control-section-ast_section,
 li#accordion-section-section-search-page-title.control-section-ast_section,
@@ -2163,6 +2167,9 @@ li.customize-control.ast-top-section-spacing {
 }
 .ast-top-section-divider .ast-control-tooltip {
     top: 30px;
+}
+.ast-field-settings-modal .customize-control.ast-top-dotted-divider {
+    margin-top: 0;
 }
 
 .ast-typo-presets {

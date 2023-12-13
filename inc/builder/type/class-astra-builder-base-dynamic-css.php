@@ -130,6 +130,48 @@ if ( ! class_exists( 'Astra_Builder_Base_Dynamic_CSS' ) ) {
 		}
 
 		/**
+		 * Prepare Advanced Border Dynamic CSS.
+		 *
+		 * @param string $section_id section id.
+		 * @param string $selector selector.
+		 * @return string
+		 */
+		public static function prepare_inner_section_advanced_css( $section_id, $selector ) {
+
+			if ( ! empty( $section_id ) && ! empty( $selector ) ) {
+
+				$width = astra_get_option( $section_id . '-border-width', '' );
+				$color  = astra_get_option( $section_id . '-border-color', '' );
+				$radius  = astra_get_option( $section_id . '-border-radius', array(
+					'top' => '',
+					'right' => '',
+					'bottom' => '',
+					'left' => '',
+				) );
+
+				$css_output_desktop = array(
+					$selector => array(
+						'border-style'               => $width ? 'solid' : '',
+						'border-color'               => esc_attr( $color ),
+						'border-width'               => $width . 'px',
+						'border-top-left-radius'     => ! empty( astra_get_css_value( $radius['top'] ) ) ? astra_get_css_value( $radius['top'], 'px' ) : '',
+						'border-bottom-right-radius' => ! empty( astra_get_css_value( $radius['bottom'] ) ) ? astra_get_css_value( $radius['bottom'], 'px' ) : '',
+						'border-bottom-left-radius'  => ! empty( astra_get_css_value( $radius['left'] ) ) ? astra_get_css_value( $radius['left'], 'px' ) : '',
+						'border-top-right-radius'    => ! empty( astra_get_css_value( $radius['right'] ) ) ? astra_get_css_value( $radius['right'], 'px' ) : '',
+					),
+				);
+
+				$css_output  = astra_parse_css( $css_output_desktop );
+
+				$css_output .= self::prepare_advanced_margin_padding_css( $section_id, $selector );
+
+				return $css_output;
+			}
+
+			return '';
+		}
+
+		/**
 		 * Prepare Advanced Margin / Padding Dynamic CSS.
 		 *
 		 * @param string $section_id section id.

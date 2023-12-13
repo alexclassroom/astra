@@ -25,21 +25,49 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 		 * @return Array Astra Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
-
+			$parent_section = 'section-blog-single';
 			$_configs = array(
 				array(
+					'name'        => 'comments-section-ast-context-tabs',
+					'section'     => 'ast-sub-section-comments',
+					'type'        => 'control',
+					'control'     => 'ast-builder-header-control',
+					'priority'    => 0,
+					'description' => '',
+					'context'     => array(),
+				),
+				array(
+					'name'     => 'ast-sub-section-comments',
+					'title'    => __( 'Comments', 'astra' ),
+					'type'     => 'section',
+					'section'  => $parent_section,
+					'panel'    => '',
+					'priority' => 1,
+				),
+				array(
 					'name'     => ASTRA_THEME_SETTINGS . '[comments-single-section-heading]',
-					'section'  => 'section-blog-single',
+					'section'  => $parent_section,
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'title'    => __( 'Comments', 'astra' ),
 					'priority' => 20,
 				),
 				array(
+					'name'     => ASTRA_THEME_SETTINGS . '[enable-comments-area]',
+					'type'     => 'control',
+					'default'  => astra_get_option( 'enable-comments-area' ),
+					'control'  => 'ast-section-toggle',
+					'section'  => $parent_section,
+					'priority' => 20,
+					'linked'   => 'ast-sub-section-comments',
+					'linkText' => __( 'Comments', 'astra' ),
+					'divider'  => array( 'ast_class' => 'ast-bottom-divider ast-bottom-section-divider' ),
+				),
+				array(
 					'name'        => ASTRA_THEME_SETTINGS . '[comments-box-placement]',
 					'default'     => astra_get_option( 'comments-box-placement' ),
 					'type'        => 'control',
-					'section'     => 'section-blog-single',
+					'section'     => 'ast-sub-section-comments',
 					'priority'    => 20,
 					'title'       => __( 'Section Placement', 'astra' ),
 					'control'     => 'ast-selector',
@@ -58,7 +86,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'name'       => ASTRA_THEME_SETTINGS . '[comments-box-container-width]',
 					'default'    => astra_get_option( 'comments-box-container-width' ),
 					'type'       => 'control',
-					'section'    => 'section-blog-single',
+					'section'    => 'ast-sub-section-comments',
 					'priority'   => 20,
 					'title'      => __( 'Container Structure', 'astra' ),
 					'control'    => 'ast-selector',
@@ -83,7 +111,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'name'       => ASTRA_THEME_SETTINGS . '[comment-form-position]',
 					'default'    => astra_get_option( 'comment-form-position' ),
 					'type'       => 'control',
-					'section'    => 'section-blog-single',
+					'section'    => 'ast-sub-section-comments',
 					'priority'   => 20,
 					'title'      => __( 'Form Position', 'astra' ),
 					'control'    => 'ast-selector',
@@ -97,6 +125,8 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 					'renderAs'   => 'text',
 				),
 			);
+
+			$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_section_spacing_border_options( 'ast-sub-section-comments', true ) );
 
 			return array_merge( $configurations, $_configs );
 		}

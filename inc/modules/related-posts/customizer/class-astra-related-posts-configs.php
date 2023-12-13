@@ -893,41 +893,6 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
 			),
-			array(
-				'name'              => ASTRA_THEME_SETTINGS . '[related-post-padding]',
-				'default'           => astra_get_option( 'related-post-padding' ),
-				'type'              => 'control',
-				'control'           => 'ast-responsive-spacing',
-				'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
-				'section'           => 'ast-sub-section-related-posts',
-				'title'             => __( 'Spacing', 'astra' ),
-				'linked_choices'    => true,
-				'transport'         => 'postMessage',
-				'unit_choices'      => array( 'px', 'em', '%' ),
-				'choices'           => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
-				),
-				'priority'          => 18,
-				'divider'           => array( 'ast_class' => 'ast-top-dotted-divider' ),
-				'context'           => array(
-					true === Astra_Builder_Helper::$is_header_footer_builder_active ?
-					Astra_Builder_Helper::$design_tab_config : Astra_Builder_Helper::$general_tab_config,
-					'relation' => 'AND',
-					array(
-						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
-						'operator' => '==',
-						'value'    => true,
-					),
-					array(
-						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-structure]',
-						'operator' => 'contains',
-						'value'    => 'title-meta',
-					),
-				),
-			),
 
 			/**
 			 * Option: Related Posts content typography setting group
@@ -1410,6 +1375,8 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'title'   => __( 'Font Extras', 'astra' ),
 			),
 		);
+
+		$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_section_spacing_border_options( 'ast-sub-section-related-posts' ) );
 
 		$configurations = array_merge( $configurations, $_configs );
 

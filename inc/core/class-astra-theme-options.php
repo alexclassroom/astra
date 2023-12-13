@@ -644,6 +644,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'mobile-unit'  => 'em',
 					),
 					// Single Comments.
+					'enable-comments-area'                 => true,
 					'comments-box-placement'               => '',
 					'comment-form-position'                => 'below',
 					'comments-box-container-width'         => '',

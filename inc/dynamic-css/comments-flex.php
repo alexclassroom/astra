@@ -149,9 +149,6 @@ function astra_comments_css( $dynamic_css ) {
           .comments-area p.logged-in-as {
             margin-bottom: 1em;
           }
-          .ast-separate-container .comments-area {
-            border-top: 0;
-          }
           .ast-separate-container .ast-comment-list {
             padding-bottom: 0;
           }

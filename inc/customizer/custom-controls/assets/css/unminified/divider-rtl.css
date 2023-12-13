@@ -263,3 +263,6 @@ li.customize-control.ast-top-section-spacing {
 .ast-top-section-divider .ast-control-tooltip {
     top: 30px;
 }
+.ast-field-settings-modal .customize-control.ast-top-dotted-divider {
+    margin-top: 0;
+}

@@ -212,29 +212,6 @@ class Astra_Related_Posts_Loader {
 			'tablet-unit'  => 'px',
 			'mobile-unit'  => 'px',
 		);
-		$defaults['related-post-padding']              = array(
-			'desktop'      => array(
-				'top'    => '',
-				'right'  => '',
-				'bottom' => '',
-				'left'   => '',
-			),
-			'tablet'       => array(
-				'top'    => '',
-				'right'  => '',
-				'bottom' => '',
-				'left'   => '',
-			),
-			'mobile'       => array(
-				'top'    => '',
-				'right'  => '',
-				'bottom' => '',
-				'left'   => '',
-			),
-			'desktop-unit' => 'px',
-			'tablet-unit'  => 'px',
-			'mobile-unit'  => 'px',
-		);
 
 		return $defaults;
 	}
