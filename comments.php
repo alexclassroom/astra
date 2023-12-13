@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if ( post_password_required() || false === astra_get_option( 'enable-comments-area', true ) ) {
 	return;
 }
 
