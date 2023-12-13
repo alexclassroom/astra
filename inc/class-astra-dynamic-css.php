@@ -5357,6 +5357,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			// Default form styling accessibility options compatibility.
 			if ( $enable_site_accessibility ) {
+				$outline_style       = astra_get_option( 'site-accessibility-highlight-type' );
 				$outline_color       = astra_get_option( 'site-accessibility-highlight-color' );
 				$outline_input_style = astra_get_option( 'site-accessibility-highlight-input-type' );
 				$outline_input_color = astra_get_option( 'site-accessibility-highlight-input-color' );
@@ -5373,7 +5374,30 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'box-shadow'   => 'none',
 						'outline'      => 'none',
 						'color'        => 'var(--ast-form-input-focus-text, #475569)',
-					);              
+					);
+				}
+
+				// Contact form 7 accessibility compatibility.
+				if ( defined( 'WPCF7_VERSION' ) ) {
+					if ( 'disable' !== $outline_input_style ) {
+						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
+							'border-style'  => $outline_input_style ? $outline_input_style : 'inherit',
+							'border-color'  => $outline_input_color ? $outline_input_color : '#046BD2',
+							'border-width'  => 'thin',
+							'box-shadow'    => 'none',
+							'outline'       => 'none',
+							'color'         => 'var(--ast-form-input-focus-text, #475569)',
+						);
+					} else {
+						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
+							'border-style'  => $outline_style ? $outline_style : 'inherit',
+							'border-color'  => $outline_color ? $outline_color : '#046BD2',
+							'border-width'  => 'thin',
+							'box-shadow'    => 'none',
+							'outline'       => 'none',
+							'color'         => 'var(--ast-form-input-focus-text, #475569)',
+						);
+					}
 				}
 			}
 
