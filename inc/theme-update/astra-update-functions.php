@@ -826,7 +826,7 @@ function astra_theme_background_updater_4_5_0() {
 /**
  * Handle backward compatibility on version 4.5.2.
  *
- * @since x.x.x
+ * @since 4.5.2
  * @return void
  */
 function astra_theme_background_updater_4_5_2() {
@@ -872,6 +872,11 @@ function astra_theme_background_updater_4_6_0() {
 			$theme_options['blog-post-structure'] = $migrated_post_structure;
 		}
 
+		update_option( 'astra-settings', $theme_options );
+	}
+  
+  if ( ! isset( $theme_options['ast-font-style-update'] ) ) {
+		$theme_options['ast-font-style-update'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}
 }

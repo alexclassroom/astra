@@ -5554,7 +5554,7 @@ namespace {
         /**
          * Collect Customizer Builder Data to process further.
          *
-         * @since x.x.x
+         * @since 4.5.2
          * @return bool
          */
         public static function astra_collect_customizer_builder_data()
@@ -5626,7 +5626,7 @@ namespace {
          * All header configs array data.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.5.2
          * @var array
          */
         public static $customizer_header_configs = array('different-retina-logo', 'ast-header-retina-logo', 'different-mobile-logo', 'mobile-header-logo', 'header-color-site-tagline', 'ast-header-responsive-logo-width', 'display-site-title-responsive', 'display-site-tagline-responsive', 'logo-title-inline');
@@ -5634,7 +5634,7 @@ namespace {
          * All footer configs array data.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.5.2
          * @var array
          */
         public static $customizer_footer_configs = array();
@@ -15325,7 +15325,7 @@ namespace {
      * Register html footer builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_html_footer_configuration($configurations = array())
@@ -15335,7 +15335,7 @@ namespace {
      * Register social footer builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_social_footer_configuration($configurations = array())
@@ -15345,7 +15345,7 @@ namespace {
      * Register widget footer builder Customizer Configurations.
      *
      * @param  array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_widget_footer_configuration($configurations = array())
@@ -15354,7 +15354,7 @@ namespace {
     /**
      * Register menu footer builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_menu_footer_configuration()
@@ -15363,7 +15363,7 @@ namespace {
     /**
      * Register copyright footer builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_copyright_footer_configuration()
@@ -15372,7 +15372,7 @@ namespace {
     /**
      * Register below footer builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_below_footer_configuration()
@@ -15381,7 +15381,7 @@ namespace {
     /**
      * Register primary footer builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_primary_footer_configuration()
@@ -15390,7 +15390,7 @@ namespace {
     /**
      * Register Above footer builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_above_footer_configuration()
@@ -15400,7 +15400,7 @@ namespace {
      * Register builder footer builder Customizer Configurations.
      *
      * @param Array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_builder_footer_configuration($configurations = array())
@@ -15410,7 +15410,7 @@ namespace {
      * Register button footer builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_button_footer_configuration($configurations = array())
@@ -15419,7 +15419,7 @@ namespace {
     /**
      * Register off-canvas header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_off_canvas_configuration()
@@ -15428,7 +15428,7 @@ namespace {
     /**
      * Register Header Trigger header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_mobile_trigger_configuration()
@@ -15437,7 +15437,7 @@ namespace {
     /**
      * Register mobile-menu header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_mobile_menu_configuration()
@@ -15446,7 +15446,7 @@ namespace {
     /**
      * Register site identity header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_site_identity_configuration()
@@ -15455,7 +15455,7 @@ namespace {
     /**
      * Register account header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_account_configuration()
@@ -15465,7 +15465,7 @@ namespace {
      * Register EDD Cart header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_edd_cart_header_configuration($configurations = array())
@@ -15491,7 +15491,7 @@ namespace {
     /**
      * Register search header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_search_configuration()
@@ -15500,7 +15500,7 @@ namespace {
     /**
      * Register Header Widget header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_widget_configuration()
@@ -15509,7 +15509,7 @@ namespace {
     /**
      * Register Primary header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_primary_header_configuration()
@@ -15519,7 +15519,7 @@ namespace {
      * Register header_builder header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_header_builder_configuration($configurations = array())
@@ -15528,7 +15528,7 @@ namespace {
     /**
      * Register menu header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_menu_configuration()
@@ -15538,7 +15538,7 @@ namespace {
      * Register html header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_html_configuration($configurations = array())
@@ -15547,7 +15547,7 @@ namespace {
     /**
      * Register below header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_below_header_configuration()
@@ -15556,7 +15556,7 @@ namespace {
     /**
      * Register Above header builder Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_above_header_configuration()
@@ -15566,7 +15566,7 @@ namespace {
      * Register button header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_button_configuration($configurations = array())
@@ -15576,7 +15576,7 @@ namespace {
      * Register social header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_social_configuration($configurations = array())
@@ -15586,7 +15586,7 @@ namespace {
      * Register woo-cart header builder Customizer Configurations.
      *
      * @param array $configurations Astra Customizer Configurations.
-     * @since x.x.x
+     * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
     function astra_header_woo_cart_configuration($configurations = array())
@@ -15599,7 +15599,7 @@ namespace {
      *
      * @param array $configs configs.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return void
      */
     function astra_save_header_customizer_configs($configs)
@@ -15612,7 +15612,7 @@ namespace {
      *
      * @param array $configs configs.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return void
      */
     function astra_save_footer_customizer_configs($configs)
@@ -16384,7 +16384,7 @@ namespace {
     /**
      * Handle backward compatibility on version 4.5.2.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return void
      */
     function astra_theme_background_updater_4_5_2()
@@ -16791,7 +16791,7 @@ namespace {
     /**
      * Check whether user is existing or new to apply the updated default values for secondary button padding.
      *
-     * @since x.x.x
+     * @since 4.5.2
      * @return string
      */
     function astra_scndry_btn_default_padding()

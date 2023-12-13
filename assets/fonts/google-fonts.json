@@ -129,6 +129,21 @@
         }
     },
     {
+        "Afacad": {
+            "variants": [
+                "regular",
+                "500",
+                "600",
+                "700",
+                "italic",
+                "500italic",
+                "600italic",
+                "700italic"
+            ],
+            "category": "sans-serif"
+        }
+    },
+    {
         "Agbalumo": {
             "variants": [
                 "regular"
@@ -5803,6 +5818,22 @@
         }
     },
     {
+        "Hedvig Letters Sans": {
+            "variants": [
+                "regular"
+            ],
+            "category": "sans-serif"
+        }
+    },
+    {
+        "Hedvig Letters Serif": {
+            "variants": [
+                "regular"
+            ],
+            "category": "serif"
+        }
+    },
+    {
         "Heebo": {
             "variants": [
                 "100",
@@ -6847,6 +6878,20 @@
                 "700"
             ],
             "category": "handwriting"
+        }
+    },
+    {
+        "Kalnia": {
+            "variants": [
+                "100",
+                "200",
+                "300",
+                "regular",
+                "500",
+                "600",
+                "700"
+            ],
+            "category": "serif"
         }
     },
     {
@@ -9387,9 +9432,13 @@
     {
         "Narnoor": {
             "variants": [
-                "regular"
+                "regular",
+                "500",
+                "600",
+                "700",
+                "800"
             ],
-            "category": "sans-serif"
+            "category": "serif"
         }
     },
     {
@@ -9664,22 +9713,22 @@
         "Noto Sans": {
             "variants": [
                 "100",
-                "100italic",
                 "200",
-                "200italic",
                 "300",
-                "300italic",
                 "regular",
-                "italic",
                 "500",
-                "500italic",
                 "600",
-                "600italic",
                 "700",
-                "700italic",
                 "800",
-                "800italic",
                 "900",
+                "100italic",
+                "200italic",
+                "300italic",
+                "italic",
+                "500italic",
+                "600italic",
+                "700italic",
+                "800italic",
                 "900italic"
             ],
             "category": "sans-serif"
@@ -13600,6 +13649,23 @@
                 "regular"
             ],
             "category": "display"
+        }
+    },
+    {
+        "Rethink Sans": {
+            "variants": [
+                "regular",
+                "500",
+                "600",
+                "700",
+                "800",
+                "italic",
+                "500italic",
+                "600italic",
+                "700italic",
+                "800italic"
+            ],
+            "category": "sans-serif"
         }
     },
     {

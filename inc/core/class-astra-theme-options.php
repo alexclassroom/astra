@@ -116,7 +116,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 			/**
 			 * Update Astra customizer default values. To not update directly on existing users site, added backwards.
 			 *
-			 * @since x.x.x
+			 * @since 4.5.2
 			 */
 			$apply_scndry_default_padding_values = astra_scndry_btn_default_padding();
 
