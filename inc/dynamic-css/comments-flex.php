@@ -117,7 +117,6 @@ function astra_comments_css( $dynamic_css ) {
           }
 
           .comments-area {
-            border-top: 1px solid ' . esc_attr( $border_color ) . ';
             margin-top: 2em;
           }
 
