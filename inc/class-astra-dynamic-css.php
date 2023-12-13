@@ -5301,7 +5301,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'padding'             => '6px 10px',
 				),
 				'fieldset'           => array(
-					'padding'       => '30px 30px 30px 30px',
+					'padding'       => '30px',
 					'border-radius' => '4px',
 				),
 				'button, .ast-button, .button, input[type="button"], input[type="reset"], input[type="submit"]' => array(
