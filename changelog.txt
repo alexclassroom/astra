@@ -1,5 +1,9 @@
-v4.6.0
+v4.6.0 (Unreleased)
 - Improvement: Default forms experience improved.
+
+v4.5.3 (Unreleased)
+- Fix: Logo color not working in FireFox browser.
+- Fix: Site title, tagline font-sizes are not part of export-import header settings.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
@@ -19,6 +23,7 @@ v4.5.2
 - Fix: Input fields border focus did not consistently inherit the correct styling in certain scenarios.
 - Fix: WooCommerce - PHP fatal error 'Uncaught Error: Call to a member function get_cart_contents_total() on null' when cart element is added in the header and "Hide Cart Total Label" option is enabled.
 - Fix: PHP deprecated notices with PHP 8.0 and above when activating the theme.
+- Fix: WooCommerce - Mini cart values does not update automatically on the cart page.
 
 v4.5.1
 - Improvement: Compatibility with WooCommerce 8.3.

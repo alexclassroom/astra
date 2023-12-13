@@ -1736,10 +1736,10 @@ function astra_get_filter_svg( $filter_id, $color ) {
 					"
 				/>
 				<feComponentTransfer color-interpolation-filters="sRGB" >
-					<feFuncR type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['r'] ) ); ?>" />
-					<feFuncG type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['g'] ) ); ?>" />
-					<feFuncB type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['b'] ) ); ?>" />
-					<feFuncA type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['a'] ) ); ?>" />
+					<feFuncR type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['r'] ) ); ?> <?php echo esc_attr( implode( ' ', $duotone_values['r'] ) ); ?>" />
+					<feFuncG type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['g'] ) ); ?> <?php echo esc_attr( implode( ' ', $duotone_values['g'] ) ); ?>" />
+					<feFuncB type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['b'] ) ); ?> <?php echo esc_attr( implode( ' ', $duotone_values['b'] ) ); ?>" />
+					<feFuncA type="table" tableValues="<?php echo esc_attr( implode( ' ', $duotone_values['a'] ) ); ?> <?php echo esc_attr( implode( ' ', $duotone_values['a'] ) ); ?>" />
 				</feComponentTransfer>
 				<feComposite in2="SourceGraphic" operator="in" />
 			</filter>

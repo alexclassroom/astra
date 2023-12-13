@@ -1191,7 +1191,6 @@ if ( ! class_exists( 'Astra_Customizer' ) ) {
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-body-typo-configs.php';
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/block-editor/class-astra-block-editor-configs.php';
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-headings-typo-configs.php';
-			require ASTRA_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-header-typo-configs.php';
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-single-typo-configs.php';
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-global-typo-configs.php';
 			require ASTRA_THEME_DIR . 'inc/customizer/configurations/global-misc/class-astra-global-misc-configs.php';

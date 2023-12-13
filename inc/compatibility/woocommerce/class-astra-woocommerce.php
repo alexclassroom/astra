@@ -65,7 +65,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 
 			add_action( 'woocommerce_before_main_content', array( $this, 'before_main_content_start' ) );
 			add_action( 'woocommerce_after_main_content', array( $this, 'before_main_content_end' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'add_styles' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts_styles' ) );
 			add_action( 'wp', array( $this, 'shop_customization' ), 5 );
 			add_action( 'wp_head', array( $this, 'single_product_customization' ), 5 );
 			add_action( 'wp', array( $this, 'woocommerce_init' ), 1 );
@@ -1416,13 +1416,27 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 				get_sidebar();
 			}
 		}
+		/**
+		 * Astra update default font size and font weight.
+		 * 
+		 * @since x.x.x 
+		 * @return boolean 
+		 */
+		public static function astra_update_default_font_styling() {
+			$astra_settings                          = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings['ast-font-style-update'] = isset( $astra_settings['ast-font-style-update'] ) ? false : true;
+			return apply_filters( 'astra_default_font_style_update', $astra_settings['ast-font-style-update'] );
+		}
 
 		/**
 		 * Enqueue styles
 		 *
 		 * @since 1.0.31
 		 */
-		public function add_styles() {
+		public function add_scripts_styles() {
+			if ( is_cart() ) {
+				wp_enqueue_script( 'wc-cart-fragments' ); // Require for cart widget update on the cart page.
+			}
 
 			/**
 			 * - Variable Declaration
@@ -1439,6 +1453,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 			$ltr_right                               = $is_site_rtl ? 'left' : 'right';
 			$icon_cart_color_slug                    = '';
 			$theme_btn_font_size                     = astra_get_option( 'font-size-button' );
+			$font_style_updates                      = self::astra_update_default_font_styling();
 
 			if ( false === Astra_Builder_Helper::$is_header_footer_builder_active ) {
 				$icon_cart_color_slug = 'woo-header-cart-icon-color';
@@ -1505,20 +1520,27 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 
 			$css_desktop_output = array(
 				'#customer_details h3:not(.elementor-widget-woocommerce-checkout-page h3)' => array(
-					'font-size'     => '1.2rem',
+					'font-size'     => $font_style_updates ? '' : '1.2rem',
 					'padding'       => '20px 0 14px',
 					'margin'        => '0 0 20px',
 					'border-bottom' => '1px solid var(--ast-border-color)',
-					'font-weight'   => '700',
+					'font-weight'   => $font_style_updates ? '' : '700',
 				),
 				'form #order_review_heading:not(.elementor-widget-woocommerce-checkout-page #order_review_heading)' => array(
 					'border-width' => '2px 2px 0 2px',
 					'border-style' => 'solid',
-					'font-size'    => '1.2rem',
+					'font-size'    => $font_style_updates ? '' : '1.2rem',
 					'margin'       => '0',
 					'padding'      => '1.5em 1.5em 1em',
 					'border-color' => 'var(--ast-border-color)',
-					'font-weight'  => '700',
+					'font-weight'  => $font_style_updates ? '' : '700',
+				),
+				'.woocommerce-Address h3, .cart-collaterals h2' => array(
+					'font-size' => $font_style_updates ? '' : '1.2rem',
+					'padding'   => '.7em 1em',
+				), 
+				'.woocommerce-cart .cart-collaterals .cart_totals>h2' => array(
+					'font-weight' => $font_style_updates ? '' : '700',
 				),
 				'form #order_review:not(.elementor-widget-woocommerce-checkout-page #order_review)' => array(
 					'padding'      => '0 2em',
