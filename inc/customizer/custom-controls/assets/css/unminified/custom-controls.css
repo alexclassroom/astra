@@ -1619,7 +1619,7 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
 
 .customize-control.customize-control-ast-toggle-control.ast-top-dotted-divider .ast-control-tooltip {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 40px;
   transform: translateY(0);
 }
