@@ -84,10 +84,6 @@ function astra_comments_css( $dynamic_css ) {
             justify-content: flex-end;
           }
 
-          .ast-comment-list .ast-edit-link {
-            flex: 1;
-          }
-
           .ast-comment-list .comment-awaiting-moderation {
             margin-bottom: 0;
           }
@@ -97,8 +93,6 @@ function astra_comments_css( $dynamic_css ) {
           }
           .ast-comment-info img {
             border-radius: 50%;
-			box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
-    		border: 1px solid var(--ast-single-post-border, var(--ast-border-color));
           }
           .ast-comment-cite-wrap cite {
             font-style: normal;
@@ -217,12 +211,6 @@ function astra_comments_css( $dynamic_css ) {
 			$single_post_comment_css .= '
 				.ast-separate-container .ast-comment-list .pingback p {
 					margin-bottom: 0;
-				}
-				.ast-separate-container .ast-comment-list li, .ast-separate-container .ast-comment-list {
-					background-color: #fff;
-				}
-				.ast-comment-list .comment + .comment {
-					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 				}
 				.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
 					padding: 3em;
@@ -374,7 +362,6 @@ function astra_comments_css( $dynamic_css ) {
             .ast-comment-info {
                 display: flex;
                 position: relative;
-				margin-bottom: 1em;
             }
             .ast-comment-meta {
                 justify-content: right;
@@ -490,11 +477,18 @@ function astra_comments_css( $dynamic_css ) {
 			);
 		}
 
-		if ( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ) {
+		if ( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
 			$dynamic_css .= '
 				.ast-comment-cite-wrap cite {
 					font-weight: 600;
 					font-size: 1.2em;
+				}
+				.ast-comment-info img {
+					box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
+					border: 1px solid var(--ast-single-post-border, var(--ast-border-color));
+				}
+				.ast-comment-info {
+					margin-bottom: 1em;
 				}
 				.logged-in span.ast-reply-link {
 					margin-right: 16px;
@@ -616,11 +610,18 @@ function astra_comments_css( $dynamic_css ) {
 				.ast-comment-time .timendate{
 					margin-right: 0.5em;
 				}
-				.ast-separate-container .ast-comment-list .comment + .comment, .ast-narrow-container .ast-comment-list .comment + .comment {
-					padding-top: 20px;
-				}
 				.ast-separate-container .comment-reply-title {
 					padding-top: 0;
+				}
+				.ast-comment-list .ast-edit-link {
+					flex: 1;
+				}
+				.comments-area {
+					border-top: 1px solid var(--ast-global-color-6);
+					margin-top: 2em;
+				}
+				.ast-separate-container .comments-area {
+					border-top: 0;
 				}
 			';
 		}

@@ -3673,8 +3673,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$max_site_container_css = array(
 					'.site-content .ast-container' => array(
 						'display' => 'flex',
-						'padding-left' => '0',
-						'padding-right' => '0',
 					),
 				);
 				$parse_css             .= astra_parse_css( $max_site_container_css, astra_get_tablet_breakpoint( '', 1 ) );

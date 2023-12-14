@@ -675,7 +675,7 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'desktop'      => array(
 							'top' => '',
 							'right'  => '',
-							'bottom'    => $blog_defaults_update ? 2 : '',
+							'bottom'    => $blog_defaults_update ? 2 : 3,
 							'left'   => '',
 						),
 						'tablet'       => array(

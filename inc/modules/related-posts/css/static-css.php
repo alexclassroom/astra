@@ -88,9 +88,6 @@ function astra_related_posts_static_css( $dynamic_css ) {
 					padding-right: 20px;
 				}
 				@media (max-width: ' . strval( $astra_mobile_breakpoint ) . 'px) {
-					.ast-separate-container .ast-single-related-posts-container {
-						padding: 1.5em 1em;
-					}
 					.ast-related-posts-title-section {
 						padding-bottom: 1.5em;
 					}

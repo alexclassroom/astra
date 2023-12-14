@@ -168,21 +168,38 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 								<?php comment_text(); ?>
 								<div class="ast-comment-edit-reply-wrap">
 									<?php
-									comment_reply_link(
-										array_merge(
-											$args,
-											array(
-												'reply_text' => astra_default_strings( 'string-comment-reply-link', false ),
-												'add_below' => 'comment',
-												'depth'  => $depth,
-												'max_depth' => $args['max_depth'],
-												'before' => '<span class="ast-reply-link">',
-												'after'  => '</span>',
+									if ( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
+										comment_reply_link(
+											array_merge(
+												$args,
+												array(
+													'reply_text' => astra_default_strings( 'string-comment-reply-link', false ),
+													'add_below' => 'comment',
+													'depth'  => $depth,
+													'max_depth' => $args['max_depth'],
+													'before' => '<span class="ast-reply-link">',
+													'after'  => '</span>',
+												)
 											)
-										)
-									);
+										);
+										edit_comment_link( astra_default_strings( 'string-comment-edit-link', false ), '<span class="ast-edit-link">', '</span>' );
+									} else {
+										edit_comment_link( astra_default_strings( 'string-comment-edit-link', false ), '<span class="ast-edit-link">', '</span>' );
+										comment_reply_link(
+											array_merge(
+												$args,
+												array(
+													'reply_text' => astra_default_strings( 'string-comment-reply-link', false ),
+													'add_below' => 'comment',
+													'depth'  => $depth,
+													'max_depth' => $args['max_depth'],
+													'before' => '<span class="ast-reply-link">',
+													'after'  => '</span>',
+												)
+											)
+										);
+									}
 									?>
-									<?php edit_comment_link( astra_default_strings( 'string-comment-edit-link', false ), '<span class="ast-edit-link">', '</span>' ); ?>
 								</div>
 								<?php if ( '0' == $comment->comment_approved ) : ?>
 									<p class="ast-highlight-text comment-awaiting-moderation"><?php echo esc_html( astra_default_strings( 'string-comment-awaiting-moderation', false ) ); ?></p>
