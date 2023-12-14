@@ -74,9 +74,6 @@ function astra_comments_css( $dynamic_css ) {
             padding-bottom: ' . esc_attr( $padding_ast_comment_list ) . ';
             list-style: none;
           }
-		  .site-content article .comments-area {
-			border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
-		}
           .ast-comment-list li {
             list-style: none;
           }
@@ -116,10 +113,6 @@ function astra_comments_css( $dynamic_css ) {
             margin-bottom: 0.5em;
           }
 
-          .comments-area {
-            margin-top: 2em;
-          }
-
           .comments-area .comment-form-comment {
             width: 100%;
             border: none;
@@ -150,9 +143,6 @@ function astra_comments_css( $dynamic_css ) {
           }
           .ast-separate-container .ast-comment-list {
             padding-bottom: 0;
-          }
-          .ast-separate-container .ast-comment-list li, .ast-separate-container .ast-comment-list {
-            background-color: #fff;
           }
 
           .ast-separate-container .ast-comment-list li.depth-1 .children li, .ast-narrow-container .ast-comment-list li.depth-1 .children li {
@@ -227,6 +217,9 @@ function astra_comments_css( $dynamic_css ) {
 			$single_post_comment_css .= '
 				.ast-separate-container .ast-comment-list .pingback p {
 					margin-bottom: 0;
+				}
+				.ast-separate-container .ast-comment-list li, .ast-separate-container .ast-comment-list {
+					background-color: #fff;
 				}
 				.ast-comment-list .comment + .comment {
 					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
@@ -533,9 +526,11 @@ function astra_comments_css( $dynamic_css ) {
 				}
 				.comment-respond {
 					padding-top: 2em;
+					padding-bottom: 2em;
 				}
 				.ast-comment-list + .comment-respond {
 					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
+					padding-bottom: 0;
 				}
 				.comment .comment-reply-title {
 					display: flex;
@@ -605,9 +600,7 @@ function astra_comments_css( $dynamic_css ) {
 				$dynamic_css .= '
 					.site-content article .comments-title {
 						padding-top: 2em;
-					}
-					.ast-separate-container article .comments-title, .ast-narrow-container article .comments-title {
-						padding-bottom: 2em;
+						padding-bottom: 1em;
 					}
 					.site-content article .comment-respond {
 						padding-top: 1.5em;

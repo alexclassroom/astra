@@ -163,7 +163,7 @@ class Astra_Related_Posts_Loader {
 			'mobile-unit'  => 'px',
 		);
 		$defaults['related-posts-title-font-extras']    = array(
-			'line-height'         => ! isset( $astra_options['related-posts-title-font-extras'] ) && isset( $astra_options['related-posts-title-line-height'] ) ? $astra_options['related-posts-title-line-height'] : '1',
+			'line-height'         => ! isset( $astra_options['related-posts-title-font-extras'] ) && isset( $astra_options['related-posts-title-line-height'] ) ? $astra_options['related-posts-title-line-height'] : ( $astra_blog_update ? '1.5' : '1' ),
 			'line-height-unit'    => 'em',
 			'letter-spacing'      => '',
 			'letter-spacing-unit' => 'px',
@@ -211,6 +211,29 @@ class Astra_Related_Posts_Loader {
 			'desktop-unit' => 'px',
 			'tablet-unit'  => 'px',
 			'mobile-unit'  => 'px',
+		);
+		$defaults['ast-sub-section-related-posts-padding'] = array(
+			'desktop'      => array(
+				'top' => '',
+				'right'  => $astra_blog_update ? 2 : '',
+				'bottom'    => '',
+				'left'   => $astra_blog_update ? 2 : '',
+			),
+			'tablet'       => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
+			'mobile'       => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
+			'desktop-unit' => 'em',
+			'tablet-unit'  => 'em',
+			'mobile-unit'  => 'em',
 		);
 
 		return $defaults;

@@ -60,9 +60,6 @@ function astra_related_posts_static_css( $dynamic_css ) {
 			margin: 0;
 			position: relative;
 		}
-		.single article .ast-single-related-posts-container {
-			border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
-		}
 		';
 
 		if ( true === astra_check_is_structural_setup() ) {
@@ -81,7 +78,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 				.ast-single-related-posts-container {
 					padding-top: 2em;
 				}
-				.ast-related-posts-title-section, .single .site-main .ast-author-meta .about-author-title-wrapper {
+				.ast-related-posts-title-section {
 					padding-bottom: 2em;
 				}
 				.ast-page-builder-template .ast-single-related-posts-container {
@@ -96,7 +93,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 					.ast-separate-container .ast-single-related-posts-container {
 						padding: 1.5em 1em;
 					}
-					.ast-related-posts-title-section, .single .site-main .ast-author-meta .about-author-title-wrapper {
+					.ast-related-posts-title-section {
 						padding-bottom: 1.5em;
 					}
 				}

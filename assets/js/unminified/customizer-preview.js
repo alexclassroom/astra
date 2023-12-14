@@ -563,15 +563,26 @@ function astra_builder_advanced_css( section, selector ) {
 function astra_border_spacing_advanced_css( section, selector ) {
 	wp.customize( 'astra-settings[' + section + '-border-width]', function( setting ) {
 		setting.bind( function( border ) {
+			if ( border.top === '' && border.right === '' && border.bottom === '' || border.left === '' ) {
+				wp.customize.preview.send( 'refresh' );
+				return;
+			}
 			var dynamicStyle = selector + ' {';
 			dynamicStyle += 'border-style: solid;';
-			dynamicStyle += 'border-width:'  + border + 'px;';
+			dynamicStyle += 'border-top-width:'  + border.top + 'px;';
+			dynamicStyle += 'border-right-width:'  + border.right + 'px;';
+			dynamicStyle += 'border-left-width:'   + border.left + 'px;';
+			dynamicStyle += 'border-bottom-width:'   + border.bottom + 'px;';
 			dynamicStyle += '} ';
 			astra_add_dynamic_css( 'astra-settings[' + section + '-border-width]', dynamicStyle );
 		} );
 	} );
 	wp.customize( 'astra-settings[' + section + '-border-radius]', function( setting ) {
 		setting.bind( function( border ) {
+			if ( border.top === '' && border.right === '' && border.bottom === '' || border.left === '' ) {
+				wp.customize.preview.send( 'refresh' );
+				return;
+			}
 			var dynamicStyle = selector + ' {';
 			dynamicStyle += 'border-top-left-radius:'  + border.top + 'px;';
 			dynamicStyle += 'border-top-right-radius:'  + border.right + 'px;';

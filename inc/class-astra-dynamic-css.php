@@ -1370,9 +1370,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'margin-top'    => astra_responsive_spacing( $single_post_outside_spacing, 'top', 'desktop' ),
 					'margin-bottom' => astra_responsive_spacing( $single_post_outside_spacing, 'bottom', 'desktop' ),
 				),
-				'.ast-narrow-container.single.ast-separate-container .post-navigation' => array(
-					'margin-top' => '0',
-				),
 				'.ast-left-sidebar.ast-single-post #primary, .ast-right-sidebar.ast-single-post #primary, .ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary, .ast-narrow-container.ast-single-post #primary' => array(
 					'padding-left'  => astra_responsive_spacing( $single_post_outside_spacing, 'left', 'desktop' ),
 					'padding-right' => astra_responsive_spacing( $single_post_outside_spacing, 'right', 'desktop' ),
@@ -2179,8 +2176,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'.ast-article-single .wp-block-post-template-is-layout-grid' => array(
 						'padding-' . $ltr_left => '0',
 					),
-					'.ast-separate-container .comments-title' => array(
-						'padding' => '2em',
+					'.ast-separate-container .comments-title, .ast-narrow-container .comments-title' => array(
+						'padding' => '2em 2em 1em',
 					),
 					'.ast-page-builder-template .comment-form-textarea, .ast-comment-formwrap .ast-grid-common-col' => array(
 						'padding' => '0',
@@ -3676,6 +3673,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$max_site_container_css = array(
 					'.site-content .ast-container' => array(
 						'display' => 'flex',
+						'padding-left' => '0',
+						'padding-right' => '0',
 					),
 				);
 				$parse_css             .= astra_parse_css( $max_site_container_css, astra_get_tablet_breakpoint( '', 1 ) );
@@ -4434,6 +4433,23 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			if ( astra_get_option( 'enable-comments-area', true ) ) {
 				$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
+
+				$comments_radius  = astra_get_option( 'ast-sub-section-comments-border-radius', array(
+					'top' => '',
+					'right' => '',
+					'bottom' => '',
+					'left' => '',
+				) );
+
+				$list_spacing_css = array(
+					'.comments-area .comments-title, .comments-area .comment-respond' => array(
+						'border-top-left-radius'     => ! empty( astra_get_css_value( $comments_radius['top'] ) ) ? astra_get_css_value( $comments_radius['top'], 'px' ) : '',
+						'border-bottom-right-radius' => ! empty( astra_get_css_value( $comments_radius['bottom'] ) ) ? astra_get_css_value( $comments_radius['bottom'], 'px' ) : '',
+						'border-bottom-left-radius'  => ! empty( astra_get_css_value( $comments_radius['left'] ) ) ? astra_get_css_value( $comments_radius['left'], 'px' ) : '',
+						'border-top-right-radius'    => ! empty( astra_get_css_value( $comments_radius['right'] ) ) ? astra_get_css_value( $comments_radius['right'], 'px' ) : '',
+					),
+				);
+				$parse_css       .= astra_parse_css( $list_spacing_css );
 			}
 
 			$parse_css .= $dynamic_css;

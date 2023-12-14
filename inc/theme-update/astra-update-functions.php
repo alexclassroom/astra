@@ -872,14 +872,26 @@ function astra_theme_background_updater_4_6_0() {
 			$theme_options['blog-post-structure'] = $migrated_post_structure;
 		}
 
-		$theme_options['ast-sub-section-author-box-border-width'] = isset( $theme_options['author-box-border-width'] ) ? $theme_options['author-box-border-width'] : '';
-		$theme_options['ast-sub-section-author-box-border-radius'] = isset( $theme_options['author-box-border-radius'] ) ? $theme_options['author-box-border-radius'] : '';
-		$theme_options['ast-sub-section-author-box-border-color'] = isset( $theme_options['author-box-border-color'] ) ? $theme_options['author-box-border-color'] : '';
+		if ( defined( 'ASTRA_EXT_VER' ) ) {
+			$theme_options['ast-sub-section-author-box-border-width'] = isset( $theme_options['author-box-border-width'] ) ? $theme_options['author-box-border-width'] : array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			);
+			$theme_options['ast-sub-section-author-box-border-radius'] = isset( $theme_options['author-box-border-radius'] ) ? $theme_options['author-box-border-radius'] : array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			);
+			$theme_options['ast-sub-section-author-box-border-color'] = isset( $theme_options['author-box-border-color'] ) ? $theme_options['author-box-border-color'] : '';
 
-		update_option( 'astra-settings', $theme_options );
-	}
+			if ( isset( $theme_options['single-post-inside-spacing'] ) ) {
+				$theme_options['ast-sub-section-author-box-padding'] = $theme_options['single-post-inside-spacing'];
+			}
+		}
 
-  if ( ! isset( $theme_options['ast-font-style-update'] ) ) {
 		$theme_options['ast-font-style-update'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}

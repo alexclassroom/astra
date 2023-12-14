@@ -142,17 +142,9 @@ function astra_container_layout_css() {
 	/** @psalm-suppress InvalidCast */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 	$page_container_css .= '
-		.ast-narrow-container .ast-container--, .ast-separate-container.ast-no-sidebar .ast-container-- {
-			margin-left: calc( -50vw + 50%);
-			margin-right: calc( -50vw + 50%);
-		}
 		.ast-narrow-container .ast-container-- {
 			max-width: 100vw;
 			width: 100vw;
-		}
-		.ast-narrow-container .ast-single-related-posts-container.ast-container-- {
-			padding-left: 20px;
-			padding-right: 20px;
 		}
 		.ast-separate-container.ast-no-sidebar .ast-container-- {
 			max-width: unset;

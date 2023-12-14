@@ -648,6 +648,52 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 					'comments-box-placement'               => '',
 					'comment-form-position'                => 'below',
 					'comments-box-container-width'         => '',
+					'ast-sub-section-comments-margin'      => array(
+						'desktop'      => array(
+							'top'    => $blog_defaults_update ? 2 : '',
+							'right'  => '',
+							'bottom' => '',
+							'left'   => '',
+						),
+						'tablet'       => array(
+							'top'    => '',
+							'right'  => '',
+							'bottom' => '',
+							'left'   => '',
+						),
+						'mobile'       => array(
+							'top'    => '',
+							'right'  => '',
+							'bottom' => '',
+							'left'   => '',
+						),
+						'desktop-unit' => 'em',
+						'tablet-unit'  => 'em',
+						'mobile-unit'  => 'em',
+					),
+					'ast-sub-section-comments-padding'      => array(
+						'desktop'      => array(
+							'top' => '',
+							'right'  => '',
+							'bottom'    => $blog_defaults_update ? 2 : '',
+							'left'   => '',
+						),
+						'tablet'       => array(
+							'top'    => '',
+							'right'  => '',
+							'bottom' => '',
+							'left'   => '',
+						),
+						'mobile'       => array(
+							'top'    => '',
+							'right'  => '',
+							'bottom' => '',
+							'left'   => '',
+						),
+						'desktop-unit' => 'em',
+						'tablet-unit'  => 'em',
+						'mobile-unit'  => 'em',
+					),
 
 					// Container.
 					'single-page-ast-content-layout'       => false === astra_check_is_structural_setup() ? 'default' : 'normal-width-container',

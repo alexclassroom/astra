@@ -16,7 +16,7 @@
 	.post-navigation {
 
 		margin: 0;
-		padding: var(--ast-single-post-nav-padding, 2em 0 0);
+		padding: 2em 0 0;
 		border-top: 1px solid var(--ast-single-post-border, $color-border-content);
 		@media(max-width: $mx-col-md) {
 	        padding-top: 1.5em;
