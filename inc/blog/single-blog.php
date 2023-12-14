@@ -209,7 +209,9 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
  * @since x.x.x
  */
 function astra_adjacent_post_links_title( $output, $format, $link, $post, $adjacent ) {
+	/** @psalm-suppress PossiblyInvalidPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( ! empty( $post->post_title ) ) {
+		/** @psalm-suppress PossiblyInvalidPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$output = str_replace( 'href="', 'title="' . esc_attr( $post->post_title ) . '"' . 'href="', $output );
 	}
 	return $output;
