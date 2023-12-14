@@ -67,10 +67,11 @@ function astra_related_posts_static_css( $dynamic_css ) {
 			$astra_mobile_breakpoint = astra_get_mobile_breakpoint();
 			/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
+			$section_title_bottom_space = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '20x' : '2em';
+
 			$dynamic_css .= '
 				.ast-single-related-posts-container {
 					border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
-					margin: 2em 0 0;
 				}
 				.ast-separate-container .ast-single-related-posts-container {
 					border-top: 0;
@@ -79,15 +80,12 @@ function astra_related_posts_static_css( $dynamic_css ) {
 					padding-top: 2em;
 				}
 				.ast-related-posts-title-section {
-					padding-bottom: 2em;
+					padding-bottom: ' . $section_title_bottom_space . ';
 				}
 				.ast-page-builder-template .ast-single-related-posts-container {
 					margin-top: 0;
 					padding-left: 20px;
 					padding-right: 20px;
-				}
-				.ast-separate-container .ast-single-related-posts-container {
-					padding: 3em;
 				}
 				@media (max-width: ' . $astra_mobile_breakpoint . 'px) {
 					.ast-separate-container .ast-single-related-posts-container {

@@ -120,7 +120,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 						'above' => __( 'Above Comments', 'astra' ),
 					),
 					'context'    => Astra_Builder_Helper::$general_tab,
-					'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
+					'divider'    => array( 'ast_class' => 'ast-top-section-divider' ),
 					'responsive' => false,
 					'renderAs'   => 'text',
 				),

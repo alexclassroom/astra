@@ -154,16 +154,19 @@ if ( ! class_exists( 'Astra_Builder_Base_Dynamic_CSS' ) ) {
 				) );
 				$css_output_desktop = array(
 					$selector => array(
-						'border-style'               => empty( astra_get_css_value( $width['top'] ) ) && empty( astra_get_css_value( $width['right'] ) ) && empty( astra_get_css_value( $width['bottom'] ) ) && empty( astra_get_css_value( $width['left'] ) ) ? '' : 'solid',
-						'border-color'               => esc_attr( $color ),
-						'border-top-width'     => ! empty( astra_get_css_value( $width['top'] ) ) ? astra_get_css_value( $width['top'], 'px' ) : '',
-						'border-bottom-width' => ! empty( astra_get_css_value( $width['bottom'] ) ) ? astra_get_css_value( $width['bottom'], 'px' ) : '',
-						'border-left-width'  => ! empty( astra_get_css_value( $width['left'] ) ) ? astra_get_css_value( $width['left'], 'px' ) : '',
-						'border-right-width'    => ! empty( astra_get_css_value( $width['right'] ) ) ? astra_get_css_value( $width['right'], 'px' ) : '',
-						'border-top-left-radius'     => ! empty( astra_get_css_value( $radius['top'] ) ) ? astra_get_css_value( $radius['top'], 'px' ) : '',
-						'border-bottom-right-radius' => ! empty( astra_get_css_value( $radius['bottom'] ) ) ? astra_get_css_value( $radius['bottom'], 'px' ) : '',
-						'border-bottom-left-radius'  => ! empty( astra_get_css_value( $radius['left'] ) ) ? astra_get_css_value( $radius['left'], 'px' ) : '',
-						'border-top-right-radius'    => ! empty( astra_get_css_value( $radius['right'] ) ) ? astra_get_css_value( $radius['right'], 'px' ) : '',
+						'border-top-style'   => ! empty( $width['top'] ) ? 'solid' : '',
+						'border-right-style' => ! empty( $width['right'] ) ? 'solid' : '',
+						'border-bottom-style' => ! empty( $width['bottom'] ) ? 'solid' : '',
+						'border-left-style'   => ! empty( $width['left'] ) ? 'solid' : '',
+						'border-color'         => esc_attr( $color ),
+						'border-top-width'     => ! empty( $width['top'] ) ? astra_get_css_value( $width['top'], 'px' ) : '',
+						'border-bottom-width' => ! empty( $width['bottom'] ) ? astra_get_css_value( $width['bottom'], 'px' ) : '',
+						'border-left-width'  => ! empty( $width['left'] ) ? astra_get_css_value( $width['left'], 'px' ) : '',
+						'border-right-width'    => ! empty( $width['right'] ) ? astra_get_css_value( $width['right'], 'px' ) : '',
+						'border-top-left-radius'     => ! empty( $radius['top'] ) ? astra_get_css_value( $radius['top'], 'px' ) : '',
+						'border-bottom-right-radius' => ! empty( $radius['bottom'] ) ? astra_get_css_value( $radius['bottom'], 'px' ) : '',
+						'border-bottom-left-radius'  => ! empty( $radius['left'] ) ? astra_get_css_value( $radius['left'], 'px' ) : '',
+						'border-top-right-radius'    => ! empty( $radius['right'] ) ? astra_get_css_value( $radius['right'], 'px' ) : '',
 					),
 				);
 

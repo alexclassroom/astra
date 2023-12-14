@@ -563,12 +563,11 @@ function astra_builder_advanced_css( section, selector ) {
 function astra_border_spacing_advanced_css( section, selector ) {
 	wp.customize( 'astra-settings[' + section + '-border-width]', function( setting ) {
 		setting.bind( function( border ) {
-			if ( border.top === '' && border.right === '' && border.bottom === '' || border.left === '' ) {
-				wp.customize.preview.send( 'refresh' );
-				return;
-			}
 			var dynamicStyle = selector + ' {';
-			dynamicStyle += 'border-style: solid;';
+			dynamicStyle += border.top ? 'border-top-style: solid;' : '';
+			dynamicStyle += border.right ? 'border-right-style: solid;' : '';
+			dynamicStyle += border.bottom ? 'border-bottom-style: solid;' : '';
+			dynamicStyle += border.left ? 'border-left-style: solid;' : '';
 			dynamicStyle += 'border-top-width:'  + border.top + 'px;';
 			dynamicStyle += 'border-right-width:'  + border.right + 'px;';
 			dynamicStyle += 'border-left-width:'   + border.left + 'px;';

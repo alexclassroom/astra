@@ -154,10 +154,6 @@ li.customize-control.ast-top-section-spacing {
     bottom: 25px;
 }
 
-.ast-top-dotted-divider > * {
-    margin-top: -5px !important;
-}
-
 /*
 * CSS for ast-section-divider attribute started.
 */

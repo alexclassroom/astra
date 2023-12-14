@@ -2177,7 +2177,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'padding-' . $ltr_left => '0',
 					),
 					'.ast-separate-container .comments-title, .ast-narrow-container .comments-title' => array(
-						'padding' => '2em 2em 1em',
+						'padding' => '1.5em 2em',
 					),
 					'.ast-page-builder-template .comment-form-textarea, .ast-comment-formwrap .ast-grid-common-col' => array(
 						'padding' => '0',

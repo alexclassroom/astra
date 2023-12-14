@@ -980,6 +980,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 					),
 				),
 				'title'             => __( 'Section Title', 'astra' ),
+				'divider'           => array( 'ast_class' => 'ast-top-section-spacing' ),
 			),
 
 			/**

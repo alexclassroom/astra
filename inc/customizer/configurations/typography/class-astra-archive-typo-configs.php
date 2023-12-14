@@ -131,17 +131,22 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						'title'             => __( 'Meta Font Size', 'astra' ),
 						'priority'          => 140,
 						'default'           => astra_get_option( 'font-size-post-meta' ),
-						'suffix'            => array( 'px', 'em' ),
+						'suffix'            => array( 'px', 'em', 'vw' ),
 						'input_attrs'       => array(
 							'px' => array(
 								'min'  => 0,
 								'step' => 1,
-								'max'  => 100,
+								'max'  => 200,
 							),
 							'em' => array(
 								'min'  => 0,
 								'step' => 0.01,
 								'max'  => 20,
+							),
+							'vw' => array(
+								'min'  => 0,
+								'step' => 0.1,
+								'max'  => 25,
 							),
 						),
 						'context'           => ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) ?
@@ -158,17 +163,22 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						'title'             => __( 'Taxonomy Font Size', 'astra' ),
 						'priority'          => 140,
 						'default'           => astra_get_option( 'font-size-post-tax' ),
-						'suffix'            => array( 'px', 'em' ),
+						'suffix'            => array( 'px', 'em', 'vw' ),
 						'input_attrs'       => array(
 							'px' => array(
 								'min'  => 0,
 								'step' => 1,
-								'max'  => 100,
+								'max'  => 200,
 							),
 							'em' => array(
 								'min'  => 0,
 								'step' => 0.01,
 								'max'  => 20,
+							),
+							'vw' => array(
+								'min'  => 0,
+								'step' => 0.1,
+								'max'  => 25,
 							),
 						),
 						'context'           => array(

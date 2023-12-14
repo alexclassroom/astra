@@ -892,6 +892,10 @@ function astra_theme_background_updater_4_6_0() {
 			}
 		}
 
+		if ( isset( $theme_options['single-post-inside-spacing'] ) ) {
+			$theme_options['ast-sub-section-related-posts-padding'] = $theme_options['single-post-inside-spacing'];
+		}
+
 		$theme_options['ast-font-style-update'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}

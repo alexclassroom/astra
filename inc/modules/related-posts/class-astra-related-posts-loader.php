@@ -214,10 +214,33 @@ class Astra_Related_Posts_Loader {
 		);
 		$defaults['ast-sub-section-related-posts-padding'] = array(
 			'desktop'      => array(
-				'top' => '',
-				'right'  => $astra_blog_update ? 2 : '',
-				'bottom'    => '',
-				'left'   => $astra_blog_update ? 2 : '',
+				'top' => 2.5,
+				'right'  => 2.5,
+				'bottom' => 2.5,
+				'left'   => 2.5,
+			),
+			'tablet'       => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
+			'mobile'       => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
+			'desktop-unit' => 'em',
+			'tablet-unit'  => 'em',
+			'mobile-unit'  => 'em',
+		);
+		$defaults['ast-sub-section-related-posts-margin'] = array(
+			'desktop'      => array(
+				'top' => 2,
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
 			),
 			'tablet'       => array(
 				'top'    => '',

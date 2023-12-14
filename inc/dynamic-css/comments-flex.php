@@ -598,19 +598,8 @@ function astra_comments_css( $dynamic_css ) {
 			$comments_section_placement = astra_get_option( 'comments-box-placement', '' );
 			if ( 'inside' === $comments_section_placement ) {
 				$dynamic_css .= '
-					.site-content article .comments-title {
-						padding-top: 2em;
-						padding-bottom: 1em;
-					}
 					.site-content article .comment-respond {
 						padding-top: 1.5em;
-					}
-					.site-content article .comments-title, .site-content article .comment-respond {
-						padding-left: 0;
-						padding-right: 0;
-					}
-					.site-content article .comment-respond {
-						padding-bottom: 2em;
 					}
 					@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
 						.site-content article .ast-comment-list li.depth-1 {
