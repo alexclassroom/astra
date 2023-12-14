@@ -912,11 +912,20 @@ namespace {
         {
         }
         /**
+         * Astra update default font size and font weight.
+         * 
+         * @since x.x.x 
+         * @return boolean 
+         */
+        public static function astra_update_default_font_styling()
+        {
+        }
+        /**
          * Enqueue styles
          *
          * @since 1.0.31
          */
-        public function add_styles()
+        public function add_scripts_styles()
         {
         }
         /**
@@ -4433,23 +4442,6 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Header_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Header Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
     class Astra_Global_Typo_Configs extends \Astra_Customizer_Config_Base
     {
         /**
@@ -4488,23 +4480,6 @@ namespace {
     {
         /**
          * Register Body Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Content_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Content Typography Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -5184,6 +5159,18 @@ namespace {
          * @return array
          */
         public static function prepare_visibility_tab($_section, $builder_type = 'header')
+        {
+        }
+        /**
+         * Prepare Spacing & Border options.
+         *
+         * @param string $section_id section id.
+         * @param bool $skip_border_divider Skip border control divider or not.
+         *
+         * @since x.x.x
+         * @return array
+         */
+        public static function prepare_section_spacing_border_options($section_id, $skip_border_divider = \false)
         {
         }
         /**
@@ -11262,6 +11249,16 @@ namespace {
         {
         }
         /**
+         * Prepare Advanced Border Dynamic CSS.
+         *
+         * @param string $section_id section id.
+         * @param string $selector selector.
+         * @return string
+         */
+        public static function prepare_inner_section_advanced_css($section_id, $selector)
+        {
+        }
+        /**
          * Prepare Advanced Margin / Padding Dynamic CSS.
          *
          * @param string $section_id section id.
@@ -13425,6 +13422,28 @@ namespace {
     {
     }
     /**
+     * Post Navigation - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Post Navigation.
+     *
+     * @since x.x.x
+     */
+    function astra_navigation_css($dynamic_css)
+    {
+    }
+    /**
+     * Single Post UI Improvement - Dynamic CSS
+     *
+     * @param  string $dynamic_css          Astra Dynamic CSS.
+     * @return String Generated dynamic CSS for Pagination.
+     *
+     * @since x.x.x
+     */
+    function astra_single_post_css($dynamic_css)
+    {
+    }
+    /**
      * WordPress filter - Widget Tags
      *
      * @param  array $args Tag arguments.
@@ -15399,7 +15418,7 @@ namespace {
     /**
      * Register builder footer builder Customizer Configurations.
      *
-     * @param Array $configurations Astra Customizer Configurations.
+     * @param array $configurations Astra Customizer Configurations.
      * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
@@ -15916,356 +15935,12 @@ namespace {
     \define('ASTRA_THEME_HEADING_COLORS_DIR', \ASTRA_THEME_DIR . 'inc/addons/heading-colors/');
     \define('ASTRA_THEME_HEADING_COLORS_URI', \ASTRA_THEME_URI . 'inc/addons/heading-colors/');
     /**
-     * Check if we need to load icons as font or SVG.
-     *
-     * @since 3.3.0
-     * @return void
-     */
-    function astra_icons_svg_compatibility()
-    {
-    }
-    /**
-     * Header Footer builder - Migration compatibility.
-     *
-     * @since 3.0.0
-     *
-     * @return void
-     */
-    function astra_header_builder_compatibility()
-    {
-    }
-    /**
-     * Clears assets cache and regenerates new assets files.
-     *
-     * @since 3.0.1
-     *
-     * @return void
-     */
-    function astra_clear_assets_cache()
-    {
-    }
-    /**
-     * Gutenberg pattern compatibility changes.
-     *
-     * @since 3.3.0
-     *
-     * @return void
-     */
-    function astra_gutenberg_pattern_compatibility()
-    {
-    }
-    /**
-     * Set flag to provide backward compatibility of float based CSS for existing users.
-     *
-     * @since 3.3.0
-     * @return void.
-     */
-    function astra_check_flex_based_css()
-    {
-    }
-    /**
-     * Update the Cart Style, Icon color & Border radius if None style is selected.
-     *
-     * @since 3.4.0
-     * @return void.
-     */
-    function astra_update_cart_style()
-    {
-    }
-    /**
-     * Update existing 'Grid Column Layout' option in responsive way in Related Posts.
-     * Till this update 3.5.0 we have 'Grid Column Layout' only for singular option, but now we are improving it as responsive.
-     *
-     * @since 3.5.0
-     * @return void.
-     */
-    function astra_update_related_posts_grid_layout()
-    {
-    }
-    /**
-     * Migrate Site Title & Site Tagline options to new responsive array.
-     *
-     * @since 3.5.0
-     *
-     * @return void
-     */
-    function astra_site_title_tagline_responsive_control_migration()
-    {
-    }
-    /**
-     * Do not apply new font-weight heading support CSS in editor/frontend directly.
-     *
-     * 1. Adding Font-weight support to widget titles.
-     * 2. Customizer font CSS not supporting in editor.
-     *
-     * @since 3.6.0
-     *
-     * @return void
-     */
-    function astra_headings_font_support()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 3.6.0
-     * @return void.
-     */
-    function astra_remove_logo_max_width()
-    {
-    }
-    /**
-     * Set flag to maintain backward compatibility for existing users for Transparent Header border bottom default value i.e from '' to 0.
-     *
-     * @since 3.6.0
-     * @return void.
-     */
-    function astra_transparent_header_default_value()
-    {
-    }
-    /**
      * Clear Astra + Astra Pro assets cache.
      *
      * @since 3.6.1
      * @return void.
      */
     function astra_clear_all_assets_cache()
-    {
-    }
-    /**
-     * Set flag for updated default values for buttons & add GB Buttons padding support.
-     *
-     * @since 3.6.3
-     * @return void
-     */
-    function astra_button_default_values_updated()
-    {
-    }
-    /**
-     * Set flag for old users, to not directly apply underline to content links.
-     *
-     * @since 3.6.4
-     * @return void
-     */
-    function astra_update_underline_link_setting()
-    {
-    }
-    /**
-     * Add compatibility support for WP-5.8. as some of settings & blocks already their in WP-5.7 versions, that's why added backward here.
-     *
-     * @since 3.6.5
-     * @return void
-     */
-    function astra_support_block_editor()
-    {
-    }
-    /**
-     * Set flag to maintain backward compatibility for existing users.
-     * Fixing the case where footer widget's right margin space not working.
-     *
-     * @since 3.6.7
-     * @return void
-     */
-    function astra_fix_footer_widget_right_margin_case()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 3.6.7
-     * @return void
-     */
-    function astra_remove_elementor_toc_margin()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     * Use: Setting flag for removing widget specific design options when WordPress 5.8 & above activated on site.
-     *
-     * @since 3.6.8
-     * @return void
-     */
-    function astra_set_removal_widget_design_options_flag()
-    {
-    }
-    /**
-     * Apply zero font size for new users.
-     *
-     * @since 3.6.9
-     * @return void
-     */
-    function astra_zero_font_size_comp()
-    {
-    }
-    /** Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 3.6.9
-     * @return void
-     */
-    function astra_unset_builder_elements_underline()
-    {
-    }
-    /**
-     * Migrating Builder > Account > transparent resonsive menu color options to single color options.
-     * Because we do not show menu on resonsive devices, whereas we trigger login link on responsive devices instead of showing menu.
-     *
-     * @since 3.6.9
-     *
-     * @return void
-     */
-    function astra_remove_responsive_account_menu_colors_support()
-    {
-    }
-    /**
-     * Link default color compatibility.
-     *
-     * @since 3.7.0
-     * @return void
-     */
-    function astra_global_color_compatibility()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 3.7.4
-     * @return void
-     */
-    function astra_improve_gutenberg_editor_ui()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Starting supporting content-background color for Full Width Contained & Full Width Stretched layouts.
-     *
-     * @since 3.7.8
-     * @return void
-     */
-    function astra_fullwidth_layouts_apply_content_background()
-    {
-    }
-    /**
-     * Sets the default breadcrumb separator selector value if the current user is an exsisting user
-     *
-     * @since 3.7.8
-     * @return void
-     */
-    function astra_set_default_breadcrumb_separator_option()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To initiate modern & updated UI of block editor & frontend.
-     *
-     * @since 3.8.0
-     * @return void
-     */
-    function astra_apply_modern_block_editor_ui()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To keep structure defaults updation by filter.
-     *
-     * @since 3.8.3
-     * @return void
-     */
-    function astra_update_customizer_layout_defaults()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To initiate maintain modern, updated v2 experience of block editor & frontend.
-     *
-     * @since 3.8.3
-     * @return void
-     */
-    function astra_apply_modern_block_editor_v2_ui()
-    {
-    }
-    /**
-     * Display Cart Total and Title compatibility.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_display_cart_total_title_compatibility()
-    {
-    }
-    /**
-     * If old user then it keeps then default cart icon.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_update_woocommerce_cart_icons()
-    {
-    }
-    /**
-     * Set brder color to blank for old users for new users 'default' will take over.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_legacy_customizer_maintenance()
-    {
-    }
-    /**
-     * Enable single product breadcrumb to maintain backward compatibility for existing users.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_update_single_product_breadcrumb()
-    {
-    }
-    /**
-     * Restrict direct changes on users end so make it filterable.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_apply_modern_ecommerce_setup()
-    {
-    }
-    /**
-     * Migrate old user data to new responsive format layout for shop's summary box content alignment.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_responsive_shop_content_alignment()
-    {
-    }
-    /**
-     * Change default layout to standard for old users.
-     *
-     * @since 3.9.2
-     * @return void
-     */
-    function astra_shop_style_design_layout()
-    {
-    }
-    /**
-     * Apply css for show password icon on woocommerce account page.
-     *
-     * @since 3.9.2
-     * @return void
-     */
-    function astra_apply_woocommerce_show_password_icon_css()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 3.9.4
-     *
-     * @since 3.9.4
-     * @return void
-     */
-    function astra_theme_background_updater_3_9_4()
     {
     }
     /**
@@ -16631,16 +16306,6 @@ namespace {
      * @return array            Return theme author URL and name.
      */
     function astra_get_theme_author_details()
-    {
-    }
-    /**
-     * Remove Base Color > Background Color option from the customize array.
-     *
-     * @since 2.4.0
-     * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-     * @return $wp_customize
-     */
-    function astra_remove_controls($wp_customize)
     {
     }
     /**
@@ -17051,6 +16716,20 @@ namespace {
     {
     }
     /**
+     * Adjacent navigation post link attributes.
+     * @param string         $output   The adjacent post link.
+     * @param string         $format   Link anchor format.
+     * @param string         $link     Link permalink format.
+     * @param WP_Post|string $post     The adjacent post. Empty string if no corresponding post exists.
+     * @param string         $adjacent Whether the post is previous or next.
+     *
+     * @return string       Link of post URL.
+     * @since x.x.x
+     */
+    function astra_adjacent_post_links_title($output, $format, $link, $post, $adjacent)
+    {
+    }
+    /**
      * Get Post Navigation
      *
      * Checks post navigation, if exists return as button.
@@ -17255,10 +16934,11 @@ namespace {
      * @param int    $loop_count Meta loop counter to decide separator appearance.
      * @param string $separator Separator.
      * @param string $badge_style For taxonomies as badge styles.
+     * @param string $html_tag HTML tag.
      *
      * @return string $output Taxonomy output.
      */
-    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '')
+    function astra_get_dynamic_taxonomy($control_tax, $loop_count, $separator, $badge_style = '', $html_tag = 'p')
     {
     }
     /**
@@ -17973,6 +17653,14 @@ namespace {
      * @since 4.0.0
      */
     $astra_post_type = \strval(\get_post_type());
+    /**
+     * Blog Pro - Blog Layout 5 Template
+     *
+     * @todo Update this template for Default Blog Style
+     *
+     * @package Astra Addon
+     */
+    $blog_structure_order = \astra_get_option('blog-post-structure', array());
     /**
      * Template part for displaying archive post's entry banner.
      *

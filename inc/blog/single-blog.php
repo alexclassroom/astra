@@ -264,8 +264,8 @@ if ( ! function_exists( 'astra_single_post_navigation_markup' ) ) {
 				)
 			);
 
-			remove_filter( 'previous_post_link', 'astra_adjacent_post_links_title', 10, 5 );
-			remove_filter( 'next_post_link', 'astra_adjacent_post_links_title', 10, 5 );
+			remove_filter( 'previous_post_link', 'astra_adjacent_post_links_title', 10 );
+			remove_filter( 'next_post_link', 'astra_adjacent_post_links_title', 10 );
 		}
 	}
 }

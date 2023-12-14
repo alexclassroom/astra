@@ -270,9 +270,10 @@ final class Astra_Builder_Base_Configuration {
 	/**
 	 * Prepare Spacing & Border options.
 	 *
-	 * @param string $_section section id.
-	 * @param string $builder_type Builder Type.
-	 * @param bool $builder_type Builder Type.
+	 * @param string $section_id section id.
+	 * @param bool $skip_border_divider Skip border control divider or not.
+	 *
+	 * @since x.x.x
 	 * @return array
 	 */
 	public static function prepare_section_spacing_border_options( $section_id, $skip_border_divider = false ) {
