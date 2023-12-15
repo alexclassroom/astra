@@ -710,6 +710,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
 				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				'choices'     => array(
+					'default'  => __( 'Default', 'astra' ),
 					'inside'  => __( 'Contained', 'astra' ),
 					'outside' => __( 'Separated', 'astra' ),
 				),
@@ -745,6 +746,11 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 						'setting'  => ASTRA_THEME_SETTINGS . '[enable-related-posts]',
 						'operator' => '==',
 						'value'    => true,
+					),
+					array(
+						'setting'  => ASTRA_THEME_SETTINGS . '[related-posts-box-placement]',
+						'operator' => '!=',
+						'value'    => 'default',
 					),
 				),
 				'responsive'  => false,
