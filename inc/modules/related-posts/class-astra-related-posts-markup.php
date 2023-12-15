@@ -121,7 +121,12 @@ class Astra_Related_Posts_Markup {
 
 					if ( false === $related_posts_section_loaded ) {
 
-						echo '<div class="ast-single-related-posts-container ' . esc_attr( $module_container_width ) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						if ( is_customize_preview() ) {
+							echo '<div class="customizer-item-block-preview customizer-navigate-on-focus ast-single-related-posts-container ' . esc_attr( $module_container_width ) . '" data-section="ast-sub-section-related-posts" data-type="section">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							Astra_Builder_UI_Controller::render_customizer_edit_button( 'row-editor-shortcut' );
+						} else {
+							echo '<div class="ast-single-related-posts-container ' . esc_attr( $module_container_width ) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						}
 
 						do_action( 'astra_related_posts_title_before' );
 
