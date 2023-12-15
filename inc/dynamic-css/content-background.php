@@ -41,13 +41,13 @@ function astra_content_background_css( $dynamic_css ) {
 		$content_bg_obj = astra_get_option_meta( 'ast-content-background-meta' );
 	}
 
-	$blog_layout             = astra_get_blog_layout();
-	$blog_grid               = astra_get_option( 'blog-grid' );
-	$sidebar_default_css     = $content_bg_obj;
-	$is_boxed                = astra_is_content_style_boxed();
-	$is_sidebar_boxed        = astra_is_sidebar_style_boxed();
-	$current_layout          = astra_get_content_layout();
-	$narrow_dynamic_selector = 'narrow-width-container' === $current_layout && $is_boxed ? ', .ast-narrow-container .site-content' : '';
+	$blog_layout                  = astra_get_blog_layout();
+	$blog_grid                    = astra_get_option( 'blog-grid' );
+	$sidebar_default_css          = $content_bg_obj;
+	$is_boxed                     = astra_is_content_style_boxed();
+	$is_sidebar_boxed             = astra_is_sidebar_style_boxed();
+	$current_layout               = astra_get_content_layout();
+	$narrow_dynamic_selector      = 'narrow-width-container' === $current_layout && $is_boxed ? ', .ast-narrow-container .site-content' : '';
 	$comments_wrapper_bg_selector = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? ', .ast-separate-container .comments-area' : ', .ast-separate-container .comments-area .comment-respond, .ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .comments-area .comments-title';
 
 	$author_box_extra_selector = ( true === astra_check_is_structural_setup() ) ? '.site-main' : '';

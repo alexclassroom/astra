@@ -420,7 +420,7 @@ if ( ! class_exists( 'Astra_Blog_Layout_Configs' ) ) {
 					'control'      => 'ast-number',
 					'qty_selector' => true,
 					'transport'    => 'postMessage',
-					'title'             => __( 'Height', 'astra' ),
+					'title'        => __( 'Height', 'astra' ),
 					'parent'       => ASTRA_THEME_SETTINGS . '[blog-post-structure]',
 					'section'      => 'section-blog',
 					'linked'       => 'image',

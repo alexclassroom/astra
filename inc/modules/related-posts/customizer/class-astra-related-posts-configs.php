@@ -135,7 +135,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'priority'  => 11,
 				'title'     => __( 'Title', 'astra' ),
 				'control'   => 'ast-text-input',
-				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
+				'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
 				'transport' => 'postMessage',
 				'partial'   => array(
 					'selector'            => '.ast-related-posts-title-section .ast-related-posts-title',
@@ -708,9 +708,9 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'title'       => __( 'Section Placement', 'astra' ),
 				'control'     => 'ast-selector',
 				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
-				'divider'  => array( 'ast_class' => 'ast-top-dotted-divider' ),
+				'divider'     => array( 'ast_class' => 'ast-top-dotted-divider' ),
 				'choices'     => array(
-					'default'  => __( 'Default', 'astra' ),
+					'default' => __( 'Default', 'astra' ),
 					'inside'  => __( 'Contained', 'astra' ),
 					'outside' => __( 'Separated', 'astra' ),
 				),
@@ -766,7 +766,7 @@ class Astra_Related_Posts_Configs extends Astra_Customizer_Config_Base {
 				'control'    => 'ast-selector',
 				'choices'    => array(
 					'narrow' => __( 'Narrow', 'astra' ),
-					''  => __( 'Full Width', 'astra' ),
+					''       => __( 'Full Width', 'astra' ),
 				),
 				'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(

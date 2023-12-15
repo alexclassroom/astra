@@ -77,7 +77,7 @@ class Astra_Related_Posts_Loader {
 		 */
 		$apply_new_default_color_typo_values = Astra_Dynamic_CSS::astra_check_default_color_typo();
 
-		$astra_options = Astra_Theme_Options::get_astra_options();
+		$astra_options     = Astra_Theme_Options::get_astra_options();
 		$astra_blog_update = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
 
 		// Related Posts.
@@ -194,9 +194,9 @@ class Astra_Related_Posts_Loader {
 		);
 
 		// Related Posts - Content typo.
-		$defaults['related-posts-content-font-family'] = 'inherit';
-		$defaults['related-posts-content-font-weight'] = 'inherit';
-		$defaults['related-posts-content-font-extras'] = array(
+		$defaults['related-posts-content-font-family']     = 'inherit';
+		$defaults['related-posts-content-font-weight']     = 'inherit';
+		$defaults['related-posts-content-font-extras']     = array(
 			'line-height'         => ! isset( $astra_options['related-posts-content-font-extras'] ) && isset( $astra_options['related-posts-content-line-height'] ) ? $astra_options['related-posts-content-line-height'] : '',
 			'line-height-unit'    => 'em',
 			'letter-spacing'      => '',
@@ -204,7 +204,7 @@ class Astra_Related_Posts_Loader {
 			'text-transform'      => ! isset( $astra_options['related-posts-content-font-extras'] ) && isset( $astra_options['related-posts-content-text-transform'] ) ? $astra_options['related-posts-content-text-transform'] : '',
 			'text-decoration'     => '',
 		);
-		$defaults['related-posts-content-font-size']   = array(
+		$defaults['related-posts-content-font-size']       = array(
 			'desktop'      => '',
 			'tablet'       => '',
 			'mobile'       => '',
@@ -214,7 +214,7 @@ class Astra_Related_Posts_Loader {
 		);
 		$defaults['ast-sub-section-related-posts-padding'] = array(
 			'desktop'      => array(
-				'top' => 2.5,
+				'top'    => 2.5,
 				'right'  => 2.5,
 				'bottom' => 2.5,
 				'left'   => 2.5,
@@ -235,9 +235,9 @@ class Astra_Related_Posts_Loader {
 			'tablet-unit'  => 'em',
 			'mobile-unit'  => 'em',
 		);
-		$defaults['ast-sub-section-related-posts-margin'] = array(
+		$defaults['ast-sub-section-related-posts-margin']  = array(
 			'desktop'      => array(
-				'top' => 2,
+				'top'    => 2,
 				'right'  => '',
 				'bottom' => '',
 				'left'   => '',

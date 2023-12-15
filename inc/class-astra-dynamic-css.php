@@ -914,7 +914,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			// Accessibility options.
 			$enable_site_accessibility        = astra_get_option( 'site-accessibility-toggle', false );
 			$html_selectors_focus_visible     = 'a:focus-visible, .ast-menu-toggle:focus-visible, .site .skip-link:focus-visible, .wp-block-loginout input:focus-visible, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper, .ast-header-navigation-arrow:focus-visible, .woocommerce .wc-proceed-to-checkout > .checkout-button:focus-visible, .woocommerce .woocommerce-MyAccount-navigation ul li a:focus-visible, .ast-orders-table__row .ast-orders-table__cell:focus-visible, .woocommerce .woocommerce-order-details .order-again > .button:focus-visible, .woocommerce .woocommerce-message a.button.wc-forward:focus-visible, .woocommerce #minus_qty:focus-visible, .woocommerce #plus_qty:focus-visible, a#ast-apply-coupon:focus-visible, .woocommerce .woocommerce-info a:focus-visible, .woocommerce .astra-shop-summary-wrap a:focus-visible, .woocommerce a.wc-forward:focus-visible, #ast-apply-coupon:focus-visible, .woocommerce-js .woocommerce-mini-cart-item a.remove:focus-visible';
-			$html_selectors_focus_only_inputs = 'input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="number"]:focus, textarea:focus, .wp-block-search__input:focus, [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus, .ast-mobile-popup-drawer.active .menu-toggle-close:focus, .woocommerce-ordering select.orderby:focus, #ast-scroll-top:focus, #coupon_code:focus, .woocommerce-page #comment:focus, .woocommerce #reviews #respond input#submit:focus, .woocommerce a.add_to_cart_button:focus, .woocommerce .button.single_add_to_cart_button:focus, .woocommerce .woocommerce-cart-form button:focus, .woocommerce .woocommerce-cart-form__cart-item .quantity .qty:focus, .woocommerce .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce #order_comments:focus, .woocommerce #place_order:focus, .woocommerce .woocommerce-address-fields .woocommerce-address-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce .woocommerce-MyAccount-content form button:focus, .woocommerce .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row .woocommerce-Input.input-text:focus, .woocommerce .ast-woocommerce-container .woocommerce-pagination ul.page-numbers li a:focus, body #content .woocommerce form .form-row .select2-container--default .select2-selection--single:focus, #ast-coupon-code:focus, .woocommerce.woocommerce-js .quantity input[type=number]:focus, .woocommerce-js .woocommerce-mini-cart-item .quantity input[type=number]:focus, .woocommerce p#ast-coupon-trigger:focus';
+			$html_selectors_focus_only_inputs = 'input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus, select:focus, .wp-block-search__input:focus, [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus, .ast-mobile-popup-drawer.active .menu-toggle-close:focus, .woocommerce-ordering select.orderby:focus, #ast-scroll-top:focus, #coupon_code:focus, .woocommerce-page #comment:focus, .woocommerce #reviews #respond input#submit:focus, .woocommerce a.add_to_cart_button:focus, .woocommerce .button.single_add_to_cart_button:focus, .woocommerce .woocommerce-cart-form button:focus, .woocommerce .woocommerce-cart-form__cart-item .quantity .qty:focus, .woocommerce .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce #order_comments:focus, .woocommerce #place_order:focus, .woocommerce .woocommerce-address-fields .woocommerce-address-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce .woocommerce-MyAccount-content form button:focus, .woocommerce .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row .woocommerce-Input.input-text:focus, .woocommerce .ast-woocommerce-container .woocommerce-pagination ul.page-numbers li a:focus, body #content .woocommerce form .form-row .select2-container--default .select2-selection--single:focus, #ast-coupon-code:focus, .woocommerce.woocommerce-js .quantity input[type=number]:focus, .woocommerce-js .woocommerce-mini-cart-item .quantity input[type=number]:focus, .woocommerce p#ast-coupon-trigger:focus';
 
 			if ( $enable_site_accessibility ) {
 				$outline_style = astra_get_option( 'site-accessibility-highlight-type' );
@@ -1153,6 +1153,12 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			if ( 'no-sidebar' !== astra_page_layout() ) {
 				$parse_css .= Astra_Enqueue_Scripts::trim_css( self::load_sidebar_static_css() );
 				$parse_css .= self::astra_sticky_sidebar_css();
+			}
+
+			if ( self::astra_forms_default_style_update() ) {
+
+				// Forms default styling improvements.
+				$parse_css .= self::astra_default_forms_styling_dynamic_css();
 			}
 
 			if ( true === Astra_Builder_Helper::$is_header_footer_builder_active ) {
@@ -2210,7 +2216,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					),
 				);
 				if ( ! self::astra_4_6_0_compatibility() ) {
-					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry'] = array(
 						'margin-bottom' => '2em',
 					);
 				} else {
@@ -4432,12 +4438,15 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			if ( astra_get_option( 'enable-comments-area', true ) ) {
 				$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
 
-				$comments_radius  = astra_get_option( 'ast-sub-section-comments-border-radius', array(
-					'top' => '',
-					'right' => '',
-					'bottom' => '',
-					'left' => '',
-				) );
+				$comments_radius = astra_get_option(
+					'ast-sub-section-comments-border-radius',
+					array(
+						'top'    => '',
+						'right'  => '',
+						'bottom' => '',
+						'left'   => '',
+					) 
+				);
 
 				$list_spacing_css = array(
 					'.comments-area .comments-title, .comments-area .comment-respond' => array(
@@ -5754,6 +5763,162 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
+		 * Dynamic CSS for default forms styling improvements.
+		 *
+		 * @return string Dynamic CSS.
+		 * @since x.x.x
+		 */
+		public static function astra_default_forms_styling_dynamic_css() {
+			$css                       = '';
+			$enable_site_accessibility = astra_get_option( 'site-accessibility-toggle', false );
+			$forms_default_styling_css = array(
+				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date], select, textarea' => array(
+					'font-size'     => '16px',
+					'font-style'    => 'normal',
+					'font-weight'   => '400',
+					'line-height'   => '24px',
+					'width'         => '100%',
+					'padding'       => '12px 16px',
+					'border-radius' => '4px',
+					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
+					'color'         => 'var(--ast-form-input-text, #475569)',
+				),
+				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date], select' => array(
+					'height' => '40px',
+				),
+				'input[type="date"]'      => array(
+					'border-width' => '1px',
+					'border-style' => 'solid',
+					'border-color' => 'var(--ast-border-color)',
+				),
+				'input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus' => array(
+					'border-color' => '#046BD2',
+					'box-shadow'   => 'none',
+					'outline'      => 'none',
+					'color'        => 'var(--ast-form-input-focus-text, #475569)',
+				),
+				'label, legend'           => array(
+					'color'       => '#111827',
+					'font-size'   => '14px',
+					'font-style'  => 'normal',
+					'font-weight' => '500',
+					'line-height' => '20px',
+				),
+				'select'                  => array(
+					'-webkit-appearance'  => 'none',
+					'-moz-appearance'     => 'none',
+					'background-image'    => "url('data:image/svg+xml,%3Csvg width=\'21\' height=\'13\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M18.5.379L20.621 2.5 10.5 12.621.379 2.5 2.5.379l8 8z\' fill=\'%234F5D6D\' fill-rule=\'nonzero\'/%3E%3C/svg%3E')",
+					'background-repeat'   => 'no-repeat,repeat',
+					'background-size'     => '8px auto,100%',
+					'background-position' => 'right 10px top 50%,0 0',
+					'padding'             => '6px 10px',
+				),
+				'fieldset'                => array(
+					'padding'       => '30px',
+					'border-radius' => '4px',
+				),
+				'button, .ast-button, .button, input[type="button"], input[type="reset"], input[type="submit"]' => array(
+					'border-radius' => '4px',
+					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
+				),
+				':root'                   => array(
+					'--ast-comment-inputs-background' => '#FFF',
+				),
+				'::placeholder'           => array(
+					'color' => 'var(--ast-form-field-color, #9CA3AF)',
+				),
+				'::-ms-input-placeholder' => array( /* Edge 12-18 */
+					'color' => 'var(--ast-form-field-color, #9CA3AF)',
+				),
+			);
+
+			if ( defined( 'WPCF7_VERSION' ) ) {
+				$wpcf7_dynamic_css         = array(
+					'.wpcf7 input.wpcf7-form-control:not([type=submit]), .wpcf7 textarea.wpcf7-form-control' => array(
+						'padding' => '12px 16px',
+					),
+					'.wpcf7 select.wpcf7-form-control' => array(
+						'padding' => '6px 10px',
+					),
+					'.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus' => array(
+						'border-color' => '#046BD2',
+						'box-shadow'   => 'none',
+						'outline'      => 'none',
+						'color'        => 'var(--ast-form-input-focus-text, #475569)',
+					),
+					'.wpcf7 .wpcf7-not-valid-tip'      => array(
+						'color'       => '#DC2626',
+						'font-size'   => '14px',
+						'font-weight' => '400',
+						'line-height' => '20px',
+						'margin-top'  => '8px',
+					),
+					'.wpcf7 input[type=file].wpcf7-form-control' => array(
+						'font-size'     => '16px',
+						'font-style'    => 'normal',
+						'font-weight'   => '400',
+						'line-height'   => '24px',
+						'width'         => '100%',
+						'padding'       => '12px 16px',
+						'border-radius' => '4px',
+						'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
+						'color'         => 'var(--ast-form-input-text, #475569)',
+					),
+				);
+				$forms_default_styling_css = array_merge( $forms_default_styling_css, $wpcf7_dynamic_css );
+			}
+
+			// Default form styling accessibility options compatibility.
+			if ( $enable_site_accessibility ) {
+				$outline_style       = astra_get_option( 'site-accessibility-highlight-type' );
+				$outline_color       = astra_get_option( 'site-accessibility-highlight-color' );
+				$outline_input_style = astra_get_option( 'site-accessibility-highlight-input-type' );
+				$outline_input_color = astra_get_option( 'site-accessibility-highlight-input-color' );
+				if ( 'disable' !== $outline_input_style ) {
+					$forms_default_styling_css['input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus'] = array(
+						'border-color' => $outline_input_color ? $outline_input_color : '#046BD2',
+						'box-shadow'   => 'none',
+						'outline'      => 'none',
+						'color'        => 'var(--ast-form-input-focus-text, #475569)',
+					);  
+				} else {
+					$forms_default_styling_css['input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus'] = array(
+						'border-color' => $outline_color ? $outline_color : '#046BD2',
+						'box-shadow'   => 'none',
+						'outline'      => 'none',
+						'color'        => 'var(--ast-form-input-focus-text, #475569)',
+					);
+				}
+
+				// Contact form 7 accessibility compatibility.
+				if ( defined( 'WPCF7_VERSION' ) ) {
+					if ( 'disable' !== $outline_input_style ) {
+						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
+							'border-style' => $outline_input_style ? $outline_input_style : 'inherit',
+							'border-color' => $outline_input_color ? $outline_input_color : '#046BD2',
+							'border-width' => 'thin',
+							'box-shadow'   => 'none',
+							'outline'      => 'none',
+							'color'        => 'var(--ast-form-input-focus-text, #475569)',
+						);
+					} else {
+						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
+							'border-style' => $outline_style ? $outline_style : 'inherit',
+							'border-color' => $outline_color ? $outline_color : '#046BD2',
+							'border-width' => 'thin',
+							'box-shadow'   => 'none',
+							'outline'      => 'none',
+							'color'        => 'var(--ast-form-input-focus-text, #475569)',
+						);
+					}
+				}
+			}
+
+			$css .= astra_parse_css( $forms_default_styling_css );
+			return $css;
+		}
+
+		/**
 		 * Check if fullwidth layout with sidebar is supported.
 		 * Old users - yes
 		 * New users - no
@@ -5762,7 +5927,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @since 4.2.0
 		 */
 		public static function astra_fullwidth_sidebar_support() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS, array() );
 			return apply_filters( 'astra_get_option_fullwidth_sidebar_support', isset( $astra_settings['fullwidth_sidebar_support'] ) ? false : true );
 		}
 
@@ -5775,7 +5940,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * @since 4.2.2
 		 */
 		public static function astra_core_form_btns_styling() {
-			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS, array() );
 			return apply_filters( 'astra_core_form_btns_styling', isset( $astra_settings['v4-2-2-core-form-btns-styling'] ) ? false : true );
 		}
 
@@ -5821,6 +5986,18 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			return apply_filters( 'astra_upgrade_color_styles', $astra_settings['v4-5-0-backward-option'] );
 		}
 
+		/**
+		 * Astra Forms default style update.
+		 *
+		 * @since x.x.x
+		 * @return boolean false if it is an existing user, true if not.
+		 */
+		public static function astra_forms_default_style_update() {
+			$astra_settings                                   = get_option( ASTRA_THEME_SETTINGS, array() );
+			$astra_settings['ast-forms-default-style-update'] = isset( $astra_settings['ast-forms-default-style-update'] ) ? false : true;
+			return apply_filters( 'astra_forms_default_style_update', $astra_settings['ast-forms-default-style-update'] );
+		}
+  
 		/**
 		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
