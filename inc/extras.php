@@ -158,7 +158,9 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 			$content_layout = astra_toggle_layout( 'archive-' . $post_type . '-ast-content-layout', 'archive', false );
 
 			if ( is_search() ) {
-				$content_layout = astra_toggle_layout( 'archive-post-ast-content-layout', 'archive', false );
+				$search_content_layout = astra_get_option( 'ast-search-content-layout', 'default' );
+				$content_layout_key    = 'default' !== $search_content_layout ? 'ast-search-content-layout' : 'archive-post-ast-content-layout';
+				$content_layout        = astra_toggle_layout( $content_layout_key, 'archive', false );
 			}
 
 			if ( 'default' == $content_layout || empty( $content_layout ) ) {
@@ -186,7 +188,7 @@ if ( ! function_exists( 'astra_get_content_layout' ) ) {
 function astra_toggle_layout( $new_content_option, $level, $post_id = false, $old_meta = false ) {
 
 	// Dynamic layout option for meta case.
-	$dynamic_layout_option = 'meta' === $level ? astra_get_option_meta( $new_content_option, '', true ) : astra_get_option( $new_content_option, 'default' );
+	$dynamic_layout_option = 'meta' === $level ? astra_get_option_meta( $new_content_option, '', true ) : astra_get_option( $new_content_option, 'post' === strval( get_post_type() ) ? 'narrow-width-container' : 'default' );
 	$current_layout        = '';
 
 	// Get meta value by ID if specified.
@@ -430,35 +432,6 @@ function astra_get_theme_author_details() {
 
 	return $theme_author;
 }
-
-/**
- * Remove Base Color > Background Color option from the customize array.
- *
- * @since 2.4.0
- * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
- * @return $wp_customize
- */
-function astra_remove_controls( $wp_customize ) {
-
-	if ( defined( 'ASTRA_EXT_VER' ) && version_compare( ASTRA_EXT_VER, '2.4.0', '<=' ) ) {
-		$layout = array(
-			array(
-				'name'      => ASTRA_THEME_SETTINGS . '[site-layout-outside-bg-obj]',
-				'type'      => 'control',
-				'transport' => 'postMessage',
-				'control'   => 'ast-hidden',
-				'section'   => 'section-colors-body',
-				'priority'  => 25,
-			),
-		);
-
-		$wp_customize = array_merge( $wp_customize, $layout );
-	}
-
-	return $wp_customize;
-}
-
-add_filter( 'astra_customizer_configurations', 'astra_remove_controls', 99 );
 
 /**
  * Add dropdown icon if menu item has children.
@@ -1374,4 +1347,26 @@ function astra_get_palette_presets() {
 			'#222222',
 		),
 	);
+}
+
+/**
+ * Get Astra blog layout design.
+ * Search / Blog.
+ *
+ * @return string $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_layout() {
+	return ( is_search() && '' !== astra_get_option( 'ast-search-results-style' ) ) ? astra_get_option( 'ast-search-results-style' ) : astra_get_option( 'blog-layout' );
+}
+
+/**
+ * Get Astra blog posts per page count.
+ * Search / Blog.
+ *
+ * @return int $blog_layout.
+ * @since x.x.x
+ */
+function astra_get_blog_posts_per_page() {
+	return ( is_search() && astra_get_option( 'ast-search-results-per-page' ) ) ? astra_get_option( 'ast-search-results-per-page' ) : astra_get_option( 'blog-post-per-page' );
 }

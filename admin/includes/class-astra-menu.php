@@ -957,6 +957,7 @@ class Astra_Menu {
 					'date'        => gmdate( 'l F j, Y', strtotime( $post->date ) ),
 					'description' => $post->content->rendered,
 					'link'        => $post->link,
+					'product'     => isset( $post->product[0] ) ? $post->product[0] : 0,
 				);
 			}
 		}

@@ -78,7 +78,7 @@ if ( ! class_exists( 'Astra_Blog_Single_Layout_Configs' ) ) {
 					'title'       => __( 'Custom Width', 'astra' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
-						'min'  => 768,
+						'min'  => 0,
 						'step' => 1,
 						'max'  => 1920,
 					),

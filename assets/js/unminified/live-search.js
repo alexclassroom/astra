@@ -13,10 +13,11 @@
 	}
 
 	function getSearchResultPostMarkup(resultsData) {
-		let processedHtml = '';
+		let processedHtml = '',
+			postTypeLabels = astra_search.search_page_condition ? astra_search.search_page_post_type_labels : astra_search.search_post_types_labels;
 
 		Object.entries( resultsData ).map( ( [ postType, postsData ] ) => {
-			let postTypeLabel = astra_search.search_post_types_labels[postType] ? astra_search.search_post_types_labels[postType] : postType + 's';
+			let postTypeLabel = postTypeLabels[postType] ? postTypeLabels[postType] : postType + 's';
 			processedHtml += `<label class="ast-search--posttype-heading"> ${postTypeLabel} </label>`;
 			postsData.map((post) => {
 				const searchPostTitle = decodeHTMLEntities(post.title.rendered);
@@ -33,7 +34,7 @@
 			searchInput.addEventListener('input', function (event) {
 				const searchForm = searchInput.closest('form.search-form');
 				const searchTerm = event.target.value.trim();
-				const postTypes = astra_search.search_post_types;
+				const postTypes = astra_search.search_page_condition ? astra_search.search_page_post_types : astra_search.search_post_types;
 
 				const searchResultsWrappers = document.querySelectorAll('.ast-live-search-results');
 				if ( searchResultsWrappers ) {

@@ -15,7 +15,7 @@ import ToggleControl from '../toggle-control/toggle-control-component';
 import TextInputControl from '../text-input/text-input-component';
 import ListIconsControl from '../list-icons/list-icons-component';
 import DescriptionComponent from '../description/description-component';
-import AstNumberComponent from '../ast-number/ast-number-component';
+import NumberComponent from '../ast-number/ast-number';
 
 import {
 	astraGetBackground,
@@ -453,7 +453,7 @@ export const sortableControl = wp.customize.astraControl.extend( {
 			'ast-text-input': TextInputControl,
 			'ast-list-icons': ListIconsControl,
 			'ast-description': DescriptionComponent,
-			'ast-number' : AstNumberComponent,
+			'ast-number' : NumberComponent
 		};
 
 		if( astra.customizer.is_pro ) {
@@ -495,6 +495,11 @@ export const sortableControl = wp.customize.astraControl.extend( {
 		if ( undefined !== attr.link && undefined === controlObject.params['link'] ) {
 			controlObject.params['link'] = attr.link;
 		}
+
+		if ( undefined !== attr.qty_selector && undefined === controlObject.params['qty_selector'] ) {
+			controlObject.params['qty_selector'] = attr.qty_selector;
+		}
+
 		if ( undefined !== attr.units && undefined === controlObject.params['units'] ) {
 			controlObject.params['units'] = attr.units;
 		}

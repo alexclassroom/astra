@@ -20,16 +20,31 @@ if ( ! defined( 'ABSPATH' ) ) {
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if ( post_password_required() || false === astra_get_option( 'enable-comments-area', true ) ) {
 	return;
 }
-?>
 
-<div id="comments" class="comments-area">
+$comment_form_position = astra_get_option( 'comment-form-position', 'below' );
+$container_selector    = 'outside' === astra_get_option( 'comments-box-placement' ) ? 'ast-container--' . astra_get_option( 'comments-box-container-width', '' ) : '';
+
+if ( is_customize_preview() && is_callable( 'Astra_Builder_UI_Controller::render_customizer_edit_button' ) ) {
+	?>
+		<div id="comments" class="customizer-item-block-preview customizer-navigate-on-focus comments-area comment-form-position-<?php echo esc_attr( $comment_form_position ); ?> <?php echo esc_attr( $container_selector ); ?>" data-section="ast-sub-section-comments" data-type="section">
+	<?php
+	Astra_Builder_UI_Controller::render_customizer_edit_button( 'row-editor-shortcut' );
+} else {
+	?>
+		<div id="comments" class="comments-area comment-form-position-<?php echo esc_attr( $comment_form_position ); ?> <?php echo esc_attr( $container_selector ); ?>">
+	<?php
+}
+?>
 
 	<?php astra_comments_before(); ?>
 
 	<?php
+	if ( 'above' === $comment_form_position ) {
+		comment_form();
+	}
 	if ( have_comments() ) :
 		astra_markup_open( 'comment-count-wrapper' );
 		?>
@@ -95,8 +110,14 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php echo esc_html( astra_default_strings( 'string-comment-closed', false ) ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+	if ( 'below' === $comment_form_position ) {
+		comment_form();
+	}
+	?>
 
 	<?php astra_comments_after(); ?>
 
 </div><!-- #comments -->
+
+<?php do_action( 'astra_after_comments_module' ); ?>

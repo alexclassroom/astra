@@ -174,14 +174,14 @@
 		overflow: hidden;
 	}
 
-	.nav-previous,
-	.nav-next {
-		width: 50%;
-		display: inline-block;
+	.nav-previous {
+		position: relative;
+		text-align: left;
 	}
 
 	.nav-next {
-		text-align: right;
+		grid-column-start: 2;
+    	text-align: right;
 	}
 }
 
@@ -194,8 +194,9 @@
 .post-navigation a {
 	background: transparent;
 	font-size: 16px;
-	font-size: 1.06666rem;
-	padding: 0 1.5em;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0 var(--ast-post-nav-space, 1.5em);
 	height: 2.33333em;
 	line-height: calc(2.33333em - 3px);
 }

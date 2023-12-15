@@ -1,5 +1,9 @@
 v4.6.0 (Unreleased)
+- New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
+- New: Related Posts - Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for featured image meta.
 - Improvement: Default forms experience improved.
+- Fix: Single - Title - Featured image size option not working for Banner Layout 1.
+- Fix: Single - Title - If post excerpt is empty then displaying some content part as post excerpt.
 
 v4.5.3 (Unreleased)
 - Fix: Logo color not working in FireFox browser.

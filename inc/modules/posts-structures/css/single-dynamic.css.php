@@ -86,6 +86,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 
 	$css_output_min_tablet  = array();
 	$narrow_container_width = astra_get_option( 'narrow-container-max-width', apply_filters( 'astra_narrow_container_width', 750 ) );
+	$author_avatar_size     = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-author-avatar-size' );
 
 	// Aspect ratio.
 	$aspect_ratio_type   = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-ratio-type', 'predefined' );
@@ -96,7 +97,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 
 	// Few settings from banner section are also applicable to 'layout-1' so adding this condition & compatibility.
 	if ( 'layout-1' === $layout_type ) {
-		$image_wrap_alignment = ( false === astra_get_option( 'v4-4-0-backward-option', true ) ) ? '' : 'center';
+		$image_wrap_alignment = Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? 'center' : '';
 		/**
 		 * Desktop CSS.
 		 */
@@ -121,8 +122,11 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			),
 			$selector . ' .post-thumb img, .ast-single-post-featured-section.post-thumb img' => array(
 				'aspect-ratio' => $aspect_ratio,
+				'width'        => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
+				'height'       => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
 			),
 		);
+
 		/**
 		 * Tablet CSS.
 		 */
@@ -189,7 +193,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			),
 			$selector . '[data-banner-layout="layout-2"]' => astra_get_responsive_background_obj( $custom_background, 'desktop' ),
 			$selector . ' .ast-container *'               => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-text-font-weight' ), $banner_text_font_size, 'ast-dynamic-single-' . $current_post_type . '-text-font-extras', $text_color ),
-			$selector . ' .ast-container > *:not(:last-child)' => array(
+			$selector . ' .ast-container > *:not(:last-child), ' . $selector . ' .read-more' => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
 			'.ast-page-builder-template ' . $selector . ' .ast-container' => array(
@@ -206,8 +210,17 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' .ast-container a:hover, ' . $selector . ' .ast-container a:hover *' => array(
 				'color' => esc_attr( $link_hover_color ),
 			),
-			$selector . ' .post-thumb img'                => array(
+			'.ast-single-entry-banner .read-more .ast-button' => array(
+				'margin-top' => '0.5em',
+				'display'    => 'inline-block',
+			),
+			$selector . ' .post-thumb img, .ast-single-post-featured-section img' => array(
 				'aspect-ratio' => $aspect_ratio,
+				'width'        => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
+				'height'       => Astra_Dynamic_CSS::astra_4_6_0_compatibility() && 'default' !== $aspect_ratio_type ? '100%' : '',
+			),
+			$selector . ' .ast-container > *:last-child'  => array(
+				'margin-bottom' => '0',
 			),
 		);
 
@@ -334,6 +347,21 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		}
 		.ast-single-entry-banner + .site-content .entry-header {
 			margin-bottom: 0;
+		}
+		.ast-author-avatar {
+			--ast-author-avatar-size: ' . astra_get_css_value( $author_avatar_size, 'px' ) . ';
+		}
+		a.ast-underline-text {
+			text-decoration: underline;
+		}
+		.ast-container > .ast-terms-link {
+			position: relative;
+			display: block;
+		}
+		a.ast-button.ast-badge-tax {
+			padding: 4px 8px;
+			border-radius: 3px;
+			font-size: inherit;
 		}
 	';
 
