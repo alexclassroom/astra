@@ -542,8 +542,8 @@ function astra_hf_builder_customizer_defaults( $defaults ) {
 			'overlay-gradient'      => '',
 		),
 	);
-	$defaults['hbb-footer-top-border-color']  = $blog_update ? '' : 'var(--ast-global-color-6)';
-	$defaults['hbb-footer-separator']         = $blog_update ? '' : 1;
+	$defaults['hbb-footer-top-border-color']  = $blog_update ? '#eaeaea' : 'var(--ast-global-color-6)';
+	$defaults['hbb-footer-separator']         = 1;
 
 	/**
 	 * Header Margin defaults.

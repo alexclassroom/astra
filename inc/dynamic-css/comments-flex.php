@@ -286,14 +286,6 @@ function astra_comments_css( $dynamic_css ) {
 					}
 				';
 			}
-		} else {
-			if ( ! Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
-				$single_post_comment_css .= '
-					.ast-comment-list .children {
-						margin-top: 3em;
-					}
-				';
-			}
 		}
 
 		if ( $is_site_rtl ) {
