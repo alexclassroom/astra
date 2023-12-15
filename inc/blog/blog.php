@@ -565,7 +565,7 @@ function astra_banner_elements_order( $structure = array() ) {
 			case 'single-excerpt':
 				do_action( 'astra_single_post_banner_excerpt_before' );
 				/** @psalm-suppress PossiblyUndefinedVariable */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				echo ! empty( $post ) && ! empty( $post->post_excerpt ) ? '<p>' . $post->post_excerpt . '</p>' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo ! empty( $post ) && ! empty( $post->ID ) ? '<p>' . get_the_excerpt( $post->ID ) . '</p>' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				/** @psalm-suppress PossiblyUndefinedVariable */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				do_action( 'astra_single_post_banner_excerpt_after' );
 				break;

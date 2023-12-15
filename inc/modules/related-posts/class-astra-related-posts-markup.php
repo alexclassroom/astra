@@ -37,13 +37,9 @@ class Astra_Related_Posts_Markup {
 		$location         = astra_get_option( 'related-posts-outside-location' );
 		$module_placement = astra_get_option( 'related-posts-box-placement' );
 		if ( 'outside' === $module_placement ) {
-			if ( 'inside' === astra_get_option( 'comments-box-placement' ) ) {
-				$action = 'astra_entry_after';
-			} elseif ( 'outside' === astra_get_option( 'comments-box-placement' ) ) {
+			$action = 'astra_content_after';
+			if ( astra_get_option( 'enable-comments-area', true ) && 'outside' === astra_get_option( 'comments-box-placement' ) ) {
 				$priority = 'below' === $location ? 20 : 9;
-				$action   = 'astra_content_after';
-			} else {
-				$action = 'astra_entry_after';
 			}
 		} elseif ( 'inside' === $module_placement ) {
 			$action   = 'astra_entry_bottom';
