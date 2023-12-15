@@ -142,14 +142,6 @@ function astra_container_layout_css() {
 	/** @psalm-suppress InvalidCast */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 	$page_container_css .= '
-		.ast-narrow-container .ast-container-- {
-			max-width: 100vw;
-			width: 100vw;
-		}
-		.ast-separate-container.ast-no-sidebar .ast-container-- {
-			max-width: unset;
-			width: unset;
-		}
 		.site > .ast-single-related-posts-container {
 			margin-top: 0;
 		}
