@@ -890,6 +890,12 @@ function astra_theme_background_updater_4_6_0() {
 			if ( isset( $theme_options['single-post-inside-spacing'] ) ) {
 				$theme_options['ast-sub-section-author-box-padding'] = $theme_options['single-post-inside-spacing'];
 			}
+			if ( isset( $theme_options['font-family-post-meta'] ) ) {
+				$theme_options['font-family-post-read-more'] = $theme_options['font-family-post-meta'];
+			}
+			if ( isset( $theme_options['font-extras-post-meta'] ) ) {
+				$theme_options['font-extras-post-read-more'] = $theme_options['font-extras-post-meta'];
+			}
 		}
 
 		if ( isset( $theme_options['single-post-inside-spacing'] ) ) {

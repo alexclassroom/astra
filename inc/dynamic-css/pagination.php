@@ -59,7 +59,7 @@ function astra_pagination_css( $dynamic_css ) {
             }
 
             .ast-pagination-default .post-page-numbers.current .page-link, .ast-pagination-default .ast-pagination .page-numbers.current {
-                border-radius: 8px;
+                border-radius: 2px;
             }
 
             .ast-pagination {
