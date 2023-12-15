@@ -216,6 +216,7 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
 
 /**
  * Adjacent navigation post link attributes.
+ *
  * @param string         $output   The adjacent post link.
  * @param string         $format   Link anchor format.
  * @param string         $link     Link permalink format.

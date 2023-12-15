@@ -671,11 +671,11 @@ if ( ! class_exists( 'Astra_Theme_Options' ) ) {
 						'tablet-unit'  => 'em',
 						'mobile-unit'  => 'em',
 					),
-					'ast-sub-section-comments-padding'      => array(
+					'ast-sub-section-comments-padding'     => array(
 						'desktop'      => array(
-							'top' => '',
+							'top'    => '',
 							'right'  => '',
-							'bottom'    => $blog_defaults_update ? 2 : 3,
+							'bottom' => $blog_defaults_update ? 2 : 3,
 							'left'   => '',
 						),
 						'tablet'       => array(

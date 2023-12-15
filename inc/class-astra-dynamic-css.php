@@ -2216,7 +2216,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					),
 				);
 				if ( ! self::astra_4_6_0_compatibility() ) {
-					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry']         = array(
+					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry'] = array(
 						'margin-bottom' => '2em',
 					);
 				} else {
@@ -4438,12 +4438,15 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			if ( astra_get_option( 'enable-comments-area', true ) ) {
 				$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
 
-				$comments_radius  = astra_get_option( 'ast-sub-section-comments-border-radius', array(
-					'top' => '',
-					'right' => '',
-					'bottom' => '',
-					'left' => '',
-				) );
+				$comments_radius = astra_get_option(
+					'ast-sub-section-comments-border-radius',
+					array(
+						'top'    => '',
+						'right'  => '',
+						'bottom' => '',
+						'left'   => '',
+					) 
+				);
 
 				$list_spacing_css = array(
 					'.comments-area .comments-title, .comments-area .comment-respond' => array(
@@ -5783,7 +5786,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'input[type="text"], input[type="number"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type=reset], input[type=tel], input[type=date], select' => array(
 					'height' => '40px',
 				),
-				'input[type="date"]' => array(
+				'input[type="date"]'      => array(
 					'border-width' => '1px',
 					'border-style' => 'solid',
 					'border-color' => 'var(--ast-border-color)',
@@ -5794,14 +5797,14 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'outline'      => 'none',
 					'color'        => 'var(--ast-form-input-focus-text, #475569)',
 				),
-				'label, legend'      => array(
+				'label, legend'           => array(
 					'color'       => '#111827',
 					'font-size'   => '14px',
 					'font-style'  => 'normal',
 					'font-weight' => '500',
 					'line-height' => '20px',
 				),
-				'select' => array(
+				'select'                  => array(
 					'-webkit-appearance'  => 'none',
 					'-moz-appearance'     => 'none',
 					'background-image'    => "url('data:image/svg+xml,%3Csvg width=\'21\' height=\'13\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M18.5.379L20.621 2.5 10.5 12.621.379 2.5 2.5.379l8 8z\' fill=\'%234F5D6D\' fill-rule=\'nonzero\'/%3E%3C/svg%3E')",
@@ -5810,7 +5813,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'background-position' => 'right 10px top 50%,0 0',
 					'padding'             => '6px 10px',
 				),
-				'fieldset'           => array(
+				'fieldset'                => array(
 					'padding'       => '30px',
 					'border-radius' => '4px',
 				),
@@ -5818,24 +5821,24 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'border-radius' => '4px',
 					'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
 				),
-				':root'              => array(
+				':root'                   => array(
 					'--ast-comment-inputs-background' => '#FFF',
 				),
-				'::placeholder' => array(
+				'::placeholder'           => array(
 					'color' => 'var(--ast-form-field-color, #9CA3AF)',
 				),
 				'::-ms-input-placeholder' => array( /* Edge 12-18 */
 					'color' => 'var(--ast-form-field-color, #9CA3AF)',
-				)
+				),
 			);
 
 			if ( defined( 'WPCF7_VERSION' ) ) {
-				$wpcf7_dynamic_css = array(
+				$wpcf7_dynamic_css         = array(
 					'.wpcf7 input.wpcf7-form-control:not([type=submit]), .wpcf7 textarea.wpcf7-form-control' => array(
-						'padding'       => '12px 16px',
+						'padding' => '12px 16px',
 					),
 					'.wpcf7 select.wpcf7-form-control' => array(
-						'padding'       => '6px 10px',
+						'padding' => '6px 10px',
 					),
 					'.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus' => array(
 						'border-color' => '#046BD2',
@@ -5843,7 +5846,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'outline'      => 'none',
 						'color'        => 'var(--ast-form-input-focus-text, #475569)',
 					),
-					'.wpcf7 .wpcf7-not-valid-tip' => array(
+					'.wpcf7 .wpcf7-not-valid-tip'      => array(
 						'color'       => '#DC2626',
 						'font-size'   => '14px',
 						'font-weight' => '400',
@@ -5860,7 +5863,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'border-radius' => '4px',
 						'box-shadow'    => '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
 						'color'         => 'var(--ast-form-input-text, #475569)',
-					)
+					),
 				);
 				$forms_default_styling_css = array_merge( $forms_default_styling_css, $wpcf7_dynamic_css );
 			}
@@ -5891,21 +5894,21 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				if ( defined( 'WPCF7_VERSION' ) ) {
 					if ( 'disable' !== $outline_input_style ) {
 						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
-							'border-style'  => $outline_input_style ? $outline_input_style : 'inherit',
-							'border-color'  => $outline_input_color ? $outline_input_color : '#046BD2',
-							'border-width'  => 'thin',
-							'box-shadow'    => 'none',
-							'outline'       => 'none',
-							'color'         => 'var(--ast-form-input-focus-text, #475569)',
+							'border-style' => $outline_input_style ? $outline_input_style : 'inherit',
+							'border-color' => $outline_input_color ? $outline_input_color : '#046BD2',
+							'border-width' => 'thin',
+							'box-shadow'   => 'none',
+							'outline'      => 'none',
+							'color'        => 'var(--ast-form-input-focus-text, #475569)',
 						);
 					} else {
 						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
-							'border-style'  => $outline_style ? $outline_style : 'inherit',
-							'border-color'  => $outline_color ? $outline_color : '#046BD2',
-							'border-width'  => 'thin',
-							'box-shadow'    => 'none',
-							'outline'       => 'none',
-							'color'         => 'var(--ast-form-input-focus-text, #475569)',
+							'border-style' => $outline_style ? $outline_style : 'inherit',
+							'border-color' => $outline_color ? $outline_color : '#046BD2',
+							'border-width' => 'thin',
+							'box-shadow'   => 'none',
+							'outline'      => 'none',
+							'color'        => 'var(--ast-form-input-focus-text, #475569)',
 						);
 					}
 				}
@@ -5993,9 +5996,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$astra_settings                                   = get_option( ASTRA_THEME_SETTINGS, array() );
 			$astra_settings['ast-forms-default-style-update'] = isset( $astra_settings['ast-forms-default-style-update'] ) ? false : true;
 			return apply_filters( 'astra_forms_default_style_update', $astra_settings['ast-forms-default-style-update'] );
-    }
+		}
   
-    /**
+		/**
 		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
 		 * 2. Defaults improvement for single-blog layouts.

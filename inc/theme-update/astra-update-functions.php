@@ -873,7 +873,7 @@ function astra_theme_background_updater_4_6_0() {
 		}
 
 		if ( defined( 'ASTRA_EXT_VER' ) ) {
-			$theme_options['ast-sub-section-author-box-border-width'] = isset( $theme_options['author-box-border-width'] ) ? $theme_options['author-box-border-width'] : array(
+			$theme_options['ast-sub-section-author-box-border-width']  = isset( $theme_options['author-box-border-width'] ) ? $theme_options['author-box-border-width'] : array(
 				'top'    => '',
 				'right'  => '',
 				'bottom' => '',
@@ -885,7 +885,7 @@ function astra_theme_background_updater_4_6_0() {
 				'bottom' => '',
 				'left'   => '',
 			);
-			$theme_options['ast-sub-section-author-box-border-color'] = isset( $theme_options['author-box-border-color'] ) ? $theme_options['author-box-border-color'] : '';
+			$theme_options['ast-sub-section-author-box-border-color']  = isset( $theme_options['author-box-border-color'] ) ? $theme_options['author-box-border-color'] : '';
 
 			if ( isset( $theme_options['single-post-inside-spacing'] ) ) {
 				$theme_options['ast-sub-section-author-box-padding'] = $theme_options['single-post-inside-spacing'];
@@ -902,9 +902,8 @@ function astra_theme_background_updater_4_6_0() {
 			$theme_options['ast-sub-section-related-posts-padding'] = $theme_options['single-post-inside-spacing'];
 		}
 
-    $theme_options['ast-forms-default-style-update'] = false;
-    $theme_options['ast-font-style-update'] = false;
-
-    update_option( 'astra-settings', $theme_options );
-  }
+		$theme_options['ast-forms-default-style-update'] = false;
+		$theme_options['ast-font-style-update']          = false;
+		update_option( 'astra-settings', $theme_options );
+	}
 }

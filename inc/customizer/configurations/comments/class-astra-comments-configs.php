@@ -26,7 +26,7 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$parent_section = 'section-blog-single';
-			$_configs = array(
+			$_configs       = array(
 				array(
 					'name'        => 'comments-section-ast-context-tabs',
 					'section'     => 'ast-sub-section-comments',

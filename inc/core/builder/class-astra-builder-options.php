@@ -964,7 +964,7 @@ function astra_hf_builder_customizer_defaults( $defaults ) {
 	} else {
 		$color_palette_7 = $update_colors_for_starter_library ? '#ADB6BE' : '#e2e8f0';
 	}
-	$defaults['global-color-palette']  = $apply_new_default_color_typo_values ? array(
+	$defaults['global-color-palette'] = $apply_new_default_color_typo_values ? array(
 		'palette' => array(
 			'#046bd2',
 			'#045cb4',

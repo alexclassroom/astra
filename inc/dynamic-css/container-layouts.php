@@ -193,7 +193,7 @@ function astra_container_layout_css() {
             max-width: 100%;
           }';
 
-		$astra_blog_improvements = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
+		$astra_blog_improvements  = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
 		$post_navigation_selector = $astra_blog_improvements ? ', .ast-page-builder-template .post-navigation' : '';
 		if ( true === $customizer_default_update ) {
 			$page_container_css .= '

@@ -539,7 +539,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 			$cart_total_only_markup    = '';
 
 			/** @psalm-suppress RedundantConditionGivenDocblockType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$cart_check_total          = astra_get_option( 'woo-header-cart-total-label' ) && null !== WC()->cart ? intval( WC()->cart->get_cart_contents_total() ) > 0 : true;
+			$cart_check_total = astra_get_option( 'woo-header-cart-total-label' ) && null !== WC()->cart ? intval( WC()->cart->get_cart_contents_total() ) > 0 : true;
 			/** @psalm-suppress RedundantConditionGivenDocblockType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			if ( null !== WC()->cart ) {
@@ -3332,9 +3332,9 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 			$view_shopping_cart = apply_filters( 'astra_woo_view_shopping_cart_title', __( 'View your shopping cart', 'astra' ) );
 			$woo_cart_link      = wc_get_cart_url();
 			/** @psalm-suppress RedundantConditionGivenDocblockType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$cart_count         = null !== WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
+			$cart_count = null !== WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
 			/** @psalm-suppress RedundantConditionGivenDocblockType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$aria_label         = $cart_count > 0 ? "View Shopping Cart, {$cart_count} items" : 'View Shopping Cart, empty';
+			$aria_label = $cart_count > 0 ? "View Shopping Cart, {$cart_count} items" : 'View Shopping Cart, empty';
 
 			// Do not redirect to Cart Page in Customizer Preview & when 'Cart Page' option is not selected.
 			if ( is_customize_preview() && 'redirect' !== astra_get_option( 'woo-header-cart-click-action' ) ) {

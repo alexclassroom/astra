@@ -22,7 +22,7 @@ add_filter( 'astra_dynamic_theme_css', 'astra_navigation_css', 11 );
  */
 function astra_navigation_css( $dynamic_css ) {
 	$mobile_breakpoint = strval( astra_get_mobile_breakpoint() );
-	$navigation_css = '
+	$navigation_css    = '
 		.single .post-navigation a p {
 			margin-top: 0.5em;
 			margin-bottom: 0;

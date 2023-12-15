@@ -271,13 +271,13 @@ final class Astra_Builder_Base_Configuration {
 	 * Prepare Spacing & Border options.
 	 *
 	 * @param string $section_id section id.
-	 * @param bool $skip_border_divider Skip border control divider or not.
+	 * @param bool   $skip_border_divider Skip border control divider or not.
 	 *
 	 * @since x.x.x
 	 * @return array
 	 */
 	public static function prepare_section_spacing_border_options( $section_id, $skip_border_divider = false ) {
-		$_configs = array(
+		$_configs        = array(
 			array(
 				'name'      => ASTRA_THEME_SETTINGS . '[' . $section_id . '-border-group]',
 				'default'   => astra_get_option( $section_id . '-border-group' ),
@@ -298,7 +298,7 @@ final class Astra_Builder_Base_Configuration {
 				'transport'      => 'postMessage',
 				'control'        => 'ast-border',
 				'title'          => __( 'Border Width', 'astra-addon' ),
-				'divider'   => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
+				'divider'        => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
 				'section'        => $section_id,
 				'linked_choices' => true,
 				'priority'       => 1,
