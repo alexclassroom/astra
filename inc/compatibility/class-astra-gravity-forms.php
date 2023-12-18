@@ -43,6 +43,9 @@ if ( ! class_exists( 'Astra_Gravity_Forms' ) ) :
 		 * Constructor
 		 */
 		public function __construct() {
+			if ( Astra_Dynamic_CSS::astra_forms_default_style_update() ) {
+				return;
+			}
 			add_action( 'gform_enqueue_scripts', array( $this, 'add_styles' ) );
 		}
 

@@ -5792,7 +5792,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'border-color' => 'var(--ast-border-color)',
 				),
 				'input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus' => array(
-					'border-color' => '#046BD2',
+					'border-color' => 'var(--ast-global-color-0, #046BD2)',
 					'box-shadow'   => 'none',
 					'outline'      => 'none',
 					'color'        => 'var(--ast-form-input-focus-text, #475569)',
@@ -5841,7 +5841,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'padding' => '6px 10px',
 					),
 					'.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus' => array(
-						'border-color' => '#046BD2',
+						'border-color' => 'var(--ast-global-color-0, #046BD2)',
 						'box-shadow'   => 'none',
 						'outline'      => 'none',
 						'color'        => 'var(--ast-form-input-focus-text, #475569)',
@@ -5868,50 +5868,66 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$forms_default_styling_css = array_merge( $forms_default_styling_css, $wpcf7_dynamic_css );
 			}
 
+			if ( class_exists( 'GFForms' ) ) {
+				$gfforms_dynamic_css = array(
+					'input[type="radio"].gfield-choice-input:checked, input[type="checkbox"].gfield-choice-input:checked' => array(
+						'border-color' => 'inherit',
+						'background-color' => 'inherit',
+					),
+					'input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus' => array(
+						'border-color' => 'var(--ast-global-color-0, #046BD2)',
+						'box-shadow'   => 'none',
+						'outline'      => 'none',
+						'color'        => 'var(--ast-form-input-focus-text, #475569)',
+					),
+				);
+				$forms_default_styling_css = array_merge( $forms_default_styling_css, $gfforms_dynamic_css );
+			}
+
 			// Default form styling accessibility options compatibility.
 			if ( $enable_site_accessibility ) {
-				$outline_style       = astra_get_option( 'site-accessibility-highlight-type' );
-				$outline_color       = astra_get_option( 'site-accessibility-highlight-color' );
-				$outline_input_style = astra_get_option( 'site-accessibility-highlight-input-type' );
-				$outline_input_color = astra_get_option( 'site-accessibility-highlight-input-color' );
-				if ( 'disable' !== $outline_input_style ) {
-					$forms_default_styling_css['input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus'] = array(
-						'border-color' => $outline_input_color ? $outline_input_color : '#046BD2',
-						'box-shadow'   => 'none',
-						'outline'      => 'none',
-						'color'        => 'var(--ast-form-input-focus-text, #475569)',
-					);  
-				} else {
-					$forms_default_styling_css['input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus'] = array(
-						'border-color' => $outline_color ? $outline_color : '#046BD2',
-						'box-shadow'   => 'none',
-						'outline'      => 'none',
-						'color'        => 'var(--ast-form-input-focus-text, #475569)',
-					);
-				}
+				$outline_style          = astra_get_option( 'site-accessibility-highlight-type' );
+				$outline_color          = astra_get_option( 'site-accessibility-highlight-color' );
+				$outline_input_style    = astra_get_option( 'site-accessibility-highlight-input-type' );
+				$outline_input_color    = astra_get_option( 'site-accessibility-highlight-input-color' );
+				$input_highlight        = ( 'disable' !== $outline_input_style );
+				$selected_outline_color = $input_highlight ? $outline_input_color : $outline_color;
+				$forms_default_styling_css['input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type=reset]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus'] = array(
+					'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
+					'box-shadow'   => 'none',
+					'outline'      => 'none',
+					'color'        => 'var(--ast-form-input-focus-text, #475569)',
+				);
+			}
 
-				// Contact form 7 accessibility compatibility.
-				if ( defined( 'WPCF7_VERSION' ) ) {
-					if ( 'disable' !== $outline_input_style ) {
-						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
-							'border-style' => $outline_input_style ? $outline_input_style : 'inherit',
-							'border-color' => $outline_input_color ? $outline_input_color : '#046BD2',
-							'border-width' => 'thin',
-							'box-shadow'   => 'none',
-							'outline'      => 'none',
-							'color'        => 'var(--ast-form-input-focus-text, #475569)',
-						);
-					} else {
-						$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
-							'border-style' => $outline_style ? $outline_style : 'inherit',
-							'border-color' => $outline_color ? $outline_color : '#046BD2',
-							'border-width' => 'thin',
-							'box-shadow'   => 'none',
-							'outline'      => 'none',
-							'color'        => 'var(--ast-form-input-focus-text, #475569)',
-						);
-					}
-				}
+			// Contact form 7 accessibility compatibility.
+			if ( defined('WPCF7_VERSION' ) && $enable_site_accessibility ) {
+				$input_highlight        = ( 'disable' !== $outline_input_style );
+				$selected_outline_style = $input_highlight ? $outline_input_style : $outline_style;
+				$selected_outline_color = $input_highlight ? $outline_input_color : $outline_color;
+				$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
+					'border-style' => $selected_outline_style ? $selected_outline_style : 'inherit',
+					'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
+					'border-width' => 'thin',
+					'box-shadow'   => 'none',
+					'outline'      => 'none',
+					'color'        => 'var(--ast-form-input-focus-text, #475569)',
+				);
+			}
+
+			// Gravity forms accessibility compatibility.
+			if ( class_exists( 'GFForms' ) && $enable_site_accessibility ) {
+				$input_highlight        = ( 'disable' !== $outline_input_style );
+				$selected_outline_style = $input_highlight ? $outline_input_style : $outline_style;
+				$selected_outline_color = $input_highlight ? $outline_input_color : $outline_color;
+				$forms_default_styling_css['input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus'] = array(
+					'border-style' => $selected_outline_style ? $selected_outline_style : 'inherit',
+					'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
+					'border-width' => 'thin',
+					'box-shadow'   => 'none',
+					'outline'      => 'none',
+					'color'        => 'var(--ast-form-input-focus-text, #475569)',
+				);
 			}
 
 			$css .= astra_parse_css( $forms_default_styling_css );
