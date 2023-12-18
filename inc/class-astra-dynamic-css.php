@@ -5869,7 +5869,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			}
 
 			if ( class_exists( 'GFForms' ) ) {
-				$gfforms_dynamic_css = array(
+				$gravity_forms_dynamic_css = array(
 					'input[type="radio"].gfield-choice-input:checked, input[type="checkbox"].gfield-choice-input:checked' => array(
 						'border-color'     => 'inherit',
 						'background-color' => 'inherit',
@@ -5881,7 +5881,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'color'        => 'var(--ast-form-input-focus-text, #475569)',
 					),
 				);
-				$forms_default_styling_css = array_merge( $forms_default_styling_css, $gfforms_dynamic_css );
+				$forms_default_styling_css = array_merge( $forms_default_styling_css, $gravity_forms_dynamic_css );
 			}
 
 			// Default form styling accessibility options compatibility.
