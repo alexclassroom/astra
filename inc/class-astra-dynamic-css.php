@@ -5902,7 +5902,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				// Contact form 7 accessibility compatibility.
 				if ( defined('WPCF7_VERSION' ) ) {
-					$input_highlight = ( 'disable' !== $outline_input_style );
 					$forms_default_styling_css['.wpcf7 input.wpcf7-form-control:not([type=submit]):focus, .wpcf7 select.wpcf7-form-control:focus, .wpcf7 textarea.wpcf7-form-control:focus'] = array(
 						'border-style' => $selected_outline_style ? $selected_outline_style : 'inherit',
 						'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
@@ -5915,7 +5914,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				// Gravity forms accessibility compatibility.
 				if ( class_exists( 'GFForms' ) ) {
-					$input_highlight = ( 'disable' !== $outline_input_style );
 					$forms_default_styling_css['input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus'] = array(
 						'border-style' => $selected_outline_style ? $selected_outline_style : 'inherit',
 						'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
