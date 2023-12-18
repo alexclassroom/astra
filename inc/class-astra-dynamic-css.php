@@ -5871,7 +5871,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			if ( class_exists( 'GFForms' ) ) {
 				$gfforms_dynamic_css = array(
 					'input[type="radio"].gfield-choice-input:checked, input[type="checkbox"].gfield-choice-input:checked' => array(
-						'border-color' => 'inherit',
+						'border-color'     => 'inherit',
 						'background-color' => 'inherit',
 					),
 					'input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus' => array(
