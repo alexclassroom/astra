@@ -67,7 +67,7 @@ function astra_related_posts_static_css( $dynamic_css ) {
 			$astra_mobile_breakpoint = astra_get_mobile_breakpoint();
 			/** @psalm-suppress InvalidOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-			$section_title_bottom_space = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '20x' : '2em';
+			$section_title_bottom_space = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? '20px' : '2em';
 
 			$dynamic_css .= '
 				.ast-single-related-posts-container {

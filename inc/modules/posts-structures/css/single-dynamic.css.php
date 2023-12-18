@@ -183,8 +183,6 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 				'margin-right'    => astra_responsive_spacing( $banner_margin, 'right', 'desktop' ),
 				'margin-bottom'   => astra_responsive_spacing( $banner_margin, 'bottom', 'desktop' ),
 				'margin-left'     => astra_responsive_spacing( $banner_margin, 'left', 'desktop' ),
-			),
-			$selector . ' .ast-container'                 => array(
 				'width'          => '100%',
 				'padding-top'    => astra_responsive_spacing( $banner_padding, 'top', 'desktop' ),
 				'padding-right'  => astra_responsive_spacing( $banner_padding, 'right', 'desktop' ),
