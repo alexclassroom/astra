@@ -5805,12 +5805,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'line-height' => '20px',
 				),
 				'select'                  => array(
-					'-webkit-appearance'  => 'none',
-					'-moz-appearance'     => 'none',
-					'background-image'    => "url('data:image/svg+xml,%3Csvg width=\'21\' height=\'13\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M18.5.379L20.621 2.5 10.5 12.621.379 2.5 2.5.379l8 8z\' fill=\'%234F5D6D\' fill-rule=\'nonzero\'/%3E%3C/svg%3E')",
-					'background-repeat'   => 'no-repeat,repeat',
-					'background-size'     => '8px auto,100%',
-					'background-position' => 'right 10px top 50%,0 0',
 					'padding'             => '6px 10px',
 				),
 				'fieldset'                => array(
@@ -5870,11 +5864,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			if ( class_exists( 'GFForms' ) ) {
 				$gravity_forms_dynamic_css = array(
-					'input[type="radio"].gfield-choice-input:checked, input[type="checkbox"].gfield-choice-input:checked' => array(
+					'input[type="radio"].gfield-choice-input:checked, input[type="checkbox"].gfield-choice-input:checked, .ginput_container_consent input[type="checkbox"]:checked' => array(
 						'border-color'     => 'inherit',
 						'background-color' => 'inherit',
 					),
-					'input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus' => array(
+					'input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus, .ginput_container_consent input[type="checkbox"]:focus' => array(
 						'border-color' => 'var(--ast-global-color-0, #046BD2)',
 						'box-shadow'   => 'none',
 						'outline'      => 'none',
