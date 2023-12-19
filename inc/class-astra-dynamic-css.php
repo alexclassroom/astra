@@ -584,7 +584,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'font-family'     => astra_get_font_family( $body_font_family ),
 					'font-weight'     => esc_attr( $body_font_weight ),
 					'font-size'       => astra_responsive_font( $body_font_size, 'desktop' ),
-					'line-height'     => 'var(--ast-body-line-height, ' . esc_attr( $body_line_height ) . ')',
+					'line-height'     => ! empty( $body_line_height ) ? 'var(--ast-body-line-height, ' . esc_attr( $body_line_height ) . ')' : '',
 					'text-transform'  => esc_attr( $body_text_transform ),
 					'text-decoration' => esc_attr( $body_text_decoration ),
 					'letter-spacing'  => esc_attr( $body_letter_spacing ),
@@ -748,7 +748,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.entry-meta, .entry-meta *'             => array(
 					'line-height' => '1.45',
 					'color'       => esc_attr( $link_color ),
-					'font-weight' => ! defined( 'ASTRA_EXT_VER' ) ? '600' : '',
+					'font-weight' => self::astra_4_6_0_compatibility() && ! defined( 'ASTRA_EXT_VER' ) ? '600' : '',
 				),
 				'.entry-meta a:hover, .entry-meta a:hover *, .entry-meta a:focus, .entry-meta a:focus *, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
 					'color' => esc_attr( $link_hover_color ),
@@ -4445,7 +4445,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'right'  => '',
 						'bottom' => '',
 						'left'   => '',
-					) 
+					)
 				);
 
 				$list_spacing_css = array(
@@ -6002,7 +6002,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$astra_settings['ast-forms-default-style-update'] = isset( $astra_settings['ast-forms-default-style-update'] ) ? false : true;
 			return apply_filters( 'astra_forms_default_style_update', $astra_settings['ast-forms-default-style-update'] );
 		}
-  
+
 		/**
 		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
