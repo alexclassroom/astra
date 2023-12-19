@@ -5908,7 +5908,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				// Gravity forms accessibility compatibility.
 				if ( class_exists( 'GFForms' ) ) {
-					$forms_default_styling_css['input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus'] = array(
+					$forms_default_styling_css['input[type="radio"].gfield-choice-input:focus, input[type="checkbox"].gfield-choice-input:focus, .ginput_container_consent input[type="checkbox"]:focus'] = array(
 						'border-style' => $selected_outline_style ? $selected_outline_style : 'inherit',
 						'border-color' => $selected_outline_color ? $selected_outline_color : '#046BD2',
 						'border-width' => 'thin',
