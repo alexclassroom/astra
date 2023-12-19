@@ -22,6 +22,8 @@ add_filter( 'astra_dynamic_theme_css', 'astra_navigation_css', 11 );
  */
 function astra_navigation_css( $dynamic_css ) {
 	$mobile_breakpoint = strval( astra_get_mobile_breakpoint() );
+	$link_hover_color  = astra_get_option( 'link-h-color' );
+
 	$navigation_css    = '
 		.single .post-navigation a p {
 			margin-top: 0.5em;
@@ -43,6 +45,9 @@ function astra_navigation_css( $dynamic_css ) {
 			height: 1em;
 			position: relative;
 			fill: currentColor;
+		}
+		.page-links .page-link:hover, .single .post-navigation a:hover {
+			color: ' . esc_attr( $link_hover_color ) . ';
 		}
 		@media( min-width: 320px ) {
 			.single .post-navigation .nav-previous a {
@@ -76,6 +81,16 @@ function astra_navigation_css( $dynamic_css ) {
 			}
 			.single .post-navigation .nav-previous {
 				margin-bottom: 0;
+			}
+		}
+		@media( min-width: 421px ) {
+			.single .post-navigation a {
+				max-width: 80%;
+				width: 100%;
+			}
+			.post-navigation a {
+				font-weight: 500;
+				font-size: 16px;
 			}
 		}
 	';

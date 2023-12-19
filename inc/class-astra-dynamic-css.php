@@ -777,9 +777,6 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				'.page-links .page-link, .single .post-navigation a' => array(
 					'color' => esc_attr( self::astra_4_4_0_compatibility() ? $text_color : $link_color ),
 				),
-				'.page-links .page-link:hover, .single .post-navigation a:hover' => array(
-					'color' => esc_attr( $link_hover_color ),
-				),
 
 				// Menu Toggle Border Radius.
 				'.ast-header-break-point .main-header-bar .ast-button-wrap .menu-toggle' => array(
