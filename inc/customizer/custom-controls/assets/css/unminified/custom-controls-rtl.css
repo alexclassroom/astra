@@ -3588,6 +3588,7 @@ span.customize-control-title.ast-group-section-title {
 .customize-control-ast-responsive-slider .ast-resp-slider-reset-wrap,
 .customize-control-ast-slider .ast-resp-slider-reset-wrap {
 	top: 1px;
+	left: -8px;
 }
 
 
@@ -3598,6 +3599,7 @@ span.customize-control-title.ast-group-section-title {
 .customize-control-ast-responsive-slider .ast-slider-wrap .components-range-control__number input{
   text-align: center;
 }
+
 .customize-control-ast-responsive-spacing .customize-control-title {
   display: inline-block;
 }
@@ -4427,8 +4429,8 @@ span.customize-control-title.ast-group-section-title {
 
 .customize-control-ast-responsive-slider .ast-responsive-units {
   position: absolute;
-  top: 3px;
-  left: 23px;
+  top: 4px;
+  left: 15px;
   font-size: 11px;
   line-height: normal;
   border-left: 1px solid #ddd;

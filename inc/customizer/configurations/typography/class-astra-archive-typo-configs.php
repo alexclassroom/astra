@@ -47,7 +47,10 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						'renderAs' => 'list',
 						'choices'  => array(
 							'one'   => array(
-								'title' => __( 'Archive blog layout', 'astra' ),
+								'title' => __( 'Posts Filter', 'astra' ),
+							),
+							'eleven' => array(
+								'title' => __( 'Posts Reveal Effect', 'astra' ),
 							),
 							'two'   => array(
 								'title' => __( 'Grid, Masonry layout', 'astra' ),
@@ -78,7 +81,7 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						'default'  => '',
 						'priority' => 999,
 						'context'  => array(),
-						'title'    => __( 'Take your blog to the next level with powerful design features', 'astra' ),
+						'title'    => __( 'Take your blog to the next level with powerful design features.', 'astra' ),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					),
 				);
