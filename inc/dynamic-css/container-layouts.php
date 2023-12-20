@@ -95,7 +95,7 @@ function astra_container_layout_css() {
 
 	$current_post_type = strval( get_post_type() );
 	$layout_type       = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-layout', 'layout-1' );
-	$image_position    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-position-layout-1', 'inside' );
+	$image_position    = astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-article-featured-image-position-layout-1', 'behind' );
 
 	if ( 'layout-1' === $layout_type && 'behind' === $image_position ) {
 		$page_container_css .= '
