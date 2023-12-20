@@ -199,7 +199,7 @@ function astra_comments_css( $dynamic_css ) {
 			$content_layout = astra_get_content_layout();
 
 			$post_with_boxed_layout = ( 'plain-container' === $content_layout || 'narrow-container' === $content_layout ) && $is_boxed ? true : false;
-			if ( $post_with_boxed_layout ) {
+			if ( $post_with_boxed_layout && 'inside' !== astra_get_option( 'comments-box-placement', '' ) ) {
 				$single_post_comment_css .= '
 					.ast-separate-container .ast-comment-list li.depth-1, .ast-narrow-container .ast-comment-list li.depth-1 {
 						padding-left: 2.5em;
@@ -586,14 +586,6 @@ function astra_comments_css( $dynamic_css ) {
 				$dynamic_css .= '
 					.site-content article .comment-respond {
 						padding-top: 1.5em;
-					}
-					@media(min-width: ' . strval( astra_get_tablet_breakpoint() ) . 'px) {
-						.site-content article .ast-comment-list li.depth-1 {
-							padding: 2em;
-						}
-						.site-content article .ast-comment-list li:first-child {
-							padding-top: 0;
-						}
 					}
 				';
 			}
