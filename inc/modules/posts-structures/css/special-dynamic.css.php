@@ -180,13 +180,13 @@ function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 					'margin-bottom'   => astra_responsive_spacing( $banner_margin, 'bottom', 'desktop' ),
 					'margin-left'     => astra_responsive_spacing( $banner_margin, 'left', 'desktop' ),
 					'margin-right'    => astra_responsive_spacing( $banner_margin, 'right', 'desktop' ),
-				),
-				$selector . ' .ast-container'    => array(
-					'width'          => '100%',
 					'padding-top'    => astra_responsive_spacing( $banner_padding, 'top', 'desktop' ),
 					'padding-right'  => astra_responsive_spacing( $banner_padding, 'right', 'desktop' ),
 					'padding-bottom' => astra_responsive_spacing( $banner_padding, 'bottom', 'desktop' ),
 					'padding-left'   => astra_responsive_spacing( $banner_padding, 'left', 'desktop' ),
+				),
+				$selector . ' .ast-container'    => array(
+					'width'          => '100%',
 				),
 				$selector . ' .ast-container *'  => astra_get_font_array_css( astra_get_option( $title_section . '-text-font-family' ), astra_get_option( $title_section . '-text-font-weight' ), $banner_text_font_size, $title_section . '-text-font-extras', $text_color ),
 				$selector . ' .ast-container h1, ' . $selector . ' .ast-container h1 *' => astra_get_font_array_css( astra_get_option( $title_section . '-title-font-family' ), astra_get_option( $title_section . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, $title_section . '-title-font-extras', $title_color ),

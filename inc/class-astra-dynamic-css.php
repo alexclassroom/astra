@@ -3889,7 +3889,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						),
 
 						'.ast-separate-container ' . $bl_selector . ' .post-content' => array(
-							'padding-' . $rtl_right . '' => '2em',
+							'padding-' . $rtl_right . '' => '1.5em',
 							'padding-top'                => '1.5em',
 							'padding-bottom'             => '1.5em',
 						),
