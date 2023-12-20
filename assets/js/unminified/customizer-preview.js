@@ -2510,8 +2510,8 @@ function hasWordPressWidgetBlockEditor() {
 		wp.customize( 'astra-settings[woo-header-cart-product-count-color]', function( setting ) {
 			setting.bind( function( color ) {
 				if( color ) {
-				var dynamicStyle = '.ast-site-header-cart .ast-addon-cart-wrap i.astra-icon:after { color: ' + color + '; } ';
-				astra_add_dynamic_css( 'woo-header-cart-product-count-color', dynamicStyle );
+					var dynamicStyle = '.ast-menu-cart-outline .ast-cart-menu-wrap .count, .ast-site-header-cart .ast-addon-cart-wrap i.astra-icon:after { color: ' + color + '; } ';
+					astra_add_dynamic_css( 'woo-header-cart-product-count-color', dynamicStyle );
 				} else {
 					wp.customize.preview.send( 'refresh' );
 				}
@@ -2524,7 +2524,7 @@ function hasWordPressWidgetBlockEditor() {
 		wp.customize( 'astra-settings[woo-header-cart-product-count-h-color]', function( setting ) {
 			setting.bind( function( color ) {
 				if( color ) {
-					var dynamicStyle = '.ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after { color: ' + color + '; } ';
+					var dynamicStyle = '.ast-site-header-cart .ast-site-header-cart-li:hover .ast-cart-menu-wrap .count .ast-count-text, .ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after { color: ' + color + '; } ';
 					astra_add_dynamic_css( 'woo-header-cart-product-count-h-color', dynamicStyle );
 				} else {
 					wp.customize.preview.send( 'refresh' );

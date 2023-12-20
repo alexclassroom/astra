@@ -8,6 +8,11 @@ v4.6.0 (Unreleased)
 v4.5.3 (Unreleased)
 - Fix: Logo color not working in FireFox browser.
 - Fix: Site title, tagline font-sizes are not part of export-import header settings.
+- Fix: Self-hosted Google fonts not working properly on the multisite setup.
+- Fix: Cart count color not working for the first cart icon option.
+- Fix: RTL - Hidden menu on Desktop when off-canvas is of type Flyout and position is set to Left.
+- Fix: Block Editor - The color picker picks the wrong color on Surface Color Page Level Setting.
+- Fix: WooCommerce - PHP fatal error for old header footer builder users 'Call to undefined function astra_header_woo_cart_configuration' when WooCommerce is enable.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
@@ -15,6 +20,7 @@ v4.5.2
 - Improvement: Compatibility with WooCommerce 8.4.
 - Improvement: Improved accessibility by adding aria-label and title attributes to the shopping cart link.
 - Improvement: Secondary Button Styles - Padding default values updated for Page Builder button's support.
+- Improvement: Accessibility improvements for search fields.
 - Fix: Preventing duplication of multiple keys in the Block Editor's post-update request by setting values for the 'astra-migrate-meta-layouts' meta key.
 - Fix: Secondary Button Styles - Background color option does not apply background color to outline button as expected.
 - Fix: Site Builder - Toggle Block Inserter redirects to Site Builder when Full-screen mode in Editor is disabled.

@@ -1434,6 +1434,10 @@ input {
   /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 
+.normal-search {
+  margin-right: -5px;
+}
+
 big {
   font-size: 125%;
 }
