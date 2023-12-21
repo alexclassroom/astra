@@ -55,6 +55,9 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 							'two'   => array(
 								'title' => __( 'Grid, Masonry layout', 'astra' ),
 							),
+							'tweleve' => array(
+								'title' => __( 'Extended Meta Style Options', 'astra' ),
+							),
 							'three' => array(
 								'title' => __( 'Custom featured images size', 'astra' ),
 							),

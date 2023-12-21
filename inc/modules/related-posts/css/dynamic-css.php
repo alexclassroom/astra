@@ -66,6 +66,7 @@ function astra_related_posts_css( $dynamic_css ) {
 		$related_posts_link_color            = astra_get_option( 'related-posts-link-color' );
 		$related_posts_link_hover_color      = astra_get_option( 'related-posts-link-hover-color' );
 		$related_posts_meta_link_hover_color = astra_get_option( 'related-posts-meta-link-hover-color' );
+		$author_avatar_size                  = astra_get_option( 'related-posts-author-avatar-size' );
 
 		// Aspect Ratio processing.
 		$aspect_ratio_type     = astra_get_option( 'related-posts-image-ratio-type', '' );
@@ -126,6 +127,9 @@ function astra_related_posts_css( $dynamic_css ) {
 			'.ast-related-post-content .post-thumb-img-content img' => array(
 				'aspect-ratio' => $aspect_ratio,
 				'width'        => $with_aspect_img_width,
+			),
+			'.ast-related-post-content .ast-author-avatar' => array(
+				'--ast-author-avatar-size'  => astra_get_css_value( $author_avatar_size, 'px' ),
 			),
 		);
 

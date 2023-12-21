@@ -346,7 +346,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 		.ast-single-entry-banner + .site-content .entry-header {
 			margin-bottom: 0;
 		}
-		.ast-author-avatar {
+		.ast-article-single .ast-author-avatar {
 			--ast-author-avatar-size: ' . astra_get_css_value( $author_avatar_size, 'px' ) . ';
 		}
 		a.ast-underline-text {
