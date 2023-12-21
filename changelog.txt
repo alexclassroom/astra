@@ -1,9 +1,26 @@
-v4.6.0 (Unreleased)
-- New: Single - Banner Title - Introducing avatar options like Enable Avatar, Avatar Size in Author metadata.
-- New: Related Posts - Introducing new featured image options like Image Ratio, Image Size, Image Position, etc for featured image meta.
-- Improvement: Default forms experience improved.
+v4.6.0-beta.1
+- New: Introducing new featured image options for blog structure and related posts.
+- New: Added new structural & meta-level options under the banner area.
+- New: Banner Title - Added avatar options like Enable Avatar, and Avatar Size in Author metadata.
+- New: Added new meta options like meta divider and taxonomy styles.
+- New: Related Posts - Added new featured image options like Image Ratio, Image Size, etc.
+- New: Related Posts - Added spacing option to control container area spacing.
+- New: Added section placement options for Related Posts and Comments area.
+- New: Added new Grid, List, and Cover blog/archive layouts.
+- New: Added new meta options like meta divider and taxonomy styles.
+- New: Added new featured image options for blog archive.
+- New: Added a new Hover effect option for the featured image.
+- New: Introduced a new section “Search” under Customizer > Page for improvising search results page.
+- New: Search Results - Introduced new container & sidebar layout options.
+- New: Search Results - Introduced new layout options to showcase post results in grid, list or cover style.
+- New: No Search Results: Introduced Live Search option for a better search experience.
+- New: Search Results - Introduced title area to control banner area.
+- Improvement: Improved the overall UI of the archive page for a better user experience.
+- Improvement: Improvised comment area UI for better user experience.
+- Improvement: Improvised default internal spacing in between blocks for better readability within the post content.
+- Improvement: Showcasing post titles along with post navigation with improvised default UI for a better user experience.
+- Improvement: Improvised default form UI for better UI/UX.
 - Fix: Single - Title - Featured image size option not working for Banner Layout 1.
-- Fix: Single - Title - If post excerpt is empty then displaying some content part as post excerpt.
 
 v4.5.3 (Unreleased)
 - Fix: Logo color not working in FireFox browser.
