@@ -86,6 +86,21 @@ if ( ! class_exists( 'Astra_Blog_Single_Layout_Configs' ) ) {
 				),
 
 				/**
+				 * Option: Content images shadow
+				 */
+				array(
+					'name'        => ASTRA_THEME_SETTINGS . '[single-content-images-shadow]',
+					'default'     => astra_get_option( 'single-content-images-shadow' ),
+					'type'        => 'control',
+					'section'     => 'section-blog-single',
+					'title'       => __( 'Content Images Box Shadow', 'astra' ),
+					'control'     => 'ast-toggle-control',
+					'divider'     => array( 'ast_class' => 'ast-top-section-divider ast-bottom-spacing' ),
+					'priority'    => 9,
+					'context'     => Astra_Builder_Helper::$general_tab,
+				),
+
+				/**
 				 * Option: Divider
 				 */
 				array(

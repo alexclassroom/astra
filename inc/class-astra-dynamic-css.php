@@ -2238,11 +2238,13 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'margin-bottom' => '2em',
 					);
 				} else {
-					$default_layout_update_css['.ast-article-single img']                                       = array(
-						'box-shadow'         => '0 0 30px 0 rgba(0,0,0,.15)',
-						'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
-						'-moz-box-shadow'    => '0 0 30px 0 rgba(0,0,0,.15)',
-					);
+					if ( astra_get_option( 'single-content-images-shadow', false ) ) {
+						$default_layout_update_css['.ast-article-single img']                                       = array(
+							'box-shadow'         => '0 0 30px 0 rgba(0,0,0,.15)',
+							'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+							'-moz-box-shadow'    => '0 0 30px 0 rgba(0,0,0,.15)',
+						);
+					}
 					$default_layout_update_css['.ast-separate-container .ast-comment-list li.depth-1, .hentry'] = array(
 						'margin-bottom' => '1.5em',
 					);
@@ -3828,6 +3830,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						$blog_layout_css[ '.ast-separate-container ' . $bl_selector . ' .ast-article-post' ] = array(
 							'padding' => '0 1em 0',
 						);
+						$blog_layout_css[ '.ast-separate-container.ast-desktop .ast-blog-layout-4-grid .ast-row' ] = array(
+							'margin-left' => '-1em',
+							'margin-right' => '-1em',
+						);
 					}
 					$blog_layout_css[ $bl_selector . ' .ast-article-inner' ] = array(
 						'box-shadow' => '0px 6px 15px -2px rgba(16, 24, 40, 0.05)',
@@ -4791,6 +4797,17 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			$parse_css .= astra_parse_css( $submenu_toggle );
 
 			$dynamic_css .= $parse_css;
+
+			$ltr_right    = is_rtl() ? esc_attr( 'left' ) : esc_attr( 'right' );
+			$dynamic_css .= astra_parse_css(
+				array(
+					'.ast-builder-menu .main-navigation > ul > li:last-child a' => array(
+						'margin-' . $ltr_right => '0',
+						'padding-' . $ltr_right => '0',
+					),
+				),
+				astra_get_tablet_breakpoint( '', 1 )
+			);
 
 			return $dynamic_css;
 		}

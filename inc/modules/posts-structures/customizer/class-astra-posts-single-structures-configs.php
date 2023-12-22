@@ -648,6 +648,34 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 
 				array(
+					'name'      => $title_section . '-remove-featured-padding',
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'default'   => astra_get_option( $title_section . '-remove-featured-padding', false ),
+					'linked'    => $title_section . '-image',
+					'type'      => 'sub-control',
+					'control'   => 'ast-toggle',
+					'section'   => $title_section,
+					'divider'   => array( 'ast_class' => 'ast-section-spacing ast-top-dotted-divider' ),
+					'priority'  => 28,
+					'title'     => __( 'Remove Featured Padding', 'astra' ),
+					'transport' => 'postMessage',
+					'context'  => array(
+						Astra_Builder_Helper::$general_tab_config,
+						'relation' => 'AND',
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-article-featured-image-position-layout-1]',
+							'operator' => '===',
+							'value'    => 'none',
+						),
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-layout]',
+							'operator' => '===',
+							'value'    => 'layout-1',
+						),
+					),
+				),
+
+				array(
 					'name'      => $title_section . '-featured-as-background',
 					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
 					'default'   => astra_get_option( $title_section . '-featured-as-background', false ),
@@ -1493,7 +1521,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 		} else {
 			$title = __( 'Single Banner', 'astra' );
 		}
-		return apply_filters( 'astra_single_post_title', $title . __( ' Title', 'astra' ) );
+		return apply_filters( 'astra_single_post_title', $title . __( ' Title Area', 'astra' ) );
 	}
 }
 
