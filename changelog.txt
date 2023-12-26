@@ -1,4 +1,5 @@
 v4.5.3 (Unreleased)
+- Improvement - Check for Class Exists in class-astra-admin-loader.php file.
 - Fix: Logo color not working in FireFox browser.
 - Fix: Site title, tagline font-sizes are not part of export-import header settings.
 - Fix: Self-hosted Google fonts not working properly on the multisite setup.
