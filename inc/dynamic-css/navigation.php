@@ -24,7 +24,7 @@ function astra_navigation_css( $dynamic_css ) {
 	$mobile_breakpoint = strval( astra_get_mobile_breakpoint() );
 	$link_hover_color  = astra_get_option( 'link-h-color' );
 
-	$navigation_css    = '
+	$navigation_css = '
 		.single .post-navigation a p {
 			margin-top: 0.5em;
 			margin-bottom: 0;

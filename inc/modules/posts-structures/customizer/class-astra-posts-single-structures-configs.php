@@ -659,7 +659,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'priority'  => 28,
 					'title'     => __( 'Remove Featured Padding', 'astra' ),
 					'transport' => 'postMessage',
-					'context'  => array(
+					'context'   => array(
 						Astra_Builder_Helper::$general_tab_config,
 						'relation' => 'AND',
 						array(
@@ -1455,7 +1455,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 			);
 
-			if ( 'post' !== $post_type ) {
+			if ( 'post' !== $post_type && 'product' !== $post_type && 'download' !== $post_type ) {
 				$_configs[] = array(
 					'name'        => $title_section . '-ast-context-tabs',
 					'section'     => $parent_section,
@@ -1464,7 +1464,9 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'priority'    => 0,
 					'description' => '',
 				);
+			}
 
+			if ( 'post' !== $post_type ) {
 				$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_advanced_tab( $parent_section ) );
 			}
 

@@ -163,7 +163,7 @@ function astra_container_layout_css() {
             max-width: 100%;
             padding: 0;
           }
-          .ast-page-builder-template .site-content #primary {
+          .ast-page-builder-template .site .site-content #primary {
             padding: 0;
             margin: 0;
           }

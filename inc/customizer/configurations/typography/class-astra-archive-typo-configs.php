@@ -46,37 +46,37 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 						'control'  => 'ast-upgrade',
 						'renderAs' => 'list',
 						'choices'  => array(
-							'one'   => array(
+							'one'    => array(
 								'title' => __( 'Posts Filter', 'astra' ),
 							),
 							'eleven' => array(
 								'title' => __( 'Posts Reveal Effect', 'astra' ),
 							),
-							'two'   => array(
+							'two'    => array(
 								'title' => __( 'Grid, Masonry layout', 'astra' ),
 							),
 							'twelve' => array(
 								'title' => __( 'Extended Meta Style Options', 'astra' ),
 							),
-							'three' => array(
+							'three'  => array(
 								'title' => __( 'Custom featured images size', 'astra' ),
 							),
-							'four'  => array(
+							'four'   => array(
 								'title' => __( 'Archive pagination options', 'astra' ),
 							),
-							'six'   => array(
+							'six'    => array(
 								'title' => __( 'Extended typography options', 'astra' ),
 							),
-							'seven' => array(
+							'seven'  => array(
 								'title' => __( 'Extended spacing options', 'astra' ),
 							),
-							'eight' => array(
+							'eight'  => array(
 								'title' => __( 'Archive read time', 'astra' ),
 							),
-							'nine'  => array(
+							'nine'   => array(
 								'title' => __( 'Archive excerpt options', 'astra' ),
 							),
-							'ten'   => array(
+							'ten'    => array(
 								'title' => __( 'Extended spacing options', 'astra' ),
 							),
 						),
