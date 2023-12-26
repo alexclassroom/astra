@@ -1,6 +1,8 @@
 v4.6.0-beta.2
 - New: Single Post - Title area - Introduced new "Removed Featured Image Padding" option for layout 1 with "None" position is set.
 - New: Single Post - Introducing new option "Content Images Box Shadow" to highlight content area's images for better visual experience.
+- Improvement: Related Posts - Introduced new filter "astra_related_posts_box_heading_tag" to change the heading tag of the related posts section.
+- Improvement: Comments - Introduced new filter "astra_comment_title_tag" to change the heading tag of the comments section.
 - Fix: "Post Per Page" customizer blog option conflicting in admin area's posts/pages list count.
 
 v4.6.0-beta.1
