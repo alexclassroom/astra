@@ -55,7 +55,7 @@ if ( ! class_exists( 'Astra_Archive_Typo_Configs' ) ) {
 							'two'   => array(
 								'title' => __( 'Grid, Masonry layout', 'astra' ),
 							),
-							'tweleve' => array(
+							'twelve' => array(
 								'title' => __( 'Extended Meta Style Options', 'astra' ),
 							),
 							'three' => array(
