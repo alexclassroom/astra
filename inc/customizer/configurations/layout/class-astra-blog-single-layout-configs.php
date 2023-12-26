@@ -125,7 +125,6 @@ if ( ! class_exists( 'Astra_Blog_Single_Layout_Configs' ) ) {
 					'section'           => 'section-blog-single',
 					'title'             => __( 'Outside', 'astra' ),
 					'linked_choices'    => true,
-					'transport'         => 'postMessage',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
 						'top'    => __( 'Top', 'astra' ),

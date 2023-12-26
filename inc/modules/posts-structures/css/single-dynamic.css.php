@@ -35,6 +35,85 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 	if ( ! in_array( $current_post_type, $supported_post_types ) ) {
 		return $dynamic_css;
 	}
+
+	if ( 'post' !== $current_post_type ) {
+		if ( 'product' === $current_post_type ) {
+			$single_section_id = 'section-woo-shop-single';
+		} elseif ( 'page' === $current_post_type ) {
+			$single_section_id = 'section-single-page';
+		} elseif ( 'download' === $current_post_type ) {
+			$single_section_id = 'section-edd-single';
+		} else {
+			$single_section_id = 'single-posttype-' . $current_post_type;
+		}
+
+		$padding = astra_get_option( $single_section_id . '-padding' );
+		$margin  = astra_get_option( $single_section_id . '-margin' );
+
+		$margin_selector = '.site .site-content #primary';
+		$padding_selector = '.site .site-content #primary .ast-article-single';
+
+		// Desktop CSS.
+		$css_output_desktop = array(
+			$margin_selector => array(
+				// Margin CSS.
+				'margin-top'     => astra_responsive_spacing( $margin, 'top', 'desktop' ),
+				'margin-bottom'  => astra_responsive_spacing( $margin, 'bottom', 'desktop' ),
+				'margin-left'    => astra_responsive_spacing( $margin, 'left', 'desktop' ),
+				'margin-right'   => astra_responsive_spacing( $margin, 'right', 'desktop' ),
+			),
+			$padding_selector => array(
+				// Padding CSS.
+				'padding-top'    => astra_responsive_spacing( $padding, 'top', 'desktop' ),
+				'padding-bottom' => astra_responsive_spacing( $padding, 'bottom', 'desktop' ),
+				'padding-left'   => astra_responsive_spacing( $padding, 'left', 'desktop' ),
+				'padding-right'  => astra_responsive_spacing( $padding, 'right', 'desktop' ),
+			),
+		);
+
+		// Tablet CSS.
+		$css_output_tablet = array(
+			$margin_selector => array(
+				// Margin CSS.
+				'margin-top'     => astra_responsive_spacing( $margin, 'top', 'tablet' ),
+				'margin-bottom'  => astra_responsive_spacing( $margin, 'bottom', 'tablet' ),
+				'margin-left'    => astra_responsive_spacing( $margin, 'left', 'tablet' ),
+				'margin-right'   => astra_responsive_spacing( $margin, 'right', 'tablet' ),
+			),
+			$padding_selector => array(
+				// Padding CSS.
+				'padding-top'    => astra_responsive_spacing( $padding, 'top', 'tablet' ),
+				'padding-bottom' => astra_responsive_spacing( $padding, 'bottom', 'tablet' ),
+				'padding-left'   => astra_responsive_spacing( $padding, 'left', 'tablet' ),
+				'padding-right'  => astra_responsive_spacing( $padding, 'right', 'tablet' ),
+			),
+		);
+
+		// Mobile CSS.
+		$css_output_mobile = array(
+			$margin_selector => array(
+				// Margin CSS.
+				'margin-top'     => astra_responsive_spacing( $margin, 'top', 'mobile' ),
+				'margin-bottom'  => astra_responsive_spacing( $margin, 'bottom', 'mobile' ),
+				'margin-left'    => astra_responsive_spacing( $margin, 'left', 'mobile' ),
+				'margin-right'   => astra_responsive_spacing( $margin, 'right', 'mobile' ),
+			),
+			$padding_selector => array(
+				// Padding CSS.
+				'padding-top'    => astra_responsive_spacing( $padding, 'top', 'mobile' ),
+				'padding-bottom' => astra_responsive_spacing( $padding, 'bottom', 'mobile' ),
+				'padding-left'   => astra_responsive_spacing( $padding, 'left', 'mobile' ),
+				'padding-right'  => astra_responsive_spacing( $padding, 'right', 'mobile' ),
+			),
+		);
+
+		$css_output  = astra_parse_css( $css_output_desktop );
+		$css_output .= astra_parse_css( $css_output_tablet, '', astra_get_tablet_breakpoint() );
+		$css_output .= astra_parse_css( $css_output_mobile, '', astra_get_mobile_breakpoint() );
+
+		$dynamic_css .= $css_output;
+	}
+
 	if ( false === astra_get_option( 'ast-single-' . $current_post_type . '-title', ( class_exists( 'WooCommerce' ) && 'product' === $current_post_type ) ? false : true ) ) {
 		return $dynamic_css;
 	}

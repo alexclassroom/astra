@@ -1455,6 +1455,19 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 			);
 
+			if ( 'post' !== $post_type ) {
+				$_configs[] = array(
+					'name'        => $title_section . '-ast-context-tabs',
+					'section'     => $parent_section,
+					'type'        => 'control',
+					'control'     => 'ast-builder-header-control',
+					'priority'    => 0,
+					'description' => '',
+				);
+
+				$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_advanced_tab( $parent_section ) );
+			}
+
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( count( $taxonomies ) > 1 ) {
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
