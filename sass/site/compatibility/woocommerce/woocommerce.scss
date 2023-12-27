@@ -4287,3 +4287,21 @@ button.pswp__button--zoom:hover {
 		}
 	}
 }
+
+/**
+ * Firefox browser compatibility for WooCommerce product images.
+ *
+ * 1. Single product images misalign issue.
+ */
+ @-moz-document url-prefix() {
+	.woocommerce-js {
+	  div.product {
+		div.images {
+		  img {
+			width: 80%;
+		  }
+		}
+	  }
+	}
+  }
+  
