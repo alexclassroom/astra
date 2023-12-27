@@ -135,6 +135,7 @@ function astra_refresh_customizer( control ) {
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-width]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-height]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-size]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-remove-featured-padding]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-metadata-separator]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-prefix-label]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-featured-as-background]' );

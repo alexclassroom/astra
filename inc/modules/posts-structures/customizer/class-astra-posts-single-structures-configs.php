@@ -382,7 +382,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'contextual_sub_control' => true,
 					'input_attrs'            => array(
 						'dependents' => array(
-							'layout-1' => array( $title_section . '-empty-layout-message', $title_section . '-article-featured-image-position-layout-1', $title_section . '-article-featured-image-width-type' ),
+							'layout-1' => array( $title_section . '-empty-layout-message', $title_section . '-article-featured-image-position-layout-1', $title_section . '-article-featured-image-width-type', $title_section . '-remove-featured-padding' ),
 							'layout-2' => array( $title_section . '-featured-as-background', $title_section . '-banner-featured-overlay', $title_section . '-image-position', $title_section . '-featured-help-notice', $title_section . '-article-featured-image-position-layout-2' ),
 						),
 					),
@@ -655,24 +655,11 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'type'      => 'sub-control',
 					'control'   => 'ast-toggle',
 					'section'   => $title_section,
-					'divider'   => array( 'ast_class' => 'ast-section-spacing ast-top-dotted-divider' ),
+					'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
 					'priority'  => 28,
-					'title'     => __( 'Remove Featured Padding', 'astra' ),
+					'title'     => __( 'Remove Image Padding', 'astra' ),
+					'description' => __( 'Remove the padding around featured image when position is "None".', 'astra' ),
 					'transport' => 'postMessage',
-					'context'   => array(
-						Astra_Builder_Helper::$general_tab_config,
-						'relation' => 'AND',
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-article-featured-image-position-layout-1]',
-							'operator' => '===',
-							'value'    => 'none',
-						),
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $title_section . '-layout]',
-							'operator' => '===',
-							'value'    => 'layout-1',
-						),
-					),
 				),
 
 				array(
