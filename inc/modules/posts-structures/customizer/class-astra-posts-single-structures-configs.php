@@ -1457,7 +1457,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 
 			if ( 'post' !== $post_type && 'product' !== $post_type && 'download' !== $post_type ) {
 				$_configs[] = array(
-					'name'        => $title_section . '-ast-context-tabs',
+					'name'        => $title_section . '-parent-ast-context-tabs',
 					'section'     => $parent_section,
 					'type'        => 'control',
 					'control'     => 'ast-builder-header-control',
