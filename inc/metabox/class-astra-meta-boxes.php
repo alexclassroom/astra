@@ -116,13 +116,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 			$post_id   = get_the_ID();
 
 			if ( 'fl-theme-layout' === $post_type && $post_id ) {
-
-				$template_type = get_post_meta( $post_id, '_fl_theme_layout_type', true );
-
-				if ( ! ( 'archive' === $template_type || 'singular' === $template_type || '404' === $template_type ) ) {
-
 					remove_meta_box( 'astra_settings_meta_box', 'fl-theme-layout', 'side' );
-				}
 			}
 		}
 
