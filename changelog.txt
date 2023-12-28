@@ -7,8 +7,9 @@ v4.5.3 (Unreleased)
 - Fix: RTL - Hidden menu on Desktop when off-canvas is of type Flyout and position is set to Left.
 - Fix: Block Editor - The color picker picks the wrong color on Surface Color Page Level Setting.
 - Fix: WooCommerce - PHP fatal error for old header footer builder users 'Call to undefined function astra_header_woo_cart_configuration' when WooCommerce is enable.
+- Fix: The CSS color property is set to "unset" when the color is reset through the customizer.
 - Fix: WooCommerce - Single product image is not aligned in the center on the Firefox browser
-- Fix: Astra meta settings showing for beaver builder themer layout. 
+- Fix: Astra meta settings showing for beaver builder themer layout.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
