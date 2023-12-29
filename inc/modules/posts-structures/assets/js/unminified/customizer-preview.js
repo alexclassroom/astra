@@ -85,6 +85,24 @@ function astra_refresh_customizer( control ) {
 			selector = 'body .ast-single-entry-banner[data-post-type="' + postType + '"], header.entry-header';
 		}
 
+		let singleSectionID = '',
+			bodyPostTypeClass = 'single-' + postType;
+		if ( 'post' !== postType ) {
+			if ( 'product' === postType ) {
+				singleSectionID = 'section-woo-shop-single';
+			} else if ( 'page' === postType ) {
+				bodyPostTypeClass = 'page';
+				singleSectionID = 'section-single-page';
+			} else if ( 'download' === postType ) {
+				singleSectionID = 'section-edd-single';
+			} else {
+				singleSectionID = 'single-posttype-' . postType;
+			}
+
+			astra_responsive_spacing( 'astra-settings[' + singleSectionID + '-padding]', 'body.' + bodyPostTypeClass + ' .site .site-content #primary .ast-article-single', 'padding',  ['top', 'right', 'bottom', 'left' ] );
+			astra_responsive_spacing( 'astra-settings[' + singleSectionID + '-margin]', 'body.' + bodyPostTypeClass + ' .site .site-content #primary', 'margin', ['top', 'right', 'bottom', 'left' ] );
+		}
+
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-meta-date-type]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-date-format]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-taxonomy]' );
@@ -117,6 +135,7 @@ function astra_refresh_customizer( control ) {
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-width]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-custom-scale-height]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-article-featured-image-size]' );
+		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-remove-featured-padding]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-metadata-separator]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-author-prefix-label]' );
 		astra_refresh_customizer( 'astra-settings[ast-dynamic-single-' + postType + '-featured-as-background]' );

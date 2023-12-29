@@ -47,8 +47,9 @@ if ( is_customize_preview() && is_callable( 'Astra_Builder_UI_Controller::render
 	}
 	if ( have_comments() ) :
 		astra_markup_open( 'comment-count-wrapper' );
+		$title_tag = apply_filters( 'astra_comment_title_tag', 'h3' );
 		?>
-			<h3 class="comments-title">
+			<<?php echo esc_attr( $title_tag ); ?> class="comments-title">
 				<?php
 				$astra_comments_title = apply_filters(
 					'astra_comment_form_title',
@@ -62,7 +63,7 @@ if ( is_customize_preview() && is_callable( 'Astra_Builder_UI_Controller::render
 
 				echo esc_html( $astra_comments_title );
 				?>
-			</h3>
+			</<?php echo esc_attr( $title_tag ); ?>>
 		<?php
 		astra_markup_close( 'comment-count-wrapper' );
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :

@@ -135,7 +135,7 @@ class Astra_Related_Posts_Markup {
 								'astra_related_posts_title',
 								sprintf(
 									'<div class="ast-related-posts-title-section"> <%1$s class="ast-related-posts-title"> %2$s </%1$s> </div>',
-									'h2',
+									apply_filters( 'astra_related_posts_box_heading_tag', 'h2' ),
 									$related_posts_title
 								)
 							);

@@ -382,7 +382,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'contextual_sub_control' => true,
 					'input_attrs'            => array(
 						'dependents' => array(
-							'layout-1' => array( $title_section . '-empty-layout-message', $title_section . '-article-featured-image-position-layout-1', $title_section . '-article-featured-image-width-type' ),
+							'layout-1' => array( $title_section . '-empty-layout-message', $title_section . '-article-featured-image-position-layout-1', $title_section . '-article-featured-image-width-type', $title_section . '-remove-featured-padding' ),
 							'layout-2' => array( $title_section . '-featured-as-background', $title_section . '-banner-featured-overlay', $title_section . '-image-position', $title_section . '-featured-help-notice', $title_section . '-article-featured-image-position-layout-2' ),
 						),
 					),
@@ -645,6 +645,21 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 					'control'     => 'ast-select',
 					'choices'     => astra_get_site_image_sizes( true ),
 					'description' => defined( 'ASTRA_EXT_VER' ) ? __( "You can specify Custom image sizes from the Single Post's 'Featured Image Size' option.", 'astra' ) : '',
+				),
+
+				array(
+					'name'      => $title_section . '-remove-featured-padding',
+					'parent'    => ASTRA_THEME_SETTINGS . '[' . $title_section . '-structure]',
+					'default'   => astra_get_option( $title_section . '-remove-featured-padding', false ),
+					'linked'    => $title_section . '-image',
+					'type'      => 'sub-control',
+					'control'   => 'ast-toggle',
+					'section'   => $title_section,
+					'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
+					'priority'  => 28,
+					'title'     => __( 'Remove Image Padding', 'astra' ),
+					'description' => __( 'Remove the padding around featured image when position is "None".', 'astra' ),
+					'transport' => 'postMessage',
 				),
 
 				array(
@@ -1427,6 +1442,21 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 				),
 			);
 
+			if ( 'post' !== $post_type && 'product' !== $post_type ) {
+				$_configs[] = array(
+					'name'        => $title_section . '-parent-ast-context-tabs',
+					'section'     => $parent_section,
+					'type'        => 'control',
+					'control'     => 'ast-builder-header-control',
+					'priority'    => 0,
+					'description' => '',
+				);
+			}
+
+			if ( 'post' !== $post_type ) {
+				$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_advanced_tab( $parent_section ) );
+			}
+
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( count( $taxonomies ) > 1 ) {
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -1493,7 +1523,7 @@ class Astra_Posts_Single_Structures_Configs extends Astra_Customizer_Config_Base
 		} else {
 			$title = __( 'Single Banner', 'astra' );
 		}
-		return apply_filters( 'astra_single_post_title', $title . __( ' Title', 'astra' ) );
+		return apply_filters( 'astra_single_post_title', $title . __( ' Title Area', 'astra' ) );
 	}
 }
 
