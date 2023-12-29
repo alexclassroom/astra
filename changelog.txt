@@ -1,12 +1,4 @@
-v4.6.0-beta.2
-- New: Single Post - Title area - Introduced new "Removed Featured Image Padding" option for layout 1 with "None" position is set.
-- New: Single Post - Introducing new option "Content Images Box Shadow" to highlight content area's images for better visual experience.
-- New: Single Layouts - Introducing new margin-padding spacing options for container area in all single layout sections.
-- Improvement: Related Posts - Introduced new filter "astra_related_posts_box_heading_tag" to change the heading tag of the related posts section.
-- Improvement: Comments - Introduced new filter "astra_comment_title_tag" to change the heading tag of the comments section.
-- Fix: "Post Per Page" customizer blog option conflicting in admin area's posts/pages list count.
-
-v4.6.0-beta.1
+v4.6.0 (Unreleased)
 - New: Blog - Introducing new featured image options like Image Ratio, Image Size, Hover Effect etc.
 - New: Blog - Dedicated Post Structure elements like Featured Image, Categories, Tags, Title, Meta, Excerpt, Read More, etc.
 - New: Blog - Introducing modern Grid, List, and Cover blog/archive skins.
@@ -22,6 +14,11 @@ v4.6.0-beta.1
 - New: Search Page: Introduced Live Search option when no results found.
 - New: Search Page - Introduced title area to control banner elements.
 - New: Comments - Introduced section placement options like Contained, Separated.
+- New: Single Post - Title area - Introduced new "Removed Featured Image Padding" option for layout 1 with "None" position is set.
+- New: Single Post - Introducing new option "Content Images Box Shadow" to highlight content area's images for better visual experience.
+- New: Single Layouts - Introducing new margin-padding spacing options for container area in all single layout sections.
+- Improvement: Related Posts - Introduced new filter "astra_related_posts_box_heading_tag" to change the heading tag of the related posts section.
+- Improvement: Comments - Introduced new filter "astra_comment_title_tag" to change the heading tag of the comments section.
 - Improvement: Blog - Improved the overall UI of the archive page for a better user experience.
 - Improvement: Single Post - Improvised default internal spacing in between blocks for better readability within the post content.
 - Improvement: Single Post - Comments - Improvised comment area UI for better user experience.
