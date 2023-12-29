@@ -39,7 +39,8 @@ const ColorComponent = props => {
 							let value = JSON.parse(JSON.stringify(defaultValue));
 
 							if (undefined === value || '' === value) {
-								value = 'unset';
+								// Set empty value rather than unset so that elements can inherit the global or parents color property.
+								value = '';
 							}
 
 							updateValues(value);
