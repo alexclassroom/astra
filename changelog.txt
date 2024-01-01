@@ -10,6 +10,7 @@ v4.5.3 (Unreleased)
 - Fix: The CSS color property is set to "unset" when the color is reset through the customizer.
 - Fix: WooCommerce - Single product image is not aligned in the center on the Firefox browser
 - Fix: Astra meta settings showing for beaver builder themer layout.
+- Fix: WooCommerce - Cart & Checkout Blocks - Design is breaking with default theme settings.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
