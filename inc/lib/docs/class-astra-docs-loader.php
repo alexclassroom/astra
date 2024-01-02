@@ -203,7 +203,7 @@ class Astra_Docs_Loader {
 		}
 
 		ob_start();
-		include $local_path; // PHPCS:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		include $local_path;
 		return ob_get_clean();
 	}
 

@@ -2,9 +2,13 @@
 .ast-theme-builder #adminmenuback,
 .ast-theme-builder #adminmenumain,
 .ast-theme-builder #adminmenuwrap,
-.ast-theme-builder #wpadminbar,
 .ast-theme-builder #wpfooter {
 	display: none;
+}
+
+#wpbody-content {
+	position: relative;
+	z-index: 9999999;
 }
 
 .ast-theme-builder #wpcontent {
