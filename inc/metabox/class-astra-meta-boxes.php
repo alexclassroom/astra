@@ -606,7 +606,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 			$bg_updated_title = sprintf(
 				/* translators: 1: Post type, 2: Background string */
 				'%1$s %2$s',
-				ucfirst( $post_type ),
+				ucfirst( strval( $post_type ) ),
 				__( 'Background', 'astra' )
 			);
 			$page_bg_dynamic_title    = ( $post_type ? $bg_updated_title : __( 'Page Background', 'astra' ) );
