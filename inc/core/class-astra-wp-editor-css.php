@@ -541,7 +541,7 @@ class Astra_WP_Editor_CSS {
 			),
 
 			// Gutenberg button compatibility for default styling.
-			'.editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link, .block-editor-writing-flow .wp-block-search .wp-block-search__inside-wrapper .wp-block-search__button, .block-editor-writing-flow .wp-block-file .wp-block-file__button' => array(
+			'.editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link, .block-editor-writing-flow .wp-block-search .wp-block-search__inside-wrapper .wp-block-search__button, .block-editor-writing-flow .wp-block-file .wp-block-file__button, .editor-styles-wrapper button.wc-block-components-button' => array(
 				'border-style'               => ( $theme_btn_top_border || $theme_btn_right_border || $theme_btn_left_border || $theme_btn_bottom_border ) ? 'solid' : '',
 				'border-top-width'           => $theme_btn_top_border,
 				'border-right-width'         => $theme_btn_right_border,
@@ -798,7 +798,7 @@ class Astra_WP_Editor_CSS {
 
 			$reset_underline_from_anchors = Astra_Dynamic_CSS::unset_builder_elements_underline();
 
-			$excluding_anchor_selectors = $reset_underline_from_anchors ? '.edit-post-visual-editor a.uagb-tabs-list, .edit-post-visual-editor .uagb-ifb-cta a, .edit-post-visual-editor a.uagb-marketing-btn__link, .edit-post-visual-editor .uagb-post-grid a, .edit-post-visual-editor .uagb-toc__wrap a, .edit-post-visual-editor .uagb-taxomony-box a, .edit-post-visual-editor .uagb_review_block a, .editor-styles-wrapper .uagb-blockquote a, .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link, .editor-styles-wrapper .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button' : '';
+			$excluding_anchor_selectors = $reset_underline_from_anchors ? '.edit-post-visual-editor a.uagb-tabs-list, .edit-post-visual-editor .uagb-ifb-cta a, .edit-post-visual-editor a.uagb-marketing-btn__link, .edit-post-visual-editor .uagb-post-grid a, .edit-post-visual-editor .uagb-toc__wrap a, .edit-post-visual-editor .uagb-taxomony-box a, .edit-post-visual-editor .uagb_review_block a, .editor-styles-wrapper .uagb-blockquote a, .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link, .editor-styles-wrapper .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link, .ast-outline-button, .editor-styles-wrapper .is-root-container .wc-block-components-product-name, .editor-styles-wrapper .is-root-container .wc-block-components-totals-coupon-link' : '';
 
 			$desktop_css[ $excluding_anchor_selectors ] = array(
 				'text-decoration' => 'none',

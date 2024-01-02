@@ -756,7 +756,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				),
 				'.ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-form, .ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-field:focus' => array(
 					'transition'   => 'all 0.2s',
-					'border-color' => astra_get_option( 'site-accessibility-highlight-input-color' ),              
+					'border-color' => astra_get_option( 'site-accessibility-highlight-input-color' ),
 				),
 				'.search-form input.search-field:focus'  => array(
 					'outline' => 'none', // Making highlight by border that's why making outline none.
@@ -837,6 +837,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 				$excluding_anchor_selectors = $reset_underline_from_anchors ? '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button, .ast-single-post .entry-content .uagb-tab a, .ast-single-post .entry-content .uagb-ifb-cta a, .ast-single-post .entry-content .wp-block-uagb-buttons a, .ast-single-post .entry-content .uabb-module-content a, .ast-single-post .entry-content .uagb-post-grid a, .ast-single-post .entry-content .uagb-timeline a, .ast-single-post .entry-content .uagb-toc__wrap a, .ast-single-post .entry-content .uagb-taxomony-box a, .ast-single-post .entry-content .woocommerce a, .entry-content .wp-block-latest-posts > li > a, .ast-single-post .entry-content .wp-block-file__button, li.ast-post-filter-single, .ast-single-post .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link' : '.ast-single-post .wp-block-button .wp-block-button__link, .ast-single-post .elementor-button-wrapper .elementor-button, li.ast-post-filter-single, .ast-single-post .wp-block-button.is-style-outline .wp-block-button__link, div.ast-custom-button';
 
+				if ( class_exists( 'WooCommerce' ) ) {
+					$excluding_anchor_selectors .= ', .entry-content [CLASS*="wc-block"] .wc-block-components-button, .entry-content [CLASS*="wc-block"] .wc-block-components-totals-coupon-link, .entry-content [CLASS*="wc-block"] .wc-block-components-product-name';
+				}
+
 				$excluding_anchor_selectors = apply_filters( 'astra_remove_underline_anchor_links', $excluding_anchor_selectors );
 
 				$css_output[ $excluding_anchor_selectors ] = array(
@@ -892,7 +896,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$css_output['.ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-form, .ast-header-search .ast-search-menu-icon.ast-dropdown-active .search-field:focus'] = array(
 					'border-color' => 'var(--ast-global-color-0)',
 				);
-			}   
+			}
 
 			if ( self::astra_4_4_0_compatibility() ) {
 				$css_output['.ast-search-menu-icon .search-form button.search-submit:focus, .ast-theme-transparent-header .ast-header-search .ast-dropdown-active .ast-icon, .ast-theme-transparent-header .ast-inline-search .search-field:focus .ast-icon'] = array(
@@ -903,7 +907,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					$css_output['.ast-header-search .slide-search .search-form'] = array(
 						'border' => '2px solid var(--ast-global-color-0)',
 					);
-				}  
+				}
 
 				// Reduced specificity so that it does not override customizer background color option.
 				$css_output['.ast-header-search .slide-search .search-field'] = array(
@@ -1050,7 +1054,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			/* Parse CSS from array() */
 			$parse_css .= astra_parse_css( $css_output );
-			
+
 			if ( defined( 'BORLABS_COOKIE_VERSION' ) ) {
 				$oembed_wrapper = array(
 					'body .ast-oembed-container > *' => array(
@@ -1060,7 +1064,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'height'   => '100%',
 						( $is_site_rtl ? 'right' : 'left' ) => '0',
 					),
-				);                                       
+				);
 			} else {
 				$oembed_wrapper = array(
 					'body .ast-oembed-container *' => array(
@@ -1070,11 +1074,11 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'height'   => '100%',
 						( $is_site_rtl ? 'right' : 'left' ) => '0',
 					),
-				);         
+				);
 			}
 
-			$parse_css .= astra_parse_css( $oembed_wrapper );  
-			
+			$parse_css .= astra_parse_css( $oembed_wrapper );
+
 			if ( ! Astra_Builder_Helper::$is_header_footer_builder_active ) {
 
 				$old_header_mobile_toggle = array(
@@ -2470,8 +2474,8 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$file_block_button_selector             = ( ! $block_editor_legacy_setup || $improve_gb_ui ) ? ', body .wp-block-file .wp-block-file__button' : '';
 				$file_block_button_hover_selector       = ( ! $block_editor_legacy_setup || $improve_gb_ui ) ? ', body .wp-block-file .wp-block-file__button:hover, body .wp-block-file .wp-block-file__button:focus' : '';
 				$search_page_btn_selector               = ( true === $update_customizer_strctural_defaults ) ? ', .search .search-submit' : '';
-				$woo_btns_selector                      = ( true === self::astra_woo_support_global_settings() ) ? ', .woocommerce-js a.button, .woocommerce button.button, .woocommerce .woocommerce-message a.button, .woocommerce #respond input#submit.alt, .woocommerce input.button.alt, .woocommerce input.button,.woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled], .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover, .woocommerce #respond input#submit, .woocommerce button.button.alt.disabled, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .wc-block-grid__product-onsale, [CLASS*="wc-block"] button, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping), .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout, .woocommerce button.button.alt.disabled.wc-variation-selection-needed' : '';
-				$woo_btns_hover_selector                = ( true === self::astra_woo_support_global_settings() ) ? ', .woocommerce-js a.button:hover, .woocommerce button.button:hover, .woocommerce .woocommerce-message a.button:hover,.woocommerce #respond input#submit:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce input.button.alt:hover, .woocommerce input.button:hover, .woocommerce button.button.alt.disabled:hover, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link:hover, [CLASS*="wc-block"] button:hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover, .woocommerce button.button.alt.disabled.wc-variation-selection-needed:hover' : '';
+				$woo_btns_selector                      = ( true === self::astra_woo_support_global_settings() ) ? ', .woocommerce-js a.button, .woocommerce button.button, .woocommerce .woocommerce-message a.button, .woocommerce #respond input#submit.alt, .woocommerce input.button.alt, .woocommerce input.button,.woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled], .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover, .woocommerce #respond input#submit, .woocommerce button.button.alt.disabled, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .wc-block-grid__product-onsale, [CLASS*="wc-block"] button, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping), .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout, .woocommerce button.button.alt.disabled.wc-variation-selection-needed, [CLASS*="wc-block"] .wc-block-components-button' : '';
+				$woo_btns_hover_selector                = ( true === self::astra_woo_support_global_settings() ) ? ', .woocommerce-js a.button:hover, .woocommerce button.button:hover, .woocommerce .woocommerce-message a.button:hover,.woocommerce #respond input#submit:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce input.button.alt:hover, .woocommerce input.button:hover, .woocommerce button.button.alt.disabled:hover, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link:hover, [CLASS*="wc-block"] button:hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover, .woocommerce button.button.alt.disabled.wc-variation-selection-needed:hover, [CLASS*="wc-block"] .wc-block-components-button:hover, [CLASS*="wc-block"] .wc-block-components-button:focus' : '';
 				$v4_2_2_core_form_btns_styling_selector = ( true === self::astra_core_form_btns_styling() ) ? ', #comments .submit, .search .search-submit' : '';
 
 				/**
