@@ -604,7 +604,7 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 			$palette_css_var_prefix   = Astra_Global_Palette::get_css_variable_prefix();
 			$apply_new_default_values = astra_button_default_padding_updated();
 			$bg_updated_title = sprintf(
-				/* translators: 1: Post type, 2: Backgroun string */
+				/* translators: 1: Post type, 2: Background string */
 				'%1$s %2$s',
 				ucfirst( $post_type ),
 				__( 'Background', 'astra' )
