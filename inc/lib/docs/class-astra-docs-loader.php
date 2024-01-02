@@ -302,7 +302,7 @@ class Astra_Docs_Loader {
 	 * @return string
 	 */
 	public function get_local_docs_filename() {
-		return apply_filters( 'astra_local_font_file_name', 'docs' );
+		return apply_filters( 'astra_local_docs_file_name', 'docs' );
 	}
 
 	/**
@@ -362,8 +362,8 @@ class Astra_Docs_Loader {
 	/**
 	 * Schedule a cleanup.
 	 *
-	 * Deletes the fonts files on a regular basis.
-	 * This way font files will get updated regularly,
+	 * Deletes the docs file on a regular basis.
+	 * This way docs file will get updated regularly,
 	 * and we avoid edge cases where unused files remain in the server.
 	 *
 	 * @access public
@@ -377,7 +377,7 @@ class Astra_Docs_Loader {
 	}
 
 	/**
-	 * Delete the fonts folder.
+	 * Delete the documentation folder.
 	 *
 	 * This runs as part of a cleanup routine.
 	 *
@@ -414,10 +414,12 @@ class Astra_Docs_Loader {
 /**
  * Create instance of Astra_Docs_Loader class.
  *
- * @param string $font_url Google font URL to set data.
+ * @param string $docs_rest_url Knowledge Base URL to set data.
+ * @param string $subfolder_name Subfolder name.
+ *
  * @return object
  * @since x.x.x
  */
-function astra_docs_loader_instance( $font_url = '', $subfolder_name = 'bsf-docs' ) {
-	return new Astra_Docs_Loader( $font_url, $subfolder_name );
+function astra_docs_loader_instance( $docs_rest_url = '', $subfolder_name = 'bsf-docs' ) {
+	return new Astra_Docs_Loader( $docs_rest_url, $subfolder_name );
 }
