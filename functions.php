@@ -52,6 +52,7 @@ if ( is_admin() ) {
 }
 
 require_once ASTRA_THEME_DIR . 'inc/lib/webfont/class-astra-webfont-loader.php';
+require_once ASTRA_THEME_DIR . 'inc/lib/docs/class-astra-docs-loader.php';
 require_once ASTRA_THEME_DIR . 'inc/customizer/class-astra-fonts.php';
 
 require_once ASTRA_THEME_DIR . 'inc/dynamic-css/custom-menu-old-header.php';
