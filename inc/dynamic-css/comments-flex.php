@@ -57,15 +57,16 @@ function astra_comments_css( $dynamic_css ) {
 		$padding_ast_comment                  = $update_customizer_strctural_defaults ? '0' : '1em 0';
 		$padding_ast_comment_list             = $update_customizer_strctural_defaults ? '0' : '0.5em';
 		$border_color                         = astra_get_option( 'border-color' );
+		$blog_improvements                    = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
+		$comments_title_css                   = $blog_improvements ? 'font-weight: 600; padding-bottom: 1em;' : 'font-weight: normal;';
 
 		$single_post_comment_css = '.comments-title {
             padding: ' . esc_attr( $padding_comment_title ) . ';
           }
 
           .comments-title {
-            font-weight: ' . esc_attr( Astra_Dynamic_CSS::astra_4_4_0_compatibility() ? '600' : 'normal' ) . ';
             word-wrap: break-word;
-			padding-bottom: 1em;
+			' . $comments_title_css . '
           }
 
           .ast-comment-list {

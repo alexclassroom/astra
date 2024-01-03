@@ -992,7 +992,7 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 		} else {
 			$title = __( 'Archive Banner', 'astra' );
 		}
-		return apply_filters( 'astra_archive_post_title', $title . __( ' Title', 'astra' ) );
+		return apply_filters( 'astra_archive_post_title', $title . __( ' Title Area', 'astra' ) );
 	}
 }
 
