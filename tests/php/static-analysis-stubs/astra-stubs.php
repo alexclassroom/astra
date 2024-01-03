@@ -912,11 +912,20 @@ namespace {
         {
         }
         /**
+         * Astra update default font size and font weight.
+         * 
+         * @since x.x.x 
+         * @return boolean 
+         */
+        public static function astra_update_default_font_styling()
+        {
+        }
+        /**
          * Enqueue styles
          *
          * @since 1.0.31
          */
-        public function add_styles()
+        public function add_scripts_styles()
         {
         }
         /**
@@ -4416,23 +4425,6 @@ namespace {
     /**
      * Customizer Sanitizes Initial setup
      */
-    class Astra_Header_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Header Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
     class Astra_Global_Typo_Configs extends \Astra_Customizer_Config_Base
     {
         /**
@@ -4471,23 +4463,6 @@ namespace {
     {
         /**
          * Register Body Typography Customizer Configurations.
-         *
-         * @param Array                $configurations Astra Customizer Configurations.
-         * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since 1.4.3
-         * @return Array Astra Customizer Configurations with updated configurations.
-         */
-        public function register_configuration($configurations, $wp_customize)
-        {
-        }
-    }
-    /**
-     * Customizer Sanitizes Initial setup
-     */
-    class Astra_Content_Typo_Configs extends \Astra_Customizer_Config_Base
-    {
-        /**
-         * Register Content Typography Customizer Configurations.
          *
          * @param Array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -9431,6 +9406,15 @@ namespace {
          */
         protected $subfolder_name;
         /**
+         * Current blog id.
+         *
+         * @multisite
+         * @access protected
+         * @since x.x.x
+         * @var int
+         */
+        protected $current_blog_id;
+        /**
          * The fonts folder.
          *
          * @access protected
@@ -9653,6 +9637,16 @@ namespace {
         {
         }
         /**
+         * Returns the current blog id if current WordPress setup is a multisite setup.
+         *
+         * @access public
+         * @since x.x.x
+         * @return void|int Returns integer if current WP setup is multisite.
+         */
+        public function get_current_blog_id()
+        {
+        }
+        /**
          * Get the folder for fonts.
          *
          * @access public
@@ -9692,6 +9686,267 @@ namespace {
          *
          * @access protected
          * @since 3.6.0
+         * @return \WP_Filesystem_Base
+         */
+        protected function get_filesystem()
+        {
+        }
+    }
+    /**
+     * Download Docs locally.
+     *
+     * @package Astra
+     * @since x.x.x
+     */
+    /**
+     * Process Docs from locally.
+     */
+    class Astra_Docs_Loader
+    {
+        /**
+         * The remote URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $remote_url;
+        /**
+         * Base path.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $base_path;
+        /**
+         * Base URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $base_url;
+        /**
+         * Subfolder name.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $subfolder_name;
+        /**
+         * The docs folder.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $docs_folder;
+        /**
+         * The local stylesheet's path.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $local_stylesheet_path;
+        /**
+         * The local stylesheet's URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $local_docs_json_url;
+        /**
+         * The remote CSS.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $remote_styles;
+        /**
+         * The final docs data.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $docs_data;
+        /**
+         * Cleanup routine frequency.
+         */
+        const CLEANUP_FREQUENCY = 'weekly';
+        /**
+         * Constructor.
+         *
+         * Get a new instance of the object for a new URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @param string $url The remote URL.
+         * @param string $subfolder_name The subfolder name.
+         */
+        public function __construct($url = '', $subfolder_name = 'bsf-docs')
+        {
+        }
+        /**
+         * Get the local URL which contains the styles.
+         *
+         * Fallback to the remote URL if we were unable to write the file locally.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_url()
+        {
+        }
+        /**
+         * Get the local stylesheet URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_json_url()
+        {
+        }
+        /**
+         * Get remote data locally.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_remote_data()
+        {
+        }
+        /**
+         * Get local stylesheet contents.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string|false Returns the remote URL contents.
+         */
+        public function get_local_docs_contents()
+        {
+        }
+        /**
+         * Get remote file contents.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string Returns the remote URL contents.
+         */
+        public function get_remote_url_contents()
+        {
+        }
+        /**
+         * Write the CSS to the filesystem.
+         *
+         * @access protected
+         * @since x.x.x
+         * @return string|false Returns the absolute path of the file on success, or false on fail.
+         */
+        protected function write_json()
+        {
+        }
+        /**
+         * Get the stylesheet path.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_file_path()
+        {
+        }
+        /**
+         * Get the local stylesheet filename.
+         *
+         * This is a hash, generated from the site-URL, the wp-content path and the URL.
+         * This way we can avoid issues with sites changing their URL, or the wp-content path etc.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_filename()
+        {
+        }
+        /**
+         * Check if the local stylesheet exists.
+         *
+         * @access public
+         * @since x.x.x
+         * @return bool
+         */
+        public function local_file_exists()
+        {
+        }
+        /**
+         * Get the base path.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_base_path()
+        {
+        }
+        /**
+         * Get the base URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_base_url()
+        {
+        }
+        /**
+         * Get the folder for docs.
+         *
+         * @access public
+         * @return string
+         */
+        public function get_docs_folder()
+        {
+        }
+        /**
+         * Schedule a cleanup.
+         *
+         * Deletes the docs file on a regular basis.
+         * This way docs file will get updated regularly,
+         * and we avoid edge cases where unused files remain in the server.
+         *
+         * @access public
+         * @since x.x.x
+         * @return void
+         */
+        public function schedule_cleanup()
+        {
+        }
+        /**
+         * Delete the documentation folder.
+         *
+         * This runs as part of a cleanup routine.
+         *
+         * @access public
+         * @since x.x.x
+         * @return bool
+         */
+        public function astra_delete_docs_folder()
+        {
+        }
+        /**
+         * Get the filesystem.
+         *
+         * @access protected
+         * @since x.x.x
          * @return \WP_Filesystem_Base
          */
         protected function get_filesystem()
@@ -12214,33 +12469,6 @@ namespace {
         {
         }
         /**
-         * Astra's REST knowledge base data.
-         *
-         * @since 4.0.0
-         * @return mixed
-         */
-        public static function astra_get_knowledge_base_data()
-        {
-        }
-        /**
-         * Perform scheduler for Astra knowledge base data retriever for processing further in admin dashboard.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_kb_data_scheduler()
-        {
-        }
-        /**
-         * Run scheduled job for Astra knowledge base data.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_run_scheduled_docs_job()
-        {
-        }
-        /**
          * Register API routes.
          *
          * @since 4.0.0
@@ -12716,7 +12944,7 @@ namespace {
     /**
      * Define Constants
      */
-    \define('ASTRA_THEME_VERSION', '4.5.2');
+    \define('ASTRA_THEME_VERSION', '4.6.0');
     \define('ASTRA_THEME_SETTINGS', 'astra-settings');
     \define('ASTRA_THEME_DIR', \trailingslashit(\get_template_directory()));
     \define('ASTRA_THEME_URI', \trailingslashit(\esc_url(\get_template_directory_uri())));
@@ -15318,7 +15546,7 @@ namespace {
     /**
      * Register builder footer builder Customizer Configurations.
      *
-     * @param Array $configurations Astra Customizer Configurations.
+     * @param array $configurations Astra Customizer Configurations.
      * @since 4.5.2
      * @return array Astra Customizer Configurations with updated configurations.
      */
@@ -16310,6 +16538,15 @@ namespace {
     {
     }
     /**
+     * Handle backward compatibility on version x.x.x
+     *
+     * @since x.x.x
+     * @return void
+     */
+    function astra_theme_background_updater_4_6_0()
+    {
+    }
+    /**
      * Header Footer builder - Migration of options.
      *
      * @since 3.0.0
@@ -16905,6 +17142,14 @@ namespace {
     {
     }
     /**
+     * Get the remote WP-Astra docs data.
+     *
+     * @since x.x.x
+     */
+    function astra_remote_docs_data()
+    {
+    }
+    /**
      * Adds custom classes to the array of body classes.
      *
      * @since 1.0.0
@@ -17199,6 +17444,18 @@ namespace {
      * @since 3.6.0
      */
     function astra_webfont_loader_instance($font_url = '')
+    {
+    }
+    /**
+     * Create instance of Astra_Docs_Loader class.
+     *
+     * @param string $docs_rest_url Knowledge Base URL to set data.
+     * @param string $subfolder_name Subfolder name.
+     *
+     * @return object
+     * @since x.x.x
+     */
+    function astra_docs_loader_instance($docs_rest_url = '', $subfolder_name = 'bsf-docs')
     {
     }
     /**

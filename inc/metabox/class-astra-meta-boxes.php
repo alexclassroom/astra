@@ -603,7 +603,13 @@ if ( ! class_exists( 'Astra_Meta_Boxes' ) ) {
 
 			$palette_css_var_prefix   = Astra_Global_Palette::get_css_variable_prefix();
 			$apply_new_default_values = astra_button_default_padding_updated();
-			$page_bg_dynamic_title    = ( $post_type ? __( ucfirst( $post_type ) . ' Background', 'astra' ) : __( 'Page Background', 'astra' ) );
+			$bg_updated_title = sprintf(
+				/* translators: 1: Post type, 2: Background string */
+				'%1$s %2$s',
+				ucfirst( strval( $post_type ) ),
+				__( 'Background', 'astra' )
+			);
+			$page_bg_dynamic_title    = ( $post_type ? $bg_updated_title : __( 'Page Background', 'astra' ) );
 			$global_palette           = astra_get_option( 'global-color-palette' );
 
 			wp_localize_script(

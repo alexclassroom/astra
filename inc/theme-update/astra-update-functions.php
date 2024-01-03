@@ -1526,5 +1526,9 @@ function astra_theme_background_updater_4_6_0() {
 		$theme_options['ast-font-style-update'] = false;
 		update_option( 'astra-settings', $theme_options );
 	}
+	$docs_legacy_data = get_option( 'astra_docs_data', array() );
+	if ( ! empty( $docs_legacy_data ) ) {
+		delete_option( 'astra_docs_data' );
+	}
 }
 

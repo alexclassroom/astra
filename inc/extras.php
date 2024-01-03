@@ -1375,3 +1375,13 @@ function astra_get_palette_presets() {
 		),
 	);
 }
+
+/**
+ * Get the remote WP-Astra docs data.
+ *
+ * @since x.x.x
+ */
+function astra_remote_docs_data() {
+	$astra_docs_instance = astra_docs_loader_instance( 'https://wpastra.com/wp-json/powerful-docs/v1/get-docs', 'astra-docs' );
+	return json_decode( $astra_docs_instance->get_remote_data() );
+}
