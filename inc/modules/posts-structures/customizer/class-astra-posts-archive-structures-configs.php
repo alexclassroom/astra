@@ -284,7 +284,9 @@ class Astra_Posts_Archive_Structures_Configs extends Astra_Customizer_Config_Bas
 
 				array(
 					'name'     => $title_section,
-					'title'    => isset( $post_type_object->labels->name ) ? ucfirst( $post_type_object->labels->name ) . __( ' Title', 'astra' ) : ucfirst( $post_type ) . __( ' Title', 'astra' ),
+					// @codingStandardsIgnoreStart
+					'title' => $this->get_dynamic_section_title( get_post_type_object( $post_type ), $post_type ),
+					// @codingStandardsIgnoreEnd
 					'type'     => 'section',
 					'section'  => $parent_section,
 					'panel'    => ( 'product' === $post_type ) ? 'woocommerce' : '',

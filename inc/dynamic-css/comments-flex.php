@@ -172,11 +172,6 @@ function astra_comments_css( $dynamic_css ) {
             word-wrap: break-word;
           }
 
-		  .comment-reply-title {
-			padding-top: 0;
-			margin-bottom: 1em;
-		  }
-
           .comment-form-legend {
             margin-bottom: unset;
             padding: 0 0.5em;
@@ -184,6 +179,10 @@ function astra_comments_css( $dynamic_css ) {
 
 		if ( Astra_Dynamic_CSS::astra_4_6_0_compatibility() ) {
 			$single_post_comment_css .= '
+				.comment-reply-title {
+					padding-top: 0;
+					margin-bottom: 1em;
+				}
 				.ast-comment {
 					padding-top: 2.5em;
 					padding-bottom: 2.5em;
