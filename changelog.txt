@@ -13,6 +13,7 @@ v4.5.3 (Unreleased)
 - Fix: Astra meta settings showing for beaver builder themer layout.
 - Fix: WooCommerce - Cart & Checkout Blocks - Design is breaking with default theme settings.
 - Fix: Secondary Button Styles - Background color option does not apply background color to outline button as expected.
+- Fix: Featured image not hiding in the single post view.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
