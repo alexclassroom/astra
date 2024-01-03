@@ -2003,7 +2003,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 
 			// Secondary button background color.
 			if ( ! empty( $scndry_btn_bg_color ) ) {
-				$outline_button_css_desktop['.wp-block-button .wp-block-button__link.wp-element-button.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link.wp-element-button:not(.has-background)'] = array(
+				$outline_button_css_desktop['.wp-block-button .wp-block-button__link.wp-element-button.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link.wp-element-button:not(.has-background), .ast-outline-button'] = array(
 					'background-color' => empty( $scndry_btn_bg_color ) ? 'transparent' : esc_attr( $scndry_btn_bg_color ),
 				);
 			}
@@ -2013,7 +2013,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				if ( empty( $scndry_btn_text_color ) ) {
 					$scndry_btn_text_color = astra_get_foreground_color( $theme_color );
 				}
-				$outline_button_css_desktop['.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)'] = array(
+				$outline_button_css_desktop['.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background), .ast-outline-button'] = array(
 					'background-color' => empty( $scndry_btn_bg_color ) ? esc_attr( $theme_color ) : esc_attr( $scndry_btn_bg_color ),
 					'color'            => esc_attr( $scndry_btn_text_color ),
 				);
