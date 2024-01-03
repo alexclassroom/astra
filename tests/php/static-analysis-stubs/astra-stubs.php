@@ -913,9 +913,9 @@ namespace {
         }
         /**
          * Astra update default font size and font weight.
-         * 
-         * @since x.x.x 
-         * @return boolean 
+         *
+         * @since x.x.x
+         * @return boolean
          */
         public static function astra_update_default_font_styling()
         {
@@ -5165,7 +5165,7 @@ namespace {
          * Prepare Spacing & Border options.
          *
          * @param string $section_id section id.
-         * @param bool $skip_border_divider Skip border control divider or not.
+         * @param bool   $skip_border_divider Skip border control divider or not.
          *
          * @since x.x.x
          * @return array
@@ -9070,6 +9070,15 @@ namespace {
         {
         }
         /**
+         * Dynamic CSS for default forms styling improvements.
+         *
+         * @return string Dynamic CSS.
+         * @since x.x.x
+         */
+        public static function astra_default_forms_styling_dynamic_css()
+        {
+        }
+        /**
          * Check if fullwidth layout with sidebar is supported.
          * Old users - yes
          * New users - no
@@ -9115,6 +9124,15 @@ namespace {
          * @return boolean false if it is an existing user, true if not.
          */
         public static function astra_4_5_0_compatibility()
+        {
+        }
+        /**
+         * Astra Forms default style update.
+         *
+         * @since x.x.x
+         * @return boolean false if it is an existing user, true if not.
+         */
+        public static function astra_forms_default_style_update()
         {
         }
         /**
@@ -16386,358 +16404,6 @@ namespace {
     {
     }
     /**
-     * Migrating Builder > Account > transparent resonsive menu color options to single color options.
-     * Because we do not show menu on resonsive devices, whereas we trigger login link on responsive devices instead of showing menu.
-     *
-     * @since 3.6.9
-     *
-     * @return void
-     */
-    function astra_remove_responsive_account_menu_colors_support()
-    {
-    }
-    /**
-     * Link default color compatibility.
-     *
-     * @since 3.7.0
-     * @return void
-     */
-    function astra_global_color_compatibility()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 3.7.4
-     * @return void
-     */
-    function astra_improve_gutenberg_editor_ui()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Starting supporting content-background color for Full Width Contained & Full Width Stretched layouts.
-     *
-     * @since 3.7.8
-     * @return void
-     */
-    function astra_fullwidth_layouts_apply_content_background()
-    {
-    }
-    /**
-     * Sets the default breadcrumb separator selector value if the current user is an exsisting user
-     *
-     * @since 3.7.8
-     * @return void
-     */
-    function astra_set_default_breadcrumb_separator_option()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To initiate modern & updated UI of block editor & frontend.
-     *
-     * @since 3.8.0
-     * @return void
-     */
-    function astra_apply_modern_block_editor_ui()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To keep structure defaults updation by filter.
-     *
-     * @since 3.8.3
-     * @return void
-     */
-    function astra_update_customizer_layout_defaults()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * Backward flag purpose - To initiate maintain modern, updated v2 experience of block editor & frontend.
-     *
-     * @since 3.8.3
-     * @return void
-     */
-    function astra_apply_modern_block_editor_v2_ui()
-    {
-    }
-    /**
-     * Display Cart Total and Title compatibility.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_display_cart_total_title_compatibility()
-    {
-    }
-    /**
-     * If old user then it keeps then default cart icon.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_update_woocommerce_cart_icons()
-    {
-    }
-    /**
-     * Set brder color to blank for old users for new users 'default' will take over.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_legacy_customizer_maintenance()
-    {
-    }
-    /**
-     * Enable single product breadcrumb to maintain backward compatibility for existing users.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_update_single_product_breadcrumb()
-    {
-    }
-    /**
-     * Restrict direct changes on users end so make it filterable.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_apply_modern_ecommerce_setup()
-    {
-    }
-    /**
-     * Migrate old user data to new responsive format layout for shop's summary box content alignment.
-     *
-     * @since 3.9.0
-     * @return void
-     */
-    function astra_responsive_shop_content_alignment()
-    {
-    }
-    /**
-     * Change default layout to standard for old users.
-     *
-     * @since 3.9.2
-     * @return void
-     */
-    function astra_shop_style_design_layout()
-    {
-    }
-    /**
-     * Apply css for show password icon on woocommerce account page.
-     *
-     * @since 3.9.2
-     * @return void
-     */
-    function astra_apply_woocommerce_show_password_icon_css()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 3.9.4
-     *
-     * @since 3.9.4
-     * @return void
-     */
-    function astra_theme_background_updater_3_9_4()
-    {
-    }
-    /**
-     * 4.0.0 backward handling part.
-     *
-     * 1. Migrate existing setting & do required onboarding for new admin dashboard v4.0.0 app.
-     * 2. Migrating Post Structure & Meta options in title area meta parts.
-     *
-     * @since 4.0.0
-     * @return void
-     */
-    function astra_theme_background_updater_4_0_0()
-    {
-    }
-    /**
-     * 4.0.2 backward handling part.
-     *
-     * 1. Read Time option backwards handling for old users.
-     *
-     * @since 4.0.2
-     * @return void
-     */
-    function astra_theme_background_updater_4_0_2()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.1.0
-     *
-     * @since 4.1.0
-     * @return void
-     */
-    function astra_theme_background_updater_4_1_0()
-    {
-    }
-    /**
-     * 4.1.4 backward handling cases.
-     *
-     * 1. Migrating users to combined color overlay option to new dedicated overlay options.
-     *
-     * @since 4.1.4
-     * @return void
-     */
-    function astra_theme_background_updater_4_1_4()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.1.6
-     *
-     * @since 4.1.6
-     * @return void
-     */
-    function astra_theme_background_updater_4_1_6()
-    {
-    }
-    /**
-     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
-     *
-     * @since 4.1.7
-     * @return void
-     */
-    function astra_theme_background_updater_4_1_7()
-    {
-    }
-    /**
-     * Migrating users to new container layout options
-     *
-     * @since 4.2.0
-     * @return void
-     */
-    function astra_theme_background_updater_4_2_0()
-    {
-    }
-    /**
-     * Handle migration from old to new layouts.
-     *
-     * Migration cases for old users, old layouts -> new layouts.
-     *
-     * @since 4.2.0
-     * @param mixed $old_layout
-     * @param mixed $new_layout
-     * @param mixed $content_style
-     * @param mixed $sidebar_style
-     * @param array $theme_options
-     * @return array $theme_options The updated theme options.
-     */
-    function astra_apply_layout_migration($old_layout, $new_layout, $content_style, $sidebar_style, $theme_options)
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.2.2
-     *
-     * @since 4.2.2
-     * @return void
-     */
-    function astra_theme_background_updater_4_2_2()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.4.0
-     *
-     * @since 4.4.0
-     * @return void
-     */
-    function astra_theme_background_updater_4_4_0()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.5.0.
-     *
-     * @since 4.5.0
-     * @return void
-     */
-    function astra_theme_background_updater_4_5_0()
-    {
-    }
-    /**
-     * Handle backward compatibility on version 4.5.2.
-     *
-     * @since 4.5.2
-     * @return void
-     */
-    function astra_theme_background_updater_4_5_2()
-    {
-    }
-    /**
-     * Handle backward compatibility on version x.x.x
-     *
-     * @since x.x.x
-     * @return void
-     */
-    function astra_theme_background_updater_4_6_0()
-    {
-    }
-    /**
-     * Header Footer builder - Migration of options.
-     *
-     * @since 3.0.0
-     *
-     * @return void
-     */
-    function astra_header_builder_migration()
-    {
-    }
-    /**
-     * Header Footer builder - Migration of Primary Header.
-     *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
-     */
-    function astra_primary_header_builder_migration($theme_options, $used_elements, $widget_options)
-    {
-    }
-    /**
-     * Header Footer builder - Migration of Below Header.
-     *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
-     */
-    function astra_below_header_builder_migration($theme_options, $used_elements, $widget_options)
-    {
-    }
-    /**
-     * Header Footer builder - Migration of Above Header.
-     *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
-     */
-    function astra_above_header_builder_migration($theme_options, $used_elements, $widget_options)
-    {
-    }
-    /**
-     * Header Footer builder - Migration of Footer.
-     *
-     * @since 3.0.0
-     * @param array $theme_options Theme options.
-     * @param array $used_elements Used Elements array.
-     * @param array $widget_options Widget options.
-     * @return array
-     */
-    function astra_footer_builder_migration($theme_options, $used_elements, $widget_options)
-    {
-    }
-    /**
      * Header Footer builder - Migration of Footer Widgets.
      *
      * @since 3.0.0
@@ -17282,6 +16948,8 @@ namespace {
      * @since x.x.x
      */
     function astra_get_blog_posts_per_page()
+    {
+    }
     /**
      * Get the remote WP-Astra docs data.
      *
@@ -17328,6 +16996,7 @@ namespace {
     }
     /**
      * Adjacent navigation post link attributes.
+     *
      * @param string         $output   The adjacent post link.
      * @param string         $format   Link anchor format.
      * @param string         $link     Link permalink format.
