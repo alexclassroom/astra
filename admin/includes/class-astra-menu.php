@@ -278,7 +278,7 @@ class Astra_Menu {
 			'plugin_activated_text'  => __( 'Activated', 'astra' ),
 			'plugin_activate_text'   => __( 'Activate', 'astra' ),
 			'starter_templates_data' => self::get_starter_template_plugin_data(),
-			'astra_docs_data'        => get_option( 'astra_docs_data', Astra_API_Init::astra_get_knowledge_base_data() ),
+			'astra_docs_data'        => astra_remote_docs_data(),
 			'upgrade_notice'         => astra_showcase_upgrade_notices(),
 			'show_banner_video'      => apply_filters( 'astra_show_banner_video', true ),
 		);

@@ -2150,7 +2150,7 @@ function hasWordPressWidgetBlockEditor() {
 
 		wp.customize( 'astra-settings[secondary-button-preset-style]', function( setting ) {
 
-			var btnBgColorSelector = '.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)';
+			var btnBgColorSelector = '.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background), .ast-outline-button';
 			setting.bind( function( value ) {
 
 				var buttonBGColor   = wp.customize( 'astra-settings[secondary-button-bg-color]' ).get();
@@ -2404,7 +2404,7 @@ function hasWordPressWidgetBlockEditor() {
 		} );
 
 		wp.customize( 'astra-settings[secondary-button-bg-color]', function( setting ) {
-			var btnBgColorSelector = '.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)';
+			var btnBgColorSelector = '.wp-block-buttons .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background), .ast-outline-button';
 
 			setting.bind( function( value ) {
 				var buttonPreset = wp.customize( 'astra-settings[secondary-button-preset-style]' ).get();
@@ -2443,10 +2443,24 @@ function hasWordPressWidgetBlockEditor() {
 						);
 					}
 
-				}
-				 else if ( 'button_01' === buttonPreset || 'button_02' === buttonPreset || 'button_03' === buttonPreset ) {
 					jQuery( 'style#astra-settings-secondary-button-bg-color-background-color' ).remove();
+
+					jQuery( 'head' ).append(
+						'<style id="astra-settings-secondary-button-bg-color-background-color">'
+						+ btnSecondarySelector + '	{ background-color: transparent }'
+						+ '</style>'
+					);
+
+				} else if ( 'button_01' === buttonPreset || 'button_02' === buttonPreset || 'button_03' === buttonPreset ) {
 					jQuery( 'style#astra-settings-secondary-button-outline-preset-color' ).remove();
+
+					jQuery( 'style#astra-settings-secondary-button-bg-color-background-color' ).remove();
+
+					jQuery( 'head' ).append(
+						'<style id="astra-settings-secondary-button-bg-color-background-color">'
+						+ btnSecondarySelector + '	{ background-color: ' + value + ' }'
+						+ '</style>'
+					);
 
 					// Set background color for button to theme color when value is empty.
 					value = ( '' != value ) ? value : themeColor;
@@ -2459,27 +2473,9 @@ function hasWordPressWidgetBlockEditor() {
 							+ '</style>'
 						);
 					}
-
-					// Theme Button - Background Color
-					jQuery( 'head' ).append(
-						'<style id="stra-settings-secondary-button-bg-color-background-color">'
-						+ btnBgColorSelector + '	{ background-color: ' + value + ' }'
-						+ '</style>'
-					);
-				}
-				else {
+				} else {
 					var buttonTextColor = wp.customize( 'astra-settings[secondary-button-color]' ).get();
 					var buttonBorderColor = wp.customize( 'astra-settings[secondary-theme-button-border-group-border-color]' ).get();
-
-					// Theme Button - Background Color
-					jQuery( 'style#astra-settings-secondary-theme-button-border-group-border-color' ).remove();
-
-					// Theme Button - Background Color
-					jQuery( 'head' ).append(
-						'<style id="astra-settings-secondary-theme-button-border-group-border-color">'
-						+ btnSecondarySelector + '	{ background-color: ' + value + ' }'
-						+ '</style>'
-					);
 
 					if ( '' === buttonBorderColor ) {
 						jQuery( 'head' ).append(
@@ -2488,6 +2484,14 @@ function hasWordPressWidgetBlockEditor() {
 							+ '</style>'
 						);
 					}
+
+					jQuery( 'style#astra-settings-secondary-button-bg-color-background-color' ).remove();
+
+					jQuery( 'head' ).append(
+						'<style id="astra-settings-secondary-button-bg-color-background-color">'
+						+ btnSecondarySelector + '	{ background-color: ' + value + ' }'
+						+ '</style>'
+					);
 				}
 			} );
 		} );

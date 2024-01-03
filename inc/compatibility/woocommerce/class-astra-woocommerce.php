@@ -429,6 +429,24 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 		 */
 		public function astra_woocommerce_store_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) {
 
+			if ( is_checkout() ) {
+				$checkout_compatibility_css = '
+					.wc-block-checkout .wc-block-components-order-summary .wc-block-components-panel__button,
+					.wc-block-checkout .wc-block-components-order-summary .wc-block-components-panel__button:hover,
+					.wc-block-checkout .wc-block-components-order-summary .wc-block-components-panel__button:focus {
+						background: transparent;
+						color: inherit;
+						font-family: inherit;
+						font-size: inherit;
+						line-height: inherit;
+						font-weight: inherit;
+						padding: inherit;
+					}
+				';
+
+				$dynamic_css .= $checkout_compatibility_css;
+			}
+
 			if ( false === is_store_notice_showing() ) {
 				return $dynamic_css;
 			}
@@ -1418,9 +1436,9 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 		}
 		/**
 		 * Astra update default font size and font weight.
-		 * 
-		 * @since x.x.x 
-		 * @return boolean 
+		 *
+		 * @since x.x.x
+		 * @return boolean
 		 */
 		public static function astra_update_default_font_styling() {
 			$astra_settings                          = get_option( ASTRA_THEME_SETTINGS );
@@ -1538,7 +1556,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 				'.woocommerce-Address h3, .cart-collaterals h2' => array(
 					'font-size' => $font_style_updates ? '' : '1.2rem',
 					'padding'   => '.7em 1em',
-				), 
+				),
 				'.woocommerce-cart .cart-collaterals .cart_totals>h2' => array(
 					'font-weight' => $font_style_updates ? '' : '700',
 				),

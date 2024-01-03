@@ -9454,6 +9454,15 @@ namespace {
          */
         protected $subfolder_name;
         /**
+         * Current blog id.
+         *
+         * @multisite
+         * @access protected
+         * @since x.x.x
+         * @var int
+         */
+        protected $current_blog_id;
+        /**
          * The fonts folder.
          *
          * @access protected
@@ -9676,6 +9685,16 @@ namespace {
         {
         }
         /**
+         * Returns the current blog id if current WordPress setup is a multisite setup.
+         *
+         * @access public
+         * @since x.x.x
+         * @return void|int Returns integer if current WP setup is multisite.
+         */
+        public function get_current_blog_id()
+        {
+        }
+        /**
          * Get the folder for fonts.
          *
          * @access public
@@ -9715,6 +9734,267 @@ namespace {
          *
          * @access protected
          * @since 3.6.0
+         * @return \WP_Filesystem_Base
+         */
+        protected function get_filesystem()
+        {
+        }
+    }
+    /**
+     * Download Docs locally.
+     *
+     * @package Astra
+     * @since x.x.x
+     */
+    /**
+     * Process Docs from locally.
+     */
+    class Astra_Docs_Loader
+    {
+        /**
+         * The remote URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $remote_url;
+        /**
+         * Base path.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $base_path;
+        /**
+         * Base URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $base_url;
+        /**
+         * Subfolder name.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $subfolder_name;
+        /**
+         * The docs folder.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $docs_folder;
+        /**
+         * The local stylesheet's path.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $local_stylesheet_path;
+        /**
+         * The local stylesheet's URL.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $local_docs_json_url;
+        /**
+         * The remote CSS.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $remote_styles;
+        /**
+         * The final docs data.
+         *
+         * @access protected
+         * @since x.x.x
+         * @var string
+         */
+        protected $docs_data;
+        /**
+         * Cleanup routine frequency.
+         */
+        const CLEANUP_FREQUENCY = 'weekly';
+        /**
+         * Constructor.
+         *
+         * Get a new instance of the object for a new URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @param string $url The remote URL.
+         * @param string $subfolder_name The subfolder name.
+         */
+        public function __construct($url = '', $subfolder_name = 'bsf-docs')
+        {
+        }
+        /**
+         * Get the local URL which contains the styles.
+         *
+         * Fallback to the remote URL if we were unable to write the file locally.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_url()
+        {
+        }
+        /**
+         * Get the local stylesheet URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_json_url()
+        {
+        }
+        /**
+         * Get remote data locally.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_remote_data()
+        {
+        }
+        /**
+         * Get local stylesheet contents.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string|false Returns the remote URL contents.
+         */
+        public function get_local_docs_contents()
+        {
+        }
+        /**
+         * Get remote file contents.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string Returns the remote URL contents.
+         */
+        public function get_remote_url_contents()
+        {
+        }
+        /**
+         * Write the CSS to the filesystem.
+         *
+         * @access protected
+         * @since x.x.x
+         * @return string|false Returns the absolute path of the file on success, or false on fail.
+         */
+        protected function write_json()
+        {
+        }
+        /**
+         * Get the stylesheet path.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_file_path()
+        {
+        }
+        /**
+         * Get the local stylesheet filename.
+         *
+         * This is a hash, generated from the site-URL, the wp-content path and the URL.
+         * This way we can avoid issues with sites changing their URL, or the wp-content path etc.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_local_docs_filename()
+        {
+        }
+        /**
+         * Check if the local stylesheet exists.
+         *
+         * @access public
+         * @since x.x.x
+         * @return bool
+         */
+        public function local_file_exists()
+        {
+        }
+        /**
+         * Get the base path.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_base_path()
+        {
+        }
+        /**
+         * Get the base URL.
+         *
+         * @access public
+         * @since x.x.x
+         * @return string
+         */
+        public function get_base_url()
+        {
+        }
+        /**
+         * Get the folder for docs.
+         *
+         * @access public
+         * @return string
+         */
+        public function get_docs_folder()
+        {
+        }
+        /**
+         * Schedule a cleanup.
+         *
+         * Deletes the docs file on a regular basis.
+         * This way docs file will get updated regularly,
+         * and we avoid edge cases where unused files remain in the server.
+         *
+         * @access public
+         * @since x.x.x
+         * @return void
+         */
+        public function schedule_cleanup()
+        {
+        }
+        /**
+         * Delete the documentation folder.
+         *
+         * This runs as part of a cleanup routine.
+         *
+         * @access public
+         * @since x.x.x
+         * @return bool
+         */
+        public function astra_delete_docs_folder()
+        {
+        }
+        /**
+         * Get the filesystem.
+         *
+         * @access protected
+         * @since x.x.x
          * @return \WP_Filesystem_Base
          */
         protected function get_filesystem()
@@ -12289,33 +12569,6 @@ namespace {
          * @since 4.0.0
          */
         public function __construct()
-        {
-        }
-        /**
-         * Astra's REST knowledge base data.
-         *
-         * @since 4.0.0
-         * @return mixed
-         */
-        public static function astra_get_knowledge_base_data()
-        {
-        }
-        /**
-         * Perform scheduler for Astra knowledge base data retriever for processing further in admin dashboard.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_kb_data_scheduler()
-        {
-        }
-        /**
-         * Run scheduled job for Astra knowledge base data.
-         *
-         * @since 4.0.0
-         * @return void
-         */
-        public function astra_run_scheduled_docs_job()
         {
         }
         /**
@@ -16133,6 +16386,358 @@ namespace {
     {
     }
     /**
+     * Migrating Builder > Account > transparent resonsive menu color options to single color options.
+     * Because we do not show menu on resonsive devices, whereas we trigger login link on responsive devices instead of showing menu.
+     *
+     * @since 3.6.9
+     *
+     * @return void
+     */
+    function astra_remove_responsive_account_menu_colors_support()
+    {
+    }
+    /**
+     * Link default color compatibility.
+     *
+     * @since 3.7.0
+     * @return void
+     */
+    function astra_global_color_compatibility()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * @since 3.7.4
+     * @return void
+     */
+    function astra_improve_gutenberg_editor_ui()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * Starting supporting content-background color for Full Width Contained & Full Width Stretched layouts.
+     *
+     * @since 3.7.8
+     * @return void
+     */
+    function astra_fullwidth_layouts_apply_content_background()
+    {
+    }
+    /**
+     * Sets the default breadcrumb separator selector value if the current user is an exsisting user
+     *
+     * @since 3.7.8
+     * @return void
+     */
+    function astra_set_default_breadcrumb_separator_option()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * Backward flag purpose - To initiate modern & updated UI of block editor & frontend.
+     *
+     * @since 3.8.0
+     * @return void
+     */
+    function astra_apply_modern_block_editor_ui()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * Backward flag purpose - To keep structure defaults updation by filter.
+     *
+     * @since 3.8.3
+     * @return void
+     */
+    function astra_update_customizer_layout_defaults()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * Backward flag purpose - To initiate maintain modern, updated v2 experience of block editor & frontend.
+     *
+     * @since 3.8.3
+     * @return void
+     */
+    function astra_apply_modern_block_editor_v2_ui()
+    {
+    }
+    /**
+     * Display Cart Total and Title compatibility.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_display_cart_total_title_compatibility()
+    {
+    }
+    /**
+     * If old user then it keeps then default cart icon.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_update_woocommerce_cart_icons()
+    {
+    }
+    /**
+     * Set brder color to blank for old users for new users 'default' will take over.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_legacy_customizer_maintenance()
+    {
+    }
+    /**
+     * Enable single product breadcrumb to maintain backward compatibility for existing users.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_update_single_product_breadcrumb()
+    {
+    }
+    /**
+     * Restrict direct changes on users end so make it filterable.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_apply_modern_ecommerce_setup()
+    {
+    }
+    /**
+     * Migrate old user data to new responsive format layout for shop's summary box content alignment.
+     *
+     * @since 3.9.0
+     * @return void
+     */
+    function astra_responsive_shop_content_alignment()
+    {
+    }
+    /**
+     * Change default layout to standard for old users.
+     *
+     * @since 3.9.2
+     * @return void
+     */
+    function astra_shop_style_design_layout()
+    {
+    }
+    /**
+     * Apply css for show password icon on woocommerce account page.
+     *
+     * @since 3.9.2
+     * @return void
+     */
+    function astra_apply_woocommerce_show_password_icon_css()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 3.9.4
+     *
+     * @since 3.9.4
+     * @return void
+     */
+    function astra_theme_background_updater_3_9_4()
+    {
+    }
+    /**
+     * 4.0.0 backward handling part.
+     *
+     * 1. Migrate existing setting & do required onboarding for new admin dashboard v4.0.0 app.
+     * 2. Migrating Post Structure & Meta options in title area meta parts.
+     *
+     * @since 4.0.0
+     * @return void
+     */
+    function astra_theme_background_updater_4_0_0()
+    {
+    }
+    /**
+     * 4.0.2 backward handling part.
+     *
+     * 1. Read Time option backwards handling for old users.
+     *
+     * @since 4.0.2
+     * @return void
+     */
+    function astra_theme_background_updater_4_0_2()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.1.0
+     *
+     * @since 4.1.0
+     * @return void
+     */
+    function astra_theme_background_updater_4_1_0()
+    {
+    }
+    /**
+     * 4.1.4 backward handling cases.
+     *
+     * 1. Migrating users to combined color overlay option to new dedicated overlay options.
+     *
+     * @since 4.1.4
+     * @return void
+     */
+    function astra_theme_background_updater_4_1_4()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.1.6
+     *
+     * @since 4.1.6
+     * @return void
+     */
+    function astra_theme_background_updater_4_1_6()
+    {
+    }
+    /**
+     * Set flag to avoid direct reflections on live site & to maintain backward compatibility for existing users.
+     *
+     * @since 4.1.7
+     * @return void
+     */
+    function astra_theme_background_updater_4_1_7()
+    {
+    }
+    /**
+     * Migrating users to new container layout options
+     *
+     * @since 4.2.0
+     * @return void
+     */
+    function astra_theme_background_updater_4_2_0()
+    {
+    }
+    /**
+     * Handle migration from old to new layouts.
+     *
+     * Migration cases for old users, old layouts -> new layouts.
+     *
+     * @since 4.2.0
+     * @param mixed $old_layout
+     * @param mixed $new_layout
+     * @param mixed $content_style
+     * @param mixed $sidebar_style
+     * @param array $theme_options
+     * @return array $theme_options The updated theme options.
+     */
+    function astra_apply_layout_migration($old_layout, $new_layout, $content_style, $sidebar_style, $theme_options)
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.2.2
+     *
+     * @since 4.2.2
+     * @return void
+     */
+    function astra_theme_background_updater_4_2_2()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.4.0
+     *
+     * @since 4.4.0
+     * @return void
+     */
+    function astra_theme_background_updater_4_4_0()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.5.0.
+     *
+     * @since 4.5.0
+     * @return void
+     */
+    function astra_theme_background_updater_4_5_0()
+    {
+    }
+    /**
+     * Handle backward compatibility on version 4.5.2.
+     *
+     * @since 4.5.2
+     * @return void
+     */
+    function astra_theme_background_updater_4_5_2()
+    {
+    }
+    /**
+     * Handle backward compatibility on version x.x.x
+     *
+     * @since x.x.x
+     * @return void
+     */
+    function astra_theme_background_updater_4_6_0()
+    {
+    }
+    /**
+     * Header Footer builder - Migration of options.
+     *
+     * @since 3.0.0
+     *
+     * @return void
+     */
+    function astra_header_builder_migration()
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Primary Header.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_primary_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Below Header.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_below_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Above Header.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_above_header_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
+     * Header Footer builder - Migration of Footer.
+     *
+     * @since 3.0.0
+     * @param array $theme_options Theme options.
+     * @param array $used_elements Used Elements array.
+     * @param array $widget_options Widget options.
+     * @return array
+     */
+    function astra_footer_builder_migration($theme_options, $used_elements, $widget_options)
+    {
+    }
+    /**
      * Header Footer builder - Migration of Footer Widgets.
      *
      * @since 3.0.0
@@ -16677,6 +17282,12 @@ namespace {
      * @since x.x.x
      */
     function astra_get_blog_posts_per_page()
+    /**
+     * Get the remote WP-Astra docs data.
+     *
+     * @since x.x.x
+     */
+    function astra_remote_docs_data()
     {
     }
     /**
@@ -17116,6 +17727,18 @@ namespace {
      * @since 3.6.0
      */
     function astra_webfont_loader_instance($font_url = '')
+    {
+    }
+    /**
+     * Create instance of Astra_Docs_Loader class.
+     *
+     * @param string $docs_rest_url Knowledge Base URL to set data.
+     * @param string $subfolder_name Subfolder name.
+     *
+     * @return object
+     * @since x.x.x
+     */
+    function astra_docs_loader_instance($docs_rest_url = '', $subfolder_name = 'bsf-docs')
     {
     }
     /**

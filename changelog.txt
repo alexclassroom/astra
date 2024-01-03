@@ -31,6 +31,7 @@ v4.6.0 (Unreleased)
 - Improvement: Improvised default form UI with theme for better user experience.
 
 v4.5.3 (Unreleased)
+- Improvement: Knowledge base data storing in the local uploads directory for better performance.
 - Improvement - Check for Class Exists in class-astra-admin-loader.php file.
 - Fix: Logo color not working in FireFox browser.
 - Fix: Site title, tagline font-sizes are not part of export-import header settings.
@@ -42,6 +43,8 @@ v4.5.3 (Unreleased)
 - Fix: The CSS color property is set to "unset" when the color is reset through the customizer.
 - Fix: WooCommerce - Single product image is not aligned in the center on the Firefox browser
 - Fix: Astra meta settings showing for beaver builder themer layout.
+- Fix: WooCommerce - Cart & Checkout Blocks - Design is breaking with default theme settings.
+- Fix: Secondary Button Styles - Background color option does not apply background color to outline button as expected.
 
 v4.5.2
 - New: Compatibility to Import Export header-footer builder customizer layouts with the "Astra Import Export" plugin.
