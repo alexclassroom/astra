@@ -6,11 +6,6 @@
 	display: none;
 }
 
-#wpbody-content {
-	position: relative;
-	z-index: 9999999;
-}
-
 .ast-theme-builder #wpcontent {
 	margin: 0px;
 	padding: 0px;
