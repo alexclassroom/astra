@@ -126,7 +126,9 @@ if ( ! class_exists( 'Astra_Comments_Configs' ) ) {
 				),
 			);
 
-			$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_section_spacing_border_options( 'ast-sub-section-comments', true ) );
+			if ( Astra_Builder_Helper::$is_header_footer_builder_active ) {
+				$_configs = array_merge( $_configs, Astra_Builder_Base_Configuration::prepare_section_spacing_border_options( 'ast-sub-section-comments', true ) );
+			}
 
 			return array_merge( $configurations, $_configs );
 		}

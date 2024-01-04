@@ -1380,3 +1380,34 @@ function astra_remote_docs_data() {
 	$astra_docs_instance = astra_docs_loader_instance( 'https://wpastra.com/wp-json/powerful-docs/v1/get-docs', 'astra-docs' );
 	return json_decode( $astra_docs_instance->get_remote_data() );
 }
+
+/**
+ * Post types for live search.
+ *
+ * @since 4.4.0
+ */
+function astra_customizer_live_search_posttypes() {
+	$supported_post_types = array();
+	if ( is_customize_preview() ) {
+		$supported_post_types = astra_get_queried_post_types();
+	}
+	return apply_filters( 'astra_live_search_posttypes', $supported_post_types );
+}
+
+/**
+ * Get formatted live search post types.
+ *
+ * @since 4.4.0
+ * @return array
+ */
+function astra_customizer_search_post_types_choices() {
+	$all_post_types    = astra_customizer_live_search_posttypes();
+	$post_type_choices = array();
+	foreach ( $all_post_types as $post_type ) {
+		$post_type_object = get_post_type_object( $post_type );
+		/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+		$post_type_choices[ $post_type ] = ! empty( $post_type_object->labels->name ) ? $post_type_object->labels->name : $post_type;
+		/** @psalm-suppress PossiblyNullPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	}
+	return $post_type_choices;
+}

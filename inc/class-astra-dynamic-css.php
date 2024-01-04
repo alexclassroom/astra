@@ -4466,7 +4466,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			}
 
 			if ( astra_get_option( 'enable-comments-area', true ) ) {
-				$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
+				if ( Astra_Builder_Helper::$is_header_footer_builder_active ) {
+					$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
+				}
 
 				$comments_radius = astra_get_option(
 					'ast-sub-section-comments-border-radius',
