@@ -5809,7 +5809,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * Dynamic CSS for default forms styling improvements.
 		 *
 		 * @return string Dynamic CSS.
-		 * @since x.x.x
+		 * @since 4.6.0
 		 */
 		public static function astra_default_forms_styling_dynamic_css() {
 			$css                       = '';
@@ -5995,7 +5995,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		/**
 		 * Load Blog Layout static CSS when it is enabled.
 		 *
-		 * @since x.x.x
+		 * @since 4.6.0
 		 */
 		public static function blog_layout_static_css() {
 
@@ -6035,13 +6035,13 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * In x.x.x version we are having new stylings.
+		 * In 4.6.0 version we are having new stylings.
 		 * 1. Comments area refined.
 		 * 2. Defaults improvement for single-blog layouts.
 		 * 3. Form default UI improved.
 		 *
 		 * @return bool true|false.
-		 * @since x.x.x
+		 * @since 4.6.0
 		 */
 		public static function astra_4_6_0_compatibility() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
