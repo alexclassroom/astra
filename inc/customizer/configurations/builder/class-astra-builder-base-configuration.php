@@ -273,7 +273,7 @@ final class Astra_Builder_Base_Configuration {
 	 * @param string $section_id section id.
 	 * @param bool   $skip_border_divider Skip border control divider or not.
 	 *
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @return array
 	 */
 	public static function prepare_section_spacing_border_options( $section_id, $skip_border_divider = false ) {

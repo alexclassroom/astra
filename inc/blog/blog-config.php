@@ -71,7 +71,7 @@ function astra_get_dynamic_taxonomy( $control_tax, $loop_count, $separator, $bad
 /**
  * Function to get Author ID.
  *
- * @since x.x.x
+ * @since 4.6.0
  * @return mixed $author_id Author ID.
  */
 function astra_get_author_id() {
@@ -89,7 +89,7 @@ function astra_get_author_id() {
 /**
  * Function to get Author Avatar.
  *
- * @since x.x.x
+ * @since 4.6.0
  * @param string $get_for Get for.
  * @return mixed $avatar Author Avatar.
  */
@@ -273,7 +273,7 @@ function astra_get_dynamic_post_format( $get_for = 'single-post' ) {
 	/**
 	 * Get category List.
 	 *
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @param  string $filter_name Filter name.
 	 * @param  string $style_type_slug Style slug.
 	 * @param  bool   $post_meta Post meta.
@@ -310,7 +310,7 @@ function astra_get_category_list( $filter_name, $style_type_slug, $post_meta ) {
 	/**
 	 * Get tag List.
 	 *
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @param  string $filter_name Filter name.
 	 * @param string $style_type_slug style type slug.
 	 * @param  bool   $post_meta Post meta.

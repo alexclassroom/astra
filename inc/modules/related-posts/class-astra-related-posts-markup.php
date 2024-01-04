@@ -30,7 +30,7 @@ class Astra_Related_Posts_Markup {
 	/**
 	 * Initialize related posts module in Astra.
 	 *
-	 * @since x.x.x
+	 * @since 4.6.0
 	 */
 	public function initialize_related_posts() {
 		$priority         = 10;

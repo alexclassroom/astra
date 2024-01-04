@@ -260,7 +260,7 @@ class Astra_Posts_Structure_Loader {
 	/**
 	 * Get special pages query.
 	 *
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @return array $special_pages
 	 */
 	public static function get_special_page_types() {

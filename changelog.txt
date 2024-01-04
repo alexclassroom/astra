@@ -53,7 +53,7 @@ v4.6.0
 		- Fix: WooCommerce - PHP fatal error for old header footer builder users 'Call to undefined function astra_header_woo_cart_configuration' when WooCommerce is enabled.
 		- Fix: The CSS color property is set to "unset" when the color is reset through the customizer.
 		- Fix: WooCommerce - Single product image is not aligned in the centre on the Firefox browser
-		- Fix: Astra meta settings showing for Beaver Builder themer layouts.
+		- Fix: Theme meta settings showing for Beaver Builder themer layouts unnecessarily.
 		- Fix: WooCommerce - Cart & Checkout Blocks - Design is breaking with default theme settings.
 		- Fix: Secondary Button Styles - The background color option does not apply to the background color of the outline button as expected.
 

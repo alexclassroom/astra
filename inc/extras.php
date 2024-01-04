@@ -1354,7 +1354,7 @@ function astra_get_palette_presets() {
  * Search / Blog.
  *
  * @return string $blog_layout.
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_get_blog_layout() {
 	return ( is_search() && '' !== astra_get_option( 'ast-search-results-style' ) ) ? astra_get_option( 'ast-search-results-style' ) : astra_get_option( 'blog-layout' );
@@ -1365,7 +1365,7 @@ function astra_get_blog_layout() {
  * Search / Blog.
  *
  * @return int $blog_layout.
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_get_blog_posts_per_page() {
 	return ( is_search() && astra_get_option( 'ast-search-results-per-page' ) ) ? astra_get_option( 'ast-search-results-per-page' ) : astra_get_option( 'blog-post-per-page' );
@@ -1374,7 +1374,7 @@ function astra_get_blog_posts_per_page() {
 /**
  * Get the remote WP-Astra docs data.
  *
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_remote_docs_data() {
 	$astra_docs_instance = astra_docs_loader_instance( 'https://wpastra.com/wp-json/powerful-docs/v1/get-docs', 'astra-docs' );

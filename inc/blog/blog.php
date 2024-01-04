@@ -71,7 +71,7 @@ add_filter( 'post_class', 'astra_post_class_blog_grid' );
  * Add Body Classes
  *
  * @param array $classes Blog Layout Class Array.
- * @since x.x.x
+ * @since 4.6.0
  * @return array
  */
 function astra_add_blog_layout_class( $classes ) {
@@ -332,7 +332,7 @@ if ( ! function_exists( 'astra_get_blog_post_title_meta' ) ) {
 /**
  * Blog post title
  *
- * @since  x.x.x
+ * @since  4.6.0
  */
 function astra_get_blog_post_title() {
 
@@ -644,7 +644,7 @@ function astra_banner_elements_order( $structure = array() ) {
 /**
  * Blog Post Per Page
  *
- * @since x.x.x
+ * @since 4.6.0
  * @param WP_Query $query Query.
  */
 function astra_blog_post_per_page( $query ) {
@@ -663,7 +663,7 @@ if ( ! is_admin() ) {
  * Add Blog Layout Class
  *
  * @param array $classes Body Class Array.
- * @since x.x.x
+ * @since 4.6.0
  * @return array
  */
 function astra_primary_class_blog_layout( $classes ) {
@@ -706,7 +706,7 @@ add_filter( 'astra_primary_class', 'astra_primary_class_blog_layout' );
 /**
  * Blog Layout Customization
  *
- * @since x.x.x
+ * @since 4.6.0
  * @return void
  */
 function astra_blog_layout_customization() {
@@ -724,7 +724,7 @@ add_action( 'wp_head', 'astra_blog_layout_customization' );
 /**
  * Blog Layout Template Markup
  *
- * @since x.x.x
+ * @since 4.6.0
  * @return void
  */
 function astra_blog_layout_template() {
@@ -734,7 +734,7 @@ function astra_blog_layout_template() {
 /**
  * Blog Custom excerpt length.
  *
- * @since x.x.x
+ * @since 4.6.0
  * @param int $length Length.
  * @return int
  */
@@ -747,7 +747,7 @@ add_filter( 'excerpt_length', 'astra_custom_excerpt_length', 1 );
 /**
  * Remove link from featured image for layout 6
  *
- * @since x.x.x
+ * @since 4.6.0
  * @param string $content Content.
  * @return mixed
  */

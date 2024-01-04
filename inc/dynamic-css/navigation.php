@@ -3,7 +3,7 @@
  * Post Navigation - Dynamic CSS
  *
  * @package Astra
- * @since x.x.x
+ * @since 4.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ add_filter( 'astra_dynamic_theme_css', 'astra_navigation_css', 11 );
  * @param  string $dynamic_css          Astra Dynamic CSS.
  * @return String Generated dynamic CSS for Post Navigation.
  *
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_navigation_css( $dynamic_css ) {
 	$mobile_breakpoint = strval( astra_get_mobile_breakpoint() );
