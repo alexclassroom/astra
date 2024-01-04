@@ -224,7 +224,7 @@ if ( ! function_exists( 'astra_theme_comment' ) ) {
  * @param string         $adjacent Whether the post is previous or next.
  *
  * @return string       Link of post URL.
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_adjacent_post_links_title( $output, $format, $link, $post, $adjacent ) {
 	/** @psalm-suppress PossiblyInvalidPropertyFetch */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort

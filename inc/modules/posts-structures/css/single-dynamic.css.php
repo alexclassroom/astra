@@ -270,17 +270,17 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$astra_mobile_container_right_spacing = defined( 'ASTRA_EXT_VER' ) && astra_responsive_spacing( $single_post_container_spacing, 'right', 'mobile' ) ? astra_responsive_spacing( $single_post_container_spacing, 'right', 'mobile', $container_lg_horz_spacing ) : '1em';
 			$astra_mobile_container_top_spacing   = defined( 'ASTRA_EXT_VER' ) && astra_responsive_spacing( $single_post_container_spacing, 'right', 'mobile' ) ? astra_responsive_spacing( $single_post_container_spacing, 'right', 'mobile', $container_lg_vert_spacing ) : '1.5em';
 
-			$css_output_desktop[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']  = $astra_desktop_container_left_spacing ? 'calc( -1 * ' . $astra_desktop_container_left_spacing . ' )' : '';
-			$css_output_desktop[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top']   = $astra_desktop_container_top_spacing ? 'calc( -1 * ' . $astra_desktop_container_top_spacing . ' )' : '';
-			$css_output_desktop[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right'] = $astra_desktop_container_right_spacing ? 'calc( -1 * ' . $astra_desktop_container_right_spacing . ' )' : '';
+			$css_output_desktop[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']               = $astra_desktop_container_left_spacing ? 'calc( -1 * ' . $astra_desktop_container_left_spacing . ' )' : '';
+			$css_output_desktop[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top'] = $astra_desktop_container_top_spacing ? 'calc( -1 * ' . $astra_desktop_container_top_spacing . ' )' : '';
+			$css_output_desktop[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right']              = $astra_desktop_container_right_spacing ? 'calc( -1 * ' . $astra_desktop_container_right_spacing . ' )' : '';
 
-			$css_output_tablet[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']  = $astra_tablet_container_left_spacing ? 'calc( -1 * ' . $astra_tablet_container_left_spacing . ' )' : '';
-			$css_output_tablet[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top']   = $astra_tablet_container_top_spacing ? 'calc( -1 * ' . $astra_tablet_container_top_spacing . ' )' : '';
-			$css_output_tablet[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right'] = $astra_tablet_container_right_spacing ? 'calc( -1 * ' . $astra_tablet_container_right_spacing . ' )' : '';
+			$css_output_tablet[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']               = $astra_tablet_container_left_spacing ? 'calc( -1 * ' . $astra_tablet_container_left_spacing . ' )' : '';
+			$css_output_tablet[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top'] = $astra_tablet_container_top_spacing ? 'calc( -1 * ' . $astra_tablet_container_top_spacing . ' )' : '';
+			$css_output_tablet[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right']              = $astra_tablet_container_right_spacing ? 'calc( -1 * ' . $astra_tablet_container_right_spacing . ' )' : '';
 
-			$css_output_mobile[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']  = $astra_mobile_container_left_spacing ? 'calc( -1 * ' . $astra_mobile_container_left_spacing . ' )' : '';
-			$css_output_mobile[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top']   = $astra_mobile_container_top_spacing ? 'calc( -1 * ' . $astra_mobile_container_top_spacing . ' )' : '';
-			$css_output_mobile[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right'] = $astra_mobile_container_right_spacing ? 'calc( -1 * ' . $astra_mobile_container_right_spacing . ' )' : '';
+			$css_output_mobile[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-left']               = $astra_mobile_container_left_spacing ? 'calc( -1 * ' . $astra_mobile_container_left_spacing . ' )' : '';
+			$css_output_mobile[ '.ast-separate-container ' . $selector . ' > *:first-child.post-thumb' ]['margin-top'] = $astra_mobile_container_top_spacing ? 'calc( -1 * ' . $astra_mobile_container_top_spacing . ' )' : '';
+			$css_output_mobile[ '.ast-separate-container ' . $selector . ' .post-thumb' ]['margin-right']              = $astra_mobile_container_right_spacing ? 'calc( -1 * ' . $astra_mobile_container_right_spacing . ' )' : '';
 		}
 	} else {
 		$entry_title_selector    = is_customize_preview() ? $selector . ' .ast-container .entry-title' : $selector . ' .entry-title';

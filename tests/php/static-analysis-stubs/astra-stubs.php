@@ -914,7 +914,7 @@ namespace {
         /**
          * Astra update default font size and font weight.
          *
-         * @since x.x.x
+         * @since 4.6.0
          * @return boolean
          */
         public static function astra_update_default_font_styling()
@@ -5167,7 +5167,7 @@ namespace {
          * @param string $section_id section id.
          * @param bool   $skip_border_divider Skip border control divider or not.
          *
-         * @since x.x.x
+         * @since 4.6.0
          * @return array
          */
         public static function prepare_section_spacing_border_options($section_id, $skip_border_divider = \false)
@@ -9073,7 +9073,7 @@ namespace {
          * Dynamic CSS for default forms styling improvements.
          *
          * @return string Dynamic CSS.
-         * @since x.x.x
+         * @since 4.6.0
          */
         public static function astra_default_forms_styling_dynamic_css()
         {
@@ -9103,7 +9103,7 @@ namespace {
         /**
          * Load Blog Layout static CSS when it is enabled.
          *
-         * @since x.x.x
+         * @since 4.6.0
          */
         public static function blog_layout_static_css()
         {
@@ -9127,13 +9127,13 @@ namespace {
         {
         }
         /**
-         * In x.x.x version we are having new stylings.
+         * In 4.6.0 version we are having new stylings.
          * 1. Comments area refined.
          * 2. Defaults improvement for single-blog layouts.
          * 3. Form default UI improved.
          *
          * @return bool true|false.
-         * @since x.x.x
+         * @since 4.6.0
          */
         public static function astra_4_6_0_compatibility()
         {
@@ -9468,7 +9468,7 @@ namespace {
          *
          * @multisite
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var int
          */
         protected $current_blog_id;
@@ -9698,7 +9698,7 @@ namespace {
          * Returns the current blog id if current WordPress setup is a multisite setup.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return void|int Returns integer if current WP setup is multisite.
          */
         public function get_current_blog_id()
@@ -9754,7 +9754,7 @@ namespace {
      * Download Docs locally.
      *
      * @package Astra
-     * @since x.x.x
+     * @since 4.6.0
      */
     /**
      * Process Docs from locally.
@@ -9765,7 +9765,7 @@ namespace {
          * The remote URL.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $remote_url;
@@ -9773,7 +9773,7 @@ namespace {
          * Base path.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $base_path;
@@ -9781,7 +9781,7 @@ namespace {
          * Base URL.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $base_url;
@@ -9789,7 +9789,7 @@ namespace {
          * Subfolder name.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $subfolder_name;
@@ -9797,7 +9797,7 @@ namespace {
          * The docs folder.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $docs_folder;
@@ -9805,7 +9805,7 @@ namespace {
          * The local stylesheet's path.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $local_stylesheet_path;
@@ -9813,7 +9813,7 @@ namespace {
          * The local stylesheet's URL.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $local_docs_json_url;
@@ -9821,7 +9821,7 @@ namespace {
          * The remote CSS.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $remote_styles;
@@ -9829,7 +9829,7 @@ namespace {
          * The final docs data.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @var string
          */
         protected $docs_data;
@@ -9843,7 +9843,7 @@ namespace {
          * Get a new instance of the object for a new URL.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @param string $url The remote URL.
          * @param string $subfolder_name The subfolder name.
          */
@@ -9856,7 +9856,7 @@ namespace {
          * Fallback to the remote URL if we were unable to write the file locally.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_url()
@@ -9866,7 +9866,7 @@ namespace {
          * Get the local stylesheet URL.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_local_docs_json_url()
@@ -9876,7 +9876,7 @@ namespace {
          * Get remote data locally.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_remote_data()
@@ -9886,7 +9886,7 @@ namespace {
          * Get local stylesheet contents.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string|false Returns the remote URL contents.
          */
         public function get_local_docs_contents()
@@ -9896,7 +9896,7 @@ namespace {
          * Get remote file contents.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string Returns the remote URL contents.
          */
         public function get_remote_url_contents()
@@ -9906,7 +9906,7 @@ namespace {
          * Write the CSS to the filesystem.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @return string|false Returns the absolute path of the file on success, or false on fail.
          */
         protected function write_json()
@@ -9916,7 +9916,7 @@ namespace {
          * Get the stylesheet path.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_local_docs_file_path()
@@ -9929,7 +9929,7 @@ namespace {
          * This way we can avoid issues with sites changing their URL, or the wp-content path etc.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_local_docs_filename()
@@ -9939,7 +9939,7 @@ namespace {
          * Check if the local stylesheet exists.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return bool
          */
         public function local_file_exists()
@@ -9949,7 +9949,7 @@ namespace {
          * Get the base path.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_base_path()
@@ -9959,7 +9959,7 @@ namespace {
          * Get the base URL.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return string
          */
         public function get_base_url()
@@ -9982,7 +9982,7 @@ namespace {
          * and we avoid edge cases where unused files remain in the server.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return void
          */
         public function schedule_cleanup()
@@ -9994,7 +9994,7 @@ namespace {
          * This runs as part of a cleanup routine.
          *
          * @access public
-         * @since x.x.x
+         * @since 4.6.0
          * @return bool
          */
         public function astra_delete_docs_folder()
@@ -10004,7 +10004,7 @@ namespace {
          * Get the filesystem.
          *
          * @access protected
-         * @since x.x.x
+         * @since 4.6.0
          * @return \WP_Filesystem_Base
          */
         protected function get_filesystem()
@@ -10455,7 +10455,7 @@ namespace {
         /**
          * Initialize related posts module in Astra.
          *
-         * @since x.x.x
+         * @since 4.6.0
          */
         public function initialize_related_posts()
         {
@@ -10597,7 +10597,7 @@ namespace {
         /**
          * Get special pages query.
          *
-         * @since x.x.x
+         * @since 4.6.0
          * @return array $special_pages
          */
         public static function get_special_page_types()
@@ -10625,7 +10625,7 @@ namespace {
     /**
      * Register Posts Structures Customizer Configurations.
      *
-     * @since x.x.x
+     * @since 4.6.0
      */
     class Astra_Posts_Special_Archive_Structures_Configs extends \Astra_Customizer_Config_Base
     {
@@ -10634,7 +10634,7 @@ namespace {
          *
          * @param array                $configurations Astra Customizer Configurations.
          * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-         * @since x.x.x
+         * @since 4.6.0
          * @return Array Astra Customizer Configurations with updated configurations.
          */
         public function register_configuration($configurations, $wp_customize)
@@ -13690,7 +13690,7 @@ namespace {
      * @param  string $dynamic_css          Astra Dynamic CSS.
      * @return String Generated dynamic CSS for Post Navigation.
      *
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_navigation_css($dynamic_css)
     {
@@ -13701,7 +13701,7 @@ namespace {
      * @param  string $dynamic_css          Astra Dynamic CSS.
      * @return String Generated dynamic CSS for Pagination.
      *
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_single_post_css($dynamic_css)
     {
@@ -16302,7 +16302,7 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.6.0
      *
      * @since 4.4.0
      * @return void
@@ -16329,9 +16329,9 @@ namespace {
     {
     }
     /**
-     * Handle backward compatibility on version x.x.x
+     * Handle backward compatibility on version 4.6.0
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @return void
      */
     function astra_theme_background_updater_4_6_0()
@@ -16927,7 +16927,7 @@ namespace {
      * Search / Blog.
      *
      * @return string $blog_layout.
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_get_blog_layout()
     {
@@ -16937,7 +16937,7 @@ namespace {
      * Search / Blog.
      *
      * @return int $blog_layout.
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_get_blog_posts_per_page()
     {
@@ -16945,7 +16945,7 @@ namespace {
     /**
      * Get the remote WP-Astra docs data.
      *
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_remote_docs_data()
     {
@@ -16996,7 +16996,7 @@ namespace {
      * @param string         $adjacent Whether the post is previous or next.
      *
      * @return string       Link of post URL.
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_adjacent_post_links_title($output, $format, $link, $post, $adjacent)
     {
@@ -17035,7 +17035,7 @@ namespace {
      * Add Body Classes
      *
      * @param array $classes Blog Layout Class Array.
-     * @since x.x.x
+     * @since 4.6.0
      * @return array
      */
     function astra_add_blog_layout_class($classes)
@@ -17088,7 +17088,7 @@ namespace {
     /**
      * Blog post title
      *
-     * @since  x.x.x
+     * @since  4.6.0
      */
     function astra_get_blog_post_title()
     {
@@ -17145,7 +17145,7 @@ namespace {
     /**
      * Blog Post Per Page
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param WP_Query $query Query.
      */
     function astra_blog_post_per_page($query)
@@ -17155,7 +17155,7 @@ namespace {
      * Add Blog Layout Class
      *
      * @param array $classes Body Class Array.
-     * @since x.x.x
+     * @since 4.6.0
      * @return array
      */
     function astra_primary_class_blog_layout($classes)
@@ -17164,7 +17164,7 @@ namespace {
     /**
      * Blog Layout Customization
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @return void
      */
     function astra_blog_layout_customization()
@@ -17173,7 +17173,7 @@ namespace {
     /**
      * Blog Layout Template Markup
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @return void
      */
     function astra_blog_layout_template()
@@ -17182,7 +17182,7 @@ namespace {
     /**
      * Blog Custom excerpt length.
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param int $length Length.
      * @return int
      */
@@ -17192,7 +17192,7 @@ namespace {
     /**
      * Remove link from featured image for layout 6
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param string $content Content.
      * @return mixed
      */
@@ -17216,7 +17216,7 @@ namespace {
     /**
      * Function to get Author ID.
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @return mixed $author_id Author ID.
      */
     function astra_get_author_id()
@@ -17225,7 +17225,7 @@ namespace {
     /**
      * Function to get Author Avatar.
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param string $get_for Get for.
      * @return mixed $avatar Author Avatar.
      */
@@ -17256,7 +17256,7 @@ namespace {
     /**
      * Get category List.
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param  string $filter_name Filter name.
      * @param  string $style_type_slug Style slug.
      * @param  bool   $post_meta Post meta.
@@ -17268,7 +17268,7 @@ namespace {
     /**
      * Get tag List.
      *
-     * @since x.x.x
+     * @since 4.6.0
      * @param  string $filter_name Filter name.
      * @param string $style_type_slug style type slug.
      * @param  bool   $post_meta Post meta.
@@ -17397,7 +17397,7 @@ namespace {
      * @param string $subfolder_name Subfolder name.
      *
      * @return object
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_docs_loader_instance($docs_rest_url = '', $subfolder_name = 'bsf-docs')
     {
@@ -17456,7 +17456,7 @@ namespace {
      * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
      * @return string Generated dynamic CSS for Post Structures.
      *
-     * @since x.x.x
+     * @since 4.6.0
      */
     function astra_special_archive_dynamic_css($dynamic_css, $dynamic_css_filtered = '')
     {

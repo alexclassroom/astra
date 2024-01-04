@@ -749,7 +749,7 @@ function astra_theme_background_updater_4_2_2() {
 }
 
 /**
- * Handle backward compatibility on version x.x.x
+ * Handle backward compatibility on version 4.6.0
  *
  * @since 4.4.0
  * @return void
@@ -839,9 +839,9 @@ function astra_theme_background_updater_4_5_2() {
 }
 
 /**
- * Handle backward compatibility on version x.x.x
+ * Handle backward compatibility on version 4.6.0
  *
- * @since x.x.x
+ * @since 4.6.0
  * @return void
  */
 function astra_theme_background_updater_4_6_0() {
@@ -902,8 +902,8 @@ function astra_theme_background_updater_4_6_0() {
 			$theme_options['ast-sub-section-related-posts-padding'] = $theme_options['single-post-inside-spacing'];
 		}
 
-		$theme_options['single-content-images-shadow']   = false;
-		$theme_options['ast-font-style-update']          = false;
+		$theme_options['single-content-images-shadow'] = false;
+		$theme_options['ast-font-style-update']        = false;
 		update_option( 'astra-settings', $theme_options );
 	}
 	$docs_legacy_data = get_option( 'astra_docs_data', array() );

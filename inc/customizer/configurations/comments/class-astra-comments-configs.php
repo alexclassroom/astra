@@ -6,7 +6,7 @@
  * @author      Astra
  * @copyright   Copyright (c) 2023, Astra
  * @link        https://wpastra.com/
- * @since       Astra x.x.x
+ * @since       Astra 4.6.0
  */
 
 if ( ! class_exists( 'Astra_Comments_Configs' ) ) {

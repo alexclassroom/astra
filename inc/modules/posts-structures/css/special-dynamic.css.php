@@ -3,7 +3,7 @@
  * Post Structures - Special Pages Dynamic CSS
  *
  * @package Astra
- * @since x.x.x
+ * @since 4.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,7 +22,7 @@ add_filter( 'astra_dynamic_theme_css', 'astra_special_archive_dynamic_css' );
  * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
  * @return string Generated dynamic CSS for Post Structures.
  *
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_special_archive_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) {
 	// Adding condition for search page only, once we have more special pages, we can modify this condition.

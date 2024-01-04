@@ -1437,7 +1437,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 		/**
 		 * Astra update default font size and font weight.
 		 *
-		 * @since x.x.x
+		 * @since 4.6.0
 		 * @return boolean
 		 */
 		public static function astra_update_default_font_styling() {

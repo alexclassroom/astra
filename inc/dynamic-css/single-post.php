@@ -3,7 +3,7 @@
  * Single Post UI Improvement - Dynamic CSS
  *
  * @package astra-builder
- * @since x.x.x
+ * @since 4.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,7 +21,7 @@ if ( apply_filters( 'astra_improvise_single_post_design', Astra_Dynamic_CSS::ast
  * @param  string $dynamic_css          Astra Dynamic CSS.
  * @return String Generated dynamic CSS for Pagination.
  *
- * @since x.x.x
+ * @since 4.6.0
  */
 function astra_single_post_css( $dynamic_css ) {
 	$is_boxed       = astra_is_content_style_boxed();

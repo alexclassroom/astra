@@ -8,7 +8,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2023, Brainstorm Force
  * @link        https://www.brainstormforce.com
- * @since       Astra x.x.x
+ * @since       Astra 4.6.0
  */
 
 // Block direct access to the file.
@@ -24,7 +24,7 @@ if ( ! class_exists( 'Astra_Customizer_Config_Base' ) ) {
 /**
  * Register Posts Structures Customizer Configurations.
  *
- * @since x.x.x
+ * @since 4.6.0
  */
 class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Config_Base {
 
@@ -33,7 +33,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 	 *
 	 * @param array                $configurations Astra Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
