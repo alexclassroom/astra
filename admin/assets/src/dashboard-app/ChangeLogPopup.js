@@ -123,7 +123,7 @@ const ChangeLogPopup = () => {
 																index
 															].description;
 														const link =
-															"https://wpastra.com/changelog/?utm_source=wp&utm_medium=dashboard";
+															item.product === 97 ? "https://wpastra.com/product/astra-theme/?utm_source=wp&utm_medium=dashboard" : "https://wpastra.com/product/astra-pro-addon/?utm_source=wp&utm_medium=dashboard";
 														const pubDate =
 															activeChangeLog[
 																index

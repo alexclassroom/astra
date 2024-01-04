@@ -158,7 +158,7 @@ function astra_header_search_configuration() {
 			'control'  => 'ast-toggle-control',
 			'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 			'section'  => $_section,
-			'title'    => __( 'Enable Live Search', 'astra' ),
+			'title'    => __( 'Live Search', 'astra' ),
 			'priority' => 5,
 			'context'  => Astra_Builder_Helper::$general_tab,
 		),

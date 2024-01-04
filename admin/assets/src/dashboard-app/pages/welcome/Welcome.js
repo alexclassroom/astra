@@ -249,10 +249,12 @@ const Welcome = () => {
 										<div className="relative w-full lg:flex lg:items-center lg:justify-between">
 											<span className="font-semibold text-xl leading-6 text-slate-800">
 												{" "}
-												{__(
-													"Astra Integrations",
-													"astra"
-												)}{" "}
+												{
+													__(
+														`${astra_admin.theme_name} Integrations`,
+														"astra"
+													)
+												}{" "}
 											</span>
 										</div>
 

@@ -3519,12 +3519,6 @@ button.pswp__button--zoom:hover {
   border-radius: 0;
 }
 
-.woocommerce-Address h3,
-.cart-collaterals h2 {
-  font-size: 1.2rem;
-  padding: .7em 1em;
-}
-
 /**
  * Cart/checkout page
  */
@@ -4960,4 +4954,15 @@ button.pswp__button--zoom:hover {
 
 .sidebar-main .ast-mini-cart-empty .woocommerce-mini-cart__empty-message {
   display: none;
+}
+
+/**
+ * Firefox browser compatibility for WooCommerce product images.
+ *
+ * 1. Single product images misalign issue.
+ */
+@-moz-document url-prefix() {
+  .woocommerce-js div.product div.images img {
+    width: 80%;
+  }
 }

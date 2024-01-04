@@ -39,7 +39,8 @@ const ColorComponent = props => {
 							let value = JSON.parse(JSON.stringify(defaultValue));
 
 							if (undefined === value || '' === value) {
-								value = 'unset';
+								// Set empty value rather than unset so that elements can inherit the global or parents color property.
+								value = '';
 							}
 
 							updateValues(value);
@@ -66,18 +67,26 @@ const ColorComponent = props => {
 	};
 
 	let labelHtml = null;
+	let descriptionHtml = null;
+
 	const {
-		label
+		label,
+		description
 	} = props.control.params;
 
 	if (label) {
 		labelHtml = <span>{label}</span>;
 	}
 
+	if (description) {
+		descriptionHtml = <><i className="ast-control-tooltip dashicons dashicons-editor-help" data-title={description}></i> <span className="ast-dashicons-custom-tooltip" data-title={description}><span></span></span></>;
+	}
+
 	return <div className="ast-control-wrap">
 		<label>
 			{labelHtml}
 		</label>
+		{descriptionHtml}
 		<div className="ast-color-picker-alpha color-picker-hex">
 			{renderOperationButtons()}
 			<AstraColorPickerControl color={undefined !== state.value && state.value ? state.value : ''}
