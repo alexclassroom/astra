@@ -1,3 +1,6 @@
+v4.6.1
+- Fix: PHP fatal error with "Uncaught Error: Class 'Astra_Builder_Base_Dynamic_CSS' not found" when old header-footer is active.
+
 v4.6.0
 
 	** Blog Improvements (https://wpastra.com/docs/blog-archive-improvements/)
