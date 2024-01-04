@@ -33,11 +33,11 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 1.5em 1em;
 }
 
 b, strong {
@@ -71,6 +71,10 @@ blockquote {
 
 address {
 	margin: 0 0 1.5em;
+}
+
+address, cite {
+	font-style: italic;
 }
 
 abbr,
@@ -123,6 +127,10 @@ textarea {
 button,
 input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+}
+
+.normal-search {
+	margin-right: -5px;
 }
 
 big {

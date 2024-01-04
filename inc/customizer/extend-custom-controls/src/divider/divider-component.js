@@ -42,7 +42,7 @@ const DividerComponent = props => {
 	return <Fragment>
 		{captionHtml}
 		{separatorHtml}
-		<label className="customizer-text sadsad">
+		<label className="customizer-text">
 			{labelHtml}
 			{suffixHtml}
 			{descriptionHtml}

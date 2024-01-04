@@ -197,6 +197,10 @@ class AstraColorPickerControl extends Component {
 			"#94a3b8"
 		  ]};
 
+		if (astMetaParams.global_color_palette) {
+			globalColorPalette = { 'palette' : astMetaParams.global_color_palette.palette }
+		}
+
 		Object.entries(globalColorPalette.palette).forEach(([ index, color])=>{
 			let palettePrefix = '--ast-global-color-';
 			const paletteLables = ['Color  1', 'Color  2', 'Color  3', 'Color  4', 'Color  5', 'Color  6', 'Color  7', 'Color  8', 'Color  9'];
@@ -498,6 +502,10 @@ class AstraColorPickerControl extends Component {
 			"#cbd5e1",
 			"#94a3b8"
 		  ]};
+
+		  if (astMetaParams.global_color_palette) {
+			globalColorPalette = { 'palette' : astMetaParams.global_color_palette.palette }
+		}
 
 		Object.entries(globalColorPalette.palette).forEach(([ index, color])=>{
 			let palettePrefix = '--ast-global-color-';

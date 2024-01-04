@@ -1329,11 +1329,11 @@ li > ol {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1em;
 }
 
 b,
@@ -1370,6 +1370,10 @@ blockquote {
 
 address {
   margin: 0 0 1.5em;
+}
+
+address, cite {
+  font-style: italic;
 }
 
 abbr,
@@ -1430,6 +1434,10 @@ input {
   /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 
+.normal-search {
+  margin-left: -5px;
+}
+
 big {
   font-size: 125%;
 }
@@ -1453,11 +1461,11 @@ table {
 }
 
 th {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 th, td {
-  padding: 8px;
+  padding: 0.7em 1em;
   border-width: 0 0 1px 1px;
 }
 
@@ -1882,7 +1890,7 @@ textarea,
 
 .entry-title,
 .entry-title a {
-  font-weight: normal;
+  font-weight: var(--ast-blog-title-font-weight, normal);
 }
 
 /*----------  Media ----------*/
@@ -2431,18 +2439,16 @@ body {
 }
 
 .comment-navigation .nav-previous,
-.comment-navigation .nav-next,
 .posts-navigation .nav-previous,
-.posts-navigation .nav-next,
-.post-navigation .nav-previous,
-.post-navigation .nav-next {
-  width: 50%;
-  display: inline-block;
+.post-navigation .nav-previous {
+  position: relative;
+  text-align: right;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
+  grid-column-start: 2;
   text-align: left;
 }
 
@@ -2452,9 +2458,9 @@ body {
 
 .post-navigation a {
   background: transparent;
-  font-size: 16px;
   font-size: 1.06666rem;
-  padding: 0 1.5em;
+  font-size: 1rem;
+  padding: 0 var(--ast-post-nav-space, 1.5em);
   height: 2.33333em;
   line-height: calc(2.33333em - 3px);
 }
@@ -3702,7 +3708,7 @@ body {
 .widget_search .search-field,
 .widget_search .search-field:focus {
   width: 100%;
-  padding: 16px 15px 16px 45px;
+  padding: 12px 15px 12px 45px;
 }
 
 /* Widget - Archive */
@@ -4193,12 +4199,16 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .entry-header {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   word-wrap: break-word;
 }
 
 .entry-header + .ast-blog-featured-section {
   margin-top: 0.5em;
+}
+
+.blog-layout-6 .entry-header + .ast-blog-featured-section {
+  margin-top: 0;
 }
 
 .entry-content {
@@ -4209,8 +4219,31 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 1.6em;
 }
 
+.post-content > .cat-links, .post-content > .tags-links, .post-content > .read-more {
+  display: block;
+  margin-bottom: .8em;
+  font-weight: var(--ast-blog-meta-weight, "");
+}
+
+.ast-excerpt-container > p:last-child {
+  margin-bottom: 0;
+}
+
+.post-content > .read-more {
+  margin-top: 1.5em;
+}
+
+.ast-article-inner {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 .read-more {
   margin-bottom: 0;
+}
+
+.read-more a {
+  display: inline-block;
 }
 
 .read-more .ast-right-arrow {
@@ -4227,6 +4260,11 @@ input[type="color"]::-webkit-color-swatch {
 
 .ast-blog-featured-section {
   margin-bottom: 1.5em;
+}
+
+.blog-layout-3 .ast-blog-featured-section,
+.blog-layout-2 .ast-blog-featured-section {
+  margin-bottom: 0;
 }
 
 .error404 .page-header {
@@ -4384,7 +4422,7 @@ input[type="color"]::-webkit-color-swatch {
 .single .post-navigation {
   margin: 0;
   padding: 2em 0 0;
-  border-top: 1px solid var(--ast-border-color);
+  border-top: 1px solid var(--ast-single-post-border, var(--ast-border-color));
 }
 
 @media (max-width: 768px) {
@@ -4400,14 +4438,21 @@ input[type="color"]::-webkit-color-swatch {
   color: #000;
 }
 
+.single .post-navigation a p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @media (min-width: 421px) {
   .single .post-navigation .nav-links {
-    -js-display: flex;
-    display: flex;
+    -js-display: inline-flex;
+    display: inline-flex;
+    width: 100%;
   }
   .single .post-navigation .nav-previous,
   .single .post-navigation .nav-next {
-    flex: auto;
+    width: 50%;
   }
 }
 
@@ -4459,10 +4504,20 @@ input[type="color"]::-webkit-color-swatch {
   border-radius: 2px;
 }
 
+.ast-author-avatar {
+  margin: 0 5px;
+}
+
+.ast-author-avatar img {
+  border-radius: 100%;
+  width: var(--ast-author-avatar-size, 30px);
+  height: var(--ast-author-avatar-size, 30px);
+}
+
 .ast-separate-container .post-navigation {
   border-top: 0;
-  padding-right: 3.33333em;
-  padding-left: 3.33333em;
+  padding-right: var(--ast-post-nav-space, 3.33333em);
+  padding-left: var(--ast-post-nav-space, 3.33333em);
 }
 
 @media (max-width: 420px) {
