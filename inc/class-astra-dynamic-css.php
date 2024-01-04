@@ -4466,7 +4466,9 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 			}
 
 			if ( astra_get_option( 'enable-comments-area', true ) ) {
-				$parse_css .= astra_get_sub_section_dynamic_css( 'ast-sub-section-comments', '.site .comments-area' );
+				if ( Astra_Builder_Helper::$is_header_footer_builder_active ) {
+					$parse_css .= Astra_Builder_Base_Dynamic_CSS::prepare_inner_section_advanced_css( 'ast-sub-section-comments', '.site .comments-area' );
+				}
 
 				$comments_radius = astra_get_option(
 					'ast-sub-section-comments-border-radius',
@@ -5807,7 +5809,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		 * Dynamic CSS for default forms styling improvements.
 		 *
 		 * @return string Dynamic CSS.
-		 * @since 4.6.0
+		 * @since x.x.x
 		 */
 		public static function astra_default_forms_styling_dynamic_css() {
 			$css                       = '';
@@ -5993,7 +5995,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		/**
 		 * Load Blog Layout static CSS when it is enabled.
 		 *
-		 * @since 4.6.0
+		 * @since x.x.x
 		 */
 		public static function blog_layout_static_css() {
 
@@ -6033,13 +6035,13 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * In 4.6.0 version we are having new stylings.
+		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
 		 * 2. Defaults improvement for single-blog layouts.
 		 * 3. Form default UI improved.
 		 *
 		 * @return bool true|false.
-		 * @since 4.6.0
+		 * @since x.x.x
 		 */
 		public static function astra_4_6_0_compatibility() {
 			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
