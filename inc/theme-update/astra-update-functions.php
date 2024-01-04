@@ -903,7 +903,6 @@ function astra_theme_background_updater_4_6_0() {
 		}
 
 		$theme_options['single-content-images-shadow']   = false;
-		$theme_options['ast-forms-default-style-update'] = false;
 		$theme_options['ast-font-style-update']          = false;
 		update_option( 'astra-settings', $theme_options );
 	}

@@ -750,7 +750,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'color'       => esc_attr( $link_color ),
 					'font-weight' => self::astra_4_6_0_compatibility() && ! defined( 'ASTRA_EXT_VER' ) ? '600' : '',
 				),
-				'.entry-meta a:hover, .entry-meta a:hover *, .entry-meta a:focus, .entry-meta a:focus *, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
+				'.entry-meta a:not(.ast-button):hover, .entry-meta a:not(.ast-button):hover *, .entry-meta a:not(.ast-button):focus, .entry-meta a:not(.ast-button):focus *, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
 					'color' => esc_attr( $link_hover_color ),
 				),
 
@@ -1177,7 +1177,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 				$parse_css .= self::astra_sticky_sidebar_css();
 			}
 
-			if ( self::astra_forms_default_style_update() ) {
+			if ( self::astra_4_6_0_compatibility() ) {
 
 				// Forms default styling improvements.
 				$parse_css .= self::astra_default_forms_styling_dynamic_css();
@@ -2244,7 +2244,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 						'margin-bottom' => '2em',
 					);
 				} else {
-					if ( astra_get_option( 'single-content-images-shadow', false ) ) {
+					if ( is_single() && astra_get_option( 'single-content-images-shadow', false ) ) {
 						$default_layout_update_css['.ast-article-single img'] = array(
 							'box-shadow'         => '0 0 30px 0 rgba(0,0,0,.15)',
 							'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
@@ -6033,21 +6033,10 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Astra Forms default style update.
-		 *
-		 * @since x.x.x
-		 * @return boolean false if it is an existing user, true if not.
-		 */
-		public static function astra_forms_default_style_update() {
-			$astra_settings                                   = get_option( ASTRA_THEME_SETTINGS, array() );
-			$astra_settings['ast-forms-default-style-update'] = isset( $astra_settings['ast-forms-default-style-update'] ) ? false : true;
-			return apply_filters( 'astra_forms_default_style_update', $astra_settings['ast-forms-default-style-update'] );
-		}
-
-		/**
 		 * In x.x.x version we are having new stylings.
 		 * 1. Comments area refined.
 		 * 2. Defaults improvement for single-blog layouts.
+		 * 3. Form default UI improved.
 		 *
 		 * @return bool true|false.
 		 * @since x.x.x

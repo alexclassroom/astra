@@ -431,7 +431,11 @@ if ( ! class_exists( 'Astra_Customizer_Register_Sections_Panels' ) ) {
 					'name'     => 'ast-section-' . $special_type . '-page',
 					'type'     => 'section',
 					'priority' => 10 + absint( $index ),
-					'title'    => __( ucfirst( $special_type ), 'astra' ),
+					'title'    => sprintf(
+						/* translators: %s: Name of special page type */
+						esc_html__( '%s Page', 'astra' ),
+						ucfirst( $special_type )
+					),
 					'section'  => 'section-page-dynamic-group',
 				);
 			}

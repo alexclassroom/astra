@@ -9127,18 +9127,10 @@ namespace {
         {
         }
         /**
-         * Astra Forms default style update.
-         *
-         * @since x.x.x
-         * @return boolean false if it is an existing user, true if not.
-         */
-        public static function astra_forms_default_style_update()
-        {
-        }
-        /**
          * In x.x.x version we are having new stylings.
          * 1. Comments area refined.
          * 2. Defaults improvement for single-blog layouts.
+         * 3. Form default UI improved.
          *
          * @return bool true|false.
          * @since x.x.x

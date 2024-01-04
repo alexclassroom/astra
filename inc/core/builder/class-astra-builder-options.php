@@ -958,7 +958,7 @@ function astra_hf_builder_customizer_defaults( $defaults ) {
 	 * Global Color Palette.
 	 */
 	$update_colors_for_starter_library = Astra_Dynamic_CSS::astra_4_4_0_compatibility();
-	$update_color_for_forms_ui         = Astra_Dynamic_CSS::astra_forms_default_style_update();
+	$update_color_for_forms_ui         = Astra_Dynamic_CSS::astra_4_6_0_compatibility();
 	if ( $update_color_for_forms_ui ) {
 		$color_palette_7 = '#D1D5DB';
 	} else {

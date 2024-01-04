@@ -93,7 +93,7 @@ class Astra_Posts_Special_Archive_Structures_Configs extends Astra_Customizer_Co
 
 				array(
 					'name'     => $title_section,
-					'title'    => __( ucfirst( $special_type ) . ' Title', 'astra' ),
+					'title'    => __( ucfirst( $special_type ) . ' Page Title', 'astra' ),
 					'type'     => 'section',
 					'section'  => $section,
 					'panel'    => '',
