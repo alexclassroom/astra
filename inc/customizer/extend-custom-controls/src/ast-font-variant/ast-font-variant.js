@@ -106,10 +106,6 @@ const FontVariantComponent = props => {
 		} );
 	}
 
-	const arrowRenderer = () => {
-		return <div className='sadsad'>This is an arrow</div>
-	  }
-
 	return <>
 		{
 			labelHtml !== '' && (

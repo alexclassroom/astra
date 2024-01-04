@@ -36,6 +36,16 @@ function astra_font_size_rem( size, with_rem, device ) {
 	return css;
 }
 
+/**
+ * Refresh customizer iframe.
+ */
+function astra_refresh_customizer( control ) {
+	wp.customize( control, function( value ) {
+		value.bind( function( value ) {
+			wp.customize.preview.send( 'refresh' );
+		} );
+	} );
+}
 
 /**
  * Apply CSS for the element
@@ -442,6 +452,149 @@ function astra_generate_outside_font_family_css( control, selector ) {
 	});
 }
 
+/**
+ * Apply Advanced CSS for the element
+ *
+ * @param string section Section ID.
+ * @param string selector Base Selector.
+ */
+function astra_builder_advanced_css( section, selector ) {
+
+    var tablet_break_point    = 921,
+		mobile_break_point    = 544;
+
+    // Padding.
+    wp.customize( 'astra-settings[' + section + '-padding]', function( value ) {
+        value.bind( function( padding ) {
+
+			if( ! padding.hasOwnProperty('desktop') ) {
+				return
+			}
+
+            if(
+                padding.desktop.bottom != '' || padding.desktop.top != '' || padding.desktop.left != '' || padding.desktop.right != '' ||
+                padding.tablet.bottom != '' || padding.tablet.top != '' || padding.tablet.left != '' || padding.tablet.right != '' ||
+                padding.mobile.bottom != '' || padding.mobile.top != '' || padding.mobile.left != '' || padding.mobile.right != ''
+            ) {
+                var dynamicStyle = '';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'padding-left: ' + padding['desktop']['left'] + padding['desktop-unit'] + ';';
+                dynamicStyle += 'padding-right: ' + padding['desktop']['right'] + padding['desktop-unit'] + ';';
+                dynamicStyle += 'padding-top: ' + padding['desktop']['top'] + padding['desktop-unit'] + ';';
+                dynamicStyle += 'padding-bottom: ' + padding['desktop']['bottom'] + padding['desktop-unit'] + ';';
+                dynamicStyle += '} ';
+
+                dynamicStyle +=  '@media (max-width: ' + tablet_break_point + 'px) {';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'padding-left: ' + padding['tablet']['left'] + padding['tablet-unit'] + ';';
+                dynamicStyle += 'padding-right: ' + padding['tablet']['right'] + padding['tablet-unit'] + ';';
+                dynamicStyle += 'padding-top: ' + padding['tablet']['top'] + padding['tablet-unit'] + ';';
+                dynamicStyle += 'padding-bottom: ' + padding['tablet']['bottom'] + padding['tablet-unit'] + ';';
+                dynamicStyle += '} ';
+                dynamicStyle += '} ';
+
+                dynamicStyle +=  '@media (max-width: ' + mobile_break_point + 'px) {';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'padding-left: ' + padding['mobile']['left'] + padding['mobile-unit'] + ';';
+                dynamicStyle += 'padding-right: ' + padding['mobile']['right'] + padding['mobile-unit'] + ';';
+                dynamicStyle += 'padding-top: ' + padding['mobile']['top'] + padding['mobile-unit'] + ';';
+                dynamicStyle += 'padding-bottom: ' + padding['mobile']['bottom'] + padding['mobile-unit'] + ';';
+                dynamicStyle += '} ';
+                dynamicStyle += '} ';
+                astra_add_dynamic_css( section + '-padding-toggle-button', dynamicStyle );
+            } else {
+                astra_add_dynamic_css( section + '-padding-toggle-button', '' );
+            }
+        } );
+    } );
+
+    // Margin.
+    wp.customize( 'astra-settings[' + section + '-margin]', function( value ) {
+        value.bind( function( margin ) {
+
+        	if( ! margin.hasOwnProperty('desktop') ) {
+        		return
+			}
+
+            if(
+                margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||
+                margin.tablet.bottom != '' || margin.tablet.top != '' || margin.tablet.left != '' || margin.tablet.right != '' ||
+                margin.mobile.bottom != '' || margin.mobile.top != '' || margin.mobile.left != '' || margin.mobile.right != ''
+            ) {
+                var dynamicStyle = '';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'margin-left: ' + margin['desktop']['left'] + margin['desktop-unit'] + ';';
+                dynamicStyle += 'margin-right: ' + margin['desktop']['right'] + margin['desktop-unit'] + ';';
+                dynamicStyle += 'margin-top: ' + margin['desktop']['top'] + margin['desktop-unit'] + ';';
+                dynamicStyle += 'margin-bottom: ' + margin['desktop']['bottom'] + margin['desktop-unit'] + ';';
+                dynamicStyle += '} ';
+
+                dynamicStyle +=  '@media (max-width: ' + tablet_break_point + 'px) {';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'margin-left: ' + margin['tablet']['left'] + margin['tablet-unit'] + ';';
+                dynamicStyle += 'margin-right: ' + margin['tablet']['right'] + margin['tablet-unit'] + ';';
+                dynamicStyle += 'margin-top: ' + margin['tablet']['top'] + margin['tablet-unit'] + ';';
+                dynamicStyle += 'margin-bottom: ' + margin['tablet']['bottom'] + margin['tablet-unit'] + ';';
+                dynamicStyle += '} ';
+                dynamicStyle += '} ';
+
+                dynamicStyle +=  '@media (max-width: ' + mobile_break_point + 'px) {';
+                dynamicStyle += selector + ' {';
+                dynamicStyle += 'margin-left: ' + margin['mobile']['left'] + margin['mobile-unit'] + ';';
+                dynamicStyle += 'margin-right: ' + margin['mobile']['right'] + margin['mobile-unit'] + ';';
+                dynamicStyle += 'margin-top: ' + margin['mobile']['top'] + margin['mobile-unit'] + ';';
+                dynamicStyle += 'margin-bottom: ' + margin['mobile']['bottom'] + margin['mobile-unit'] + ';';
+                dynamicStyle += '} ';
+                dynamicStyle += '} ';
+                astra_add_dynamic_css( section + '-margin-toggle-button', dynamicStyle );
+            } else {
+                astra_add_dynamic_css( section + '-margin-toggle-button', '' );
+            }
+        } );
+    } );
+}
+
+/**
+ * Apply Advanced CSS for the element
+ *
+ * @param string section Section ID.
+ * @param string selector Base Selector.
+ */
+function astra_border_spacing_advanced_css( section, selector ) {
+	wp.customize( 'astra-settings[' + section + '-border-width]', function( setting ) {
+		setting.bind( function( border ) {
+			var dynamicStyle = selector + ' {';
+			dynamicStyle += border.top ? 'border-top-style: solid;' : '';
+			dynamicStyle += border.right ? 'border-right-style: solid;' : '';
+			dynamicStyle += border.bottom ? 'border-bottom-style: solid;' : '';
+			dynamicStyle += border.left ? 'border-left-style: solid;' : '';
+			dynamicStyle += 'border-top-width:'  + border.top + 'px;';
+			dynamicStyle += 'border-right-width:'  + border.right + 'px;';
+			dynamicStyle += 'border-left-width:'   + border.left + 'px;';
+			dynamicStyle += 'border-bottom-width:'   + border.bottom + 'px;';
+			dynamicStyle += '} ';
+			astra_add_dynamic_css( 'astra-settings[' + section + '-border-width]', dynamicStyle );
+		} );
+	} );
+	wp.customize( 'astra-settings[' + section + '-border-radius]', function( setting ) {
+		setting.bind( function( border ) {
+			if ( border.top === '' && border.right === '' && border.bottom === '' || border.left === '' ) {
+				wp.customize.preview.send( 'refresh' );
+				return;
+			}
+			var dynamicStyle = selector + ' {';
+			dynamicStyle += 'border-top-left-radius:'  + border.top + 'px;';
+			dynamicStyle += 'border-top-right-radius:'  + border.right + 'px;';
+			dynamicStyle += 'border-bottom-left-radius:'   + border.left + 'px;';
+			dynamicStyle += 'border-bottom-right-radius:'   + border.bottom + 'px;';
+			dynamicStyle += '} ';
+			astra_add_dynamic_css( 'astra-settings[' + section + '-border-radius]', dynamicStyle );
+		} );
+	} );
+	astra_css( 'astra-settings[' + section + '-border-color]', 'border-color', selector );
+	astra_builder_advanced_css( section, selector );
+}
+
 /*
 * Generate Font Weight CSS
 */
@@ -793,10 +946,10 @@ function hasWordPressWidgetBlockEditor() {
 		var blog_grid = (typeof ( wp.customize._value['astra-settings[blog-grid]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-grid]']._value : 1;
 		var blog_layout = (typeof ( wp.customize._value['astra-settings[blog-layout]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-layout]']._value : 'blog-layout-1';
 
-		var dynamicSelector = '.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts, .ast-separate-container .comments-count-wrapper, .ast-separate-container .comments-area .comments-title, .ast-single-related-posts-container, .ast-plain-container';
+		var dynamicSelector = '.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts, .ast-separate-container .comments-count-wrapper, .ast-separate-container .comments-area .comments-title, .ast-single-related-posts-container, .ast-plain-container, .site-content article .ast-article-inner';
 
 		if( 'blog-layout-1' == blog_layout && 1 != blog_grid ) {
-			dynamicSelector   += ', .ast-separate-container .blog-layout-1, .ast-separate-container .blog-layout-2, .ast-separate-container .blog-layout-3';
+			dynamicSelector   += ', .ast-separate-container .ast-article-inner';
 		} else {
 			dynamicSelector   += ', .ast-separate-container .ast-article-post';
 		}
@@ -1094,30 +1247,55 @@ function hasWordPressWidgetBlockEditor() {
 	astra_responsive_font_size( 'astra-settings[font-size-site-tagline]', '.site-header .site-description' );
 	astra_responsive_font_size( 'astra-settings[font-size-site-title]', '.site-title' );
 
-	/**
-	 * Single Post Container Outside Spacing
-	 */
-	astra_responsive_spacing( 'astra-settings[single-post-outside-spacing]','.ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary .ast-article-single, .ast-plain-container.ast-single-post #primary, .ast-narrow-container.ast-single #primary', 'margin',  ['top', 'bottom' ] );
-	astra_responsive_spacing( 'astra-settings[single-post-outside-spacing]','.ast-left-sidebar.ast-single-post #primary, .ast-right-sidebar.ast-single-post #primary, .ast-separate-container.ast-single-post.ast-right-sidebar #primary, .ast-separate-container.ast-single-post.ast-left-sidebar #primary, .ast-separate-container.ast-single-post #primary .ast-article-single, .ast-narrow-container.ast-single-post #primary', 'padding',  ['left', 'right' ] );
-	// Remove padding top to container if padding top is given to Container Outer Spacing.
-	wp.customize( 'astra-settings[single-post-outside-spacing]', function( value ) {
-		value.bind( function( padding ) {
+	astra_responsive_font_size( 'astra-settings[font-size-page-title]', 'body:not(.ast-single-post) .entry-title' );
+	astra_responsive_font_size( 'astra-settings[font-size-post-meta]', '.entry-meta, .read-more' );
+	astra_responsive_font_size( 'astra-settings[font-size-post-tax]', '.ast-blog-single-element.ast-taxonomy-container a' );
 
-			var dynamicStyle = '';
-			if( padding.desktop.top != '' || padding.tablet.top != '' || padding.mobile.top != '' ) {
-				dynamicStyle += '.ast-separate-container.ast-single-post #primary { padding-top: 0px;} ';
-				dynamicStyle += '.ast-narrow-container.ast-single-post #primary { padding-top: 0px;} ';
-			}
-			if( padding.desktop.bottom != '' || padding.tablet.bottom != '' || padding.mobile.bottom != '' ) {
-				dynamicStyle += '.ast-separate-container.ast-single-post #primary { padding-bottom: 0px;} ';
-				dynamicStyle += '.ast-narrow-container.ast-single-post #primary { padding-bottom: 0px;} ';
-			}
-			astra_add_dynamic_css( 'remove-header-spacing', dynamicStyle );
+	astra_refresh_customizer( 'astra-settings[blog-meta-category-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-category-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-tag-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-post-meta-divider-type]' );
+	astra_refresh_customizer( 'astra-settings[blog-meta-tag-style]' );
+	astra_refresh_customizer( 'astra-settings[blog-post-content]' );
 
+	wp.customize( 'astra-settings[post-card-border-radius]', function( setting ) {
+		setting.bind( function( border ) {
+			let desktopTop = border['desktop']['top'] ? border['desktop']['top'] : 0,
+				desktopBottom = border['desktop']['bottom'] ? border['desktop']['bottom'] : 0,
+				desktopLeft = border['desktop']['left'] ? border['desktop']['left'] : 0,
+				desktopRight = border['desktop']['right'] ? border['desktop']['right'] : 0,
+				tabletTop = border['tablet']['top'] ? border['tablet']['top'] : 0,
+				tabletBottom = border['tablet']['bottom'] ? border['tablet']['bottom'] : 0,
+				tabletLeft = border['tablet']['left'] ? border['tablet']['left'] : 0,
+				tabletRight = border['tablet']['right'] ? border['tablet']['right'] : 0,
+				mobileTop = border['mobile']['top'] ? border['mobile']['top'] : 0,
+				mobileBottom = border['mobile']['bottom'] ? border['mobile']['bottom'] : 0,
+				mobileLeft = border['mobile']['left'] ? border['mobile']['left'] : 0,
+				mobileRight = border['mobile']['right'] ? border['mobile']['right'] : 0;
+
+			let tabletBreakPoint    = astraBuilderPreview.tablet_break_point || 921,
+				mobileBreakPoint    = astraBuilderPreview.mobile_break_point || 544,
+				blog_layout = (typeof ( wp.customize._value['astra-settings[blog-layout]'] ) != 'undefined') ? wp.customize._value['astra-settings[blog-layout]']._value : 'blog-layout-1';
+
+			let globalSelector = 'blog-layout-5' === blog_layout ? '.archive .ast-article-post, .blog .ast-article-post, .archive .ast-article-post:hover, .blog .ast-article-post:hover' : '.archive .ast-article-post .ast-article-inner, .blog .ast-article-post .ast-article-inner, .archive .ast-article-post .ast-article-inner:hover, .blog .ast-article-post .ast-article-inner:hover';
+
+			let dynamicStyle = globalSelector + '{ border-top-left-radius :' + desktopTop + border['desktop-unit']
+					+ '; border-bottom-right-radius :' + desktopBottom + border['desktop-unit'] + '; border-bottom-left-radius :'
+					+ desktopLeft + border['desktop-unit'] + '; border-top-right-radius :' + desktopRight + border['desktop-unit'] + '; } ';
+
+			dynamicStyle += '@media (max-width: ' + tabletBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + tabletTop + border['tablet-unit']
+					+ '; border-bottom-right-radius :' + tabletBottom + border['tablet-unit'] + '; border-bottom-left-radius :'
+					+ tabletLeft + border['tablet-unit'] + '; border-top-right-radius :' + tabletRight + border['tablet-unit'] + '; } } ';
+
+			dynamicStyle += '@media (max-width: ' + mobileBreakPoint + 'px) { ' + globalSelector + '{ border-top-left-radius :' + mobileTop + border['mobile-unit']
+					+ '; border-bottom-right-radius :' + mobileBottom + border['mobile-unit'] + '; border-bottom-left-radius :'
+					+ mobileLeft + border['mobile-unit'] + '; border-top-right-radius :' + mobileRight + border['mobile-unit'] + '; } } ';
+
+			astra_add_dynamic_css( 'post-card-border-radius', dynamicStyle );
 		} );
 	} );
 
-	astra_responsive_font_size( 'astra-settings[font-size-page-title]', 'body:not(.ast-single-post) .entry-title' );
+	astra_css( 'astra-settings[post-card-featured-overlay]', 'background-color', '.ast-blog-layout-6-grid .ast-article-inner .post-thumb::after' );
 
 	// Check if anchors should be loaded in the CSS for headings.
 	if (true == astraCustomizer.includeAnchorsInHeadindsCss) {
@@ -1823,6 +2001,9 @@ function hasWordPressWidgetBlockEditor() {
 	astra_responsive_font_size( 'astra-settings[related-posts-content-font-size]', '.ast-related-post-content .ast-related-post-excerpt' );
 	astra_font_extras_css( 'related-posts-content-font-extras', '.ast-related-post-content .ast-related-post-excerpt' );
 
+	astra_border_spacing_advanced_css( 'ast-sub-section-related-posts', 'body .site .ast-single-related-posts-container' );
+	astra_border_spacing_advanced_css( 'ast-sub-section-comments', 'body .site .comments-area' );
+
 	// Title Color.
     astra_css(
         'astra-settings[header-color-site-title]',
@@ -1843,6 +2024,31 @@ function hasWordPressWidgetBlockEditor() {
         'color',
         '.ast-site-identity .site-description'
     );
+
+	wp.customize( 'astra-settings[related-posts-author-avatar-size]', function( value ) {
+		value.bind( function( size ) {
+			var dynamicStyle = '';
+			dynamicStyle +=  '.ast-related-post-content .ast-author-avatar img {';
+			dynamicStyle += 'width: ' + size + 'px;';
+			dynamicStyle += 'height: ' + size + 'px;';
+			dynamicStyle += '} ';
+
+			astra_add_dynamic_css( 'related-posts-author-avatar-size', dynamicStyle );
+		} );
+	} );
+
+	astra_refresh_customizer( 'astra-settings[related-metadata-separator]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-ratio-pre-scale]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-width]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-custom-scale-height]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-image-size]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-prefix-label]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-author-avatar]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-meta-date-type]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-date-format]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-category-style]' );
+	astra_refresh_customizer( 'astra-settings[related-posts-tag-style]' );
 
 	function astraHandleButtonPresetPreview( btnSelector ) {
 

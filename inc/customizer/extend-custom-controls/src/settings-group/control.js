@@ -13,6 +13,7 @@ import BoxShadowComponent from '../box-shadow/box-shadow-component.js';
 import SelectorComponent from '../selector/selector-component';
 import FontVariantComponent from '../ast-font-variant/ast-font-variant.js';
 import FontExtrasComponent from '../ast-font-extras/ast-font-extras';
+import NumberComponent from '../ast-number/ast-number';
 
 import {
 	astraGetBackground,
@@ -20,7 +21,8 @@ import {
 	astraGetResponsiveBgJs,
 	astraGetResponsiveColorJs,
 	astraGetResponsiveSliderJs,
-	astraGetResponsiveSpacingJs
+	astraGetResponsiveSpacingJs,
+	astraGetResponsiveNumberJs
 } from '../common/responsive-helper';
 
 export const settingsGroupControl = wp.customize.astraControl.extend( {
@@ -267,6 +269,9 @@ export const settingsGroupControl = wp.customize.astraControl.extend( {
 				case "ast-responsive-spacing":
 					astraGetResponsiveSpacingJs( control )
 					break;
+				case "ast-number":
+					astraGetResponsiveNumberJs( control )
+					break;
 				case "ast-font":
 
 					var googleFontsString = astra.customizer.settings.google_fonts;
@@ -499,7 +504,8 @@ export const settingsGroupControl = wp.customize.astraControl.extend( {
 			'ast-divider' : DividerComponent,
 			'ast-selector' : SelectorComponent,
 			'ast-font-variant' : FontVariantComponent,
-			'ast-font-extras' : FontExtrasComponent
+			'ast-font-extras' : FontExtrasComponent,
+			'ast-number' : NumberComponent
 		};
 
 		if( astra.customizer.is_pro ) {

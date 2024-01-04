@@ -594,6 +594,14 @@ class Astra_WP_Editor_CSS {
 			),
 		);
 
+		if ( Astra_Dynamic_CSS::astra_4_6_0_compatibility() && astra_get_option( 'single-content-images-shadow', false ) ) {
+			$desktop_css['.wp-block-image img'] = array(
+				'box-shadow'         => '0 0 30px 0 rgba(0,0,0,.15)',
+				'-webkit-box-shadow' => '0 0 30px 0 rgba(0,0,0,.15)',
+				'-moz-box-shadow'    => '0 0 30px 0 rgba(0,0,0,.15)',
+			);
+		}
+
 		// Boxed, Content-Boxed, page title alignment with Spectra Container Blocks.
 		$desktop_css['.ast-separate-container .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .uagb-is-root-container'] = array(
 			'max-width' => 'var(--wp--custom--ast-content-width-size)',

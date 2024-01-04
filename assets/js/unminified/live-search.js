@@ -40,7 +40,7 @@
 			searchInput.addEventListener("input", function (event) {
 				const searchForm = searchInput.closest("form.search-form");
 				const searchTerm = event.target.value.trim();
-				const postTypes = astra_search.search_post_types;
+				const postTypes = astra_search.search_page_condition ? astra_search.search_page_post_types : astra_search.search_post_types;
 
 				const searchResultsWrappers = document.querySelectorAll(
 					".ast-live-search-results"
