@@ -3471,7 +3471,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'display'   => esc_attr( $tablet_tagline_visibility ),
 				),
 				'.entry-title'                   => array(
-					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'tablet', 30 ),
+					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'tablet' ),
 				),
 				'.ast-blog-single-element.ast-taxonomy-container a' => array(
 					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'tablet' ),
@@ -3575,7 +3575,7 @@ if ( ! class_exists( 'Astra_Dynamic_CSS' ) ) {
 					'display'   => esc_attr( $mobile_tagline_visibility ),
 				),
 				'.entry-title'                   => array(
-					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'mobile', 30 ),
+					'font-size' => astra_responsive_font( $archive_post_title_font_size, 'mobile' ),
 				),
 				'.ast-blog-single-element.ast-taxonomy-container a' => array(
 					'font-size' => astra_responsive_font( $archive_post_tax_font_size, 'mobile' ),

@@ -503,6 +503,7 @@ function astra_comments_css( $dynamic_css ) {
 				}
 				.ast-comment-list .ast-comment-edit-reply-wrap {
 					justify-content: flex-start;
+					align-items: center;
 				}
 				.comment-awaiting-moderation {
 					margin-top: 20px;
