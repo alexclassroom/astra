@@ -911,3 +911,32 @@ function astra_theme_background_updater_4_6_0() {
 		delete_option( 'astra_docs_data' );
 	}
 }
+
+/**
+ * Handle backward compatibility on version 4.6.2.
+ *
+ * @since 4.6.2
+ * @return void
+ */
+function astra_theme_background_updater_4_6_2() {
+	$theme_options = get_option( 'astra-settings', array() );
+
+	// Unset "featured image" for pages structure.
+	if ( ! isset( $theme_options['v4-6-2-backward-option'] ) ) {
+		$theme_options['v4-6-2-backward-option'] = false;
+
+		$page_structure = isset( $theme_options['ast-dynamic-single-page-structure'] ) ? $theme_options['ast-dynamic-single-page-structure'] : array( 'ast-dynamic-single-page-image', 'ast-dynamic-single-page-title' );
+
+		if ( ! empty( $page_structure ) ) {
+			$value_to_remove = 'ast-dynamic-single-page-image';
+			$index           = array_search( $value_to_remove, $page_structure, true );
+			if ( false !== $index ) {
+				unset( $page_structure[ $index ] );
+			}
+
+			$theme_options['ast-dynamic-single-page-structure'] = $page_structure;
+		}
+
+		update_option( 'astra-settings', $theme_options );
+	}
+}
