@@ -14002,6 +14002,14 @@
         }
     },
     {
+        "Rubik Broken Fax": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
         "Rubik Bubbles": {
             "variants": [
                 "regular"
@@ -14034,6 +14042,22 @@
         }
     },
     {
+        "Rubik Doodle Shadow": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
+        "Rubik Doodle Triangles": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
         "Rubik Gemstones": {
             "variants": [
                 "regular"
@@ -14051,6 +14075,22 @@
     },
     {
         "Rubik Iso": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
+        "Rubik Lines": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
+        "Rubik Maps": {
             "variants": [
                 "regular"
             ],
@@ -14107,6 +14147,14 @@
     },
     {
         "Rubik Puddles": {
+            "variants": [
+                "regular"
+            ],
+            "category": "display"
+        }
+    },
+    {
+        "Rubik Scribble": {
             "variants": [
                 "regular"
             ],

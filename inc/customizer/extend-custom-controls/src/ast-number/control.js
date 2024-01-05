@@ -1,8 +1,12 @@
-import AstNumberComponent from './ast-number-component';
+import NumberComponent from './ast-number.js';
+import {astraGetResponsiveNumberJs} from '../common/responsive-helper';
 
-export const numberInputControl = wp.customize.Control.extend( {
+export const astNumberControl = wp.customize.astraControl.extend( {
 	renderContent: function renderContent() {
-		const control = this;
-		ReactDOM.render( <AstNumberComponent control={ control } />, control.container[0] );
+		let control = this;
+		ReactDOM.render( <NumberComponent control={ control } />, control.container[0] );
+	},
+	ready: function() {
+		astraGetResponsiveNumberJs( this );
 	}
 } );

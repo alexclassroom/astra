@@ -66,7 +66,7 @@ class Astra_WebFont_Loader {
 	 *
 	 * @multisite
 	 * @access protected
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @var int
 	 */
 	protected $current_blog_id;
@@ -615,7 +615,7 @@ class Astra_WebFont_Loader {
 	 * Returns the current blog id if current WordPress setup is a multisite setup.
 	 *
 	 * @access public
-	 * @since x.x.x
+	 * @since 4.6.0
 	 * @return void|int Returns integer if current WP setup is multisite.
 	 */
 	public function get_current_blog_id() {
@@ -653,7 +653,7 @@ class Astra_WebFont_Loader {
 			 * 3. Then, finally, creates the child folders inside the subfolder by the current blog id.
 			 *
 			 * Ref: GH Issue: #5291, [AST-3438]
-			 * @since x.x.x
+			 * @since 4.6.0
 			 */
 			if ( $this->get_current_blog_id() ) {
 				if ( ! file_exists( $this->fonts_folder ) ) {
