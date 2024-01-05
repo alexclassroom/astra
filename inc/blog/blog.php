@@ -657,10 +657,8 @@ function astra_blog_post_per_page( $query ) {
 		return;
 	}
 
-	if ( function_exists( 'is_woocommerce' ) ) {
-		if ( is_woocommerce() ) {
-			return;
-		}
+	if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+		return;
 	}
 
 	$exclusions = apply_filters(
