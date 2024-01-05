@@ -584,6 +584,10 @@ function astra_banner_elements_order( $structure = array() ) {
 				break;
 
 			case 'single-image':
+				if ( 'disabled' === astra_get_option_meta( 'ast-featured-img' ) ) {
+					break;
+				}
+
 				$featured_background = astra_get_option( 'ast-dynamic-single-' . $post_type . '-featured-as-background', false );
 
 				if ( 'layout-1' === $layout_type ) {
