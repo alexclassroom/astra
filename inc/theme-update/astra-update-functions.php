@@ -929,12 +929,10 @@ function astra_theme_background_updater_4_6_2() {
 
 		if ( ! empty( $page_structure ) ) {
 			$value_to_remove = 'ast-dynamic-single-page-image';
-			$index           = array_search( $value_to_remove, $page_structure, true );
-			if ( false !== $index ) {
-				unset( $page_structure[ $index ] );
-			}
-
-			$theme_options['ast-dynamic-single-page-structure'] = $page_structure;
+			$filtered_items = array_filter( $page_structure, function ( $value ) use ( $value_to_remove ) {
+				return $value !== $value_to_remove;
+			});
+			$theme_options['ast-dynamic-single-page-structure'] = $filtered_items;
 		}
 
 		update_option( 'astra-settings', $theme_options );
