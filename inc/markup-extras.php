@@ -2142,7 +2142,7 @@ function astra_setup_article_featured_image() {
 		/**
 		 * Bail early if featured image option "Show featured image in the posts lists only, but hide it in the single post view." is enabled.
 		 *
-		 * @since x.x.x
+		 * @since 4.6.2
 		 */
 		return;
 	}

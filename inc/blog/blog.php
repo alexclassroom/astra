@@ -670,11 +670,11 @@ function astra_blog_post_per_page( $query ) {
 		array(
 			'bbpress_single',
 			'courses_archive',
-			'product'
+			'product',
 		)
 	);
 
-	if ( in_array( $query->get('post_type'), $exclusions, true ) ) {
+	if ( in_array( $query->get( 'post_type' ), $exclusions, true ) ) {
 		return;
 	}
 

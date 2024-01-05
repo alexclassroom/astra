@@ -925,8 +925,8 @@ function astra_theme_background_updater_4_6_2() {
 	if ( ! isset( $theme_options['v4-6-2-backward-option'] ) ) {
 		$theme_options['v4-6-2-backward-option'] = false;
 
-		$page_banner_layout = isset( $theme_options['ast-dynamic-single-page-layout'] ) ? $theme_options['ast-dynamic-single-page-layout'] : 'layout-1';
-		$page_structure = isset( $theme_options['ast-dynamic-single-page-structure'] ) ? $theme_options['ast-dynamic-single-page-structure'] : array( 'ast-dynamic-single-page-image', 'ast-dynamic-single-page-title' );
+		$page_banner_layout      = isset( $theme_options['ast-dynamic-single-page-layout'] ) ? $theme_options['ast-dynamic-single-page-layout'] : 'layout-1';
+		$page_structure          = isset( $theme_options['ast-dynamic-single-page-structure'] ) ? $theme_options['ast-dynamic-single-page-structure'] : array( 'ast-dynamic-single-page-image', 'ast-dynamic-single-page-title' );
 		$layout_1_image_position = isset( $theme_options['ast-dynamic-single-page-article-featured-image-position-layout-1'] ) ? $theme_options['ast-dynamic-single-page-article-featured-image-position-layout-1'] : 'behind';
 
 		$migrated_page_structure = array();
