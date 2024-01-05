@@ -2137,12 +2137,12 @@ function astra_setup_article_featured_image() {
 		return;
 	}
 
-	if ( 'disabled' === astra_get_option_meta( 'ast-featured-img' ) ) {
+	if ( 'disabled' === astra_get_option_meta( 'ast-featured-img' ) && Astra_Dynamic_CSS::astra_4_6_2_compatibility() ) {
 
 		/**
 		 * Bail early if featured image option "Show featured image in the posts lists only, but hide it in the single post view." is enabled.
 		 *
-		 * @since x.x.x
+		 * @since 4.6.2
 		 */
 		return;
 	}
