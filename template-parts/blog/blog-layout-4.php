@@ -8,6 +8,7 @@
  * @link        https://wpastra.com/
  * @since       Astra 4.6.0
  */
+
 ?>
 <div <?php astra_blog_layout_class( 'blog-layout-4' ); ?>>
 	<div class="post-content <?php echo astra_attr( 'ast-grid-common-col' ); ?>" >
