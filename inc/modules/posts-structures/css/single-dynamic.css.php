@@ -314,7 +314,7 @@ function astra_post_single_structure_dynamic_css( $dynamic_css, $dynamic_css_fil
 			$selector . ' .ast-container > *:not(:last-child), ' . $selector . ' .read-more' => array(
 				'margin-bottom' => $elements_gap . 'px',
 			),
-			$selector . ' .ast-container' => array(
+			$selector . ' .ast-container'                 => array(
 				'width' => '100%',
 			),
 			$entry_title_selector                         => astra_get_font_array_css( astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-family' ), astra_get_option( 'ast-dynamic-single-' . $current_post_type . '-title-font-weight', Astra_Posts_Structure_Loader::get_customizer_default( 'title-font-weight' ) ), $banner_title_font_size, 'ast-dynamic-single-' . $current_post_type . '-title-font-extras', $title_color ),
