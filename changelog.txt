@@ -1,3 +1,6 @@
+v4.6.3 (Unreleased)
+- Fix: Primary menu last item padding is missing not applying. 
+
 v4.6.2
 - Fix: Page: Featured Image directly show on the frontend after recent v4.6.0 update.
 - Fix: WooCommerce - "No. of Products" option not working for the Shop page and its inheriting Blog "No. of Posts" option.
