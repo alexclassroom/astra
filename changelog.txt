@@ -4,6 +4,7 @@ v4.6.3 (Unreleased)
 - Fix: Header - Menu - Last menu item's padding missing on the frontend.
 - Fix: Single Layout - Banner - Alignment of title area not working.
 - Fix: Single Layout - Author Meta - Avatar size not working when banner layout is set as layout-2.
+- Fix: Customizer - Number control's input field UI breaking in Firefox browser.
 
 v4.6.2
 - Fix: Page: Featured Image directly show on the frontend after recent v4.6.0 update.
