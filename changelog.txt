@@ -1,5 +1,7 @@
 v4.6.3 (Unreleased)
-- Fix: Primary menu last item padding is missing not applying. 
+- Fix: BBPress - Forum - Archive items get shrink on the frontend due to inheriting blog layout configurations.
+- Fix: Single Layout - Banner - Featured image visible on the frontend if title area is disabled when image is positioned as "Behind" or "Below" for Layout-1 & Layout-2 respectively.
+- Fix: Header - Menu - Last menu item's padding missing on the frontend.
 
 v4.6.2
 - Fix: Page: Featured Image directly show on the frontend after recent v4.6.0 update.
